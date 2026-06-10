@@ -93,3 +93,52 @@ Track environmental changes that may require future adaptive action.
 - [ ] Monitor `pandas` 3.x migration path when ready
 - [ ] Add GPU environment for CUDA-specific testing when available
 - [ ] Check `tikzplotlib` compatibility before matplotlib 4.0
+- [ ] Loosen `pyarrow` upper bound from `<24` to `<25` if/when 23.1.0+ released
+
+## Entry: 2026-06-10 — Pre-Push Environment Audit
+
+### Security
+
+pip-audit re-run: 1 new CVE found.
+
+| Package | Old Version | New Version | CVE |
+|---------|-------------|-------------|-----|
+| pip | 26.1.1 | 26.1.2 | PYSEC-2026-196 |
+
+**0 remaining vulnerabilities in auditable packages.**
+
+### CUDA / Runtime
+
+| Property | Value |
+|----------|-------|
+| GPU | None (CPU-only) — unchanged |
+| CUDA | N/A — unchanged |
+| PyTorch | 2.12.0+cu130 (CUDA 13.0 libs installed, inactive) |
+
+### Cloud APIs
+
+No changes since 2026-06-09. All endpoints stable:
+- OpenAI, Anthropic, W&B, TensorBoard, MLflow: still unused
+- arXiv, PyPI, GitHub, Reddit, HN: stable, public, no-auth
+- Twitter/X: stub only (unchanged)
+
+### Package Versions
+
+No version changes since 2026-06-09. All within `pyproject.toml` bounds.
+
+| Package | Version | Upper Bound | Margin |
+|---------|---------|-------------|--------|
+| numpy | 2.4.6 | <3.0 | 0.54 |
+| scipy | 1.17.1 | <2.0 | 0.83 |
+| torch | 2.12.0 | <3.0 | 0.88 |
+| matplotlib | 3.10.9 | <4.0 | 0.89 |
+| pandas | 2.3.3 | <3.0 | 0.67 |
+| datasets | 2.21.0 | <3.0 | 0.79 |
+| pyarrow | 23.0.1 | <24 | **0.04** ⚠️ |
+| triton | 3.7.0 | (none) | — |
+
+### New Risks
+
+| # | Risk | Severity | Trigger | Action When Triggered |
+|---|------|----------|---------|----------------------|
+| 7 | `pyarrow` upper bound collision | MEDIUM | PyPI shows pyarrow 23.1.0+ | Loosen pin to `<25` in `pyproject.toml` |
