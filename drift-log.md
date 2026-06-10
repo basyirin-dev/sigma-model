@@ -141,4 +141,30 @@ No version changes since 2026-06-09. All within `pyproject.toml` bounds.
 
 | # | Risk | Severity | Trigger | Action When Triggered |
 |---|------|----------|---------|----------------------|
-| 7 | `pyarrow` upper bound collision | MEDIUM | PyPI shows pyarrow 23.1.0+ | Loosen pin to `<25` in `pyproject.toml` |
+| 7 | `pyarrow` upper bound collision | MEDIUM | PyPI shows pyarrow 23.1.0+ | Pin loosened: `<24` → `<25` in `pyproject.toml` (2026-06-10) |
+
+## Entry: 2026-06-10 — pyarrow Pin Loosening
+
+### Action
+
+Loosened `pyarrow` upper bound in `pyproject.toml`:
+
+| Before | After | Reason |
+|--------|-------|--------|
+| `pyarrow>=14,<24` | `pyarrow>=14,<25` | pyarrow 24.0.0 exists on PyPI; `<24` blocks future pip operations |
+
+### Local State Preserved
+
+| Package | Version | Status |
+|---------|---------|--------|
+| pyarrow | **23.0.1** | Intentionally NOT upgraded to 24.0.0 |
+
+**Rationale:** Local environment is the verified audit environment that produced canonical `all_results.pkl` (92 KB, Table 5 15/15 PASS). Upgrading a C-extension library (Parquet serialization, datasets compatibility) introduces non-zero risk of silent breakage before arXiv submission. Stability over novelty.
+
+### Risk #7 Status: ✅ Mitigated
+
+Structural constraint relaxed. Local pin remains at 23.0.1 for provenance. Next `pip install` or `pip sync` will allow 24.x if/when needed.
+
+### Future Actions Updated
+
+- [x] Loosen `pyarrow` upper bound from `<24` to `<25` if/when 23.1.0+ released *(Completed 2026-06-10)*
