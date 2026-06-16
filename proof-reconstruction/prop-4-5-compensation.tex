@@ -1,0 +1,187 @@
+% ============================================================
+% Proposition 4.5: Compensation Analysis
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Intersection Discovery Rate]
+The rate at which agent $A$ discovers compositional intersections
+between domains $d_1$ and $d_2$ is:
+\[
+\Psi_A(d_1, d_2, t) = \Psi_0 \cdot \phi(d_1, d_2) \cdot
+\sqrt{q_A(d_1, t) \cdot q_A(d_2, t)},
+\]
+as defined in Equation~\eqref{eq:discovery-rate}, where
+$q_A(d, t) = \sigma_A(d, t) \cdot \delta_A^{\text{relative}}(d, t)$
+is the mastery quality \eqref{eq:mastery-quality}.
+\end{definition}
+
+\begin{definition}[Attentional Fidelity ODE]
+During training, $\alpha_A$ evolves according to
+Equation~\eqref{eq:alpha-ode}:
+\[
+\dot{\alpha}_A = \gamma C_A (1 - \alpha_A) - \zeta_\alpha \alpha_A R_A^{\text{surface}}.
+\]
+The coupling to $\sigma_A$ occurs through the $\sigma_A$ ODE
+\eqref{eq:sigma-ode}:
+\[
+\dot{\sigma}_A = \sigma_A \cdot
+[\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}],
+\]
+where $\alpha_A$ appears as a multiplicative gate on the growth term.
+\end{definition}
+
+\begin{assumption}[Evaluation-Time Stationarity]
+At evaluation time, $\sigma_A$ and $\alpha_A$ are considered fixed
+(measured at the end of training). The dynamics that produced them
+are not relevant to the evaluation-time expression for $\Psi_A$.
+\end{assumption}
+
+\begin{assumption}[No $\alpha_A$ Dependence in $\Psi_A$]
+The evaluation-time expression \eqref{eq:discovery-rate} contains
+no $\alpha_A$ term. This follows from the definition of $q_A$ as
+$\sigma_A \cdot \delta_A^{\text{relative}}$, which depends only on
+$\sigma_A$ and $\delta_A$.
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Compensation Analysis]
+\label{prop:compensation}
+High attentional fidelity $\alpha_A$ cannot compensate for low schema
+coherence $\sigma_A$ in the intersection discovery rate:
+\[
+\Psi_A \propto \sigma_A \cdot \delta_A^{\text{relative}}
+\quad \text{(independent of } \alpha_A \text{ at evaluation time)}.
+\]
+While $\alpha_A$ gates the \emph{growth} of $\sigma_A$ during training
+\eqref{eq:sigma-ode}, it does not appear in the evaluation-time
+expression for $\Psi_A$. Thus, a benchmark measuring intersection
+discovery is insensitive to $\alpha_A$ once $\sigma_A$ is fixed.
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We analyze the evaluation-time expression and the training-time
+dynamics separately.
+
+\paragraph{Step 1: Evaluation-time independence.}
+By Equation~\eqref{eq:discovery-rate} and
+\eqref{eq:mastery-quality}:
+\[
+\Psi_A(d_1, d_2, t) = \Psi_0 \cdot \phi(d_1, d_2) \cdot
+\sqrt{(\sigma_A(d_1) \cdot \delta_A^{\text{relative}}(d_1))
+\cdot (\sigma_A(d_2) \cdot \delta_A^{\text{relative}}(d_2))}.
+\]
+Taking the partial derivative with respect to $\alpha_A$:
+\[
+\frac{\partial \Psi_A}{\partial \alpha_A} = 0,
+\]
+because $\alpha_A$ does not appear anywhere in the expression.
+The same applies to the joint sensitivity:
+\[
+\frac{\partial^2 \Psi_A}{\partial \sigma_A \partial \alpha_A} = 0.
+\]
+Thus, for fixed $\sigma_A$ and $\delta_A^{\text{relative}}$, $\Psi_A$
+is independent of $\alpha_A$. No amount of attentional fidelity can
+directly increase the intersection discovery rate if $\sigma_A$ is low.
+
+\paragraph{Step 2: Training-time dependence.}
+The ODE \eqref{eq:sigma-ode} shows that $\alpha_A$ gates the growth
+rate of $\sigma_A$:
+\[
+\dot{\sigma}_A = \sigma_A \cdot
+[\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}].
+\]
+The term $\rho P_A \alpha_A$ is the growth engine. When $\alpha_A = 0$:
+\[
+\dot{\sigma}_A = \sigma_A \cdot [0 - \epsilon_\sigma \Omega_{SL}]
+= -\sigma_A \epsilon_\sigma \Omega_{SL} \leq 0.
+\]
+Schema coherence decreases monotonically when attention is absent.
+When $\alpha_A > 0$, the growth term provides upward pressure on
+$\sigma_A$ (when the bracket is positive).
+
+The result is that $\alpha_A$ determines the \emph{trajectory} of
+$\sigma_A$ during training, but not the evaluation-time expression
+of $\Psi_A$. Once training is complete and $\sigma_A$ is fixed,
+$\Psi_A$ is determined by $\sigma_A$ alone (together with
+$\delta_A^{\text{relative}}$), independently of $\alpha_A$.
+
+\paragraph{Step 3: Compensatory relationships that fail.}
+Consider an agent with low $\sigma_A$ but high $\alpha_A$. Can the
+high $\alpha_A$ compensate for low $\sigma_A$ in $\Psi_A$? The
+evaluation-time expression:
+\[
+\Psi_A \propto \sqrt{\sigma_A \cdot \delta_A^{\text{relative}}}.
+\]
+$\alpha_A$ does not appear. Compensation is impossible in the
+intersection discovery rate.
+
+Consider an agent with high $\alpha_A$ during training. This would
+(given sufficient $\rho$, $P_A$, and low $\Omega_{SL}$) produce higher
+$\sigma_A$ at the end of training. But this is an indirect effect
+through the dynamics, not a direct compensation mechanism. If other
+factors ($\rho P_A$ small, $\Omega_{SL}$ large) prevent $\sigma_A$
+from growing despite high $\alpha_A$, the high $\alpha_A$ is
+ineffective.
+
+\paragraph{Step 4: Implication for benchmark design.}
+A benchmark measuring intersection discovery (e.g., compositional
+generalisation tests) assesses the product of $\sigma_A$ and
+$\delta_A^{\text{relative}}$. It does not assess $\alpha_A$ directly.
+To measure $\alpha_A$, a benchmark must probe attention during
+training (e.g., through distractor tasks or attention-weight
+analysis). The $\Sigma$-Model predicts that discovery-rate benchmarks
+and attention benchmarks are complementary: they measure different
+latent variables that interact during training but factor at
+evaluation time. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\sigma_A = 0$ (no schema coherence):}
+$\Psi_A = 0$ regardless of $\alpha_A$, $\delta_A^{\text{relative}}$,
+or any other parameter. The intersection discovery rate is identically
+zero. No compensation is possible.
+
+\textbf{$\alpha_A = 0$ but $\sigma_A > 0$ (attention collapse with existing coherence):}
+If $\sigma_A$ was built before attention collapsed, the evaluation-time
+$\Psi_A$ remains proportional to $\sqrt{\sigma_A \delta_A}$ even with
+$\alpha_A = 0$. However, $\sigma_A$ will decay under the dynamics
+($\dot{\sigma}_A \leq 0$ when $\alpha_A = 0$), so this is a transient
+state.
+
+\textbf{$\delta_A^{\text{relative}} = 0$ (zero depth):}
+$\Psi_A = 0$ regardless of $\sigma_A$ or $\alpha_A$. Depth is
+necessary for intersection discovery — even perfect schema coherence
+cannot compensate for lack of knowledge. This is the ``no free lunch''
+boundary.
+
+\textbf{Both $\sigma_A$ and $\alpha_A$ are high:}
+The full $\Psi_A$ expression is evaluated with $\sigma_A \approx 1$,
+giving $\Psi_A \propto \sqrt{\delta_A^{\text{relative}}}$. The
+intersection discovery rate is limited only by depth.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Dependencies on earlier results:} The proof uses the
+definitions of $\Psi_A$ \eqref{eq:discovery-rate},
+$q_A$ \eqref{eq:mastery-quality}, and the $\sigma_A$ ODE
+\eqref{eq:sigma-ode}. It does not depend on any specific proposition.
+
+\textbf{Forward dependencies:} None. This is a self-contained
+analysis of the evaluation-time expression.
+
+\textbf{Self-circularity:} The claim that ``$\alpha_A$ does not
+appear in $\Psi_A$'' is definitionally true given the model equations.
+The proof demonstrates the absence of $\alpha_A$ from $\Psi_A$ by
+inspection of the definitions. This is not a deep mathematical
+result but an architectural observation about the $\Sigma$-Model.
+The significance lies in the implications for benchmark design and
+interpretability, not in the formal difficulty of the proof. The
+analysis of the training-time dynamics ($\alpha_A$ gates $\sigma_A$
+growth) is also definitional given the ODE structure. The proposition
+is best understood as a formal statement of a non-trivial architectural
+constraint rather than a non-obvious mathematical fact.
+\end{circularity-check}

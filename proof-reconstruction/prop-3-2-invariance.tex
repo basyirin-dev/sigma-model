@@ -1,0 +1,189 @@
+% ============================================================
+% Proposition 3.2: Forward Invariance and Boundedness
+% Status: CORRECTION (original σ_A = 0 boundary claim is false)
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Schema Coherence ODE]
+The schema coherence dynamics are given by:
+\begin{equation}\label{eq:sigma-ode-recon}
+\dot{\sigma}_A(d,t) = \sigma_A(d,t) \cdot
+\bigl[ \rho \cdot P_A(d,t) \cdot \alpha_A(d,t) \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t))
+- \epsilon_\sigma \cdot \Omega_{SL}(d,t) \bigr].
+\end{equation}
+This is Equation~(28) in the original manuscript, rewritten to show the
+factorization that is critical to the boundary analysis.
+\end{definition}
+
+\begin{assumption}[Parameter Bounds]
+The following parameter ranges hold throughout training:
+\begin{enumerate}[nosep]
+\item $\sigma_A(0) \in (0, 1)$, i.e., the initial schema coherence is
+  strictly between the bounds. (Allows $\sigma_A(0) = 0$ as a special
+  case handled separately.)
+\item $\rho, \gamma_\sigma > 0$, $\epsilon_\sigma \geq 0$.
+\item $0 \leq P_A(d,t) \leq P_{\max}$, $0 \leq \Omega_{SL}(d,t) \leq \Omega_{\max}$,
+  $0 \leq \alpha_A(d,t) \leq 1$ for all $t$.
+\item $\gamma_\sigma \in (0, 1)$ (schema-mediated decay protection factor).
+\end{enumerate}
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Forward Invariance and Boundedness]
+\label{prop:invariance}
+Under Assumptions 1--4, the state space $\mathcal{X}$ is
+forward-invariant under the dynamics: if $\mathbf{x}_A(0) \in \mathcal{X}$,
+then $\mathbf{x}_A(t) \in \mathcal{X}$ for all $t \in [0, T_{\max})$.
+Furthermore, if $\Delta(d,t)$ is uniformly bounded by $\Delta_{\max} < \infty$,
+then $T_{\max} = \infty$ (global existence).
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We verify boundary behavior for each variable. For brevity, we present
+the full proof for $\sigma_A$ (the case where the original is erroneous)
+and summarize the remaining variables.
+
+\paragraph{The $\sigma_A = 0$ boundary: invariant manifold, not reflecting.}
+The original proof (line~871) claims: ``$\sigma_A = 0$: $\dot{\sigma}_A \geq 0$
+(growth term $\rho \cdot P_A \cdot \alpha_A > 0$).'' This statement is
+\textbf{mathematically false}. From \eqref{eq:sigma-ode-recon}, at $\sigma_A = 0$:
+\[
+\dot{\sigma}_A = 0 \times \bigl[ \rho \cdot P_A \cdot \alpha_A \cdot (1 - 0) - \epsilon_\sigma \cdot \Omega_{SL} \bigr] = 0,
+\]
+regardless of the sign or magnitude of the bracket term. The factor
+$\sigma_A$ multiplies the entire right-hand side, making $\sigma_A = 0$
+a set of equilibrium points (the entire $\sigma_A = 0$ hyperplane is
+invariant). This is a critical distinction: a reflecting boundary would
+have $\dot{\sigma}_A > 0$ pointing inward; an invariant manifold has
+$\dot{\sigma}_A = 0$, meaning trajectories starting on $\sigma_A = 0$
+remain there forever.
+
+\paragraph{Correct non-negativity proof via exact integration.}
+The ODE \eqref{eq:sigma-ode-recon} is separable:
+\[
+\frac{d\sigma_A}{\sigma_A} = \bigl[ \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL} \bigr] \, dt.
+\]
+Integrating from $0$ to $t$:
+\begin{equation}\label{eq:exact-integral}
+\sigma_A(t) = \sigma_A(0) \cdot
+\exp\!\left( \int_0^t \bigl[ \rho P_A(s) \alpha_A(s) (1 - \gamma_\sigma \sigma_A(s))
+- \epsilon_\sigma \Omega_{SL}(s) \bigr] \, ds \right).
+\end{equation}
+Since the exponential function is strictly positive for any finite
+argument, and $\sigma_A(0) \geq 0$ by assumption, we have:
+\[
+\sigma_A(t) \geq 0 \quad \forall t \in [0, T_{\max}).
+\]
+Equality $\sigma_A(t) = 0$ holds if and only if $\sigma_A(0) = 0$ (the
+invariant manifold case). If $\sigma_A(0) > 0$, then $\sigma_A(t) > 0$
+for all finite $t$. The lower bound is established without needing
+$\dot{\sigma}_A \geq 0$ at the boundary.
+
+\paragraph{The $\sigma_A = 1$ upper boundary.}
+At $\sigma_A = 1$, \eqref{eq:sigma-ode-recon} gives:
+\[
+\dot{\sigma}_A(1) = \rho P_A \alpha_A (1 - \gamma_\sigma) - \epsilon_\sigma \Omega_{SL}.
+\]
+This can be positive, zero, or negative depending on parameter values.
+The original proof claims $\dot{\sigma}_A \leq 0$ ``because the
+$(1-\sigma_A)$ factor vanishes'' --- but this is incorrect because the
+ODE does \emph{not} contain a $(1-\sigma_A)$ factor. The correct form
+\eqref{eq:sigma-ode-recon} has $(1 - \gamma_\sigma \sigma_A)$, which at
+$\sigma_A = 1$ evaluates to $(1 - \gamma_\sigma) > 0$.
+
+The saturation at $\sigma_A = 1$ is therefore \textbf{not guaranteed by
+the ODE alone}. It requires the additional condition:
+\begin{equation}\label{eq:upper-bound-condition}
+\rho P_A \alpha_A (1 - \gamma_\sigma) \leq \epsilon_\sigma \Omega_{SL}.
+\end{equation}
+If this condition holds, $\dot{\sigma}_A \leq 0$ at $\sigma_A = 1$ and the
+boundary is reflecting. If it fails, trajectories would overshoot
+$\sigma_A > 1$, which is outside the state space. \textbf{Resolution:}
+The equilibrium analysis (Proposition~3.4) shows that the non-trivial
+equilibrium is:
+\[
+\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right)
+\]
+where $R_0 = \rho P_A \alpha_A / (\epsilon_\sigma \Omega_{SL})$. This
+equilibrium is $< 1$ whenever $R_0 < 1/(1 - \gamma_\sigma)$. For $R_0$
+in this range, trajectories converge monotonically to $\sigma_A^* < 1$
+and never exceed 1. For $R_0 \geq 1/(1 - \gamma_\sigma)$, the equilibrium
+is $\geq 1$ and the ODE would push $\sigma_A$ above 1. In practice,
+the numerical integration (Algorithm~3.1) enforces the bound via
+clamping.
+
+\paragraph{Summary of corrected boundary conditions for all variables.}
+\begin{itemize}[nosep]
+\item $\delta_A = 0$: $\dot{\delta}_A = f_{\text{learn}} \cdot \eta \cdot T_A \geq 0$.
+  Growth term dominates when depth is zero. Correct as stated.
+\item $\delta_A = \Delta(d,t)$: The Gompertz efficiency $\eta \to 0$ as
+  $\delta_A \to \Delta$, so $\dot{\delta}_A \approx -\lambda_c \delta_A (1 - r_A) \leq 0$.
+  Correct as stated.
+\item $\sigma_A = 0$: $\dot{\sigma}_A = 0$ (invariant manifold, not
+  reflecting). Lower bound follows from \eqref{eq:exact-integral}.
+  \textbf{Correction applied.}
+\item $\sigma_A = 1$: Not guaranteed reflecting without condition
+  \eqref{eq:upper-bound-condition}. Trajectories that converge to the
+  equilibrium $\sigma_A^* < 1$ never reach 1. \textbf{Correction applied.}
+\item $\alpha_A = 0$: $\dot{\alpha}_A = \gamma C_A \geq 0$ (requires $C_A > 0$).
+  \textbf{Needs explicit Assumption $C_A > 0$.}
+\item $\alpha_A = 1$: $\dot{\alpha}_A = -\zeta_\alpha R_A^{\text{surface}} \leq 0$.
+  Correct as stated.
+\item $\hat{M}_A, \Xi_A$ bounds: Mean-reverting dynamics ensure $[0,1]$
+  invariance. Correct as stated.
+\end{itemize}
+
+\paragraph{Global existence.}
+Since $\mathcal{X}$ is compact when $\Delta_{\max} < \infty$, and the
+vector field points inward (or trajectories remain on the invariant
+manifold) at every boundary, solutions cannot escape to infinity.
+The escape lemma then implies $T_{\max} = \infty$. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\sigma_A(0) = 0$ exactly:} The entire trajectory lies on the
+invariant manifold $\sigma_A(t) \equiv 0$. This is the $\sigma$-trap
+characterized in Theorem~4.1. The agent never develops schema coherence.
+
+\textbf{$\sigma_A(0) \in (0, 1)$ but small:} The exact integral
+\eqref{eq:exact-integral} shows the trajectory grows multiplicatively
+if the bracket term is positive and decays to zero if it is negative.
+This is the bifurcation behavior formalized in Proposition~4.1.
+
+\textbf{Condition \eqref{eq:upper-bound-condition} fails:} If
+$R_0 \geq 1/(1 - \gamma_\sigma)$, the analytical equilibrium exceeds 1.
+The ODE alone cannot keep $\sigma_A \leq 1$. The numerical clamp in
+Algorithm~3.1 is the effective enforcement mechanism, making the
+implemented system a projected dynamical system rather than a pure ODE.
+
+\textbf{$C_A = 0$ for an interval:} The $\alpha_A = 0$ boundary is not
+reflecting; $\alpha_A$ remains at 0. This is physically interpretable as
+attention collapse.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Does Proposition~3.2 depend on any later result?}
+The proof of $\sigma_A$ non-negativity via \eqref{eq:exact-integral}
+depends only on the ODE structure and the assumption $\sigma_A(0) \geq 0$.
+It does not require Proposition~3.6 (estimator consistency) or
+Proposition~4.1 (bifurcation analysis). The upper bound discussion
+references the equilibrium value $\sigma_A^*$ from Proposition~3.4,
+but this is for interpretation only --- the forward invariance claim
+itself is independent of Proposition~3.4.
+
+\textbf{Does any later result depend on Proposition~3.2?}
+Proposition~3.3 (fast-slow decomposition) requires that the state
+space is compact and forward-invariant to apply Fenichel's theorem.
+Proposition~3.4 (equilibria) requires the forward-invariant domain to
+define equilibria. These are forward dependencies. Safe.
+
+\textbf{Self-circularity:} The bound $\sigma_A \leq 1$ is not strictly
+proved by the ODE alone for all parameter regimes. The proof must
+be supplemented by the equilibrium analysis or the numerical clamp.
+This is a \textbf{partial circular dependency}: Proposition~3.2's
+claim of $\sigma_A \leq 1$ relies on Proposition~3.4's equilibrium
+bound or Algorithm~3.1's clamping. We flag this for the reader.
+\end{circularity-check}

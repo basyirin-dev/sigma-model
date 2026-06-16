@@ -1,0 +1,189 @@
+% ============================================================
+% Proposition 4.1: Sigma-Critical Threshold Derivation
+% Status: CORRECTION (original omits transversality verification)
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Basic Schema Reproduction Number]
+Define:
+\[
+R_0(d,t) \defeq \frac{\rho \cdot P_A(d,t) \cdot \alpha_A(d,t)}
+{\epsilon_\sigma \cdot \Omega_{SL}(d,t)} \in [0, \infty).
+\]
+This is the ratio of schema growth drivers to suppression pressure.
+\end{definition}
+
+\begin{assumption}[Adiabatic Approximation]
+For the bifurcation analysis, we treat $P_A$, $\alpha_A$, and $\Omega_{SL}$
+as slowly varying parameters relative to the $\sigma_A$ dynamics. This is
+consistent with the timescale separation (Proposition~3.3): $\sigma_A$
+evolves at rate $\rho \sim 10^{-1}$, while $P_A$, $\alpha_A$, $\Omega_{SL}$
+evolve at rates determined by the slow subsystem ($\nu_M, \kappa \sim 10^{-2}$).
+Thus the bifurcation parameter $R_0$ is approximately constant on the
+$\sigma_A$ equilibration timescale.
+\end{assumption}
+
+\begin{assumption}[Parameter Non-Degeneracy]
+At the bifurcation point $R_0 = 1$, the following hold:
+\begin{enumerate}[nosep]
+\item $\rho > 0$, $\gamma_\sigma > 0$, $P_A > 0$, $\alpha_A > 0$
+  (all drivers of schema growth are active).
+\item The second derivative $f''(0) \neq 0$ (transversality), verified below.
+\end{enumerate}
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Sigma-Critical Threshold]
+\label{prop:bifurcation}
+When $R_0 < 1$, the schema-free equilibrium $\sigma_A = 0$ is locally
+stable. When $R_0 > 1$, it becomes unstable and a non-zero stable
+equilibrium emerges via a transcritical bifurcation at $R_0 = 1$.
+The critical threshold is:
+\[
+\sigma_{\text{critical}} = \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right).
+\]
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We perform a direct Taylor expansion of $\dot{\sigma}_A = f(\sigma_A)$
+around $\sigma_A = 0$, verifying the three conditions for a
+transcritical bifurcation.
+
+\paragraph{Step 1: Setup.}
+Recall the $\sigma_A$ ODE:
+\[
+\dot{\sigma}_A = f(\sigma_A; R_0) = \sigma_A \left[ \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL} \right].
+\]
+Factor out $\epsilon_\sigma \Omega_{SL}$ to express in terms of $R_0$:
+\[
+f(\sigma_A; R_0) = \epsilon_\sigma \Omega_{SL} \cdot \sigma_A \left[ R_0 (1 - \gamma_\sigma \sigma_A) - 1 \right].
+\]
+Let $r_{\text{net}} \defeq \epsilon_\sigma \Omega_{SL} (R_0 - 1)$.
+
+\paragraph{Step 2: Equilibrium condition.}
+$f(0; R_0) = 0$ for all $R_0$ (the zero equilibrium always exists).
+A non-zero equilibrium satisfies:
+\[
+R_0 (1 - \gamma_\sigma \sigma_A) - 1 = 0 \quad\Longrightarrow\quad
+\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right).
+\]
+
+\paragraph{Step 3: Linear stability of $\sigma_A = 0$.}
+Compute the derivative:
+\[
+\frac{\partial f}{\partial \sigma_A}(0; R_0) = \epsilon_\sigma \Omega_{SL} (R_0 - 1) = r_{\text{net}}.
+\]
+Thus:
+\begin{itemize}[nosep]
+\item $R_0 < 1 \implies \partial f/\partial \sigma_A < 0 \implies \sigma_A = 0$ is stable.
+\item $R_0 > 1 \implies \partial f/\partial \sigma_A > 0 \implies \sigma_A = 0$ is unstable.
+\item $R_0 = 1 \implies \partial f/\partial \sigma_A = 0$ (bifurcation condition).
+\end{itemize}
+
+\paragraph{Step 4: Transversality conditions.}
+A transcritical bifurcation at $(\sigma_A, R_0) = (0, 1)$ requires
+two non-degeneracy conditions \citep[Thm.~3.2]{kuznetsov1998}:
+
+\noindent\textbf{Condition T1 (equilibrium crossing).}
+\[
+\frac{\partial f}{\partial R_0}(0; 1) = \epsilon_\sigma \Omega_{SL} \cdot 0 \cdot [1 - 0] = 0.
+\]
+This appears to vanish. However, the correct transversality condition is
+for the bifurcation parameter unfolded through the equilibrium condition.
+Write $f(\sigma_A; r_{\text{net}})$ with $r_{\text{net}}$ as the unfolding
+parameter:
+\[
+f(\sigma_A; r_{\text{net}}) = \sigma_A (r_{\text{net}} - \gamma_\sigma \rho P_A \alpha_A \sigma_A).
+\]
+Then:
+\[
+\frac{\partial^2 f}{\partial \sigma_A \partial r_{\text{net}}}(0; 0) = 1 \neq 0.
+\]
+This satisfies the eigenvalue crossing transversality condition.
+
+\noindent\textbf{Condition T2 (nonlinear term non-degeneracy).}
+\[
+\frac{\partial^2 f}{\partial \sigma_A^2}(0; 1) = -2 \gamma_\sigma \rho P_A \alpha_A \neq 0.
+\]
+Since $\gamma_\sigma > 0$, $\rho > 0$, $P_A > 0$, $\alpha_A > 0$ at the
+bifurcation point (Assumption~2), this second derivative is strictly
+negative and non-zero.
+
+\paragraph{Step 5: Normal form.}
+With conditions T1 and T2 satisfied, the dynamics near $(\sigma_A, R_0) = (0, 1)$
+are topologically equivalent to the transcritical normal form:
+\[
+\dot{\sigma} = r_{\text{net}} \sigma - k \sigma^2 + O(\sigma^3),
+\]
+where $k \defeq \gamma_\sigma \rho P_A \alpha_A > 0$. The non-trivial
+equilibrium of the truncated normal form $\dot{x} = rx - kx^2$ is
+$x^* = r/k$, which gives:
+\[
+\sigma_{\text{critical}} = \frac{r_{\text{net}}}{k}
+= \frac{\epsilon_\sigma \Omega_{SL} (R_0 - 1)}{\gamma_\sigma \rho P_A \alpha_A}
+= \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right).
+\]
+
+\paragraph{Step 6: Verification of claims.}
+The exchange of stability is now clear:
+\begin{itemize}[nosep]
+\item $R_0 < 1$: $\sigma_A = 0$ stable (sole attractor), no positive equilibrium.
+\item $R_0 > 1$: $\sigma_A = 0$ unstable, $\sigma_A^* = \sigma_{\text{critical}} > 0$ stable.
+\end{itemize}
+Since $\sigma_A^*$ is strictly increasing in $R_0$, the threshold
+$\sigma_{\text{critical}}$ marks the smallest positive value of $\sigma_A$
+that can be maintained against shortcut suppression pressure. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$R_0 \to 0^+$ (complete suppression):}
+$\sigma_{\text{critical}} \to -\infty$, meaning no positive equilibrium
+exists. The $\sigma_A = 0$ equilibrium is globally attracting.
+
+\textbf{$R_0 \to \infty$ (no suppression):}
+$\sigma_{\text{critical}} \to 1/\gamma_\sigma$. Since $\gamma_\sigma \in (0,1)$,
+the limit $1/\gamma_\sigma > 1$. If $\gamma_\sigma < 1/R_0$ for
+large $R_0$, $\sigma_{\text{critical}} > 1$, which is outside the state
+space. In this regime the ODE would drive $\sigma_A$ toward a value
+above 1 --- the numerical clamp in Algorithm~3.1 is the enforcement
+mechanism (see Proposition~3.2 boundary discussion).
+
+\textbf{$R_0 = 1$ exactly:} The system undergoes critical slowing down.
+The linearization vanishes; dynamics are dominated by the quadratic
+term. Perturbations decay as $O(1/t)$ rather than exponentially.
+Fenichel's theorem breaks down (Proposition~3.3), and the fast-slow
+decomposition must be replaced by center manifold reduction.
+
+\textbf{$\alpha_A = 0$ at bifurcation:} If $\alpha_A = 0$ when $R_0 = 1$,
+then $R_0 = 0/(\epsilon_\sigma \Omega_{SL}) = 0$ (since the numerator
+vanishes), contradicting $R_0 = 1$. The bifurcation cannot occur when
+attentional fidelity is zero. This is physically correct: without
+attentional allocation to principled structure, schema coherence
+cannot grow regardless of $P_A$.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Does Proposition~4.1 depend on any later result?}
+It depends on the definition of $R_0$ and the $\sigma_A$ ODE structure.
+It does not require Proposition~4.2, 4.3, or any later result. It
+references standard bifurcation theory \citep{kuznetsov1998} for the
+transversality conditions but performs the calculation directly.
+
+\textbf{Does any later result depend on Proposition~4.1?}
+Proposition~4.3 (hysteresis) requires the transcritical bifurcation
+structure. Theorem~4.1 (SGD suppression) is a corollary of the
+$R_0 < 1$ regime. Proposition~4.2 (depth threshold) uses
+$\sigma_{\text{critical}}$ as a given value. Meta-Prediction~M1
+depends on $\sigma_{\text{critical}}$ crossing as necessary condition
+for Phase~2 entry. These are forward dependencies.
+
+\textbf{Self-circularity:} The proof uses the adiabatic approximation
+that $P_A, \alpha_A, \Omega_{SL}$ are frozen parameters. This is
+justified by Proposition~3.3 (timescale separation). If the timescale
+separation does not hold (Assumption~\ref{assum:timescale} violated),
+the bifurcation analysis becomes a quasi-steady-state approximation
+whose validity must be checked numerically. This is a mild dependency.
+\end{circularity-check}

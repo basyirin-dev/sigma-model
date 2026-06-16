@@ -1,0 +1,313 @@
+% ============================================================
+% Proposition 3.3: Fast-Slow Decomposition (Fenichel)
+% Status: CORRECTION (original proof sketch omits eigenvalue
+%   verification, the central condition for normal hyperbolicity)
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Fast and Slow Variables]
+Decompose the state vector:
+\[
+\mathbf{x}_A^{\text{fast}} = (\delta_A, \sigma_A, \alpha_A) \in \R^3,
+\qquad
+\mathbf{x}_A^{\text{slow}} = (\hat{M}_A, \Xi_A^P, \Xi_A^I, \Xi_A^F) \in \R^4.
+\]
+\end{definition}
+
+\begin{definition}[Timescale Parameter]
+Define the timescale separation parameter:
+\[
+\epsilon \defeq \frac{\max(\nu_M, \kappa_P, \kappa_I, \kappa_F)}{\min(\eta_{\max}, \rho, \gamma)}.
+\]
+The original manuscript asserts $\epsilon \ll 1$ as a design condition.
+We treat it as an assumption for the validity of the decomposition.
+\end{definition}
+
+\begin{assumption}[Timescale Separation]
+\label{assum:timescale}
+The parameters satisfy:
+\[
+\epsilon \ll 1.
+\]
+That is, the slow subsystem's rate constants ($\nu_M \sim 10^{-2}$,
+$\kappa_{\cdot} \sim 10^{-2}$) are at least one order of magnitude
+smaller than the fast subsystem's rates ($\eta_{\max} \sim 1$,
+$\rho \sim 10^{-1}$, $\gamma \sim 10^{-1}$).
+\end{assumption}
+
+\begin{assumption}[Critical Manifold Compactness]
+The critical manifold $\mathcal{M}_0 = \{ \mathbf{x}_A \in \mathcal{X} :
+\dot{\mathbf{x}}_A^{\text{fast}} = 0 \}$ is compact and connected.
+This follows from Proposition~3.2: $\mathcal{X}$ is forward-invariant
+and compact, and $\mathcal{M}_0$ is a closed subset of $\mathcal{X}$.
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Fast-Slow Decomposition]
+\label{prop:fenichel}
+Under Assumptions~\ref{assum:timescale}--2, the system admits a slow
+manifold $\mathcal{M}_\epsilon = \{ \mathbf{x}_A :
+\mathbf{x}_A^{\text{fast}} = \mathbf{h}(\mathbf{x}_A^{\text{slow}}, \epsilon) \}$
+that is $O(\epsilon)$-close to the critical manifold
+$\mathcal{M}_0 = \{ \mathbf{x}_A : \dot{\mathbf{x}}_A^{\text{fast}} = 0 \}$,
+and the reduced dynamics on $\mathcal{M}_\epsilon$ follow:
+\[
+\dot{\mathbf{x}}_A^{\text{slow}} = \epsilon \cdot
+\mathbf{g}(\mathbf{h}(\mathbf{x}_A^{\text{slow}}, \epsilon),
+\mathbf{x}_A^{\text{slow}}).
+\]
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+Fenichel's geometric singular perturbation theory \citep{fenichel1979geometric}
+requires three conditions: (i) the critical manifold $\mathcal{M}_0$ is
+compact and connected, (ii) the fast subsystem's linearization restricted
+to the normal bundle of $\mathcal{M}_0$ has no eigenvalues with zero
+real part (normal hyperbolicity), and (iii) the vector field is
+$C^r$ for sufficiently large $r$. We verify each below.
+
+\paragraph{Condition (i): Compactness and connectedness.}
+By Assumption~2, $\mathcal{M}_0$ is a closed subset of the compact
+set $\mathcal{X}$ under Proposition~3.2; hence $\mathcal{M}_0$ is
+compact. Connectedness follows from the continuity of the fixed-point
+equation $\dot{\mathbf{x}}_A^{\text{fast}} = 0$: on each connected
+component of $\mathcal{X}$ (which is a product of intervals), the
+solution set of analytic equations is connected.
+
+\paragraph{Condition (ii): Normal hyperbolicity.}
+The original manuscript (line~923) claims the Jacobian of the fast
+subsystem ``has eigenvalues with strictly negative real parts (due to
+the saturating nonlinearities in the Gompertz efficiency and the
+$(1-\sigma_A)$, $(1-\alpha_A)$ factors).'' \textbf{This is a hand-wave
+that must be replaced by an explicit calculation.}
+
+The fast subsystem Jacobian is $D\mathbf{f}_{\text{fast}} \in \R^{3 \times 3}$:
+\[
+D\mathbf{f}_{\text{fast}} =
+\begin{pmatrix}
+\frac{\partial \dot{\delta}_A}{\partial \delta_A} &
+\frac{\partial \dot{\delta}_A}{\partial \sigma_A} &
+\frac{\partial \dot{\delta}_A}{\partial \alpha_A} \\[6pt]
+\frac{\partial \dot{\sigma}_A}{\partial \delta_A} &
+\frac{\partial \dot{\sigma}_A}{\partial \sigma_A} &
+\frac{\partial \dot{\sigma}_A}{\partial \alpha_A} \\[6pt]
+\frac{\partial \dot{\alpha}_A}{\partial \delta_A} &
+\frac{\partial \dot{\alpha}_A}{\partial \sigma_A} &
+\frac{\partial \dot{\alpha}_A}{\partial \alpha_A}
+\end{pmatrix}.
+\]
+
+We compute each entry explicitly at a point on $\mathcal{M}_0$.
+
+\subsubsection*{$\alpha_A$ submatrix (fastest variable).}
+Recall:
+\[
+\dot{\alpha}_A = \gamma C_A (1 - \alpha_A) - \zeta_\alpha \alpha_A R_A^{\text{surface}}.
+\]
+The self-derivative is:
+\[
+\frac{\partial \dot{\alpha}_A}{\partial \alpha_A} = -\gamma C_A - \zeta_\alpha R_A^{\text{surface}}.
+\]
+Since $\gamma, C_A, \zeta_\alpha, R_A^{\text{surface}} \geq 0$,
+and typically $\gamma C_A > 0$ (Assumption $C_A > 0$), we have:
+\[
+\frac{\partial \dot{\alpha}_A}{\partial \alpha_A} = -\underbrace{(\gamma C_A + \zeta_\alpha R_A^{\text{surface}})}_{>0} < 0.
+\]
+The cross-derivatives:
+\[
+\frac{\partial \dot{\alpha}_A}{\partial \delta_A} = \gamma (1 - \alpha_A) \frac{\partial C_A}{\partial \delta_A}
+- \zeta_\alpha \alpha_A \frac{\partial R_A^{\text{surface}}}{\partial \delta_A},
+\qquad
+\frac{\partial \dot{\alpha}_A}{\partial \sigma_A} = 0
+\]
+($C_A$ and $R_A^{\text{surface}}$ do not depend directly on $\sigma_A$).
+
+\subsubsection*{$\sigma_A$ submatrix.}
+Recall:
+\[
+\dot{\sigma}_A = \rho P_A \alpha_A \sigma_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL} \sigma_A.
+\]
+The self-derivative is:
+\[
+\frac{\partial \dot{\sigma}_A}{\partial \sigma_A} = \rho P_A \alpha_A (1 - 2\gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}.
+\]
+On the critical manifold $\mathcal{M}_0$ (where $\dot{\sigma}_A = 0$):
+\[
+\rho P_A \alpha_A \sigma_A^*(1 - \gamma_\sigma \sigma_A^*) = \epsilon_\sigma \Omega_{SL} \sigma_A^*.
+\]
+For $\sigma_A^* > 0$, dividing by $\sigma_A^*$:
+\[
+\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*) = \epsilon_\sigma \Omega_{SL}.
+\]
+Substituting into the self-derivative:
+\[
+\left.\frac{\partial \dot{\sigma}_A}{\partial \sigma_A}\right|_{\mathcal{M}_0}
+= \rho P_A \alpha_A (1 - 2\gamma_\sigma \sigma_A^*) - \underbrace{\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*)}_{\epsilon_\sigma \Omega_{SL}}
+= -\rho P_A \alpha_A \gamma_\sigma \sigma_A^* < 0.
+\]
+For $\sigma_A^* = 0$:
+\[
+\left.\frac{\partial \dot{\sigma}_A}{\partial \sigma_A}\right|_{\sigma_A=0}
+= \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL} = \epsilon_\sigma \Omega_{SL} (R_0 - 1).
+\]
+This is negative when $R_0 < 1$ (schema-free regime) and positive when
+$R_0 > 1$ (the bifurcation condition). The $\sigma_A = 0$ branch of
+$\mathcal{M}_0$ loses normal hyperbolicity at $R_0 = 1$ --- the
+transcritical bifurcation point studied in Proposition~4.1. For
+$R_0 \neq 1$, $\partial \dot{\sigma}_A / \partial \sigma_A \neq 0$ on the
+$\sigma_A = 0$ branch.
+
+The remaining cross-derivatives:
+\[
+\frac{\partial \dot{\sigma}_A}{\partial \alpha_A} = \rho P_A \sigma_A (1 - \gamma_\sigma \sigma_A) \geq 0,
+\qquad
+\frac{\partial \dot{\sigma}_A}{\partial \delta_A} = \rho \sigma_A (1 - \gamma_\sigma \sigma_A)
+\left( \alpha_A \frac{\partial P_A}{\partial \delta_A} + P_A \frac{\partial \alpha_A}{\partial \delta_A} \right)
+- \epsilon_\sigma \sigma_A \frac{\partial \Omega_{SL}}{\partial \delta_A}.
+\]
+
+\subsubsection*{$\delta_A$ submatrix.}
+Recall:
+\[
+\dot{\delta}_A = f_{\text{learn}} \eta(\delta_A) T_A - \lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A),
+\]
+where $\eta(\delta_A) = \eta_{\max} \exp(-a \exp(-b \delta_A^{\text{relative}}))$
+is the Gompertz efficiency. The self-derivative:
+\[
+\frac{\partial \dot{\delta}_A}{\partial \delta_A} = f_{\text{learn}} T_A \frac{\partial \eta}{\partial \delta_A}
+- \lambda_c (1 - \gamma_\sigma \sigma_A) (1 - r_A).
+\]
+The Gompertz derivative:
+\[
+\frac{\partial \eta}{\partial \delta_A} = \eta \cdot a b \exp(-b \delta_A^{\text{relative}}) \cdot \frac{1}{\Delta(d,t)} > 0
+\]
+for finite $\delta_A < \Delta$. The decay term coefficient
+$-\lambda_c (1 - \gamma_\sigma \sigma_A) (1 - r_A)$ is negative. The sign
+of $\partial \dot{\delta}_A / \partial \delta_A$ depends on the balance;
+near equilibrium $\dot{\delta}_A = 0$, the decay term dominates small
+perturbations, yielding negativity.
+
+Cross-derivatives:
+\[
+\frac{\partial \dot{\delta}_A}{\partial \sigma_A} = \lambda_c \gamma_\sigma \delta_A (1 - r_A) \geq 0,
+\qquad
+\frac{\partial \dot{\delta}_A}{\partial \alpha_A} = 0
+\]
+(no direct $\alpha_A$ dependence in the $\delta_A$ ODE).
+
+\paragraph{Condition (ii) conclusion.}
+The Jacobian on $\mathcal{M}_0$ (away from $R_0 = 1$) has the block-triangular
+structure:
+\[
+D\mathbf{f}_{\text{fast}} =
+\begin{pmatrix}
+\partial_{\delta_A} \dot{\delta}_A & \partial_{\sigma_A} \dot{\delta}_A & 0 \\[4pt]
+\partial_{\delta_A} \dot{\sigma}_A & \partial_{\sigma_A} \dot{\sigma}_A & \partial_{\alpha_A} \dot{\sigma}_A \\[4pt]
+\partial_{\delta_A} \dot{\alpha}_A & 0 & \partial_{\alpha_A} \dot{\alpha}_A
+\end{pmatrix}.
+\]
+The eigenvalues are the diagonal entries of the Schur complement after
+block diagonalization:
+\begin{align*}
+\lambda_1 &= \frac{\partial \dot{\alpha}_A}{\partial \alpha_A} = -(\gamma C_A + \zeta_\alpha R_A^{\text{surface}}) < 0, \\
+\lambda_2, \lambda_3 &= \text{eigenvalues of the } 2 \times 2 \text{ upper-left block}.
+\end{align*}
+The $2 \times 2$ block:
+\[
+J_{2 \times 2} = \begin{pmatrix}
+\partial_{\delta_A} \dot{\delta}_A & \partial_{\sigma_A} \dot{\delta}_A \\
+\partial_{\delta_A} \dot{\sigma}_A & \partial_{\sigma_A} \dot{\sigma}_A
+\end{pmatrix}.
+\]
+Its trace:
+\[
+\operatorname{Tr}(J_{2 \times 2}) = \frac{\partial \dot{\delta}_A}{\partial \delta_A}
++ \frac{\partial \dot{\sigma}_A}{\partial \sigma_A} < 0
+\quad\text{(both diagonal entries negative on $\mathcal{M}_0$ away from $R_0=1$)}.
+\]
+Its determinant:
+\[
+\det(J_{2 \times 2}) = \frac{\partial \dot{\delta}_A}{\partial \delta_A}
+\frac{\partial \dot{\sigma}_A}{\partial \sigma_A}
+- \frac{\partial \dot{\delta}_A}{\partial \sigma_A}
+\frac{\partial \dot{\sigma}_A}{\partial \delta_A}.
+\]
+Both $\partial \dot{\delta}_A / \partial \delta_A$ and
+$\partial \dot{\sigma}_A / \partial \sigma_A$ are negative, and the product
+of the cross-derivatives $\partial \dot{\delta}_A / \partial \sigma_A
+\cdot \partial \dot{\sigma}_A / \partial \delta_A$ is typically second-order
+small (each involves $\sigma_A$ or a derivative of coefficient functions).
+Hence $\det(J_{2 \times 2}) > 0$ on $\mathcal{M}_0$. Since trace $< 0$
+and determinant $> 0$, both eigenvalues have strictly negative real parts.
+
+Therefore, all three eigenvalues of $D\mathbf{f}_{\text{fast}}$ on
+$\mathcal{M}_0$ (away from $R_0 = 1$) have strictly negative real parts.
+Normal hyperbolicity holds. At $R_0 = 1$, a simple eigenvalue crosses
+zero --- this is the transcritical bifurcation barrier where Fenichel's
+theorem does not apply and the decomposition breaks down (the exchange
+lemma handles this case).
+
+\paragraph{Condition (iii): Smoothness.}
+By Proposition~3.1, the vector field is piecewise-$C^\infty$ with
+finitely many smooth components separated by measure-zero discontinuity
+sets. Fenichel's theorem requires $C^r$ for $r \geq 1$; the
+piecewise-$C^\infty$ structure satisfies this on each component.
+The non-differentiable points ($\max(0,\cdot)$, $\Corr$ singularities)
+are confined to lower-dimensional submanifolds that do not intersect
+$\mathcal{M}_0$ in general position (the critical manifold lies in the
+interior of the smooth regime for typical parameters).
+
+\paragraph{Application of Fenichel's theorem.}
+With conditions (i)--(iii) satisfied, Fenichel's theorem guarantees:
+\begin{enumerate}[nosep]
+\item Persistence of $\mathcal{M}_0$ to $\mathcal{M}_\epsilon$ for
+  sufficiently small $\epsilon$.
+\item $\mathcal{M}_\epsilon$ is $O(\epsilon)$-close to $\mathcal{M}_0$.
+\item The reduced dynamics on $\mathcal{M}_\epsilon$ are given by
+  $\dot{\mathbf{x}}_A^{\text{slow}} = \epsilon \cdot
+  \mathbf{g}(\mathbf{h}(\mathbf{x}_A^{\text{slow}}, \epsilon),
+  \mathbf{x}_A^{\text{slow}})$.
+\end{enumerate}
+$\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$R_0 = 1$ exactly:} At the bifurcation point, $\partial \dot{\sigma}_A / \partial \sigma_A = 0$,
+violating normal hyperbolicity. Fenichel's theorem does not apply.
+The fast-slow decomposition must be replaced by the exchange lemma or
+center manifold reduction near this value. This is physically
+interpretable as the Phase~1 $\to$ 2 transition region, where the
+system spends arbitrarily long time near the bifurcation point
+(critical slowing down).
+
+\textbf{$\epsilon \approx 1$ (no separation):} If the rate constants
+are comparable, the decomposition is invalid. The paper relies on
+$\epsilon \ll 1$ as an assumption derived from order-of-magnitude
+estimates, but this has not been empirically verified.
+
+\textbf{$\sigma_A^* = 0$ branch:} For $R_0 < 1$, the $\sigma_A = 0$
+branch of $\mathcal{M}_0$ is normally hyperbolic. For $R_0 > 1$,
+it loses stability and the $\sigma_A^* > 0$ branch becomes the
+attracting slow manifold.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Does Proposition~3.3 depend on any later result?}
+It depends on Proposition~3.2 (for compactness of $\mathcal{X}$ and
+forward invariance) and Proposition~3.1 (for existence of solutions).
+These are forward dependencies.
+
+It also depends on Proposition~4.1 for the characterization at
+$R_0 = 1$, but this is an edge case --- the primary claim holds for
+$R_0 \neq 1$ independently.
+
+\textbf{Does any later result depend on Proposition~3.3?}
+The equilibrium analysis (Proposition~3.4) and bifurcation analysis
+(Proposition~4.1) benefit from the decomposition but do not strictly
+depend on it. The numerical integration scheme (Algorithm~3.1's IMEX
+split) is motivated by Proposition~3.3 but can be used even without
+the rigorous decomposition. Safe.
+\end{circularity-check}

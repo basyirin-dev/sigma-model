@@ -1,0 +1,148 @@
+% ============================================================
+% Proposition 3.1: Local Existence and Uniqueness
+% Status: CORRECTION (original C∞ claim is false)
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[State Space]
+Let $\mathcal{X} = [0, \Delta_{\max}]^{|D||M|} \times [0,1]^{3|D||M| + 3}$
+with the Euclidean topology. Denote $\text{int}(\mathcal{X})$ as the
+interior and $\partial\mathcal{X}$ as the boundary.
+\end{definition}
+
+\begin{definition}[Vector Field]
+Define $\mathbf{f}: \mathcal{X} \to \R^N$ by collecting the right-hand
+sides of the ODE system:
+\begin{align*}
+\dot{\delta}_A(d,m,t) &= f_{\text{learn}} \cdot \eta \cdot T_A
+  - \lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A), \\
+\dot{\sigma}_A(d,m,t) &=
+  \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL} \sigma_A, \\
+\dot{\alpha}_A(d,m,t) &=
+  \gamma C_A (1 - \alpha_A) - \zeta_\alpha \alpha_A R_A^{\text{surface}}, \\
+\dot{\hat{M}}_A(d,m,t) &=
+  \nu_M (\sigma_A - \hat{M}_A) - \xi_M \Omega_{SL} \hat{M}_A, \\
+\dot{\Xi}_A^P(t) &= \kappa_P (P^* - \Xi_A^P), \\
+\dot{\Xi}_A^I(t) &= \kappa_I (I^* - \Xi_A^I), \\
+\dot{\Xi}_A^F(t) &= \kappa_F (F^* - \Xi_A^F).
+\end{align*}
+The Stage~1 proxy $\tilde{\sigma}_A$ enters through the fusion equation:
+\[
+\tilde{\sigma}_A = w_g \max(0, g_A) + w_r \max(0, r_A) + w_c c_A,
+\]
+where $g_A$, $r_A$, $c_A$ involve $\Corr$ and $\CosSim$.
+\end{definition}
+
+\begin{assumption}[Regularity of Coefficient Functions]
+\label{assum:regularity}
+The coefficient functions satisfy:
+\begin{enumerate}[nosep]
+\item $P_A, C_A, \Omega_{SL}, R_A^{\text{surface}}, T_A, r_A, P^*, I^*, F^*$
+  are uniformly bounded and continuous in $t$ for all $x \in \mathcal{X}$.
+\item $P_A, C_A, \Omega_{SL}$ are locally Lipschitz in $x$ with common
+  constant $L$.
+\item $\Corr$ and $\CosSim$ are evaluated on finite sample batches;
+  the resulting functions $\tilde{g}_A, \tilde{r}_A, \tilde{c}_A$ are
+  piecewise-$C^\infty$ with finite jump discontinuities bounded by
+  $O(1/\sqrt{n_{\text{batch}}})$ (see Proposition~3.6).
+\end{enumerate}
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Local Existence and Uniqueness]
+\label{prop:local-existence}
+Under Assumption~\ref{assum:regularity}, for any initial condition
+$\mathbf{x}_A(0) \in \text{int}(\mathcal{X})$, the coupled ODE system
+admits a unique solution $\mathbf{x}_A(t)$ defined on a maximal interval
+$[0, T_{\max})$ where $T_{\max} > 0$.
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We proceed in three steps: (i) correct the smoothness claim of the
+original proof, (ii) verify local Lipschitz continuity, and (iii)
+apply Picard--Lindelöf.
+
+\paragraph{Step 1: The vector field is not $C^\infty$.}
+The original manuscript (line~853) claims all component functions are
+$C^\infty$ on $\text{int}(\mathcal{X})$. This is false for two terms:
+\begin{enumerate}[nosep]
+\item The Stage~1 fusion (Eq.~11 in the manuscript, $\tilde{\sigma}_A = w_g \max(0, g_A) + w_r \max(0, r_A) + w_c c_A$) contains $\max(0, g_A)$,
+  which is not differentiable at $g_A = 0$.
+\item The RGA signal (Eq.~13 in the manuscript) uses absolute cosine similarity
+  via representational dissimilarity; the $\Corr$ function is $C^\infty$
+  only when the covariance matrix is full rank, which fails at degenerate
+  activations (e.g., uniform hidden states across all inputs).
+\end{enumerate}
+The original proof's claim of $C^\infty$ smoothness is therefore incorrect.
+
+\paragraph{Step 2: The vector field is locally Lipschitz.}
+Despite non-smoothness at measure-zero sets, each component function is
+piecewise-$C^\infty$ with bounded subgradients:
+\begin{itemize}[nosep]
+\item \textbf{Polynomial terms} ($\sigma_A \cdot \delta_A$, $\alpha_A(1-\sigma_A)$,
+  etc.): globally Lipschitz on the compact set $\mathcal{X}$ with constant
+  bounded by the maximum derivative of each monomial.
+\item \textbf{Gompertz efficiency} $\eta(d,t) = \eta_{\max} \exp(-a \exp(-b \delta_A^{\text{relative}}))$:
+  $C^\infty$ and bounded derivative on $\delta_A^{\text{relative}} \in [0,1]$.
+\item \textbf{max}(0, $\cdot$): 1-Lipschitz with a single non-differentiable
+  point at the origin.
+\item \textbf{Pearson correlation} $\Corr(\cdot, \cdot)$: $C^\infty$ on
+  the open set where the covariance matrix is positive definite; on the
+  degenerate locus the function extends continuously with bounded
+  difference quotients\footnote{Formally, if $\text{RDM}_{\text{rep}}$ is
+  constant, the correlation is undefined. In practice, the Stage~1
+  computation returns $r_A = 0$ in this case, making the function
+  piecewise-$C^\infty$ with a jump discontinuity. The jump size is
+  bounded by $O(1/\sqrt{n_{\text{batch}}})$ per Proposition~3.6.}.
+\item \textbf{Cosine similarity} $\CosSim(\cdot,\cdot)$: $C^\infty$ away
+  from zero vectors; 1-Lipschitz on the unit sphere.
+\end{itemize}
+The composition of Lipschitz functions is Lipschitz. Since $\mathcal{X}$
+is compact, each component function $f_i$ has a finite Lipschitz constant
+$L_i$ on $\text{int}(\mathcal{X})$.
+
+\paragraph{Step 3: Apply Picard--Lindelöf.}
+By Step~2, $\mathbf{f}$ is locally Lipschitz on $\text{int}(\mathcal{X})$.
+The Picard--Lindelöf theorem guarantees a unique local solution
+$\mathbf{x}_A(t)$ through any initial condition $\mathbf{x}_A(0) \in
+\text{int}(\mathcal{X})$ on a maximal interval $[0, T_{\max})$ with
+$T_{\max} > 0$. If $T_{\max} < \infty$, the solution must approach
+$\partial\mathcal{X}$ as $t \to T_{\max}$ (the escape lemma).
+$\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\mathbf{x}_A(0) \in \partial\mathcal{X}$ (boundary initial
+conditions):} Picard--Lindelöf requires open domain; on the boundary,
+the vector field may not be Lipschitz (e.g., $\max(0,\cdot)$ at the
+origin). Existence may still hold (e.g., via Carathéodory's theorem)
+but uniqueness can fail. This is acceptable because the paper uses
+$\mathbf{x}_A(0) \in \text{int}(\mathcal{X})$ for all practical
+training scenarios.
+
+\textbf{Zero determinant of $\Corr$ covariance:} If the RDM is
+singular (e.g., all hidden states identical), the correlation is
+undefined. The Stage~1 protocol must handle this by returning
+$r_A = \text{undefined} \to 0$, introducing a single-point
+discontinuity. Uniqueness at such points requires Filippov
+solutions.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Does Proposition~3.1 depend on any later result?} It requires
+Assumption~\ref{assum:regularity} on boundedness and Lipschitz
+continuity of coefficient functions. These are structural assumptions
+about the training environment, not results derived later. 
+\textbf{Proposition~3.6} provides the $O(1/\sqrt{n_{\text{batch}}})$
+bound for the correlation estimation error, but it is not strictly
+necessary for existence --- existence holds even without the bound.
+
+\textbf{Does any later result depend on Proposition~3.1?}
+Proposition~3.2 (forward invariance) requires the existence of a
+unique solution to analyze its boundary behavior, creating a logical
+dependency: 3.1 $\to$ 3.2. This is a forward dependency, not a
+circular one. Safe.
+\end{circularity-check}

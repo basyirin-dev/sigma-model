@@ -1,0 +1,134 @@
+% ============================================================
+% Proof Reconstruction — Σ-Model V3.0+
+% Target: JAIR Appendix
+% Compiled: June 2026
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\input{preamble}
+
+\title{\textbf{Proof Reconstruction: The $\Sigma$-Model}\\[6pt]
+\large Independent Reconstruction from First Principles}
+\author{Proof Reconstruction Team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Reconstruction Notes}
+
+This document reconstructs every formal proof in the $\Sigma$-Model from first
+principles, independently of the original derivation in
+\cite{basri2026sigma}. Each proof is preceded by a \textbf{Definitions
+and Assumptions} block that makes all implicit premises explicit, followed
+by the full proof, boundary case verification, and a circular dependency
+check.
+
+\vspace{3mm}
+\noindent\textbf{Target journal:} JAIR (Journal of Artificial Intelligence Research).
+Archival mathematical rigor is required for all claims.
+\vspace{3mm}
+
+\noindent\textbf{Reference:} \cite{basri2026sigma} refers to the original
+manuscript \texttt{paper/manuscript.tex} at commit
+\texttt{3947e83}.
+
+\newpage
+
+% ============================================================
+\part{Foundational Lemmas}
+% ============================================================
+
+\section{Latentness of Schema Coherence}
+\input{lemma-3-1-latent}
+
+% ============================================================
+\part{ODE Well-Posedness}
+% ============================================================
+
+\section{Local Existence and Uniqueness}
+\input{prop-3-1-existence}
+
+\section{Forward Invariance and Boundedness}
+\input{prop-3-2-invariance}
+
+\section{Fast-Slow Decomposition (Fenichel)}
+\input{prop-3-3-fenichel}
+
+\section{Single-Domain Equilibria}
+\input{prop-3-4-equilibria}
+
+% ============================================================
+\part{Estimation and Numerical Properties}
+% ============================================================
+
+\section{Estimator Consistency}
+\input{prop-3-6-estimator}
+
+\section{Error Propagation}
+\input{prop-3-7-error}
+
+\section{Numerical Stability}
+\input{prop-3-5-stability}
+
+% ============================================================
+\part{Cognitive Coupling and Suppression}
+% ============================================================
+
+\section{SGD-Induced Sigma Suppression}
+\input{theorem-4-1-suppression}
+
+% ============================================================
+\part{Bifurcation Analysis}
+% ============================================================
+
+\section{Sigma-Critical Threshold}
+\input{prop-4-1-bifurcation}
+
+\section{Depth Threshold}
+\input{prop-4-2-depth}
+
+\section{Hysteresis}
+\input{prop-4-3-hysteresis}
+
+\section{Noise Sensitivity}
+\input{prop-4-4-noise}
+
+% ============================================================
+\part{Validity and Compensation}
+% ============================================================
+
+\section{Faculty-Validity Correspondence}
+\input{theorem-4-2-validity}
+
+\section{Faculty Omission Penalty}
+\input{lemma-4-2-omission}
+
+\section{Compensation Analysis}
+\input{prop-4-5-compensation}
+
+% ============================================================
+\part{Circular Dependency Resolution}
+% ============================================================
+
+\section{Piecewise-Smooth Hybrid Formulation}
+\input{phase-6-hybrid}
+
+% ============================================================
+% Appendix
+% ============================================================
+\appendix
+\section{Audit Matrix}
+\input{audit-matrix}
+
+\section{Errata}
+\input{erratum}
+
+% ============================================================
+\bibliography{../../paper/bibliography}
+% ============================================================
+
+\end{document}

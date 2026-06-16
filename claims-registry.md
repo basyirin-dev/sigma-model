@@ -1,10 +1,10 @@
-# Claims Registry — Σ-Model Model V3.0+
+# Claims Registry — Σ-Model V3.0+
 
-Every quantitative claim in `paper/paper.md` is tracked here.  
-Each claim ID appears as an inline anchor <!-- CLAIM:C-NNN --> in the paper.
+Every quantitative claim in `paper/manuscript.tex` is tracked here.
+Each claim ID appears as an inline anchor `<!-- CLAIM:C-NNN -->` in the paper.
 
-| Claim ID | Lines | Claim Text | Status | Config | Run ID | Commit | Notebook Cell |
-|----------|-------|------------|--------|--------|--------|--------|--------------|
+| Claim ID | Lines | Claim Text | Status | Config / Proof | Run ID | Commit | Notebook Cell |
+|----------|-------|------------|--------|----------------|--------|--------|--------------|
 | C-001 | 54 | SCAN: >99% ID, <2% add-primitive | LITERATURE | — | — | 3947e83 | — |
 | C-002 | 54 | COGS: 96-99% ID, 16-35% compositional | LITERATURE | — | — | 3947e83 | — |
 | C-003 | 100 | ME training: structural splits <1% | LITERATURE | — | — | 3947e83 | — |
@@ -25,6 +25,24 @@ Each claim ID appears as an inline anchor <!-- CLAIM:C-NNN --> in the paper.
 | C-018 | 1286 | H-STB ROI_Schema | PENDING | h-stb.yaml | — | — | — |
 | C-019 | 1287 | H-STB mu_hat_AB | PENDING | h-stb.yaml | — | — | — |
 | C-020 | 1299-1306 | Human baseline N=200 results | PENDING | h-*.yaml | — | — | — |
+| C-021 | ~595 | Lemma 3.1: σ_A latent from δ trajectory | PROVEN | docs/proof-reconstruction/lemma-3-1.tex | — | — | — |
+| C-022 | ~840 | Prop 3.1: Local existence/uniqueness | PROVEN | docs/proof-reconstruction/prop-3-1.tex | — | — | — |
+| C-023 | ~862 | Prop 3.2: Forward invariance + boundedness | PROVEN | docs/proof-reconstruction/prop-3-2.tex | — | — | — |
+| C-024 | ~904 | Prop 3.3: Fast-slow decomposition (Fenichel) | PROVEN | docs/proof-reconstruction/prop-3-3.tex | — | — | — |
+| C-025 | ~934 | Prop 3.4: Single-domain equilibria | PROVEN | docs/proof-reconstruction/prop-3-4.tex | — | — | — |
+| C-026 | ~969 | Prop 3.5: Numerical stability (condition number) | PROVEN | docs/proof-reconstruction/prop-3-5.tex | — | — | — |
+| C-027 | ~684 | Prop 3.6: Estimator consistency (σ̂_A convergence) | PROVEN | docs/proof-reconstruction/prop-3-6.tex | — | — | — |
+| C-028 | ~702 | Prop 3.7: Error propagation (Delta method) | PROVEN | docs/proof-reconstruction/prop-3-7.tex | — | — | — |
+| C-029 | ~1139 | Thm 4.1: SGD-induced σ-suppression | PROVEN | docs/proof-reconstruction/theorem-4-1.tex | — | — | — |
+| C-030 | ~1351 | Prop 4.1: σ_critical derivation (transcritical bifurcation) | PROVEN | docs/proof-reconstruction/prop-4-1.tex | — | — | — |
+| C-031 | ~1377 | Prop 4.2: Depth threshold δ* derivation | PROVEN | docs/proof-reconstruction/prop-4-2.tex | — | — | — |
+| C-032 | ~1397 | Prop 4.3: Hysteresis and reverse transitions | PROVEN | docs/proof-reconstruction/prop-4-3.tex | — | — | — |
+| C-033 | ~1413 | Prop 4.4: Noise sensitivity (Gaussian tail) | PROVEN | docs/proof-reconstruction/prop-4-4.tex | — | — | — |
+| C-034 | ~1449 | Thm 4.2: Faculty-validity correspondence | PROVEN | docs/proof-reconstruction/theorem-4-2.tex | — | — | — |
+| C-035 | ~1480 | Lemma 4.2: Faculty omission penalty (geometric mean) | PROVEN | docs/proof-reconstruction/lemma-4-2.tex | — | — | — |
+| C-036 | ~1489 | Prop 4.5: Compensation analysis (α_A vs σ_A) | PROVEN | docs/proof-reconstruction/prop-4-5.tex | — | — | — |
+| C-037 | ~1405 | Phase 6: Circular dependency (Filippov formulation) | PROVEN | docs/proof-reconstruction/phase-6-hybrid.tex | — | — | — |
+| C-038 | ~1084 | Σ-Model training adds 31.6% computational overhead | DESIGNED | base.yaml | — | — | — |
 
 ## Status Legend
 - **LITERATURE:** Claim cites published result (no experiment needed)
@@ -32,6 +50,8 @@ Each claim ID appears as an inline anchor <!-- CLAIM:C-NNN --> in the paper.
 - **PENDING:** Data collection planned (Kaggle post-June 1 2026, Prolific N=200)
 - **COLLECTED:** Data collected and verified
 - **FALSIFIED:** Experiment completed, claim not supported
+- **RECONSTRUCTED:** Claim backed by formal proof in `docs/proof-reconstruction/`
+- **PROVEN:** Fully verified mathematical statement with complete derivation
 
 ## Verification
-Run `grep '<!-- CLAIM:' paper/paper.md | sort > /tmp/anchors.txt` and compare against claim IDs above. Every anchor must have a registry entry and vice versa.
+Run `grep '<!-- CLAIM:' paper/manuscript.tex | sort > /tmp/anchors.txt` and compare against claim IDs above. Every anchor must have a registry entry and vice versa.

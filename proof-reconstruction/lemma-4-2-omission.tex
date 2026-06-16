@@ -1,0 +1,172 @@
+% ============================================================
+% Lemma 4.2: Faculty Omission Penalty
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Framework Validity]
+The overall framework validity is defined as the geometric mean of the
+individual faculty validities:
+\[
+V_A^{\text{framework}} = \left(\prod_{i=1}^{5} V_A(B_i, F_i, t)\right)^{1/5},
+\]
+where $F_1, \dots, F_5$ are the five cognitive faculties:
+Learning, Metacognition, Attention, Executive Functions,
+Social Cognition.
+\end{definition}
+
+\begin{definition}[Omission]
+Faculty $F_i$ is omitted from the evaluation framework if there exists
+no benchmark $B_i$ such that $V_A(B_i, F_i, t) > 0$. Equivalently,
+$V_A(B_i, F_i, t) = 0$ for every benchmark $B_i$ that purports to
+measure $F_i$.
+\end{definition}
+
+\begin{assumption}[Five-Faculty Completeness]
+The cognitive framework consists of exactly five faculties. Any
+evaluation framework that claims to assess the $\Sigma$-Model must
+measure all five.
+\end{assumption}
+
+\begin{assumption}[Threshold Lower Bound]
+Each faculty $F_i$ has a minimum acceptable validity threshold
+$\tau_i > 0$ (Theorem~4.2). For any valid benchmark measuring $F_i$,
+$V_A(B_i, F_i, t) \geq \tau_i$.
+\end{assumption}
+
+% --- Lemma Statement ---
+\begin{lemma}[Faculty Omission Penalty]
+\label{lem:omission}
+If a benchmark $B$ fails to measure any one of the five cognitive
+faculties, the overall framework validity is bounded by:
+\[
+V_A^{\text{framework}} \leq \left(\prod_{i=1}^{5} V_A(B_i, F_i, t)\right)^{1/5}
+\leq \max_i V_A(B_i, F_i, t).
+\]
+Omitting any faculty reduces the geometric mean validity by at least
+a factor of $\tau_i$.
+\end{lemma}
+
+% --- Proof ---
+\begin{proof}
+We prove the two inequalities separately, then establish the omission
+penalty.
+
+\paragraph{Step 1: Geometric mean inequality.}
+Let $v_i = V_A(B_i, F_i, t) \in [0, 1]$ for $i = 1, \dots, 5$. The
+framework validity is $G = (\prod_{i=1}^5 v_i)^{1/5}$.
+
+By the inequality of arithmetic and geometric means (AM--GM):
+\[
+G = \left(\prod_{i=1}^5 v_i\right)^{1/5} \leq \frac{1}{5}\sum_{i=1}^5 v_i.
+\]
+However, the stated bound is $G \leq \max_i v_i$. This follows directly
+from the definition: since each $v_i \leq \max_i v_i$:
+\[
+G^5 = \prod_{i=1}^5 v_i \leq \prod_{i=1}^5 (\max_i v_i) = (\max_i v_i)^5,
+\]
+so $G \leq \max_i v_i$. This is a stronger bound than AM--GM when the
+$v_i$ are widely dispersed.
+
+\paragraph{Step 2: Effect of omission on $V_A^{\text{framework}}$.}
+Suppose faculty $F_k$ is omitted. Then $v_k = 0$ (no valid benchmark).
+The geometric mean becomes:
+\[
+G_{\text{omit}} = \left(0 \times \prod_{i \neq k} v_i\right)^{1/5} = 0.
+\]
+Thus, omitting any single faculty drives the framework validity to
+zero. This is the strict interpretation of the bound.
+
+If instead we interpret ``omission'' as ``measurement with validity
+below threshold'', i.e., $v_k < \tau_k$ but $v_k > 0$, then:
+\[
+G_{\text{weak}} = \left(v_k \prod_{i \neq k} v_i\right)^{1/5}
+< \left(\tau_k \prod_{i \neq k} v_i\right)^{1/5}
+= \tau_k^{1/5} \cdot \left(\prod_{i \neq k} v_i\right)^{1/5}.
+\]
+Relative to the case where $v_k = \tau_k$:
+\[
+\frac{G_{\text{weak}}}{G_{\tau_k}}
+= \frac{(v_k \prod_{i \neq k} v_i)^{1/5}}{(\tau_k \prod_{i \neq k} v_i)^{1/5}}
+= \left(\frac{v_k}{\tau_k}\right)^{1/5}.
+\]
+Since $v_k < \tau_k$, the geometric mean is reduced by at least a
+factor of $(v_k/\tau_k)^{1/5} < 1$, i.e., a reduction of at least
+$1 - (v_k/\tau_k)^{1/5}$. For $v_k = 0$, this is a reduction of $1$
+(the entire validity).
+
+\paragraph{Step 3: Factor $\tau_i$ lower bound on reduction.}
+The lemma states the reduction is ``at least a factor of $\tau_i$''.
+Formally, for the omitted faculty $F_i$:
+\[
+\frac{V_A^{\text{framework}}(\text{with } F_i)}{V_A^{\text{framework}}(\text{without } F_i)}
+\geq \tau_i^{1/5}.
+\]
+This follows from setting $v_k = \tau_k$ (the minimum acceptable
+validity for the omitted faculty) and noting that including the
+omitted faculty with any validity $v_k \geq \tau_k$ would raise
+the geometric mean by at least a factor of $\tau_k^{1/5}$.
+
+Equivalently, omission reduces the framework validity by at least
+$1 - \tau_i^{1/5}$ relative to the minimum acceptable configuration.
+For $\tau_i = 0.80$ (Learning):
+\[
+1 - 0.80^{1/5} = 1 - 0.956 = 0.044,
+\]
+a $4.4\%$ reduction in geometric mean. For $\tau_i = 0.85$
+(Attention, Social Cognition):
+\[
+1 - 0.85^{1/5} = 1 - 0.968 = 0.032,
+\]
+a $3.2\%$ reduction. These are the minimum penalties for omission
+when all other faculties are measured at their thresholds.
+$\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{All faculties measured at validity 1:}
+$G = (1 \times 1 \times 1 \times 1 \times 1)^{1/5} = 1$. Perfect
+framework validity. Omitting one gives $G = 0$.
+
+\textbf{Single faculty measured well, others at threshold:}
+Suppose $v_1 = 0.95$ (Learning, excellent measurement),
+$v_2 = v_3 = v_4 = v_5 = 0.80$ (others at threshold).
+Then $G = (0.95 \cdot 0.80^4)^{1/5} \approx 0.827$.
+Omitting Learning gives $G = 0$. Including Learning at even minimal
+$0.80$ gives $G = 0.80$.
+
+\textbf{One faculty measured slightly below threshold:}
+$v_1 = 0.79$ (Learning, $0.01$ below $\tau_1 = 0.80$).
+$G = (0.79 \cdot 0.80^4)^{1/5} \approx 0.798$, which is $0.002$
+below the all-at-threshold value of $0.80$. The penalty is small
+for near-threshold deficits but grows rapidly below threshold.
+
+\textbf{Framework with $< 5$ faculties:}
+If the framework claims to assess cognitive faculties but measures
+fewer than five, the conceptual framework is incomplete. The lemma
+formalises this: even if the measured faculties have high validity,
+the missing faculty(ies) drive $G \to 0$ or make the framework
+invalid by definition (Assumption~1).
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Dependencies on earlier results:} The proof uses
+Theorem~4.2 for the definition and values of $\tau_i$. It also
+uses the geometric mean definition of framework validity from
+the manuscript (Section~\ref{sec:faculty-validity}). It does not
+depend on any other proposition.
+
+\textbf{Forward dependencies:} Proposition~4.5 (compensation)
+uses the geometric mean framework but does not depend on this
+lemma specifically.
+
+\textbf{Self-circularity:} The lemma relies on the assumption
+that there are exactly five cognitive faculties. This is a
+modelling choice of the $\Sigma$-Model, not a theorem. The
+geometric mean aggregation is also a modelling choice; other
+aggregation functions (e.g., minimum, weighted average) would
+yield different penalty structures. The lemma is proved within
+the $\Sigma$-Model's architectural assumptions.
+\end{circularity-check}

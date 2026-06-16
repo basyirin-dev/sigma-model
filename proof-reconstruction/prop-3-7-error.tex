@@ -1,0 +1,184 @@
+% ============================================================
+% Proposition 3.7: Error Propagation
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Estimation Error]
+Let $\delta_\sigma(d,t) = \tilde{\sigma}_A(d,t) - \hat{\sigma}_A(d,t)$
+be the Stage~1--Stage~2 discrepancy (Proposition~3.6). The true schema
+coherence is $\sigma_A^*(d,t)$; the operative value used in the ODE is
+$\tilde{\sigma}_A(d,t)$.
+\end{definition}
+
+\begin{definition}[Propagated ODE Error]
+Let $\dot{\delta}_A^{\text{error}}(d,t)$ be the deviation in the depth
+and schema ODE right-hand sides caused by using $\tilde{\sigma}_A$
+instead of $\sigma_A^*$:
+\[
+\dot{\delta}_A^{\text{error}} =
+|f(\mathbf{x}; \tilde{\sigma}_A) - f(\mathbf{x}; \sigma_A^*)|,
+\]
+where $f$ denotes the vector field of the coupled ODE system.
+\end{definition}
+
+\begin{assumption}[Lipschitz Continuity of Coupling Terms]
+The coupling functions $\sigma_A \mapsto \lambda_c \gamma_\sigma \sigma_A
+\delta_A$ and $\sigma_A \mapsto \rho P_A \alpha_A \sigma_A$ are
+Lipschitz continuous with constants $L_1 = \lambda_c \gamma_\sigma
+\delta_A$ and $L_2 = \rho P_A \alpha_A$, respectively.
+\end{assumption}
+
+\begin{assumption}[Bounded Variables]
+All state variables are bounded as established in Proposition~3.2:
+$\sigma_A \in [0,1]$, $\delta_A \in [0, \Delta_{\max}]$,
+$\alpha_A \in [0,1]$, $P_A \in [0, P_{\max}]$.
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Error Propagation in ODE System]
+\label{prop:error-prop}
+Under Assumptions~1--2, the effective error propagated into the depth
+ODE \eqref{eq:depth-ode} and schema ODE \eqref{eq:sigma-ode} is
+bounded by:
+\[
+|\dot{\delta}_A^{\text{error}}| \leq
+\lambda_c \cdot \gamma_\sigma \cdot |\delta_\sigma| \cdot \delta_A
++ \rho \cdot P_A \cdot \alpha_A \cdot |\delta_\sigma|.
+\]
+If $|\delta_\sigma| < 0.10$, the propagated error is negligible
+relative to typical ODE step sizes ($\eta_{\max} \sim O(1)$).
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We trace the two pathways through which $\sigma_A$ enters the
+coupled ODE system.
+
+\paragraph{Step 1: Depth ODE perturbation.}
+The depth ODE \eqref{eq:depth-ode} is:
+\[
+\dot{\delta}_A = f_{\text{learn}} \cdot \eta \cdot T_A
+- \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A) \cdot \delta_A \cdot (1 - r_A).
+\]
+The only $\sigma_A$-dependent term is the decay component
+$-\lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A)$. Let
+$\tilde{\sigma}_A = \sigma_A^* + \delta_\sigma$ be the corrupted value.
+The deviation in the depth ODE is:
+\begin{align*}
+\Delta_{\delta} &= |
+[-\lambda_c (1 - \gamma_\sigma \tilde{\sigma}_A) \delta_A (1 - r_A)]
+- [-\lambda_c (1 - \gamma_\sigma \sigma_A^*) \delta_A (1 - r_A)] | \\
+&= \lambda_c \delta_A (1 - r_A) \cdot |\gamma_\sigma \tilde{\sigma}_A - \gamma_\sigma \sigma_A^*| \\
+&= \lambda_c \gamma_\sigma \delta_A (1 - r_A) \cdot |\delta_\sigma|.
+\end{align*}
+Since $(1 - r_A) \in [0, 1]$, we have:
+\[
+\Delta_{\delta} \leq \lambda_c \gamma_\sigma \delta_A |\delta_\sigma|.
+\]
+This is the first term in the bound.
+
+\paragraph{Step 2: Schema ODE perturbation.}
+The schema ODE \eqref{eq:sigma-ode} is:
+\[
+\dot{\sigma}_A = \sigma_A \cdot
+[\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}].
+\]
+The $\sigma_A$ factor outside the bracket is the operative value
+(the state variable itself, not the estimate). The error propagation
+occurs through the $\sigma_A$ inside the bracket — specifically, the
+$(1 - \gamma_\sigma \sigma_A)$ which should use $\sigma_A^*$.
+
+Let $\tilde{\sigma}_A = \sigma_A^* + \delta_\sigma$ be used in the
+bracket's $(1 - \gamma_\sigma \sigma_A)$ term. The deviation in the
+schema ODE at a given state is:
+\begin{align*}
+\Delta_{\sigma} &= |
+\sigma_A [\rho P_A \alpha_A (1 - \gamma_\sigma \tilde{\sigma}_A) - \epsilon_\sigma \Omega_{SL}]
+- \sigma_A [\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*) - \epsilon_\sigma \Omega_{SL}] | \\
+&= \sigma_A \cdot \rho P_A \alpha_A \cdot |\gamma_\sigma \tilde{\sigma}_A - \gamma_\sigma \sigma_A^*| \\
+&= \sigma_A \cdot \rho P_A \alpha_A \gamma_\sigma \cdot |\delta_\sigma|.
+\end{align*}
+Using $\sigma_A \leq 1$ and $\gamma_\sigma \leq 1$:
+\[
+\Delta_{\sigma} \leq \rho P_A \alpha_A |\delta_\sigma|.
+\]
+This is the second term in the bound.
+
+\paragraph{Step 3: Combining terms.}
+The total propagated error magnitude is the sum of the two pathways:
+\[
+|\dot{\delta}_A^{\text{error}}| = \Delta_{\delta} + \Delta_{\sigma}
+\leq \lambda_c \gamma_\sigma \delta_A |\delta_\sigma|
++ \rho P_A \alpha_A |\delta_\sigma|,
+\]
+which is the stated inequality.
+
+\paragraph{Step 4: Negligibility condition.}
+The typical ODE step size is determined by the fastest rate constant
+$\eta_{\max} \sim O(1)$. The propagated error is negligible when:
+\[
+\lambda_c \gamma_\sigma \delta_A |\delta_\sigma|
++ \rho P_A \alpha_A |\delta_\sigma| \ll \eta_{\max}.
+\]
+Using the numerical values $\lambda_c = 0.01$, $\gamma_\sigma \in (0,1)$,
+$\rho = 0.1$, $\alpha_A \leq 1$, $P_A \leq 1$, $\delta_A \leq 1$:
+\[
+\lambda_c \gamma_\sigma \delta_A |\delta_\sigma| \leq 0.01 |\delta_\sigma|,
+\qquad
+\rho P_A \alpha_A |\delta_\sigma| \leq 0.1 |\delta_\sigma|.
+\]
+The total is $\leq 0.11 |\delta_\sigma|$. For $|\delta_\sigma| < 0.10$:
+\[
+|\dot{\delta}_A^{\text{error}}| \leq 0.011 \ll 1 \approx \eta_{\max}.
+\]
+Thus the propagated error is at most $1.1\%$ of the fastest rate,
+rendering it negligible for numerical integration and qualitative
+dynamics. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\delta_A = 0$ (nascent domain):}
+The depth ODE perturbation term vanishes ($\Delta_{\delta} = 0$).
+Only the schema ODE perturbation remains, bounded by
+$\rho P_A \alpha_A |\delta_\sigma|$.
+
+\textbf{$\alpha_A = 0$ (attention collapse):}
+Both perturbation terms vanish. Errors in $\sigma_A$ estimation
+do not propagate when there is no attentional gating. This is
+consistent: if $\alpha_A = 0$, the ODE dynamics are already
+frozen.
+
+\textbf{$P_A = 0$ (no prior knowledge):}
+The schema perturbation term vanishes. Only depth perturbation,
+bounded by $\lambda_c \gamma_\sigma \delta_A |\delta_\sigma|$, remains.
+
+\textbf{$|\delta_\sigma| \geq 0.10$:}
+The propagated error may become non-negligible. The recalibration
+rule (ridge regression, Proposition~3.6) is triggered to reduce
+$|\delta_\sigma|$ below this threshold, restoring negligibility.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Dependencies on earlier results:} The proof uses
+Proposition~3.6 to define $\delta_\sigma$ and its bound. It also
+uses the ODE definitions from Section~3.2 and Proposition~3.2
+(boundedness of state variables). These are all earlier results.
+
+\textbf{Forward dependencies:} The error bound is used implicitly
+in Theorem~4.1 to ensure that SGD suppression analysis is robust
+to estimation noise. This is a forward dependency, not circular.
+
+\textbf{Self-circularity:} The bound assumes the error propagates
+additively through the two pathways. In reality, the ODE is coupled
+and errors can amplify through feedback — $\delta_\sigma$ affects
+$\dot{\sigma}_A$, which changes $\sigma_A(t + \Delta t)$, which
+changes $\delta_\sigma$ at the next timestep. The stated bound is a
+one-step bound (instantaneous), not a global bound over a time
+interval. A full global error bound would require a Gronwall-type
+argument integrating the Lipschitz constant over time. The
+one-step bound is sufficient for the claim's purpose (assessing
+negligibility relative to $\eta_{\max}$).
+\end{circularity-check}

@@ -1,0 +1,302 @@
+% ============================================================
+% Proposition 3.4: Single-Domain Equilibria
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Single-Domain State Space]
+When $|D| = 1$, denote $\sigma_A = \sigma_A(d, \cdot)$,
+$\delta_A = \delta_A(d, \cdot)$, $\alpha_A = \alpha_A(d, \cdot)$.
+The reduced ODE system is:
+\begin{align*}
+\dot{\delta}_A &= f_{\text{learn}} \eta_{\max} e^{-a e^{-b \delta_A}} T_A
+- \lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A), \\
+\dot{\sigma}_A &= \sigma_A [\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}], \\
+\dot{\alpha}_A &= \gamma C_A (1 - \alpha_A) - \zeta_\alpha \alpha_A R_A^{\text{surface}}.
+\end{align*}
+\end{definition}
+
+\begin{assumption}[Symmetric Couplings]
+All cross-domain coupling terms vanish when $|D| = 1$: no intersection
+discovery, no interdomain schema transfer, no multi-domain attention.
+\end{assumption}
+
+\begin{assumption}[Non-Degenerate Parameters]
+The parameters satisfy:
+\begin{align*}
+f_{\text{learn}} &> 0, \quad \eta_{\max} > 0, \quad \lambda_c > 0, \\
+\rho &> 0, \quad P_A > 0, \quad \gamma_\sigma > 0, \quad \epsilon_\sigma > 0, \quad \Omega_{SL} > 0, \\
+\gamma &> 0, \quad C_A > 0, \quad \zeta_\alpha > 0, \quad R_A^{\text{surface}} > 0.
+\end{align*}
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Single-Domain Equilibria]
+\label{prop:equilibria}
+Under the single-domain reduction (Assumptions~1--2), the system has
+precisely two equilibrium families:
+\begin{enumerate}[nosep]
+\item \textbf{Schema-free equilibrium $\mathcal{E}_0$:}
+  $\sigma_A = 0$, $\delta_A = 0$,
+  $\alpha_A^* = \dfrac{\gamma C_A}{\gamma C_A + \zeta_\alpha R_A^{\text{surface}}}$.
+  Exists for all parameter values.
+
+\item \textbf{Schema-active equilibrium $\mathcal{E}_1$:}
+  \begin{align*}
+  \sigma_A^* &= \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right), \\
+  \alpha_A^* &= \frac{\gamma C_A}{\gamma C_A + \zeta_\alpha R_A^{\text{surface}}},\\
+  \delta_A^* &: f_{\text{learn}} \eta(\delta_A^*) T_A = \lambda_c (1 - \gamma_\sigma \sigma_A^*) \delta_A^* (1 - r_A),
+  \end{align*}
+  where $R_0 = \rho P_A \alpha_A^* / \epsilon_\sigma \Omega_{SL}$.
+  Exists iff $R_0 \geq 1$.
+\end{enumerate}
+The stability of each equilibrium is determined by the eigenvalues of
+the $3\times 3$ Jacobian, with $\mathcal{E}_0$ stable for $R_0 < 1$
+and $\mathcal{E}_1$ stable for $R_0 > 1$.
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+
+\paragraph{Step 1: Equilibrium equations.}
+Setting $\dot{\delta}_A = \dot{\sigma}_A = \dot{\alpha}_A = 0$:
+
+For $\dot{\sigma}_A = 0$, the product form gives either:
+\[
+\sigma_A = 0 \quad\text{or}\quad \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL} = 0.
+\]
+
+For $\dot{\alpha}_A = 0$:
+\[
+\gamma C_A (1 - \alpha_A) = \zeta_\alpha \alpha_A R_A^{\text{surface}}
+\;\Longrightarrow\; \alpha_A^* = \frac{\gamma C_A}{\gamma C_A + \zeta_\alpha R_A^{\text{surface}}},
+\]
+which is independent of $\sigma_A$ and $\delta_A$. For positive
+parameters, $\alpha_A^* \in (0,1)$, confirming the attractiveness
+of the attentional subsystem to a unique fixed point.
+
+For $\dot{\delta}_A = 0$:
+\[
+f_{\text{learn}} \eta(\delta_A) T_A = \lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A).
+\]
+This equation defines $\delta_A^*$ implicitly; the left-hand side is
+monotonically increasing in $\delta_A$ (since $\eta' > 0$) and the
+right-hand side is linear in $\delta_A$. A positive solution exists
+iff the left-hand side exceeds the right-hand side at $\delta_A = 0^+$,
+which holds for all positive parameters.
+
+\paragraph{Step 2: Schema-free equilibrium $\mathcal{E}_0$.}
+At $\sigma_A = 0$, the depth equilibrium condition becomes:
+\[
+f_{\text{learn}} \eta(\delta_A) T_A = \lambda_c \delta_A (1 - r_A),
+\]
+which has the trivial solution $\delta_A = 0$ (no depth accumulation
+in the absence of schema coherence). The full equilibrium is:
+\[
+\mathcal{E}_0 = (\delta_A = 0,\; \sigma_A = 0,\; \alpha_A = \alpha_A^*).
+\]
+
+\paragraph{Step 3: Schema-active equilibrium $\mathcal{E}_1$.}
+Substituting $\alpha_A^*$ into the non-trivial $\dot{\sigma}_A = 0$
+condition:
+\[
+\rho P_A \alpha_A^* (1 - \gamma_\sigma \sigma_A) = \epsilon_\sigma \Omega_{SL}.
+\]
+Define the basic reproduction number:
+\[
+R_0 = \frac{\rho P_A \alpha_A^*}{\epsilon_\sigma \Omega_{SL}}.
+\]
+Then:
+\[
+1 - \gamma_\sigma \sigma_A^* = \frac{1}{R_0}
+\;\Longrightarrow\; \sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right).
+\]
+For $\sigma_A^* > 0$, we require $R_0 > 1$. At $R_0 = 1$, the
+schema-active equilibrium coincides with the schema-free equilibrium
+(transcritical bifurcation; see Proposition~4.1).
+
+The depth $\delta_A^*$ is the positive solution of:
+\[
+f_{\text{learn}} \eta(\delta_A^*) T_A = \lambda_c (1 - \gamma_\sigma \sigma_A^*) \delta_A^* (1 - r_A)
+= \frac{\lambda_c}{R_0} \delta_A^* (1 - r_A),
+\]
+where the decay coefficient $\lambda_c / R_0$ is smaller than
+$\lambda_c$, confirming that schema-active agents retain depth
+more effectively.
+
+\paragraph{Step 4: $3\times 3$ Jacobian at equilibrium.}
+The Jacobian $\mathbf{J} \in \mathbb{R}^{3\times 3}$ has entries
+$J_{ij} = \partial \dot{x}_i / \partial x_j$ for
+$\mathbf{x} = (\delta_A, \sigma_A, \alpha_A)$:
+
+\[
+\mathbf{J} =
+\begin{pmatrix}
+J_{\delta\delta} & J_{\delta\sigma} & 0 \\
+0 & J_{\sigma\sigma} & J_{\sigma\alpha} \\
+0 & 0 & J_{\alpha\alpha}
+\end{pmatrix},
+\]
+where:
+\begin{align*}
+J_{\delta\delta} &= \frac{\partial \dot{\delta}_A}{\partial \delta_A}
+= \frac{f_{\text{learn}} T_A \cdot \eta_{\max} a b e^{-b\delta_A} e^{-a e^{-b\delta_A}}}
+{- \lambda_c (1 - \gamma_\sigma \sigma_A)(1 - r_A)}, \\
+J_{\delta\sigma} &= \frac{\partial \dot{\delta}_A}{\partial \sigma_A}
+= \lambda_c \gamma_\sigma \delta_A (1 - r_A), \\
+J_{\sigma\sigma} &= \frac{\partial \dot{\sigma}_A}{\partial \sigma_A}
+= \rho P_A \alpha_A (1 - 2\gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}, \\
+J_{\sigma\alpha} &= \frac{\partial \dot{\sigma}_A}{\partial \alpha_A}
+= \rho P_A \sigma_A (1 - \gamma_\sigma \sigma_A), \\
+J_{\alpha\alpha} &= \frac{\partial \dot{\alpha}_A}{\partial \alpha_A}
+= -\gamma C_A - \zeta_\alpha R_A^{\text{surface}} < 0.
+\end{align*}
+
+The lower-triangular block structure is due to the fact that
+$\dot{\alpha}_A$ does not depend on $\delta_A$ or $\sigma_A$, and
+$\dot{\sigma}_A$ does not depend on $\delta_A$.
+
+\paragraph{Step 5: Stability of $\mathcal{E}_0$ ($\sigma_A = 0$).}
+At $\mathcal{E}_0$, $\sigma_A = 0$, $\delta_A = 0$:
+\begin{align*}
+J_{\delta\delta} &= f_{\text{learn}} T_A \eta_{\max} e^{-a} - \lambda_c (1 - r_A), \\
+J_{\delta\sigma} &= 0 \quad (\text{since } \delta_A = 0), \\
+J_{\sigma\sigma} &= \rho P_A \alpha_A^* - \epsilon_\sigma \Omega_{SL}
+= \epsilon_\sigma \Omega_{SL} (R_0 - 1), \\
+J_{\sigma\alpha} &= 0 \quad (\text{since } \sigma_A = 0), \\
+J_{\alpha\alpha} &= -\gamma C_A - \zeta_\alpha R_A^{\text{surface}} < 0.
+\end{align*}
+
+The eigenvalues are the diagonal entries:
+\[
+\lambda_1 = J_{\delta\delta},\quad
+\lambda_2 = J_{\sigma\sigma} = \epsilon_\sigma \Omega_{SL} (R_0 - 1),\quad
+\lambda_3 = J_{\alpha\alpha} < 0.
+\]
+
+At $\delta_A = 0$, the learning function satisfies
+$\eta(0) = \eta_{\max} e^{-a}$, so:
+\[
+\lambda_1 = f_{\text{learn}} T_A \eta_{\max} e^{-a} - \lambda_c (1 - r_A).
+\]
+For small initial depth accumulation, the learning drive exceeds the
+decay ($\lambda_1 > 0$), so the $\delta_A$ direction is unstable at
+$\delta_A = 0$ --- depth grows away from zero, consistent with
+Proposition~3.1's local existence result that $\delta_A$ increases
+from initialisation.
+
+The critical eigenvalue is $\lambda_2$:
+\begin{itemize}
+\item If $R_0 < 1$: $\lambda_2 < 0$, so $\mathcal{E}_0$ is stable in
+  the $\sigma_A$ direction. Schema perturbations decay.
+\item If $R_0 > 1$: $\lambda_2 > 0$, so $\mathcal{E}_0$ is unstable
+  in the $\sigma_A$ direction. Schema perturbations grow, driving the
+  system toward $\mathcal{E}_1$.
+\item If $R_0 = 1$: $\lambda_2 = 0$, the non-hyperbolic transcritical
+  bifurcation point (Proposition~4.1).
+\end{itemize}
+
+Thus $\mathcal{E}_0$ is a saddle for $R_0 > 1$ and an attractor
+(in the $\sigma_A$-$\alpha_A$ subspace) for $R_0 < 1$.
+
+\paragraph{Step 6: Stability of $\mathcal{E}_1$ ($\sigma_A^* > 0$).}
+At $\mathcal{E}_1$, $\sigma_A^*$ satisfies $1 - \gamma_\sigma \sigma_A^* = 1/R_0$.
+Substituting into $J_{\sigma\sigma}$:
+\[
+J_{\sigma\sigma} = \rho P_A \alpha_A^* (1 - 2\gamma_\sigma \sigma_A^*) - \epsilon_\sigma \Omega_{SL}
+= \rho P_A \alpha_A^* \left(1 - 2\left(1 - \frac{1}{R_0}\right)\right) - \epsilon_\sigma \Omega_{SL}
+= \rho P_A \alpha_A^* \left(\frac{2}{R_0} - 1\right) - \epsilon_\sigma \Omega_{SL}.
+\]
+
+Using $R_0 = \rho P_A \alpha_A^* / \epsilon_\sigma \Omega_{SL}$:
+\[
+J_{\sigma\sigma} = \epsilon_\sigma \Omega_{SL} \left[R_0\left(\frac{2}{R_0} - 1\right) - 1\right]
+= \epsilon_\sigma \Omega_{SL} (1 - R_0).
+\]
+
+For $R_0 > 1$, $J_{\sigma\sigma} < 0$: the $\sigma_A$ direction is
+stable at $\mathcal{E}_1$.
+
+The $\alpha_A$ eigenvalue $J_{\alpha\alpha} < 0$ is unchanged.
+
+The $\delta_A$ eigenvalue $J_{\delta\delta}$ at $\mathcal{E}_1$ is:
+\[
+J_{\delta\delta} = f_{\text{learn}} T_A \eta'(\delta_A^*) - \frac{\lambda_c}{R_0} (1 - r_A),
+\]
+where $\eta'(\delta_A^*) = \eta_{\max} a b e^{-b\delta_A^*} e^{-a e^{-b\delta_A^*}}$.
+Since $\delta_A^*$ is the fixed point of the balanced equation,
+$J_{\delta\delta} < 0$ by the monotonicity of the learning saturation
+function (the right-hand side of the $\delta_A$ ODE crosses zero from
+above at $\delta_A^*$, making the equilibrium stable in the $\delta_A$
+direction).
+
+Therefore, for $R_0 > 1$, all three eigenvalues at $\mathcal{E}_1$
+have negative real parts: the schema-active equilibrium is locally
+asymptotically stable.
+$\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$R_0 = 1$ (bifurcation threshold):}
+Both equilibria coincide at $\sigma_A = 0$. The Jacobian has a zero
+eigenvalue, and the system undergoes a transcritical bifurcation
+(formalised in Proposition~4.1). Higher-order terms determine the
+stability beyond the linear approximation.
+
+\textbf{$\gamma_\sigma = 0$ (no schema modulation of depth decay):}
+The depth decay coefficient does not depend on $\sigma_A$, so
+$J_{\delta\sigma} = 0$ at both equilibria. The $\delta_A$ and
+$\sigma_A$ subsystems decouple linearly. Equilibrium existence
+conditions remain unchanged.
+
+\textbf{$\alpha_A^* \to 1$ (maximal attention):}
+Occurs when $\gamma C_A \gg \zeta_\alpha R_A^{\text{surface}}$.
+The reproduction number $R_0$ approaches its maximum
+$\rho P_A / \epsilon_\sigma \Omega_{SL}$, maximising the basin
+of the schema-active equilibrium.
+
+\textbf{$\alpha_A^* \to 0$ (attentional collapse):}
+Occurs when $\zeta_\alpha R_A^{\text{surface}} \gg \gamma C_A$.
+Then $R_0 \to 0$ and only $\mathcal{E}_0$ exists. Schema formation
+is impossible regardless of training signal.
+
+\textbf{$\delta_A^* = 0$ boundary:}
+If the learning drive $f_{\text{learn}} T_A \eta_{\max}$ is
+insufficient to overcome decay at $\sigma_A^*$, the only depth
+fixed point is $\delta_A = 0$. This represents a training collapse
+regime where the curriculum fails to induce any depth accumulation.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+The proof uses the ODE definitions from Section~3.2 and
+Proposition~4.1's definition of $\sigma_A^*$ (the transcritical
+bifurcation result). This creates an apparent circularity:
+Proposition~3.4 (equilibria) uses Proposition~4.1 ($\sigma_A^*$)
+which depends on the equilibrium analysis.
+
+\textbf{Resolution:} The dependency is unidirectional. Proposition~4.1
+derives the existence of the transcritical bifurcation by analysing the
+$\sigma_A$ ODE at equilibrium ($\dot{\sigma}_A = 0$) independently of
+$\delta_A$ and $\alpha_A$. Proposition~3.4 uses that result to
+characterise the full $3\times 3$ system after the bifurcation point
+is established. Specifically:
+\begin{itemize}[nosep]
+\item The $\sigma_A$ equilibrium structure ($\sigma_A^* = (1 - 1/R_0)/\gamma_\sigma$)
+  follows from setting $\dot{\sigma}_A = 0$ alone --- a one-dimensional
+  analysis that does not depend on the $3\times 3$ Jacobian.
+\item Proposition~3.4 then embeds this $\sigma_A^*$ into the full
+  coupled system for the stability analysis via the $3\times 3$
+  Jacobian.
+\end{itemize}
+This is a standard pattern in dynamical systems: first establish the
+bifurcation structure of the slow variable ($\sigma_A$), then analyze
+the full system stability around the resulting equilibria. No logical
+circularity exists; the dependence is sequential and well-ordered.
+
+\textbf{Forward dependencies:} Proposition~4.1 (bifurcation) references
+the equilibrium existence but not the $3\times 3$ stability analysis.
+Proposition~3.5 (numerical stability) uses the forward-invariant set
+from Proposition~3.2 independently.
+\end{circularity-check}

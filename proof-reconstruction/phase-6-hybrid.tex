@@ -1,0 +1,251 @@
+% ============================================================
+% Phase 6: Circular Dependency Resolution
+% (Stage 1 ↔ Stage 2 as Filippov Hybrid System)
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Circular Dependency]
+Stage~1 (depth estimation) requires $\tilde{\sigma}_A$ as input to
+compute the fusion signal $g_A$; Stage~2 (schema coherence estimation)
+requires $\delta_A$ as input to compute the ground-truth proxy. This is
+a mutual dependency:
+\[
+\delta_A = F(\tilde{\sigma}_A), \qquad \tilde{\sigma}_A = G(\delta_A),
+\]
+where $F: \mathbb{R} \to \mathbb{R}$ and $G: \mathbb{R} \to \mathbb{R}$
+are the Stage~1 depth estimator and Stage~2 schema estimator respectively,
+each defined on the compact domain
+$\mathcal{D} = [0, \delta_{\max}] \times [0, 1] \subset \mathbb{R}^2$.
+\end{definition}
+
+\begin{definition}[Piecewise-Smooth Hybrid System]
+A Filippov system is a differential equation with a piecewise-smooth
+right-hand side:
+\[
+\dot{x} = f_i(x), \quad x \in S_i,
+\]
+where $\{S_i\}$ is a finite partition of the state space and $f_i$ is
+smooth on each $S_i$. On the switching boundary $\Sigma_{ij} = \bar{S}_i
+\cap \bar{S}_j$, the vector field is defined by Filippov convex
+combination.
+\end{definition}
+
+\begin{assumption}[Lipschitz Continuity]
+The Stage~1 estimator $F$ is $L_F$-Lipschitz and the Stage~2 estimator
+$G$ is $L_G$-Lipschitz on the domain $\mathcal{D}$:
+\begin{align*}
+|F(\tilde{\sigma}_1) - F(\tilde{\sigma}_2)| &\leq L_F |\tilde{\sigma}_1 - \tilde{\sigma}_2|, \\
+|G(\delta_1) - G(\delta_2)| &\leq L_G |\delta_1 - \delta_2|,
+\end{align*}
+with Lipschitz constants $L_F, L_G \geq 0$.
+\end{assumption}
+
+\begin{assumption}[Contraction Condition]
+The product of Lipschitz constants satisfies $L_F L_G < 1$, making
+the composition $G \circ F$ a contraction on $\mathcal{D}$.
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Circular Dependency Resolution]
+\label{prop:hybrid}
+Under Assumptions~1--2, the Stage~1/2 circular dependency admits a
+unique consistent solution via the Filippov hybrid system formulation,
+with the mutual estimation converging after at most
+$K = \lceil \log(\theta_{\text{conv}} / d_0) / \log(L_F L_G) \rceil$
+alternating rounds, where $d_0$ is the initial distance and
+$\theta_{\text{conv}}$ the convergence tolerance.
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+
+\paragraph{Step 1: Lipschitz bounds for $F$ and $G$.}
+The Stage~1 depth estimator $F$ computes $\delta_A$ from the coupled
+ODE system (Eqs.~14, 28, 29) with $\tilde{\sigma}_A$ as the schema
+input. The ODE solution is differentiable with respect to the initial
+condition and parameters (Proposition~3.1). By standard sensitivity
+analysis for ODEs (the variation-of-constants formula), the derivative
+$\partial \delta_A / \partial \tilde{\sigma}_A$ is bounded on the
+compact interval $[0, T]$ by:
+\[
+\left|\frac{\partial \delta_A}{\partial \tilde{\sigma}_A}\right|
+\leq \frac{\lambda_c \delta_{\max}}{\min(\lambda_c, \rho, \gamma)}
+\cdot e^{(\eta_{\max} + \lambda_c) T} \triangleq L_F,
+\]
+where $\delta_{\max}$ is the maximum depth (Proposition~3.2), and the
+factor $\lambda_c \delta_{\max}$ bounds the coupling term
+$\partial \dot{\delta}_A / \partial \tilde{\sigma}_A = \lambda_c \gamma_\sigma \delta_A (1 - r_A)$.
+
+The Stage~2 schema estimator $G$ computes $\tilde{\sigma}_A$ as a
+weighted fusion of three proxy signals (GCA, RGA, AC; Section~3.1.4).
+Each signal is bounded between 0 and 1, and the fusion is a convex
+combination with weights $w_g + w_r + w_c = 1$. The mapping from
+$\delta_A$ to $\tilde{\sigma}_A$ is therefore 1-Lipschitz when the
+proxy signals themselves are 1-Lipschitz in $\delta_A$:
+\[
+\left|\frac{\partial \tilde{\sigma}_A}{\partial \delta_A}\right|
+\leq w_g \cdot L_{\text{GCA}} + w_r \cdot L_{\text{RGA}} + w_c \cdot L_{\text{AC}}
+\leq L_G,
+\]
+where $L_{\text{GCA}}$, $L_{\text{RGA}}$, $L_{\text{AC}}$ are the
+Lipschitz constants of the individual proxy signal extractors.
+In practice, each proxy is computed as a bounded differentiable
+function of the hidden states, ensuring $L_G < \infty$.
+
+\paragraph{Step 2: Contraction of $G \circ F$.}
+By the chain rule and Assumption~1:
+\[
+\left|\frac{d(G \circ F)}{d\tilde{\sigma}_A}\right|
+= \left|\frac{dG}{d\delta_A} \cdot \frac{dF}{d\tilde{\sigma}_A}\right|
+\leq L_G \cdot L_F.
+\]
+Under Assumption~2 ($L_F L_G < 1$), the Banach fixed-point theorem
+guarantees that the iteration:
+\[
+\tilde{\sigma}_A^{(k+1)} = G(F(\tilde{\sigma}_A^{(k)}))
+\]
+converges to a unique fixed point $\tilde{\sigma}_A^*$ from any
+initial $\tilde{\sigma}_A^{(0)} \in [0, 1]$.
+
+\paragraph{Step 3: Convergence rate.}
+The contraction mapping theorem provides a geometric convergence rate:
+\[
+\|\tilde{\sigma}_A^{(k)} - \tilde{\sigma}_A^*\|
+\leq (L_F L_G)^k \cdot \|\tilde{\sigma}_A^{(0)} - \tilde{\sigma}_A^*\|.
+\]
+For a tolerance $\theta_{\text{conv}} > 0$, the number of iterations
+required is:
+\[
+K = \lceil \log(\theta_{\text{conv}} / d_0) / \log(L_F L_G) \rceil,
+\]
+where $d_0 = \|\tilde{\sigma}_A^{(0)} - \tilde{\sigma}_A^*\| \leq 1$
+is the initial distance.
+
+For typical parameter values:
+\begin{itemize}[nosep]
+\item $L_F \approx 0.5$ (moderate ODE sensitivity, bounded training horizon)
+\item $L_G \approx 0.6$ (convex fusion of 1-Lipschitz proxy signals)
+\item $L_F L_G \approx 0.3$, giving $(0.3)^k$ convergence
+\item For $\theta_{\text{conv}} = 0.01$ and $d_0 = 1$: $K = \lceil \log(0.01) / \log(0.3) \rceil = \lceil 3.82 \rceil = 4$ rounds
+\end{itemize}
+The 2--3 round convergence observed in numerical experiments
+(Appendix~C) corresponds to the tighter bound achieved when
+$L_F L_G \approx 0.1$ (achieved when $T$ is small, limiting the
+exponential factor in $L_F$).
+
+\paragraph{Step 4: Hybrid system formulation.}
+The three discrete modes resolve the circular dependency without
+simultaneous equation solving:
+
+\begin{enumerate}[nosep]
+\item \textbf{Mode S1 (Stage~1 active):} Use prior $\tilde{\sigma}_A^{(k)}$
+  to solve the depth ODE and produce $\delta_A^{(k)} = F(\tilde{\sigma}_A^{(k)})$.
+\item \textbf{Mode S2 (Stage~2 active):} Use $\delta_A^{(k)}$ to compute
+  $\tilde{\sigma}_A^{(k+1)} = G(\delta_A^{(k)})$.
+\item \textbf{Mode F (Fixed-point):} If
+  $\|\tilde{\sigma}_A^{(k+1)} - \tilde{\sigma}_A^{(k)}\| < \theta_{\text{conv}}$,
+  output $(\delta_A^*, \tilde{\sigma}_A^*)$.
+\end{enumerate}
+
+The mode transition function $\phi: \mathbb{R}^2 \to \{\text{S1}, \text{S2}, \text{F}\}$ is:
+\[
+\phi(\tilde{\sigma}_A, \delta_A) = \begin{cases}
+\text{S1} & \text{if } \|\tilde{\sigma}_A^{(k+1)} - \tilde{\sigma}_A^{(k)}\| > \theta_{\text{conv}}
+\text{ and current mode is S2}, \\
+\text{S2} & \text{if } \|\delta_A^{(k+1)} - \delta_A^{(k)}\| > \theta_{\text{conv}}
+\text{ and current mode is S1}, \\
+\text{F} & \text{otherwise}.
+\end{cases}
+\]
+
+This is a Filippov system with two switching manifolds:
+\begin{align*}
+\Sigma_{12} &= \{(\tilde{\sigma}_A, \delta_A) : \|\tilde{\sigma}_A - G(\delta_A)\| = \theta_{\text{conv}}\}, \\
+\Sigma_{21} &= \{(\tilde{\sigma}_A, \delta_A) : \|\delta_A - F(\tilde{\sigma}_A)\| = \theta_{\text{conv}}\},
+\end{align*}
+where on each manifold the vector field is the convex combination of
+the adjacent modes' fields, ensuring existence of solutions by
+Filippov's theorem.
+
+\paragraph{Step 5: Uniqueness of the fixed point.}
+By the Banach fixed-point theorem, $G \circ F$ has exactly one fixed
+point $\tilde{\sigma}_A^*$ on the compact domain $[0, 1]$. The
+corresponding depth is $\delta_A^* = F(\tilde{\sigma}_A^*)$, which is
+unique because $F$ is Lipschitz (hence single-valued). The pair
+$(\tilde{\sigma}_A^*, \delta_A^*)$ is the unique consistent solution
+to the circular dependency. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{Cold start ($\tilde{\sigma}_A^{(0)} = 0$):}
+The initial distance $d_0 = \|\tilde{\sigma}_A^*\| \leq 1$ is maximal.
+The required iteration count $K = \lceil \log(\theta_{\text{conv}}) / \log(L_F L_G) \rceil$
+increases by approximately $\lceil \log(1/d_0) / \log(L_F L_G) \rceil$ rounds.
+For $L_F L_G = 0.3$ and $\theta_{\text{conv}} = 0.01$, cold start
+requires $K = 4$ rounds vs.\ $K = 2$ for warm start with
+$d_0 = 0.01$.
+
+\textbf{$L_F L_G \geq 1$ (not a contraction):}
+The fixed-point iteration may diverge or oscillate. In this regime,
+the hybrid formulation is replaced by a simultaneous equation solver
+(Newton--Raphson on the coupled system $(\tilde{\sigma}_A, \delta_A)$).
+The Newton--Raphson iteration converges quadratically provided the
+Jacobian $\mathbf{I} - \mathbf{J}_{G \circ F}$ is non-singular at the
+solution.
+
+\textbf{Time-discretized implementation:}
+The practical pipeline (Algorithm~3.2) uses alternating updates each
+epoch rather than inner-loop iteration. This single-step alternating
+scheme is equivalent to one iteration of the fixed-point map per
+epoch. The convergence analysis holds asymptotically as the epoch
+count grows, because the composition $G \circ F$ is applied
+repeatedly across epochs. The effective contraction rate per epoch is
+$(L_F L_G)^{1/\tau_{\text{epoch}}}$ where $\tau_{\text{epoch}}$ is
+the number of ODE integration steps per epoch, making the practical
+convergence slower but still geometric.
+
+\textbf{Discontinuous proxy signals:}
+If any proxy signal has discontinuities (e.g., threshold-based metrics),
+the Lipschitz assumption (Assumption~1) is violated. The Filippov
+formulation still guarantees existence of solutions via the convex
+combination on switching boundaries, but the convergence rate bound
+no longer holds. In practice, all three proxies (GCA, RGA, AC) are
+continuous functions of the hidden state activations, so
+discontinuity is not expected.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+The proof uses the following external results:
+\begin{itemize}[nosep]
+\item Proposition~3.1 (local existence and uniqueness of ODE solutions)
+  to justify differentiability of $F$ with respect to parameters.
+\item Proposition~3.2 (boundedness) to define $\delta_{\max}$ and the
+  compact domain $\mathcal{D}$.
+\item The ODE definitions from Section~3.2 and the proxy signal
+  definitions from Section~3.1.4.
+\item Standard results from functional analysis: Banach fixed-point
+  theorem, Filippov's existence theorem for discontinuous differential
+  equations.
+\end{itemize}
+
+\textbf{Self-circularity:} The Lipschitz constants $L_F$ and $L_G$
+are stated as bounded but not explicitly computed in closed form.
+The bound on $L_F$ depends on the ODE integration horizon $T$ and
+the parameter bounds, which are themselves derived from
+Proposition~3.2 (boundedness). This is not circular: Proposition~3.2
+establishes the invariant set independently of the Stage~1/2
+estimation procedure.
+
+\textbf{No dependence on later results:} The proof does not use any
+proposition or theorem from Section~4 (Cognitive Dimensions) or
+later. It depends only on Section~3 infrastructure (ODE definitions,
+existence, boundedness).
+
+\textbf{No dependence on Proposition~3.4 (equilibria):} The equilibrium
+analysis is not required because $F$ and $G$ are defined as
+finite-horizon ODE solutions and proxy signal evaluations,
+respectively, neither of which requires reaching equilibrium.
+\end{circularity-check}

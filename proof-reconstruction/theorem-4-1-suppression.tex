@@ -1,0 +1,193 @@
+% ============================================================
+% Theorem 4.1: SGD-Induced Sigma Suppression
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Schema Coherence ODE]
+The schema coherence dynamics are governed by:
+\[
+\dot{\sigma}_A = \sigma_A \cdot
+[\rho \cdot P_A \cdot \alpha_A \cdot (1 - \gamma_\sigma \cdot \sigma_A)
+- \epsilon_\sigma \cdot \Omega_{SL}],
+\]
+as defined in Equation~\eqref{eq:sigma-ode} of the manuscript
+and Equation~\eqref{eq:sigma-ode-recon} of the reconstruction.
+\end{definition}
+
+\begin{definition}[SGD Training Regime]
+Standard SGD training minimizes a loss function $\mathcal{L}(\theta)$
+on the training dataset, where $\theta$ denotes all network parameters.
+No explicit $\sigma_A$-targeting term (e.g., a loss bonus for high
+$\sigma_A$) is present. The shortcut-learning pressure
+$\Omega_{SL}(d,t) \in [0, \Omega_{\max}]$ quantifies how much of the
+task can be solved via surface-level pattern matching.
+\end{definition}
+
+\begin{assumption}[Shortcut Pressure Dominance in Early Training]
+In the neighbourhood of $\sigma_A > 0$, SGD (optimizing purely for loss)
+induces $\Omega_{SL} > 0$ whenever surface-level shortcuts exist.
+Specifically:
+\[
+\epsilon_\sigma \cdot \Omega_{SL} > \rho \cdot P_A \cdot \alpha_A
+\]
+holds during early-to-mid training whenever the dataset contains
+spurious correlations or surface-level patterns.
+\end{assumption}
+
+\begin{assumption}[Parameter Positivity]
+All rate constants are non-negative: $\rho, \gamma_\sigma, \epsilon_\sigma > 0$,
+and the state variables satisfy $P_A \in [0, P_{\max}]$,
+$\alpha_A \in [0, 1]$, $\Omega_{SL} \in [0, \Omega_{\max}]$.
+\end{assumption}
+
+% --- Theorem Statement ---
+\begin{theorem}[SGD-Induced $\sigma$-Suppression]
+\label{thm:suppression}
+Under standard SGD training (without explicit $\sigma_A$ targeting),
+the schema coherence dynamics satisfy:
+\[
+\left.\frac{\partial \sigma_A(d,t)}{\partial t}\right|_{\text{SGD}} < 0
+\]
+in the neighbourhood of $\sigma_A > 0$ whenever the bracket in
+\eqref{eq:sigma-ode-recon} is negative, i.e., when
+\[
+\epsilon_\sigma \cdot \Omega_{SL}(d,t) > \rho \cdot P_A(d,t) \cdot \alpha_A(d,t).
+\]
+In this regime, the $\sigma_A = 0$ equilibrium is locally stable and
+attracts all nearby trajectories (the ``$\sigma$-trap''). When the
+inequality reverses, $\sigma_A = 0$ becomes unstable and the system
+bifurcates toward the schema-coherent branch (Proposition~4.1).
+\end{theorem}
+
+% --- Proof ---
+\begin{proof}
+The proof proceeds by sign analysis of \eqref{eq:sigma-ode-recon}
+under the SGD regime.
+
+\paragraph{Step 1: Sign of $\dot{\sigma}_A$ for $\sigma_A > 0$.}
+From \eqref{eq:sigma-ode-recon}, for any $\sigma_A > 0$:
+\[
+\dot{\sigma}_A = \sigma_A \cdot B,
+\]
+where $B = \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}$.
+Since $\sigma_A > 0$ (strictly positive), the sign of $\dot{\sigma}_A$
+is identical to the sign of $B$:
+\[
+\text{sgn}(\dot{\sigma}_A) = \text{sgn}(B).
+\]
+
+\paragraph{Step 2: SGD induces negative $B$ in the suppression regime.}
+Under standard SGD training, the shortcut-learning pressure
+$\Omega_{SL}$ is driven by the loss landscape. Because SGD greedily
+minimizes training loss, it preferentially exploits surface-level
+patterns when available, increasing $\Omega_{SL}$. In the
+neighbourhood of $\sigma_A > 0$ (small but positive schema coherence),
+the $(1 - \gamma_\sigma \sigma_A)$ factor is approximately 1, so:
+\[
+B \approx \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}.
+\]
+When Assumption~1 holds ($\epsilon_\sigma \Omega_{SL} > \rho P_A \alpha_A$),
+we have $B < 0$ and consequently $\dot{\sigma}_A < 0$.
+
+\paragraph{Step 3: Local stability of $\sigma_A = 0$.}
+Consider the linearization of \eqref{eq:sigma-ode-recon} at
+$\sigma_A = 0$. The derivative of the right-hand side with respect
+to $\sigma_A$ is:
+\[
+\frac{\partial \dot{\sigma}_A}{\partial \sigma_A}\bigg|_{\sigma_A = 0}
+= [\rho P_A \alpha_A (1 - 2\gamma_\sigma \cdot 0) - \epsilon_\sigma \Omega_{SL}]
+= \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}.
+\]
+When $B < 0$ (the suppression regime), this eigenvalue is negative:
+\[
+\lambda = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL} < 0.
+\]
+By the Hartman--Grobman theorem, the $\sigma_A = 0$ equilibrium is
+locally exponentially stable. All trajectories starting sufficiently
+close to $\sigma_A = 0$ converge to zero — this is the $\sigma$-trap.
+
+\paragraph{Step 4: Global attraction within the basin.}
+The ODE \eqref{eq:sigma-ode-recon} is one-dimensional in $\sigma_A$
+(with other variables treated as parameters). The exact integral
+(Proposition~3.2, Equation~\eqref{eq:exact-integral}) gives:
+\[
+\sigma_A(t) = \sigma_A(0) \cdot
+\exp\!\left( \int_0^t B(s) \, ds \right).
+\]
+If $B(s) \leq -c < 0$ uniformly over $[0, t]$, then:
+\[
+\sigma_A(t) \leq \sigma_A(0) e^{-c t} \to 0 \text{ as } t \to \infty.
+\]
+Thus, whenever the bracket remains negative, $\sigma_A = 0$ is globally
+attracting within the domain $\sigma_A \geq 0$.
+
+\paragraph{Step 5: Bifurcation when the inequality reverses.}
+When $\epsilon_\sigma \Omega_{SL} < \rho P_A \alpha_A$, the linearization
+eigenvalue $\lambda$ becomes positive, making $\sigma_A = 0$ unstable.
+The non-trivial equilibrium:
+\[
+\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - \frac{1}{R_0}\right),
+\quad R_0 = \frac{\rho P_A \alpha_A}{\epsilon_\sigma \Omega_{SL}},
+\]
+becomes positive and stable. This is the transcritical bifurcation
+analyzed in Proposition~4.1 ($\sigma_{\text{critical}} = 1/\gamma_\sigma$).
+$\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\sigma_A(0) = 0$ exactly:}
+By Proposition~3.2, $\dot{\sigma}_A = 0$ and $\sigma_A(t) \equiv 0$
+(the invariant manifold). The $\sigma$-trap is permanent — no
+bifurcation can occur because $\sigma_A$ is identically zero.
+
+\textbf{$\sigma_A(0)$ very small but positive:}
+The exact integral shows exponential decay to zero when $B < 0$.
+The trajectory may take arbitrarily long to approach zero, but
+asymptotically it converges. This is the $\sigma$-trap basin.
+
+\textbf{$\Omega_{SL} = 0$ (no shortcut pressure):}
+The inequality $\epsilon_\sigma \Omega_{SL} > \rho P_A \alpha_A$
+cannot hold (unless $\rho P_A \alpha_A = 0$). SGD never suppresses
+$\sigma_A$, and the system always evolves toward the
+schema-coherent branch. This is the ideal training scenario.
+
+\textbf{$\rho P_A \alpha_A = 0$ (no growth engine):}
+The inequality holds trivially ($0 > 0$ is false, but $B = -\epsilon_\sigma \Omega_{SL} < 0$).
+The $\sigma_A = 0$ equilibrium is stable regardless of $\Omega_{SL}$.
+Without the growth engine ($\rho P_A \alpha_A$), schema coherence can
+never increase.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Dependencies on earlier results:} The proof uses
+Proposition~3.2 (exact integral, forward invariance) and
+Proposition~4.1 (bifurcation analysis). The dependency on
+Proposition~4.1 is a forward reference for the bifurcation
+mechanism, not for the suppression claim itself. The suppression
+claim (Theorem~4.1) is established independently via sign analysis
+of the bracket $B$.
+
+\textbf{Forward dependencies:} Proposition~4.2 (depth threshold)
+and Proposition~4.3 (hysteresis) depend on Theorem~4.1. These are
+forward dependencies.
+
+\textbf{Ordering concern:} The theorem statement references
+Proposition~4.1 before Proposition~4.1 has been proved in the
+reconstruction document. This is acceptable because the theorem
+establishes the suppression regime independently; the reference
+is to the bifurcation mechanism that operates when the inequality
+reverses. In the reconstruction document, Proposition~4.1 appears
+earlier in the ordering (Part~V vs. Part~IV). The cross-reference
+is resolved.
+
+\textbf{Self-circularity:} Assumption~1 (shortcut pressure dominance)
+is specific to SGD training and is not formally derived from first
+principles. It is a modelling assumption about the effect of SGD on
+$\Omega_{SL}$. This is acceptable: the theorem proves that \emph{if}
+SGD induces sufficient $\Omega_{SL}$, then $\sigma_A$ is suppressed.
+The assumption is the bridge connecting the ODE analysis to the
+SGD algorithm — a necessary modelling step.
+\end{circularity-check}

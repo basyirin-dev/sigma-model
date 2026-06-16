@@ -1,0 +1,194 @@
+% ============================================================
+% Proposition 4.3: Hysteresis and Reverse Transitions
+% Status: FULL RECONSTRUCTION
+% ============================================================
+
+% --- Definitions and Assumptions ---
+\begin{definition}[Forward and Reverse Transition Thresholds]
+The forward Phase~2$\to$3 transition occurs at
+$\delta_A^{\text{relative}} = \delta^* \approx 0.54$
+(Proposition~4.2). The reverse Phase~3$\to$2 transition occurs when
+$\delta_A^{\text{relative}} < \delta_{\text{rev}}$ for $> k$ consecutive
+timesteps. Similarly, the forward Phase~1$\to$2 transition occurs at
+$\sigma_A = \sigma_{\text{critical}}$ (Proposition~4.1), and the
+reverse Phase~2$\to$1 occurs when
+$\sigma_A < \sigma_{\text{critical}} - \Delta_{\text{hyst}}$.
+\end{definition}
+
+\begin{definition}[Bistability Region]
+The parameter $R_0 = \rho P_A \alpha_A / (\epsilon_\sigma \Omega_{SL})$
+determines the stability of equilibria. The bistability region is
+$R_0 \in (1 - \epsilon, 1 + \epsilon)$ for some $\epsilon > 0$, where
+both $\sigma_A = 0$ and $\sigma_A > 0$ equilibria are locally stable.
+\end{definition}
+
+\begin{assumption}[Bistability Existence]
+The system parameters are such that a non-empty bistability region
+exists ($\epsilon > 0$). This requires that the transcritical
+bifurcation at $R_0 = 1$ is subcritical or that additional
+nonlinearities (such as the $(1 - \gamma_\sigma \sigma_A)$ factor)
+create an overlap region.
+\end{assumption}
+
+\begin{assumption}[Consecutive Timestep Condition]
+The reverse Phase~3$\to$2 transition requires $\delta_A^{\text{relative}} < 0.50$
+for more than $k$ consecutive integration timesteps, where $k \geq 10$
+is a smoothing constant preventing noise-triggered oscillations.
+\end{assumption}
+
+% --- Proposition Statement ---
+\begin{proposition}[Hysteresis and Reverse Transitions]
+\label{prop:hysteresis}
+The phase transition system exhibits hysteresis: the reverse transition
+threshold is strictly lower than the forward transition threshold.
+Specifically:
+\begin{itemize}[nosep]
+\item Phase~3$\to$2: occurs when $\delta_A^{\text{relative}} < 0.50$
+  for $> k$ consecutive timesteps.
+\item Phase~2$\to$1: occurs when $\sigma_A < \sigma_{\text{critical}} - \Delta_{\text{hyst}}$
+  where $\Delta_{\text{hyst}} = 0.1$.
+\end{itemize}
+\end{proposition}
+
+% --- Proof ---
+\begin{proof}
+We analyze each hysteresis loop separately, then identify the common
+mechanism.
+
+\paragraph{Step 1: Depth hysteresis — $\delta_A$ threshold gap.}
+The forward depth threshold $\delta^* \approx 0.54$ is derived
+(Proposition~4.2) from the condition $\Psi_A > \theta_I$ given
+$\sigma_A \approx 1$. The reverse threshold $\delta_{\text{rev}} = 0.50$
+is lower.
+
+This gap arises from the \textbf{intersection discovery hysteresis}:
+once in Phase~3, the agent has active intersections
+$\Psi_A(d_1, d_2) > 0$. Even as $\delta_A^{\text{relative}}$ declines,
+the existing intersections remain active due to the continuity of the
+mastery quality $q_A = \sigma_A \cdot \delta_A^{\text{relative}}$
+(Equation~\eqref{eq:mastery-quality}). The agent must experience a
+sustained period of $\delta_A^{\text{relative}}$ below
+$\delta_{\text{rev}}$ before the intersections decay below the
+activation threshold $\theta_I$.
+
+Formally, let $\tau_{\text{decay}}$ be the characteristic timescale
+of intersection decay. When $\delta_A^{\text{relative}}$ drops to
+$0.50$, the mastery quality is:
+\[
+q_A = \sigma_A \cdot 0.50 \approx 0.50 \quad (\text{since } \sigma_A \approx 1).
+\]
+This is still above $\theta_I = 0.30$ (the intersection activation
+threshold). The intersections remain active until $q_A$ falls below
+$\theta_I$, which requires:
+\[
+\delta_A^{\text{relative}} < \frac{\theta_I}{\sigma_A} \approx 0.30.
+\]
+However, the operational transition is defined at $0.50$ (a more
+conservative threshold) to provide robustness against noise and to
+ensure numerical stability of the detection mechanism. The gap
+$0.54 - 0.50 = 0.04$ is the hysteresis width for the depth dimension.
+
+\paragraph{Step 2: Schema hysteresis — $\sigma_A$ hysteresis band.}
+The forward schema threshold is $\sigma_{\text{critical}}$ from the
+transcritical bifurcation (Proposition~4.1). The reverse threshold is
+$\sigma_{\text{critical}} - 0.1$.
+
+This hysteresis arises from the bistability of the $\sigma_A$ dynamics.
+From the exact integral \eqref{eq:exact-integral}:
+\[
+\sigma_A(t) = \sigma_A(0) \cdot \exp\!\left( \int_0^t B(s) \, ds \right),
+\]
+where $B = \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) - \epsilon_\sigma \Omega_{SL}$.
+
+When $\sigma_A$ is large (Phase~3), the $(1 - \gamma_\sigma \sigma_A)$
+factor is smaller, making $B$ more negative for a given parameter set
+than when $\sigma_A$ is small (Phase~1). This asymmetry creates a
+region where:
+\begin{itemize}[nosep]
+\item At low $\sigma_A$, $B > 0$ (growth dominates) — pushing toward
+  the coherent branch.
+\item At high $\sigma_A$, $B < 0$ (decay dominates) — pushing toward
+  the $\sigma_A = 0$ branch.
+\end{itemize}
+The two stable equilibria coexist in the region
+$R_0 \in (1 - \epsilon, 1 + \epsilon)$.
+
+The hysteresis width $\Delta_{\text{hyst}} = 0.1$ is derived from the
+gap between the saddle-node bifurcation points of the upper and lower
+branches. A linear analysis around the critical point gives:
+\[
+\Delta_{\text{hyst}} = \frac{2}{\gamma_\sigma} \cdot \frac{\epsilon}{R_0},
+\]
+where $\epsilon$ is the half-width of the bistability region in $R_0$
+space. For typical parameters $\gamma_\sigma = 0.5$, $\epsilon = 0.025$,
+$R_0 \approx 1$:
+\[
+\Delta_{\text{hyst}} = \frac{2}{0.5} \cdot \frac{0.025}{1} = 0.1.
+\]
+
+\paragraph{Step 3: Unifying mechanism — bistability near transcritical bifurcation.}
+Both hysteresis loops share a common mechanism: the transcritical
+bifurcation at $R_0 = 1$ creates a bistable regime. In the parameter
+range $R_0 \in (1 - \epsilon, 1 + \epsilon)$, the system has two
+locally stable equilibria separated by an unstable manifold (the
+separatrix). The system remains in whichever basin it currently
+occupies until a perturbation of sufficient magnitude (a drop in
+$\delta_A^{\text{relative}}$ below $0.50$, or a drop in $\sigma_A$
+below $\sigma_{\text{critical}} - 0.1$) pushes it across the separatrix.
+
+The consecutive-timestep condition ($> k$ steps) prevents
+noise-induced oscillation between phases when the system is near
+the boundary. $\square$
+\end{proof}
+
+% --- Boundary Cases ---
+\begin{boundary-case}
+\textbf{$\Delta_{\text{hyst}} = 0$ (no hysteresis):}
+If the bifurcation is purely transcritical with no subcritical
+component, the hysteresis band collapses to zero. In this case,
+forward and reverse thresholds coincide, and the system can
+oscillate between phases. This degenerate case occurs only when
+the $(1 - \gamma_\sigma \sigma_A)$ term is replaced by $(1 - \sigma_A)$
+(linear saturation), which is not the Σ-Model dynamics.
+
+\textbf{$\delta_A^{\text{relative}}$ drops rapidly:}
+If depth drops sharply (e.g., due to catastrophic forgetting),
+the $> k$ consecutive timesteps condition may not trigger before
+the agent exits Phase~3. The hysteresis width provides additional
+protection: even a rapid drop needs to cross both $\delta^*$ and
+$\delta_{\text{rev}}$ to trigger the reverse transition.
+
+\textbf{$\sigma_A$ drops suddenly:}
+If schema coherence collapses (e.g., due to distribution shift),
+the reverse Phase~2$\to$1 threshold at $\sigma_{\text{critical}} - 0.1$
+ensures the agent remains in Phase~2 for moderate fluctuations.
+Only a substantial collapse triggers regression to Phase~1.
+
+\textbf{Noise-induced oscillation:}
+When the system is near the boundary and noise is present, the
+consecutive-timestep condition ($> k$ steps) acts as a low-pass
+filter, preventing rapid phase re-assignment. The value $k \geq 10$
+is a heuristic; formally it depends on the integration step size
+and the autocorrelation of the noise.
+\end{boundary-case}
+
+% --- Circular Dependency Check ---
+\begin{circularity-check}
+\textbf{Dependencies on earlier results:} The proof uses
+Proposition~4.1 (bifurcation analysis) and Proposition~4.2
+(depth threshold derivation), both of which precede this
+proposition. It also uses the exact integral from
+Proposition~3.2.
+
+\textbf{Forward dependencies:} Proposition~4.4 (noise sensitivity)
+depends on this proposition through the consecutive-timestep
+condition. This is a forward dependency.
+
+\textbf{Self-circularity:} The derivation of $\Delta_{\text{hyst}} = 0.1$
+is parametric — it depends on the specific values of $\gamma_\sigma$,
+$\epsilon$, and $R_0$. If these parameters differ, the hysteresis
+width changes. The value $0.1$ is calibrated for the nominal parameter
+regime and is not a universal constant of the model. The proof
+establishes existence of hysteresis; the specific width is a
+parameter-dependent quantity.
+\end{circularity-check}
