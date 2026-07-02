@@ -1,0 +1,69 @@
+% PRISMA 2020 flow diagram — placeholder
+% To be populated with actual numbers in Phase 3 (Database Search).
+\begin{tikzpicture}[
+    node distance = 8mm and 12mm,
+    box/.style = {
+        rectangle, draw, rounded corners=2pt,
+        minimum width=5cm, minimum height=1.2cm,
+        align=center, font=\small,
+        fill=gray!5
+    },
+    arrow/.style = {-{Latex[length=2mm]}, thick},
+    every node/.style={font=\small}
+  ]
+
+  % Box 1: Records identified
+  \node[box] (identify) {
+    Records identified through database searching\\
+    \annote{n = $\square\square$}
+  };
+
+  % Box 2: Records screened
+  \node[box, below=of identify] (screened) {
+    Records after duplicates removed\\
+    \annote{n = $\square\square$}
+  };
+
+  % Arrow 1→2
+  \draw[arrow] (identify) -- (screened);
+
+  % Box 3: Full-text assessed
+  \node[box, below=of screened] (fulltext) {
+    Full-text articles assessed for eligibility\\
+    \annote{n = $\square\square$}
+  };
+
+  % Arrow 2→3
+  \draw[arrow] (screened) -- (fulltext);
+
+  % Box 4: Records excluded (side of 3)
+  \node[box, right=of fulltext] (excluded) {
+    Full-text articles excluded\\
+    \annote{n = $\square\square$}
+  };
+
+  % Arrow 3→4
+  \draw[arrow] (fulltext) -- (excluded);
+
+  % Box 5: Studies included
+  \node[box, below=of fulltext] (included) {
+    Studies included in synthesis\\
+    \annote{n = $\square\square$}
+  };
+
+  % Arrow 3→5
+  \draw[arrow] (fulltext) -- (included);
+
+  % Identification label
+  \node[left=of identify, font=\small\itshape] {Identification};
+
+  % Screening label
+  \node[left=of screened, font=\small\itshape] {Screening};
+
+  % Eligibility label
+  \node[left=of fulltext, font=\small\itshape] {Eligibility};
+
+  % Included label
+  \node[left=of included, font=\small\itshape] {Included};
+
+\end{tikzpicture}

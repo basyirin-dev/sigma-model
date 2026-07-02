@@ -11,7 +11,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 
 ### CC.1: Scoping Review Methodology (PRISMA-ScR)
 
-- [ ] CC.1.1: Follow PRISMA extension for Scoping Reviews (PRISMA-ScR) 22-item checklist
+- [x] CC.1.1: Follow PRISMA extension for Scoping Reviews (PRISMA-ScR) 22-item checklist
 - [ ] CC.1.2: PRISMA flow diagram at each screening stage
 - [ ] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix)
 - [ ] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening
