@@ -1,6 +1,6 @@
 TEX_SRC     = manuscript.tex
 PDF_OUT     = manuscript.pdf
-BIB_SRC     = bibliography.bib
+BIB_SRC     = ../../../bibliography.bib
 
 all: pdf
 
