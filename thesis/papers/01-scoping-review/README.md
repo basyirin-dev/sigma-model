@@ -1,6 +1,6 @@
 # Paper 01: Landscape of AGI Safety — A Scoping Review
 
-**Status**: 🟡 In progress (Phase 0.5: AI-Assisted Research)
+**Status**: 🟡 Phase 0 complete — ready for Phase 0.5 (AI-Assisted Research)
 **Type**: Scoping Review
 **Target Venue**: *ACM Computing Surveys* or pre-print
 **Timeline**: Months 1–6
@@ -9,7 +9,7 @@
 
 | Phase | Name | Deadline | Status |
 |:------|:-----|:---------|:-------|
-| 0 | Repo & LaTeX Setup | 2026-07-09 | 🟡 Pending |
+| 0 | Repo & LaTeX Setup | 2026-07-09 | ✅ Complete |
 | 0.5 | AI-Assisted Research | 2026-07-23 | 🟡 Pending |
 | 1 | Research Question & Protocol | 2026-07-30 | 🟡 Pending |
 | 2 | Search Strategy Design | 2026-08-06 | 🟡 Pending |
