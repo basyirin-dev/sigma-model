@@ -4,7 +4,7 @@
 .PHONY: pdf clean
 
 pdf:
-	latexmk -pdf manuscript.tex
+	TEXINPUTS=.:$$TEXINPUTS latexmk -pdf manuscript.tex
 
 clean:
 	latexmk -c manuscript.tex

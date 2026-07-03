@@ -3,13 +3,8 @@
 
 \title{Schema Coherence and the $\sigma$-Trap: A Systematic Review and Meta-Analysis of Compositional Generalisation Failure in Neural Networks}
 
-\author{Basyirin Amsyar Basri}
-\email{amsyar.basy@gmail.com}
-\affiliation{%
-  \institution{Independent Researcher}
-  \city{Selangor}
-  \country{Malaysia}
-}
+\author*[1]{\fnm{Basyirin Amsyar} \sur{Basri}}\email{amsyar.basy@gmail.com}
+\affil*[1]{\orgname{Independent Researcher}, \orgaddress{\city{Selangor}, \country{Malaysia}}}
 
 \begin{document}
 
@@ -35,6 +30,8 @@
 
 \todo{Write introduction}
 
+This systematic review follows the PRISMA 2020 reporting guidelines~\cite{page2021prisma2020}.
+
 % ============================================================
 \section{Methods}\label{sec:methods}
 % ============================================================
@@ -51,7 +48,38 @@
 \subsection{Eligibility Criteria}\label{sec:eligibility}
 % ------------------------------------------------------------
 
-\todo{State PICO inclusion/exclusion criteria}
+\subsubsection{PICO Framework}
+
+\todo{State review question in PICO format, e.g., ``In studies of neural network models (P), do training or architectural interventions (I) compared with standard approaches (C) reduce compositional generalisation failure / $\sigma$-trap (O)?''}
+
+\subsubsection{Inclusion and Exclusion Criteria}
+
+\begin{table}[htbp]
+\centering
+\caption{PICO inclusion and exclusion criteria.}
+\begin{tabular}{p{1.5cm} p{4.5cm} p{4.5cm}}
+\toprule
+\textbf{Element} & \textbf{Inclusion} & \textbf{Exclusion} \\
+\midrule
+P --- Population &
+\todo{Define eligible study populations} &
+\todo{Define excluded populations} \\
+\midrule
+I --- Intervention &
+\todo{Define eligible interventions} &
+\todo{Define excluded interventions} \\
+\midrule
+C --- Comparison &
+\todo{Define baseline/comparator conditions} &
+\todo{Define excluded comparisons} \\
+\midrule
+O --- Outcome &
+\todo{Define eligible outcome measures} &
+\todo{Define excluded outcomes} \\
+\bottomrule
+\end{tabular}
+\label{tab:pico}
+\end{table}
 
 % ------------------------------------------------------------
 \subsection{Information Sources}\label{sec:sources}
@@ -170,7 +198,6 @@
 
 \todo{Write conclusion}
 
-\bibliographystyle{ACM-Reference-Format}
 \bibliography{../../../bibliography}
 
 \appendix

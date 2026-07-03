@@ -1,5 +1,5 @@
 %% Paper 02 preamble — Artificial Intelligence Review (Springer) format
-\documentclass[review,screen]{sn-jnl}
+\documentclass[pdflatex,sn-basic]{sn-jnl}
 
 \AtBeginDocument{%
 \hypersetup{
@@ -36,7 +36,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit}
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit, calc}
 
 % Misc
 \usepackage{enumitem}
@@ -54,6 +54,7 @@
 \definecolor{okabe-ito-black}{RGB}{0,0,0}
 
 % Math operators
+\newcommand{\square}{\mbox{\framebox(5,5){}}}
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Corr}{Corr}

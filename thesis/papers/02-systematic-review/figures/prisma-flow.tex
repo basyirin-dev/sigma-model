@@ -2,53 +2,48 @@
 %% Adapted from PRISMA 2020 template
 
 \begin{tikzpicture}[
-    node distance=1.5cm,
+    node distance=1.5cm and 2cm,
     box/.style={rectangle, draw, minimum width=8cm, minimum height=0.8cm, align=center, font=\small},
     arrow/.style={->, >=stealth, thick}
 ]
 
 % Row 1: Identification
 \node[box] (identification) {Records identified from databases ($n = $ \todo{total})};
-\node[box, right=of identification, xshift=6cm] (grey) {Records from grey literature ($n = $ \todo{total})};
+\node[box, right=of identification] (grey) {Records from grey literature ($n = $ \todo{total})};
+
+% Row 2: Merged — centred below both
+\node[box, below=of identification, anchor=center] (merged) at ([yshift=-1cm]$(identification.south)!0.5!(grey.south)$) {Records after merging ($n = $ \todo{merged})};
 
 % Arrow down to merged
-\draw[arrow] (identification.south) -- ++(0,-0.5) -| (merged.north);
-\draw[arrow] (grey.south) -- ++(0,-0.5) -| (merged.north);
-
-% Row 2: Merged
-\node[box, below=of identification, yshift=-1cm] (merged) {Records after merging ($n = $ \todo{merged})};
-
-% Arrow to deduplication
-\draw[arrow] (merged.south) -- (duplicates.north);
+\draw[arrow] (identification.south) -- ++(0,-0.3) -| (merged.north);
+\draw[arrow] (grey.south) -- ++(0,-0.3) -| (merged.north);
 
 % Row 3: Duplicates removed
 \node[box, below=of merged] (duplicates) {Duplicates removed ($n = $ \todo{duplicates})};
-
-% Arrow to screening
-\draw[arrow] (duplicates.south) -- (screening.north);
+\draw[arrow] (merged.south) -- (duplicates.north);
 
 % Row 4: Screened
 \node[box, below=of duplicates] (screening) {Records screened ($n = $ \todo{screened})};
+\draw[arrow] (duplicates.south) -- (screening.north);
 
 % Arrow right to excluded
-\draw[arrow] (screening.east) -- ++(2,0) node[right, box, minimum width=4cm] (excluded) {Records excluded ($n = $ \todo{excluded})};
-
-% Arrow down to full-text
-\draw[arrow] (screening.south) -- (fulltext.north);
+\node[box, right=of screening] (excluded) {Records excluded ($n = $ \todo{excluded})};
+\draw[arrow] (screening.east) -- (excluded.west);
 
 % Row 5: Full-text assessed
 \node[box, below=of screening] (fulltext) {Full-text assessed ($n = $ \todo{fulltext})};
+\draw[arrow] (screening.south) -- (fulltext.north);
 
 % Arrow right to excluded full-text
-\draw[arrow] (fulltext.east) -- ++(2,0) node[right, box, minimum width=4cm] (excluded-ft) {Excluded ($n = $ \todo{ft-excluded})};
-
-% Arrow down to included
-\draw[arrow] (fulltext.south) -- (included.north);
+\node[box, right=of fulltext] (excluded-ft) {Excluded ($n = $ \todo{ft-excluded})};
+\draw[arrow] (fulltext.east) -- (excluded-ft.west);
 
 % Row 6: Included
 \node[box, below=of fulltext] (included) {Studies included in synthesis ($n = $ \todo{included})};
+\draw[arrow] (fulltext.south) -- (included.north);
 
 % Optional: included in meta-analysis
-\draw[arrow] (included.south) -- ++(0,-0.5) node[below, box] (meta) {Included in meta-analysis ($n = $ \todo{meta})};
+\node[box, below=of included] (meta) {Included in meta-analysis ($n = $ \todo{meta})};
+\draw[arrow] (included.south) -- (meta.north);
 
 \end{tikzpicture}
