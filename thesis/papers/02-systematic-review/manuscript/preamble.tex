@@ -1,0 +1,70 @@
+%% Paper 02 preamble — Artificial Intelligence Review (Springer) format
+\documentclass[review,screen]{sn-jnl}
+
+\AtBeginDocument{%
+\hypersetup{
+  pdftitle={Schema Coherence and the $\sigma$-Trap: A Systematic Review and Meta-Analysis of Compositional Generalisation Failure in Neural Networks},
+  pdfsubject={Artificial Intelligence, Systematic Review, Compositional Generalisation},
+  pdfkeywords={schema coherence, compositional generalisation, out-of-distribution generalisation, systematic review, meta-analysis}
+}%
+}
+
+% --- Common packages ---
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{longtable,array}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{round-mode=places, round-precision=1, table-number-alignment=center, group-separator={}}
+\usepackage{newunicodechar}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{Ξ}{\ensuremath{\Xi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+
+% TikZ and PGFPlots for figures
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit}
+
+% Misc
+\usepackage{enumitem}
+\usepackage{xcolor}
+\providecommand{\Description}[1]{}
+
+% Okabe-Ito colorblind-safe palette
+\definecolor{okabe-ito-orange}{RGB}{230,159,0}
+\definecolor{okabe-ito-skyblue}{RGB}{86,180,233}
+\definecolor{okabe-ito-bluishgreen}{RGB}{0,158,115}
+\definecolor{okabe-ito-yellow}{RGB}{240,228,66}
+\definecolor{okabe-ito-blue}{RGB}{0,114,178}
+\definecolor{okabe-ito-vermillion}{RGB}{213,94,0}
+\definecolor{okabe-ito-purple}{RGB}{204,121,167}
+\definecolor{okabe-ito-black}{RGB}{0,0,0}
+
+% Math operators
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\CosSim}{CosSim}
+
+% Drafting macros
+\newcommand{\todo}[1]{\textcolor{red!80!black}{[TODO: #1]}}
+\newcommand{\annote}[1]{\textcolor{okabe-ito-blue}{[#1]}}
+
+% Meta-analysis notation
+\newcommand{\ES}{\text{ES}}
+\newcommand{\SE}{\text{SE}}
+\newcommand{\CI}{\text{CI}}
