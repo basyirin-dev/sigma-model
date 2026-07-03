@@ -20,7 +20,7 @@
 | Phase | Name | Deadline | Status |
 |:------|:-----|:---------|:-------|
 | 00_cross_cutting | Cross-Cutting Concerns | 2027-03-12 | 🟡 Ongoing |
-| 00_repo | Repo & LaTeX Setup | 2026-07-10 | 🟡 Pending |
+| 00_repo | Repo & LaTeX Setup | 2026-07-10 | ✅ Complete |
 | 00_5 | AI-Assisted Research | 2026-07-24 | 🟡 Pending |
 | 01 | Research Question & Protocol | 2026-07-31 | 🟡 Pending |
 | 02 | Search Strategy Design | 2026-08-07 | 🟡 Pending |
