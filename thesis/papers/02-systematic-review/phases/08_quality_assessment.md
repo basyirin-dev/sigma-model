@@ -11,55 +11,68 @@
 
 - [ ] 8.1.1: Review Phase 0.5 `research/quality-criteria.md` for proposed risk of bias (RoB) domains
 - [ ] 8.1.2: Adapt QUADAS-2 (for diagnostic accuracy studies) and PROBAST (for prediction models) to the ML experiment context
-- [ ] 8.1.3: Define final RoB domains and signalling questions:
+- [ ] 8.1.3: Define final RoB domains and signalling questions (see `research/quality-criteria.md` for full σ-ROB tool with embedded extraction forms):
 
   **Domain 1 — Reproducibility (6 signalling questions):**
-  - 1.1: Are random seeds reported for all experimental runs?
-  - 1.2: Is the complete training configuration reported (optimizer, LR, batch size, epochs)?
-  - 1.3: Is the model architecture specified in sufficient detail to reproduce?
-  - 1.4: Is the data split procedure described exactly (ID vs OOD)?
-  - 1.5: Is the evaluation metric clearly defined?
-  - 1.6: Is the code publicly available?
-  - RoB judgment: Low (≥5 Yes) / Unclear (3–4 Yes) / High (≤2 Yes)
+  - 1.1: Are random seeds reported for all experiments?
+  - 1.2: Is the code publicly available (or hyperparameters sufficient for reimplementation)?
+  - 1.3: Are all training hyperparameters reported (LR, batch size, epochs, optimizer, weight decay, ρ for SAM, etc.)?
+  - 1.4: Is the exact dataset version/preprocessing pipeline reported?
+  - 1.5: Is the hardware/compute environment reported or implied?
+  - 1.6: Are model weights/checkpoints available?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §1.3)
 
-  **Domain 2 — Benchmark Validity (5 signalling questions):**
-  - 2.1: Is the OOD split genuinely compositional (not random)?
-  - 2.2: Does the OOD split control for ID performance (i.e., not trivially harder)?
-  - 2.3: Is the metric appropriate for the task?
-  - 2.4: Are multiple OOD splits evaluated (not cherry-picked)?
-  - 2.5: Are floor/ceiling effects discussed?
-  - RoB judgment: Low (≥4 Yes) / Unclear (3 Yes) / High (≤2 Yes)
+  **Domain 2 — Benchmark Validity (6 signalling questions):**
+  - 2.1: Is the OOD split explicitly defined and justified (not just "OOD")?
+  - 2.2: Does the OOD split avoid information leakage from training to test?
+  - 2.3: Is the primary metric appropriate for the task (accuracy, not loss)?
+  - 2.4: Are multiple OOD splits tested (not cherry-picked)?
+  - 2.5: Is the benchmark difficulty appropriate (non-trivial, non-impossible)?
+  - 2.6: Is the ID-OOD comparison computed on the same metric and same test-set size?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §2.3)
 
-  **Domain 3 — Confounding & Fair Comparison (5 signalling questions):**
-  - 3.1: Are comparisons between methods matched on architecture?
-  - 3.2: Are comparisons matched on compute (parameters, FLOPs, training steps)?
-  - 3.3: Are comparisons matched on data?
-  - 3.4: Is the baseline reasonable and state-of-the-art (not straw-man)?
-  - 3.5: Are multiple random seeds used (n ≥ 3)?
-  - RoB judgment: Low (≥4 Yes) / Unclear (3 Yes) / High (≤2 Yes)
+  **Domain 3 — Confounding (6 signalling questions):**
+  - 3.1: Is the architecture identical between intervention and baseline?
+  - 3.2: Is the compute budget (FLOPs, training time, parameter count) matched (±10%)?
+  - 3.3: Is the training data identical?
+  - 3.4: Is the training duration (epochs/steps) matched?
+  - 3.5: Are other hyperparameters tuned equally for both conditions?
+  - 3.6: If multiple interventions compared, is there a common baseline?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §3.3)
 
-  **Domain 4 — Reporting Completeness (5 signalling questions):**
-  - 4.1: Are both ID and OOD results reported?
-  - 4.2: Is variability reported (SD, CI, error bars)?
-  - 4.3: Are negative or null results reported (not just positive findings)?
-  - 4.4: Are failure cases or error analyses discussed?
-  - 4.5: Are limitations explicitly stated?
-  - RoB judgment: Low (≥4 Yes) / Unclear (3 Yes) / High (≤2 Yes)
+  **Domain 4 — Reporting Completeness (6 signalling questions):**
+  - 4.1: Are all tested OOD splits reported (not just the best-performing one)?
+  - 4.2: Are negative or null results reported?
+  - 4.3: Are all tested architectures/model scales reported?
+  - 4.4: Are hyperparameter search failures reported?
+  - 4.5: Is the full confusion matrix or per-class accuracy available?
+  - 4.6: Are results from all random seeds reported (not just best seed)?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §4.3)
 
-  **Domain 5 — Statistical Rigor (5 signalling questions):**
-  - 5.1: Are multiple independent runs performed (n ≥ 3)?
-  - 5.2: Is statistical significance tested appropriately?
-  - 5.3: Are effect sizes reported or calculable?
-  - 5.4: Are confidence intervals reported or calculable?
-  - 5.5: Are corrections for multiple comparisons applied (if applicable)?
-  - RoB judgment: Low (≥4 Yes) / Unclear (3 Yes) / High (≤2 Yes)
+  **Domain 5 — Statistical Rigor (7 signalling questions):**
+  - 5.1: Are confidence intervals or standard errors reported for all key results?
+  - 5.2: Are error bars shown on plots?
+  - 5.3: Are multiple random seeds used (≥3)?
+  - 5.4: Is the number of seeds justified by power analysis or effect size estimate?
+  - 5.5: Are statistical significance tests performed?
+  - 5.6: Are multiple testing corrections applied when appropriate?
+  - 5.7: Is the effect size (not just p-value) reported?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §5.3)
+
+  **Domain 6 — External Validity (6 signalling questions):**
+  - 6.1: Are results replicated on multiple benchmarks?
+  - 6.2: Are results replicated across multiple architectures?
+  - 6.3: Are results replicated across multiple model scales?
+  - 6.4: Are results replicated across multiple training data sizes?
+  - 6.5: Is the OOD split type representative of real-world distribution shifts?
+  - 6.6: Does the study discuss limitations to generalizability?
+  - RoB judgment: Low / Unclear / High (see rubric in `quality-criteria.md` §6.3)
 
   **Overall RoB:**
-  - Low: all five domains Low
+  - Low: all six domains Low
   - Unclear: at least one domain Unclear, none High
   - High: at least one domain High
-
-- [ ] 8.1.4: Create structured RoB extraction form in `research/risk-of-bias-template.md`
+  - See algorithm in `quality-criteria.md` §7.1
 - [ ] 8.1.5: Satisfy CC.1.8 — risk of bias tool finalized before assessment begins
 
 ### Task 8.2: Pilot RoB Assessment
@@ -97,7 +110,7 @@
 ---
 
 **Phase 8 Exit Criteria**:
-- [ ] RoB tool finalized with 5 domains and signalling questions
+- [ ] RoB tool finalized with 6 domains and signalling questions (see `research/quality-criteria.md`)
 - [ ] RoB pilot completed with inter-rater agreement calculated
 - [ ] Full RoB assessment completed by two independent reviewers
 - [ ] RoB data stored in `research/risk-of-bias.csv`
