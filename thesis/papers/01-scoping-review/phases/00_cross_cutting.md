@@ -42,7 +42,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 
 - [ ] CC.5.1: Commit format per thesis convention
 - [ ] CC.5.2: Large PDF files not committed (use `.gitignore`)
-- [ ] CC.5.3: Phase completion commits with exit criteria summary
+- [x] CC.5.3: Phase completion commits with exit criteria summary
 
 ---
 

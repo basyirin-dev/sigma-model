@@ -80,4 +80,4 @@
 - [x] CC.1.3 — search strategy reported (see `01_protocol_draft.md` §6 and `research/search-terms.md`)
 - [x] CC.1.5 — data charting form developed and piloted (see `research/extraction-template.md`; 3 test papers, 3 adjustments applied)
 - [x] CC.1.7 — OSF registration complete (https://osf.io/ntuh2/)
-- [ ] CC.5.3 satisfied — phase completion committed
+- [x] CC.5.3 satisfied — phase completion committed
