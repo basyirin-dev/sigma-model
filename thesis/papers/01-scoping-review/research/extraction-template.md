@@ -114,7 +114,7 @@ Complete only if `paper_type` includes "Empirical"
 | `discusses_schema_coherence` | Boolean [†] | Yes | Yes/No | Whether paper discusses schema coherence or related concepts | No |
 | `discusses_internal_structure` | Boolean [†] | Yes | Yes/No | Whether paper discusses internal representation structure as relevant to safety | Yes |
 | `structure_concepts` | Categorical (multiple) [†] | Conditional | Schema coherence; Representational structure; Latent ontology; Feature geometry; Internal representations; Natural abstractions; Compositional features; Circuits; Other | Specific structure concepts discussed | Internal representations; Circuits |
-| `structure_safety_link` | Categorical (single) [†] | Conditional | Explicit; Implicit; None | Whether link between structure and safety is made | Implicit |
+| `structure_safety_link` | Categorical (single) [†] | Conditional | Explicit; Explicit (CG-safety); Explicit (structure-safety); Implicit; None | Whether link between structure and safety is made (see §3 guidance) | Implicit |
 | `structure_safety_description` | Text (long) | Conditional | N/A | How structure connects to safety | "Argues that deceptive alignment may be detectable through internal representations, as mesa-optimizers must track training/deployment distinction" |
 | `measurement_approach` | Text | Conditional | N/A | How internal structure is measured | "Activation patching to identify circuits responsible for goal tracking" |
 | `structural_intervention` | Boolean | Conditional | Yes/No | Whether paper proposes or tests interventions on internal structure | No |
@@ -146,7 +146,7 @@ Complete only if `paper_type` includes "Empirical"
 
 | Field Name | Data Type | Required | Controlled Vocabulary | Extraction Instructions | Example |
 |---|---|---|---|---|---|
-| `relevance_to_review` | Categorical (single) [†] | Yes | High; Medium; Low | Relevance to schema coherence focus | Medium |
+| `relevance_to_review` | Categorical (single) [†] | Yes | High; Medium; Low | Relevance to schema coherence focus. Rule: "High" = paper explicitly discusses both compositional generalization/schema AND AGI safety in the same paper; "Medium" = addresses one side with clear implications for the other; "Low" = peripheral to both | Medium |
 | `inclusion_recommendation` | Categorical (single) [†] | Yes | Include; Exclude; Discuss | Recommendation for final review | Include |
 | `exclusion_reason` | Text | Conditional | N/A | Reason for exclusion | N/A |
 | `quality_tier` | Categorical (single) [†] | No | Tier 1 (foundational); Tier 2 (substantive); Tier 3 (peripheral); Tier 4 (marginal) | Quality tier based on methodological rigor | Tier 1 (foundational) |
@@ -187,14 +187,21 @@ Complete only for fields marked with [†] in dual-extraction workflow
 **Level 2: Technical Alignment**
 - Inner Alignment; Outer Alignment; Mesa-optimization; Deceptive Alignment; Corrigibility; Goal Preservation; Interpretability; Robustness
 
-**Level 3: Failure Modes**
-- Specification Gaming; Reward Hacking
+**Level 3: Diagnostic Approaches**
+- Specification Gaming; Reward Hacking; Developmental Interpretability
 
 **Level 4: Value Specification**
 - Coherent Extrapolated Volition; Indirect Normativity
 
 **Level 5: Bridging Concepts**
 - Schema Coherence; Compositional Generalization; Internal Representation Structure
+
+### `structure_safety_link` Guidance
+- **Explicit**: Paper directly states a causal/typological link between internal representation structure and AGI safety failure modes
+- **Explicit (CG-safety)**: Paper explicitly frames compositional generalization failure as an AGI safety risk
+- **Explicit (structure-safety)**: Paper explicitly links internal representation structure (latent ontology, circuits, feature geometry) to safety
+- **Implicit**: Paper discusses representation structure without claiming safety relevance, but a safety implication can be inferred
+- **None**: No detectable link between structure and safety
 
 ### Evidence Types
 - **Mathematical proof**: Formal mathematical demonstration

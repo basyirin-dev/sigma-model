@@ -14,10 +14,10 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 - [x] CC.1.1: Follow PRISMA extension for Scoping Reviews (PRISMA-ScR) 22-item checklist
 - [ ] CC.1.2: PRISMA flow diagram at each screening stage
 - [ ] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix)
-- [ ] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening
-- [ ] CC.1.5: Data charting form developed, piloted, and iterated
+- [x] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening (see `01_protocol_draft.md` §5.1–5.2)
+- [x] CC.1.5: Data charting form developed, piloted, and iterated (see `01_pilot_results.md` §5; 3 template adjustments applied)
 - [ ] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample)
-- [ ] CC.1.7: Protocol registered on OSF or similar prior to search
+- [x] CC.1.7: Protocol registered on OSF or similar prior to search — https://osf.io/ntuh2/
 
 ### CC.2: Writing & Formatting
 
