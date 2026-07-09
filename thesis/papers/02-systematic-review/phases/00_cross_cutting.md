@@ -15,9 +15,9 @@ This document refines the thesis-level CC standards for Paper 02's systematic re
 - [ ] CC.1.2: PRISMA 2020 flow diagram at each screening stage (including identification, screening, eligibility, included)
 - [ ] CC.1.3: Search strategy reported in full for at least one database (databases, dates, full strings in appendix)
 - [ ] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening, using PICO framework
-- [ ] CC.1.5: Data extraction form developed, piloted, and iterated on 5+ papers
+- [x] CC.1.5: Data extraction form developed, piloted, and iterated on 5+ papers
 - [ ] CC.1.6: Dual independent screening — two screeners independently assess each record, with inter-rater agreement (Cohen's κ ≥ 0.80). AI-assisted screening permitted only if validated against second human screener on 20% sample.
-- [ ] CC.1.7: Protocol registered on PROSPERO prior to search. Also registered on OSF for supplementary materials.
+- [x] CC.1.7: Protocol registered on OSF prior to search (https://osf.io/m3asw). PROSPERO not applicable (non-medical review).
 - [ ] CC.1.8: Risk of bias assessment mandatory for all included studies (see Phase 8)
 - [ ] CC.1.9: Meta-analysis pre-specified in protocol; if not feasible, state explicit reasons
 - [ ] CC.1.10: Publication bias assessment planned (funnel plot, Egger's test) if meta-analysis with ≥10 studies
@@ -62,8 +62,8 @@ This document refines the thesis-level CC standards for Paper 02's systematic re
 | Phase | CC.1 (SR Method) | CC.2 (Writing) | CC.3 (Coherence) | CC.4 (Reprod) | CC.5 (Git) |
 |:------|:-----------------|:---------------|:-----------------|:--------------|:-----------|
 | 00_repo | — | CC.2.2, CC.2.3 | — | — | Required |
-| 00_5 | — | — | — | — | Required |
-| 01 | CC.1.1, CC.1.4, CC.1.7 | — | CC.3.1 | — | Required |
+| 00_5 | — | — | — | — | ✅ Complete |
+| 01 | CC.1.1 (partial), CC.1.4 ✅, CC.1.5 ✅ | — | CC.3.1 (partial) | — | Required |
 | 02 | CC.1.3 | CC.2.1 | — | CC.4.1 | Required |
 | 03 | — | — | — | CC.4.1 | Required |
 | 04 | — | — | — | CC.4.1 | Required |
