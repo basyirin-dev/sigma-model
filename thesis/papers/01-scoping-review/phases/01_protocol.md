@@ -48,7 +48,7 @@
   - Study selection process (§7)
   - Data charting process (§8)
   - Synthesis approach (§9)
-- [x] 1.3.2: Staged search approach selected — iterative (Scopus→arXiv→WoS→ACM/IEEE→PhilPapers→grey), see `01_protocol_draft.md` §6.4 and `research/search-terms.md` §4
+- [x] 1.3.2: Staged search approach selected — iterative (Scopus→arXiv→WoS→ACM/IEEE→PhilPapers→grey), see `01_protocol_draft.md` §6.5 and `research/search-terms.md` §4
 - [x] 1.3.3: Protocol length: ~3,800 words (~8 pages) — within 5–10 page target
 - [x] 1.3.4: Satisfy CC.1.7 — protocol PDF generated at `phases/01_protocol_draft.pdf`; see `01_osf_registration.md` for OSF registration steps
 

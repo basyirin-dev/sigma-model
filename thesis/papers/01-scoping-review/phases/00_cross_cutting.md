@@ -13,7 +13,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 
 - [x] CC.1.1: Follow PRISMA extension for Scoping Reviews (PRISMA-ScR) 22-item checklist
 - [ ] CC.1.2: PRISMA flow diagram at each screening stage
-- [ ] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix)
+- [x] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix) — §6.1, §6.4, Appendix C
 - [x] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening (see `01_protocol_draft.md` §5.1–5.2)
 - [x] CC.1.5: Data charting form developed, piloted, and iterated (see `01_pilot_results.md` §5; 3 template adjustments applied)
 - [ ] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample)
@@ -34,7 +34,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 
 ### CC.4: Reproducibility
 
-- [ ] CC.4.1: Search dates, database names, and exact search strings recorded
+- [x] CC.4.1: Search dates, database names, and exact search strings recorded — §6.1, §6.4, Appendix C, §6.7 validation table
 - [ ] CC.4.2: Screening decisions exported and stored (`research/screening-decisions/`)
 - [ ] CC.4.3: Charting data exported to CSV/JSON (`research/charted-data.csv`)
 
