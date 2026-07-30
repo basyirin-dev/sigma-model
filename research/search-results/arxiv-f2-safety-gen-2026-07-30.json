@@ -1,0 +1,164 @@
+{
+  "query": "(all:\"AI alignment\" OR all:\"mesa-optimization\" OR all:\"deceptive alignment\" OR all:\"inner alignment\" OR all:\"corrigibility\" OR all:\"reward hacking\") AND (all:\"compositional generalization\" OR all:\"compositional generalisation\" OR all:\"systematic generalization\" OR all:\"out-of-distribution generalization\")",
+  "max_results": 100,
+  "total_results": 8,
+  "returned": 8,
+  "entries": [
+    {
+      "arxiv_id": "2603.07388v2",
+      "title": "Sparsity and Out-of-Distribution Generalization",
+      "abstract": "Explaining out-of-distribution generalization has been a central problem in epistemology since Goodman's \"grue\" puzzle in 1946. Today it's a central problem in machine learning, including AI alignment.   Here we propose a principled account of OOD generalization with three main ingredients. First, the world is always presented to experience not as an amorphous mass, but via distinguished features (for example, visual and auditory channels). Second, Occam's Razor favors hypotheses that are \"sparse,\" meaning that they depend on as few features as possible. Third, sparse hypotheses will generalize from a training to a test distribution, provided the two distributions sufficiently overlap on their restrictions to the features that are either actually relevant or hypothesized to be. The two distributions could diverge arbitrarily on other features.   We prove a simple theorem that formalizes the above intuitions, generalizing the classic sample complexity bound of Blumer et al. to an OOD context. We then generalize sparse classifiers to subspace juntas, where the ground truth classifier depends solely on a low-dimensional linear subspace of the features.",
+      "published": "2026-03-08T00:16:25Z",
+      "authors": [
+        "Scott Aaronson",
+        "Lin Lin Lee",
+        "Jiawei Li"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "http://arxiv.org/abs/2603.07388v2",
+      "pdf_url": "https://arxiv.org/pdf/2603.07388v2"
+    },
+    {
+      "arxiv_id": "2410.07866v5",
+      "title": "System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI",
+      "abstract": "Despite their broad applicability, transformer-based models still fall short in System~2 reasoning, lacking the generality and adaptivity needed for human--AI alignment. We examine weaknesses on ARC-AGI tasks, revealing gaps in compositional generalization and novel-rule adaptation, and argue that closing these gaps requires overhauling the reasoning pipeline and its evaluation. We propose three research axes: (1) Symbolic representation pipeline for compositional generality, (2) Interactive feedback-driven reasoning loop for adaptivity, and (3) Test-time task augmentation balancing both qualities. Finally, we demonstrate how ARC-AGI's evaluation suite can be adapted to track progress in symbolic generality, feedback-driven adaptivity, and task-level robustness, thereby guiding future work on robust human--AI alignment.",
+      "published": "2024-10-10T12:34:25Z",
+      "authors": [
+        "Sejin Kim",
+        "Sundong Kim"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "http://arxiv.org/abs/2410.07866v5",
+      "pdf_url": "https://arxiv.org/pdf/2410.07866v5"
+    },
+    {
+      "arxiv_id": "2604.17573v2",
+      "title": "Beyond Static Snapshots: A Grounded Evaluation Framework for Language Models at the Agentic Frontier",
+      "abstract": "We argue that current evaluation frameworks for large language models (LLMs) suffer from four systematic failures that make them structurally inadequate for deployed, agentic systems: distributional, temporal, scope, and process invalidity. These failures compound in RLHF, making reward hacking a predictable consequence of evaluation design rather than an unpredictable training pathology, and RLHF's dual-model architecture imposes a hardware barrier limiting evaluation reproducibility. We propose the Grounded Continuous Evaluation (GCE) framework and present ISOPro as a reference implementation. ISOPro replaces the learned reward model with a deterministic verifier, eliminating reward hacking by construction in verifiable-reward domains, and updates LoRA adapters on CPU, reducing the hardware barrier by an order of magnitude. We validate ISOPro across three architectures (Qwen 2.5 3B, Llama 3.2 3B, Gemma 2 2B) and two domains (scheduling, MBPP), with a head-to-head matched-compute comparison against GRPO-LoRA. Across twelve cells, ISOPro produces the largest absolute capability gains (+25.6, +22.2, +16.0pp) at mean delta +9.0pp and worst-case regression -5.6pp; GRPO-LoRA at consumer-budget hyperparameters reaches a smaller peak gain (+8.5pp), deeper worst-case regression (-10pp), and mean delta -1.5pp. Held-out compositional generalization on MBPP reaches 40% for ISOPro on two of three architectures (including a 0% to 40% bootstrap on Qwen 2.5 3B), against 20% for GRPO-LoRA on one of three. We characterize a buffer-skew failure mode in which the implicit curriculum can erode pre-existing tier capability under three preconditions, with three corresponding mitigations. The work is situated alongside DeepSeek-R1's GRPO, which arrived at the same architectural conclusion at scale: for verifiable-reward domains, the verifier is the reward signal.",
+      "published": "2026-04-19T18:28:32Z",
+      "authors": [
+        "Jazmia Henry"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "http://arxiv.org/abs/2604.17573v2",
+      "pdf_url": "https://arxiv.org/pdf/2604.17573v2"
+    },
+    {
+      "arxiv_id": "2605.24076v1",
+      "title": "Causality as the Statistical Conscience of Artificial Intelligence: From Pearl's Ladder to Trustworthy Machines",
+      "abstract": "Modern Artificial Intelligence achieves remarkable predictive power by optimizing statistical risk functionals over vast corpora. Yet a gap separates this from genuine intelligence: the inability to distinguish correlation from causation. This paper argues that causal inference (identifying mechanisms invariant under intervention) is AI's indispensable statistical conscience. Without causal grounding, AI systems are correlation machines: powerful in familiar domains, brittle under distribution shift, and biased in high-stakes settings. Three contributions develop this argument. First, a Statistical Necessity Theorem for Causal Generalization: any algorithm achieving out-of-distribution generalization must encode causal structure, formalizing the distinction between prediction P(Y|X) and intelligence P(Y|do(X)). Second, a unified framework connects Pearl's do-calculus, the Potential Outcomes framework, Double Machine Learning, and Invariant Risk Minimization as a family of Causal Statistical Estimators, each identifying interventional distributions under different assumptions. Third, three AI failure modes (hallucination in large language models, reward hacking in reinforcement learning from human feedback, and degradation under distribution shift) are manifestations of causal blindness, each admitting a principled statistical remedy. Trustworthy AI is, at its core, a problem of causal statistics. The statistical community is not merely equipped to solve it -- it is the only community with the foundational tools to do so rigorously.",
+      "published": "2026-05-22T16:48:11Z",
+      "authors": [
+        "Ernest Fokou\u00e9"
+      ],
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "primary_category": "stat.ML",
+      "arxiv_url": "http://arxiv.org/abs/2605.24076v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.24076v1"
+    },
+    {
+      "arxiv_id": "2604.12617v2",
+      "title": "SOAR: Self-Correction for Optimal Alignment and Refinement in Diffusion Models",
+      "abstract": "The post-training pipeline for diffusion models currently has two stages: supervised fine-tuning (SFT) on curated data and reinforcement learning (RL) with reward models. A fundamental gap separates them. SFT optimizes the denoiser only on ground-truth states sampled from the forward noising process; once inference deviates from these ideal states, subsequent denoising relies on out-of-distribution generalization rather than learned correction, exhibiting the same exposure bias that afflicts autoregressive models, but accumulated along the denoising trajectory instead of the token sequence. RL can in principle address this mismatch, yet its terminal reward signal is sparse, suffers from credit-assignment difficulty, and risks reward hacking. We propose SOAR (Self-Correction for Optimal Alignment and Refinement), a bias-correction post-training method that fills this gap. Starting from a real sample, SOAR performs a single stop-gradient rollout with the current model, re-noises the resulting off-trajectory state, and supervises the model to steer back toward the original clean target. The method is on-policy, reward-free, and provides dense per-timestep supervision with no credit-assignment problem. On SD3.5-Medium, SOAR improves GenEval from 0.70 to 0.78 and OCR from 0.64 to 0.67 over SFT, while simultaneously raising all model-based preference scores. In controlled reward-specific experiments, SOAR surpasses Flow-GRPO in final metric value on both aesthetic and text-image alignment tasks, despite having no access to a reward model. Since SOAR's base loss subsumes the standard SFT objective, it can directly replace SFT as a stronger first post-training stage after pretraining, while remaining fully compatible with subsequent RL alignment.",
+      "published": "2026-04-14T11:45:15Z",
+      "authors": [
+        "You Qin",
+        "Linqing Wang",
+        "Hao Fei",
+        "Roger Zimmermann",
+        "Liefeng Bo",
+        "Qinglin Lu",
+        "Chunyu Wang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "http://arxiv.org/abs/2604.12617v2",
+      "pdf_url": "https://arxiv.org/pdf/2604.12617v2"
+    },
+    {
+      "arxiv_id": "2603.00918v3",
+      "title": "Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards",
+      "abstract": "Text-to-image generation powers content creation across design, media, and data augmentation. Post-training of text-to-image generative models is a promising path to improve human preference alignment, factuality, and aesthetics. We introduce SOLACE (Self-Originating LAtent Confidence Estimation), a post-training framework that replaces external reward supervision with an internal self-confidence signal: we re-noise the model's own outputs and measure how accurately it recovers the injected noise, treating low reconstruction error as high self-confidence. SOLACE converts this intrinsic signal into scalar rewards for reinforcement learning, requiring no external reward models, annotators, or preference data. By reinforcing high-confidence generations, SOLACE delivers consistent gains in compositional generation, text rendering, and text-image alignment. Integrating SOLACE with external rewards yields complementary improvements while alleviating reward hacking.",
+      "published": "2026-03-01T04:39:09Z",
+      "authors": [
+        "Seungwook Kim",
+        "Minsu Cho"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "http://arxiv.org/abs/2603.00918v3",
+      "pdf_url": "https://arxiv.org/pdf/2603.00918v3"
+    },
+    {
+      "arxiv_id": "2505.05470v5",
+      "title": "Flow-GRPO: Training Flow Matching Models via Online RL",
+      "abstract": "We propose Flow-GRPO, the first method to integrate online policy gradient reinforcement learning (RL) into flow matching models. Our approach uses two key strategies: (1) an ODE-to-SDE conversion that transforms a deterministic Ordinary Differential Equation (ODE) into an equivalent Stochastic Differential Equation (SDE) that matches the original model's marginal distribution at all timesteps, enabling statistical sampling for RL exploration; and (2) a Denoising Reduction strategy that reduces training denoising steps while retaining the original number of inference steps, significantly improving sampling efficiency without sacrificing performance. Empirically, Flow-GRPO is effective across multiple text-to-image tasks. For compositional generation, RL-tuned SD3.5-M generates nearly perfect object counts, spatial relations, and fine-grained attributes, increasing GenEval accuracy from $63\\%$ to $95\\%$. In visual text rendering, accuracy improves from $59\\%$ to $92\\%$, greatly enhancing text generation. Flow-GRPO also achieves substantial gains in human preference alignment. Notably, very little reward hacking occurred, meaning rewards did not increase at the cost of appreciable image quality or diversity degradation.",
+      "published": "2025-05-08T17:58:45Z",
+      "authors": [
+        "Jie Liu",
+        "Gongye Liu",
+        "Jiajun Liang",
+        "Yangguang Li",
+        "Jiaheng Liu",
+        "Xintao Wang",
+        "Pengfei Wan",
+        "Di Zhang",
+        "Wanli Ouyang"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CV",
+      "arxiv_url": "http://arxiv.org/abs/2505.05470v5",
+      "pdf_url": "https://arxiv.org/pdf/2505.05470v5"
+    },
+    {
+      "arxiv_id": "2605.10983v3",
+      "title": "TMPO: Trajectory Matching Policy Optimization for Diverse and Efficient Diffusion Alignment",
+      "abstract": "Reinforcement learning (RL) has shown extraordinary potential in aligning diffusion models to downstream tasks, yet most of them still suffer from significant reward hacking, which degrades generative diversity and quality by inducing visual mode collapse and amplifying unreliable rewards. We identify the root cause as the mode-seeking nature of these methods, which maximize expected reward without effectively constraining probability distribution over acceptable trajectories, causing concentration on a few high-reward paths. In contrast, we propose Trajectory Matching Policy Optimization (TMPO), which replaces scalar reward maximization with trajectory-level reward distribution matching. Specifically, TMPO introduces a Softmax Trajectory Balance (Softmax-TB) objective to match the policy probabilities of K trajectories to a reward-induced Boltzmann distribution. We prove that this objective inherits the mode-covering property of forward KL divergence, preserving coverage over all acceptable trajectories while optimizing reward. To further reduce multi-trajectory training time on large-scale flow-matching models, TMPO incorporates Dynamic Stochastic Tree Sampling, where trajectories share denoising prefixes and branch at dynamically scheduled steps, reducing redundant computation while improving training effectiveness. Extensive results across diverse alignment tasks such as human preference, compositional generation and text rendering show that TMPO improves generative diversity over state-of-the-art methods by 9.1%, and achieves competitive performance in all downstream and efficiency metrics, attaining the optimal trade-off between reward and diversity.",
+      "published": "2026-05-09T04:41:02Z",
+      "authors": [
+        "Jiaming Li",
+        "Chenyu Zhu",
+        "Nanxi Yi",
+        "Youjun Bao",
+        "Li Sun",
+        "Quanying Lv",
+        "Xiang Fang",
+        "Daizong Liu",
+        "Jianjun Li",
+        "Kun He",
+        "Bowen Zhou",
+        "Zhiyuan Ma"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "primary_category": "cs.LG",
+      "arxiv_url": "http://arxiv.org/abs/2605.10983v3",
+      "pdf_url": "https://arxiv.org/pdf/2605.10983v3"
+    }
+  ]
+}

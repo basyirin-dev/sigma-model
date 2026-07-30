@@ -1,0 +1,361 @@
+﻿TY  - JOUR
+AU  - Mahrouk, A
+TI  - Symbolic feedback for transparent fault anticipation in neuroergonomic brain-machine interfaces
+T2  - FRONTIERS IN ROBOTICS AND AI
+LA  - English
+KW  - neuroergonomics
+KW  - brain-machine interfaces
+KW  - symbolic feedback
+KW  - cognitive transparency
+KW  - fault anticipation
+KW  - human-AI alignment
+KW  - traceability
+KW  - closed-loop interpretability
+AB  - Background Brain-Machine Interfaces (BMIs) increasingly mediate human interaction with assistive systems, yet remain sensitive to internal cognitive divergence. Subtle shifts in user intention-due to fatigue, overload, or schema conflict-may affect system reliability. While decoding accuracy has improved, most systems still lack mechanisms to communicate internal uncertainty or reasoning dynamics in real time.Objective We present NECAP-Interaction, a neuro-symbolic architecture that explores the potential of symbolic feedback to support real-time human-AI alignment. The framework aims to improve neuroergonomic transparency by integrating symbolic trace generation into the BMI control pipeline.Methods All evaluations were conducted using high-fidelity synthetic agents across three simulation tasks (motor control, visual attention, cognitive inhibition). NECAP-Interaction generates symbolic descriptors of epistemic shifts, supporting co-adaptive human-system communication. We report trace clarity, response latency, and symbolic coverage using structured replay analysis and interpretability metrics.Results NECAP-Interaction anticipated behavioral divergence up to 2.3 +/- 0.4 s before error onset and maintained over 90% symbolic trace interpretability across uncertainty tiers. In simulated overlays, symbolic feedback improved user comprehension of system states and reduced latency to trust collapse compared to baseline architectures (CNN, RNN).Conclusion Cognitive interpretability is not merely a technical concern-it is a design priority. By embedding symbolic introspection into BMI workflows, NECAP-Interaction supports user transparency and co-regulated interaction in cognitively demanding contexts. These findings contribute to the development of human-centered neurotechnologies where explainability is experienced in real time.
+CR  - Chan S., 2024, Front. Neurosci
+CR  - Clark A, 2013, BEHAV BRAIN SCI, V36, P181, DOI 10.1017/S0140525X12000477
+CR  - Doshi-Velez F, 2017, Arxiv, DOI [arXiv:1702.08608, DOI 10.48550/ARXIV.1702.08608]
+CR  - Farah M. J., 2021, Annu. Rev. Psychol, V72, P447, DOI [10.1146/annurev-psych-081920-021223, DOI 10.1146/ANNUREV-PSYCH-081920-021223]
+CR  - Friston KJ, 2020, ENTROPY-SWITZ, V22, DOI 10.3390/e22050516
+CR  - Garcez AD, 2020, Arxiv, DOI [arXiv:2012.05876, DOI 10.48550/ARXIV.2012.05876]
+CR  - Ghosh A., 2023, Cognitive Syst. Res, V78, P101, DOI [10.1016/j.cogsys.2023.04.007, DOI 10.1016/J.COGSYS.2023.04.007]
+CR  - Kriegeskorte N, 2019, CURR OPIN NEUROBIOL, V55, P167, DOI 10.1016/j.conb.2019.04.002
+CR  - Lahtinen J, 2023, J NEURAL ENG, V20, DOI 10.1088/1741-2552/acbdc1
+CR  - Lee J., 2024, Neurocomputing, V565, P125, DOI [10.1016/j.neucom.2023.12.045, DOI 10.1016/J.NEUCOM.2023.12.045]
+CR  - Muller K., 2023, Neuroergonomics J, V5, P45, DOI [10.1016/j.neuroerg.2023.01.004, DOI 10.1016/J.NEUROERG.2023.01.004]
+CR  - Nguyen T., 2022, NeuroImage, V253, P119078, DOI [10.1016/j.neuroimage.2022.119078, DOI 10.1016/J.NEUROIMAGE.2022.119078]
+CR  - Shenoy KV, 2014, NEURON, V84, P665, DOI 10.1016/j.neuron.2014.08.038
+CR  - Wolpaw JR, 2002, CLIN NEUROPHYSIOL, V113, P767, DOI 10.1016/S1388-2457(02)00057-3
+CR  - Yuste R, 2017, NATURE, V551, P159, DOI 10.1038/551159a
+CR  - Zhang Y., 2022, Front. Neuroinformatics, V16, P875321, DOI [10.3389/fninf.2022.875321, DOI 10.3389/FNINF.2022.875321]
+PU  - FRONTIERS MEDIA SA
+PI  - LAUSANNE
+PA  - AVENUE DU TRIBUNAL FEDERAL 34, LAUSANNE, CH-1015, SWITZERLAND
+SN  - 2296-9144
+J9  - FRONT ROBOT AI
+JI  - Front. Robot. AI
+DA  - NOV 18
+PY  - 2025
+VL  - 12
+C7  - 1656642
+DO  - 10.3389/frobt.2025.1656642
+WE  - Emerging Sources Citation Index (ESCI)AN  - WOS:001627989300001
+N1  - Times Cited in Web of Science Core Collection:  0
+Total Times Cited:  0
+Cited Reference Count:  16
+ER  -
+
+TY  - CPAPER
+AU  - Goyal, N
+AU  - Chang, M
+AU  - Terry, M
+A1  - ASSOC COMPUTING MACHINERY
+TI  - Designing for Human-Agent Alignment: Understanding what humans want from their agents
+T2  - EXTENDED ABSTRACTS OF THE 2024 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, CHI 2024
+LA  - English
+CP  - CHI Conference on Human Factors in Computing Sytems (CHI)
+KW  - Human-AI Alignment
+KW  - Human-Agent Alignment
+KW  - Agents
+KW  - Generative AI
+KW  - Large Language Models
+AB  - Our ability to build autonomous agents that leverage Generative AI continues to increase by the day. As builders and users of such agents it is unclear what parameters we need to align on before the agents start performing tasks on our behalf. To discover these parameters, we ran a qualitative empirical research study about designing agents that can negotiate during a fictional yet relatable task of selling a camera online. We found that for an agent to perform the task successfully, humans/users and agents need to align over 6 dimensions: 1) Knowledge Schema Alignment 2) Autonomy and Agency Alignment 3) Operational Alignment and Training 4) Reputational Heuristics Alignment 5) Ethics Alignment and 6) Human Engagement Alignment. These empirical findings expand previous work related to process and specification alignment and the need for values and safety in Human-AI interactions. Subsequently we discuss three design directions for designers who are imagining a world filled with Human-Agent collaborations.
+AD  - Google, Google Res, New York, NY 10011 USAAD  - Google, Seattle, WA USAAD  - Google, Cambridge, MA USAC3  - Alphabet Inc.C3  - Google IncorporatedC3  - Alphabet Inc.C3  - Google IncorporatedC3  - Alphabet Inc.C3  - Google IncorporatedCR  - Amershi S, 2019, CHI 2019: PROCEEDINGS OF THE 2019 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, DOI 10.1145/3290605.3300233
+CR  - Bai Y., 2022, arXiv
+CR  - Berman Glen, 2024, ARXIV
+CR  - Brown TB, 2020, ADV NEUR IN, V33
+CR  - Cao K., 2018, ARXIV
+CR  - Christian Brian., 2020, The alignment problem: Machine learning and human values
+CR  - Christiano Paul, AI Alignment Forum
+CR  - Fu Yao, 2023, arXiv
+CR  - Gabriel I, 2020, MIND MACH, V30, P411, DOI 10.1007/s11023-020-09539-2
+CR  - github, AUTOGPT
+CR  - Goyal N, 2016, ACM CONFERENCE ON COMPUTER-SUPPORTED COOPERATIVE WORK AND SOCIAL COMPUTING (CSCW 2016), P288, DOI 10.1145/2818048.2820071
+CR  - Goyal Nitesh., 2013, P SIGCHI C HUMAN FAC, P2721, DOI DOI 10.1145/2470654.2481376
+CR  - Goyal Nitesh, 2017, P ACM INTERACT MOB W, V1, P3
+CR  - Horvitz Eric., 1999, Proceedings of the SIGCHI conference on Human factors in computing systems, P159, DOI [DOI 10.1145/302979.303030, 10.1145/302979.303030]
+CR  - Irving Geoffrey, 2018, arXiv
+CR  - Lewis Mike, 2017, ARXIV
+CR  - Mark G, 2008, CHI 2008: 26TH ANNUAL CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS VOLS 1 AND 2, CONFERENCE PROCEEDINGS, P107
+CR  - Noukhovitch Michael, 2021, ARXIV
+CR  - Peng B., 2023, arXiv
+CR  - Petridis Savvas, 2023, ARXIV
+CR  - Russell S., 2009, Artificial_Intelligence:_A_Modern_Approach, V3rd
+CR  - Sharma Ashish, 2023, arXiv
+CR  - Shirazi AS, 2014, 32ND ANNUAL ACM CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI 2014), P3055, DOI 10.1145/2556288.2557189
+CR  - Terry Michael, 2023, arXiv
+CR  - Timmermans S, 2012, SOCIOL THEOR, V30, P167, DOI 10.1177/0735275112457914
+CR  - Varanasi RamaAdithya., 2023, Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, P1
+CR  - Wang Y, 2024, PUBLIC ADMIN, V102, P479, DOI 10.1111/padm.12932
+CR  - Wei J, 2022, NAT MED, V28, P1072, DOI 10.1038/s41591-022-01721-6
+CR  - Yildirim Nur., 2023, Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, P1
+CR  - Zamfirescu-Pereira J. H., 2023, Herding AI Cats: Lessons from Designing a Chatbot by Prompting GPT-3
+CR  - Zamfrescu-Pereira JD, 2023, PROCEEDINGS OF THE 2023 CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS (CHI 2023), DOI 10.1145/3544548.3581388
+PU  - ASSOC COMPUTING MACHINERY
+PI  - NEW YORK
+PA  - 1601 Broadway, 10th Floor, NEW YORK, NY, UNITED STATES
+SN  - 979-8-4007-0331-7
+PY  - 2024
+DO  - 10.1145/3613905.3650948
+WE  - Conference Proceedings Citation Index - Science (CPCI-S)AN  - WOS:001227587703048
+N1  - Times Cited in Web of Science Core Collection:  14
+Total Times Cited:  14
+Cited Reference Count:  31
+ER  -
+
+TY  - CPAPER
+AU  - Nousias, A
+AU  - Dagioglou, M
+AU  - Petasis, G
+ED  - Osman, N
+ED  - Steels, L
+TI  - Values-Aligned, Responsible Sharing (VaRS): A Methodology and a Blueprint
+T2  - VALUE ENGINEERING IN ARTIFICIAL INTELLIGENCE, VALE 2024
+LA  - English
+CP  - 2nd International Workshop on Value Engineering in Artificial Intelligence-VALE
+KW  - Value-alignment
+KW  - Value-driven responsible sharing
+KW  - Open Responsible AI licensing
+KW  - Soft law
+AB  - Identifying values as the drivers of human behavior constitutes the first step towards responsible and trusted sharing. A valuealigned and responsible sharing schema for AI assets aims to generate, over and above hard law, a 'for benefit' culture and can serve as a driver for responsible AI practices. In the present work, we propose a methodology that allows licensors to self-reflect about their values set with respect to the licensed AI asset, based on Schwartz's personal values vocabulary and convey licensors permissions and restrictions accordingly through licensing. The proposed value-aligned responsible sharing license blueprint integrates the licensor's values along with typical open licensing elements (BY-SA-NC-ND) that are employed in a dual form, both for copyright and responsibility (r) treats. We demonstrate the application of VaRS methodology through the datasets of the VAST project, an EU-funded H2020 research and innovation action. The VaRS blueprint integrates the VAST consortium's responsibility treats and demonstrates how licensors' value-alignment can be reflected in the license.
+AD  - Natl Ctr Sci Res Demokritos, Inst Informat & Telecommun, Attica, GreeceC3  - National Centre of Scientific Research DemokritosFU  - European Union [101004949, 101070658, 101070190, 101135782]
+FX  - This research was co-funded by the European Union in the context of the projects: VAST (grant agreement No. 101004949), TITAN (grant agreement No. 101070658), AI4TRUST (grant agreement No. 101070190) and MANOLO (grant agreement No. 101135782). Views and opinions expressed are, however, those of the authors only and do not necessarily reflect those of the European Union or CNECT. Neither the European Union nor CNECT can be held responsible for them.
+CR  - [Anonymous], 2024, Artificial Intelligence Strategy Launched, a Steppingstone to Wealth and Job Creation, DOI DOI 10.1007/978-3-031-39355-6_10
+CR  - bigcode- project, BigCode OpenRAIL-M-bigcode-project.org
+CR  - bigscience. huggingface, BigScience Ethical Charter-bigscience.huggingface.co
+CR  - Black J., 2001, CURR LEGAL PROBL, V54, P103, DOI [10.1093/clp/54.1.103, DOI 10.1093/CLP/54.1.103]
+CR  - Boonstra M, 2024, Arxiv, DOI arXiv:2404.14366
+CR  - Coleman EG, 2013, CODING FREEDOM: THE ETHICS AND AESTHETICS OF HACKING, P1
+CR  - Contractor D., From RAIL to Open RAIL: topologies of RAIL licenses-Responsible AI licenses (RAIL)-licenses.ai
+CR  - Contractor D, 2022, PROCEEDINGS OF 2022 5TH ACM CONFERENCE ON FAIRNESS, ACCOUNTABILITY, AND TRANSPARENCY, FACCT 2022, P778, DOI 10.1145/3531146.3533143
+CR  - Ellemers N, 2019, PERS SOC PSYCHOL REV, V23, P332, DOI 10.1177/1088868318811759
+CR  - europarl.europa, HEALTHCARE DIVE
+CR  - Graham J, 2013, ADV EXP SOC PSYCHOL, V47, P55, DOI 10.1016/B978-0-12-407236-7.00002-4
+CR  - huggingface, BigCode Model License Agreement-a Hugging Face Space by bigcode-huggingface.co
+CR  - Klingefjord O, 2024, Arxiv, DOI arXiv:2404.10636
+CR  - Legkas S., 2024, CEUR Workshop Proceedings
+CR  - Lessig Lawrence., 2005, FREE CULTURE NATURE
+CR  - Liscio E., 2023, [No title captured], P1774
+CR  - Narvaez D., 1995, MORAL BEHAV MORAL DE, P385, DOI DOI 10.4324/9781315807287
+CR  - Narvaez Darcia., 2014, Handbook of Moral and Character Education, VSecond, P140, DOI https://doi.org/10.4324/9780203114896
+CR  - Papadopoulos G, 2023, Int Work Semantic Ev, P542
+CR  - Reitis-Munstermann T., 2024, Values in news and political manifestos: annotation guidelines, DOI [10.2760/7398, DOI 10.2760/7398]
+CR  - Ruskov Martin, 2023, CEUR WORKSHOP P, V3536, P8
+CR  - Schabus Dietmar, The IEEE CertifAIEd framework applied to the city of vienna
+CR  - Scharfbillig M., 2021, VALUES IDENTITIES PO, DOI DOI 10.2760/349527
+CR  - Schwartz SH, 2021, Online Readings in Psychology and Culture, V2, DOI [10.9707/2307-0919.1173, 10.9707/2307-0919.1173, DOI 10.9707/2307-0919.1173]
+CR  - Schwartz SH, 2012, J PERS SOC PSYCHOL, V103, P663, DOI 10.1037/a0029393
+CR  - Widder DG, 2022, PROCEEDINGS OF 2022 5TH ACM CONFERENCE ON FAIRNESS, ACCOUNTABILITY, AND TRANSPARENCY, FACCT 2022, P2035, DOI 10.1145/3531146.3533779
+PU  - SPRINGER INTERNATIONAL PUBLISHING AG
+PI  - CHAM
+PA  - GEWERBESTRASSE 11, CHAM, CH-6330, SWITZERLAND
+SN  - 2945-9133
+SN  - 1611-3349
+SN  - 978-3-031-85462-0
+SN  - 978-3-031-85463-7
+J9  - LECT NOTES ARTIF INT
+PY  - 2025
+VL  - 15356
+SP  - 240
+EP  - 256
+DO  - 10.1007/978-3-031-85463-7_15
+WE  - Conference Proceedings Citation Index - Science (CPCI-S)AN  - WOS:001532135000015
+N1  - Times Cited in Web of Science Core Collection:  0
+Total Times Cited:  0
+Cited Reference Count:  26
+ER  -
+
+TY  - CPAPER
+AU  - Maitra, S
+A1  - ACM
+TI  - Artificial Intelligence and Indigenous Perspectives: Protecting and Empowering Intelligent Human Beings
+T2  - PROCEEDINGS OF THE 3RD AAAI/ACM CONFERENCE ON AI, ETHICS, AND SOCIETY AIES 2020
+LA  - English
+CP  - 3rd AAAI/ACM Conference on AI, Ethics, and Society (AIES)
+KW  - Indigenous perspectives
+KW  - Human rights
+KW  - Value alignment
+KW  - Ethics
+KW  - Relational shift
+AB  - As 'control' is increasingly ceded to AI systems, potentially Artificial General Intelligence (AGI) humanity may be facing an identity crisis sooner rather than later, whereby the notion of 'intelligence' no longer remains solely our own. This paper characterizes the problem in terms of an impending loss of control and proposes a relational shift in our attitude towards AI. The shortcomings of value alignment as a solution to the problem are outlined which necessitate an extension of these principles. One such approach is considering strongly relational Indigenous epistemologies. The value of Indigenous perspectives has not been canvassed widely in the literature. Their utility becomes clear when considering the existence of well-developed epistemologies adept at accounting for the non-human, a task that defies Western anthropocentrism. Accommodating AI by considering it as part of our network is a step towards building a symbiotic relationship. Given that AGI questions our fundamental notions of what it means to have human rights, it is argued that in order to co-exist, we find assistance in Indigenous traditions such as the Hawaiian and Lakota ontologies. Lakota rituals provide comfort with the conception of non-human soul-bearer while Hawaiian stories provide possible relational schema to frame our relationship with AI.
+AD  - Univ Queensland, TC Beirne Sch Law, Brisbane, Qld, AustraliaC3  - University of QueenslandFU  - TC Beirne School of Law, University of Queensland
+FX  - The author is grateful to Mr. Matthijs M. Mass for constant encouragement, support and valuable feedback and Mr. Joseph Orange for numerous insightful discussions. However, any remaining errors or oversights are solely the author's own. The author wishes to thank the TC Beirne School of Law, University of Queensland for their substantial financial assistance. No conflict of interest identified.
+CR  - Abdilla A, 2018, P67
+CR  - Anderson O, 2010, HEYTHROP J, V51, P178, DOI 10.1111/j.1468-2265.2009.00497.x
+CR  - Bell Genevieve, 2017, NOW 2017 S CAMBR MA
+CR  - Bogosian K, 2017, MIND MACH, V27, P591, DOI 10.1007/s11023-017-9448-z
+CR  - Bostrom N, 2013, GLOB POLICY, V4, P15, DOI 10.1111/1758-5899.12002
+CR  - Bostrom N, 2012, MIND MACH, V22, P71, DOI 10.1007/s11023-012-9281-3
+CR  - Bostrom Nick., 2014, Superintelligence: Paths, Dangers, Strategies
+CR  - Calo R, 2017, SSRN Electronic Journal, DOI [10.2139/ssrn.3015350, 10.2139/ssrn.3015350, DOI 10.2139/SSRN.3015350]
+CR  - Chalmers David., 1996, CONSCIOUS MIND
+CR  - Cordova V.F., 2004, AM INDIAN THOUGHT, P173
+CR  - Deloria EllaC., 1998, Speaking of Indians
+CR  - Deloria J.Vine., 2004, AM INDIAN THOUGHT, P3
+CR  - Deloria Vine., 1999, SPIRIT REASON VINE D
+CR  - DENNETT DC, 1993, PHILOS PHENOMEN RES, V53, P889, DOI 10.2307/2108259
+CR  - Descola Philippe., 2013, Beyond Nature and Culture, DOI DOI 10.7208/CHICAGO/9780226145006.001.0001
+CR  - Donahoe E, 2019, J DEMOCR, V30, P115, DOI 10.1353/jod.2019.0029
+CR  - Eckersley P, 2019, Arxiv, DOI arXiv:1901.00064
+CR  - Everitt T, 2018, PROCEEDINGS OF THE TWENTY-SEVENTH INTERNATIONAL JOINT CONFERENCE ON ARTIFICIAL INTELLIGENCE, P5441
+CR  - Harari YuvalNoah., 2015, HOMO DEUS BRIEF HIST
+CR  - Hughes J.Donald., 1996, N AM INDIAN ECOLOGY, V2nd
+CR  - Ingold T., 1997, MARK SOCIAL, P231
+CR  - Ito Joichi, 2017, Journal of Design and Science, V3, DOI [10.21428/8f7503-4, DOI 10.21428/8F7503-4]
+CR  - Kesserwan Karina, 2018, Policy Options
+CR  - Kurzweil Ray., 2006, Singularity | Singularity
+CR  - Latour B., 1993, We Have Never Been Modern
+CR  - Legg S, 2007, MIND MACH, V17, P391, DOI 10.1007/s11023-007-9079-x
+CR  - Lewis JE, 2018, Journal of Design and Science, DOI [10.21428/bfafd97b, 10.21428/bfafd97b, DOI 10.21428/BFAFD97B]
+CR  - Liu HY, 2020, ETHICS INF TECHNOL, V22, P321, DOI 10.1007/s10676-017-9443-3
+CR  - Livingston S, 2019, ETHICS INT AFF, V33, P141, DOI 10.1017/S089267941900011X
+CR  - Marshall J, 2014, ROUT RES HUM RTS LAW, P1
+CR  - Matthias A., 2004, Ethics and Information Technology, V6, P175, DOI 10.1007/s10676-004-3422-1
+CR  - Metzinger T., 2017, Edge
+CR  - Omohundro SM, 2008, FRONT ARTIF INTEL AP, V171, P483
+CR  - Parasuraman R, 2000, IEEE T SYST MAN CY A, V30, P286, DOI 10.1109/3468.844354
+CR  - Pielemeier Jason, 2019, AI and Global Governance: The Advantages of Applying the International Human Rights Framework to Artificial Intelligence
+CR  - Pond Samuel W, 1908, Collections of the Minnesota Historical Society, V12, P320
+CR  - Posthumus DC, 2018, NEW VIS NATIV AMER
+CR  - Raso F, 2018, SSRN Electronic Journal, DOI [10.2139/ssrn.3259344, 10.2139/ssrn.3259344, DOI 10.2139/SSRN.3259344]
+CR  - Reath Andrews., 2006, AGENCY AUTONOMY KANT, P121, DOI [10.1017/s1369415400001503, DOI 10.1017/S1369415400001503, 10.1093/0199288836.003.0006, DOI 10.1093/0199288836.003.0006]
+CR  - Risse M, 2019, HUM RIGHTS QUART, V41, P1
+CR  - Russell Stuart J., 2020, Human Compatible: Artificial Intelligence and the Problem of Control
+CR  - Sotala K, 2017, PHYS SCRIPTA, V92, DOI 10.1088/1402-4896/aa90e8
+CR  - Sotala K, 2015, PHYS SCRIPTA, V90, DOI 10.1088/0031-8949/90/1/018001
+CR  - Ulloa A, 2017, ENVIRON JUSTICE, V10, P175, DOI 10.1089/env.2017.0017
+CR  - Van Est R., 2017, Human rights in the robot age: Challenges arising from the use of robotics, artificial intelligence, and virtual and augmented reality-Expert report written for the Committee on Culture, Science, Education and Media of the Parliamentary Assembly of the Council of Europe (PACE)
+CR  - Verbos AK, 2014, J BUS ETHICS, V123, P1, DOI 10.1007/s10551-013-1790-3
+CR  - Verney MarilynNotah., 2004, AM INDIAN THOUGHT, P133
+CR  - Walker JamesR., 1980, Lakota Belief and Ritual
+CR  - Waser Mark, 2019, Artificial General Intelligence, P153, DOI [10.1007/978-3-642-22887-2_16, DOI 10.1007/978-3-642-22887-2_16]
+CR  - Webster Graham, 2017, China's 'New Generation Artificial Intelligence Development Plan' (2017)
+CR  - Yudkowsky Eliezer, 2011, Artificial General Intelligence. Proceedings 4th International Conference, AGI 2011, P388, DOI 10.1007/978-3-642-22887-2_48
+PU  - ASSOC COMPUTING MACHINERY
+PI  - NEW YORK
+PA  - 1601 Broadway, 10th Floor, NEW YORK, NY, UNITED STATES
+SN  - 978-1-4503-7110-0
+PY  - 2020
+SP  - 320
+EP  - 326
+DO  - 10.1145/3375627.3375845
+WE  - Conference Proceedings Citation Index - Science (CPCI-S)WE  - Conference Proceedings Citation Index - Social Science &amp; Humanities (CPCI-SSH)AN  - WOS:001108779100059
+N1  - Times Cited in Web of Science Core Collection:  15
+Total Times Cited:  20
+Cited Reference Count:  51
+ER  -
+
+TY  - JOUR
+AU  - Yasar, AB
+AU  - Gündüz, A
+TI  - The Smart Therapy Model: a Fourth Wave framework for assessment-driven, integrative multimodal biopsychosocial psychotherapy
+T2  - FRONTIERS IN PSYCHIATRY
+LA  - English
+KW  - assessment
+KW  - component analysis
+KW  - dismantling studies
+KW  - Fourth Wave
+KW  - hypothesis
+KW  - integrative psychotherapy
+KW  - personalized medicine
+KW  - psychotherapy
+KW  - COGNITIVE-BEHAVIORAL THERAPY
+KW  - PSYCHIATRIC-PATIENTS
+KW  - COMMITMENT THERAPY
+KW  - GOAL CONSENSUS
+KW  - ACCEPTANCE
+KW  - DEPRESSION
+KW  - STANDARD
+KW  - SCIENCE
+KW  - ANXIETY
+AB  - Introduction Despite decades of psychotherapy research yielding over 100 empirically supported treatment protocols, clinical practice continues to face persistent challenges, including high dropout rates averaging 15-20% in controlled settings and widespread treatment resistance. The central tension is the "research-practice gap": whereas research validates singular, manualized protocols, clinicians predominantly operate eclectically. Critically, the field lacks a standardized framework to guide how clinicians should select and sequence interventions-not merely which protocols exist. Emerging paradigms such as the Research Domain Criteria (RDoC) and modular treatment approaches point toward individualized, mechanism-driven intervention; however, a unifying clinical integration framework remains absent.Hypothesis and theoretical framework This paper proposes the "Smart Therapy" model as a theoretical framework and perspective on the foundations of a potential Fourth Wave of psychotherapy-conceptualized not as a novel philosophical school, but as an Integrated Multimodal Biopsychosocial Assessment-to-Intervention model. Grounded in the neuroscience of psychotherapy, the model posits that intervention selection should be driven by a standardized, three-domain assessment: (1) biological prerequisites; (2) deep neurostructural pattern issues ("Hardware"), referring to maladaptive memory traces encoded via trauma and adversity; and (3) "active cognitive-process habits ("Software"), referring primarily to maladaptive metacognitive regulatory styles centered on the Cognitive Attentional Syndrome (CAS)".Model The Smart Therapy model proposes a five-level, sequenced intervention dosing framework. Level 1 establishes collaborative goal-setting and value alignment ("The Compass"). Level 2 screens and addresses biological prerequisites-including neuroinflammation, hypothalamic-pituitary-adrenal (HPA) axis dysregulation, and micronutrient deficiencies-that constitute primary barriers to psychotherapeutic efficacy. Level 3 delivers the core psychological intervention, matched to the Hardware/Software assessment: "process-focused approaches, primarily Metacognitive Therapy (MCT), and where appropriate Acceptance and Commitment Therapy (ACT), for Software presentations. Pattern-reprocessing approaches (Eye Movement Desensitization and Reprocessing [EMDR], Schema Therapy, Psychodynamic Therapy) for Hardware presentations-the latter explicitly leveraging neuroplasticity mechanisms to restructure maladaptive memory networks. Levels 4 and 5 add behavioral activation and systemic interventions as augmentation strategies.Conclusion Smart Therapy offers a framework to bridge the research-practice gap by standardizing the assessment process rather than the treatment protocol. Its central, falsifiable hypothesis is whether Hardware/Software assessment-guided intervention matching-particularly the use of MCT for Software-dominant presentations-may improve remission, reduce dropout, and increase treatment efficiency-compared to treatment-as-usual and single manualized protocols. Future research should prioritize component-based dismantling studies over monolithic protocol comparisons.
+AD  - Istanbul Nisantasi Univ, Fac Med, Dept Psychiat, Istanbul, TurkiyeAD  - Istanbul Kent Univ, Dept Clin Psychol, Istanbul, TurkiyeC3  - Istanbul Nisantasi UniversityC3  - Istanbul Kent UniversityCR  - Abdollahi A, 2017, J AFFECT DISORDERS, V219, P58, DOI 10.1016/j.jad.2017.05.012
+CR  - ANFINSON TJ, 1992, GEN HOSP PSYCHIAT, V14, P248, DOI 10.1016/0163-8343(92)90095-R
+CR  - [Anonymous], 2024, BMJ, V385, pq1024, DOI 10.1136/bmj.q1024
+CR  - Arch JJ, 2008, CLIN PSYCHOL-SCI PR, V15, P263, DOI 10.1111/j.1468-2850.2008.00137.x
+CR  - Arora J, 2024, J INDIAN ASSOC CHILD, V20, P167, DOI 10.1177/09731342241238827
+CR  - Atefi GL, 2026, COGN BEHAV THERAPY, V55, P74, DOI 10.1080/16506073.2025.2477600
+CR  - Atefi GL, 2024, JMIR AGING, V7, DOI 10.2196/53489
+CR  - Bam M, 2016, J NEUROIMMUNE PHARM, V11, P168, DOI 10.1007/s11481-015-9643-8
+CR  - Bauer M, 2021, J ENDOCRINOL INVEST, V44, P2341, DOI 10.1007/s40618-021-01600-w
+CR  - BECK A T, 1976, P356
+CR  - Bernardes BM, 2024, Brazilian Journal of Implantology and Health Sciences, V6, P2241, DOI [10.36557/2674-8169.2024v6n2p2241-2256, 10.36557/2674-8169.2024v6n2p2241-2256, DOI 10.36557/2674-8169.2024V6N2P2241-2256]
+CR  - Blacker CJ, 2019, GENES-BASEL, V10, DOI 10.3390/genes10020140
+CR  - Brown LA, 2011, BEHAV MODIF, V35, P187, DOI 10.1177/0145445510393730
+CR  - Capobianco L, 2023, COGN BEHAV PRACT, V30, P45, DOI 10.1016/j.cbpra.2021.11.002
+CR  - Carr A, 2025, J FAM THER, V47, DOI 10.1111/1467-6427.12481
+CR  - Cooper AA, 2015, CLIN PSYCHOL REV, V40, P57, DOI 10.1016/j.cpr.2015.05.001
+CR  - Cozolino L., 2017, NEUROSCIENCE PSYCHOT
+CR  - Cuijpers P, 2023, PSYCHOTHER RES, V33, P886, DOI 10.1080/10503307.2023.2197630
+CR  - Cuthbert BN, 2013, BMC MED, V11, DOI 10.1186/1741-7015-11-126
+CR  - De Salve F, 2025, CLIN PSYCHOL PSYCHOT, V32, DOI 10.1002/cpp.70080
+CR  - Di Malta G, 2019, J CLIN PSYCHOL, V75, P1770, DOI 10.1002/jclp.22821
+CR  - Doidge Norman., 2007, BRAIN CHANGES ITSELF
+CR  - Drysdale AT, 2017, NAT MED, V23, P28, DOI 10.1038/nm.4246
+CR  - Ecker B., 2012, UNLOCKING EMOTIONAL
+CR  - Eifert GH, 2009, COGN BEHAV PRACT, V16, P368, DOI 10.1016/j.cbpra.2009.06.001
+CR  - Elsaesser M, 2022, BMJ OPEN, V12, DOI 10.1136/bmjopen-2021-057672
+CR  - Fischer S, 2017, BRIT J PSYCHIAT, V210, P105, DOI 10.1192/bjp.bp.115.180653
+CR  - Fulton S, 2022, TRENDS ENDOCRIN MET, V33, P18, DOI 10.1016/j.tem.2021.10.005
+CR  - Gonda X, 2024, EUR NEUROPSYCHOPHARM, V83, P1, DOI 10.1016/j.euroneuro.2024.03.002
+CR  - Hassamal S, 2023, FRONT PSYCHIATRY, V14, DOI 10.3389/fpsyt.2023.1130989
+CR  - Hayes AM, 2020, BMC MED, V18, DOI 10.1186/s12916-020-01662-2
+CR  - Hayes SC, 2016, BEHAV THER, V47, P869, DOI 10.1016/j.beth.2016.11.006
+CR  - He YL, 2022, AUST NZ J FAM THER, V43, P9, DOI 10.1002/anzf.1473
+CR  - Herbert J.D., 2009, GEN PRINCIPLES EMPIR, P102
+CR  - Hole C, 2025, CELLS-BASEL, V14, DOI 10.3390/cells14080607
+CR  - Insel T, 2010, AM J PSYCHIAT, V167, P748, DOI 10.1176/appi.ajp.2010.09091379
+CR  - Khan M, 2023, BIOMOLECULES, V13, DOI 10.3390/biom13040695
+CR  - Kleinridders A, 2015, P NATL ACAD SCI USA, V112, P3463, DOI 10.1073/pnas.1500877112
+CR  - Krafft J, 2022, COGNITIVE THER RES, V46, P86, DOI 10.1007/s10608-021-10242-4
+CR  - Larsson A, 2016, BEHAV MODIF, V40, P452, DOI 10.1177/0145445515621488
+CR  - Lewis C, 2020, EUR J PSYCHOTRAUMATO, V11, DOI 10.1080/20008198.2019.1709709
+CR  - Longmore RJ, 2007, CLIN PSYCHOL REV, V27, P173, DOI 10.1016/j.cpr.2006.08.001
+CR  - Maddox SA, 2018, MOL PSYCHIATR, V23, P658, DOI 10.1038/mp.2016.250
+CR  - Miklowitz DJ, 2021, JAMA PSYCHIAT, V78, P141, DOI 10.1001/jamapsychiatry.2020.2993
+CR  - Morrison FG, 2019, PROG NEURO-PSYCHOPH, V90, P223, DOI 10.1016/j.pnpbp.2018.11.011
+CR  - Nader K, 2009, NAT REV NEUROSCI, V10, P224, DOI 10.1038/nrn2590
+CR  - Ng MY, 2016, J CHILD PSYCHOL PSYC, V57, P216, DOI 10.1111/jcpp.12470
+CR  - Nordahl H., 2023, TIDSSKRIFT NORSK PSY, DOI [10.52734/chiq3716, DOI 10.52734/CHIQ3716]
+CR  - Özdel K, 2025, FRONT PSYCHOL, V16, DOI 10.3389/fpsyg.2025.1555047
+CR  - Penix-Smith EA, 2024, AM PSYCHOL, DOI 10.1037/amp0001320
+CR  - Penninx BWJH, 2018, DIALOGUES CLIN NEURO, V20, P63
+CR  - Renger S, 2021, J CONTEMP PSYCHOTHER, V51, P357, DOI 10.1007/s10879-021-09505-8
+CR  - Schumacher S, 2018, PSYCHONEUROENDOCRINO, V98, P186, DOI 10.1016/j.psyneuen.2018.08.006
+CR  - Shapiro F., 2018, EYE MOVEMENT DESENSI
+CR  - Stewart KE, 2020, J AFFECT DISORDERS, V277, P159, DOI 10.1016/j.jad.2020.07.140
+CR  - Swift JK, 2012, J CONSULT CLIN PSYCH, V80, P547, DOI 10.1037/a0028226
+CR  - Tryon GS, 2018, PSYCHOTHERAPY, V55, P372, DOI 10.1037/pst0000170
+CR  - Tryon GS, 2011, PSYCHOTHERAPY, V48, P50, DOI 10.1037/a0022061
+CR  - Tulbure BT, 2025, BEHAV THER, V56, P785, DOI [10.1016/j.beth.2024.12.004, 10.1016/j.beth.2024.12.004]
+CR  - Usman M, 2023, BJPSYCH OPEN, V9, pS116, DOI 10.1192/bjo.2023.328
+CR  - Van der Kolk B., 2014, The Body Keeps the Score-Brain, Mind, and Body in the Healing of Trauma
+CR  - von Sydow K, 2010, FAM PROCESS, V49, P457, DOI 10.1111/j.1545-5300.2010.01334.x
+CR  - Vossler A, 2025, PSYCHOTHER RES, V35, P867, DOI 10.1080/10503307.2024.2352741
+CR  - Wampold BE., 2015, GREAT PSYCHOTHERAPY
+CR  - Watkins ER, 2020, BEHAV RES THER, V127, DOI 10.1016/j.brat.2020.103573
+CR  - Weisz JR, 2012, ARCH GEN PSYCHIAT, V69, P274, DOI 10.1001/archgenpsychiatry.2011.147
+CR  - Wells A., 2009, METACOGNITIVE THERAP
+CR  - Yasar AB., 2025, COK KURAN INSANLAR I
+CR  - Yaşar A, 2021, J COGN BEHAV PSYCHOT, P1, DOI [10.5455/jcbpr.74416, 10.5455/JCBPR.74416, DOI 10.5455/JCBPR.74416]
+CR  - Yaşar AB, 2025, Turkish Journal of Traumatic Stress, V1, P60, DOI [10.63175/tjts.25, 10.63175/tjts.25, DOI 10.63175/TJTS.25]
+CR  - Young J.E., 2003, SCHEMA THERAPY PRACT
+CR  - Zatloukal L, 2025, CONTEMP FAM THER, V47, P339, DOI 10.1007/s10591-024-09725-9
+PU  - FRONTIERS MEDIA SA
+PI  - LAUSANNE
+PA  - AVENUE DU TRIBUNAL FEDERAL 34, LAUSANNE, CH-1015, SWITZERLAND
+SN  - 1664-0640
+J9  - FRONT PSYCHIATRY
+JI  - Front. Psychiatry
+DA  - JUN 11
+PY  - 2026
+VL  - 17
+C7  - 1748511
+DO  - 10.3389/fpsyt.2026.1748511
+C6  - JUN 2026
+WE  - Science Citation Index Expanded (SCI-EXPANDED)WE  - Social Science Citation Index (SSCI)AN  - WOS:001801508800001
+N1  - Times Cited in Web of Science Core Collection:  0
+Total Times Cited:  0
+Cited Reference Count:  72
+ER  -
+

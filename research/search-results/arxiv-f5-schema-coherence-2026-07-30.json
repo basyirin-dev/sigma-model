@@ -1,0 +1,14 @@
+{
+  "query": "(all:\"schema\" AND all:\"coherence\" AND (all:\"neural\" OR all:\"alignment\" OR all:\"deep learning\"))",
+  "max_results": 50,
+  "total_results": 25,
+  "returned": 25,
+  "notes": "Confirming expected near-zero yield for schema-coherence intersection. Most results are database schema matching, cognitive science, or MRI physics. No papers directly on schema coherence in AGI safety context.",
+  "entries": [
+    {"arxiv_id": "2604.19457v1", "title": "Four-Axis Decision Alignment for Long-Horizon Enterprise AI Agents", "categories": ["cs.AI"]},
+    {"arxiv_id": "2604.15100v1", "title": "Presenting Neural Networks via Coherent Functors", "categories": ["cs.LG", "math.CT"]},
+    {"arxiv_id": "2607.22642v1", "title": "CRAFT: Learn the Schema, Execute the Plan", "categories": ["cs.CL"]},
+    {"arxiv_id": "2604.26356v1", "title": "PiLLar: Matching for Pivot Table Schema via LLM-guided Monte-Carlo Tree Search", "categories": ["cs.DB"]},
+    {"arxiv_id": "2605.23242v1", "title": "Cogniscope: A Synthetic Longitudinal Benchmark and Browser-Based Evaluation Framework for Early-Risk Cognitive AI Systems", "categories": ["cs.AI", "cs.LG"]}
+  ]
+}

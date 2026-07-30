@@ -1,0 +1,83 @@
+{
+  "query": "(all:\"AI alignment\" OR all:\"mesa-optimization\" OR all:\"deceptive alignment\" OR all:\"inner alignment\" OR all:\"goal misgeneralization\") AND (all:\"compositional generalization\" OR all:\"compositional generalisation\" OR all:\"systematic generalization\" OR all:\"schema\" OR all:\"representational structure\") AND (all:safety OR all:alignment OR all:robustness)",
+  "max_results": 100,
+  "total_results": 4,
+  "returned": 4,
+  "entries": [
+    {
+      "arxiv_id": "2404.04289v1",
+      "title": "Designing for Human-Agent Alignment: Understanding what humans want from their agents",
+      "abstract": "Our ability to build autonomous agents that leverage Generative AI continues to increase by the day. As builders and users of such agents it is unclear what parameters we need to align on before the agents start performing tasks on our behalf. To discover these parameters, we ran a qualitative empirical research study about designing agents that can negotiate during a fictional yet relatable task of selling a camera online. We found that for an agent to perform the task successfully, humans/users and agents need to align over 6 dimensions: 1) Knowledge Schema Alignment 2) Autonomy and Agency Alignment 3) Operational Alignment and Training 4) Reputational Heuristics Alignment 5) Ethics Alignment and 6) Human Engagement Alignment. These empirical findings expand previous work related to process and specification alignment and the need for values and safety in Human-AI interactions. Subsequently we discuss three design directions for designers who are imagining a world filled with Human-Agent collaborations.",
+      "published": "2024-04-04T03:01:57Z",
+      "authors": [
+        "Nitesh Goyal",
+        "Minsuk Chang",
+        "Michael Terry"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "http://arxiv.org/abs/2404.04289v1",
+      "pdf_url": "https://arxiv.org/pdf/2404.04289v1",
+      "doi": "https://doi.org/10.1145/3613905.3650948"
+    },
+    {
+      "arxiv_id": "2410.07866v5",
+      "title": "System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI",
+      "abstract": "Despite their broad applicability, transformer-based models still fall short in System~2 reasoning, lacking the generality and adaptivity needed for human--AI alignment. We examine weaknesses on ARC-AGI tasks, revealing gaps in compositional generalization and novel-rule adaptation, and argue that closing these gaps requires overhauling the reasoning pipeline and its evaluation. We propose three research axes: (1) Symbolic representation pipeline for compositional generality, (2) Interactive feedback-driven reasoning loop for adaptivity, and (3) Test-time task augmentation balancing both qualities. Finally, we demonstrate how ARC-AGI's evaluation suite can be adapted to track progress in symbolic generality, feedback-driven adaptivity, and task-level robustness, thereby guiding future work on robust human--AI alignment.",
+      "published": "2024-10-10T12:34:25Z",
+      "authors": [
+        "Sejin Kim",
+        "Sundong Kim"
+      ],
+      "categories": [
+        "cs.AI"
+      ],
+      "primary_category": "cs.AI",
+      "arxiv_url": "http://arxiv.org/abs/2410.07866v5",
+      "pdf_url": "https://arxiv.org/pdf/2410.07866v5"
+    },
+    {
+      "arxiv_id": "2602.00061v1",
+      "title": "Simple Role Assignment is Extraordinarily Effective for Safety Alignment",
+      "abstract": "Principle-based alignment often lacks context sensitivity and completeness. Grounded in Theory of Mind, we propose role conditioning as a compact alternative: social roles (e.g., mother, judge) implicitly encode both values and the cognitive schemas required to apply them. We introduce a training-free pipeline featuring a role-conditioned generator and iterative role-based critics for refinement. Across five model families, our approach consistently outperforms principle-based, Chain-of-Thought (CoT) and other baselines across benchmarks. Notably, it reduces unsafe outputs on the WildJailbreak benchmark from 81.4\\% to 3.6\\% with DeepSeek-V3. Not only for common safety benchmarks, it consistently applies for agentic safety tasks. These results establish role assignment as a powerful, interpretable paradigm for AI alignment and LLM-as-a-Judge construction.",
+      "published": "2026-01-20T08:42:44Z",
+      "authors": [
+        "Zhou Ziheng",
+        "Jiakun Ding",
+        "Zhaowei Zhang",
+        "Ruosen Gao",
+        "Yingnian Wu",
+        "Demetri Terzopoulos",
+        "Yipeng Kang",
+        "Fangwei Zhong",
+        "Junqi Wang"
+      ],
+      "categories": [
+        "cs.CY",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CY",
+      "arxiv_url": "http://arxiv.org/abs/2602.00061v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.00061v1"
+    },
+    {
+      "arxiv_id": "2505.16081v2",
+      "title": "BiasLab: Toward Explainable Political Bias Detection with Dual-Axis Annotations and Rationale Indicators",
+      "abstract": "We present BiasLab, a dataset of 300 political news articles annotated for perceived ideological bias. These articles were selected from a curated 900-document pool covering diverse political events and source biases. Each article is labeled by crowdworkers along two independent scales, assessing sentiment toward the Democratic and Republican parties, and enriched with rationale indicators. The annotation pipeline incorporates targeted worker qualification and was refined through pilot-phase analysis. We quantify inter-annotator agreement, analyze misalignment with source-level outlet bias, and organize the resulting labels into interpretable subsets. Additionally, we simulate annotation using schema-constrained GPT-4o, enabling direct comparison to human labels and revealing mirrored asymmetries, especially in misclassifying subtly right-leaning content. We define two modeling tasks: perception drift prediction and rationale type classification, and report baseline performance to illustrate the challenge of explainable bias detection. BiasLab's rich rationale annotations provide actionable interpretations that facilitate explainable modeling of political bias, supporting the development of transparent, socially aware NLP systems. We release the dataset, annotation schema, and modeling code to encourage research on human-in-the-loop interpretability and the evaluation of explanation effectiveness in real-world settings.",
+      "published": "2025-05-21T23:50:42Z",
+      "authors": [
+        "Kma Solaiman"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "arxiv_url": "http://arxiv.org/abs/2505.16081v2",
+      "pdf_url": "https://arxiv.org/pdf/2505.16081v2"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+TY  - CONF
+AU  - Ramé, A.
+AU  - Vieillard, N.
+AU  - Hussenot, L.
+AU  - Dadashi, R.
+AU  - Cideron, G.
+AU  - Bachem, O.
+AU  - Ferret, J.
+TI  - WARM: On the Benefits of Weight Averaged Reward Models
+PY  - 2024
+T2  - Proceedings of Machine Learning Research
+VL  - 235
+SP  - 42048
+EP  - 42073
+UR  - https://www.scopus.com/pages/publications/85203817719?origin=resultslist
+AD  - Google DeepMind, United Kingdom
+AB  - Aligning large language models (LLMs) with human preferences through reinforcement learning (RLHF) can lead to reward hacking, where LLMs exploit failures in the reward model (RM) to achieve seemingly high rewards without meeting the underlying objectives. We identify two primary challenges when designing RMs to mitigate reward hacking: distribution shifts during the RL process and inconsistencies in human preferences. As a solution, we propose Weight Averaged Reward Models (WARM), first finetuning multiple RMs, then averaging them in the weight space. This strategy follows the observation that fine-tuned weights remain linearly connected when sharing the same pre-training. By averaging weights, WARM improves efficiency compared to the traditional ensembling of predictions, while improving reliability under distribution shifts and robustness to preference inconsistencies. Our experiments on summarization tasks, using best-of-N and RL methods, shows that WARM improves the quality and alignment of LLM predictions; for example, a policy RL fine-tuned with WARM has a 79.4% win rate against a policy RL fine-tuned with a single RM. Copyright 2024 by the author(s)
+KW  - Contrastive Learning
+KW  - Economic and social effects
+KW  - Language model
+KW  - Model prediction
+KW  - Pre-training
+KW  - Reinforcement learnings
+KW  - Shift-and
+KW  - Weight-averaged
+KW  - Reinforcement learning
+A2  - Salakhutdinov R.
+A2  - Kolter Z.
+A2  - Heller K.
+A2  - Weller A.
+A2  - Oliver N.
+A2  - Scarlett J.
+A2  - Berkenkamp F.
+PB  - ML Research Press
+SN  - 26403498 (ISSN)
+LA  - English
+J2  - Proc. Mach. Learn. Res.
+M3  - Conference paper
+DB  - Scopus
+N1  - Export Date: 30 July 2026; Cited By: 4; Correspondence Address: A. Ramé; Google DeepMind, United Kingdom; email: alexandrerame@google.com; Conference name: 41st International Conference on Machine Learning, ICML 2024; Conference date: 21 July 2024 through 27 July 2024; Conference code: 201670
+ER  -
+
+TY  - CONF
+AU  - Du, X.
+TI  - Teach AI What It Doesn’t Know
+PY  - 2026
+T2  - Proceedings of the AAAI Conference on Artificial Intelligence
+VL  - 40
+IS  - 47
+SP  - 39820
+DO  - 10.1609/aaai.v40i47.41345
+UR  - https://www.scopus.com/pages/publications/105034265087?origin=resultslist
+AD  - College of Computing and Data Science, Nanyang Technological University (NTU), Singapore
+AB  - This talk surveys my research journey toward building reliable machine learning systems that behave safely and predictably in the open world. While modern machine learning models—including foundation models (FMs)—have demonstrated unprecedented capabilities, they often suffer from reliability failures under distribution shift, leading to overconfident mispredictions, hallucinated generations, or susceptibility to adversarial prompts. My research rethinks reliability not as an afterthought, but as a first-class algorithmic principle, to be optimized alongside accuracy with minimal human supervision. The talk is organized around three key threads. To respect the allotted 20-30 minutes, the first and second parts will be briefly discussed. 1. Unknown-Aware Learning via Outlier Synthesis. I introduce a class of learning algorithms that synthesize “virtual outliers” in representation or pixel space to explicitly teach models what they don’t know. This includes the VOS, NPOS, and Dream-OOD frameworks, which shape the energy landscape around in-distribution data to avoid overconfidence on OOD. 2. Learning in the Wild with Unlabeled Data. I present theoretical insights and practical algorithms for leveraging unlabeled in-the-wild data to improve reliability. This includes SAL framework, which uses a gradient-based spectral method to separate potential outliers, and SCONE, which handles semantic and covariate shifts via constrained optimization. These results turn unlabeled data contamination into a learning signal. 3. Reliable Foundation Models. I explore reliability failures in LLMs and multimodal systems. I introduce HaloScope for hallucination detection via subspace separation on LLM representations, and TSV that performs LLM latent steering for improved hallucination detection. I will also briefly cover the LLM security and alignment, which includes VLMGuard for detecting malicious prompts in vision-language models and a data-centric paradigm for AI alignment through source-aware feedback cleaning. Throughout the talk, I highlight how representation learning, data generation, and theoretical guarantees intersect to produce scalable, label-efficient reliability methods. I will also reflect on my broader vision: designing proactive and collaborative AI systems that anticipate uncertainty and support rich human-AI interaction—especially for underrepresented communities and emerging scientific domains. This talk will be accessible to a broad AAAI audience, combining foundational algorithmic insights with real-world applications and forward-looking perspectives on the future of responsible AI. © 2026, Association for the Advancement of Artificial Intelligence (www.aaai.org). All rights reserved.
+KW  - Alignment
+KW  - Data reliability
+KW  - Federated learning
+KW  - Learning algorithms
+KW  - Learning systems
+KW  - Machine learning
+KW  - Reliability
+KW  - Source separation
+KW  - Statistics
+KW  - Algorithmics
+KW  - Energy landscape
+KW  - Foundation models
+KW  - Human supervision
+KW  - Machine learning models
+KW  - Machine learning systems
+KW  - Modern machines
+KW  - Open world
+KW  - Reliability failure
+KW  - Unlabeled data
+KW  - Constrained optimization
+A2  - Koenig S.
+A2  - Jenkins C.
+A2  - Taylor M.E.
+PB  - Association for the Advancement of Artificial Intelligence
+SN  - 21595399 (ISSN)
+LA  - English
+J2  - Proc. AAAI Conf. Artif. Intell.
+M3  - Conference paper
+DB  - Scopus
+N1  - Export Date: 30 July 2026; Cited By: 0; Correspondence Address: X. Du; College of Computing and Data Science, Nanyang Technological University (NTU), Singapore; email: xuefeng.du@ntu.edu.sg; Conference name: 40th AAAI Conference on Artificial Intelligence, AAAI 2026; Conference date: 20 January 2026 through 27 January 2026; Conference code: 349419
+ER  -
+
+TY  - CONF
+AU  - Bao, R.
+AU  - Yu, D.
+AU  - Fan, K.
+AU  - Liao, M.
+TI  - Fixing Distribution Shifts of LLM Self-Critique via On-Policy Self-Play Training
+PY  - 2025
+T2  - Proceedings of the Annual Meeting of the Association for Computational Linguistics
+VL  - 1
+SP  - 17680
+EP  - 17700
+DO  - 10.18653/v1/2025.acl-long.865
+UR  - https://www.scopus.com/pages/publications/105021051450?origin=resultslist
+AD  - College of Computer Science and Artificial Intelligence, Fudan University, China
+AD  - University of Chinese Academy of Sciences, China
+AD  - Tongyi Lab, China
+AB  - Self-critique mechanisms significantly improve the performance of language models in complex reasoning tasks by giving them the ability to correct errors, conduct induction and deduction, and switch thinking insights. However, synthetic data methods often require human-introduced errors or sampling of the model's reasoning results from the previous moment, and the current output distribution of the model cannot be obtained, makes the data for critique and reasoning face the problem of distribution shifts. In this work, we propose an on-policy reinforcement learning framework to synchronize the reasoning and critique capabilities of language models. To alleviate reward hacking caused by outcome-based supervision, we design a deliberate reward framework for different purposes. The reward framework not only supervises the model reasoning process based on the results, but also uses Monte Carlo sampling to give appropriate rewards to the critique content according to the success rate of the model's correction after critique. In addition, we introduce a rule-based reward function to impose penalties on the model when it generates hallucinatory critiques. When our approach is applied to the DeepSeek-Math-7B-Base and Qwen2.5-7B-Base models, model performance improves 5.40 and 3.66 points, respectively, compared to the best baseline approach. This validates the significant advantages of our method in improving model's reasoning and self-critique capability. Code will be made available at https://github.com/rbao2018/SCOP. © 2025 Association for Computational Linguistics.
+A2  - Che W.
+A2  - Nabende J.
+A2  - Shutova E.
+A2  - Pilehvar M.T.
+PB  - Association for Computational Linguistics (ACL)
+SN  - 0736587X (ISSN); 979-889176251-0 (ISBN)
+LA  - English
+J2  - Proc. Annu. Meet. Assoc. Comput Linguist.
+M3  - Conference paper
+DB  - Scopus
+N1  - Export Date: 30 July 2026; Cited By: 1; Correspondence Address: K. Fan; Tongyi Lab, China; email: k.fan@alibaba-inc.com; M. Liao; Tongyi Lab, China; email: minpeng.lmp@alibaba-inc.com; Conference name: 63rd Annual Meeting of the Association for Computational Linguistics, ACL 2025; Conference date: 27 July 2025 through 1 August 2025; Conference code: 213612
+ER  -
+
+TY  - JOUR
+AU  - Ji, J.
+AU  - Qiu, T.
+AU  - Chen, B.
+AU  - Zhou, J.
+AU  - Zhang, B.
+AU  - Hong, D.
+AU  - Lou, H.
+AU  - Wang, K.
+AU  - Duan, Y.
+AU  - He, Z.
+AU  - Vierling, L.
+AU  - Zhang, Z.
+AU  - Zeng, F.
+AU  - Dai, J.
+AU  - Pan, X.
+AU  - Xu, H.
+AU  - O'Gara, A.
+AU  - Ng, K.
+AU  - Tse, B.
+AU  - Fu, J.
+AU  - McAleer, S.
+AU  - Wang, Y.
+AU  - Yang, M.
+AU  - Liu, Y.
+AU  - Wang, Y.
+AU  - Zhu, S.-C.
+AU  - Guo, Y.
+AU  - Yang, Y.
+AU  - Gao, W.
+TI  - AI Alignment: A Contemporary Survey
+PY  - 2025
+T2  - ACM Computing Surveys
+VL  - 58
+IS  - 5
+C7  - 132
+DO  - 10.1145/3770749
+UR  - https://www.scopus.com/pages/publications/105024934023?origin=resultslist
+AD  - Peking University, Beijing, China
+AD  - University of Cambridge, Cambridge, United Kingdom
+AD  - University of Oxford, Oxford, United Kingdom
+AD  - University of Southern California, Los Angeles, United States
+AD  - Concordia AI, Beijing, China
+AD  - Hong Kong University of Science and Technology, Hong Kong, Hong Kong
+AD  - Carnegie Mellon University, Pittsburgh, United States
+AD  - Shanghai Jiao Tong University, Shanghai, China
+AD  - China Telecommunications Corporation, Beijing, China
+AD  - Computer Science, Peking University, Beijing, China
+AB  - AI alignment aims to make AI systems behave in line with human intentions and values. As AI systems grow more capable, so do risks from misalignment. To provide a comprehensive and up-To-date overview of the alignment field, in this survey, we delve into the core concepts, methodology, and practice of alignment. First, we identify four principles as the key objectives of AI alignment: Robustness, Interpretability, Controllability, and Ethicality (RICE). Guided by these four principles, we outline the landscape of current alignment research and decompose them into two key components: forward alignment and backward alignment. The former aims to make AI systems aligned via alignment training, while the latter aims to gain evidence about the systems' alignment and govern them appropriately to avoid exacerbating misalignment risks. On forward alignment, we discuss techniques for learning from feedback and learning under the distribution shift. Specifically, we survey traditional preference modeling methods and reinforcement learning from human feedback and further discuss potential frameworks to reach scalable oversight for tasks where effective human oversight is hard to obtain. Within learning under distribution shift, we also cover data distribution interventions such as adversarial training that helps expand the distribution of training data and algorithmic interventions to combat goal misgeneralization. On backward alignment, we discuss assurance techniques and governance practices. Specifically, we survey assurance methods of AI systems throughout their lifecycle, covering safety evaluation, interpretability, and human value compliance. We discuss current and prospective governance practices adopted by governments, industry actors, and other third parties, aimed at managing existing and future AI risks. This survey aims to provide a comprehensive yet beginner-friendly review of alignment research topics. Based on this, we also release and continually update the website www.alignmentsurvey.com which features tutorials, collections of papers, blog posts, and other resources.  © 2025 Copyright held by the owner/author(s).
+KW  - Additional Key Words and Phrases AI safety
+KW  - AI alignment
+KW  - learning from human feedback
+KW  - Artificial intelligence
+KW  - Ethical aspects
+KW  - Feedback
+KW  - Safety engineering
+KW  - 'current
+KW  - Additional key word and phrase AI safety
+KW  - AI alignment
+KW  - AI systems
+KW  - Human intentions
+KW  - Human values
+KW  - Interpretability
+KW  - Key words
+KW  - Key-phrase
+KW  - Learning from human feedback
+KW  - Alignment
+KW  - Surveying
+PB  - Association for Computing Machinery
+SN  - 03600300 (ISSN)
+LA  - English
+J2  - ACM Comput Surv
+M3  - Article
+DB  - Scopus
+N1  - Export Date: 30 July 2026; Cited By: 19; CODEN: ACSUE
+ER  -
+
