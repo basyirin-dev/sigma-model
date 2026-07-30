@@ -1,0 +1,280 @@
+﻿TY  - JOUR
+AU  - Ji, JM
+AU  - Qiu, TY
+AU  - Chen, BY
+AU  - Zhou, JY
+AU  - Zhang, BR
+AU  - Hong, DH
+AU  - Lou, HT
+AU  - Wang, KL
+AU  - Duan, YW
+AU  - He, ZH
+AU  - Vierling, L
+AU  - Zhang, ZW
+AU  - Zeng, FZ
+AU  - Dai, JT
+AU  - Pan, XH
+AU  - Xu, H
+AU  - O'Gara, A
+AU  - Ng, K
+AU  - Tse, B
+AU  - Fu, J
+AU  - Wang, YF
+AU  - Yang, MC
+AU  - Liu, YH
+AU  - Wang, YZ
+AU  - Zhu, SC
+AU  - Guo, YK
+AU  - Yang, YD
+AU  - Gao, W
+TI  - AI Alignment: A Contemporary Survey
+T2  - ACM COMPUTING SURVEYS
+LA  - English
+KW  - AI safety
+KW  - AI alignment
+KW  - learning from human feedback
+AB  - AI alignment aims to make AI systems behave in line with human intentions and values. As AI systems grow more capable, so do risks from misalignment. To provide a comprehensive and up-to-date overview of the alignment field, in this survey, we delve into the core concepts, methodology, and practice of alignment. First, we identify four principles as the key objectives of AI alignment: Robustness, Interpretability, Controllability, and Ethicality (RICE). Guided by these four principles, we outline the landscape of current alignment research and decompose them into two key components: forward alignment and backward alignment. The former aims to make AI systems aligned via alignment training, while the latter aims to gain evidence about the systems' alignment and govern them appropriately to avoid exacerbating misalignment risks. On forward alignment, we discuss techniques for learning from feedback and learning under the distribution shift. Specifically, we survey traditional preference modeling methods and reinforcement learning from human feedback and further discuss potential frameworks to reach scalable oversight for tasks where effective human oversight is hard to obtain. Within learning under distribution shift, we also cover data distribution interventions such as adversarial training that helps expand the distribution of training data and algorithmic interventions to combat goal misgeneralization. On backward alignment, we discuss assurance techniques and governance practices. Specifically, we survey assurance methods of AI systems throughout their lifecycle, covering safety evaluation, interpretability, and human value compliance. We discuss current and prospective governance practices adopted by governments, industry actors, and other third parties, aimed at managing existing and future AI risks. This survey aims to provide a comprehensive yet beginner-friendly review of alignment research topics. Based on this, we also release and continually update the website www.alignmentsurvey.com which features tutorials, collections of papers, blog posts, and other resources.
+AD  - Peking Univ, Beijing, Peoples R ChinaAD  - Univ Cambridge, Cambridge, EnglandAD  - Univ Oxford, Oxford, EnglandAD  - Univ Southern Calif, Los Angeles, CA USAAD  - Concordia AI, Beijing, Peoples R ChinaAD  - Hong Kong Univ Sci & Technol, Hong Kong, Peoples R ChinaAD  - Carnegie Mellon Univ, Pittsburgh, PA USAAD  - Shanghai Jiao Tong Univ, Shanghai, Peoples R ChinaAD  - China Telecommun Corp, Beijing, Peoples R ChinaAD  - Peking Univ, Comp Sci, Beijing, Peoples R ChinaC3  - Peking UniversityC3  - University of CambridgeC3  - University of OxfordC3  - University of Southern CaliforniaC3  - Hong Kong University of Science & TechnologyC3  - Carnegie Mellon UniversityC3  - Shanghai Jiao Tong UniversityC3  - China Telecom Corp. Ltd.C3  - Peking UniversityCR  - Abbass HA, 2019, COGN COMPUT, V11, P159, DOI 10.1007/s12559-018-9619-0
+CR  - Abbeel P., 2004, P 21 INT C MACHINE L, DOI [10.1007/978-0-387-30164-8_417, DOI 10.1007/978-0-387-30164-8_417]
+CR  - Acemoglu DM, 2018, SSRN Electronic Journal, DOI [10.2139/ssrn.3098384, 10.1257/jep.33.2.193, DOI 10.3386/W24196]
+CR  - AI Safety Summit, 2023, The Bletchley Declaration by Countries Attending the AI Safety Summit
+CR  - Alain Guillaume, 2017, ICLR 2017
+CR  - Alvarez-Melis D, 2018, ADV NEUR IN, V31
+CR  - Ammann Nora., 2024, ARXIV
+CR  - Amodei D, 2016, Arxiv, DOI arXiv:1606.06565
+CR  - Anderljung M, 2023, Arxiv, DOI [arXiv:2307.03718, 10.48550/arXiv.2307.03718]
+CR  - Anthropic, 2022, Softmax Linear Units
+CR  - Arik SO, 2021, AAAI CONF ARTIF INTE, V35, P6679
+CR  - Arjovsky M, 2020, Arxiv, DOI [arXiv:1907.02893, 10.48550/arXiv.1907.02893]
+CR  - Armstrong S, 2019, Arxiv, DOI arXiv:1712.05812
+CR  - Arora S, 2021, ARTIF INTELL-AMST, V297, DOI 10.1016/j.artint.2021.103500
+CR  - Bai Y., arXiv, DOI [DOI 10.48550/ARXIV.2204.05862, 10.48550/arXiv.2204.05862]
+CR  - Bai YT, 2022, Arxiv, DOI [arXiv:2212.08073, 10.48550/arXiv.2212.08073]
+CR  - Baker B, 2022, ADV NEUR IN
+CR  - Belinkov Y, 2022, COMPUT LINGUIST, V48, P207, DOI 10.1162/coli_a_00422
+CR  - Bengio Y, 2024, SCIENCE, V384, P842, DOI 10.1126/science.adn0117
+CR  - Bereska Leonard, 2024, Mechanistic interpretability for AI safety-a review
+CR  - Berglund L, 2023, Arxiv, DOI [arXiv:2309.00667, 10.48550/arXiv.2309.00667]
+CR  - Berreby Fiona, 2017, P 16 C AUTONOMOUS AG
+CR  - Besbes Omar., 2022, Advances in Neural Information Processing Systems, V35, P23979
+CR  - Blumenthal Richard, 2023, Bipartisan Framework for U.S. AI Act
+CR  - Bonabeau E, 2002, P NATL ACAD SCI USA, V99, P7280, DOI 10.1073/pnas.082080899
+CR  - Bostrom Nick., 2003, SCI FICTION PHILOS T, P277
+CR  - Bostrom Nick, 2011, Global Catastrophic Risks
+CR  - Bowman Samuel R, 2022, arXiv
+CR  - BRADLEY RA, 1952, BIOMETRIKA, V39, P324, DOI 10.1093/biomet/39.3-4.324
+CR  - Brandt Felix, 2016, Handbook of Computational Social Choice
+CR  - Brockman G, 2016, Arxiv, DOI arXiv:1606.01540
+CR  - Brown Tom., 2020, Advances in neural information processing systems, V33, P1877, DOI [10.5555/3495724.3495883, DOI 10.5555/3495724.3495883]
+CR  - Bubeck S, 2023, Arxiv, DOI [arXiv:2303.12712, DOI 10.48550/ARXIV.2303.12712, 10.48550/arXiv.2303.12712]
+CR  - Burns C, 2023, Arxiv, DOI arXiv:2312.09390
+CR  - Caliskan A, 2017, SCIENCE, V356, DOI 10.1126/science.aal4230
+CR  - Carlini Nicholas, 2023, Advances in Neural Information Processing Systems, V36
+CR  - Carlsmith J, 2022, Arxiv, DOI [arXiv:2206.13353, 10.48550/arXiv.2206.13353]
+CR  - Carranza A, 2023, Arxiv, DOI [arXiv:2307.10569, DOI 10.48550/ARXIV.2307.10569, 10.48550/arXiv.2307.10569]
+CR  - Carroll M, 2022, PR MACH LEARN RES
+CR  - Carvalho DV, 2019, ELECTRONICS-SWITZ, V8, DOI 10.3390/electronics8080832
+CR  - Casper S, 2023, Arxiv, DOI [arXiv:2306.09442, 10.48550/arXiv.2306.09442, DOI 10.48550/ARXIV.2306.09442]
+CR  - Casper Stephen, 2023, Transactions on Machine Learning Research
+CR  - Chen Z., 2023, ADV NEURAL INFORM PR, V36, P51719
+CR  - Cheng WW, 2010, LECT NOTES ARTIF INT, V6321, P215, DOI 10.1007/978-3-642-15880-3_20
+CR  - Cheng Weiwei, 2010, [No title captured], P223
+CR  - Cheng Weiwei., 2010, Proceedings of the Twenty-seventh In- ternational Conference on Machine Learning (ICML-10), P215
+CR  - Christiano PF, 2017, ADV NEUR IN, V30
+CR  - Collective Intelligence Project, 2023, Introducing the Collective Intelligence Project
+CR  - Critch Andrew, 2020, AI research considerations for human existential safety (ARCHES)
+CR  - Cross JL, 2024, PLOS DIGIT HEALTH, V3, DOI 10.1371/journal.pdig.0000651
+CR  - Cui H, 2024, PATTERNS, V5, DOI 10.1016/j.patter.2024.101074
+CR  - Dafoe A, 2020, Arxiv, DOI [arXiv:2012.08630, 10.48550/arXiv.2012.08630]
+CR  - Dafoe A, 2021, NATURE, V593, P33, DOI 10.1038/d41586-021-01170-0
+CR  - Dathathri Sumanth, 2019, P INT C LEARNING REP
+CR  - DAVIS R, 1977, ARTIF INTELL-AMST, V8, P15, DOI 10.1016/0004-3702(77)90003-0
+CR  - de Haan P, 2019, ADV NEUR IN, V32
+CR  - Degrave J, 2022, NATURE, V602, P414, DOI 10.1038/s41586-021-04301-9
+CR  - Denison C, 2024, Arxiv, DOI [arXiv:2406.10162, 10.48550/arXiv.2406.10162arXiv, DOI 10.48550/ARXIV.2406.10162ARXIV]
+CR  - Dhingra B, 2019, 57TH ANNUAL MEETING OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS (ACL 2019), P4884
+CR  - Di Langosco L L., 2022, P MACHINE LEARNING R, P12004
+CR  - Du Y., 2020, ADV NEURAL INFORM PR, V33, P4560
+CR  - Du Yilun, 2024, P 41 INT C MACHINE L
+CR  - Elhage Nelson., 2022, arXiv, DOI DOI 10.48550/ARXIV.2209.10652
+CR  - Fabian Daniel, 2023, Google's AI Red Team: the ethical hackers making AI safer
+CR  - Fiez T., 2020, INT C MACH LEARN, P3133
+CR  - Floridi L, 2018, MIND MACH, V28, P689, DOI 10.1007/s11023-018-9482-5
+CR  - Foerster JN, 2016, ADV NEUR IN, V29
+CR  - Foerster JN, 2017, PR MACH LEARN RES, V70
+CR  - Gabriel I, 2020, MIND MACH, V30, P411, DOI 10.1007/s11023-020-09539-2
+CR  - Gan Z, 2020, ADV NEUR IN, V33
+CR  - Gao Leo., 2023, ICML, P10835
+CR  - Garipov T, 2018, ADV NEUR IN, V31
+CR  - Gehman S, 2020, FINDINGS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, EMNLP 2020
+CR  - Geirhos R, 2019, Arxiv, DOI arXiv:1811.12231
+CR  - Gilmer J., 2019, PMLR, P2280, DOI 10.48550/arxiv.1901.10513
+CR  - Government of the United Kingdom, 2021, The roadmap to an effective AI assurance ecosystem-extended version
+CR  - Greenblatt R, 2024, Arxiv, DOI [arXiv:2412.14093, 10.48550/arXiv.2412.14093]
+CR  - Greenblatt Ryan, 2024, P 41 INT C MACHINE L
+CR  - Guerdan L, 2023, PROCEEDINGS OF THE 6TH ACM CONFERENCE ON FAIRNESS, ACCOUNTABILITY, AND TRANSPARENCY, FACCT 2023, P688, DOI 10.1145/3593013.3594036
+CR  - Gurnee W, 2024, Arxiv, DOI [arXiv:2310.02207, 10.48550/arXiv.2310.02207]
+CR  - Guterres Antonio, 2023, Secretary-General's remarks to the Security Council on Artificial Intelligence
+CR  - Hadfield-Menell Dylan, 2017, P WORKSHOPS 31 AAAI
+CR  - Hadfield-Menell Dylan., 2016, Advances in Neural Information Processing Systems, DOI [DOI 10.48550/ARXIV.1606.03137, 10.5555/3157382.3157535, DOI 10.5555/3157382.3157535]
+CR  - Hayes CF, 2022, AUTON AGENT MULTI-AG, V36, DOI 10.1007/s10458-022-09552-y
+CR  - Hendrycks D, 2023, Arxiv, DOI [arXiv:2303.16200, 10.48550/arXiv.2303.16200, DOI 10.48550/ARXIV.2303.16200]
+CR  - Hendrycks D, 2022, Arxiv, DOI [arXiv:2206.05862, DOI 10.48550/ARXIV.2206.05862]
+CR  - Hendrycks D, 2021, Arxiv, DOI [arXiv:2109.13916, 10.48550/arXiv.2109.13916]
+CR  - Ho J, 2016, ADV NEUR IN, V29
+CR  - Ho L., 2023, International Institutions for Advanced AI (arXiv:2307.04699). arXiv, DOI DOI 10.48550/ARXIV.2307.04699
+CR  - Holtzman Ari, 2019, P INT C LEARNING REP
+CR  - Hu Hengyuan., 2020, PR MACH LEARN RES, P4399
+CR  - Hu JH, 2025, 2025 IEEE INTERNATIONAL CONFERENCE ON ROBOTICS AND AUTOMATION, ICRA, P3617, DOI 10.1109/ICRA55743.2025.11127934
+CR  - Huben Robert, 2024, 12 INT C LEARNING RE
+CR  - Hubinger E, 2024, Arxiv, DOI [arXiv:2401.05566, 10.48550/arXiv.2401.05566, DOI 10.48550/ARXIV.2401.05566]
+CR  - Hubinger Evan., 2019, arXiv, DOI DOI 10.48550/ARXIV.1906.01820
+CR  - Hubinger Evan, 2019, The Inner Alignment Problem
+CR  - Hüllermeier E, 2008, ARTIF INTELL-AMST, V172, P1897, DOI 10.1016/j.artint.2008.08.002
+CR  - Hussein A, 2017, ACM COMPUT SURV, V50, DOI 10.1145/3054912
+CR  - Ibarz B, 2018, ADV NEUR IN, V31
+CR  - Irving G, 2018, Arxiv, DOI arXiv:1805.00899
+CR  - Goodfellow IJ, 2015, Arxiv, DOI [arXiv:1412.6572, DOI 10.48550/ARXIV.1412.6572]
+CR  - Ji JM, 2024, Arxiv, DOI arXiv:2412.15838
+CR  - Ji Jiaming, 2024, ADV NEURAL INFORM PR
+CR  - Ji Jiaming, 2024, ADV NEURAL INFORM PR, V36
+CR  - Ji ZW, 2023, ACM COMPUT SURV, V55, DOI 10.1145/3571730
+CR  - Jia Robin, 2017, [No title captured], P2021, DOI [10.18653/v1/d17-1215, DOI 10.18653/V1/D17-1215]
+CR  - Jones Erik, 2023, [No title captured], p15 307
+CR  - Kenward B, 2021, COGN COMPUT SYST, V3, P83, DOI 10.1049/ccs2.12027
+CR  - Kerry Cameron F., 2021, Progress report
+CR  - Khan A., 2024, INT C MACHINE LEARNI, P23662
+CR  - Kinniment Megan, 2023, Evaluating Language-Model Agents on Realistic Autonomous Tasks
+CR  - Kirilenko A, 2017, J FINANC, V72, P967, DOI 10.1111/jofi.12498
+CR  - Kirk HR, 2024, ADV NEUR IN
+CR  - Koessler Leonie., 2023, Risk Assessment at AGI Companies: A Review of Popular Risk Assessment Techniques from Other Safety-Critical Industries, DOI DOI 10.48550/ARXIV.2307.08823
+CR  - Koralus P, 2025, Arxiv, DOI arXiv:2504.18601
+CR  - Kosoy V, 2019, Arxiv, DOI arXiv:1705.04630
+CR  - Krakovna Victoria, 2022, Paradigms of AI alignment: components and enablers
+CR  - Krueger D, 2021, PR MACH LEARN RES, V139
+CR  - Landers RN, 2023, AM PSYCHOL, V78, P36, DOI 10.1037/amp0000972
+CR  - Leibo JZ, 2024, Arxiv, DOI [arXiv:2412.19010, 10.48550/arXiv.2412.19010, DOI 10.48550/ARXIV.2412.19010]
+CR  - Leibo Joel Z, 2021, [No title captured], P6187, DOI 10.48550/arxiv.2107.06857
+CR  - Leike J, 2018, Arxiv, DOI arXiv:1811.07871
+CR  - Leike Jan, 2016, Nonparametric General Reinforcement Learning
+CR  - Li C, 2022, AAAI CONF ARTIF INTE, P1280
+CR  - Li JW, 2023, 2023 CONFERENCE ON EMPIRICAL METHODS IN NATURAL LANGUAGE PROCESSING, EMNLP 2023, P1229
+CR  - Li YF, 2023, 2023 CONFERENCE ON EMPIRICAL METHODS IN NATURAL LANGUAGE PROCESSING, EMNLP 2023, P292
+CR  - Liang PP, 2021, PR MACH LEARN RES, V139
+CR  - Liang YW, 2024, PROC CVPR IEEE, P19401, DOI 10.1109/CVPR52733.2024.01835
+CR  - Lin Stephanie., 2022, Long Papers, P3214
+CR  - Liu Ruibo, 2024, P 12 INT C LEARNING
+CR  - Liu Xiao, 2024, P 12 INT C LEARNING
+CR  - Lubana E S., 2023, P 40 INT C MACHINE L, P22965
+CR  - Madiega Tambiama Andre, 2024, PE 698.792, V4th
+CR  - Manyika James., 2017, McKinsey Glob. Inst. Res. Tech. Rep, V60, P1
+CR  - Mehrabi N, 2021, ACM COMPUT SURV, V54, DOI [10.1145/3457607, 10.1186/s12889-022-13256-z]
+CR  - Miller T, 2019, ARTIF INTELL-AMST, V267, P1, DOI 10.1016/j.artint.2018.07.007
+CR  - Mökander J, 2024, AI and Ethics, V4, P1085, DOI [10.1007/s43681-023-00289-2, 10.1007/s43681-023-00289-2, DOI 10.1007/S43681-023-00289-2, https://doi.org/10.1007/s43681-023-00289-2]
+CR  - Mulgan Tim, 2016, Superintelligence: Paths, dangers, strategies
+CR  - Murthy SK, 1998, DATA MIN KNOWL DISC, V2, P345, DOI 10.1023/A:1009744630224
+CR  - Ng AndrewY., 2000, Icml, DOI DOI 10.5555/645529.657801
+CR  - Ngo Richard, 2024, P 12 INT C LEARNING
+CR  - Ngo Richard, 2020, AGI Safety from First Principles
+CR  - Ntoutsi E, 2020, WIRES DATA MIN KNOWL, V10, DOI 10.1002/widm.1356
+CR  - Olah C, 2020, Distill, V5, DOI [10.23915/distill.00024.001, 10.23915/distill.00024.001, DOI 10.23915/DISTILL.00024.001]
+CR  - Olsson C., In-context learning and induction heads, DOI 10.48550/arXiv.2209.11895
+CR  - Omohundro SM, 2008, FRONT ARTIF INTEL AP, V171, P483
+CR  - OpenAI, 2023, Arxiv, DOI [arXiv:2303.08774, 10.48550/arXiv.2303.08774, DOI 10.48550/ARXIV.2303.08774]
+CR  - Ouyang L, 2022, ADV NEUR IN
+CR  - Pan Alexander, 2023, ICML
+CR  - Parrish A, 2022, FINDINGS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS (ACL 2022), P2086
+CR  - Pereira LM, 2016, STUD APPL PHILOS, V26, P1, DOI 10.1007/978-3-319-29354-7
+CR  - Perez E, 2023, FINDINGS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS (ACL 2023), P13387
+CR  - Perez E, 2022, 2022 CONFERENCE ON EMPIRICAL METHODS IN NATURAL LANGUAGE PROCESSING, EMNLP 2022, P3419
+CR  - Perolat J., 2017, ADV NEURAL INFORM PR, P3646
+CR  - Perry Lucas, 2020, Evan Hubinger on Inner Alignment, Outer Alignment, and Proposals for Building Safe Advanced AI
+CR  - Peters J., 2015, arXiv
+CR  - Phelps S, 2024, Arxiv, DOI [arXiv:2305.07970, 10.48550/arXiv.2305.07970]
+CR  - Pita J, 2010, ARTIF INTELL-AMST, V174, P1142, DOI 10.1016/j.artint.2010.07.002
+CR  - Pope Quintin, 2022, The shard theory of human values
+CR  - Poursaeed O, 2021, 2021 IEEE/CVF INTERNATIONAL CONFERENCE ON COMPUTER VISION (ICCV 2021), P15691, DOI 10.1109/ICCV48922.2021.01542
+CR  - Qiu Tianyi Alex, 2024, Advances in Neural Information Processing Systems, V37, P14570
+CR  - Rafailov R, 2023, ADV NEUR IN
+CR  - Rai D, 2025, Arxiv, DOI [arXiv:2407.02646, 10.48550/arXiv.2407.02646]
+CR  - Rauker T, 2023, 2023 IEEE CONFERENCE ON SECURE AND TRUSTWORTHY MACHINE LEARNING, SATML, P464, DOI 10.1109/SaTML54575.2023.00039
+CR  - Ross Andrew, 2017, P WORKSHOP TRANSPARE, V4
+CR  - Rudin C, 2019, NAT MACH INTELL, V1, P206, DOI 10.1038/s42256-019-0048-x
+CR  - Russell Stuart, 2019, Human Compatible: AI and the Problem of Control
+CR  - Sagawa Shiori, 2020, P INT C LEARNING REP
+CR  - Santurkar S, 2023, Arxiv, DOI arXiv:2303.17548
+CR  - Schaal S, 1999, TRENDS COGN SCI, V3, P233, DOI 10.1016/S1364-6613(99)01327-3
+CR  - Schramowski P, 2020, FRONT ARTIF INTELL, V3, DOI 10.3389/frai.2020.00036
+CR  - Schuett J, 2023, Arxiv, DOI arXiv:2305.07153
+CR  - SCHUSTER P, 1983, J THEOR BIOL, V100, P533, DOI 10.1016/0022-5193(83)90445-9
+CR  - Seger E, 2023, Arxiv, DOI arXiv:2311.09227
+CR  - Shah RH, 2022, Arxiv, DOI arXiv:2210.01790
+CR  - Shah Rohin, 2020, Benefits of assistance over reward learning
+CR  - Shah Rusheb, 2023, P SOCIALLY RESPONSIB
+CR  - Sharma Mrinank, 2024, P 12 INT C LEARNING
+CR  - Shaw Kenneth., 2023, C ROBOT LEARNING, P654
+CR  - Shevlane T, 2023, Arxiv, DOI [arXiv:2305.15324, DOI 10.48550/ARXIV.2305.15324, 10.48550/arXiv.2305.15324]
+CR  - Shlegeris Buck, 2023, P ALIGNMENT FORUM
+CR  - Silver D, 2016, NATURE, V529, P484, DOI 10.1038/nature16961
+CR  - Skalse Joar, 2022, ADV NEURAL INFORM PR, V35, P9460
+CR  - Soares N, 2017, FRONT COLLECT, P103, DOI 10.1007/978-3-662-54033-6_5
+CR  - Soares Nate, 2015, P WORKSHOPS 29 AAAI
+CR  - Song JM, 2018, ADV NEUR IN, V31
+CR  - Song Y, 2018, ADV NEUR IN, V31
+CR  - Sorensen T, 2024, Arxiv, DOI arXiv:2402.05070
+CR  - Sovik AO, 2022, AI SOC, V37, P1505, DOI 10.1007/s00146-021-01229-6
+CR  - Stag, 2023, ALIGNMENT FORUM
+CR  - Stiennon N., 2020, ADV NEURAL INFORM PR, V33, P3008, DOI [10.5555/3495724.3495977, DOI 10.5555/3495724.3495977]
+CR  - Sutton Richard S., 1998, Reinforcement Learning: An Introduction
+CR  - Sutton RS, 2018, ADAPT COMPUT MACH LE, P1
+CR  - Tack J, 2025, Arxiv, DOI arXiv:2502.08524
+CR  - Tallberg J, 2023, INT STUD REV, V25, DOI 10.1093/isr/viad040
+CR  - The White House, 2023, FACT SHEET: Biden-Harris Administration Secures Voluntary Commitments from Leading Artificial Intelligence Companies to Manage the Risks Posed by AI
+CR  - Thulasidasan S, 2021, 20TH IEEE INTERNATIONAL CONFERENCE ON MACHINE LEARNING AND APPLICATIONS (ICMLA 2021), P278, DOI 10.1109/ICMLA52953.2021.00050
+CR  - Tolmeijer S, 2021, ACM COMPUT SURV, V53, DOI 10.1145/3419633
+CR  - Touvron H, 2023, Arxiv, DOI [arXiv:2307.09288, DOI 10.48550/ARXIV.2307.09288]
+CR  - Turner Alex, 2022, Inner and outer alignment decompose one hard problem into two extremely hard problems
+CR  - Turner AM, 2021, ADV NEUR IN, V34
+CR  - UNESCO, 2021, Recommendation on the Ethics of Artificial Intelligence
+CR  - United Nations ITU, 2023, ITU Press Release, V1, P1
+CR  - Urbina F, 2022, NAT MACH INTELL, V4, P189, DOI 10.1038/s42256-022-00465-9
+CR  - Vapnik V., 1991, Advances in neural information processing systems, V4, DOI DOI 10.1109/ICCV.2019.00956
+CR  - Wang Kevin, 2022, P 11 INT C LEARNING
+CR  - Wei Jason, 2022, ADV NEURAL INFORM PR
+CR  - Weibull Jorgen W., 1997, Evolutionary Game Theory
+CR  - Wen Jiaxin, 2025, 13 INT C LEARNING RE
+CR  - Wirth C, 2017, J MACH LEARN RES, V18
+CR  - Wu YH, 2018, AAAI CONF ARTIF INTE, P1687
+CR  - Wulczyn E, 2017, PROCEEDINGS OF THE 26TH INTERNATIONAL CONFERENCE ON WORLD WIDE WEB (WWW'17), P1391, DOI 10.1145/3038912.3052591
+CR  - Xie YQ, 2023, NAT MACH INTELL, DOI 10.1038/s42256-023-00765-8
+CR  - Yoo JY, 2021, FINDINGS OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS, EMNLP 2021, P945
+CR  - Yu H, 2018, PROCEEDINGS OF THE TWENTY-SEVENTH INTERNATIONAL JOINT CONFERENCE ON ARTIFICIAL INTELLIGENCE, P5527
+CR  - Yudkowsky E., 2016, SYMBOLIC SYSTEMS DIS, V4, P1
+CR  - Zampieri M, 2019, 2019 CONFERENCE OF THE NORTH AMERICAN CHAPTER OF THE ASSOCIATION FOR COMPUTATIONAL LINGUISTICS: HUMAN LANGUAGE TECHNOLOGIES (NAACL HLT 2019), VOL. 1, P1415
+CR  - Zaremb Wojciech, 2023, OpenAI Blog, V1
+CR  - Zhang Y, 2020, PROCEEDINGS OF THE 13TH INTERNATIONAL CONFERENCE ON WEB SEARCH AND DATA MINING (WSDM '20), P735, DOI 10.1145/3336191.3371790
+CR  - Zhou JY, 2025, AAAI CONF ARTIF INTE, P27765, DOI 10.1609/aaai.v39i26.34992
+CR  - Zhuang Simon, 2020, ADV NEURAL INFORM PR, V33, P15763, DOI 10.48550/arXiv.2102.03896
+CR  - Ziebart BrianD., 2008, PROC AAAI C ARTIF IN
+CR  - Ziegler DM, 2022, ADV NEUR IN
+CR  - Zou A, 2025, Arxiv, DOI arXiv:2310.01405
+CR  - Zou AY, 2023, Arxiv, DOI arXiv:2307.15043
+PU  - ASSOC COMPUTING MACHINERY
+PI  - NEW YORK
+PA  - 1601 Broadway, 10th Floor, NEW YORK, NY USA
+SN  - 0360-0300
+SN  - 1557-7341
+J9  - ACM COMPUT SURV
+JI  - ACM Comput. Surv.
+DA  - APR
+PY  - 2026
+VL  - 58
+IS  - 5
+C7  - 132
+DO  - 10.1145/3770749
+WE  - Science Citation Index Expanded (SCI-EXPANDED)AN  - WOS:001652143300023
+N1  - Times Cited in Web of Science Core Collection:  13
+Total Times Cited:  14
+Cited Reference Count:  225
+ER  -
+

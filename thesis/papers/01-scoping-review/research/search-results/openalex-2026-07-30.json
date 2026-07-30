@@ -1,0 +1,28 @@
+{
+  "query": "\"AI alignment\" AND (\"compositional generalization\" OR \"systematic generalization\") AND safety",
+  "source": "openalex",
+  "year_range": "2015-2026",
+  "date_executed": "2026-07-30",
+  "total_results": 18,
+  "returned": 18,
+  "entries": [
+    {"title": "Language Models\u2019 Hall of Mirrors Problem: Why AI Alignment Requires Peircean Semiosis", "year": 2026, "doi": "10.1007/s13347-025-00975-5", "cited_by": 3},
+    {"title": "Aligning generalization between humans and machines", "year": 2025, "doi": "10.1038/s42256-025-01109-4", "cited_by": 14},
+    {"title": "Aligning Generalisation Between Humans and Machines", "year": 2024, "doi": "10.48550/arxiv.2411.15626", "cited_by": 1},
+    {"title": "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision", "year": 2024, "doi": "10.48550/arxiv.2403.09472", "cited_by": 1},
+    {"title": "Machine Psychology", "year": 2023, "doi": "10.48550/arxiv.2303.13988", "cited_by": 72},
+    {"title": "Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms", "year": 2026, "doi": "", "cited_by": 0},
+    {"title": "Robot Learning in the Era of Foundation Models: A Survey", "year": 2023, "doi": "10.48550/arxiv.2311.14379", "cited_by": 0},
+    {"title": "A Comprehensive Review of Neuro-symbolic AI for Robustness, Uncertainty Quantification, and Intervenability", "year": 2025, "doi": "10.1007/s13369-025-10887-3", "cited_by": 11},
+    {"title": "The Road to General Intelligence", "year": 2022, "doi": "10.1007/978-3-031-08020-3", "cited_by": 6},
+    {"title": "Building Machines that Learn and Think with People", "year": 2024, "doi": "10.48550/arxiv.2408.03943", "cited_by": 2},
+    {"title": "A Study on Training and Developing Large Language Models for Behavior Tree Generation", "year": 2024, "doi": "10.48550/arxiv.2401.08089", "cited_by": 3},
+    {"title": "AGI Requires a Coordination Layer on Top of Pattern Repositories", "year": 2025, "doi": "10.48550/arxiv.2512.05765", "cited_by": 0},
+    {"title": "When Models Fabricate Credentials: Measuring How Professional Identity Suppresses Honest Self-Representation", "year": 2025, "doi": "10.48550/arxiv.2511.21569", "cited_by": 0},
+    {"title": "Sparse Autoencoders are Topic Models", "year": 2025, "doi": "10.48550/arxiv.2511.16309", "cited_by": 0},
+    {"title": "Planning in a recurrent neural network that plays Sokoban", "year": 2024, "doi": "10.48550/arxiv.2407.15421", "cited_by": 0},
+    {"title": "Emergent Moral Representations in Large Language Models", "year": 2025, "doi": "10.21203/rs.3.rs-8270539/v1", "cited_by": 0},
+    {"title": "TorchUMM: A Unified Multimodal Model Codebase for Evaluation, Analysis, and Post-training", "year": 2026, "doi": "", "cited_by": 0},
+    {"title": "Principles of Artificial Intelligence: Cognitive Architectures, Large Language Models, and Computational Limits", "year": 2026, "doi": "10.70593/978-93-7185-527-3", "cited_by": 0}
+  ]
+}
