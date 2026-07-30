@@ -66,3 +66,36 @@
 - PhilPapers: API blocked (requires JS)
 - Google Scholar (860 found): extraction too difficult
 - Semantic Scholar: API rate-limited
+
+## 4.3.1 Near-Duplicate Candidates
+
+**Candidates found** (similarity ≥ 0.88): 6
+
+| Similarity | ID 1 | ID 2 |
+|-----------:|------|------|
+| 0.994 | P02_1394 | P02_1438 |
+| 0.987 | P02_1275 | P02_1411 |
+| 0.930 | P02_1221 | P02_1243 |
+| 0.912 | P02_1227 | P02_1245 |
+| 0.892 | P02_1192 | P02_1212 |
+| 0.891 | P02_1300 | P02_1412 |
+
+## 4.3.2 Preprint/Journal Pairs
+
+**Records with arXiv ID + non-arXiv DOI**: 0
+
+
+**Records with arXiv ID only (no DOI)**: 572
+These are arXiv preprints that may or may not have been published.
+
+
+## 4.4.1 Field Standardization
+
+Applied standardization pass:
+- doi normalized: 262 records modified
+- title trimmed: 0 records modified
+- authors split: 0 records modified
+
+## 4.4.2 DOI Enrichment
+
+DOIs retrieved from arXiv API metadata: 0
