@@ -1,19 +1,19 @@
 # Paper 02: Schema Coherence and the σ-Trap — A Systematic Review
 
-**Status**: 🟡 Phase 00 complete — ready for Phase 0.5 (AI-Assisted Research)
+**Status**: 🟡 Phase 0.5 complete — ready for Phase 1 (Protocol)
 **Type**: Systematic Review with Meta-Analysis (conditional)
 **Target Venue**: *Artificial Intelligence Review* (Springer) or *JAIR*
-**PROSPERO ID**: [Pending registration — Phase 1]
-**OSF Project**: [Pending registration — Phase 1]
+**PROSPERO**: Not eligible (non-medical review)
+**OSF Project**: https://osf.io/m3asw (immutable registration, 2026-07-08)
 **Timeline**: Months 1–9 (2026-07-03 → 2027-03-12)
 
 ## Research Question (PICO)
 
-**Primary**: In neural network models trained via gradient-based optimization, what is the effect of σ-targeting training interventions on OOD generalization performance compared to standard SGD?
+**Primary**: In neural network models trained via gradient-based optimization, what is the effect of σ-targeting training interventions on compositional out-of-distribution generalization performance compared to standard SGD?
 
 **Secondary 1**: What empirical evidence exists for the σ-trap (stable low-σ_A equilibrium) across benchmarks and architectures?
 **Secondary 2**: What proxy measures of schema coherence have been validated, and how do they correlate with OOD performance?
-**Secondary 3**: What is the relationship between σ-trap failure and alignment failure modes (mesa-optimization, deceptive alignment)?
+**Secondary 3** [Exploratory — Discussion only]: What is the relationship between σ-trap failure and alignment failure modes (mesa-optimization, deceptive alignment)?
 
 ## Phase Overview
 
@@ -21,10 +21,10 @@
 |:------|:-----|:---------|:-------|
 | 00_cross_cutting | Cross-Cutting Concerns | 2027-03-12 | 🟡 Ongoing |
 | 00_repo | Repo & LaTeX Setup | 2026-07-10 | ✅ Complete |
-| 00_5 | AI-Assisted Research | 2026-07-24 | 🟡 Pending |
+| 00_5 | AI-Assisted Research | 2026-07-24 | ✅ Complete |
 | 01 | Research Question & Protocol | 2026-07-31 | 🟡 Pending |
 | 02 | Search Strategy Design | 2026-08-07 | 🟡 Pending |
-| 03 | Database Search Execution | 2026-08-14 | 🟡 Pending |
+| 03 | Database Search Execution | 2026-08-14 | ✅ Complete |
 | 04 | Deduplication & Reference Management | 2026-08-21 | 🟡 Pending |
 | 05 | Title & Abstract Screening | 2026-09-11 | 🟡 Pending |
 | 06 | Full-Text Retrieval & Review | 2026-09-25 | 🟡 Pending |
