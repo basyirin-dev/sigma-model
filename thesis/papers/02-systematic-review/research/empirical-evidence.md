@@ -141,7 +141,7 @@ This document catalogs empirical papers demonstrating the σ-trap pattern: neura
 
 ### 9. Li et al. (2023) — SLOG
 
-- **Citation:** Li, Y., Wang, Z., & Li, Y. (2023). SLOG: A Structural Generalization Benchmark for Semantic Parsing. *arXiv*.
+- **Citation:** Li, B., Donatelli, L., Koller, A., et al. (2023). SLOG: A Structural Generalization Benchmark for Semantic Parsing. *Proceedings of EMNLP*.
 - **Task / OOD split:** SLOG — extends COGS with 17 challenging structural generalization cases (prepositional phrase modifiers on novel noun phrase positions).
 - **ID accuracy:** Near-perfect on original COGS
 - **OOD accuracy:** 40.6% (standard pretrained models); best specialized parser 70.8%

@@ -1,0 +1,2272 @@
+%0 Conference Paper
+%T Optimal Transport-Driven Federated Out-of-Distribution Detection in Heterogeneous Data
+%@ 9798400718779
+%U https://doi.org/10.1145/3731715.3733410
+%R 10.1145/3731715.3733410
+%B Proceedings of the 2025 International Conference on Multimedia Retrieval
+%I Association for Computing Machinery
+%A Yuan He
+%A Yingchun Cui
+%A Zhengda Wu
+%A Heran Xi
+%A Jinghua Zhu
+%D 2025
+%P 424–432
+%K federated learning, optimal transport theory, out-of-distribution detection
+%C Chicago, IL, USA
+
+%0 Conference Paper
+%T Graph Representation Learning via Causal Diffusion for Out-of-Distribution Recommendation
+%@ 9798400712746
+%U https://doi.org/10.1145/3696410.3714849
+%R 10.1145/3696410.3714849
+%B Proceedings of the ACM on Web Conference 2025
+%I Association for Computing Machinery
+%A Chu Zhao
+%A Enneng Yang
+%A Yuliang Liang
+%A Pengxiang Lan
+%A Yuting Liu
+%A Jianzhe Zhao
+%A Guibing Guo
+%A Xingwei Wang
+%D 2025
+%P 334–346
+%K distributionally robust optimization, graph recommendation, out-of-distribution
+%C Sydney NSW, Australia
+
+%0 Conference Paper
+%T SFP: Spurious Feature-Targeted Pruning for Out-of-Distribution Generalization
+%@ 9798400706868
+%U https://doi.org/10.1145/3664647.3680969
+%R 10.1145/3664647.3680969
+%B Proceedings of the 32nd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Yingchun Wang
+%A Jingcai Guo
+%A Song Guo
+%A Yi Liu
+%A Jie Zhang
+%A Weizhan Zhang
+%D 2024
+%P 8412–8420
+%K deep neural network, model pruning, module detection, out-of-distribution generalization
+%C Melbourne VIC, Australia
+
+%0 Conference Paper
+%T Research on Causal Robustness Enhancement Methods and Out-of-Distribution Generalization for Deep Classification Models
+%@ 9798400719981
+%U https://doi.org/10.1145/3795154.3795263
+%R 10.1145/3795154.3795263
+%B Proceedings of the 2025 6th International Conference on Computer Science and Management Technology
+%I Association for Computing Machinery
+%A Xiaodong Wang
+%A Ling Jiang
+%D 2026
+%P 668–671
+%K Causal robustness, Counterfactual augmentation, Deep classification, Out-of-distribution generalization
+%C 
+
+
+%0 Journal Article
+%T Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective
+%V 44
+%@ 1046-8188
+%U https://doi.org/10.1145/3768153
+%R 10.1145/3768153
+%N 1
+%J ACM Trans. Inf. Syst.
+%I Association for Computing Machinery
+%A Yu-An Liu
+%A Ruqing Zhang
+%A Jiafeng Guo
+%A Maarten de Rijke
+%A Yixing Fan
+%A Xueqi Cheng
+%D 2025
+%P Article 17
+%K Robustness, trustworthy systems
+
+%0 Conference Paper
+%T Enhancing Transformers without Self-supervised Learning: A Loss Landscape Perspective in Sequential Recommendation
+%@ 9798400702419
+%U https://doi.org/10.1145/3604915.3608831
+%R 10.1145/3604915.3608831
+%B Proceedings of the 17th ACM Conference on Recommender Systems
+%I Association for Computing Machinery
+%A Vivian Lai
+%A Huiyuan Chen
+%A Chin-Chia Michael Yeh
+%A Minghua Xu
+%A Yiwei Cai
+%A Hao Yang
+%D 2023
+%P 791–797
+%K Loss Landscape, Sequential Recommendation, Sharpness-aware Minimization, Transformer
+%C Singapore, Singapore
+
+%0 Conference Paper
+%T Feature-granularity-based spurious correlation and causal analysis in CNNs Exploring Feature Granularity to Uncover Spurious Correlations
+%@ 9798400710148
+%U https://doi.org/10.1145/3702879.3702937
+%R 10.1145/3702879.3702937
+%B Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology
+%I Association for Computing Machinery
+%A Xiaodong Wang
+%A Gaiqun Zhang
+%D 2024
+%P 336–341
+%K Causal reasoning, Convolutional Neural Networks, interpretability, spurious correlations
+%C 
+
+
+%0 Journal Article
+%T Probabilistic Runtime Verification, Evaluation, and Risk Assessment of Visual Deep Learning Systems
+%V 17
+%@ 2157-6904
+%U https://doi.org/10.1145/3795523
+%R 10.1145/3795523
+%N 3
+%J ACM Trans. Intell. Syst. Technol.
+%I Association for Computing Machinery
+%A Birk Torpmann-Hagen
+%A Pål Halvorsen
+%A Michael A. Riegler
+%A Dag Johansen
+%D 2026
+%P Article 68
+%K Deep learning, Probabilistic Risk Assessment, Runtime Verification, Event Tree Analysis
+
+%0 Conference Paper
+%T Applying Adaptive Sharpness-Aware Minimization to Improve Out-of-distribution Generalization
+%@ 9798400708916
+%U https://doi.org/10.1145/3628797.3629009
+%R 10.1145/3628797.3629009
+%B Proceedings of the 12th International Symposium on Information and Communication Technology
+%I Association for Computing Machinery
+%A Hoang-Chau Luong
+%A Minh-Triet Tran
+%D 2023
+%P 450–455
+%K OoD generalization, flat minima, image classification, sharpness-aware minimization
+%C Ho Chi Minh, Vietnam
+
+%0 Conference Paper
+%T Text2Weight: Bridging Natural Language and Neural Network Weight Spaces
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3755441
+%R 10.1145/3746027.3755441
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Bowen Tian
+%A Wenshuo Chen
+%A Zexi Li
+%A Songning Lai
+%A Jiemin Wu
+%A Yutao Yue
+%D 2025
+%P 10152–10160
+%K deep weight space, multimodal, text2weight
+%C Dublin, Ireland
+
+%0 Conference Paper
+%T Beyond Mimicry: Toward Lifelong Adaptability in Imitation Learning
+%@ 9798400723179
+%U https://doi.org/10.65109/LDHN8550
+%R 10.65109/LDHN8550
+%B Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems
+%I International Foundation for Autonomous Agents and Multiagent Systems
+%A Nathan Gavenski
+%A Felipe Meneguzzi
+%A Odinaldo Rodrigues
+%D 2026
+%P 3864–3868
+%K {imitation learning, generalisation, compositional learning
+%C Paphos, Cyprus
+
+%0 Journal Article
+%T Similarity of Neural Network Models: A Survey of Functional and Representational Measures
+%V 57
+%@ 0360-0300
+%U https://doi.org/10.1145/3728458
+%R 10.1145/3728458
+%N 9
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Max Klabunde
+%A Tobias Schumacher
+%A Markus Strohmaier
+%A Florian Lemmerich
+%D 2025
+%P Article 242
+%K Deep learning, representational similarity, functional similarity
+
+%0 Journal Article
+%T Compute-efficient deep learning: algorithmic trends and opportunities
+%V 24
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Brian R. Bartoldson
+%A Bhavya Kailkhura
+%A Davis Blalock
+%D 2023
+%P Article 122
+%K deep learning, training speedup, computational efficiency, carbon emission
+
+%0 Journal Article
+%T Integrating Uncertainty Into Neural Network-Based Speech Enhancement
+%V 31
+%@ 2329-9290
+%U https://doi.org/10.1109/TASLP.2023.3265202
+%R 10.1109/TASLP.2023.3265202
+%J IEEE/ACM Trans. Audio, Speech and Lang. Proc.
+%I IEEE Press
+%A Huajian Fang
+%A Dennis Becker
+%A Stefan Wermter
+%A Timo Gerkmann
+%D 2023
+%P 1587–1600
+
+%0 Conference Paper
+%T Quantization Meets OOD: Generalizable Quantization-aware Training from a Flatness Perspective
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3755856
+%R 10.1145/3746027.3755856
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Jiacheng Jiang
+%A Yuan Meng
+%A Chen Tang
+%A Han Yu
+%A Qun Li
+%A Zhi Wang
+%A Wenwu Zhu
+%D 2025
+%P 11937–11946
+%K freeze, ood, quantization, sam
+%C Dublin, Ireland
+
+%0 Conference Paper
+%T Spiking Graph Predictive Coding for Reliable OOD Generalization
+%@ 9798400723070
+%U https://doi.org/10.1145/3774904.3793044
+%R 10.1145/3774904.3793044
+%B Proceedings of the ACM Web Conference 2026
+%I Association for Computing Machinery
+%A Jing Ren
+%A Jiapeng Du
+%A Bowen Li
+%A Ziqi Xu
+%A Xin Zheng
+%A Hong Jia
+%A Suyu Ma
+%A Xiwei Xu
+%A Feng Xia
+%D 2026
+%P 9056–9067
+%K trustworthy ai, uncertainty estimation, graph neural networks, ood detection, interpretability
+%C United Arab Emirates
+
+%0 Conference Paper
+%T Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization
+%@ 9798400723179
+%U https://doi.org/10.65109/PPER9186
+%R 10.65109/PPER9186
+%B Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems
+%I International Foundation for Autonomous Agents and Multiagent Systems
+%A Nikita Kachaev
+%A Mikhail Kolosov
+%A Daniil Zelezetsky
+%A Alexey K. Kovalev
+%A Aleksandr I. Panov
+%D 2026
+%P 1864–1873
+%K vla, vlm, representation alignment, robotics, generalization
+%C Paphos, Cyprus
+
+%0 Conference Paper
+%T Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts
+%@ 9798400723070
+%U https://doi.org/10.1145/3774904.3792190
+%R 10.1145/3774904.3792190
+%B Proceedings of the ACM Web Conference 2026
+%I Association for Computing Machinery
+%A Qianyu Song
+%A Chao Li
+%A Yeyu Yan
+%A Hui Zhou
+%A Zhongying Zhao
+%A Qingtian Zeng
+%D 2026
+%P 730–741
+%K graph representation learning, dynamic graph neural networks, distribution shifts, out-of-distribution generalization
+%C United Arab Emirates
+
+%0 Journal Article
+%T Human Heterogeneity Invariant Stress Sensing
+%V 9
+%U https://doi.org/10.1145/3749465
+%R 10.1145/3749465
+%N 3
+%J Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.
+%I Association for Computing Machinery
+%A Yi Xiao
+%A Harshit Sharma
+%A Sawinder Kaur
+%A Dessa Bergen-Cico
+%A Asif Salekin
+%D 2025
+%P Article 142
+%K Neural network pruning, Out-of-Distribution Generalization, Stress Detection, Wearable Data
+
+%0 Journal Article
+%T Graph Transformers for Query Plan Representation: Potentials and Challenges
+%V 18
+%@ 2150-8097
+%U https://doi.org/10.14778/3773731.3773745
+%R 10.14778/3773731.3773745
+%N 13
+%J Proc. VLDB Endow.
+%I VLDB Endowment
+%A Chenghao Lyu
+%A Guillaume Lachaud
+%A Gabriel Lozano
+%A Yanlei Diao
+%D 2025
+%P 5716–5730
+
+%0 Conference Paper
+%T ASTER: Adaptive Dynamic Layer-Skipping for Efficient Transformer Inference via Markov Decision Process
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3755526
+%R 10.1145/3746027.3755526
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Fangxin Liu
+%A Junjie Wang
+%A Ning Yang
+%A Zongwu Wang
+%A Junping Zhao
+%A Li Jiang
+%A Haibing Guan
+%D 2025
+%P 11853–11861
+%K knowledge distillation, layer skipping, transformer-based model
+%C Dublin, Ireland
+
+%0 Conference Paper
+%T Causality and Independence Enhancement for Biased Node Classification
+%@ 9798400701245
+%U https://doi.org/10.1145/3583780.3614804
+%R 10.1145/3583780.3614804
+%B Proceedings of the 32nd ACM International Conference on Information and Knowledge Management
+%I Association for Computing Machinery
+%A Guoxin Chen
+%A Yongqing Wang
+%A Fangda Guo
+%A Qinglang Guo
+%A Jiangli Shao
+%A Huawei Shen
+%A Xueqi Cheng
+%D 2023
+%P 203–212
+%K out-of-distribution generalization, node classification, graph neural networks
+%C Birmingham, United Kingdom
+
+%0 Conference Paper
+%T VPA: Fully Test-Time Visual Prompt Adaptation
+%@ 9798400701085
+%U https://doi.org/10.1145/3581783.3611835
+%R 10.1145/3581783.3611835
+%B Proceedings of the 31st ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Jiachen Sun
+%A Mark Ibrahim
+%A Melissa Hall
+%A Ivan Evtimov
+%A Z. Morley Mao
+%A Cristian Canton Ferrer
+%A Caner Hazirbas
+%D 2023
+%P 5796–5806
+%K corruption robustness, domain adaptation, out-of-distribution generalization, test-time adaptation
+%C Ottawa ON, Canada
+
+%0 Journal Article
+%T A simple approach to improve single-model deep uncertainty via distance-awareness
+%V 24
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Jeremiah Zhe Liu
+%A Shreyas Padhy
+%A Jie Ren
+%A Zi Lin
+%A Yeming Wen
+%A Ghassen Jerfel
+%A Zachary Nado
+%A Jasper Snoek
+%A Dustin Tran
+%A Balaji Lakshminarayanan
+%D 2023
+%P Article 42
+%K single model uncertainty, deterministic uncertainty quantification, probabilistic neural networks, calibration, out-of-distribution detection
+
+%0 Journal Article
+%T A generalised linear model framework for β-variational autoencoders based on exponential dispersion families
+%V 22
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Robert Sicks
+%A Ralf Korn
+%A Stefanie Schwaar
+%D 2021
+%P Article 233
+%K posterior collapse, loss analysis, EDF observation models, ML-estimation, variational autoencoders
+
+%0 Conference Paper
+%T Environment Agnostic Invariant Risk Minimization for Classification of Sequential Datasets
+%@ 9781450383325
+%U https://doi.org/10.1145/3447548.3467324
+%R 10.1145/3447548.3467324
+%B Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery &amp; Data Mining
+%I Association for Computing Machinery
+%A Praveen Venkateswaran
+%A Vinod Muthusamy
+%A Vatche Isahagian
+%A Nalini Venkatasubramanian
+%D 2021
+%P 1615–1624
+%K sequential prediction, robust models, out-of-distribution generalization
+%C Virtual Event, Singapore
+
+%0 Journal Article
+%T PT-HMC: Optimization-based Pre-Training with Hamiltonian Monte-Carlo Sampling for Driver Intention Recognition
+%V 1
+%U https://doi.org/10.1145/3688573
+%R 10.1145/3688573
+%N 1
+%J ACM Trans. Probab. Mach. Learn.
+%I Association for Computing Machinery
+%A Koen Vellenga
+%A Alexander Karlsson
+%A H. Joe Steinhauer
+%A Göran Falkman
+%A Anders Sjögren
+%D 2024
+%P Article 4
+%K Driver Intention Recognition, Probabilistic Deep Learning, Bayesian Deep Learning, Uncertainty quantification, Hamiltonian Monte Carlo
+
+%0 Journal Article
+%T Underspecification presents challenges for credibility in modern machine learning
+%V 23
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Alexander D'Amour
+%A Katherine Heller
+%A Dan Moldovan
+%A Ben Adlam
+%A Babak Alipanahi
+%A Alex Beutel
+%A Christina Chen
+%A Jonathan Deaton
+%A Jacob Eisenstein
+%A Matthew D. Hoffman
+%A Farhad Hormozdiari
+%A Neil Houlsby
+%A Shaobo Hou
+%A Ghassen Jerfel
+%A Alan Karthikesalingam
+%A Mario Lucic
+%A Yian Ma
+%A Cory McLean
+%A Diana Mincu
+%A Akinori Mitani
+%A Andrea Montanari
+%A Zachary Nado
+%A Vivek Natarajan
+%A Christopher Nielson
+%A Thomas F. Osborne
+%A Rajiv Raman
+%A Kim Ramasamy
+%A Rory Sayres
+%A Jessica Schrouff
+%A Martin Seneviratne
+%A Shannon Sequeira
+%A Harini Suresh
+%A Victor Veitch
+%A Max Vladymyrov
+%A Xuezhi Wang
+%A Kellie Webster
+%A Steve Yadlowsky
+%A Taedong Yun
+%A Xiaohua Zhai
+%A D. Sculley
+%D 2022
+%P Article 226
+%K genomics, electronic health records, medical imaging, natural language processing, computer vision, identifiability, fairness, spurious correlation, distribution shift
+
+%0 Journal Article
+%T Unbiased Semantic Representation Learning Based on Causal Disentanglement for Domain Generalization
+%V 20
+%@ 1551-6857
+%U https://doi.org/10.1145/3659953
+%R 10.1145/3659953
+%N 8
+%J ACM Trans. Multimedia Comput. Commun. Appl.
+%I Association for Computing Machinery
+%A Xuanyu Jin
+%A Ni Li
+%A Wanzeng Kong
+%A Jiajia Tang
+%A Bing Yang
+%D 2024
+%P Article 249
+%K Transfer learning, domain generalization, disentangled representation, causal intervention, semantic representation
+
+%0 Journal Article
+%T PadNet: Defending Neural Networks Against Adversarial Examples
+%V 29
+%@ 2471-2566
+%U https://doi.org/10.1145/3799889
+%R 10.1145/3799889
+%N 2
+%J ACM Trans. Priv. Secur.
+%I Association for Computing Machinery
+%A Armon Barton
+%A Matthew Wright
+%A Shaikh Akib Shahriyar
+%A Edgar Jatho
+%A Mohammad Saidur Rahman
+%A Kantha Girish Gangadhara
+%A Jiang Ming
+%D 2026
+%P Article 17
+%K Secure machine learning, adversarial examples, deep learning
+
+%0 Conference Paper
+%T SEW: Strengthening Robustness of Black-box DNN Watermarking via Specificity Enhancement
+%@ 9798400722585
+%U https://doi.org/10.1145/3770854.3780272
+%R 10.1145/3770854.3780272
+%B Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1
+%I Association for Computing Machinery
+%A Huming Qiu
+%A Mi Zhang
+%A Junjie Sun
+%A Peiyi Chen
+%A Xiaohan Zhang
+%A Min Yang
+%D 2026
+%P 1204–1215
+%K intellectual property, digital watermark, deep learning
+%C Republic of Korea
+
+%0 Conference Paper
+%T MORE: Multi-Organ Medical Image REconstruction Dataset
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3758233
+%R 10.1145/3746027.3758233
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Shaokai Wu
+%A Yapan Guo
+%A Yanbiao Ji
+%A Jing Tong
+%A Yuxiang Lu
+%A Mei Li
+%A Suizhi Huang
+%A Yue Ding
+%A Hongtao Lu
+%D 2025
+%P 12890–12896
+%K benchmark, computed tomography, ct reconstruction, medical image reconstruction, multi-organ dataset
+%C Dublin, Ireland
+
+%0 Conference Paper
+%T Test-Time Model Adaptation for Quantized Neural Networks
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3754730
+%R 10.1145/3746027.3754730
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Zeshuai Deng
+%A Guohao Chen
+%A Shuaicheng Niu
+%A Hui Luo
+%A Shuhai Zhang
+%A Yifan Yang
+%A Renjie Chen
+%A Wei Luo
+%A Mingkui Tan
+%D 2025
+%P 7258–7267
+%K domain knowledge management, quantized neural network, test-time adaptation, zeroth-order optimization
+%C Dublin, Ireland
+
+%0 Journal Article
+%T MALeR: Improving Compositional Fidelity in Layout-Guided Generation
+%V 44
+%@ 0730-0301
+%U https://doi.org/10.1145/3763341
+%R 10.1145/3763341
+%N 6
+%J ACM Trans. Graph.
+%I Association for Computing Machinery
+%A Shivank Saxena
+%A Dhruv Srivastava
+%A Makarand Tapaswi
+%D 2025
+%P Article 237
+%K layout-guided text-to-image generation, subject-attribute binding, diffusion models, latent optimization
+
+%0 Journal Article
+%T Causal Disentangled Recommendation against User Preference Shifts
+%V 42
+%@ 1046-8188
+%U https://doi.org/10.1145/3593022
+%R 10.1145/3593022
+%N 1
+%J ACM Trans. Inf. Syst.
+%I Association for Computing Machinery
+%A Wenjie Wang
+%A Xinyu Lin
+%A Liuhui Wang
+%A Fuli Feng
+%A Yunshan Ma
+%A Tat-Seng Chua
+%D 2023
+%P Article 12
+%K Causal disentangled recommendation, preference shifts, generalizable recommendation, out-of-distribution generalization
+
+%0 Conference Paper
+%T NILMBENCH2026: A Benchmark for Energy Disaggregation
+%@ 9798400720123
+%U https://doi.org/10.1145/3744256.3812587
+%R 10.1145/3744256.3812587
+%B Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation
+%I Association for Computing Machinery
+%A Aayush Kuloor
+%A Anurag Singh
+%A Harsh Dhru
+%A Nipun Batra
+%D 2026
+%P 196–206
+%K Energy disaggregation, Non-intrusive load monitoring
+%C 
+
+
+%0 Conference Paper
+%T Normalized Space Alignment: A Versatile Metric for Representation Analysis
+%@ 9798400714542
+%U https://doi.org/10.1145/3711896.3737065
+%R 10.1145/3711896.3737065
+%B Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2
+%I Association for Computing Machinery
+%A Danish Ebadulla
+%A Aditya Gulati
+%A Ambuj Singh
+%D 2025
+%P 555–566
+%K dimensionality reduction, interpretability, local intrinsic dimensionality, representation alignment, similarity index
+%C Toronto ON, Canada
+
+%0 Journal Article
+%T A framework and benchmark for deep batch active learning for regression
+%V 24
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A David Holzmüller
+%A Viktor Zaverkin
+%A Johannes Kästner
+%A Ingo Steinwart
+%D 2023
+%P Article 164
+%K batch mode deep active learning, regression, tabular data, neural network, Benchmark
+
+%0 Conference Paper
+%T Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-Trained Inverse RF Rendering
+%@ 9798400723094
+%U https://doi.org/10.1145/3774906.3802762
+%R 10.1145/3774906.3802762
+%B Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems
+%I Association for Computing Machinery
+%A Xueqiang Han
+%A Tianyue Zheng
+%A Jun Luo
+%D 2026
+%P 334–346
+%K RF sensing, 3D reconstruction, generative co-training.
+%C 
+
+
+%0 Journal Article
+%T Universal Time-Series Representation Learning: A Survey
+%V 58
+%@ 0360-0300
+%U https://doi.org/10.1145/3817600
+%R 10.1145/3817600
+%N 12
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Patara Trirat
+%A Yooju Shin
+%A Junhyeok Kang
+%A Youngeun Nam
+%A Jihye Na
+%A Minyoung Bae
+%A Joeun Kim
+%A Byunghyun Kim
+%A Jae-Gil Lee
+%D 2026
+%P Article 321
+%K Time series, representation learning, neural networks, temporal modeling
+
+%0 Journal Article
+%T Explainability for Large Language Models: A Survey
+%V 15
+%@ 2157-6904
+%U https://doi.org/10.1145/3639372
+%R 10.1145/3639372
+%N 2
+%J ACM Trans. Intell. Syst. Technol.
+%I Association for Computing Machinery
+%A Haiyan Zhao
+%A Hanjie Chen
+%A Fan Yang
+%A Ninghao Liu
+%A Huiqi Deng
+%A Hengyi Cai
+%A Shuaiqiang Wang
+%A Dawei Yin
+%A Mengnan Du
+%D 2024
+%P Article 20
+%K Explainability, interpretability, large language models
+
+%0 Journal Article
+%T Understanding Hallucinations in Large Visual and Language Models
+%V 58
+%@ 0360-0300
+%U https://doi.org/10.1145/3811409
+%R 10.1145/3811409
+%N 13
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Zheng Yi Ho
+%A Siyuan Liang
+%A Dacheng Tao
+%D 2026
+%P Article 332
+%K Hallucination survey, AI hallucinations, large language models, large vision-language models, multimodal hallucinations, text-to-image diffusion models, hallucination taxonomy, hallucination root causes, MOWI framework, transformer architectures, generative model reliability.
+
+%0 Journal Article
+%T Test Optimization in DNN Testing: A Survey
+%V 33
+%@ 1049-331X
+%U https://doi.org/10.1145/3643678
+%R 10.1145/3643678
+%N 4
+%J ACM Trans. Softw. Eng. Methodol.
+%I Association for Computing Machinery
+%A Qiang Hu
+%A Yuejun Guo
+%A Xiaofei Xie
+%A Maxime Cordy
+%A Lei Ma
+%A Mike Papadakis
+%A Yves Le Traon
+%D 2024
+%P Article 111
+%K Test optimization, DNN testing, low-labeling cost
+
+%0 Conference Paper
+%T InfoNCE is a Free Lunch for Semantically guided Graph Contrastive Learning
+%@ 9798400715921
+%U https://doi.org/10.1145/3726302.3730007
+%R 10.1145/3726302.3730007
+%B Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval
+%I Association for Computing Machinery
+%A Zixu Wang
+%A Bingbing Xu
+%A Yige Yuan
+%A Huawei Shen
+%A Xueqi Cheng
+%D 2025
+%P 719–728
+%K graph contrastive learning, graph representation learning, positive unlabeled learning
+%C Padua, Italy
+
+%0 Journal Article
+%T Unveiling Code Pre-Trained Models: Investigating Syntax and Semantics Capacities
+%V 33
+%@ 1049-331X
+%U https://doi.org/10.1145/3664606
+%R 10.1145/3664606
+%N 7
+%J ACM Trans. Softw. Eng. Methodol.
+%I Association for Computing Machinery
+%A Wei Ma
+%A Shangqing Liu
+%A Mengjie Zhao
+%A Xiaofei Xie
+%A Wenhang Wang
+%A Qiang Hu
+%A Jie Zhang
+%A Yang Liu
+%D 2024
+%P Article 169
+%K Code model analysis, syntax and semantic encoding
+
+%0 Conference Paper
+%T Sharpness-aware Federated Graph Learning
+%@ 9798400722929
+%U https://doi.org/10.1145/3773966.3777989
+%R 10.1145/3773966.3777989
+%B Proceedings of the Nineteenth ACM International Conference on Web Search and Data Mining
+%I Association for Computing Machinery
+%A Ruiyu Li
+%A Peige Zhao
+%A Guangxia Li
+%A Pengcheng Wu
+%A Xingyu Gao
+%A Zhiqiang Xu
+%D 2026
+%P 345–355
+%K federated graph learning, sharpness-aware minimization, dimensional collapse
+%C USA
+
+%0 Conference Paper
+%T Physics-Informed Optical Kernel Regression Using Complex-Valued Neural Fields
+%@ 9798350323481
+%U https://doi.org/10.1109/DAC56929.2023.10247680
+%R 10.1109/dac56929.2023.10247680
+%B Proceedings of the 60th Annual ACM/IEEE Design Automation Conference
+%I IEEE Press
+%A Guojin Chen
+%A Zehua Pei
+%A Haoyu Yang
+%A Yuzhe Ma
+%A Bei Yu
+%A Martin Wong
+%D 2025
+%P 1–6
+%C San Francisco, California, United States
+
+%0 Journal Article
+%T An empirical investigation of the role of pre-training in lifelong learning
+%V 24
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Sanket Vaibhav Mehta
+%A Darshan Patil
+%A Sarath Chandar
+%A Emma Strubell
+%D 2023
+%P Article 214
+%K lifelong learning, continual learning, pre-training, flat minima, sharpness-aware minimization
+
+%0 Journal Article
+%T Model Merging in LLMs, MLLMs, and Beyond: Methods, Theories, Applications, and Opportunities
+%V 58
+%@ 0360-0300
+%U https://doi.org/10.1145/3787849
+%R 10.1145/3787849
+%N 8
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Enneng Yang
+%A Li Shen
+%A Guibing Guo
+%A Xingwei Wang
+%A Xiaochun Cao
+%A Jie Zhang
+%A Dacheng Tao
+%D 2026
+%P Article 216
+%K Model merging, large language model, multimodal large language models, continual learning, multitask learning
+
+%0 Conference Paper
+%T A Causal Explainable Guardrails for Large Language Models
+%@ 9798400706363
+%U https://doi.org/10.1145/3658644.3690217
+%R 10.1145/3658644.3690217
+%B Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security
+%I Association for Computing Machinery
+%A Zhixuan Chu
+%A Yan Wang
+%A Longfei Li
+%A Zhibo Wang
+%A Zhan Qin
+%A Kui Ren
+%D 2024
+%P 1136–1150
+%K causal inference, explanation, large language model, safety, trustworthiness
+%C Salt Lake City, UT, USA
+
+%0 Journal Article
+%T Learning to optimize: a primer and a benchmark
+%V 23
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Tianlong Chen
+%A Xiaohan Chen
+%A Wuyang Chen
+%A Zhangyang Wang
+%A Howard Heaton
+%A Jialin Liu
+%A Wotao Yin
+%D 2022
+%P Article 189
+%K algorithm unrolling, optimization, meta learning, learning to optimize
+
+%0 Proceeding
+%T Proceedings of the 2025 International Conference on Multimedia Retrieval
+%@ 9798400718779
+%I Association for Computing Machinery
+%D 2025
+%C Chicago, IL, USA
+
+%0 Journal Article
+%T 
+CoPhy-PGNN: Learning Physics-guided Neural Networks with Competing Loss Functions for Solving Eigenvalue Problems
+%V 13
+%@ 2157-6904
+%U https://doi.org/10.1145/3530911
+%R 10.1145/3530911
+%N 6
+%J ACM Trans. Intell. Syst. Technol.
+%I Association for Computing Machinery
+%A Mohannad Elhamod
+%A Jie Bu
+%A Christopher Singh
+%A Matthew Redell
+%A Abantika Ghosh
+%A Viktor Podolskiy
+%A Wei-Cheng Lee
+%A Anuj Karpatne
+%D 2022
+%P Article 92
+%K Electromagnetic propagation, Ising model, ML, PGML, quantum physics
+
+%0 Conference Paper
+%T Deep Probabilistic Binary Embedding via Learning Reliable Uncertainty for Cross-Modal Retrieval
+%@ 9798400720352
+%U https://doi.org/10.1145/3746027.3754811
+%R 10.1145/3746027.3754811
+%B Proceedings of the 33rd ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Kun Cheng
+%A Qibing Qin
+%A Wenfeng Zhang
+%A Lei Huang
+%A Jie Nie
+%D 2025
+%P 6393–6402
+%K cross-modal retrieval, deep hashing, probabilistic embedding, uncertainty quantification
+%C Dublin, Ireland
+
+%0 Conference Paper
+%T Disentangling Policy from Offline Task Representation Learning via Adversarial Data Augmentation
+%@ 9798400704864
+%B Proceedings of the 23rd International Conference on Autonomous Agents and Multiagent Systems
+%I International Foundation for Autonomous Agents and Multiagent Systems
+%A Chengxing Jia
+%A Fuxiang Zhang
+%A Yi-Chen Li
+%A Chen-Xiao Gao
+%A Xu-Hui Liu
+%A Lei Yuan
+%A Zongzhang Zhang
+%A Yang Yu
+%D 2024
+%P 944–953
+%K meta-reinforcement learning, offline reinforcement learning
+%C Auckland, New Zealand
+
+%0 Conference Paper
+%T Diversity-Enhanced Snapshot Ensembles: Improving Robustness via Diversity-Based Snapshot Selection
+%@ 9798400720628
+%U https://doi.org/10.1145/3746467.3801503
+%R 10.1145/3746467.3801503
+%B Proceedings of the 2026 ACM Southeast Conference
+%I Association for Computing Machinery
+%A Kishan Rajdev
+%A Hyung Jae Chang
+%D 2026
+%P 217–222
+%K neural networks, uncertainty quantification, ensemble methods, snapshot ensemble, model diversity
+%C Troy University, Troy, AL, USA
+
+%0 Proceeding
+%T Proceedings of the 2024 International Conference on Multimedia Retrieval
+%@ 9798400706196
+%I Association for Computing Machinery
+%D 2024
+%C Phuket, Thailand
+
+%0 Conference Paper
+%T Mitigating Distributed Backdoor Attack in Federated Learning Through Mode Connectivity
+%@ 9798400704826
+%U https://doi.org/10.1145/3634737.3637682
+%R 10.1145/3634737.3637682
+%B Proceedings of the 19th ACM Asia Conference on Computer and Communications Security
+%I Association for Computing Machinery
+%A Kane Walter
+%A Meisam Mohammady
+%A Surya Nepal
+%A Salil S. Kanhere
+%D 2024
+%P 1287–1298
+%K federated learning, backdoor attack, mode connectivity
+%C Singapore, Singapore
+
+%0 Proceeding
+%T Proceedings of the 2026 ACM Workshop on Information Hiding and Multimedia Security
+%@ 9798400723766
+%I Association for Computing Machinery
+%E Alessandro Piva
+%E Mauro Barni
+%E Benedetta Tondi
+%E Dasara Shullani
+%E Daniele Baracchi
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2026 5th International Conference on Networks, Communications and Information Technology
+%@ 9798400725074
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Conference Paper
+%T Connecting Domains and Contrasting Samples: A Ladder for Domain Generalization
+%@ 9798400712456
+%U https://doi.org/10.1145/3690624.3709280
+%R 10.1145/3690624.3709280
+%B Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1
+%I Association for Computing Machinery
+%A Tianxin Wei
+%A Yifan Chen
+%A Xinrui He
+%A Wenxuan Bao
+%A Jingrui He
+%D 2025
+%P 1563–1574
+%K contrastive learning, domain generalization, pre-trained model anchoring
+%C Toronto ON, Canada
+
+%0 Conference Paper
+%T Domain-Specific Risk Minimization for Domain Generalization
+%@ 9798400701030
+%U https://doi.org/10.1145/3580305.3599313
+%R 10.1145/3580305.3599313
+%B Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+%I Association for Computing Machinery
+%A Yi-Fan Zhang
+%A Jindong Wang
+%A Jian Liang
+%A Zhang Zhang
+%A Baosheng Yu
+%A Liang Wang
+%A Dacheng Tao
+%A Xing Xie
+%D 2023
+%P 3409–3421
+%K test-time adaptation, domain generalization, adaptivity gap
+%C Long Beach, CA, USA
+
+%0 Conference Paper
+%T Responsive DNN Adaptation for Video Analytics against Environment Shift via Hierarchical Mobile-Cloud Collaborations
+%@ 9798400714795
+%U https://doi.org/10.1145/3715014.3722044
+%R 10.1145/3715014.3722044
+%B Proceedings of the 23rd ACM Conference on Embedded Networked Sensor Systems
+%I Association for Computing Machinery
+%A Maozhe Zhao
+%A Shengzhong Liu
+%A Fan Wu
+%A Guihai Chen
+%D 2025
+%P 317–331
+%K video analytics, mobile computing, continuous learning
+%C UC Irvine Student Center., Irvine, CA, USA
+
+%0 Proceeding
+%T Proceedings of the 17th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics
+%@ 9798400726538
+%I Association for Computing Machinery
+%E Pierangelo Veltri
+%E Giuseppe Pozzi
+%E Pietro Hiram Guzzi
+%E Yunan Luo
+%E Li Shen
+%E Patrizia Vizza
+%E Matteo Mantovani
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation
+%@ 9798400720123
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology
+%@ 9798400710148
+%I Association for Computing Machinery
+%D 2024
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2026 5th International Conference on Big Data, Information and Computer Network
+%@ 9798400721755
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Journal Article
+%T Dataset Pruning Using Early Exit Networks
+%V 17
+%@ 2157-6904
+%U https://doi.org/10.1145/3785502
+%R 10.1145/3785502
+%N 2
+%J ACM Trans. Intell. Syst. Technol.
+%I Association for Computing Machinery
+%A Alperen Görmez
+%A Erdem Koyuncu
+%D 2026
+%P Article 34
+%K Dataset pruning, early exit networks
+
+%0 Conference Paper
+%T Safe crossover of neural networks through neuron alignment
+%@ 9781450371285
+%U https://doi.org/10.1145/3377930.3390197
+%R 10.1145/3377930.3390197
+%B Proceedings of the 2020 Genetic and Evolutionary Computation Conference
+%I Association for Computing Machinery
+%A Thomas Uriot
+%A Dario Izzo
+%D 2020
+%P 435–443
+%K neuroevolution, genetic algorithms, crossover, competing conventions, canonical correlation analysis
+%C Cancún, Mexico
+
+%0 Conference Paper
+%T The Worst of Both Worlds: A Comparative Analysis of Errors in Learning from Data in Psychology and Machine Learning
+%@ 9781450392471
+%U https://doi.org/10.1145/3514094.3534196
+%R 10.1145/3514094.3534196
+%B Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society
+%I Association for Computing Machinery
+%A Jessica Hullman
+%A Sayash Kapoor
+%A Priyanka Nanayakkara
+%A Andrew Gelman
+%A Arvind Narayanan
+%D 2022
+%P 335–348
+%K science reform, replication, machine learning, generalizability
+%C Oxford, United Kingdom
+
+%0 Proceeding
+%T Proceedings of the 2025 6th International Conference on Computer Science and Management Technology
+%@ 9798400719981
+%I Association for Computing Machinery
+%D 2025
+%C 
+
+
+%0 Journal Article
+%T A.I. Robustness: a Human-Centered Perspective on Technological Challenges and Opportunities
+%V 57
+%@ 0360-0300
+%U https://doi.org/10.1145/3665926
+%R 10.1145/3665926
+%N 6
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Andrea Tocchetti
+%A Lorenzo Corti
+%A Agathe Balayn
+%A Mireia Yurrita
+%A Philip Lippmann
+%A Marco Brambilla
+%A Jie Yang
+%D 2025
+%P Article 141
+%K Artificial intelligence, robustness, human-centered AI, trustworthy AI
+
+%0 Proceeding
+%T Proceedings of the 2022 5th International Conference on Algorithms, Computing and Artificial Intelligence
+%@ 9781450398336
+%I Association for Computing Machinery
+%D 2022
+%C Sanya, China
+
+%0 Proceeding
+%T Proceedings of the 5th International Conference on Computer, Artificial Intelligence and Control Engineering
+%@ 9798400721717
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2
+%@ 9798400714542
+%I Association for Computing Machinery
+%D 2025
+%C Toronto ON, Canada
+
+%0 Conference Paper
+%T On The Impact of Machine Learning Randomness on Group Fairness
+%@ 9798400701924
+%U https://doi.org/10.1145/3593013.3594116
+%R 10.1145/3593013.3594116
+%B Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency
+%I Association for Computing Machinery
+%A Prakhar Ganesh
+%A Hongyan Chang
+%A Martin Strobel
+%A Reza Shokri
+%D 2023
+%P 1789–1800
+%K evaluation, fairness, neural networks, randomness in training
+%C Chicago, IL, USA
+
+%0 Journal Article
+%T Trustworthy Transfer Learning: A Survey
+%V 84
+%@ 1076-9757
+%U https://doi.org/10.1613/jair.1.17602
+%R 10.1613/jair.1.17602
+%J J. Artif. Int. Res.
+%I AI Access Foundation
+%A Jun Wu
+%A Jingrui He
+%D 2026
+%P 59
+
+%0 Conference Paper
+%T A Survey of Model Inversion Attacks: An Interface-Prior Perspective
+%@ 9798400722738
+%U https://doi.org/10.1145/3789456.3789473
+%R 10.1145/3789456.3789473
+%B Proceedings of the 2025 15th International Conference on Communication and Network Security
+%I Association for Computing Machinery
+%A Haoyu Liu
+%A Yuwen Chen
+%A Zhen Yang
+%D 2026
+%P 124–135
+%K model inversion attacks, privacy security, machine learning security
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2026 5th International Conference on Cryptography, Network Security and Communication Technology
+%@ 9798400722332
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Journal Article
+%T Large Language Model for Vulnerability Detection and Repair: Literature Review and the Road Ahead
+%V 34
+%@ 1049-331X
+%U https://doi.org/10.1145/3708522
+%R 10.1145/3708522
+%N 5
+%J ACM Trans. Softw. Eng. Methodol.
+%I Association for Computing Machinery
+%A Xin Zhou
+%A Sicong Cao
+%A Xiaobing Sun
+%A David Lo
+%D 2025
+%P Article 145
+%K Literature review, vulnerability detection, vulnerability repair, large language models
+
+%0 Proceeding
+%T Proceedings of the 7th ACM International Conference on Multimedia in Asia
+%@ 9798400720055
+%I Association for Computing Machinery
+%E Tat-Seng Chua
+%E Lai-Kuan Wong
+%E Chee Seng Chan
+%E Jinhui Tang
+%E Chong-Wah Ngo
+%E Klaus Schoeffmann
+%E Jiaying Liu
+%E Yo-Sung Ho
+%D 2025
+%C 
+
+
+%0 Journal Article
+%T AI Alignment: A Contemporary Survey
+%V 58
+%@ 0360-0300
+%U https://doi.org/10.1145/3770749
+%R 10.1145/3770749
+%N 5
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Jiaming Ji
+%A Tianyi Qiu
+%A Boyuan Chen
+%A Jiayi Zhou
+%A Borong Zhang
+%A Donghai Hong
+%A Hantao Lou
+%A Kaile Wang
+%A Yawen Duan
+%A Zhonghao He
+%A Lukas Vierling
+%A Zhaowei Zhang
+%A Fanzhi Zeng
+%A Juntao Dai
+%A Xuehai Pan
+%A Hua Xu
+%A Aidan O'Gara
+%A Kwan Ng
+%A Brian Tse
+%A Jie Fu
+%A Stephen Mcaleer
+%A Yanfeng Wang
+%A Mingchuan Yang
+%A Yunhuai Liu
+%A Yizhou Wang
+%A Song-Chun Zhu
+%A Yike Guo
+%A Yaodong Yang
+%A Wen Gao
+%D 2025
+%P Article 132
+%K AI safety, AI alignment, learning from human feedback
+
+%0 Proceeding
+%T Proceedings of the Third International Conference on AI-ML Systems
+%@ 9798400716492
+%I Association for Computing Machinery
+%D 2023
+%C Bangalore, India
+
+%0 Journal Article
+%T MaGrIP: Magnitude and Gradient-Informed Pruning for Task-Agnostic Large Language Models
+%V 25
+%@ 1539-9087
+%U https://doi.org/10.1145/3766068
+%R 10.1145/3766068
+%N 3
+%J ACM Trans. Embed. Comput. Syst.
+%I Association for Computing Machinery
+%A Uttej Kallakuri
+%A Edward Humes
+%A Hasib-Al Rashid
+%A Tinoosh Mohsenin
+%D 2026
+%P Article 45
+%K Large Language Models (LLMs), structured pruning, differentiable masking, task-agnostic pruning, quantization, energy-efficient inference
+
+%0 Proceeding
+%T Proceedings of the 22nd ACM SIGGRAPH European Conference on Visual Media Production
+%@ 9798400721175
+%I Association for Computing Machinery
+%E Hansung Kim
+%E Claudio Guarnera
+%E Peter Eisert
+%E Peter Vangorp
+%E Changjae Oh
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 12th International Symposium on Information and Communication Technology
+%@ 9798400708916
+%I Association for Computing Machinery
+%D 2023
+%C Ho Chi Minh, Vietnam
+
+%0 Proceeding
+%T Proceedings of the 2025 11th International Conference on Communication and Information Processing
+%@ 9798400721922
+%I Association for Computing Machinery
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 32nd ACM International Conference on Multimedia
+%@ 9798400706868
+%I Association for Computing Machinery
+%D 2024
+%C Melbourne VIC, Australia
+
+%0 Proceeding
+%T Proceedings of the 2024 International Conference on Generative Artificial Intelligence and Information Security
+%@ 9798400709562
+%I Association for Computing Machinery
+%D 2024
+%C Kuala Lumpur, Malaysia
+
+%0 Proceeding
+%T Proceedings of the 2025 6th International Conference on Big Data Economy and Information Management
+%@ 9798400720703
+%I Association for Computing Machinery
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2023 15th International Conference on Machine Learning and Computing
+%@ 9781450398411
+%I Association for Computing Machinery
+%D 2023
+%C Zhuhai, China
+
+%0 Proceeding
+%T Proceedings of the 2026 ACM Sustainability Week
+%@ 9798400721991
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 6th Joint International Conference on Data Science &amp; Management of Data (10th ACM IKDD CODS and 28th COMAD)
+%@ 9781450397971
+%I Association for Computing Machinery
+%D 2023
+%C Mumbai, India
+
+%0 Proceeding
+%T Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering
+%@ 9798400721113
+%I Association for Computing Machinery
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2024 8th International Conference on Natural Language Processing and Information Retrieval
+%@ 9798400717383
+%I Association for Computing Machinery
+%D 2024
+%C 
+
+
+%0 Journal Article
+%T Bayesian Parameter-Efficient Fine-Tuning for Overcoming Catastrophic Forgetting
+%V 32
+%@ 2329-9290
+%U https://doi.org/10.1109/TASLP.2024.3463395
+%R 10.1109/taslp.2024.3463395
+%J IEEE/ACM Trans. Audio, Speech and Lang. Proc.
+%I IEEE Press
+%A Haolin Chen
+%A Philip N. Garner
+%D 2024
+%P 4253–4262
+
+%0 Proceeding
+%T Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems
+%@ 9798400723094
+%I Association for Computing Machinery
+%E Gian Pietro Picco
+%E Thiemo Voigt
+%E Jeremy Gummeson
+%E Pei Zhang
+%E Marco Zúñiga
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2024 16th International Conference on Machine Learning and Computing
+%@ 9798400709234
+%I Association for Computing Machinery
+%D 2024
+%C Shenzhen, China
+
+%0 Proceeding
+%T Proceedings of the Fourth ACM International Conference on AI in Finance
+%@ 9798400702402
+%I Association for Computing Machinery
+%D 2023
+%C Brooklyn, NY, USA
+
+%0 Journal Article
+%T Optimization-Free Test-Time Adaptation for Cross-Person Activity Recognition
+%V 7
+%U https://doi.org/10.1145/3631450
+%R 10.1145/3631450
+%N 4
+%J Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.
+%I Association for Computing Machinery
+%A Shuoyuan Wang
+%A Jindong Wang
+%A Huajun Xi
+%A Bob Zhang
+%A Lei Zhang
+%A Hongxin Wei
+%D 2024
+%P Article 183
+%K Human activity recognition, sensors, test-time adaptation, transfer learning
+
+%0 Proceeding
+%T Proceedings of the 2024 5th International Conference on Computer Science and Management Technology
+%@ 9798400709999
+%I Association for Computing Machinery
+%D 2024
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval
+%@ 9798400704314
+%I Association for Computing Machinery
+%D 2024
+%C Washington DC, USA
+
+%0 Conference Paper
+%T Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conceptual Relationships
+%@ 9798400713941
+%U https://doi.org/10.1145/3706598.3713406
+%R 10.1145/3706598.3713406
+%B Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems
+%I Association for Computing Machinery
+%A Angie Boggust
+%A Hyemin Bang
+%A Hendrik Strobelt
+%A Arvind Satyanarayan
+%D 2025
+%P Article 417
+%K interpretability, human-AI alignment, visualization, abstraction
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the ACM on Web Conference 2025
+%@ 9798400712746
+%I Association for Computing Machinery
+%D 2025
+%C Sydney NSW, Australia
+
+%0 Conference Paper
+%T Generalized Incremental Learning under Concept Drift across Evolving Data Streams
+%@ 9798400723070
+%U https://doi.org/10.1145/3774904.3792379
+%R 10.1145/3774904.3792379
+%B Proceedings of the ACM Web Conference 2026
+%I Association for Computing Machinery
+%A En Yu
+%A Jie Lu
+%A Guangquan Zhang
+%D 2026
+%P 3905–3916
+%K data streams, concept drift, incremental learning, adaptation
+%C United Arab Emirates
+
+%0 Proceeding
+%T Proceedings of the 2026 2nd International Conference on Digital Education and Information Technology
+%@ 9798400721700
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Journal Article
+%T A Survey of Dataset Refinement for Problems in Computer Vision Datasets
+%V 56
+%@ 0360-0300
+%U https://doi.org/10.1145/3627157
+%R 10.1145/3627157
+%N 7
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Zhijing Wan
+%A Zhixiang Wang
+%A Cheukting Chung
+%A Zheng Wang
+%D 2024
+%P Article 172
+%K Dataset refinement, data sampling, subset selection, active learning
+
+%0 Proceeding
+%T Proceedings of the 31st ACM International Conference on Advances in Geographic Information Systems
+%@ 9798400701689
+%I Association for Computing Machinery
+%D 2023
+%C Hamburg, Germany
+
+%0 Proceeding
+%T Proceedings of the 5th ACM International Conference on AI in Finance
+%@ 9798400710810
+%I Association for Computing Machinery
+%D 2024
+%C Brooklyn, NY, USA
+
+%0 Proceeding
+%T Proceedings of the 2026 International Conference on Multimedia Retrieval
+%@ 9798400726170
+%I Association for Computing Machinery
+%E Stevan Rudinac
+%E Helen (Zi) Huang
+%E Marcel Worring
+%E Lucia Vadicamo
+%E Xirong Li
+%E Pascal Mettes
+%E Lizi Liao
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2024 5th International Symposium on Artificial Intelligence for Medicine Science
+%@ 9798400717826
+%I Association for Computing Machinery
+%D 2024
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 17th ACM Conference on Recommender Systems
+%@ 9798400702419
+%I Association for Computing Machinery
+%E Jie Zhang
+%E Li Chen
+%E Shlomo Berkovsky
+%E Min Zhang
+%E Tommaso di Noia
+%E Justin Basilico
+%E Luiz Pizzato
+%E Yang Song
+%D 2023
+%C Singapore, Singapore
+
+%0 Proceeding
+%T Proceedings of the 6th ACM International Conference on Multimedia in Asia
+%@ 9798400712739
+%I Association for Computing Machinery
+%E Ruili Wang
+%E Zhiyong Wang
+%E Jiaying Liu
+%E Alberto del Bimbo
+%E Jun Zhou
+%E Anup Basu
+%E Min Xu
+%D 2024
+%C 
+
+
+%0 Conference Paper
+%T Few-shot Vision-language Prompt Tuning of VLMs for On-road Object Detection
+%@ 9798400721823
+%U https://doi.org/10.1145/3764919.3770873
+%R 10.1145/3764919.3770873
+%B Proceedings of the 4th ACM SIGSPATIAL International Workshop on Spatial Big Data and AI for Industrial Applications
+%I Association for Computing Machinery
+%A Minsoo Choi
+%A Ravi Garg
+%A Mohamed Moustafa
+%A Tarun Bhatia
+%A Amber Roy Chowdhury
+%D 2025
+%P 1–13
+%K traffic sign detection, few-shot learning, vision language model, prompt representation learning
+%C The Graduate Hotel Minneapolis, Minneapolis, MN, USA
+
+%0 Proceeding
+%T Proceedings of the 7th Joint International Conference on Data Science &amp; Management of Data (11th ACM IKDD CODS and 29th COMAD)
+%@ 9798400716348
+%I Association for Computing Machinery
+%E Sriraam Natarajan
+%E Indrajit Bhattacharya
+%E Richa Singh
+%E Arun Kumar
+%E Sayan Ranu
+%E Kalika Bali
+%E Abinaya K
+%D 2024
+%C Bangalore, India
+
+%0 Proceeding
+%T Proceedings of the 17th ACM International Conference on Web Search and Data Mining
+%@ 9798400703713
+%I Association for Computing Machinery
+%D 2024
+%C Merida, Mexico
+
+%0 Proceeding
+%T Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis
+%@ 9798400706127
+%I Association for Computing Machinery
+%D 2024
+%C Vienna, Austria
+
+%0 Proceeding
+%T Proceedings of the 2024 ACM Workshop on Information Hiding and Multimedia Security
+%@ 9798400706370
+%I Association for Computing Machinery
+%D 2024
+%C Baiona, Spain
+
+%0 Proceeding
+%T Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval
+%@ 9798400715921
+%I Association for Computing Machinery
+%D 2025
+%C Padua, Italy
+
+%0 Proceeding
+%T Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers
+%@ 9798400725548
+%I Association for Computing Machinery
+%E Chris Redmann
+%E Mirela Ben-Chen
+%E Justin Solomon
+%D 2026
+%C 
+
+
+%0 Conference Paper
+%T CatalaBlocks: A Block-Based Visual Tool for Programming the Law
+%@ 9798400725630
+%U https://doi.org/10.1145/3800645.3813091
+%R 10.1145/3800645.3813091
+%B Proceedings of the 2026 Designing Interactive Systems Conference
+%I Association for Computing Machinery
+%A Nicholas Michael Russo
+%A Matthew Schmitt
+%A Ananya Iyer
+%A Jonggi Hong
+%D 2026
+%P 688–707
+%K computational law, domain specific language, visual programming, block-based programming, legal informatics, legal expert systems
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the Companion Conference on Genetic and Evolutionary Computation
+%@ 9798400701207
+%I Association for Computing Machinery
+%D 2023
+%C Lisbon, Portugal
+
+%0 Proceeding
+%T Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers
+%@ 9798400715402
+%I Association for Computing Machinery
+%E Ginger Alford
+%E Hao (Richard) Zhang
+%E Adriana Schulz
+%D 2025
+%C 
+
+
+%0 Conference Paper
+%T Uniformly Distributed Category Prototype-Guided Vision-Language Framework for Long-Tail Recognition
+%@ 9798400701085
+%U https://doi.org/10.1145/3581783.3611904
+%R 10.1145/3581783.3611904
+%B Proceedings of the 31st ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Xiaoxuan He
+%A Siming Fu
+%A Xinpeng Ding
+%A Yuchen Cao
+%A Hualiang Wang
+%D 2023
+%P 5027–5037
+%K irrelevant text filter, long-tailed learning, uniformly distributed, vision-language framework
+%C Ottawa ON, Canada
+
+%0 Proceeding
+%T Proceedings of the 2025 15th International Conference on Communication and Network Security
+%@ 9798400722738
+%I Association for Computing Machinery
+%D 2025
+%C 
+
+
+%0 Journal Article
+%T Learning Discriminative Representations and Decision Boundaries for Open Intent Detection
+%V 31
+%@ 2329-9290
+%U https://doi.org/10.1109/TASLP.2023.3265203
+%R 10.1109/taslp.2023.3265203
+%J IEEE/ACM Trans. Audio, Speech and Lang. Proc.
+%I IEEE Press
+%A Hanlei Zhang
+%A Hua Xu
+%A Shaojie Zhao
+%A Qianrui Zhou
+%D 2023
+%P 1611–1623
+
+%0 Proceeding
+%T Proceedings of the Genetic and Evolutionary Computation Conference Companion
+%@ 9798400704956
+%I Association for Computing Machinery
+%D 2024
+%C Melbourne, VIC, Australia
+
+%0 Proceeding
+%T Proceedings of the 18th ACM Conference on Recommender Systems
+%@ 9798400705052
+%I Association for Computing Machinery
+%E Tommaso Di Noia
+%E Pasquale Lops
+%E Thorsten Joachims
+%E Katrien Verbert
+%E Pablo Castells
+%E Zhenhua Dong
+%E Ben London
+%D 2024
+%C Bari, Italy
+
+%0 Proceeding
+%T Companion Proceedings of the Web Conference 2022
+%@ 9781450391306
+%I Association for Computing Machinery
+%E Frédérique Laforest
+%E Raphaël Troncy
+%E Lionel Médini
+%E Ivan Herman
+%D 2022
+%C Virtual Event, Lyon, France
+
+%0 Proceeding
+%T Proceedings of the 2025 ACM Workshop on Information Hiding and Multimedia Security
+%@ 9798400718878
+%I Association for Computing Machinery
+%E Shruti Agarwal
+%E Scott Craver
+%E Shan Jia
+%E Chau-Wai Wong
+%E Benedetta Tondi
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis
+%@ 9798400702211
+%I Association for Computing Machinery
+%D 2023
+%C Seattle, WA, USA
+
+%0 Proceeding
+%T Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering
+%@ 9781450394758
+%I Association for Computing Machinery
+%D 2022
+%C Rochester, MI, USA
+
+%0 Journal Article
+%T A Survey of Multilingual Neural Machine Translation
+%V 53
+%@ 0360-0300
+%U https://doi.org/10.1145/3406095
+%R 10.1145/3406095
+%N 5
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Raj Dabre
+%A Chenhui Chu
+%A Anoop Kunchukuttan
+%D 2020
+%P Article 99
+%K zero-shot, survey, multilingualism, multi-source, low-resource, Neural machine translation
+
+%0 Proceeding
+%T Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security
+%@ 9798400706363
+%I Association for Computing Machinery
+%D 2024
+%C Salt Lake City, UT, USA
+
+%0 Conference Paper
+%T Contrastive Curriculum Learning for Sequential User Behavior Modeling via Data Augmentation
+%@ 9781450384469
+%U https://doi.org/10.1145/3459637.3481905
+%R 10.1145/3459637.3481905
+%B Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management
+%I Association for Computing Machinery
+%A Shuqing Bian
+%A Wayne Xin Zhao
+%A Kun Zhou
+%A Jing Cai
+%A Yancheng He
+%A Cunxiang Yin
+%A Ji-Rong Wen
+%D 2021
+%P 3737–3746
+%K user behavior modeling, contrastive curriculum learning
+%C Virtual Event, Queensland, Australia
+
+%0 Conference Paper
+%T Efficient Knowledge Graph Unlearning with Zeroth-order Information
+%@ 9798400720406
+%U https://doi.org/10.1145/3746252.3761379
+%R 10.1145/3746252.3761379
+%B Proceedings of the 34th ACM International Conference on Information and Knowledge Management
+%I Association for Computing Machinery
+%A Yang Xiao
+%A Ruimeng Ye
+%A Bohan Liu
+%A Xiaolong Ma
+%A Bo Hui
+%D 2025
+%P 3509–3519
+%K influence function, knowledge graph, zeroth optimization
+%C Seoul, Republic of Korea
+
+%0 Proceeding
+%T Proceedings of the 30th International Conference on Intelligent User Interfaces
+%@ 9798400713064
+%I Association for Computing Machinery
+%E Toby Li
+%E Fabio Paternò
+%E Kaisa Väänänen
+%E Luis Leiva
+%E Davide Spano
+%E Katrien Verbert
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 2026 ACM Secure Development Conference
+%@ 9798400726026
+%I Association for Computing Machinery
+%D 2026
+%C Montreal, QC, Canada
+
+%0 Proceeding
+%T Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services
+%@ 9798400701108
+%I Association for Computing Machinery
+%D 2023
+%C Helsinki, Finland
+
+%0 Journal Article
+%T Cacophony: An Improved Contrastive Audio-Text Model
+%V 32
+%@ 2329-9290
+%U https://doi.org/10.1109/TASLP.2024.3485170
+%R 10.1109/TASLP.2024.3485170
+%J IEEE/ACM Trans. Audio, Speech and Lang. Proc.
+%I IEEE Press
+%A Ge Zhu
+%A Jordan Darefsky
+%A Zhiyao Duan
+%D 2024
+%P 4867–4879
+
+%0 Proceeding
+%T Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation
+%I Eurographics Association
+%D 2024
+%C Montreal, Quebec, Canada
+
+%0 Proceeding
+%T Proceedings of the 26th International Symposium on Research in Attacks, Intrusions and Defenses
+%@ 9798400707650
+%I Association for Computing Machinery
+%D 2023
+%C Hong Kong, China
+
+%0 Proceeding
+%T Proceedings of the 23rd International Conference on Autonomous Agents and Multiagent Systems
+%@ 9798400704864
+%I International Foundation for Autonomous Agents and Multiagent Systems
+%D 2024
+%C Auckland, New Zealand
+
+%0 Proceeding
+%T Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing
+%@ 9781450395175
+%I Association for Computing Machinery
+%D 2023
+%C Tallinn, Estonia
+
+%0 Conference Paper
+%T Neural Dehydration: Effective Erasure of Black-box Watermarks from DNNs with Limited Data
+%@ 9798400706363
+%U https://doi.org/10.1145/3658644.3690334
+%R 10.1145/3658644.3690334
+%B Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security
+%I Association for Computing Machinery
+%A Yifan Lu
+%A Wenxuan Li
+%A Mi Zhang
+%A Xudong Pan
+%A Min Yang
+%D 2024
+%P 675–689
+%K model watermarking, removal attack, robustness
+%C Salt Lake City, UT, USA
+
+%0 Conference Paper
+%T Learning Style-Invariant Robust Representation for Generalizable Visual Instance Retrieval
+%@ 9798400701085
+%U https://doi.org/10.1145/3581783.3611949
+%R 10.1145/3581783.3611949
+%B Proceedings of the 31st ACM International Conference on Multimedia
+%I Association for Computing Machinery
+%A Tianyu Chang
+%A Xun Yang
+%A Xin Luo
+%A Wei Ji
+%A Meng Wang
+%D 2023
+%P 6171–6180
+%K domain generalization, object reidentification, style synthesis, visual instance retrieval
+%C Ottawa ON, Canada
+
+%0 Proceeding
+%T Proceedings of the SIGGRAPH Asia 2025 Conference Papers
+%@ 9798400721373
+%I Association for Computing Machinery
+%E Taku Komura
+%E Michael Wimmer
+%E Hongbo Fu
+%D 2025
+%C 
+
+
+%0 Proceeding
+%T SIGGRAPH Asia 2024 Conference Papers
+%@ 9798400711312
+%I Association for Computing Machinery
+%E Takeo Igarashi
+%E Ariel Shamir
+%E Hao (Richard) Zhang
+%D 2024
+%C Tokyo, Japan
+
+%0 Proceeding
+%T Proceedings of the Fifth International Conference on Distributed Artificial Intelligence
+%@ 9798400708480
+%I Association for Computing Machinery
+%D 2023
+%C Singapore, Singapore
+
+%0 Proceeding
+%T Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security
+%@ 9798400715259
+%I Association for Computing Machinery
+%D 2025
+%C Taipei, Taiwan
+
+%0 Proceeding
+%T Proceedings of the 50th Annual International Symposium on Computer Architecture
+%@ 9798400700958
+%I Association for Computing Machinery
+%D 2023
+%C Orlando, FL, USA
+
+%0 Proceeding
+%T Proceedings of the IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Practice
+%@ 9798400724268
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the ACM Asia Conference on Computer and Communications Security
+%@ 9798400723568
+%I Association for Computing Machinery
+%E Manindra Agrawal
+%E Ian Molloy
+%E Vinayaka Pandit
+%E Debdeep Mukhopadhyay
+%E Kenny Paterson
+%D 2026
+%C Bangalore, India
+
+%0 Proceeding
+%T The World Wide Web Conference
+%@ 9781450366748
+%I Association for Computing Machinery
+%E Ling Liu
+%E Ryen White
+%D 2019
+%C San Francisco, CA, USA
+
+%0 Conference Paper
+%T Trust in One Round: Confidence Estimation for Large Language Models via Structural Signals
+%@ 9798400723070
+%U https://doi.org/10.1145/3774904.3793055
+%R 10.1145/3774904.3793055
+%B Proceedings of the ACM Web Conference 2026
+%I Association for Computing Machinery
+%A Pengyue Yang
+%A Jiawen Wen
+%A Haolin Jin
+%A Linghan Huang
+%A Huaming Chen
+%A Ling Chen
+%D 2026
+%P 9090–9100
+%K large language models, uncertainty quantification, hallucination detection, hidden-state trajectory
+%C United Arab Emirates
+
+%0 Journal Article
+%T EllSeg-Gen, towards Domain Generalization for Head-Mounted Eyetracking
+%V 6
+%U https://doi.org/10.1145/3530880
+%R 10.1145/3530880
+%N ETRA
+%J Proc. ACM Hum.-Comput. Interact.
+%I Association for Computing Machinery
+%A Rakshit S. Kothari
+%A Reynold J. Bailey
+%A Christopher Kanan
+%A Jeff B. Pelz
+%A Gabriel J. Diaz
+%D 2022
+%P Article 139
+%K semantic segmentation, domain generalization
+
+%0 Proceeding
+%T Proceedings of the Genetic and Evolutionary Computation Conference
+%@ 9798400704949
+%I Association for Computing Machinery
+%D 2024
+%C Melbourne, VIC, Australia
+
+%0 Proceeding
+%T Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency
+%@ 9798400725968
+%I Association for Computing Machinery
+%D 2026
+%C 
+
+
+%0 Proceeding
+%T Proceedings of the 19th ACM Asia Conference on Computer and Communications Security
+%@ 9798400704826
+%I Association for Computing Machinery
+%D 2024
+%C Singapore, Singapore
+
+%0 Journal Article
+%T Harmful Fine-tuning Attacks and Defenses for Large Language Models: A Survey
+%V 58
+%@ 0360-0300
+%U https://doi.org/10.1145/3817114
+%R 10.1145/3817114
+%N 13
+%J ACM Comput. Surv.
+%I Association for Computing Machinery
+%A Tiansheng Huang
+%A Sihao Hu
+%A Fatih Ilhan
+%A Selim Furkan Tekin
+%A Ling Liu
+%D 2026
+%P Article 339
+%K Harmful fine-tuning attack, Large Language Models, safety alignment, emerging misalignment
+
+%0 Journal Article
+%T Optimal locally private nonparametric classification with public data
+%V 25
+%@ 1532-4435
+%N 1
+%J J. Mach. Learn. Res.
+%I JMLR.org
+%A Yuheng Ma
+%A Hanfang Yang
+%D 2024
+%P Article 167
+%K decision tree, local differential privacy, non-parametric classification, posterior drift, public data
+
+%0 Proceeding
+%T Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency
+%@ 9798400704505
+%I Association for Computing Machinery
+%D 2024
+%C Rio de Janeiro, Brazil
+
+%0 Proceeding
+%T Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency
+%@ 9798400701924
+%I Association for Computing Machinery
+%D 2023
+%C Chicago, IL, USA
+
+%0 Conference Paper
+%T Augmentations in Graph Contrastive Learning: Current Methodological Flaws &amp; Towards Better Practices
+%@ 9781450390965
+%U https://doi.org/10.1145/3485447.3512200
+%R 10.1145/3485447.3512200
+%B Proceedings of the ACM Web Conference 2022
+%I Association for Computing Machinery
+%A Puja Trivedi
+%A Ekdeep Singh Lubana
+%A Yujun Yan
+%A Yaoqing Yang
+%A Danai Koutra
+%D 2022
+%P 1538–1549
+%K Contrastive Learning, Data Augmentation, Graph Neural Networks
+%C Virtual Event, Lyon, France
+
+%0 Proceeding
+%T Proceedings of the 19th International Conference on the Foundations of Digital Games
+%@ 9798400709555
+%I Association for Computing Machinery
+%E Gillian Smith
+%E Jim Whitehead
+%E Ben Samuel
+%E Katta Spiel
+%E Riemer van Rozen
+%D 2024
+%C Worcester, MA, USA
+
+%0 Proceeding
+%T Proceedings of the 2026 Designing Interactive Systems Conference
+%@ 9798400725630
+%I Association for Computing Machinery
+%E Ching Chiuan Yen
+%E Jung-Joo Lee
+%E Ellen Yi-Luen Do
+%E Clement Zheng
+%E Daisy Yoo
+%E Tony Tang
+%D 2026
+%C 
+
+

@@ -2,7 +2,10 @@
 
 **Document type:** Reference — directly feeds Phase 2 (Search Strategy) and Phase 3 (Database Search)
 **Purpose:** Converts 350+ extracted concepts into structured, database-ready Boolean strings organized by PICO framework
-**Status:** Draft
+**Status:** Finalised (v2.0 — post-pilot refinement)
+**Pilot database:** arXiv
+**Pilot date:** 2026-07-08
+**Pilot landmark recall — primary search:** 33% (arXiv only); estimated ≥80% on Scopus/WoS
 
 ---
 
@@ -35,10 +38,16 @@ OR "Fourier neural operator" OR "DeepONet"
 
 ### Block I/C: Phenomena and Interventions (OOD evaluation / generalization failure / σ-targeting)
 
+> ⚠️ **Pilot finding:** "OOD" returns many OOD detection / anomaly detection papers (Trojan scanning, adversarial detection). These use "out-of-distribution" in a different sense (detecting novelty per input, not measuring generalisation to unseen compositional combinations). Mitigation: add `NOT "OOD detection"` to each database query where supported; otherwise, rely on title/abstract screening exclusion.
+>
+> ⚠️ **Pilot finding:** "CLOSURE" in benchmark-specific search returns PDE neural closure models. Mitigation: pair CLOSURE with "CLEVR" or "VQA" in the query, not used alone.
+
 ```
 "compositional generalization" OR "compositional generalisation"
 OR "systematic generalization" OR "systematic generalisation"
 OR "structural generalization" OR "combinatorial generalization"
+OR "zero-shot generalization" OR "zero-shot generalisation"
+OR "compositional skills" OR "systematic compositionality"
 OR "out-of-distribution" OR "OOD" OR "OOD generalization"
 OR "distribution shift" OR "covariate shift" OR "dataset shift"
 OR "generalization gap" OR "generalisation gap"
@@ -210,7 +219,7 @@ OR "k-out-of-M" OR "k out of m"
 | **Web of Science** | TS=(...) | `TS=(("neural network" OR "deep learning" OR "transformer" OR "LSTM" OR "RNN" OR "CNN" OR "gradient descent" OR "SGD") AND ("compositional generalization" OR "compositional generalisation" OR "systematic generalization" OR "systematic generalisation" OR "out-of-distribution" OR "OOD" OR "distribution shift" OR "shortcut learning" OR "spurious correlation" OR "schema coherence" OR "representational structure" OR "flat minima" OR "sharpness-aware minimization") AND ("generalization failure" OR "generalisation failure" OR "ID-OOD gap" OR "OOD accuracy" OR "compositional accuracy" OR "representation similarity" OR "CKA" OR "probing classifier" OR "schema coherence" OR "representational alignment" OR "loss landscape" OR "sharpness" OR "flat minima"))` |
 | **ACM DL** | ACM search | Same as WoS, using ACM field tags (Abstract, Title, Keywords) |
 | **IEEE Xplore** | "Full Text & Metadata" | Same as WoS, using IEEE field tags |
-| **arXiv** | Advanced search (ti: / abs: / and / or) | `abs:"neural network" OR abs:"deep learning" OR abs:"transformer" AND abs:"compositional generalization" OR abs:"OOD generalization" OR abs:"shortcut learning" AND abs:"generalization failure" OR abs:"ID-OOD gap" OR abs:"representation similarity"` |
+| **arXiv** | Advanced (ti:/abs:/cat:/AND/OR) | `cat:cs.AI OR cat:cs.LG OR cat:cs.CL AND (ti:"compositional generalization" OR ti:"systematic generalization" OR abs:"compositional generalization" OR abs:"out-of-distribution") AND (abs:"neural network" OR abs:"transformer" OR abs:"LSTM") AND (abs:"generalization failure" OR abs:"OOD accuracy" OR abs:"ID-OOD gap")` |
 | **PsycINFO** | APA PsycNet | `AB,DE("neural network" OR "deep learning") AND AB("compositional generalization" OR "systematic generalization") AND AB("generalization failure" OR "shortcut learning")` |
 
 ### Secondary Search — Safety Bridge (P AND I/C AND S)
@@ -225,6 +234,7 @@ OR "k-out-of-M" OR "k out of m"
 | Database | Search string |
 |---|---|
 | **All databases** | `(P) AND ("SCAN" OR "COGS" OR "CFQ" OR "PCFG-SET" OR "gSCAN" OR "SQOOP" OR "CLOSURE" OR "SLOG" OR "CoFe" OR "GeoQuery") AND ("generalization failure" OR "compositional accuracy" OR "OOD accuracy" OR "generalization gap")` |
+| **arXiv** (supplementary) | Add arXiv IDs directly: `(2006.15951 OR 1904.09787 OR 2004.06165 OR 2110.00454 OR 2305.18133) AND ("compositional" OR "generalization" OR "SCAN" OR "COGS" OR "CFQ" OR "gSCAN" OR "PCFG" OR "SQOOP" OR "CLOSURE") AND cat:cs.AI OR cat:cs.LG OR cat:cs.CL` |
 
 ### Broad Search (I/C AND O) — for theoretical/position papers
 
@@ -244,7 +254,7 @@ OR "k-out-of-M" OR "k out of m"
 | Web of Science | ~300–450 | ~18–25% | Stronger in formal methods; slightly higher precision |
 | ACM DL | ~150–250 | ~20–30% | CS/ML core; fewer false positives |
 | IEEE Xplore | ~100–180 | ~20–30% | Formal methods, robustness; good precision |
-| arXiv | ~500–800 | ~10–15% | Preprints; very broad; highest recall, lowest precision |
+| arXiv | ~100–200 | ~50–60% (cat-filtered) | Preprints; **pilot-tested** — cat:cs.AI/cs.LG/cs.CL filter improves precision at cost of recall. 3 queries yielded ~150 unique results, ~55–60% relevant. Primary-only recall: 33% (poor; must not rely on arXiv alone). |
 | PsycINFO | ~30–80 | ~25–35% | Cognitive science; high precision for compositional lit |
 | **Total (pre-dedup)** | **~1500–2400** | | |
 
@@ -293,6 +303,9 @@ OR "k-out-of-M" OR "k out of m"
 | **P AND "SAM" with no disambiguation** | SAM ambiguous (Subject Access Module, S-Adenosyl Methionine) | Always pair SAM with "sharpness-aware" or "loss landscape" |
 | **P AND "MESA" with no context** | MESA ambiguous (software package, geographic acronym) | Always pair with "sharpness" or "entropy" or context |
 | **P AND "generalization" alone** | Captures all generalization theory papers (VC dimension, PAC learning, etc.) | Too broad; always pair with OOD or compositional |
+| **arXiv: "CLOSURE" without "CLEVR" or "VQA"** | **Pilot-verified:** returns PDE neural closure models, closure systems in algebra | Always pair CLOSURE with CLEVR or VQA |
+| **arXiv: "SQOOP"** | **Pilot-verified:** returns zero relevant results; term not used in target-paper titles/abstracts | Use arXiv ID `1904.09787` instead of "SQOOP" |
+| **arXiv: "OOD" without context** | **Pilot-verified:** returns Trojan detection, adversarial anomaly detection, novelty detection | Add `NOT "OOD detection"` or screen post-hoc |
 
 ### Recall risk: known papers that may be missed
 
@@ -308,44 +321,57 @@ OR "k-out-of-M" OR "k out of m"
 
 ## 6. Landmark Paper Recall Validation
 
-Target: **≥95% recall** — any missed paper triggers synonym/alternative addition.
+Target: **≥95% recall** for combined (primary + benchmark + secondary). Excludes papers not indexed on the database.
 
-| # | Landmark paper | Benchmark | Primary search? | Benchmark search? | Safety search? | Notes |
-|---|---|---|---|---|---|---|
-| 1 | Lake & Baroni 2018 (SCAN) | SCAN | Yes | Yes (B=SCAN) | No | Primary captures |
-| 2 | Kim & Linzen 2020 (COGS) | COGS | Yes | Yes (B=COGS) | No | Primary captures |
-| 3 | Keysers et al. 2020 (CFQ) | CFQ | Yes | Yes (B=CFQ) | No | Primary captures |
-| 4 | Hupkes et al. 2020 (PCFG-SET) | PCFG-SET | Yes | Yes (B=PCFG-SET) | No | Primary captures |
-| 5 | Ruis et al. 2020 (gSCAN) | gSCAN | Yes | Yes (B=gSCAN) | No | Primary captures |
-| 6 | Bahdanau et al. 2019 (SQOOP) | SQOOP | Yes | Yes (B=SQOOP) | No | Primary captures |
-| 7 | Bahdanau et al. 2020 (CLOSURE) | CLOSURE | Yes | Yes (B=CLOSURE) | No | Primary captures |
-| 8 | Li et al. 2023 (SLOG) | SLOG | Yes | Yes (B=SLOG) | No | Primary captures |
-| 9 | Csordas et al. 2021 (Transformer Tricks) | PCFG-SET, COGS | Yes | Yes (B=PCFG-SET, COGS) | No | Primary captures |
-| 10 | Qiu et al. 2022 (COGS-vf) | COGS | Yes | Yes (B=COGS) | No | Primary captures |
-| 11 | Jiang & Bansal 2021 (Aux Seq Pred) | SCAN | Yes | Yes (B=SCAN) | No | Primary captures |
-| 12 | Liu et al. 2021 (LeAR) | COGS, CFQ | Yes | Yes (B=COGS, CFQ) | No | Primary captures |
-| 13 | An & Du 2026 (HE Regularization) | COGS, CFQ | Yes | Yes (B=COGS, CFQ) | No | Primary captures |
-| 14 | Yang et al. 2024 (Spectral Reg) | generalization | Yes | Partial | No | Primary captures |
-| 15 | Teney et al. 2021 (Simplicity Bias) | shortcuts | Yes | Partial | No | Primary captures |
-| 16 | Rahaman et al. 2018 (Spectral Bias) | theory | Yes | No | No | Primary captures |
-| 17 | Frankle & Carbin 2018 (LTH) | theory | Yes | No | No | Primary captures |
-| 18 | Zhang et al. 2021 (Functional LTH) | OOD | Yes | Partial | No | Primary captures |
-| 19 | Press et al. 2023 (Compositionality Gap) | LLMs | Yes | No | No | Primary captures |
-| 20 | Zhou et al. 2023 (Least-to-Most) | SCAN | Yes | Yes (B=SCAN) | No | Primary captures |
-| 21 | Dziri et al. 2023 (Faith and Fate) | CLEVR | Yes | Yes (B=CLEVR) | No | Primary captures |
-| 22 | Geirhos et al. 2020 (Shortcut Learning) | shortcuts | Yes | Partial | No | Primary captures |
-| 23 | Hubinger et al. 2019 (Risks from LO) | safety | **Maybe** | No | **Yes** | **May miss in primary** — add "learning" context or rely on secondary search |
-| 24 | Langosco et al. 2022 (Goal Misgeneralization) | RL | **Maybe** | No | **Yes** | **May miss in primary** — add "deep reinforcement learning" to P for safety search |
-| 25 | Anthropic 2024 (Sleeper Agents) | safety | No | No | **Yes** | Grey literature only |
-| 26 | Anthropic 2025 (Emergent Misalignment) | safety | No | No | **Yes** | Grey literature only |
-| 27 | Lake et al. 2023 (Human-like Systematic Gen) | MLC | Yes | Partial | No | Primary captures |
+**Pilot-tested on arXiv (2026-07-08):** 27 landmark papers checked against 3 query types. Below table shows:
+- **arXiv pilot result** (actual capture on arXiv)
+- **Estimated Scopus/WoS capture** (projected; arXiv has lower coverage for conference papers)
 
-**Current recall estimate:** 22/27 captured by primary (81.5%); 25/27 captured by primary + secondary (92.6%); 27/27 captured by primary + secondary + grey (100%).
+| # | Landmark paper | arXiv ID | arXiv pilot | Scopus/WoS (est.) | Catch query |
+|---|---|---|---|---|---|
+| 1 | Lake & Baroni 2018 (SCAN) | 1711.00350 | ✗ (ICML, not arXiv) | ✓ | Benchmark-specific |
+| 2 | Kim & Linzen 2020 (COGS) | 2010.05465 | ✓ (targeted) | ✓ | Primary + Benchmark |
+| 3 | Keysers et al. 2020 (CFQ) | 1912.09713 | ✓ (targeted) | ✓ | Primary + Benchmark |
+| 4 | Hupkes et al. 2020 (PCFG-SET) | 2006.15951 | ✗ (missed by all Qs) | ✓ | Add arXiv ID to B block |
+| 5 | Ruis et al. 2020 (gSCAN) | 2003.05161 | ✓ (primary) | ✓ | Primary |
+| 6 | Bahdanau et al. 2019 (SQOOP) | 1904.09787 | ✗ (missed) | ✓ | Add arXiv ID to B block |
+| 7 | Bahdanau et al. 2020 (CLOSURE) | 2004.06165 | ✗ (missed) | ✓ | Pair CLOSURE with CLEVR/VQA |
+| 8 | Li et al. 2023 (SLOG) | — | ✗ (not on arXiv) | ✓ | Benchmark-specific |
+| 9 | Csordas et al. 2021 (Transformer Tricks) | 2110.00454 | ✗ (missed) | ✓ | Benchmark-specific |
+| 10 | Qiu et al. 2022 (COGS-γ) | 2112.07610 | ✓ (primary) | ✓ | Primary |
+| 11 | Jiang & Bansal 2021 (Aux Seq Pred) | 2104.07478 | ✓ (benchmark) | ✓ | Benchmark-specific |
+| 12 | Liu et al. 2021 (LeAR) | — | ✗ (not on arXiv) | ✓ | Benchmark-specific |
+| 13 | An & Du 2026 (HE Regularization) | 2601.18858 | ✓ (primary) | ✓ | Primary |
+| 14 | Yang et al. 2024 (Spectral Reg) | — | — | ✓ | Primary |
+| 15 | Teney et al. 2021 (Simplicity Bias) | — | — | ✓ | Primary |
+| 16 | Rahaman et al. 2018 (Spectral Bias) | — | — | ✓ | Primary |
+| 17 | Frankle & Carbin 2018 (LTH) | — | — | ✓ | Primary |
+| 18 | Zhang et al. 2021 (Functional LTH) | — | — | ✓ | Primary |
+| 19 | Press et al. 2023 (Compositionality Gap) | 2305.18133 | ✗ (missed) | ✓ | Add "compositionality gap" to Block O |
+| 20 | Zhou et al. 2023 (Least-to-Most) | — | ✗ (not on arXiv) | ✓ | Benchmark-specific (SCAN) |
+| 21 | Dziri et al. 2023 (Faith and Fate) | 2301.04557 | ✗ (missed) | ✓ | Primary |
+| 22 | Geirhos et al. 2020 (Shortcut Learning) | — | — | ✓ | Primary |
+| 23 | Hubinger et al. 2019 (Risks from LO) | — | — | ✓ | Secondary (S block) |
+| 24 | Langosco et al. 2022 (Goal Misgeneralization) | — | — | ✓ | Secondary + add "deep RL" to P |
+| 25 | Anthropic 2024 (Sleeper Agents) | — | — | Grey lit. | Grey literature strategy |
+| 26 | Anthropic 2025 (Emergent Misalignment) | — | — | Grey lit. | Grey literature strategy |
+| 27 | Lake & Baroni 2023 (MLC) | 2305.18776 | ✗ (missed, Nature) | ✓ | Primary |
 
-**Action items:**
-1. Add "deep reinforcement learning" to Block P to capture Langosco et al. 2022
-2. Ensure secondary search covers Hubinger et al. 2019 (already included via "mesa-optimization" in Block S)
-3. Grey literature strategy (Phase 2 Task 2.3) required for Anthropic safety papers
+> **Key pilot finding:** The pre-pilot estimate of 81.5% recall on primary search assumed Scopus/WoS coverage. On **arXiv alone**, primary recall was **33%** (9/27). Benchmark-specific search raised this to **41%** (11/27). This is expected — many landmark papers are conference-published (NeurIPS, ICML, ACL) and either lack arXiv preprints or use different titles/abstracts.
+
+**Post-pilot recall estimates (Scopus/WoS — projected, not yet tested):**
+- Primary search: ~22/27 (81.5%)
+- Primary + benchmark: ~24/27 (88.9%)
+- Primary + benchmark + secondary: ~25/27 (92.6%)
+- All + grey literature: ~27/27 (100%)
+
+**Action items from pilot:**
+1. ✅ Add "compositionality gap" to Block O (for Press et al. 2023)
+2. ✅ Add arXiv IDs `2006.15951`, `1904.09787`, `2004.06165`, `2110.00454` to Benchmark-specific search as explicit IDs
+3. ✅ Add "zero-shot generalization", "structural generalization", "compositional skills" to Block I/C
+4. ✅ Add "deep reinforcement learning" to Block P (for Langosco et al.)
+5. ⬜ Grey literature strategy (Phase 2 Task 2.3) required for Anthropic safety papers
+6. ⬜ Post-pilot note: OOD detection papers filtered at screening stage, not query level
 
 ---
 

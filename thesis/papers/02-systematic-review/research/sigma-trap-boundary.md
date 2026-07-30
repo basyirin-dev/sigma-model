@@ -120,8 +120,8 @@ To study the σ-trap empirically, researchers utilize specific datasets and eval
 
 | Benchmark | In-Distribution Training Split | Systematic OOD Test Split | SGD Trajectory Performance Signature | Key Citations |
 |---|---|---|---|---|
-| SCAN | Simple command-action sequences (e.g., "run", "jump twice", "run left") | Systematic command combinations not seen in training (e.g., "jump left twice" held out) | Models achieve ~100% ID accuracy but collapse to 0–20% OOD accuracy, failing to map individual components to generalized actions | Patel et al. (2022); Lake & Baroni (2023) |
-| COGS / ReCOGS | Lexical and syntactic semantic parsing instances within limited depth | Deep structural recursions, structural shifts, and grammatical-role alternations (e.g., using a noun as a verb) | Standard Transformers achieve near-perfect ID parsing scores but fail catastrophically on OOD structural generalization | Bruns (2025) |
+| SCAN | Simple command-action sequences (e.g., "run", "jump twice", "run left") | Systematic command combinations not seen in training (e.g., "jump left twice" held out) | Models achieve ~100% ID accuracy but collapse to 0–20% OOD accuracy, failing to map individual components to generalized actions | Lake & Baroni (2018); Bastings et al. (2018) |
+| COGS / ReCOGS | Lexical and syntactic semantic parsing instances within limited depth | Deep structural recursions, structural shifts, and grammatical-role alternations (e.g., using a noun as a verb) | Standard Transformers achieve near-perfect ID parsing scores but fail catastrophically on OOD structural generalization | Kim & Linzen (2020); Wu et al. (2023) |
 | SLOG | Structured relational sequences containing specific grammatical patterns | Grammatical compositions that combine syntax rules across long-range dependencies | Models successfully parse training structures but fail when dependencies are stretched or composed systematically, illustrating localized schema trapping | Li et al. (2023) |
 | Meta-Mapping (MLC) | Few-shot context-to-target mapping under synthetic translation schemas | Complex, multi-layered combinations of novel symbolic mappings | Standard seq2seq networks struggle to perform meta-generalization without explicit meta-representation structures | Lake & Baroni (2023) |
 
@@ -185,17 +185,18 @@ To move beyond the limitations of standard gradient training, the development of
 ## References
 
 - Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., & Mané, D. (2016). Concrete Problems in AI Safety. *arXiv:1606.06565*.
-- basyirin-dev. (2025). Σ-Align: H-Bar Phase Engine and σFlow-PDE. *Project repository*.
-- Bruns, D. (2025). COGS / ReCOGS structural generalization benchmarks.
+- Bastings, J., Baroni, M., Weston, J., Cho, K., & Kiela, D. (2018). Jump to better conclusions: SCAN both left and right. *Proceedings of the ACL Workshop on BlackboxNLP*.
 - Feldman, V. (2020). Does Learning Require Memorization? A Short Tale about a Long Tail. *ACM STOC*.
 - Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., & Wichmann, F. A. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence*, 2(11), 665–673.
-- Krakovna, V., Uesato, J., Mikulik, V., Rahtz, M., Everitt, T., Kumar, R., Kenton, Z., Leike, J., & Legg, S. (2020). Specification gaming: the flip side of alignment. *DeepMind Blog / arXiv*.
+- Kim, N., & Linzen, T. (2020). COGS: A Compositional Generalization Challenge Based on Semantic Interpretation. *Proceedings of EMNLP*.
+- Krakovna, V., Uesato, J., Mikulitz, V., Rahtz, M., Everitt, T., Kumar, R., Kenton, Z., Leike, J., & Legg, S. (2020). Specification gaming: the flip side of alignment. *DeepMind Blog / arXiv*.
+- Lake, B. M., & Baroni, M. (2018). Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks. *Proceedings of ICML*.
 - Lake, B. M., & Baroni, M. (2023). Human-like systematic generalization through a meta-learning neural network. *Nature*, 623, 115–121.
 - Langosco, L. L., Koch, J., Sharkey, L. D., Pfau, J., & Russell, S. (2022). Goal Misgeneralization in Deep Reinforcement Learning. *ICML*.
 - Lapuschkin, S., Wäldchen, S., Binder, A., Montavon, G., Samek, W., & Müller, K.-R. (2019). Unmasking Clever Hans predictors and assessing exemplary responses in deep image classifiers. *Nature Communications*, 10, 1096.
-- Li, Y., Wang, Z., & Li, Y. (2023). SLOG: Structured relational generalization benchmarks.
-- Patel, A., Bhattamishra, S., & Goyal, N. (2022). Are NLP Models really able to Solve Simple Math Word Problems? *NAACL*.
+- Li, B., Donatelli, L., Koller, A., et al. (2023). SLOG: A Structural Generalization Benchmark for Semantic Parsing. *Proceedings of EMNLP*.
 - Quiñonero-Candela, J., Sugiyama, M., Schwaighofer, A., & Lawrence, N. D. (2008). *Dataset Shift in Machine Learning*. MIT Press.
 - Rice, L., Wong, E., & Kolter, J. Z. (2020). Overfitting in adversarial training: An analysis. *ICML*.
 - Shah, R., Varma, V., Kumar, R., Phuong, M., Krakovna, V., Uesato, J., & Kenton, Z. (2022). Goal Misgeneralization in RL: Evidence from Atari. *arXiv:2206.10168*.
 - Stephenson, C., Padhy, S., Ganesh, A., & Lee, J. (2021). On memorization in deep neural networks. *ICML*.
+- Wu, Z., Manning, C. D., & Potts, C. (2023). ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation. *Transactions of the ACL*.

@@ -1,0 +1,1281 @@
+TY  - CONF
+TI  - Your Diffusion Model is Secretly a Zero-Shot Classifier
+T2  - 2023 IEEE/CVF International Conference on Computer Vision (ICCV)
+SP  - 2206
+EP  - 2217
+AU  - A. C. Li
+AU  - M. Prabhudesai
+AU  - S. Duggal
+AU  - E. Brown
+AU  - D. Pathak
+PY  - 2023
+KW  - Training
+KW  - Visualization
+KW  - Computer vision
+KW  - Image synthesis
+KW  - Computational modeling
+KW  - Benchmark testing
+KW  - Robustness
+DO  - 10.1109/ICCV51070.2023.00210
+JO  - 2023 IEEE/CVF International Conference on Computer Vision (ICCV)
+IS  - 
+SN  - 2380-7504
+VO  - 
+VL  - 
+JA  - 2023 IEEE/CVF International Conference on Computer Vision (ICCV)
+Y1  - 1-6 Oct. 2023
+AB  - The recent wave of large-scale text-to-image diffusion models has dramatically increased our text-based image generation abilities. These models can generate realistic images for a staggering variety of prompts and exhibit impressive compositional generalization abilities. Almost all use cases thus far have solely focused on sampling; however, diffusion models can also provide conditional density estimates, which are useful for tasks beyond image generation. In this paper, we show that the density estimates from large-scale text-to-image diffusion models like Stable Diffusion can be leveraged to perform zero-shot classification without any additional training. Our generative approach to classification, which we call Diffusion Classifier, attains strong results on a variety of benchmarks and outperforms alternative methods of extracting knowledge from diffusion models. Although a gap remains between generative and discriminative approaches on zero-shot recognition tasks, our diffusion-based approach has stronger multimodal compositional reasoning abilities than competing discriminative approaches. Finally, we use Diffusion Classifier to extract standard classifiers from class-conditional diffusion models trained on ImageNet. These models approach the performance of SOTA discriminative classifiers and exhibit strong "effective robustness" to distribution shift. Overall, our results are a step toward using generative over discriminative models for downstream tasks. Results and visualizations on our website: diffusion-classifier.github.io/
+ER  - 
+
+TY  - JOUR
+TI  - Distributed Representations for Cognitive Control in Frontal Medial Cortex
+T2  - Journal of Cognitive Neuroscience
+SP  - 941
+EP  - 969
+AU  - T. R. Colin
+AU  - I. Ikink
+AU  - C. B. Holroyd
+PY  - 2025
+DO  - 10.1162/jocn_a_02285
+JO  - Journal of Cognitive Neuroscience
+IS  - 5
+SN  - 0898-929X
+VO  - 37
+VL  - 37
+JA  - Journal of Cognitive Neuroscience
+Y1  - 1 May 2025
+AB  - In natural and artificial neural networks, modularity and distributed structure afford complementary but competing benefits. The former allows for hierarchical representations that can flexibly recombine modules to address novel problems, whereas the latter can benefit from less constrained training, potentially uncovering fruitful statistical regularities. Here, we investigate these competing demands in the context of human sequential behavior. First, we explore this setting by comparing the properties of several recurrent neural network models. We find that explicit hierarchical structure by itself fails to provide a critical performance advantage when compared with a “flat” model that does not incorporate hierarchical structure. However, hierarchy appears to facilitate cognitive control processes that support nonroutine behaviors and behaviors that are carried out under computational stress. Second, we compare these models against fMRI data using representational similarity analysis. We find that a model that incorporates so-called wiring costs in the cost function, which produces a hierarchically organized gradient of representational structure across the hidden layer of the neural network, best accounts for fMRI data collected from human participants in a previous study [Holroyd, C. B., Ribas-Fernandes, J. J. F., Shahnazian, D., Silvetti, M., & Verguts, T., Human midcingulate cortex encodes distributed representations of task progress. Proceedings of the National Academy of Sciences, U.S.A., 115, 6398–6403, 2018]. The results reveal that the ACC encodes distributed representations of sequential task context along a rostro-caudal gradient of abstraction: Rostral ACC encodes relatively abstract and temporally extended patterns of activity compared with those encoded by caudal ACC. These results provide insight into the role of ACC in motivation and cognitive control.
+ER  - 
+
+TY  - CONF
+TI  - AETTA: Label-Free Accuracy Estimation for Test-Time Adaptation
+T2  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+SP  - 28643
+EP  - 28652
+AU  - T. Lee
+AU  - S. Chottananurak
+AU  - T. Gong
+AU  - S. -J. Lee
+PY  - 2024
+KW  - Adaptation models
+KW  - Accuracy
+KW  - Source coding
+KW  - Heuristic algorithms
+KW  - Estimation
+KW  - Predictive models
+KW  - Prediction algorithms
+KW  - test-time adaptation
+KW  - accuracy estimation
+KW  - performance estimation
+DO  - 10.1109/CVPR52733.2024.02706
+JO  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+IS  - 
+SN  - 2575-7075
+VO  - 
+VL  - 
+JA  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+Y1  - 16-22 June 2024
+AB  - Test-time adaptation (TTA) has emerged as a viable solution to adapt pretrained models to domain shifts using unlabeled test data. However, TTA faces challenges of adaptation failures due to its reliance on blind adaptation to unknown test samples in dynamic scenarios. Traditional methods for out-of-distribution performance estimation are limited by unrealistic assumptions in the TTA context, such as requiring labeled data or retraining models. To address this issue, we propose AETTA, a label-free accuracy estimation algorithm for TTA. We propose the prediction disagreement as the accuracy estimate, calculated by comparing the target model prediction with dropout inferences. We then improve the prediction disagreement to extend the applicability of AETTA under adaptation failures. Our extensive evaluation with four baselines and six TTA methods demonstrates that AETTA shows an average of 19.8%p more accurate estimation compared with the baselines. We further demonstrate the effectiveness of accuracy estimation with a model recovery case study, showcasing the practicality of our model recovery based on accuracy estimation. The source code is available at https://github.com/taeckyung/AETTA.
+ER  - 
+
+TY  - JOUR
+TI  - MedShift: Automated Identification of Shift Data for Medical Image Dataset Curation
+T2  - IEEE Journal of Biomedical and Health Informatics
+SP  - 3936
+EP  - 3947
+AU  - X. Guo
+AU  - J. W. Gichoya
+AU  - H. Trivedi
+AU  - S. Purkayastha
+AU  - I. Banerjee
+PY  - 2023
+KW  - Data models
+KW  - Biomedical imaging
+KW  - Pipelines
+KW  - Training
+KW  - Detectors
+KW  - Information sharing
+KW  - Bioinformatics
+KW  - Anomaly detection
+KW  - dataset curation
+KW  - medical shift data
+KW  - OOD detection
+KW  - X-ray
+DO  - 10.1109/JBHI.2023.3275104
+JO  - IEEE Journal of Biomedical and Health Informatics
+IS  - 8
+SN  - 2168-2208
+VO  - 27
+VL  - 27
+JA  - IEEE Journal of Biomedical and Health Informatics
+Y1  - Aug. 2023
+AB  - Automated curation of noisy external data in the medical domain has long been in high demand, as AI technologies need to be validated using various sources with clean, annotated data. Identifying the variance between internal and external sources is a fundamental step in curating a high-quality dataset, as the data distributions from different sources can vary significantly and subsequently affect the performance of AI models. The primary challenges for detecting data shifts are - (1) accessing private data across healthcare institutions for manual detection and (2) the lack of automated approaches to learn efficient shift-data representation without training samples. To overcome these problems, we propose an automated pipeline called MedShift to detect top-level shift samples and evaluate the significance of shift data without sharing data between internal and external organizations. MedShift employs unsupervised anomaly detectors to learn the internal distribution and identify samples showing significant shiftness for external datasets, and then compares their performance. To quantify the effects of detected shift data, we train a multi-class classifier that learns internal domain knowledge and evaluates the classification performance for each class in external domains after dropping the shift data. We also propose a data quality metric to quantify the dissimilarity between internal and external datasets. We verify the efficacy of MedShift using musculoskeletal radiographs (MURA) and chest X-ray datasets from multiple external sources. Our experiments show that our proposed shift data detection pipeline can be beneficial for medical centers to curate high-quality datasets more efficiently.
+ER  - 
+
+TY  - CONF
+TI  - Bayesian Test-Time Adaptation for Vision-Language Models
+T2  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+SP  - 29999
+EP  - 30009
+AU  - L. Zhou
+AU  - M. Ye
+AU  - S. Li
+AU  - N. Li
+AU  - X. Zhu
+AU  - L. Deng
+AU  - H. Liu
+AU  - Z. Lei
+PY  - 2025
+KW  - Adaptation models
+KW  - Visualization
+KW  - Accuracy
+KW  - Predictive models
+KW  - Performance metrics
+KW  - Data models
+KW  - Robustness
+KW  - Bayes methods
+KW  - Pattern recognition
+KW  - Image classification
+KW  - test-time adaptation
+KW  - vision-language models
+KW  - bayes theorem
+KW  - distribution shifts
+DO  - 10.1109/CVPR52734.2025.02792
+JO  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+IS  - 
+SN  - 2575-7075
+VO  - 
+VL  - 
+JA  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+Y1  - 10-17 June 2025
+AB  - Test-time adaptation with pre-trained vision-language models, such as CLIP, aims to adapt the model to new, potentially out-of-distribution test data. Existing methods calculate the similarity between visual embedding and learnable class embeddings, which are initialized by text embeddings, for zero-shot image classification. In this work, we first analyze this process based on Bayes theorem, and observe that the core factors influencing the final prediction are the likelihood and the prior. However, existing methods essentially focus on adapting class embeddings to adapt likelihood, but they often ignore the importance of prior. To address this gap, we propose a novel approach, Bayesian Class Adaptation (BCA), which in addition to continuously updating class embeddings to adapt likelihood, also uses the posterior of incoming samples to continuously update the prior for each class embedding. This dual updating mechanism allows the model to better adapt to distribution shifts and achieve higher prediction accuracy. Our method not only surpasses existing approaches in terms of performance metrics but also maintains superior inference rates and memory usage, making it highly efficient and practical for real-world applications.
+ER  - 
+
+TY  - CONF
+TI  - Perceptual Inductive Bias Is What You Need Before Contrastive Learning
+T2  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+SP  - 9621
+EP  - 9630
+AU  - J. Zhao
+AU  - T. Li
+AU  - D. Jiang
+AU  - S. Wu
+AU  - A. Ramirez
+AU  - T. S. Lee
+PY  - 2025
+KW  - Training
+KW  - Representation learning
+KW  - Visualization
+KW  - Semantic segmentation
+KW  - Semantics
+KW  - Robustness
+KW  - Pattern recognition
+KW  - Object recognition
+KW  - Surface treatment
+KW  - Convergence
+KW  - contrastive learning
+KW  - representation learning
+KW  - human perception
+DO  - 10.1109/CVPR52734.2025.00899
+JO  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+IS  - 
+SN  - 2575-7075
+VO  - 
+VL  - 
+JA  - 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+Y1  - 10-17 June 2025
+AB  - David Marr’s seminal theory of human perception stipulates that visual processing is a multi-stage process, prioritizing the derivation of boundary and surface properties before forming semantic object representations. In contrast, contrastive representation learning frameworks typically bypass this explicit multi-stage approach, defining their objective as the direct learning of a semantic representation space for objects. While effective in general contexts, this approach sacrifices the inductive biases of vision, leading to slower convergence speed and learning shortcut resulting in texture bias. In this work, we demonstrate that leveraging Marr’s multi-stage theory—by first constructing boundary and surface-level representations using perceptual constructs from early visual processing stages and subsequently training for object semantics—leads to 2x faster convergence on ResNet18, improved final representations on semantic segmentation, depth estimation, and object recognition, and enhanced robustness and out-of-distribution capability. Together, we propose a pretraining stage before the general contrastive representation pre-training to further enhance the final representation quality and reduce the overall convergence time via inductive bias from human vision systems.
+ER  - 
+
+TY  - CONF
+TI  - FixCLR: Negative-Class Contrastive Learning for Semi-Supervised Domain Generalization
+T2  - 2025 IEEE 8th International Conference on Multimedia Information Processing and Retrieval (MIPR)
+SP  - 116
+EP  - 122
+AU  - H. M. Son
+AU  - S. Rezaei
+AU  - X. Liu
+PY  - 2025
+KW  - Accuracy
+KW  - Contrastive learning
+KW  - Information processing
+KW  - Semisupervised learning
+KW  - Benchmark testing
+KW  - Information leakage
+KW  - Domain generalization
+KW  - contrastive learning
+KW  - semi-supervised learning
+DO  - 10.1109/MIPR67560.2025.00027
+JO  - 2025 IEEE 8th International Conference on Multimedia Information Processing and Retrieval (MIPR)
+IS  - 
+SN  - 2770-4319
+VO  - 
+VL  - 
+JA  - 2025 IEEE 8th International Conference on Multimedia Information Processing and Retrieval (MIPR)
+Y1  - 6-8 Aug. 2025
+AB  - Semi-supervised domain generalization (SSDG) aims to solve the problem of generalizing to out-of-distribution data when only a few labels are available. Due to label scarcity, applying domain generalization methods often underperform. Consequently, existing SSDG methods combine semi-supervised learning methods with various regularization terms. However, these methods do not explicitly regularize to learn domains invariant representations across all domains, which is a key goal for domain generalization. To address this, we introduce FixCLR. Inspired by success in self-supervised learning, we change two crucial components to adapt contrastive learning for explicit domain invariance regularization: utilization of class information from pseudo-labels and using only a repelling term. FixCLR can also be added on top of most existing SSDG and semi-supervised methods for complementary performance improvements. Our research includes extensive experiments that have not been previously explored in SSDG studies. These experiments include benchmarking different improvements to semi-supervised methods, evaluating the performance of pretrained versus non-pretrained models, and testing on datasets with many domains. Overall, FixCLR proves to be an effective SSDG method, especially when combined with other semi-supervised methods.
+ER  - 
+
+TY  - JOUR
+TI  - Explanation-Guided Adversarial Training for Robust and Interpretable Models
+T2  - IEEE Transactions on Circuits and Systems for Video Technology
+SP  - 9780
+EP  - 9793
+AU  - C. Chen
+AU  - Y. Chen
+AU  - S. Lin
+AU  - D. Hong
+AU  - S. Wu
+AU  - X. Liao
+AU  - C. Liu
+PY  - 2026
+KW  - Robustness
+KW  - Training
+KW  - Predictive models
+KW  - Perturbation methods
+KW  - Accuracy
+KW  - Annotations
+KW  - Chaos
+KW  - Analytical models
+KW  - Sun
+KW  - Standards
+KW  - Adversarial machine learning
+KW  - explainable AI
+KW  - image processing
+KW  - robustness
+DO  - 10.1109/TCSVT.2026.3666191
+JO  - IEEE Transactions on Circuits and Systems for Video Technology
+IS  - 7
+SN  - 1558-2205
+VO  - 36
+VL  - 36
+JA  - IEEE Transactions on Circuits and Systems for Video Technology
+Y1  - July 2026
+AB  - Deep neural networks (DNNs) have achieved remarkable performance in many tasks, yet they often behave as opaque black boxes. Explanation-guided learning (EGL) methods steer DNNs using human-provided explanations or supervision on model attributions. These approaches improve interpretability but typically assume benign inputs and incur heavy annotation costs. In contrast, both predictions and saliency maps of DNNs could dramatically alter facing imperceptible perturbations or unseen patterns. Adversarial training (AT) can substantially improve robustness, but it does not guarantee that model decisions rely on semantically meaningful features. In response, we propose Explanation-Guided Adversarial Training (EGAT), a unified framework that integrates the strength of AT and EGL to simultaneously improve prediction performance, robustness, and explanation quality. EGAT generates adversarial examples on the fly while imposing explanation-based constraints on the model. By jointly optimizing classification performance, adversarial robustness, and attributional stability, EGAT is not only more resistant to unexpected cases, including adversarial attacks and out-of-distribution (OOD) scenarios, but also offer human-interpretable justifications for the decisions. We further formalize EGAT within the Probably Approximately Correct learning framework, demonstrating theoretically that it yields more stable predictions under unexpected situations compared to standard AT. Empirical evaluations on OOD benchmark datasets show that EGAT consistently outperforms competitive baselines in both clean accuracy and adversarial accuracy (+37%) while producing more semantically meaningful explanations, and requiring only a limited increase (+16%) in training time.
+ER  - 
+
+TY  - CONF
+TI  - Efficient Test-Time Adaptation of Vision-Language Models
+T2  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+SP  - 14162
+EP  - 14171
+AU  - A. Karmanov
+AU  - D. Guan
+AU  - S. Lu
+AU  - A. El Saddik
+AU  - E. Xing
+PY  - 2024
+KW  - Adaptation models
+KW  - Computer vision
+KW  - Codes
+KW  - Computational modeling
+KW  - Noise
+KW  - Predictive models
+KW  - Benchmark testing
+DO  - 10.1109/CVPR52733.2024.01343
+JO  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+IS  - 
+SN  - 2575-7075
+VO  - 
+VL  - 
+JA  - 2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+Y1  - 16-22 June 2024
+AB  - Test-time adaptation with pre-trained vision-language models has attracted increasing attention for tackling distribution shifts during the test time. Though prior studies have achieved very promising performance, they in-volve intensive computation which is severely unaligned with test-time adaptation. We design TDA, a training-free dynamic adapter that enables effective and efficient test-time adaptation with vision-language models. TDA works with a lightweight key-value cache that maintains a dy-namic queue with few-shot pseudo labels as values and the corresponding test-sample features as keys. Leveraging the key-value cache, TDA allows adapting to test data gradually via progressive pseudo label refinement which is super-efficient without incurring any backpropagation. In addition, we introduce negative pseudo labeling that alleviates the adverse impact of pseudo label noises by assigning pseudo labels to certain negative classes when the model is uncertain about its pseudo label predictions. Extensive experiments over two benchmarks demonstrate TDA's superior effectiveness and efficiency as compared with the state-of-the-art. The code has been released in https://kdiaaa.github.io/tda/
+ER  - 
+
+TY  - CONF
+TI  - Comprehensive Evaluation of AI Hallucination and Novel UV-Oriented Framework toward Safe and Trustworthy AI
+T2  - 2024 7th International Conference on Universal Village (UV)
+SP  - 1
+EP  - 136
+AU  - Z. Liu
+AU  - J. Kou
+AU  - W. Zhang
+AU  - C. Gu
+AU  - X. Fang
+AU  - Z. Huang
+AU  - H. Yuan
+AU  - H. Li
+AU  - X. Lu
+AU  - A. Yin
+AU  - C. Liu
+AU  - C. Zhao
+AU  - W. Lin
+AU  - L. Zhang
+AU  - Z. Wang
+AU  - H. Huang
+AU  - X. Duan
+AU  - Y. Fang
+PY  - 2024
+KW  - Surveys
+KW  - Feedback loop
+KW  - Uncertainty
+KW  - Prevention and mitigation
+KW  - Large language models
+KW  - Taxonomy
+KW  - Retrieval augmented generation
+KW  - Decoding
+KW  - Calibration
+KW  - Artificial intelligence
+KW  - AI hallucination
+KW  - large language models (LLMs)
+KW  - multimodal large language models (MLLMs)
+KW  - hallucination taxonomy
+KW  - factuality
+KW  - faithfulness
+KW  - logical consistency
+KW  - emergent hybrid hallucinations
+KW  - hallucination detection
+KW  - evaluation metrics
+KW  - benchmark construction
+KW  - mechanism-aware evaluation
+KW  - hallucination mitigation
+KW  - retrieval-augmented generation (RAG)
+KW  - uncertainty calibration
+KW  - alignment bias
+KW  - reinforcement learning from human feedback (RLHF)
+KW  - decoding strategies
+KW  - confidence miscalibration
+KW  - trustworthiness
+KW  - safe and reliable AI
+KW  - Universal Village (UV) framework
+KW  - dynamic feedback loops
+KW  - human–AI interaction
+KW  - creative AI
+KW  - responsible AI
+KW  - explainability
+KW  - robustness
+KW  - multimodal alignment
+DO  - 10.1109/UV63228.2024.11189137
+JO  - 2024 7th International Conference on Universal Village (UV)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2024 7th International Conference on Universal Village (UV)
+Y1  - 19-22 Oct. 2024
+AB  - this work, we present a comprehensive evaluation of hallucination phenomena in LLMs and multimodal systems. First, we propose a structured taxonomy encompassing factuality-based, faithfulness-based, logical-based, and emergent hybrid forms, extending to multimodal-specific risks such as cross-modal inconsistencies, visual overinterpretation, and modality dominance effects. Second, we conduct a mechanistic analysis that traces hallucinations across the full model lifecycle—data-level origins (knowledge gaps, misinformation, annotation noise), training-induced mechanisms (distributional mimicry, reward bias, alignment forgetting), and inference-time vulnerabilities (confidence miscalibration, decoding failures, prompt-induced errors). This perspective reveals how independent mechanisms interact to produce cascade effects, amplifying initial flaws into elaborate but unreliable narratives. Third, we critically assess existing detection and evaluation approaches, highlighting limitations of current benchmarks, taxonomic ambiguities, and the lack of mechanism-aware evaluation protocols. We argue that future evaluation must integrate both surface-level manifestations and their generative causes to achieve more robust measurement.Beyond evaluation, we survey mitigation strategies organized into mechanism-based, phase-based, and hybrid approaches. These range from lightweight prompt engineering and decoding constraints to resource-augmented methods such as retrieval-augmented generation and knowledge graph integration, as well as higher-level frameworks for controllability and uncertainty calibration. We analyze the trade-offs among effectiveness, scalability, interpretability, and creative freedom, emphasizing the importance of context-specific tolerances: hallucinations that are unacceptable in medicine or finance may be tolerable, or even beneficial, in creative applications.Building on these insights, we propose a novel UV-oriented framework for safe and trustworthy AI, inspired by the Universal Village vision of harmonizing human, technological, and environmental systems. In this framework, hallucination is conceptualized not only as an isolated model error but as a systemic vulnerability in information flow and decision-making loops. We design a multi-level dynamic system integrating sensing, communication, decision-making, action, and evaluation, supported by closed feedback loops and user-specific hallucination tolerance levels. This architecture enables adaptive mitigation through mechanism-informed strategies, retrieval and verification integration, and consensus mechanisms, ensuring resilience across diverse application contexts.Our contributions are threefold: (1) we present the most comprehensive taxonomy of hallucination to date, linking manifestations with mechanistic drivers; (2) we unify detection, evaluation, and mitigation strategies into a coherent survey that highlights both current progress and pressing gaps; and (3) we introduce a UV-oriented framework that reframes hallucination control as part of a broader, feedback-driven ecosystem for reliable AI. We conclude by outlining open challenges, including classification ambiguities, multimodal alignment risks, deployment-specific vulnerabilities, and the need to reconcile reliability with creativity. Addressing these challenges is essential to advancing from powerful yet fallible generative models toward AI systems that are not only safe and responsible but also aligned with human values and societal needs.
+ER  - 
+
+TY  - CONF
+TI  - Towards Higher Effective Rank in Parameter-Efficient Fine-Tuning Using Khatri-Rao Product
+T2  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+SP  - 1292
+EP  - 1302
+AU  - P. Albert
+AU  - F. Z. Zhang
+AU  - H. Saratchandran
+AU  - A. van den Hengel
+AU  - E. Abbasnejad
+PY  - 2025
+KW  - Anisotropic
+KW  - Rectifiers
+KW  - Filters
+KW  - LoRa
+KW  - Protocols
+KW  - High frequency
+KW  - HTTP
+KW  - Data communication
+KW  - Local area networks
+KW  - Over-the-top media services
+KW  - peft
+KW  - llm
+KW  - fine-tuning
+KW  - full-rank
+KW  - vision-language
+DO  - 10.1109/ICCV51701.2025.00128
+JO  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+IS  - 
+SN  - 2380-7504
+VO  - 
+VL  - 
+JA  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+Y1  - 19-25 Oct. 2025
+AB  - Parameter-efficient fine-tuning (PEFT) has become a standard approach for adapting large pre-trained models. Amongst PEFT methods, low-rank adaptation (LoRA) has achieved notable success. However, recent studies have highlighted its limitations compared against full-rank alternatives, particularly when applied to multimodal and large language models. In this work, we present a quantitative comparison amongst full-rank and low-rank PEFT methods using a synthetic matrix approximation benchmark with controlled spectral properties. Our results confirm that LoRA struggles to approximate matrices with relatively flat spectrums or high frequency components-signs of high effective ranks. To this end, we introduce KRAdapter, a novel PEFT algorithm that leverages the Khatri-Rao product to produce weight updates, which, by construction, tends to produce matrix product with a high effective rank. We demonstrate performance gains with KRAdapter on vision-language models up to 1B parameters and on large language models up to $8 B$ parameters, particularly on unseen common-sense reasoning tasks. In addition, KRAdapter maintains the memory and compute efficiency of LoRA, making it a practical and robust alternative to fine-tune billion-scale parameter models.
+ER  - 
+
+TY  - CONF
+TI  - Understanding Flatness in Generative Models: Its Role and Benefits
+T2  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+SP  - 4908
+EP  - 4917
+AU  - T. Lee
+AU  - K. Seo
+AU  - J. Yoo
+AU  - S. W. Yoon
+PY  - 2025
+KW  - Low-pass filters
+KW  - Filtering
+KW  - Filters
+KW  - Circuits and systems
+KW  - IP networks
+KW  - Communications technology
+KW  - Videos
+KW  - Communication systems
+KW  - Information and communication technology
+KW  - Computer networks
+KW  - diffusion model
+KW  - generative model
+KW  - flat minima
+KW  - exposure bias
+DO  - 10.1109/ICCV51701.2025.00467
+JO  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+IS  - 
+SN  - 2380-7504
+VO  - 
+VL  - 
+JA  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+Y1  - 19-25 Oct. 2025
+AB  - Flat minima, known to enhance generalization and robustness in supervised learning, remain largely unexplored in generative models. In this work, we systematically investigate the role of loss surface flatness in generative models, both theoretically and empirically, with a particular focus on diffusion models. We establish a theoretical claim that flatter minima improve robustness against perturbations in target prior distributions, leading to benefits such as reduced exposure bias-where errors in noise estimation accumulate over iterations-and significantly improved resilience to model quantization, preserving generative performance even under strong quantization constraints. We further observe that Sharpness-Aware Minimization (SAM), which explicitly controls the degree of flatness, effectively enhances flatness in diffusion models even surpassing the indirectly promoting flatness methods-Input Perturbation (IP) which enforces the Lipschitz condition, ensemblingbased approach like Stochastic Weight Averaging (SWA) and Exponential Moving Average (EMA)-are less effective. Through extensive experiments on CIFAR-10, LSUN Tower, and FFHQ, we demonstrate that flat minima in diffusion models indeed improve not only generative performance but also robustness.
+ER  - 
+
+TY  - JOUR
+TI  - FACT: A Simple and Efficient Framework for Active Finetuning
+T2  - IEEE Transactions on Image Processing
+SP  - 6359
+EP  - 6370
+AU  - W. Xu
+AU  - Y. Song
+AU  - Y. Cui
+AU  - M. Ren
+AU  - Q. Liu
+AU  - Z. Hu
+PY  - 2026
+KW  - Modeling
+KW  - Training
+KW  - Conferences
+KW  - Flexible AC transmission systems
+KW  - Computers
+KW  - Computer vision
+KW  - LoRa
+KW  - Accuracy
+KW  - Tuning
+KW  - Labeling
+KW  - Active finetuning
+KW  - finetuning framework
+KW  - image classification
+KW  - semantic segmentation
+DO  - 10.1109/TIP.2026.3700910
+JO  - IEEE Transactions on Image Processing
+IS  - 
+SN  - 1941-0042
+VO  - 35
+VL  - 35
+JA  - IEEE Transactions on Image Processing
+Y1  - 2026
+AB  - The main goal of active finetuning is to improve a pretrained model’s performance on a specific task or domain by finetuning it with carefully selected informative or challenging data. Previous research has predominantly focused on the active aspect (i.e., data selection) while uniformly employing full finetuning for model adaptation, which inevitably distorts pretrained features due to distribution shift. This issue becomes particularly pronounced when the model size is large relative to the finetuning data quantity, leading to heightened overfitting risks. To address this critical gap, we formally outline the FiAF task that emphasizes systematic exploration of finetuning methodologies in active learning. We propose FACT, a three-phase hierarchical finetuning framework featuring both efficiency and simplicity, specifically designed for active finetuning scenarios. Our comprehensive experiments span: 1) Three major dataset categories encompassing classic (CIFAR10, CIFAR100, ImageNet-1k), imbalanced (CIFAR10-LT, CIFAR100-LT), and fine-grained (StanfordCars, FGVCAircraft) image classification datasets, each evaluated under 3-5 distinct sampling ratios; 2) Diverse pretrained architectures including Convolutional Neural Network (ConvNeXt), Vision Transformer (ViT), and Vision LSTM (ViL) networks; 3) A systematic investigation of frozen feature augmentation (FroFA) strategies. 4) A comprehensive and rigorous analysis of efficiency and generalizability. The results demonstrate significant improvements with strong generalization and robustness. Notably, under low sampling ratios, our framework achieves remarkable performance gains of over 20% on the ViT model for CIFAR10, CIFAR100, and ImageNet-1k benchmarks. This systematic approach establishes new state-of-the-art performance while maintaining parameter efficiency, proving particularly effective when labeled data is scarce.
+ER  - 
+
+TY  - CONF
+TI  - The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models
+T2  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+SP  - 2396
+EP  - 2406
+AU  - L. Niss
+AU  - K. Vogt-Lowell
+AU  - T. Tsiligkaridis
+PY  - 2025
+KW  - LoRa
+KW  - Protocols
+KW  - HTTP
+KW  - Data communication
+KW  - Pixel
+KW  - Radio access networks
+KW  - Radio communication
+KW  - Regional area networks
+KW  - Storage area networks
+KW  - Videos
+KW  - multi-modal models
+KW  - foundation models
+KW  - peft
+KW  - embedding alignment
+KW  - clip
+KW  - catastrophic forgetting
+KW  - generalization
+DO  - 10.1109/ICCV51701.2025.00231
+JO  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+IS  - 
+SN  - 2380-7504
+VO  - 
+VL  - 
+JA  - 2025 IEEE/CVF International Conference on Computer Vision (ICCV)
+Y1  - 19-25 Oct. 2025
+AB  - The fine-tuning of large vision-language foundation models remains an underexplored area, particularly regarding its impact on learning gains and catastrophic forgetting. Inspired by the significance of modality gaps in contrastive dual-encoders, we introduce the Inter-Intra Modal Measure (IIMM)—a predictive metric that quantifies the relationship between intra-modal image embedding similarity and inter-modal misalignment. Through extensive empirical analysis across four state-of-the-art vision-language models and five fine-tuning techniques, we establish a strong linear relationship: tasks with higher IIMM scores yield greater in-domain performance improvements but suffer from more pronounced out-of-domain degradation, with some parameter-efficient fine-tuning (PEFT) methods exhibiting severe forgetting. Compared to existing transferability measures, the IIMM demonstrates significantly stronger predictive power for accuracy changes post finetuning in dual-encoder models. Moreover, we provide a theoretical bound, proving that changes in IIMM are limited by the Wasserstein distance between pre- and post-fine-tuning embedding distributions, ensuring its stability and robustness as a predictive measure. With only a single forward pass of the target data, practitioners can leverage this key insight to evaluate the degree to which a model can be expected to improve following fine-tuning. When combined with prior knowledge of a model's performance across diverse tasks, the IIMM further enhances transferability predictions for novel tasks, offering a lightweight yet effective tool for guiding model adaptation strategies. Our code is provided at https://github.com/mit-ll/IIMM.
+ER  - 
+
+TY  - CONF
+TI  - Enhancing Distilled Datasets Via Natural Data Mixing
+T2  - 2025 38th SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI)
+SP  - 1
+EP  - 6
+AU  - I. Pons
+AU  - G. B. Stern
+AU  - A. H. R. Costa
+AU  - A. Jordao
+PY  - 2025
+KW  - Training
+KW  - Graphics
+KW  - Data privacy
+KW  - Accuracy
+KW  - Codes
+KW  - Self-supervised learning
+KW  - Benchmark testing
+KW  - Robustness
+KW  - Standards
+DO  - 10.1109/SIBGRAPI67909.2025.11223402
+JO  - 2025 38th SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI)
+IS  - 
+SN  - 2377-5416
+VO  - 
+VL  - 
+JA  - 2025 38th SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI)
+Y1  - 30 Sept.-3 Oct. 2025
+AB  - Dataset distillation emerges as a promising technique to reduce web-scale datasets into a compact version with only a few samples per class. It involves distilling a large dataset into a compact synthetic set that aims to preserve representative information from the original data, offering advantages such as higher training efficiency and data privacy. However, existing techniques fail to fully capture the underlying properties of original (natural) training samples. Hence, learning solely on distilled images-the standard practice-leads models to encounter a notable generalization gap. In this work, we propose a simple yet effective mechanism to enhance distilled images. Our method transfers powerful and discriminative characteristics from natural images to distilled samples through a simple mixing process. Extensive experiments on benchmarks confirm that our method consistently improves generalization accuracy. Notably, we demonstrate that our approach enables distilled sets with only 10 images per class to match or exceed the performance of state-of-the-art methods trained on 50 images per class, representing a $5 \times$ gain in training efficiency. On challenging ImageNet subsets, it increases predictive performance by up to $\mathbf{1 1. 5}$ percentage points. We also confirm that our method more effectively preserves internal representations concerning full dataset training when compared to plain state-of-the-art dataset distillation methods. Crucially, our method achieves these improvements without increasing the size of the distilled set, thus preserving the efficiency and privacy advantages inherent to dataset distillation. Moreover, our method enhances robustness to common corruptions, improving predictive performance by an average of 9.05 percentage points. It also improves accuracy against moderate adversarial attacks. Code is available at: github.com/IanPons/Enhancing-Distilled-Datasets
+ER  - 
+
+TY  - JOUR
+TI  - PE-TSFM: Self-Supervised Time-Series Learning for Generalizable Power Converter Health Monitoring Under Unseen Conditions
+T2  - IEEE Transactions on Industrial Electronics
+SP  - 1
+EP  - 13
+AU  - X. Liao
+AU  - X. Zhang
+AU  - X. Wei
+AU  - J. Liu
+AU  - S. Zhao
+AU  - S. Bu
+AU  - Y. Zhang
+PY  - 2026
+KW  - Modeling
+KW  - Timing
+KW  - Learning (artificial intelligence)
+KW  - Degradation
+KW  - Training
+KW  - Labeling
+KW  - Converters
+KW  - Aging
+KW  - Educational institutions
+KW  - Frequency modulation
+KW  - Condition monitoring
+KW  - power electronics (PEs)
+KW  - self-supervised learning (SSL)
+KW  - time-series foundation model
+DO  - 10.1109/TIE.2026.3679761
+JO  - IEEE Transactions on Industrial Electronics
+IS  - 
+SN  - 1557-9948
+VO  - 
+VL  - 
+JA  - IEEE Transactions on Industrial Electronics
+Y1  - 
+AB  - Data-driven health monitoring of power converters remains limited by poor generalization to unseen operating conditions. This work addresses this out-of-distribution (OOD) challenge by building a domain-specific time-series foundation model (PE-TSFM) that learns representations directly from large-scale unlabeled converter data. Unlike generic TSFMs trained on broad time-series datasets, the proposed PE-TSFM is pretrained entirely on domain data, enabling it to learn the physical relationships unique to power electronics. To further tailor the model to this domain, we introduce a dual-attention mechanism that captures both temporal patterns and inter-channel dependencies. While generic TSFMs primarily model temporal dependencies, the added channel attention (CA) captures inter-sensor physical relationships essential for converter degradation analysis. A dataset containing 141 million unlabeled timestamps from an operating power converter is used for pretraining. Experiments show that PE-TSFMs achieve 76%–92% accuracy under unseen operating conditions. In contrast, generic TSFMs achieve around 60% and conventional time-series models achieve around 40% accuracy. This result confirms the strong OOD generalization of the proposed PE-TSFM. Ablation studies further verify that the introduced CA mechanism significantly improves model performance. In addition, we conduct detailed studies on model scalability, hyperparameter sensitivity, and interpretability to provide a comprehensive understanding of the proposed approach.
+ER  - 
+
+TY  - JOUR
+TI  - Systematic Abductive Reasoning via Diverse Relation Representations in Vector-Symbolic Architecture
+T2  - IEEE Transactions on Neural Networks and Learning Systems
+SP  - 1
+EP  - 15
+AU  - Z. -H. Sun
+AU  - R. -Y. Zhang
+AU  - Z. Zhen
+AU  - D. -H. Wang
+AU  - Y. -J. Li
+AU  - X. Wan
+AU  - H. You
+PY  - 2026
+KW  - Feeds
+KW  - Antennas
+KW  - Filtering
+KW  - Circuits
+KW  - Filters
+KW  - Integrated circuits
+KW  - Neural circuits
+KW  - Communication systems
+KW  - Wide area networks
+KW  - Computer networks
+KW  - Abstract visual reasoning
+KW  - relation representation
+KW  - vector-symbolic architecture (VSA)
+DO  - 10.1109/TNNLS.2026.3684958
+JO  - IEEE Transactions on Neural Networks and Learning Systems
+IS  - 
+SN  - 2162-2388
+VO  - 
+VL  - 
+JA  - IEEE Transactions on Neural Networks and Learning Systems
+Y1  - 
+AB  - In abstract visual reasoning, monolithic deep learning models suffer from limited interpretability and generalization, while existing neuro-symbolic approaches fall short in capturing the diversity and systematicity of attribute and relation representations. To address these challenges, we propose a systematic abductive reasoning model with diverse relation representations (Rel-SAR) in vector-symbolic architecture (VSA) to solve Raven’s progressive matrices (RPM). To derive attribute representations with symbolic reasoning potential, we introduce not only various types of atomic high-dimensional (HD) encodings that capture numeric, periodic, and logical semantics, but also the structured HD representation (SHDR) for the overall grid component. For systematic reasoning, we further propose novel numerical and logical relation functions and perform rule abduction and execution in a unified framework built upon these relation representations. Experimental results demonstrate that Rel-SAR achieves significant performance improvements on RPM tasks. By synergistically combining HD attribute representations with symbolic reasoning, Rel-SAR enables systematic abductive reasoning with both interpretable and computable semantics.
+ER  - 
+
+TY  - JOUR
+TI  - Faces of the Mind: Unveiling Mental Health States Through Facial Expressions in 11,427 Adolescents
+T2  - IEEE Transactions on Affective Computing
+SP  - 2305
+EP  - 2321
+AU  - X. Xu
+AU  - X. Zhang
+AU  - Y. Zhang
+PY  - 2026
+KW  - Depression
+KW  - Facial expressions
+KW  - Videos
+KW  - Faces
+KW  - Machine learning
+KW  - Computational modeling
+KW  - Mental health
+KW  - Indexes
+KW  - Affective computing
+KW  - Noise
+KW  - Facial expressions
+KW  - mood disorder
+KW  - machine learning
+KW  - large benchmark dataset
+DO  - 10.1109/TAFFC.2026.3656335
+JO  - IEEE Transactions on Affective Computing
+IS  - 2
+SN  - 1949-3045
+VO  - 17
+VL  - 17
+JA  - IEEE Transactions on Affective Computing
+Y1  - April-June 2026
+AB  - Mood disorders such as depression and anxiety often manifest through facial expressions, but existing machine learning algorithms designed to assess these disorders have been hindered by small datasets and limited real-world applicability. To address this gap, we analyzed facial videos of 11,427 participants - a dataset two orders of magnitude larger than those used in previous studies - including standardized facial expression videos and psychological assessments of depression, anxiety, and stress. However, scaling up the dataset introduces significant challenges due to increased symptom heterogeneity, making it difficult for models to learn accurate representations. To address this, we introduced the Symptom Discrepancy Index (SDI), a novel metric for quantifying dataset heterogeneity caused by variability in individual symptoms among samples with identical total scores. By removing the 10% most heterogeneous cases as identified by the SDI, we raised the F1 scores of all models from approximately 50% to 80%. Notably, comparable performance gains were observed within both the retained and excluded subsets. These findings demonstrate symptom heterogeneity, not model capacity, as the principal bottleneck in large scale automated assessment and provide a general solution that is readily applicable to other psychometric data sets.
+ER  - 
+
+TY  - JOUR
+TI  - Large language models: The outlook for next-generation AI applications in power grid
+T2  - CSEE Journal of Power and Energy Systems
+SP  - 1
+EP  - 18
+AU  - C. Cui
+AU  - P. Zhang
+AU  - Y. Sun
+AU  - C. Zhang
+AU  - M. Zhao
+AU  - J. Zhang
+PY  - 2026
+KW  - Biological system modeling
+KW  - Power systems
+KW  - Data models
+KW  - Optimization
+KW  - Renewable energy
+KW  - Predictive models
+KW  - Power system dynamics
+KW  - Computational modeling
+KW  - Parallel processing
+KW  - Load modeling
+KW  - Large language models
+KW  - artificial intelligence
+KW  - power grid
+KW  - intelligent power systems
+KW  - AI applications in power industry
+DO  - 10.17775/CSEEJPES.2025.01610
+JO  - CSEE Journal of Power and Energy Systems
+IS  - 
+SN  - 3066-9308
+VO  - 
+VL  - 
+JA  - CSEE Journal of Power and Energy Systems
+Y1  - 
+AB  - As a core technology of next-generation artificial intelligence, Large Language Models (LLMs) provide breakthrough solutions for the intelligent transformation of power systems. This paper systematically reviews the key technologies, application scenarios, and development prospects of LLMs within the power industry. We particularly emphasize their innovative applications in grid planning, dispatch optimization, equipment operation and maintenance, customer service, and power markets. Utilizing self-attention mechanisms and multimodal learning capabilities, Transformer-based LLMs significantly enhance the efficiency of power grid data parsing, spatiotemporal pattern recognition, and dynamic decision-making. Furthermore, this study explores how language models, vision models, and multimodal models present new opportunities to advance power system intelligence. Finally, the paper highlights the future development of scientific LLMs and their expanding prospects in the power industry, alongside a discussion of implementation challenges, ethical considerations, and future research directions.
+ER  - 
+
+TY  - JOUR
+TI  - TrapFlow: Controllable Website Fingerprinting Defense via Dynamic Backdoor Learning
+T2  - IEEE Transactions on Information Forensics and Security
+SP  - 2610
+EP  - 2625
+AU  - S. Liang
+AU  - J. Gong
+AU  - T. Fang
+AU  - A. Liu
+AU  - T. Wang
+AU  - X. Cao
+AU  - D. Tao
+AU  - E. -C. Chang
+PY  - 2026
+KW  - Accuracy
+KW  - Web pages
+KW  - Traffic control
+KW  - Adaptation models
+KW  - Training
+KW  - Perturbation methods
+KW  - Fingerprint recognition
+KW  - Feature extraction
+KW  - Computer architecture
+KW  - Computational modeling
+KW  - Website fingerprinting
+KW  - backdoor learning
+KW  - trigger patterns
+DO  - 10.1109/TIFS.2026.3663989
+JO  - IEEE Transactions on Information Forensics and Security
+IS  - 
+SN  - 1556-6021
+VO  - 21
+VL  - 21
+JA  - IEEE Transactions on Information Forensics and Security
+Y1  - 2026
+AB  - Website fingerprinting (WF) attacks, which covertly monitor user communications to identify the web pages they visit, pose a serious threat to user privacy. Existing WF defenses attempt to reduce attack accuracy by disrupting traffic patterns, but attackers can retrain their models to adapt, making these defenses ineffective. Meanwhile, their high overhead limits deployability. To overcome these limitations, we introduce a novel controllable website fingerprinting defense called TrapFlow based on backdoor learning. TrapFlow exploits the tendency of neural networks to memorize subtle patterns by injecting crafted trigger sequences into targeted website traffic, causing the attacker’s model to build incorrect associations during training. If the attacker attempts to adapt by training on such noisy data, TrapFlow ensures that the model internalizes the trigger as a dominant feature, leading to widespread misclassification across unrelated websites. Conversely, if the attacker ignores these patterns and trains only on clean data, the trigger behaves as an adversarial patch at inference time, causing model misclassification. To achieve this dual effect, we optimize the trigger using the Fast Levenshtein-like distance to maximize both its learnability and distinctiveness from normal traffic. Experiments show that TrapFlow significantly reduces the accuracy of the RF attack from 99% to 6% with 74% data overhead. This compares favorably against two SOTA defenses: FRONT reduces accuracy by only 2% at a similar overhead, while Palette achieves 32% accuracy, but with 48% more overhead. We further validate the practicality of our method in a real Tor network environment.
+ER  - 
+
+TY  - JOUR
+TI  - Handling Dual Skewness in Citywide Crime Prediction Using Personalized Graph Federated Learning
+T2  - IEEE Transactions on Computational Social Systems
+SP  - 1
+EP  - 12
+AU  - Bhumika
+AU  - P. Lalanda
+AU  - G. Vega
+AU  - D. Das
+PY  - 2025
+KW  - Adaptation models
+KW  - Servers
+KW  - Federated learning
+KW  - Data models
+KW  - Spatiotemporal phenomena
+KW  - Correlation
+KW  - Predictive models
+KW  - Optimization
+KW  - Training
+KW  - Smart cities
+KW  - Crime prediction
+KW  - federated learning (FL)
+KW  - skewness
+KW  - smart city
+DO  - 10.1109/TCSS.2025.3641377
+JO  - IEEE Transactions on Computational Social Systems
+IS  - 
+SN  - 2329-924X
+VO  - 
+VL  - 
+JA  - IEEE Transactions on Computational Social Systems
+Y1  - 
+AB  - The widespread deployment of sensors and recent advances in machine learning have enabled the development of predictive services in smart cities, particularly in the domain of public safety through predictive policing across different regions. Recently, training on these distributed regions is facilitated by federated learning (FL) without exposing sensitive data. However, crime data exhibit inherently complex spatiotemporal dynamics and suffer from dual skewness, as both the quantity and category distribution of crimes vary significantly across regions. Most existing federated methods struggle to effectively handle such skewed distributions, while also being limited to capture spatial dependencies. To overcome these challenges, we propose an approach called graph structured personalized federated learning (GSpfl), which jointly models spatial and temporal patterns in crime data. Specifically, GSpfl incorporates graph based aggregation at the server to model spatial dynamics, where similarity based adjacency matrix enable convolution among related clients to mitigate quantity skewness. On the client side, temporal dynamics are learned locally with regularization terms to balance global knowledge sharing and local model adaptation, while Focal Tversky loss is employed to address category imbalance. Experiments on real-world crime datasets from Los Angeles (LA) and Chicago (CHI) demonstrate the superior performance of our approach compared to ten baseline and state-of-the-art FL methods.
+ER  - 
+
+TY  - JOUR
+TI  - Exploring Invariance Matters for Domain Generalization
+T2  - IEEE Transactions on Image Processing
+SP  - 3336
+EP  - 3351
+AU  - S. Wang
+AU  - H. He
+AU  - X. Yang
+AU  - Z. Liu
+AU  - Y. Zhong
+AU  - X. Zhang
+AU  - M. Wang
+PY  - 2025
+KW  - Contrastive learning
+KW  - Feature extraction
+KW  - Frequency-domain analysis
+KW  - Training
+KW  - Data models
+KW  - Data mining
+KW  - Correlation
+KW  - Data augmentation
+KW  - Convolutional neural networks
+KW  - Computer science
+KW  - Domain generalization
+KW  - feature disentanglement
+KW  - progressive contrastive learning
+DO  - 10.1109/TIP.2025.3568747
+JO  - IEEE Transactions on Image Processing
+IS  - 
+SN  - 1941-0042
+VO  - 34
+VL  - 34
+JA  - IEEE Transactions on Image Processing
+Y1  - 2025
+AB  - Domain generalization (DG) aims to solve the problem of significant performance degradation when target domain data collected from the Out-Of-Distribution (O.O.D). Previous efforts try to exploit invariant features in the source domain through CNN networks. However, inspired by causal mechanisms, we find that the complex spurious-invariant information is still hidden in this view invariant features, and the impact of domain and class discrepancies on extracting invariance has not been effectively mitigated. To alleviate these issues, we propose a self-weighted multi-view mining invariance domain generalization framework (SMIDG). On the one hand, to make up for the insufficiency of traditional single-view convolutional feature extraction networks, we propose to mine features from another frequency view and use the self-adaptive adversarial masks to eliminate some spurious correlations, ensuring causal invariance in the coarse-grained generalization. However, due to inconsistencies in discriminative information between inter-domain and intra-domain samples, as well as inter-class and intra-class samples, the coarse-grained elimination of spurious associations does not fully resolve this issue. On the other hand, we also consider the fine-grained generalization from two aspects. Firstly, to better tackle the domain discrepancies, we propose a novel progressive contrastive learning strategy that learns the underlying specific features of samples while gradually mitigating domain discrepancies, thereby ensuring domain invariance in fine-grained generalization. Secondly, due to the issue of feature inconsistency, we adopt a self-adaptive hard sample mining method with information gain to ensure that the model pays more attention on hard disentangled samples, thus maintaining feature invariance. Extensive experiments on five benchmark datasets demonstrate that our method outperforms state-of-the-art approaches. Our code is available at https://github.com/bihhm/SMIDG
+ER  - 
+
+TY  - JOUR
+TI  - Working Memory and Self-Directed Inner Speech Enhance Multitask Generalization in Active Inference
+T2  - Neural Computation
+SP  - 28
+EP  - 70
+AU  - J. F. Queißer
+AU  - J. Tani
+PY  - 2025
+DO  - 10.1162/NECO.a.36
+JO  - Neural Computation
+IS  - 1
+SN  - 0899-7667
+VO  - 38
+VL  - 38
+JA  - Neural Computation
+Y1  - 22 Dec. 2025
+AB  - This simulation study shows how a set of working memory tasks can be acquired simultaneously through interaction between a stacked recurrent neural network (RNN) and multiple working memories. In these tasks, temporal patterns are provided, followed by linguistically specified task goals. Training is performed in a supervised manner by minimizing the free energy, and goal-directed tasks are performed using the active inference (AIF) framework. Our simulation results show that the best task performance is obtained when two working memory modules are used instead of one or none and when self-directed inner speech is incorporated during task execution. Detailed analysis indicates that a temporal hierarchy develops in the stacked RNN module under these optimal conditions. We argue that the model’s capacity for generalization across novel task configurations is supported by the structured interplay between working memory and the generation of self-directed language outputs during task execution. This interplay promotes internal representations that reflect task structure, which in turn support generalization by enabling a functional separation between content encoding and control dynamics within the memory architecture.
+ER  - 
+
+TY  - JOUR
+TI  - Point-Spread-Function-Guided HRRP Recognition Network: A Framework for Robust Target Classification Under ISRJ
+T2  - IEEE Transactions on Aerospace and Electronic Systems
+SP  - 11827
+EP  - 11844
+AU  - G. Sun
+AU  - L. Wang
+AU  - Y. Wang
+AU  - J. Wang
+AU  - Y. Liu
+PY  - 2026
+KW  - Modeling
+KW  - Jamming
+KW  - Modules (abstract algebra)
+KW  - Radar
+KW  - Target recognition
+KW  - Frequency
+KW  - Distance measurement
+KW  - Distortion
+KW  - Visualization
+KW  - Accuracy
+KW  - Attention mechanism
+KW  - high-resolution range profile (HRRP)
+KW  - mainlobe jamming
+KW  - point spread function (PSF)
+KW  - radar automatic target recognition (RATR)
+DO  - 10.1109/TAES.2026.3697718
+JO  - IEEE Transactions on Aerospace and Electronic Systems
+IS  - 
+SN  - 1557-9603
+VO  - 62
+VL  - 62
+JA  - IEEE Transactions on Aerospace and Electronic Systems
+Y1  - 2026
+AB  - Radar automatic target recognition based on high-resolution range profile (HRRP) has received extensive attention in recent years. Due to its ability to capture fine-grained structural features of targets, the HRRP enables reliable target classification and exhibits well adaptability to deep learning-based recognition frameworks. However, despite the remarkable progress of HRRP recognition techniques, target recognition under electronic countermeasures, especially under the mainstream interrupted-sampling repeater jamming, remains a significant challenge, where the HRRP suffers from serious feature distortion. To overcome this limitation, this article introduces an HRRP recognition framework assisted by prior jamming information. Specifically, we propose a prior knowledge representation method based on the point spread function to model the HRRP distortion induced by jamming. Based on this, the recognition framework incorporates a multiscale feature extraction module designed to thoroughly capture HRRP features, a feature interaction module using a cross-attention mechanism that integrates HRRP features with prior jamming information, and a hybrid loss function that enhances the model’s representation capability. With the aid of prior information, the model can learn invariant features within distorted HRRP under different jamming parameters. Evaluations on both simulated and measured datasets show that the proposed method consistently outperforms state-of-the-art ones in all metrics. Moreover, it exhibits stronger generalization capabilities when facing unseen jamming parameters.
+ER  - 
+
+TY  - JOUR
+TI  - Perspectives of Calibrated Adaptation for Few-Shot Cross-Domain Classification
+T2  - IEEE Transactions on Circuits and Systems for Video Technology
+SP  - 2410
+EP  - 2421
+AU  - D. Kong
+AU  - X. Yang
+AU  - N. Wang
+AU  - X. Gao
+PY  - 2025
+KW  - Feature extraction
+KW  - Adaptation models
+KW  - Few shot learning
+KW  - Context modeling
+KW  - Metalearning
+KW  - Data models
+KW  - Circuits and systems
+KW  - Prototypes
+KW  - Uniform resource locators
+KW  - Training
+KW  - Visual classification
+KW  - neural processes
+KW  - few-shot learning
+KW  - feature adaptation
+DO  - 10.1109/TCSVT.2024.3486455
+JO  - IEEE Transactions on Circuits and Systems for Video Technology
+IS  - 3
+SN  - 1558-2205
+VO  - 35
+VL  - 35
+JA  - IEEE Transactions on Circuits and Systems for Video Technology
+Y1  - March 2025
+AB  - Current few-shot learning techniques predominantly leverage amortization techniques based on meta-learning frameworks, which effectively adapt to unknown tasks with limited examples. However, these approaches face significant challenges in cross-domain scenarios, where the data distributions between the source domain (training data) and the target domain (testing data) differ substantially. This domain shift can lead to models that overfit the global discriminative model while underfitting their local amortization on the adaptable few-shot structure. To mitigate this problem, our proposal makes an upgrade on Conditional Neural Adaptive Processes, reformulating its conditioning mechanism to better handle cross-domain adaptation. This results in calibrated amortization of task-specific feature extractors and the construction of a robust non-parametric classifier. In our implementation, we first employ generative modeling or deterministic self-attention to all labeled context features, establishing a strong task-level alignment that adapts the extractor across domains. Additionally, we introduce a novel channel-wise normalization to further enhance the adaptation process. Our experiments on the Meta-dataset benchmark demonstrate an average  $6.9\sim 9$ % improvement in out-of-distribution tasks, underscoring the effectiveness of exploiting calibrated adaptation in few-shot cross-domain classification.
+ER  - 
+
+TY  - JOUR
+TI  - Deployment-Aware Compression of Large Language Models for Edge Intelligence: A System-Level Survey
+T2  - IEEE Transactions on Artificial Intelligence
+SP  - 3703
+EP  - 3718
+AU  - E. Dritsas
+AU  - M. Trigka
+PY  - 2026
+KW  - Adaptation models
+KW  - Hardware
+KW  - Surveys
+KW  - Random access memory
+KW  - Memory management
+KW  - Artificial intelligence
+KW  - Pipelines
+KW  - Foundation models
+KW  - Throughput
+KW  - Sustainable development
+KW  - Compression
+KW  - compiler toolchains
+KW  - edge artificial intelligence deployment
+KW  - large language models (LLMs)
+KW  - pruning
+KW  - quantization
+DO  - 10.1109/TAI.2026.3656155
+JO  - IEEE Transactions on Artificial Intelligence
+IS  - 7
+SN  - 2691-4581
+VO  - 7
+VL  - 7
+JA  - IEEE Transactions on Artificial Intelligence
+Y1  - July 2026
+AB  - The deployment of large language models (LLMs) on edge hardware presents multilayered challenges, including compression, compiler behavior, and system-level trade-offs. This survey provides a deployment-centric taxonomy of compression strategies for LLMs under edge constraints, bridging algorithmic methods and practical hardware toolchains. We examine quantization techniques, including posttraining and quantization-aware variants, under precision-scaling regimes and analyze how they interact with operator lowering, kernel fusion, and numerical drift across compilers such as tensor virtual machine, core machine learning, and tensor runtime-LLM. Pruning and distillation approaches are reviewed with an emphasis on their impact on generalization, robustness, and hallucination under tight memory and energy budgets. We highlight the limitations of existing benchmarking suites, including the lack of robustness-aware evaluation, numerical fidelity tracking under low-precision inference, and explicit treatment of compiler-induced latency and energy variability. Case studies across real-world deployment stacks illustrate how system-level constraints translate into concrete deployment bottlenecks in practical edge LLM pipelines. Finally, we identify the open challenges related to continual model adaptation at the edge, privacy-preserving personalization, and secure and reproducible deployment under system constraints. This study provides a structured synthesis of techniques and trade-offs relevant to practitioners, compiler engineers, and hardware vendors pursuing sustainable high-performance edge artificial intelligence.
+ER  - 
+
+TY  - JOUR
+TI  - DHPT: Dual-Modality Heterogeneous Prompt Tuning for Online Test-Time Adaption in Vision-Language Models
+T2  - IEEE Transactions on Circuits and Systems for Video Technology
+SP  - 8590
+EP  - 8601
+AU  - G. Wang
+AU  - P. Zhao
+AU  - X. Wang
+AU  - H. Guo
+AU  - N. Qi
+AU  - S. Yang
+AU  - Q. Guo
+PY  - 2026
+KW  - Visualization
+KW  - Tuning
+KW  - Semantics
+KW  - Noise
+KW  - Adaptation models
+KW  - Optimization
+KW  - Data models
+KW  - Calibration
+KW  - Large language models
+KW  - Noise measurement
+KW  - Test-time adaption
+KW  - prompt tuning
+KW  - vision-language models
+KW  - large language models
+DO  - 10.1109/TCSVT.2026.3657756
+JO  - IEEE Transactions on Circuits and Systems for Video Technology
+IS  - 6
+SN  - 1558-2205
+VO  - 36
+VL  - 36
+JA  - IEEE Transactions on Circuits and Systems for Video Technology
+Y1  - June 2026
+AB  - Test-Time Adaptation (TTA) has recently emerged as a promising research direction, enabling vision-language models (VLMs) to adapt to unlabeled test data in zero-shot settings. Among TTA approaches, test-time prompt tuning has shown great potential for enhancing the practical applicability of VLMs. However, existing methods typically either focus on adapting a single modality or apply uniform optimization to both modalities, without explicitly defining modality-specific optimization objectives. Such a one-size-fits-all strategy often results in suboptimal performance under test-time conditions. To address this limitation, we propose Dual-modality Heterogeneous Prompt Tuning (DHPT), a novel framework designed to simultaneously capture fine-grained textual semantics and alleviate domain shift noise in the visual modality. Specifically, we leverage a large language model to provide textual cognition guidance for the text encoder, while on the vision side, we develop a lightweight calibration module that adaptively mitigates domain shift noise across different scales. Furthermore, we introduce a cluster-tight optimization objective that enhances the stability and generalizability of prompt tuning under distribution shifts. Extensive experiments conducted on 11 benchmark datasets demonstrate that DHPT consistently and significantly outperforms existing TTA methods for VLMs.
+ER  - 
+
+TY  - JOUR
+TI  - GeCHO: Generation of Contextualized Human–Object Interactions
+T2  - IEEE Access
+SP  - 48872
+EP  - 48886
+AU  - G. Minelli
+AU  - A. Benericetti
+AU  - L. Taccari
+AU  - F. Sambo
+AU  - S. Salti
+PY  - 2026
+KW  - Diffusion models
+KW  - Training
+KW  - Synthetic data
+KW  - Image synthesis
+KW  - Noise reduction
+KW  - Diffusion processes
+KW  - Computational modeling
+KW  - Visualization
+KW  - Videos
+KW  - Semantics
+KW  - Diffusion
+KW  - human-object interaction
+KW  - inpainting
+DO  - 10.1109/ACCESS.2026.3678513
+JO  - IEEE Access
+IS  - 
+SN  - 2169-3536
+VO  - 14
+VL  - 14
+JA  - IEEE Access
+Y1  - 2026
+AB  - Creating realistic human-world interactions with diffusion models remains a key challenge, often requiring tedious trial-and-error processes and iterative manual refinements to achieve the desired result. Current approaches either fail to seamlessly integrate new content while maintaining global consistency of the scene, or require time-consuming editing and prompt engineering, making the process impractical for large-scale applications. To address this challenge, we propose an inpainting approach that specifically tackles the complexities of generating contextual human-object interactions, which we refer to as GeCHO. Our method improves local object fidelity and global scene consistency by leveraging cross-attention maps for automated, annotation-free object placement and using ControlNet to ensure precise spatial localization. We demonstrate the practical impact of our approach through two key applications: natural image inpainting, where we achieve contextual object placement with flexible spatial control, and human-object interaction detection, where we address the problem of long-tail distributions through synthetic data generation. Our results show that the proposed method enhances realism and adherence of generated images to text prompts, simplifies the generation of complex scenes without extensive input engineering, and improves performance in computer vision tasks limited by data scarcity. The source code implementation is available here: https://github.com/johnMinelli/gecho
+ER  - 
+
+TY  - JOUR
+TI  - Physics-Constrained Residual Learning for Refined Dynamic Identification and Robust Torque Estimation
+T2  - IEEE Transactions on Instrumentation and Measurement
+SP  - 7505516
+EP  - 7505516
+AU  - F. S. Wibowo
+AU  - H. -I. Lin
+AU  - W. -H. Chen
+PY  - 2026
+KW  - Modeling
+KW  - Physics
+KW  - Trajectory
+KW  - Friction
+KW  - Learning (artificial intelligence)
+KW  - Torque
+KW  - Robots
+KW  - Payloads
+KW  - Training
+KW  - Testing
+KW  - Dynamic parameter identification
+KW  - hybrid modeling
+DO  - 10.1109/TIM.2026.3709421
+JO  - IEEE Transactions on Instrumentation and Measurement
+IS  - 
+SN  - 1557-9662
+VO  - 75
+VL  - 75
+JA  - IEEE Transactions on Instrumentation and Measurement
+Y1  - 2026
+AB  - Accurate dynamic modeling of industrial robots is essential for high-performance control and estimating torque. However, traditional physics-based models often fail to capture unmodeled dynamics such as complex friction, payload variations, and gearbox-induced distortions. This article refines a physics-based modeling framework with a data-driven residual learning policy to compensate for unmodeled dynamics. We first employ a nested optimization strategy using multistart sequential quadratic programming (MS-SQP) and QR-based base parameter extraction to identify identifiable inertial and Stribeck friction parameters. To compensate for remaining systematic errors, we integrate the residual error policy model using physics-aware feature engineering. The proposed method is validated on both synthetic datasets and a real-world six-DOF industrial manipulator across various trajectories (including Fourier, chirp, and trapezoidal excitations) and payload conditions. A friction modeling ablation study confirms that richer friction representations progressively reduce the residual space, with the Stribeck backbone achieving 2.32-Nm root-mean-square error (RMSE) compared to 3.89 Nm for the rigid-body-only baseline. Experimental results demonstrate that the proposed physics-imbued residual framework improves torque prediction RMSE 31.5 % in real-world trajectories and 31.7 % in unseen synthetic payload testing. The results confirm that the framework effectively captures complex unmodeled dynamics while maintaining physical interpretability and generalization capabilities essential for industrial instrumentation and measurement applications.
+ER  - 
+
+TY  - JOUR
+TI  - Core-Aware Contrastive Learning with Substructure Adaptivity for Stable Drug-Drug Interaction Event Prediction in Consumer Healthcare
+T2  - IEEE Transactions on Consumer Electronics
+SP  - 1
+EP  - 1
+AU  - P. Zhang
+AU  - J. Wang
+AU  - J. Yuan
+AU  - C. Che
+AU  - Y. Zhu
+PY  - 2026
+KW  - Drugs
+KW  - Drug interactions
+KW  - Modeling
+KW  - Optimization
+KW  - Stability
+KW  - Contrastive learning
+KW  - Learning (artificial intelligence)
+KW  - Training
+KW  - Atoms
+KW  - Conferences
+KW  - Stable DDIE Prediction
+KW  - Core Substructure Representation
+KW  - Contrastive Learning
+KW  - Drug Repositioning
+DO  - 10.1109/TCE.2026.3702247
+JO  - IEEE Transactions on Consumer Electronics
+IS  - 
+SN  - 1558-4127
+VO  - 
+VL  - 
+JA  - IEEE Transactions on Consumer Electronics
+Y1  - 
+AB  - With the expansion of the medical and health-care consumer electronics market, Drug-Drug Interaction Event (DDIE) prediction has emerged as a crucial safeguard for identifying potential risks in clinical concomitant drugs to enhance the safety assurance within the health consumer sector. Recently, drug structural representations-based DDIE prediction is the mainstream trend. However, existing methods generally struggle to capture stable molecular representations, resulting in substantial performance fluctuations when the molecular structural distribution shifts. To bridge this gap, we propose the Core-Aware Contrastive Learning with Substructure Adaptivity (CCSA) to enhance the stability of DDIE prediction in distribution-shifted data. CCSA improves the model’s ability to learn stable representations through dynamic substructure adjustment and contrastive learning. Specifically, we introduce a division entropy-supervised substructure adaptive adjustment mechanism to promote diversity in substructure partitioning and optimization. This mechanism facilitates the filtering of irrelevant atomic noise and enriches molecular representations. Additionally, CCSA leverages substructure interactions to distinguish core substructures from confounding (i.e., non-core) substructures. By contrast learning between core substructures, CCSA enhances the consistency and robustness of molecular representations. Experimental results demonstrate that the performance and stability of CCSA outperform seven baseline models. CCSA’s satisfying explainability provides a reliable foundation for its integration and deployment in medical auxiliary electronic devices.
+ER  - 
+
+TY  - JOUR
+TI  - Lens Privacy Sealing: A New Benchmark and Method for Physical Privacy-Preserving Action Recognition
+T2  - IEEE Transactions on Image Processing
+SP  - 6167
+EP  - 6181
+AU  - M. Liu
+AU  - Z. Wang
+AU  - P. Li
+AU  - J. Yuan
+PY  - 2026
+KW  - Privacy
+KW  - Videos
+KW  - Modeling
+KW  - Accuracy
+KW  - Conferences
+KW  - Computers
+KW  - Computer vision
+KW  - Degradation
+KW  - Hardware
+KW  - Scattering
+KW  - Action recognition
+KW  - privacy protection
+DO  - 10.1109/TIP.2026.3697619
+JO  - IEEE Transactions on Image Processing
+IS  - 
+SN  - 1941-0042
+VO  - 35
+VL  - 35
+JA  - IEEE Transactions on Image Processing
+Y1  - 2026
+AB  - RGB camera-based surveillance systems enable human action recognition for public safety and healthcare, yet raise serious privacy concerns. Existing methods rely on post-capture algorithms, which fail to protect privacy during data acquisition. We propose Lens Privacy Sealing (LPS), a simple hardware solution that physically obscures camera lenses with adjustable laminating film, providing pre-sensor privacy protection at minimal cost. Unlike software methods or expensive engineered optics, LPS achieves strong privacy through stochastic multi-layer scattering that is physically irreversible. We introduce the P3AR dataset for privacy-preserving action recognition, featuring both large-scale replay-captured (P3AR-NTU, 114K videos) and real-world collected (P3AR-PKU) subsets with privacy attribute annotations. To handle video degradation from LPS, we propose MSPNet, a single-stage framework incorporating Inter-Frame Noise Suppressor (IFNS) and Cross-Frame Semantic Aggregator (CFSA), enhanced by contrastive language-image pre-training for robust semantic extraction. Extensive experiments demonstrate that MSPNet with IFNS and CFSA nearly doubles action recognition accuracy compared to baseline methods while suppressing identity recognition to low levels. Comprehensive validation shows LPS achieves a superior privacy-utility trade-off compared to state-of-the-art hardware methods, resists reconstruction attacks including PSF inversion and data-driven recovery, and generalizes robustly across optical configurations and challenging environments. Code is available at https://github.com/wangzy01/MSPNet
+ER  - 
+
+TY  - JOUR
+TI  - Instruction-Guided Distribution Maximization for General Few-Shot Intent Recognition
+T2  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+SP  - 1
+EP  - 18
+AU  - S. Yang
+AU  - Y. Du
+AU  - X. He
+PY  - 2026
+KW  - Labeling
+KW  - Modeling
+KW  - Optimization
+KW  - Intent recognition
+KW  - Training
+KW  - Learning (artificial intelligence)
+KW  - Conferences
+KW  - Natural languages
+KW  - Accuracy
+KW  - Tuning
+KW  - Distribution maximization
+KW  - generative language model
+KW  - instruction learning
+KW  - intent recognition
+KW  - natural language understanding
+DO  - 10.1109/TPAMI.2026.3692528
+JO  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+IS  - 
+SN  - 1939-3539
+VO  - 
+VL  - 
+JA  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+Y1  - 
+AB  - Intent recognition captures the deep needs of users from natural language, and few-shot intent recognition addresses data scarcity. Existing methods treat single- and multi-label intent recognition as separate classification tasks, and discriminative models typically require fine-tuning when generalizing to new intents, which limits generality. To this end, in this study, we re-think the single- and multi-label intent recognition task as a unified natural language generation task rather than a discriminative classification problem. After instruction pre-training on a general intent dataset, the language model (LM) directly generalizes to few-shot target data without fine-tuning. However, limited data and large distribution shifts severely challenge generalization. Therefore, in this paper, we propose an Instruction-Guided Distribution Maximization (IGDM) method to improve the robustness of the model and enhance generalization. IGDM prompts the model to learn a broader decision boundary by enlarging the maximum error of LM between the user utterance and the corresponding intent. Formally, we perform a two-level optimization strategy to obtain the inner instruction-guided sample distribution maximization and the outer model error minimization, respectively. The inner optimization objective is the sample distribution maximization, which is achieved by performing gradient ascent according to LM in instruction learning. The outer optimization objective is the LM, whose optimization is implemented by gradient descent in instruction learning combined with samples from the distribution maximized according to the LM. Extensive theoretical and inference proofs demonstrate the superior robustness and generalization capabilities of IGDM. To verify this, we conduct comprehensive experiments across 20 single-label and 7 multi-label widely used intent recognition benchmarks. The results demonstrate that IGDM achieves superior performance over existing methods across all benchmarks.
+ER  - 
+
+TY  - JOUR
+TI  - Emerging Synergies in Causality and Deep Generative Models: A Survey
+T2  - IEEE Transactions on Artificial Intelligence
+SP  - 3634
+EP  - 3652
+AU  - G. Zhou
+AU  - S. Xie
+AU  - G. -Y. Hao
+AU  - S. Chen
+AU  - B. Huang
+AU  - X. Xu
+AU  - C. Wang
+AU  - L. Zhu
+AU  - L. Yao
+AU  - K. Zhang
+PY  - 2026
+KW  - Cause effect analysis
+KW  - Data models
+KW  - Artificial intelligence
+KW  - Surveys
+KW  - Noise
+KW  - Reviews
+KW  - Diffusion models
+KW  - Cognition
+KW  - Computational modeling
+KW  - Analytical models
+KW  - Causality
+KW  - data-generating process (DGP)
+KW  - deep generative models (DGMs)
+KW  - generative AI (GenAI)
+KW  - large language models (LLM)
+DO  - 10.1109/TAI.2025.3646958
+JO  - IEEE Transactions on Artificial Intelligence
+IS  - 7
+SN  - 2691-4581
+VO  - 7
+VL  - 7
+JA  - IEEE Transactions on Artificial Intelligence
+Y1  - July 2026
+AB  - Understanding the mechanisms underlying data generation is a fundamental challenge in artificial intelligence. Deep generative models (DGMs) have demonstrated considerable capability in capturing complex data distributions, yet their ability to generalize and provide interpretability remains limited. On the other hand, causality offers a principled framework for explaining data-generating processes by revealing causal-effect relationships. While causality excels in interpretability and the ability to extrapolate, it grapples with intricacies of high-dimensional spaces. Recognizing the synergistic potential, we delve into the integration of causality and DGMs. We provide a comprehensive review of techniques that incorporate causal principles within DGMs, methods for identifying causal relationships through generative modeling, and emerging research frontier of causality in LLMs. We offer insights into methodologies, highlight open challenges, and suggest future directions, positioning our comprehensive review as an essential guide to leverage causal insights to develop more robust and transparent generative models.
+ER  - 
+
+TY  - JOUR
+TI  - Structure-Induced Gradient Regulation for Generalizable Vision-Language Models
+T2  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+SP  - 219
+EP  - 235
+AU  - J. Li
+AU  - M. Gao
+AU  - S. Tang
+AU  - L. Wei
+AU  - J. Xiao
+AU  - F. Wu
+AU  - R. Hong
+AU  - M. Wang
+AU  - Q. Tian
+PY  - 2026
+KW  - Tuning
+KW  - Metalearning
+KW  - Adaptation models
+KW  - Training
+KW  - Semantics
+KW  - Testing
+KW  - Visualization
+KW  - Prototypes
+KW  - Vectors
+KW  - Overfitting
+KW  - Meta-prompt learning
+KW  - structure-induced gradient regulation
+KW  - vision-language pre-training models
+DO  - 10.1109/TPAMI.2025.3604454
+JO  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+IS  - 1
+SN  - 1939-3539
+VO  - 48
+VL  - 48
+JA  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+Y1  - Jan. 2026
+AB  - Prompt tuning, a recently emerging paradigm, adapts vision-language pre-trained models to new tasks efficiently by learning “soft prompts” for frozen models. However, in few-shot scenarios, its effectiveness is limited by sensitivity to the initialization and the time-consuming search for optimal initialization, hindering rapid adaptation. Additionally, prompt tuning risks reducing the models’ generalizability due to overfitting on scarce training samples. To overcome these challenges, we introduce a novel Gradient-RegulAted Meta-prompt learning (GRAM) framework that jointly meta-learns an efficient soft prompt initialization for better adaptation and a lightweight gradient regulating function for strong cross-domain generalizability in a meta-learning paradigm using only the weakly labeled image-text pre-training data. This is achieved through a Cross-Modal Hierarchical Clustering algorithm that organizes extensive image-text data into a structured hierarchy, facilitating robust meta-learning across diverse domains. Rather than designing a specific prompt tuning method, our GRAM can be easily incorporated into various prompt tuning methods in a model-agnostic way and bring about consistent improvement for them. Further, we consider a more practical but challenging setting: test-time prompt tuning with only unlabeled test samples and propose an improved structure-induced gradient regulating function to leverage the structured semantics of the meta-learning data for zero-shot generalization. This novel approach exploits the hierarchically clustered meta-learning data to model relationships between test-time data and meta-learning prototypes, facilitating the transfer of invariant knowledge without explicit annotations. Meanwhile, we introduce a structure complexity-informed strategy for adaptively constructing meta-training tasks and generating prototypes, which fully considers the diverse semantics within hierarchical clusters of different complexities. Comprehensive experiments demonstrate the state-of-the-art few- and zero-shot generalizability of our method.
+ER  - 
+
+TY  - JOUR
+TI  - Fast-SNARF: A Fast Deformer for Articulated Neural Fields
+T2  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+SP  - 11796
+EP  - 11809
+AU  - X. Chen
+AU  - T. Jiang
+AU  - J. Song
+AU  - M. Rietmann
+AU  - A. Geiger
+AU  - M. J. Black
+AU  - O. Hilliges
+PY  - 2023
+KW  - Three-dimensional displays
+KW  - Shape
+KW  - Deformation
+KW  - Training
+KW  - Computational modeling
+KW  - Avatars
+KW  - Solid modeling
+KW  - Animation
+KW  - computer graphics
+KW  - implicit shape
+KW  - neural avatar
+KW  - neural fields
+KW  - skinning
+DO  - 10.1109/TPAMI.2023.3271569
+JO  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+IS  - 10
+SN  - 1939-3539
+VO  - 45
+VL  - 45
+JA  - IEEE Transactions on Pattern Analysis and Machine Intelligence
+Y1  - Oct. 2023
+AB  - Neural fields have revolutionized the area of 3D reconstruction and novel view synthesis of rigid scenes. A key challenge in making such methods applicable to articulated objects, such as the human body, is to model the deformation of 3D locations between the rest pose (a canonical space) and the deformed space. We propose a new articulation module for neural fields, Fast-SNARF, which finds accurate correspondences between canonical space and posed space via iterative root finding. Fast-SNARF is a drop-in replacement in functionality to our previous work, SNARF, while significantly improving its computational efficiency. We contribute several algorithmic and implementation improvements over SNARF, yielding a speed-up of $150\times$150×. These improvements include voxel-based correspondence search, pre-computing the linear blend skinning function, and an efficient software implementation with CUDA kernels. Fast-SNARF enables efficient and simultaneous optimization of shape and skinning weights given deformed observations without correspondences (e.g. 3D meshes). Because learning of deformation maps is a crucial component in many 3D human avatar methods and since Fast-SNARF provides a computationally efficient solution, we believe that this work represents a significant step towards the practical creation of 3D virtual humans.
+ER  - 
+
+TY  - JOUR
+TI  - Research Progress in Ultrasonic Testing of Defects in Aerospace CFRP Composites
+T2  - IEEE Access
+SP  - 214161
+EP  - 214179
+AU  - Y. Wang
+AU  - Y. Guo
+AU  - Z. Chen
+AU  - J. Chen
+PY  - 2025
+KW  - Acoustics
+KW  - Inspection
+KW  - Attenuation
+KW  - Delamination
+KW  - Mathematical models
+KW  - Anisotropic magnetoresistance
+KW  - Acoustic beams
+KW  - Scattering
+KW  - Reviews
+KW  - Optical fiber sensors
+KW  - Carbon fiber reinforced polymer
+KW  - ultrasonic testing
+KW  - detection mechanisms
+KW  - intelligent applications
+DO  - 10.1109/ACCESS.2025.3641640
+JO  - IEEE Access
+IS  - 
+SN  - 2169-3536
+VO  - 13
+VL  - 13
+JA  - IEEE Access
+Y1  - 2025
+AB  - Carbon fiber reinforced polymer (CFRP) composites are essential to modern aerospace structures due to their high strength-to-weight ratio and design flexibility. However, internal defects formed during manufacturing or service life critically threaten structural integrity, demanding reliable non-destructive evaluation (NDE). Ultrasonic testing has emerged as the dominant method, offering high defect sensitivity and quantitative capabilities. Yet, CFRP’s inherent anisotropy, complex layup, and high attenuation cause beam distortion, structural noise, and limited penetration—constraining inspection accuracy and efficiency. This review systematically assesses recent advances and challenges in ultrasonic inspection of aerospace CFRPs. It compares contact and non-contact techniques to define their applicability limits and analyzes optimization strategies spanning acoustic physics and intelligent algorithms. A key focus is the trend toward intelligent systems: machine learning enhances offline diagnosis but requires integration of physical models to improve generalizability and interpretability, while structural health monitoring enables a shift from post-event inspection to real-time assessment. Looking forward, we propose a development pathway centered on multi-modal sensing, physics-guided artificial intelligence, and digital twin-based prognosis. And promote the standardization of the detection process to enhance the robustness of the system. This integrated approach will support the evolution of intelligent inspection systems capable of full-lifecycle health management for next-generation aerospace composite structures.
+ER  - 
+
+

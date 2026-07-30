@@ -1,0 +1,1500 @@
+{
+  "query": "(\"SCAN\" OR \"COGS\" OR \"CFQ\" OR \"gSCAN\" OR \"PCFG-SET\" OR \"SQOOP\" OR \"CLOSURE\" OR \"SLOG\" OR \"CoFe\" OR \"GeoQuery\") AND (\"compositional generalization\" OR \"generalization failure\" OR \"compositional accuracy\" OR \"OOD accuracy\")",
+  "total_results": 72,
+  "returned": 72,
+  "entries": [
+    {
+      "arxiv_id": "2010.05465v1",
+      "title": "COGS: A Compositional Generalization Challenge Based on Semantic Interpretation",
+      "abstract": "Natural language is characterized by compositionality: the meaning of a complex expression is constructed from the meanings of its constituent parts. To facilitate the evaluation of the compositional abilities of language processing architectures, we introduce COGS, a semantic parsing dataset based on a fragment of English. The evaluation portion of COGS contains multiple systematic gaps that can only be addressed by compositional generalization; these include new combinations of familiar syntactic structures, or new combinations of familiar words and familiar structures. In experiments with Transformers and LSTMs, we found that in-distribution accuracy on the COGS test set was near-perfect (96--99%), but generalization accuracy was substantially lower (16--35%) and showed high sensitivity to random seed ($\\pm$6--8%). These findings indicate that contemporary standard NLP models are limited in their compositional generalization capacity, and position COGS as a good way to measure progress.",
+      "published": "2020-10-12T05:45:44Z",
+      "updated": "2020-10-12T05:45:44Z",
+      "authors": [
+        "Najoung Kim",
+        "Tal Linzen"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2010.05465v1",
+      "pdf_url": "https://arxiv.org/pdf/2010.05465v1"
+    },
+    {
+      "arxiv_id": "2504.15349v3",
+      "title": "Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP)",
+      "abstract": "Humans understand new combinations of words encountered if they are combinations of words recognized from different contexts, an ability called Compositional Generalization. The COGS benchmark (Kim and Linzen, 2020) arXiv:2010.05465 reports 0% accuracy for Transformer models on some structural generalizations. We use (Weiss et al., 2021) arXiv:2106.06981's Restricted Access Sequence Processing (RASP), a Transformer-equivalent programming language, to demonstrate that a Transformer Encoder-Decoder can perform COGS and the semantically equivalent ReCOGS_pos (Wu et al., 2024) arXiv:2303.13716 systematically and compositionally: Our RASP models attain near perfect scores on structural generalization splits on COGS (exact match) and ReCOGS_pos (semantic exact match). Our RASP models show the (Re)COGS tasks do not require a hierarchical or tree-structured solution (contrary to (Kim and Linzen, 2020) arXiv:2010.05465, (Yao and Koller, 2022) arXiv:2210.13050, (Murty et al., 2022) arXiv:2211.01288, (Liu et al., 2021) arXiv:2107.06516): we use word-level tokens with an \"embedding\" layer that tags with possible part of speech, applying just once per encoder pass 19 attention-head compatible flat pattern-matching rules (easily identified with specific training examples), shown using grammar coverage (Zeller et al., 2023) to cover the non-recursive aspects of the input grammar, plus masking out prepositional phrases (\"pp noun\") and/or sentential complements (cp) when recognizing grammar patterns and extracting nouns related to the main verb in the sentence, and output the next logical form (LF) token (repeating until the LF is complete). The models do not apply recursive, tree-structured rules like \"np_det pp np -> np_pp -> np\", but score near perfect semantic and string exact match on both COGS and ReCOGS pp recursion, cp recursion using the decoder loop.",
+      "published": "2025-04-21T18:00:24Z",
+      "updated": "2025-10-14T01:25:21Z",
+      "authors": [
+        "William Bruns"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2504.15349v3",
+      "pdf_url": "https://arxiv.org/pdf/2504.15349v3"
+    },
+    {
+      "arxiv_id": "2310.15040v1",
+      "title": "SLOG: A Structural Generalization Benchmark for Semantic Parsing",
+      "abstract": "The goal of compositional generalization benchmarks is to evaluate how well models generalize to new complex linguistic expressions. Existing benchmarks often focus on lexical generalization, the interpretation of novel lexical items in syntactic structures familiar from training; structural generalization tasks, where a model needs to interpret syntactic structures that are themselves unfamiliar from training, are often underrepresented, resulting in overly optimistic perceptions of how well models can generalize. We introduce SLOG, a semantic parsing dataset that extends COGS (Kim and Linzen, 2020) with 17 structural generalization cases. In our experiments, the generalization accuracy of Transformer models, including pretrained ones, only reaches 40.6%, while a structure-aware parser only achieves 70.8%. These results are far from the near-perfect accuracy existing models achieve on COGS, demonstrating the role of SLOG in foregrounding the large discrepancy between models' lexical and structural generalization capacities.",
+      "published": "2023-10-23T15:39:09Z",
+      "updated": "2023-10-23T15:39:09Z",
+      "authors": [
+        "Bingzhi Li",
+        "Lucia Donatelli",
+        "Alexander Koller",
+        "Tal Linzen",
+        "Yuekun Yao",
+        "Najoung Kim"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2310.15040v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.15040v1"
+    },
+    {
+      "arxiv_id": "2111.03642v1",
+      "title": "Grounded Graph Decoding Improves Compositional Generalization in Question Answering",
+      "abstract": "Question answering models struggle to generalize to novel compositions of training patterns, such to longer sequences or more complex test structures. Current end-to-end models learn a flat input embedding which can lose input syntax context. Prior approaches improve generalization by learning permutation invariant models, but these methods do not scale to more complex train-test splits. We propose Grounded Graph Decoding, a method to improve compositional generalization of language representations by grounding structured predictions with an attention mechanism. Grounding enables the model to retain syntax information from the input in thereby significantly improving generalization over complex inputs. By predicting a structured graph containing conjunctions of query clauses, we learn a group invariant representation without making assumptions on the target domain. Our model significantly outperforms state-of-the-art baselines on the Compositional Freebase Questions (CFQ) dataset, a challenging benchmark for compositional generalization in question answering. Moreover, we effectively solve the MCD1 split with 98% accuracy.",
+      "published": "2021-11-05T17:50:14Z",
+      "updated": "2021-11-05T17:50:14Z",
+      "authors": [
+        "Yu Gai",
+        "Paras Jain",
+        "Wendi Zhang",
+        "Joseph E. Gonzalez",
+        "Dawn Song",
+        "Ion Stoica"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2111.03642v1",
+      "pdf_url": "https://arxiv.org/pdf/2111.03642v1"
+    },
+    {
+      "arxiv_id": "2403.11834v1",
+      "title": "Towards Understanding the Relationship between In-context Learning and Compositional Generalization",
+      "abstract": "According to the principle of compositional generalization, the meaning of a complex expression can be understood as a function of the meaning of its parts and of how they are combined. This principle is crucial for human language processing and also, arguably, for NLP models in the face of out-of-distribution data. However, many neural network models, including Transformers, have been shown to struggle with compositional generalization. In this paper, we hypothesize that forcing models to in-context learn can provide an inductive bias to promote compositional generalization. To test this hypothesis, we train a causal Transformer in a setting that renders ordinary learning very difficult: we present it with different orderings of the training instance and shuffle instance labels. This corresponds to training the model on all possible few-shot learning problems attainable from the dataset. The model can solve the task, however, by utilizing earlier examples to generalize to later ones (i.e. in-context learning). In evaluations on the datasets, SCAN, COGS, and GeoQuery, models trained in this manner indeed show improved compositional generalization. This indicates the usefulness of in-context learning problems as an inductive bias for generalization.",
+      "published": "2024-03-18T14:45:52Z",
+      "updated": "2024-03-18T14:45:52Z",
+      "authors": [
+        "Sungjun Han",
+        "Sebastian Pad\u00f3"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2403.11834v1",
+      "pdf_url": "https://arxiv.org/pdf/2403.11834v1"
+    },
+    {
+      "arxiv_id": "2007.08970v3",
+      "title": "Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures",
+      "abstract": "While mainstream machine learning methods are known to have limited ability to compositionally generalize, new architectures and techniques continue to be proposed to address this limitation. We investigate state-of-the-art techniques and architectures in order to assess their effectiveness in improving compositional generalization in semantic parsing tasks based on the SCAN and CFQ datasets. We show that masked language model (MLM) pre-training rivals SCAN-inspired architectures on primitive holdout splits. On a more complex compositional task, we show that pre-training leads to significant improvements in performance vs. comparable non-pre-trained models, whereas architectures proposed to encourage compositional generalization on SCAN or in the area of algorithm learning fail to lead to significant improvements. We establish a new state of the art on the CFQ compositional generalization benchmark using MLM pre-training together with an intermediate representation.",
+      "published": "2020-07-17T13:34:49Z",
+      "updated": "2021-09-22T09:06:43Z",
+      "authors": [
+        "Daniel Furrer",
+        "Marc van Zee",
+        "Nathan Scales",
+        "Nathanael Sch\u00e4rli"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2007.08970v3",
+      "pdf_url": "https://arxiv.org/pdf/2007.08970v3"
+    },
+    {
+      "arxiv_id": "2502.20834v1",
+      "title": "Learning to Substitute Components for Compositional Generalization",
+      "abstract": "Despite the rising prevalence of neural language models, recent empirical evidence suggests their deficiency in compositional generalization. One of the current de-facto solutions to this problem is compositional data augmentation, which aims to introduce additional compositional inductive bias. However, existing handcrafted augmentation strategies offer limited improvement when systematic generalization of neural language models requires multi-grained compositional bias (i.e., not limited to either lexical or structural biases alone) or when training sentences have an imbalanced difficulty distribution. To address these challenges, we first propose a novel compositional augmentation strategy called Component Substitution (CompSub), which enables multi-grained composition of substantial substructures across the entire training set. Furthermore, we introduce the Learning Component Substitution (LCS) framework. This framework empowers the learning of component substitution probabilities in CompSub in an end-to-end manner by maximizing the loss of neural language models, thereby prioritizing challenging compositions with elusive concepts and novel contexts. We extend the key ideas of CompSub and LCS to the recently emerging in-context learning scenarios of pre-trained large language models (LLMs), proposing the LCS-ICL algorithm to enhance the few-shot compositional generalization of state-of-the-art (SOTA) LLMs. Theoretically, we provide insights into why applying our algorithms to language models can improve compositional generalization performance. Empirically, our results on four standard compositional generalization benchmarks(SCAN, COGS, GeoQuery, and COGS-QL) demonstrate the superiority of CompSub, LCS, and LCS-ICL, with improvements of up to 66.5%, 10.3%, 1.4%, and 8.8%, respectively.",
+      "published": "2025-02-28T08:30:47Z",
+      "updated": "2025-02-28T08:30:47Z",
+      "authors": [
+        "Zhaoyi Li",
+        "Gangwei Jiang",
+        "Chenwang Wu",
+        "Ying Wei",
+        "Defu Lian",
+        "Enhong Chen"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2502.20834v1",
+      "pdf_url": "https://arxiv.org/pdf/2502.20834v1"
+    },
+    {
+      "arxiv_id": "2009.06040v2",
+      "title": "Span-based Semantic Parsing for Compositional Generalization",
+      "abstract": "Despite the success of sequence-to-sequence (seq2seq) models in semantic parsing, recent work has shown that they fail in compositional generalization, i.e., the ability to generalize to new structures built of components observed during training. In this work, we posit that a span-based parser should lead to better compositional generalization. we propose SpanBasedSP, a parser that predicts a span tree over an input utterance, explicitly encoding how partial programs compose over spans in the input. SpanBasedSP extends Pasupat et al. (2019) to be comparable to seq2seq models by (i) training from programs, without access to gold trees, treating trees as latent variables, (ii) parsing a class of non-projective trees through an extension to standard CKY. On GeoQuery, SCAN and CLOSURE datasets, SpanBasedSP performs similarly to strong seq2seq baselines on random splits, but dramatically improves performance compared to baselines on splits that require compositional generalization: from $61.0 \\rightarrow 88.9$ average accuracy.",
+      "published": "2020-09-13T16:42:18Z",
+      "updated": "2021-06-13T09:07:23Z",
+      "authors": [
+        "Jonathan Herzig",
+        "Jonathan Berant"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2009.06040v2",
+      "pdf_url": "https://arxiv.org/pdf/2009.06040v2"
+    },
+    {
+      "arxiv_id": "2310.12118v1",
+      "title": "Harnessing Dataset Cartography for Improved Compositional Generalization in Transformers",
+      "abstract": "Neural networks have revolutionized language modeling and excelled in various downstream tasks. However, the extent to which these models achieve compositional generalization comparable to human cognitive abilities remains a topic of debate. While existing approaches in the field have mainly focused on novel architectures and alternative learning paradigms, we introduce a pioneering method harnessing the power of dataset cartography (Swayamdipta et al., 2020). By strategically identifying a subset of compositional generalization data using this approach, we achieve a remarkable improvement in model accuracy, yielding enhancements of up to 10% on CFQ and COGS datasets. Notably, our technique incorporates dataset cartography as a curriculum learning criterion, eliminating the need for hyperparameter tuning while consistently achieving superior performance. Our findings highlight the untapped potential of dataset cartography in unleashing the full capabilities of compositional generalization within Transformer models. Our code is available at https://github.com/cyberiada/cartography-for-compositionality.",
+      "published": "2023-10-18T17:14:41Z",
+      "updated": "2023-10-18T17:14:41Z",
+      "authors": [
+        "Osman Batur \u0130nce",
+        "Tanin Zeraati",
+        "Semih Yagcioglu",
+        "Yadollah Yaghoobzadeh",
+        "Erkut Erdem",
+        "Aykut Erdem"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2310.12118v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.12118v1"
+    },
+    {
+      "arxiv_id": "2306.02840v1",
+      "title": "Learning to Substitute Spans towards Improving Compositional Generalization",
+      "abstract": "Despite the rising prevalence of neural sequence models, recent empirical evidences suggest their deficiency in compositional generalization. One of the current de-facto solutions to this problem is compositional data augmentation, aiming to incur additional compositional inductive bias. Nonetheless, the improvement offered by existing handcrafted augmentation strategies is limited when successful systematic generalization of neural sequence models requires multi-grained compositional bias (i.e., not limited to either lexical or structural biases only) or differentiation of training sequences in an imbalanced difficulty distribution. To address the two challenges, we first propose a novel compositional augmentation strategy dubbed \\textbf{Span} \\textbf{Sub}stitution (SpanSub) that enables multi-grained composition of substantial substructures in the whole training set. Over and above that, we introduce the \\textbf{L}earning \\textbf{to} \\textbf{S}ubstitute \\textbf{S}pan (L2S2) framework which empowers the learning of span substitution probabilities in SpanSub in an end-to-end manner by maximizing the loss of neural sequence models, so as to outweigh those challenging compositions with elusive concepts and novel surroundings. Our empirical results on three standard compositional generalization benchmarks, including SCAN, COGS and GeoQuery (with an improvement of at most 66.5\\%, 10.3\\%, 1.2\\%, respectively), demonstrate the superiority of SpanSub, %the learning framework L2S2 and their combination.",
+      "published": "2023-06-05T12:44:18Z",
+      "updated": "2023-06-05T12:44:18Z",
+      "authors": [
+        "Zhaoyi Li",
+        "Ying Wei",
+        "Defu Lian"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2306.02840v1",
+      "pdf_url": "https://arxiv.org/pdf/2306.02840v1"
+    },
+    {
+      "arxiv_id": "2211.08473v1",
+      "title": "On the Compositional Generalization Gap of In-Context Learning",
+      "abstract": "Pretrained large generative language models have shown great performance on many tasks, but exhibit low compositional generalization abilities. Scaling such models has been shown to improve their performance on various NLP tasks even just by conditioning them on a few examples to solve the task without any fine-tuning (also known as in-context learning). In this work, we look at the gap between the in-distribution (ID) and out-of-distribution (OOD) performance of such models in semantic parsing tasks with in-context learning. In the ID settings, the demonstrations are from the same split (test or train) that the model is being evaluated on, and in the OOD settings, they are from the other split. We look at how the relative generalization gap of in-context learning evolves as models are scaled up. We evaluate four model families, OPT, BLOOM, CodeGen and Codex on three semantic parsing datasets, CFQ, SCAN and GeoQuery with different number of exemplars, and observe a trend of decreasing relative generalization gap as models are scaled up.",
+      "published": "2022-11-15T19:56:37Z",
+      "updated": "2022-11-15T19:56:37Z",
+      "authors": [
+        "Arian Hosseini",
+        "Ankit Vani",
+        "Dzmitry Bahdanau",
+        "Alessandro Sordoni",
+        "Aaron Courville"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2211.08473v1",
+      "pdf_url": "https://arxiv.org/pdf/2211.08473v1"
+    },
+    {
+      "arxiv_id": "2601.18858v2",
+      "title": "Representational Homomorphism Predicts and Improves Compositional Generalization In Transformer Language Model",
+      "abstract": "Compositional generalization-the ability to interpret novel combinations of familiar components-remains a persistent challenge for neural networks. Behavioral evaluations reveal \\emph{when} models fail but offer limited insight into \\emph{why} failures arise at the representational level. We introduce \\textit{Homomorphism Error} (HE), a structural metric that measures the inconsistency between a set of established rules for which words combine to form new meaning (linguistic syntax) and model's learned rules for which hidden states combine to form new states (semantic syntax). We formulate this inconsistency as deviations from approximate homomorphisms between the linguistic expression algebra and a model's hidden-state space. We designed experiments to test if i) HE predicts compositional generalization performance, and ii) will regularizing for low HE during training improve such performance. To avoid the effect of data spoilage, we train small decoder-only Transformers from scratch using an adapted version of established dataset, SCAN, for testing compositional generalization. Across controlled experiments, HE predicts out-of-distribution (OOD) compositional generalization under noise injection, achieving $R^2=0.73$ correlation between HE and OOD accuracy. Ablations show that model depth has minimal effect on either HE or OOD accuracy, training data coverage exhibits threshold effects, and randomly inserted noise tokens increase HE. Intervention experiment shows that HE-regularized training significantly reduces HE ($p=1.1\\times10^{-4}$) and yields a statistically significant improvement in OOD accuracy ($p=0.023$). Together, these results indicate the potential of HE to be both a diagnostic and an actionable training signal for improving compositional generalization.",
+      "published": "2026-01-26T18:46:00Z",
+      "updated": "2026-03-24T15:35:09Z",
+      "authors": [
+        "Zhiyu An",
+        "Wan Du"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2601.18858v2",
+      "pdf_url": "https://arxiv.org/pdf/2601.18858v2"
+    },
+    {
+      "arxiv_id": "2110.06843v2",
+      "title": "Compositional Generalization in Dependency Parsing",
+      "abstract": "Compositionality -- the ability to combine familiar units like words into novel phrases and sentences -- has been the focus of intense interest in artificial intelligence in recent years. To test compositional generalization in semantic parsing, Keysers et al. (2020) introduced Compositional Freebase Queries (CFQ). This dataset maximizes the similarity between the test and train distributions over primitive units, like words, while maximizing the compound divergence: the dissimilarity between test and train distributions over larger structures, like phrases. Dependency parsing, however, lacks a compositional generalization benchmark. In this work, we introduce a gold-standard set of dependency parses for CFQ, and use this to analyze the behavior of a state-of-the art dependency parser (Qi et al., 2020) on the CFQ dataset. We find that increasing compound divergence degrades dependency parsing performance, although not as dramatically as semantic parsing performance. Additionally, we find the performance of the dependency parser does not uniformly degrade relative to compound divergence, and the parser performs differently on different splits with the same compound divergence. We explore a number of hypotheses for what causes the non-uniform degradation in dependency parsing performance, and identify a number of syntactic structures that drive the dependency parser's lower performance on the most challenging splits.",
+      "published": "2021-10-13T16:32:24Z",
+      "updated": "2022-03-15T22:40:20Z",
+      "authors": [
+        "Emily Goodwin",
+        "Siva Reddy",
+        "Timothy J. O'Donnell",
+        "Dzmitry Bahdanau"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2110.06843v2",
+      "pdf_url": "https://arxiv.org/pdf/2110.06843v2"
+    },
+    {
+      "arxiv_id": "2012.04276v1",
+      "title": "Revisiting Iterative Back-Translation from the Perspective of Compositional Generalization",
+      "abstract": "Human intelligence exhibits compositional generalization (i.e., the capacity to understand and produce unseen combinations of seen components), but current neural seq2seq models lack such ability. In this paper, we revisit iterative back-translation, a simple yet effective semi-supervised method, to investigate whether and how it can improve compositional generalization. In this work: (1) We first empirically show that iterative back-translation substantially improves the performance on compositional generalization benchmarks (CFQ and SCAN). (2) To understand why iterative back-translation is useful, we carefully examine the performance gains and find that iterative back-translation can increasingly correct errors in pseudo-parallel data. (3) To further encourage this mechanism, we propose curriculum iterative back-translation, which better improves the quality of pseudo-parallel data, thus further improving the performance.",
+      "published": "2020-12-08T08:43:13Z",
+      "updated": "2020-12-08T08:43:13Z",
+      "authors": [
+        "Yinuo Guo",
+        "Hualei Zhu",
+        "Zeqi Lin",
+        "Bei Chen",
+        "Jian-Guang Lou",
+        "Dongmei Zhang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2012.04276v1",
+      "pdf_url": "https://arxiv.org/pdf/2012.04276v1"
+    },
+    {
+      "arxiv_id": "2012.08266v1",
+      "title": "*-CFQ: Analyzing the Scalability of Machine Learning on a Compositional Task",
+      "abstract": "We present *-CFQ (\"star-CFQ\"): a suite of large-scale datasets of varying scope based on the CFQ semantic parsing benchmark, designed for principled investigation of the scalability of machine learning systems in a realistic compositional task setting. Using this suite, we conduct a series of experiments investigating the ability of Transformers to benefit from increased training size under conditions of fixed computational cost. We show that compositional generalization remains a challenge at all training sizes, and we show that increasing the scope of natural language leads to consistently higher error rates, which are only partially offset by increased training data. We further show that while additional training data from a related domain improves the accuracy in data-starved situations, this improvement is limited and diminishes as the distance from the related domain to the target domain increases.",
+      "published": "2020-12-15T13:01:26Z",
+      "updated": "2020-12-15T13:01:26Z",
+      "authors": [
+        "Dmitry Tsarkov",
+        "Tibor Tihon",
+        "Nathan Scales",
+        "Nikola Momchev",
+        "Danila Sinopalnikov",
+        "Nathanael Sch\u00e4rli"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2012.08266v1",
+      "pdf_url": "https://arxiv.org/pdf/2012.08266v1"
+    },
+    {
+      "arxiv_id": "2202.11937v1",
+      "title": "Compositional Generalization Requires Compositional Parsers",
+      "abstract": "A rapidly growing body of research on compositional generalization investigates the ability of a semantic parser to dynamically recombine linguistic elements seen in training into unseen sequences. We present a systematic comparison of sequence-to-sequence models and models guided by compositional principles on the recent COGS corpus (Kim and Linzen, 2020). Though seq2seq models can perform well on lexical tasks, they perform with near-zero accuracy on structural generalization tasks that require novel syntactic structures; this holds true even when they are trained to predict syntax instead of semantics. In contrast, compositional models achieve near-perfect accuracy on structural generalization; we present new results confirming this from the AM parser (Groschwitz et al., 2021). Our findings show structural generalization is a key measure of compositional generalization and requires models that are aware of complex structure.",
+      "published": "2022-02-24T07:36:35Z",
+      "updated": "2022-02-24T07:36:35Z",
+      "authors": [
+        "Pia Wei\u00dfenhorn",
+        "Yuekun Yao",
+        "Lucia Donatelli",
+        "Alexander Koller"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2202.11937v1",
+      "pdf_url": "https://arxiv.org/pdf/2202.11937v1"
+    },
+    {
+      "arxiv_id": "2009.13962v2",
+      "title": "Think before you act: A simple baseline for compositional generalization",
+      "abstract": "Contrarily to humans who have the ability to recombine familiar expressions to create novel ones, modern neural networks struggle to do so. This has been emphasized recently with the introduction of the benchmark dataset \"gSCAN\" (Ruis et al. 2020), aiming to evaluate models' performance at compositional generalization in grounded language understanding. In this work, we challenge the gSCAN benchmark by proposing a simple model that achieves surprisingly good performance on two of the gSCAN test splits. Our model is based on the observation that, to succeed on gSCAN tasks, the agent must (i) identify the target object (think) before (ii) navigating to it successfully (act). Concretely, we propose an attention-inspired modification of the baseline model from (Ruis et al. 2020), together with an auxiliary loss, that takes into account the sequential nature of steps (i) and (ii). While two compositional tasks are trivially solved with our approach, we also find that the other tasks remain unsolved, validating the relevance of gSCAN as a benchmark for evaluating models' compositional abilities.",
+      "published": "2020-09-29T12:27:12Z",
+      "updated": "2020-10-01T07:11:19Z",
+      "authors": [
+        "Christina Heinze-Deml",
+        "Diane Bouchacourt"
+      ],
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2009.13962v2",
+      "pdf_url": "https://arxiv.org/pdf/2009.13962v2"
+    },
+    {
+      "arxiv_id": "2305.04835v3",
+      "title": "How Do In-Context Examples Affect Compositional Generalization?",
+      "abstract": "Compositional generalization--understanding unseen combinations of seen primitives--is an essential reasoning capability in human intelligence. The AI community mainly studies this capability by fine-tuning neural networks on lots of training samples, while it is still unclear whether and how in-context learning--the prevailing few-shot paradigm based on large language models--exhibits compositional generalization. In this paper, we present CoFe, a test suite to investigate in-context compositional generalization. We find that the compositional generalization performance can be easily affected by the selection of in-context examples, thus raising the research question what the key factors are to make good in-context examples for compositional generalization. We study three potential factors: similarity, diversity and complexity. Our systematic experiments indicate that in-context examples should be structurally similar to the test case, diverse from each other, and individually simple. Furthermore, two strong limitations are observed: in-context compositional generalization on fictional words is much weaker than that on commonly used ones; it is still critical that the in-context examples should cover required linguistic structures, even though the backbone model has been pre-trained on large corpus. We hope our analysis would facilitate the understanding and utilization of in-context learning paradigm.",
+      "published": "2023-05-08T16:32:18Z",
+      "updated": "2023-06-09T02:25:29Z",
+      "authors": [
+        "Shengnan An",
+        "Zeqi Lin",
+        "Qiang Fu",
+        "Bei Chen",
+        "Nanning Zheng",
+        "Jian-Guang Lou",
+        "Dongmei Zhang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2305.04835v3",
+      "pdf_url": "https://arxiv.org/pdf/2305.04835v3"
+    },
+    {
+      "arxiv_id": "2010.07792v1",
+      "title": "Hierarchical Poset Decoding for Compositional Generalization in Language",
+      "abstract": "We formalize human language understanding as a structured prediction task where the output is a partially ordered set (poset). Current encoder-decoder architectures do not take the poset structure of semantics into account properly, thus suffering from poor compositional generalization ability. In this paper, we propose a novel hierarchical poset decoding paradigm for compositional generalization in language. Intuitively: (1) the proposed paradigm enforces partial permutation invariance in semantics, thus avoiding overfitting to bias ordering information; (2) the hierarchical mechanism allows to capture high-level structures of posets. We evaluate our proposed decoder on Compositional Freebase Questions (CFQ), a large and realistic natural language question answering dataset that is specifically designed to measure compositional generalization. Results show that it outperforms current decoders.",
+      "published": "2020-10-15T14:34:26Z",
+      "updated": "2020-10-15T14:34:26Z",
+      "authors": [
+        "Yinuo Guo",
+        "Zeqi Lin",
+        "Jian-Guang Lou",
+        "Dongmei Zhang"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2010.07792v1",
+      "pdf_url": "https://arxiv.org/pdf/2010.07792v1"
+    },
+    {
+      "arxiv_id": "2104.07478v1",
+      "title": "Unlocking Compositional Generalization in Pre-trained Models Using Intermediate Representations",
+      "abstract": "Sequence-to-sequence (seq2seq) models are prevalent in semantic parsing, but have been found to struggle at out-of-distribution compositional generalization. While specialized model architectures and pre-training of seq2seq models have been proposed to address this issue, the former often comes at the cost of generality and the latter only shows limited success. In this paper, we study the impact of intermediate representations on compositional generalization in pre-trained seq2seq models, without changing the model architecture at all, and identify key aspects for designing effective representations. Instead of training to directly map natural language to an executable form, we map to a reversible or lossy intermediate representation that has stronger structural correspondence with natural language. The combination of our proposed intermediate representations and pre-trained models is surprisingly effective, where the best combinations obtain a new state-of-the-art on CFQ (+14.8 accuracy points) and on the template-splits of three text-to-SQL datasets (+15.0 to +19.4 accuracy points). This work highlights that intermediate representations provide an important and potentially overlooked degree of freedom for improving the compositional generalization abilities of pre-trained seq2seq models.",
+      "published": "2021-04-15T14:15:14Z",
+      "updated": "2021-04-15T14:15:14Z",
+      "authors": [
+        "Jonathan Herzig",
+        "Peter Shaw",
+        "Ming-Wei Chang",
+        "Kelvin Guu",
+        "Panupong Pasupat",
+        "Yuan Zhang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2104.07478v1",
+      "pdf_url": "https://arxiv.org/pdf/2104.07478v1"
+    },
+    {
+      "arxiv_id": "2006.10627v2",
+      "title": "Compositional Generalization by Learning Analytical Expressions",
+      "abstract": "Compositional generalization is a basic and essential intellective capability of human beings, which allows us to recombine known parts readily. However, existing neural network based models have been proven to be extremely deficient in such a capability. Inspired by work in cognition which argues compositionality can be captured by variable slots with symbolic functions, we present a refreshing view that connects a memory-augmented neural model with analytical expressions, to achieve compositional generalization. Our model consists of two cooperative neural modules, Composer and Solver, fitting well with the cognitive argument while being able to be trained in an end-to-end manner via a hierarchical reinforcement learning algorithm. Experiments on the well-known benchmark SCAN demonstrate that our model seizes a great ability of compositional generalization, solving all challenges addressed by previous works with 100% accuracies.",
+      "published": "2020-06-18T15:50:57Z",
+      "updated": "2020-10-24T03:47:49Z",
+      "authors": [
+        "Qian Liu",
+        "Shengnan An",
+        "Jian-Guang Lou",
+        "Bei Chen",
+        "Zeqi Lin",
+        "Yan Gao",
+        "Bin Zhou",
+        "Nanning Zheng",
+        "Dongmei Zhang"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2006.10627v2",
+      "pdf_url": "https://arxiv.org/pdf/2006.10627v2"
+    },
+    {
+      "arxiv_id": "2108.03509v2",
+      "title": "Compositional Generalization in Multilingual Semantic Parsing over Wikidata",
+      "abstract": "Semantic parsing (SP) allows humans to leverage vast knowledge resources through natural interaction. However, parsers are mostly designed for and evaluated on English resources, such as CFQ (Keysers et al., 2020), the current standard benchmark based on English data generated from grammar rules and oriented towards Freebase, an outdated knowledge base. We propose a method for creating a multilingual, parallel dataset of question-query pairs, grounded in Wikidata. We introduce such a dataset, which we call Multilingual Compositional Wikidata Questions (MCWQ), and use it to analyze the compositional generalization of semantic parsers in Hebrew, Kannada, Chinese and English. While within-language generalization is comparable across languages, experiments on zero-shot cross-lingual transfer demonstrate that cross-lingual compositional generalization fails, even with state-of-the-art pretrained multilingual encoders. Furthermore, our methodology, dataset and results will facilitate future research on SP in more realistic and diverse settings than has been possible with existing resources.",
+      "published": "2021-08-07T19:40:38Z",
+      "updated": "2022-05-31T16:58:51Z",
+      "authors": [
+        "Ruixiang Cui",
+        "Rahul Aralikatte",
+        "Heather Lent",
+        "Daniel Hershcovich"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2108.03509v2",
+      "pdf_url": "https://arxiv.org/pdf/2108.03509v2"
+    },
+    {
+      "arxiv_id": "2311.04420v1",
+      "title": "Data Factors for Better Compositional Generalization",
+      "abstract": "Recent diagnostic datasets on compositional generalization, such as SCAN (Lake and Baroni, 2018) and COGS (Kim and Linzen, 2020), expose severe problems in models trained from scratch on these datasets. However, in contrast to this poor performance, state-of-the-art models trained on larger and more general datasets show better generalization ability. In this work, to reconcile this inconsistency, we conduct an empirical analysis by training Transformer models on a variety of training sets with different data factors, including dataset scale, pattern complexity, example difficulty, etc. First, we show that increased dataset complexity can lead to better generalization behavior on multiple different generalization challenges. To further understand this improvement, we show two axes of the benefit from more complex datasets: they provide more diverse examples so compositional understanding becomes more effective, and they also prevent ungeneralizable memorization of the examples due to reduced example repetition frequency. Finally, we explore how training examples of different difficulty levels influence generalization differently. On synthetic datasets, simple examples invoke stronger compositionality than hard examples do. On larger-scale real language datasets, while hard examples become more important potentially to ensure decent data coverage, a balanced mixture of simple and hard examples manages to induce the strongest generalizability. The code and data for this work are available at https://github.com/owenzx/data4comp",
+      "published": "2023-11-08T01:27:34Z",
+      "updated": "2023-11-08T01:27:34Z",
+      "authors": [
+        "Xiang Zhou",
+        "Yichen Jiang",
+        "Mohit Bansal"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2311.04420v1",
+      "pdf_url": "https://arxiv.org/pdf/2311.04420v1"
+    },
+    {
+      "arxiv_id": "2110.04169v2",
+      "title": "Iterative Decoding for Compositional Generalization in Transformers",
+      "abstract": "Deep learning models generalize well to in-distribution data but struggle to generalize compositionally, i.e., to combine a set of learned primitives to solve more complex tasks. In sequence-to-sequence (seq2seq) learning, transformers are often unable to predict correct outputs for longer examples than those seen at training. This paper introduces iterative decoding, an alternative to seq2seq that (i) improves transformer compositional generalization in the PCFG and Cartesian product datasets and (ii) evidences that, in these datasets, seq2seq transformers do not learn iterations that are not unrolled. In iterative decoding, training examples are broken down into a sequence of intermediate steps that the transformer learns iteratively. At inference time, the intermediate outputs are fed back to the transformer as intermediate inputs until an end-of-iteration token is predicted. We conclude by illustrating some limitations of iterative decoding in the CFQ dataset.",
+      "published": "2021-10-08T14:52:25Z",
+      "updated": "2021-12-09T20:26:08Z",
+      "authors": [
+        "Luana Ruiz",
+        "Joshua Ainslie",
+        "Santiago Onta\u00f1\u00f3n"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2110.04169v2",
+      "pdf_url": "https://arxiv.org/pdf/2110.04169v2"
+    },
+    {
+      "arxiv_id": "2310.14124v1",
+      "title": "Structural generalization in COGS: Supertagging is (almost) all you need",
+      "abstract": "In many Natural Language Processing applications, neural networks have been found to fail to generalize on out-of-distribution examples. In particular, several recent semantic parsing datasets have put forward important limitations of neural networks in cases where compositional generalization is required. In this work, we extend a neural graph-based semantic parsing framework in several ways to alleviate this issue. Notably, we propose: (1) the introduction of a supertagging step with valency constraints, expressed as an integer linear program; (2) a reduction of the graph prediction problem to the maximum matching problem; (3) the design of an incremental early-stopping training strategy to prevent overfitting. Experimentally, our approach significantly improves results on examples that require structural generalization in the COGS dataset, a known challenging benchmark for compositional generalization. Overall, our results confirm that structural constraints are important for generalization in semantic parsing.",
+      "published": "2023-10-21T21:51:25Z",
+      "updated": "2023-10-21T21:51:25Z",
+      "authors": [
+        "Alban Petit",
+        "Caio Corro",
+        "Fran\u00e7ois Yvon"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2310.14124v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.14124v1"
+    },
+    {
+      "arxiv_id": "2210.12786v2",
+      "title": "When Can Transformers Ground and Compose: Insights from Compositional Generalization Benchmarks",
+      "abstract": "Humans can reason compositionally whilst grounding language utterances to the real world. Recent benchmarks like ReaSCAN use navigation tasks grounded in a grid world to assess whether neural models exhibit similar capabilities. In this work, we present a simple transformer-based model that outperforms specialized architectures on ReaSCAN and a modified version of gSCAN. On analyzing the task, we find that identifying the target location in the grid world is the main challenge for the models. Furthermore, we show that a particular split in ReaSCAN, which tests depth generalization, is unfair. On an amended version of this split, we show that transformers can generalize to deeper input structures. Finally, we design a simpler grounded compositional generalization task, RefEx, to investigate how transformers reason compositionally. We show that a single self-attention layer with a single head generalizes to novel combinations of object attributes. Moreover, we derive a precise mathematical construction of the transformer's computations from the learned network. Overall, we provide valuable insights about the grounded compositional generalization task and the behaviour of transformers on it, which would be useful for researchers working in this area.",
+      "published": "2022-10-23T17:03:55Z",
+      "updated": "2022-10-31T03:50:30Z",
+      "authors": [
+        "Ankur Sikarwar",
+        "Arkil Patel",
+        "Navin Goyal"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2210.12786v2",
+      "pdf_url": "https://arxiv.org/pdf/2210.12786v2"
+    },
+    {
+      "arxiv_id": "2112.05209v1",
+      "title": "Compositional Generalization for Natural Language Interfaces to Web APIs",
+      "abstract": "This paper presents Okapi, a new dataset for Natural Language to executable web Application Programming Interfaces (NL2API). This dataset is in English and contains 22,508 questions and 9,019 unique API calls, covering three domains. We define new compositional generalization tasks for NL2API which explore the models' ability to extrapolate from simple API calls in the training set to new and more complex API calls in the inference phase. Also, the models are required to generate API calls that execute correctly as opposed to the existing approaches which evaluate queries with placeholder values. Our dataset is different than most of the existing compositional semantic parsing datasets because it is a non-synthetic dataset studying the compositional generalization in a low-resource setting. Okapi is a step towards creating realistic datasets and benchmarks for studying compositional generalization alongside the existing datasets and tasks. We report the generalization capabilities of sequence-to-sequence baseline models trained on a variety of the SCAN and Okapi datasets tasks. The best model achieves 15\\% exact match accuracy when generalizing from simple API calls to more complex API calls. This highlights some challenges for future research. Okapi dataset and tasks are publicly available at https://aka.ms/nl2api/data.",
+      "published": "2021-12-09T20:49:01Z",
+      "updated": "2021-12-09T20:49:01Z",
+      "authors": [
+        "Saghar Hosseini",
+        "Ahmed Hassan Awadallah",
+        "Yu Su"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2112.05209v1",
+      "pdf_url": "https://arxiv.org/pdf/2112.05209v1"
+    },
+    {
+      "arxiv_id": "2203.07402v1",
+      "title": "Revisiting the Compositional Generalization Abilities of Neural Sequence Models",
+      "abstract": "Compositional generalization is a fundamental trait in humans, allowing us to effortlessly combine known phrases to form novel sentences. Recent works have claimed that standard seq-to-seq models severely lack the ability to compositionally generalize. In this paper, we focus on one-shot primitive generalization as introduced by the popular SCAN benchmark. We demonstrate that modifying the training distribution in simple and intuitive ways enables standard seq-to-seq models to achieve near-perfect generalization performance, thereby showing that their compositional generalization abilities were previously underestimated. We perform detailed empirical analysis of this phenomenon. Our results indicate that the generalization performance of models is highly sensitive to the characteristics of the training data which should be carefully considered while designing such benchmarks in future.",
+      "published": "2022-03-14T18:03:21Z",
+      "updated": "2022-03-14T18:03:21Z",
+      "authors": [
+        "Arkil Patel",
+        "Satwik Bhattamishra",
+        "Phil Blunsom",
+        "Navin Goyal"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2203.07402v1",
+      "pdf_url": "https://arxiv.org/pdf/2203.07402v1"
+    },
+    {
+      "arxiv_id": "1912.09713v2",
+      "title": "Measuring Compositional Generalization: A Comprehensive Method on Realistic Data",
+      "abstract": "State-of-the-art machine learning methods exhibit limited compositional generalization. At the same time, there is a lack of realistic benchmarks that comprehensively measure this ability, which makes it challenging to find and evaluate improvements. We introduce a novel method to systematically construct such benchmarks by maximizing compound divergence while guaranteeing a small atom divergence between train and test sets, and we quantitatively compare this method to other approaches for creating compositional generalization benchmarks. We present a large and realistic natural language question answering dataset that is constructed according to this method, and we use it to analyze the compositional generalization ability of three machine learning architectures. We find that they fail to generalize compositionally and that there is a surprisingly strong negative correlation between compound divergence and accuracy. We also demonstrate how our method can be used to create new compositionality benchmarks on top of the existing SCAN dataset, which confirms these findings.",
+      "published": "2019-12-20T09:32:41Z",
+      "updated": "2020-06-25T06:38:53Z",
+      "authors": [
+        "Daniel Keysers",
+        "Nathanael Sch\u00e4rli",
+        "Nathan Scales",
+        "Hylke Buisman",
+        "Daniel Furrer",
+        "Sergii Kashubin",
+        "Nikola Momchev",
+        "Danila Sinopalnikov",
+        "Lukasz Stafiniak",
+        "Tibor Tihon",
+        "Dmitry Tsarkov",
+        "Xiao Wang",
+        "Marc van Zee",
+        "Olivier Bousquet"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1912.09713v2",
+      "pdf_url": "https://arxiv.org/pdf/1912.09713v2"
+    },
+    {
+      "arxiv_id": "2201.11766v2",
+      "title": "Recursive Decoding: A Situated Cognition Approach to Compositional Generation in Grounded Language Understanding",
+      "abstract": "Compositional generalization is a troubling blind spot for neural language models. Recent efforts have presented techniques for improving a model's ability to encode novel combinations of known inputs, but less work has focused on generating novel combinations of known outputs. Here we focus on this latter \"decode-side\" form of generalization in the context of gSCAN, a synthetic benchmark for compositional generalization in grounded language understanding. We present Recursive Decoding (RD), a novel procedure for training and using seq2seq models, targeted towards decode-side generalization. Rather than generating an entire output sequence in one pass, models are trained to predict one token at a time. Inputs (i.e., the external gSCAN environment) are then incrementally updated based on predicted tokens, and re-encoded for the next decoder time step. RD thus decomposes a complex, out-of-distribution sequence generation task into a series of incremental predictions that each resemble what the model has already seen during training. RD yields dramatic improvement on two previously neglected generalization tasks in gSCAN. We provide analyses to elucidate these gains over failure of a baseline, and then discuss implications for generalization in naturalistic grounded language understanding, and seq2seq more generally.",
+      "published": "2022-01-27T19:13:42Z",
+      "updated": "2022-02-18T18:39:29Z",
+      "authors": [
+        "Matthew Setzler",
+        "Scott Howland",
+        "Lauren Phillips"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2201.11766v2",
+      "pdf_url": "https://arxiv.org/pdf/2201.11766v2"
+    },
+    {
+      "arxiv_id": "2305.16954v1",
+      "title": "Compositional Generalization without Trees using Multiset Tagging and Latent Permutations",
+      "abstract": "Seq2seq models have been shown to struggle with compositional generalization in semantic parsing, i.e. generalizing to unseen compositions of phenomena that the model handles correctly in isolation.   We phrase semantic parsing as a two-step process: we first tag each input token with a multiset of output tokens. Then we arrange the tokens into an output sequence using a new way of parameterizing and predicting permutations. We formulate predicting a permutation as solving a regularized linear program and we backpropagate through the solver. In contrast to prior work, our approach does not place a priori restrictions on possible permutations, making it very expressive.   Our model outperforms pretrained seq2seq models and prior work on realistic semantic parsing tasks that require generalization to longer examples. We also outperform non-tree-based models on structural generalization on the COGS benchmark. For the first time, we show that a model without an inductive bias provided by trees achieves high accuracy on generalization to deeper recursion.",
+      "published": "2023-05-26T14:09:35Z",
+      "updated": "2023-05-26T14:09:35Z",
+      "authors": [
+        "Matthias Lindemann",
+        "Alexander Koller",
+        "Ivan Titov"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2305.16954v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.16954v1"
+    },
+    {
+      "arxiv_id": "2008.06662v2",
+      "title": "Compositional Generalization via Neural-Symbolic Stack Machines",
+      "abstract": "Despite achieving tremendous success, existing deep learning models have exposed limitations in compositional generalization, the capability to learn compositional rules and apply them to unseen cases in a systematic manner. To tackle this issue, we propose the Neural-Symbolic Stack Machine (NeSS). It contains a neural network to generate traces, which are then executed by a symbolic stack machine enhanced with sequence manipulation operations. NeSS combines the expressive power of neural sequence models with the recursion supported by the symbolic stack machine. Without training supervision on execution traces, NeSS achieves 100% generalization performance in four domains: the SCAN benchmark of language-driven navigation tasks, the task of few-shot learning of compositional instructions, the compositional machine translation benchmark, and context-free grammar parsing tasks.",
+      "published": "2020-08-15T06:23:20Z",
+      "updated": "2020-10-22T07:16:10Z",
+      "authors": [
+        "Xinyun Chen",
+        "Chen Liang",
+        "Adams Wei Yu",
+        "Dawn Song",
+        "Denny Zhou"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2008.06662v2",
+      "pdf_url": "https://arxiv.org/pdf/2008.06662v2"
+    },
+    {
+      "arxiv_id": "1910.02612v1",
+      "title": "Compositional Generalization for Primitive Substitutions",
+      "abstract": "Compositional generalization is a basic mechanism in human language learning, but current neural networks lack such ability. In this paper, we conduct fundamental research for encoding compositionality in neural networks. Conventional methods use a single representation for the input sentence, making it hard to apply prior knowledge of compositionality. In contrast, our approach leverages such knowledge with two representations, one generating attention maps, and the other mapping attended input words to output symbols. We reduce the entropy in each representation to improve generalization. Our experiments demonstrate significant improvements over the conventional methods in five NLP tasks including instruction learning and machine translation. In the SCAN domain, it boosts accuracies from 14.0% to 98.8% in Jump task, and from 92.0% to 99.7% in TurnLeft task. It also beats human performance on a few-shot learning task. We hope the proposed approach can help ease future research towards human-level compositional language learning.",
+      "published": "2019-10-07T05:27:27Z",
+      "updated": "2019-10-07T05:27:27Z",
+      "authors": [
+        "Yuanpeng Li",
+        "Liang Zhao",
+        "Jianyu Wang",
+        "Joel Hestness"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1910.02612v1",
+      "pdf_url": "https://arxiv.org/pdf/1910.02612v1"
+    },
+    {
+      "arxiv_id": "2212.10769v1",
+      "title": "Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models",
+      "abstract": "Human linguistic capacity is often characterized by compositionality and the generalization it enables -- human learners can produce and comprehend novel complex expressions by composing known parts. Several benchmarks exploit distributional control across training and test to gauge compositional generalization, where certain lexical items only occur in limited contexts during training. While recent work using these benchmarks suggests that pretrained models achieve impressive generalization performance, we argue that exposure to pretraining data may break the aforementioned distributional control. Using the COGS benchmark of Kim and Linzen (2020), we test two modified evaluation setups that control for this issue: (1) substituting context-controlled lexical items with novel character sequences, and (2) substituting them with special tokens represented by novel embeddings. We find that both of these setups lead to lower generalization performance in T5 (Raffel et al., 2020), suggesting that previously reported results have been overestimated due to uncontrolled lexical exposure during pretraining. The performance degradation is more extreme with novel embeddings, and the degradation increases with the amount of pretraining data, highlighting an interesting case of inverse scaling.",
+      "published": "2022-12-21T05:02:08Z",
+      "updated": "2022-12-21T05:02:08Z",
+      "authors": [
+        "Najoung Kim",
+        "Tal Linzen",
+        "Paul Smolensky"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2212.10769v1",
+      "pdf_url": "https://arxiv.org/pdf/2212.10769v1"
+    },
+    {
+      "arxiv_id": "2507.18868v3",
+      "title": "A Neuroscience-Inspired Dual-Process Model of Compositional Generalization",
+      "abstract": "Deep learning models struggle with systematic compositional generalization, a hallmark of human cognition. We propose \\textsc{Mirage}, a neuro-inspired dual-process model that offers a processing account for this ability. It combines a fast, intuitive ``System~1'' (a meta-trained Transformer) with a deliberate, rule-based ``System~2'' (a Schema Engine), mirroring the brain's neocortical and hippocampal--prefrontal circuits. Trained to perform general, single-step decomposition on a stream of random grammars, Mirage achieves $>$99\\% accuracy on all splits of the SCAN benchmark in a task-agnostic setting. Ablations confirm that the model's systematic behavior emerges from the architectural interplay of its two systems, particularly its use of explicit, prioritized schemas and iterative refinement. In line with recent progress on recursive/recurrent Transformer approaches, Mirage preserves an iterative neural update while externalizing declarative control into an interpretable schema module. Our work provides a concrete computational model for interpreting how compositional reasoning can arise from a modular cognitive architecture.",
+      "published": "2025-07-25T01:02:07Z",
+      "updated": "2025-10-28T02:48:15Z",
+      "authors": [
+        "Alex Noviello",
+        "Claas Beger",
+        "Jacob Groner",
+        "Kevin Ellis",
+        "Weinan Sun"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.NE"
+      ],
+      "primary_category": "cs.AI",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2507.18868v3",
+      "pdf_url": "https://arxiv.org/pdf/2507.18868v3"
+    },
+    {
+      "arxiv_id": "1904.09708v3",
+      "title": "Compositional generalization in a deep seq2seq model by separating syntax and semantics",
+      "abstract": "Standard methods in deep learning for natural language processing fail to capture the compositional structure of human language that allows for systematic generalization outside of the training distribution. However, human learners readily generalize in this way, e.g. by applying known grammatical rules to novel words. Inspired by work in neuroscience suggesting separate brain systems for syntactic and semantic processing, we implement a modification to standard approaches in neural machine translation, imposing an analogous separation. The novel model, which we call Syntactic Attention, substantially outperforms standard methods in deep learning on the SCAN dataset, a compositional generalization task, without any hand-engineered features or additional supervision. Our work suggests that separating syntactic from semantic learning may be a useful heuristic for capturing compositional structure.",
+      "published": "2019-04-22T03:12:09Z",
+      "updated": "2019-05-23T20:59:12Z",
+      "authors": [
+        "Jake Russin",
+        "Jason Jo",
+        "Randall C. O'Reilly",
+        "Yoshua Bengio"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1904.09708v3",
+      "pdf_url": "https://arxiv.org/pdf/1904.09708v3"
+    },
+    {
+      "arxiv_id": "2204.03758v1",
+      "title": "Compositional Generalization and Decomposition in Neural Program Synthesis",
+      "abstract": "When writing programs, people have the ability to tackle a new complex task by decomposing it into smaller and more familiar subtasks. While it is difficult to measure whether neural program synthesis methods have similar capabilities, what we can measure is whether they compositionally generalize, that is, whether a model that has been trained on the simpler subtasks is subsequently able to solve more complex tasks. In this paper, we focus on measuring the ability of learned program synthesizers to compositionally generalize. We first characterize several different axes along which program synthesis methods would be desired to generalize, e.g., length generalization, or the ability to combine known subroutines in new ways that do not occur in the training data. Based on this characterization, we introduce a benchmark suite of tasks to assess these abilities based on two popular existing datasets, SCAN and RobustFill. Finally, we make first attempts to improve the compositional generalization ability of Transformer models along these axes through novel attention mechanisms that draw inspiration from a human-like decomposition strategy. Empirically, we find our modified Transformer models generally perform better than natural baselines, but the tasks remain challenging.",
+      "published": "2022-04-07T22:16:05Z",
+      "updated": "2022-04-07T22:16:05Z",
+      "authors": [
+        "Kensen Shi",
+        "Joey Hong",
+        "Manzil Zaheer",
+        "Pengcheng Yin",
+        "Charles Sutton"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.PL",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2204.03758v1",
+      "pdf_url": "https://arxiv.org/pdf/2204.03758v1"
+    },
+    {
+      "arxiv_id": "2010.03706v6",
+      "title": "Learning to Recombine and Resample Data for Compositional Generalization",
+      "abstract": "Flexible neural sequence models outperform grammar- and automaton-based counterparts on a variety of tasks. However, neural models perform poorly in settings requiring compositional generalization beyond the training data -- particularly to rare or unseen subsequences. Past work has found symbolic scaffolding (e.g. grammars or automata) essential in these settings. We describe R&R, a learned data augmentation scheme that enables a large category of compositional generalizations without appeal to latent symbolic structure. R&R has two components: recombination of original training examples via a prototype-based generative model and resampling of generated examples to encourage extrapolation. Training an ordinary neural sequence model on a dataset augmented with recombined and resampled examples significantly improves generalization in two language processing problems -- instruction following (SCAN) and morphological analysis (SIGMORPHON 2018) -- where R&R enables learning of new constructions and tenses from as few as eight initial examples.",
+      "published": "2020-10-08T00:36:33Z",
+      "updated": "2021-06-08T00:43:04Z",
+      "authors": [
+        "Ekin Aky\u00fcrek",
+        "Afra Feyza Aky\u00fcrek",
+        "Jacob Andreas"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2010.03706v6",
+      "pdf_url": "https://arxiv.org/pdf/2010.03706v6"
+    },
+    {
+      "arxiv_id": "2107.01366v2",
+      "title": "Can Transformers Jump Around Right in Natural Language? Assessing Performance Transfer from SCAN",
+      "abstract": "Despite their practical success, modern seq2seq architectures are unable to generalize systematically on several SCAN tasks. Hence, it is not clear if SCAN-style compositional generalization is useful in realistic NLP tasks. In this work, we study the benefit that such compositionality brings about to several machine translation tasks. We present several focused modifications of Transformer that greatly improve generalization capabilities on SCAN and select one that remains on par with a vanilla Transformer on a standard machine translation (MT) task. Next, we study its performance in low-resource settings and on a newly introduced distribution-shifted English-French translation task. Overall, we find that improvements of a SCAN-capable model do not directly transfer to the resource-rich MT setup. In contrast, in the low-resource setup, general modifications lead to an improvement of up to 13.1% BLEU score w.r.t. a vanilla Transformer. Similarly, an improvement of 14% in an accuracy-based metric is achieved in the introduced compositional English-French translation task. This provides experimental evidence that the compositional generalization assessed in SCAN is particularly useful in resource-starved and domain-shifted scenarios.",
+      "published": "2021-07-03T07:45:41Z",
+      "updated": "2021-09-16T07:48:33Z",
+      "authors": [
+        "Rahma Chaabouni",
+        "Roberto Dess\u00ec",
+        "Eugene Kharitonov"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2107.01366v2",
+      "pdf_url": "https://arxiv.org/pdf/2107.01366v2"
+    },
+    {
+      "arxiv_id": "2111.05013v1",
+      "title": "Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks",
+      "abstract": "Neural network models often generalize poorly to mismatched domains or distributions. In NLP, this issue arises in particular when models are expected to generalize compositionally, that is, to novel combinations of familiar words and constructions. We investigate learning representations that facilitate transfer learning from one compositional task to another: the representation and the task-specific layers of the models are strategically trained differently on a pre-finetuning task such that they generalize well on mismatched splits that require compositionality. We apply this method to semantic parsing, using three very different datasets, COGS, GeoQuery and SCAN, used alternately as the pre-finetuning and target task. Our method significantly improves compositional generalization over baselines on the test set of the target task, which is held out during fine-tuning. Ablation studies characterize the utility of the major steps in the proposed algorithm and support our hypothesis.",
+      "published": "2021-11-09T09:10:21Z",
+      "updated": "2021-11-09T09:10:21Z",
+      "authors": [
+        "Wang Zhu",
+        "Peter Shaw",
+        "Tal Linzen",
+        "Fei Sha"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2111.05013v1",
+      "pdf_url": "https://arxiv.org/pdf/2111.05013v1"
+    },
+    {
+      "arxiv_id": "2109.15101v3",
+      "title": "Compositional generalization in semantic parsing with pretrained transformers",
+      "abstract": "Large-scale pretraining instills large amounts of knowledge in deep neural networks. This, in turn, improves the generalization behavior of these models in downstream tasks. What exactly are the limits to the generalization benefits of large-scale pretraining? Here, we report observations from some simple experiments aimed at addressing this question in the context of two semantic parsing tasks involving natural language, SCAN and COGS. We show that language models pretrained exclusively with non-English corpora, or even with programming language corpora, significantly improve out-of-distribution generalization in these benchmarks, compared with models trained from scratch, even though both benchmarks are English-based. This demonstrates the surprisingly broad transferability of pretrained representations and knowledge. Pretraining with a large-scale protein sequence prediction task, on the other hand, mostly deteriorates the generalization performance in SCAN and COGS, suggesting that pretrained representations do not transfer universally and that there are constraints on the similarity between the pretraining and downstream domains for successful transfer. Finally, we show that larger models are harder to train from scratch and their generalization accuracy is lower when trained up to convergence on the relatively small SCAN and COGS datasets, but the benefits of large-scale pretraining become much clearer with larger models.",
+      "published": "2021-09-30T13:06:29Z",
+      "updated": "2022-12-22T17:05:32Z",
+      "authors": [
+        "A. Emin Orhan"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2109.15101v3",
+      "pdf_url": "https://arxiv.org/pdf/2109.15101v3"
+    },
+    {
+      "arxiv_id": "1905.08527v1",
+      "title": "CNNs found to jump around more skillfully than RNNs: Compositional generalization in seq2seq convolutional networks",
+      "abstract": "Lake and Baroni (2018) introduced the SCAN dataset probing the ability of seq2seq models to capture compositional generalizations, such as inferring the meaning of \"jump around\" 0-shot from the component words. Recurrent networks (RNNs) were found to completely fail the most challenging generalization cases. We test here a convolutional network (CNN) on these tasks, reporting hugely improved performance with respect to RNNs. Despite the big improvement, the CNN has however not induced systematic rules, suggesting that the difference between compositional and non-compositional behaviour is not clear-cut.",
+      "published": "2019-05-21T10:14:12Z",
+      "updated": "2019-05-21T10:14:12Z",
+      "authors": [
+        "Roberto Dess\u00ec",
+        "Marco Baroni"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1905.08527v1",
+      "pdf_url": "https://arxiv.org/pdf/1905.08527v1"
+    },
+    {
+      "arxiv_id": "2205.01538v1",
+      "title": "SUBS: Subtree Substitution for Compositional Semantic Parsing",
+      "abstract": "Although sequence-to-sequence models often achieve good performance in semantic parsing for i.i.d. data, their performance is still inferior in compositional generalization. Several data augmentation methods have been proposed to alleviate this problem. However, prior work only leveraged superficial grammar or rules for data augmentation, which resulted in limited improvement. We propose to use subtree substitution for compositional data augmentation, where we consider subtrees with similar semantic functions as exchangeable. Our experiments showed that such augmented data led to significantly better performance on SCAN and GeoQuery, and reached new SOTA on compositional split of GeoQuery.",
+      "published": "2022-05-03T14:47:35Z",
+      "updated": "2022-05-03T14:47:35Z",
+      "authors": [
+        "Jingfeng Yang",
+        "Le Zhang",
+        "Diyi Yang"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2205.01538v1",
+      "pdf_url": "https://arxiv.org/pdf/2205.01538v1"
+    },
+    {
+      "arxiv_id": "2302.07679v1",
+      "title": "On graph-based reentrancy-free semantic parsing",
+      "abstract": "We propose a novel graph-based approach for semantic parsing that resolves two problems observed in the literature: (1) seq2seq models fail on compositional generalization tasks; (2) previous work using phrase structure parsers cannot cover all the semantic parses observed in treebanks. We prove that both MAP inference and latent tag anchoring (required for weakly-supervised learning) are NP-hard problems. We propose two optimization algorithms based on constraint smoothing and conditional gradient to approximately solve these inference problems. Experimentally, our approach delivers state-of-the-art results on Geoquery, Scan and Clevr, both for i.i.d. splits and for splits that test for compositional generalization.",
+      "published": "2023-02-15T14:14:09Z",
+      "updated": "2023-02-15T14:14:09Z",
+      "authors": [
+        "Alban Petit",
+        "Caio Corro"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2302.07679v1",
+      "pdf_url": "https://arxiv.org/pdf/2302.07679v1"
+    },
+    {
+      "arxiv_id": "2110.07572v2",
+      "title": "LAGr: Labeling Aligned Graphs for Improving Systematic Generalization in Semantic Parsing",
+      "abstract": "Semantic parsing is the task of producing a structured meaning representation for natural language utterances or questions. Recent research has pointed out that the commonly-used sequence-to-sequence (seq2seq) semantic parsers struggle to generalize systematically, i.e. to handle examples that require recombining known knowledge in novel settings. In this work, we show that better systematic generalization can be achieved by producing the meaning representation (MR) directly as a graph and not as a sequence. To this end we propose LAGr, the Labeling Aligned Graphs algorithm that produces semantic parses by predicting node and edge labels for a complete multi-layer input-aligned graph. The strongly-supervised LAGr algorithm requires aligned graphs as inputs, whereas weakly-supervised LAGr infers alignments for originally unaligned target graphs using an approximate MAP inference procedure. On the COGS and CFQ compositional generalization benchmarks the strongly- and weakly- supervised LAGr algorithms achieve significant improvements upon the baseline seq2seq parsers.",
+      "published": "2021-10-14T17:37:04Z",
+      "updated": "2022-06-01T18:25:44Z",
+      "authors": [
+        "Dora Jambor",
+        "Dzmitry Bahdanau"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2110.07572v2",
+      "pdf_url": "https://arxiv.org/pdf/2110.07572v2"
+    },
+    {
+      "arxiv_id": "2303.13716v2",
+      "title": "ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation",
+      "abstract": "Compositional generalization benchmarks for semantic parsing seek to assess whether models can accurately compute meanings for novel sentences, but operationalize this in terms of logical form (LF) prediction. This raises the concern that semantically irrelevant details of the chosen LFs could shape model performance. We argue that this concern is realized for the COGS benchmark. COGS poses generalization splits that appear impossible for present-day models, which could be taken as an indictment of those models. However, we show that the negative results trace to incidental features of COGS LFs. Converting these LFs to semantically equivalent ones and factoring out capabilities unrelated to semantic interpretation, we find that even baseline models get traction. A recent variable-free translation of COGS LFs suggests similar conclusions, but we observe this format is not semantically equivalent; it is incapable of accurately representing some COGS meanings. These findings inform our proposal for ReCOGS, a modified version of COGS that comes closer to assessing the target semantic capabilities while remaining very challenging. Overall, our results reaffirm the importance of compositional generalization and careful benchmark task design.",
+      "published": "2023-03-24T00:01:24Z",
+      "updated": "2024-01-23T21:52:42Z",
+      "authors": [
+        "Zhengxuan Wu",
+        "Christopher D. Manning",
+        "Christopher Potts"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2303.13716v2",
+      "pdf_url": "https://arxiv.org/pdf/2303.13716v2"
+    },
+    {
+      "arxiv_id": "2109.08994v1",
+      "title": "ReaSCAN: Compositional Reasoning in Language Grounding",
+      "abstract": "The ability to compositionally map language to referents, relations, and actions is an essential component of language understanding. The recent gSCAN dataset (Ruis et al. 2020, NeurIPS) is an inspiring attempt to assess the capacity of models to learn this kind of grounding in scenarios involving navigational instructions. However, we show that gSCAN's highly constrained design means that it does not require compositional interpretation and that many details of its instructions and scenarios are not required for task success. To address these limitations, we propose ReaSCAN, a benchmark dataset that builds off gSCAN but requires compositional language interpretation and reasoning about entities and relations. We assess two models on ReaSCAN: a multi-modal baseline and a state-of-the-art graph convolutional neural model. These experiments show that ReaSCAN is substantially harder than gSCAN for both neural architectures. This suggests that ReaSCAN can serve as a valuable benchmark for advancing our understanding of models' compositional generalization and reasoning capabilities.",
+      "published": "2021-09-18T19:46:08Z",
+      "updated": "2021-09-18T19:46:08Z",
+      "authors": [
+        "Zhengxuan Wu",
+        "Elisa Kreiss",
+        "Desmond C. Ong",
+        "Christopher Potts"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2109.08994v1",
+      "pdf_url": "https://arxiv.org/pdf/2109.08994v1"
+    },
+    {
+      "arxiv_id": "2309.16467v2",
+      "title": "Compositional Program Generation for Few-Shot Systematic Generalization",
+      "abstract": "Compositional generalization is a key ability of humans that enables us to learn new concepts from only a handful examples. Neural machine learning models, including the now ubiquitous Transformers, struggle to generalize in this way, and typically require thousands of examples of a concept during training in order to generalize meaningfully. This difference in ability between humans and artificial neural architectures, motivates this study on a neuro-symbolic architecture called the Compositional Program Generator (CPG). CPG has three key features: \\textit{modularity}, \\textit{composition}, and \\textit{abstraction}, in the form of grammar rules, that enable it to generalize both systematically to new concepts in a few-shot manner, as well as productively by length on various sequence-to-sequence language tasks. For each input, CPG uses a grammar of the input language and a parser to generate a parse in which each grammar rule is assigned its own unique semantic module, a probabilistic copy or substitution program. Instances with the same parse are always processed with the same composed modules, while those with different parses may be processed with different modules. CPG learns parameters for the modules and is able to learn the semantics for new rules and types incrementally, without forgetting or retraining on rules it's already seen. It achieves perfect generalization on both the SCAN and COGS benchmarks using just 14 examples for SCAN and 22 examples for COGS -- state-of-the-art accuracy with a 1000x improvement in sample efficiency.",
+      "published": "2023-09-28T14:33:20Z",
+      "updated": "2024-01-18T18:25:38Z",
+      "authors": [
+        "Tim Klinger",
+        "Luke Liu",
+        "Soham Dan",
+        "Maxwell Crouse",
+        "Parikshit Ram",
+        "Alexander Gray"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2309.16467v2",
+      "pdf_url": "https://arxiv.org/pdf/2309.16467v2"
+    },
+    {
+      "arxiv_id": "2209.15003v2",
+      "title": "Compositional Semantic Parsing with Large Language Models",
+      "abstract": "Humans can reason compositionally when presented with new tasks. Previous research shows that appropriate prompting techniques enable large language models (LLMs) to solve artificial compositional generalization tasks such as SCAN. In this work, we identify additional challenges in more realistic semantic parsing tasks with larger vocabulary and refine these prompting techniques to address them. Our best method is based on least-to-most prompting: it decomposes the problem using prompting-based syntactic parsing, then uses this decomposition to select appropriate exemplars and to sequentially generate the semantic parse. This method allows us to set a new state of the art for CFQ while requiring only 1% of the training data used by traditional approaches. Due to the general nature of our approach, we expect similar efforts will lead to new results in other tasks and domains, especially for knowledge-intensive applications.",
+      "published": "2022-09-29T17:58:28Z",
+      "updated": "2022-09-30T01:15:10Z",
+      "authors": [
+        "Andrew Drozdov",
+        "Nathanael Sch\u00e4rli",
+        "Ekin Aky\u00fcrek",
+        "Nathan Scales",
+        "Xinying Song",
+        "Xinyun Chen",
+        "Olivier Bousquet",
+        "Denny Zhou"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2209.15003v2",
+      "pdf_url": "https://arxiv.org/pdf/2209.15003v2"
+    },
+    {
+      "arxiv_id": "2003.05161v2",
+      "title": "A Benchmark for Systematic Generalization in Grounded Language Understanding",
+      "abstract": "Humans easily interpret expressions that describe unfamiliar situations composed from familiar parts (\"greet the pink brontosaurus by the ferris wheel\"). Modern neural networks, by contrast, struggle to interpret novel compositions. In this paper, we introduce a new benchmark, gSCAN, for evaluating compositional generalization in situated language understanding. Going beyond a related benchmark that focused on syntactic aspects of generalization, gSCAN defines a language grounded in the states of a grid world, facilitating novel evaluations of acquiring linguistically motivated rules. For example, agents must understand how adjectives such as 'small' are interpreted relative to the current world state or how adverbs such as 'cautiously' combine with new verbs. We test a strong multi-modal baseline model and a state-of-the-art compositional method finding that, in most cases, they fail dramatically when generalization requires systematic compositional rules.",
+      "published": "2020-03-11T08:40:15Z",
+      "updated": "2020-10-17T17:02:02Z",
+      "authors": [
+        "Laura Ruis",
+        "Jacob Andreas",
+        "Marco Baroni",
+        "Diane Bouchacourt",
+        "Brenden M. Lake"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2003.05161v2",
+      "pdf_url": "https://arxiv.org/pdf/2003.05161v2"
+    },
+    {
+      "arxiv_id": "2106.04252v2",
+      "title": "Meta-Learning to Compositionally Generalize",
+      "abstract": "Natural language is compositional; the meaning of a sentence is a function of the meaning of its parts. This property allows humans to create and interpret novel sentences, generalizing robustly outside their prior experience. Neural networks have been shown to struggle with this kind of generalization, in particular performing poorly on tasks designed to assess compositional generalization (i.e. where training and testing distributions differ in ways that would be trivial for a compositional strategy to resolve). Their poor performance on these tasks may in part be due to the nature of supervised learning which assumes training and testing data to be drawn from the same distribution. We implement a meta-learning augmented version of supervised learning whose objective directly optimizes for out-of-distribution generalization. We construct pairs of tasks for meta-learning by sub-sampling existing training data. Each pair of tasks is constructed to contain relevant examples, as determined by a similarity metric, in an effort to inhibit models from memorizing their input. Experimental results on the COGS and SCAN datasets show that our similarity-driven meta-learning can improve generalization performance.",
+      "published": "2021-06-08T11:21:48Z",
+      "updated": "2021-06-29T17:00:06Z",
+      "authors": [
+        "Henry Conklin",
+        "Bailin Wang",
+        "Kenny Smith",
+        "Ivan Titov"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2106.04252v2",
+      "pdf_url": "https://arxiv.org/pdf/2106.04252v2"
+    },
+    {
+      "arxiv_id": "2108.04378v2",
+      "title": "Making Transformers Solve Compositional Tasks",
+      "abstract": "Several studies have reported the inability of Transformer models to generalize compositionally, a key type of generalization in many NLP tasks such as semantic parsing. In this paper we explore the design space of Transformer models showing that the inductive biases given to the model by several design decisions significantly impact compositional generalization. Through this exploration, we identified Transformer configurations that generalize compositionally significantly better than previously reported in the literature in a diverse set of compositional tasks, and that achieve state-of-the-art results in a semantic parsing compositional generalization benchmark (COGS), and a string edit operation composition benchmark (PCFG).",
+      "published": "2021-08-09T22:38:29Z",
+      "updated": "2022-03-03T17:02:15Z",
+      "authors": [
+        "Santiago Onta\u00f1\u00f3n",
+        "Joshua Ainslie",
+        "Vaclav Cvicek",
+        "Zachary Fisher"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2108.04378v2",
+      "pdf_url": "https://arxiv.org/pdf/2108.04378v2"
+    },
+    {
+      "arxiv_id": "2305.13092v2",
+      "title": "Improved Compositional Generalization by Generating Demonstrations for Meta-Learning",
+      "abstract": "Meta-learning and few-shot prompting are viable methods to induce certain types of compositional behaviour. However, these methods can be very sensitive to the choice of support examples used. Choosing good supports from the training data for a given test query is already a difficult problem, but in some cases solving this may not even be enough. We consider a grounded language learning problem (gSCAN) where good support examples for certain test splits might not even exist in the training data, or would be infeasible to search for. We design an agent which instead generates possible supports which are relevant to the test query and current state of the world, then uses these supports via meta-learning to solve the test query. We show substantially improved performance on a previously unsolved compositional behaviour split without a loss of performance on other splits. Further experiments show that in this case, searching for relevant demonstrations even with an oracle function is not sufficient to attain good performance when using meta-learning.",
+      "published": "2023-05-22T14:58:54Z",
+      "updated": "2024-10-12T14:10:16Z",
+      "authors": [
+        "Sam Spilsbury",
+        "Pekka Marttinen",
+        "Alexander Ilin"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2305.13092v2",
+      "pdf_url": "https://arxiv.org/pdf/2305.13092v2"
+    },
+    {
+      "arxiv_id": "1906.05381v2",
+      "title": "Compositional generalization through meta sequence-to-sequence learning",
+      "abstract": "People can learn a new concept and use it compositionally, understanding how to \"blicket twice\" after learning how to \"blicket.\" In contrast, powerful sequence-to-sequence (seq2seq) neural networks fail such tests of compositionality, especially when composing new concepts together with existing concepts. In this paper, I show how memory-augmented neural networks can be trained to generalize compositionally through meta seq2seq learning. In this approach, models train on a series of seq2seq problems to acquire the compositional skills needed to solve new seq2seq problems. Meta se2seq learning solves several of the SCAN tests for compositional learning and can learn to apply implicit rules to variables.",
+      "published": "2019-06-12T21:25:09Z",
+      "updated": "2019-10-08T22:03:19Z",
+      "authors": [
+        "Brenden M. Lake"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1906.05381v2",
+      "pdf_url": "https://arxiv.org/pdf/1906.05381v2"
+    },
+    {
+      "arxiv_id": "2109.15256v1",
+      "title": "Inducing Transformer's Compositional Generalization Ability via Auxiliary Sequence Prediction Tasks",
+      "abstract": "Systematic compositionality is an essential mechanism in human language, allowing the recombination of known parts to create novel expressions. However, existing neural models have been shown to lack this basic ability in learning symbolic structures. Motivated by the failure of a Transformer model on the SCAN compositionality challenge (Lake and Baroni, 2018), which requires parsing a command into actions, we propose two auxiliary sequence prediction tasks that track the progress of function and argument semantics, as additional training supervision. These automatically-generated sequences are more representative of the underlying compositional symbolic structures of the input data. During inference, the model jointly predicts the next action and the next tokens in the auxiliary sequences at each step. Experiments on the SCAN dataset show that our method encourages the Transformer to understand compositional structures of the command, improving its accuracy on multiple challenging splits from <= 10% to 100%. With only 418 (5%) training instances, our approach still achieves 97.8% accuracy on the MCD1 split. Therefore, we argue that compositionality can be induced in Transformers given minimal but proper guidance. We also show that a better result is achieved using less contextualized vectors as the attention's query, providing insights into architecture choices in achieving systematic compositionality. Finally, we show positive generalization results on the groundedSCAN task (Ruis et al., 2020). Our code is publicly available at: https://github.com/jiangycTarheel/compositional-auxseq",
+      "published": "2021-09-30T16:41:19Z",
+      "updated": "2021-09-30T16:41:19Z",
+      "authors": [
+        "Yichen Jiang",
+        "Mohit Bansal"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2109.15256v1",
+      "pdf_url": "https://arxiv.org/pdf/2109.15256v1"
+    },
+    {
+      "arxiv_id": "2305.04346v1",
+      "title": "Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing",
+      "abstract": "Nearly all general-purpose neural semantic parsers generate logical forms in a strictly top-down autoregressive fashion. Though such systems have achieved impressive results across a variety of datasets and domains, recent works have called into question whether they are ultimately limited in their ability to compositionally generalize. In this work, we approach semantic parsing from, quite literally, the opposite direction; that is, we introduce a neural semantic parsing generation method that constructs logical forms from the bottom up, beginning from the logical form's leaves. The system we introduce is lazy in that it incrementally builds up a set of potential semantic parses, but only expands and processes the most promising candidate parses at each generation step. Such a parsimonious expansion scheme allows the system to maintain an arbitrarily large set of parse hypotheses that are never realized and thus incur minimal computational overhead. We evaluate our approach on compositional generalization; specifically, on the challenging CFQ dataset and three Text-to-SQL datasets where we show that our novel, bottom-up semantic parsing technique outperforms general-purpose semantic parsers while also being competitive with comparable neural parsers that have been designed for each task.",
+      "published": "2023-05-07T17:53:08Z",
+      "updated": "2023-05-07T17:53:08Z",
+      "authors": [
+        "Maxwell Crouse",
+        "Pavan Kapanipathi",
+        "Subhajit Chaudhury",
+        "Tahira Naseem",
+        "Ramon Astudillo",
+        "Achille Fokoue",
+        "Tim Klinger"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2305.04346v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.04346v1"
+    },
+    {
+      "arxiv_id": "2205.10625v3",
+      "title": "Least-to-Most Prompting Enables Complex Reasoning in Large Language Models",
+      "abstract": "Chain-of-thought prompting has demonstrated remarkable performance on various natural language reasoning tasks. However, it tends to perform poorly on tasks which requires solving problems harder than the exemplars shown in the prompts. To overcome this challenge of easy-to-hard generalization, we propose a novel prompting strategy, least-to-most prompting. The key idea in this strategy is to break down a complex problem into a series of simpler subproblems and then solve them in sequence. Solving each subproblem is facilitated by the answers to previously solved subproblems. Our experimental results on tasks related to symbolic manipulation, compositional generalization, and math reasoning reveal that least-to-most prompting is capable of generalizing to more difficult problems than those seen in the prompts. A notable finding is that when the GPT-3 code-davinci-002 model is used with least-to-most prompting, it can solve the compositional generalization benchmark SCAN in any split (including length split) with an accuracy of at least 99% using just 14 exemplars, compared to only 16% accuracy with chain-of-thought prompting. This is particularly noteworthy because neural-symbolic models in the literature that specialize in solving SCAN are trained on the entire training set containing over 15,000 examples. We have included prompts for all the tasks in the Appendix.",
+      "published": "2022-05-21T15:34:53Z",
+      "updated": "2023-04-16T22:08:08Z",
+      "authors": [
+        "Denny Zhou",
+        "Nathanael Sch\u00e4rli",
+        "Le Hou",
+        "Jason Wei",
+        "Nathan Scales",
+        "Xuezhi Wang",
+        "Dale Schuurmans",
+        "Claire Cui",
+        "Olivier Bousquet",
+        "Quoc Le",
+        "Ed Chi"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.AI",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2205.10625v3",
+      "pdf_url": "https://arxiv.org/pdf/2205.10625v3"
+    },
+    {
+      "arxiv_id": "2602.16967v3",
+      "title": "Early-Warning Signals of Grokking via Loss-Landscape Geometry",
+      "abstract": "Grokking -- the abrupt transition from memorization to generalization after prolonged training -- has been linked to confinement on low-dimensional execution manifolds in modular arithmetic. Whether this mechanism extends beyond arithmetic remains open. We study two sequence-learning benchmarks: SCAN compositional generalization and Dyck-1 depth prediction. Across both tasks and a wide range of learning rates, the commutator defect -- a curvature measure derived from non-commuting gradient updates -- rises well before generalization, with lead times following a superlinear power law (alpha approximately 1.18 for SCAN, approximately 1.13 for Dyck), consistent with prior results on modular arithmetic. Weight-space PCA reveals that spectral concentration is not a universal precursor; the commutator defect is. Causal interventions demonstrate a mechanistic role: amplifying non-commutativity accelerates grokking (roughly 32% on SCAN, roughly 50% on Dyck), while suppressing orthogonal gradient flow delays or prevents it. The three task families form a spectrum of causal sensitivity -- modular arithmetic is rigid, Dyck is responsive, SCAN is intermediate -- yet suppression delays or prevents grokking in all cases, establishing necessity as a universal finding. These results identify the commutator defect as a robust, architecture-agnostic, causally implicated early-warning signal for delayed generalization in transformers.",
+      "published": "2026-02-19T00:14:36Z",
+      "updated": "2026-04-03T00:26:34Z",
+      "authors": [
+        "Yongzhong Xu"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2602.16967v3",
+      "pdf_url": "https://arxiv.org/pdf/2602.16967v3"
+    },
+    {
+      "arxiv_id": "2106.04476v2",
+      "title": "One Semantic Parser to Parse Them All: Sequence to Sequence Multi-Task Learning on Semantic Parsing Datasets",
+      "abstract": "Semantic parsers map natural language utterances to meaning representations. The lack of a single standard for meaning representations led to the creation of a plethora of semantic parsing datasets. To unify different datasets and train a single model for them, we investigate the use of Multi-Task Learning (MTL) architectures. We experiment with five datasets (Geoquery, NLMaps, TOP, Overnight, AMR). We find that an MTL architecture that shares the entire network across datasets yields competitive or better parsing accuracies than the single-task baselines, while reducing the total number of parameters by 68%. We further provide evidence that MTL has also better compositional generalization than single-task models. We also present a comparison of task sampling methods and propose a competitive alternative to widespread proportional sampling strategies.",
+      "published": "2021-06-08T16:03:42Z",
+      "updated": "2021-06-14T10:24:37Z",
+      "authors": [
+        "Marco Damonte",
+        "Emilio Monti"
+      ],
+      "categories": [
+        "cs.CL"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2106.04476v2",
+      "pdf_url": "https://arxiv.org/pdf/2106.04476v2"
+    },
+    {
+      "arxiv_id": "2401.15030v2",
+      "title": "On the generalization capacity of neural networks during generic multimodal reasoning",
+      "abstract": "The advent of the Transformer has led to the development of large language models (LLM), which appear to demonstrate human-like capabilities. To assess the generality of this class of models and a variety of other base neural network architectures to multimodal domains, we evaluated and compared their capacity for multimodal generalization. We introduce a multimodal question-answer benchmark to evaluate three specific types of out-of-distribution (OOD) generalization performance: distractor generalization (generalization in the presence of distractors), systematic compositional generalization (generalization to new task permutations), and productive compositional generalization (generalization to more complex tasks structures). We found that across model architectures (e.g., RNNs, Transformers, Perceivers, etc.), models with multiple attention layers, or models that leveraged cross-attention mechanisms between input domains, fared better. Our positive results demonstrate that for multimodal distractor and systematic generalization, either cross-modal attention or models with deeper attention layers are key architectural features required to integrate multimodal inputs. On the other hand, neither of these architectural features led to productive generalization, suggesting fundamental limitations of existing architectures for specific types of multimodal generalization. These results demonstrate the strengths and limitations of specific architectural components underlying modern neural models for multimodal reasoning. Finally, we provide Generic COG (gCOG), a configurable benchmark with several multimodal generalization splits, for future studies to explore.",
+      "published": "2024-01-26T17:42:59Z",
+      "updated": "2024-03-04T15:23:16Z",
+      "authors": [
+        "Takuya Ito",
+        "Soham Dan",
+        "Mattia Rigotti",
+        "James Kozloski",
+        "Murray Campbell"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2401.15030v2",
+      "pdf_url": "https://arxiv.org/pdf/2401.15030v2"
+    },
+    {
+      "arxiv_id": "2606.15386v2",
+      "title": "A Compositional Framework for Open-ended Intelligence",
+      "abstract": "Open-ended intelligence is the capacity to adapt to novel problems and environments that are substantially different from those in training. A mathematics of open-ended intelligence requires two pillars: first, a minimal set of representational primitives (e.g., states, actions) and algorithmic primitives (e.g., nearest neighbor); and second, an acquired compositional grammar for selection, recursion, and branching that produces sequences of operations and recurring motifs. We formalize open-ended intelligence in terms of the compositional closure induced by a finite primitive set $P$ and a set of composition operators $C$. We characterize properties of the induced closure $\\mathcal{L}(P,C)$ that support unbounded compositional generation across families of tasks and worlds. The closure of the two pillars yields infinite adaptive responses across a wide range of settings. The mathematics supports complementary research agendas, including evaluation metrics for explanation and interpretability, and novel architectures where compositional generalization is native. We propose next primitive prediction (NPP) as a novel architectural objective, where training encourages the acquisition of reusable algorithmic primitives and their compositional grammar, such that new solutions are generated through recombination. Given such an objective, curriculum learning and self-play can enable lifelong learning, expanding the closure by discovering reusable primitives and transition motifs across settings. We ground the framework through case studies in physics, evolution, and neuroscience.",
+      "published": "2026-06-13T16:30:32Z",
+      "updated": "2026-06-16T12:51:53Z",
+      "authors": [
+        "Ida Momennejad",
+        "Roberta Raileanu"
+      ],
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2606.15386v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.15386v2"
+    },
+    {
+      "arxiv_id": "2006.14953v2",
+      "title": "What they do when in doubt: a study of inductive biases in seq2seq learners",
+      "abstract": "Sequence-to-sequence (seq2seq) learners are widely used, but we still have only limited knowledge about what inductive biases shape the way they generalize. We address that by investigating how popular seq2seq learners generalize in tasks that have high ambiguity in the training data. We use SCAN and three new tasks to study learners' preferences for memorization, arithmetic, hierarchical, and compositional reasoning. Further, we connect to Solomonoff's theory of induction and propose to use description length as a principled and sensitive measure of inductive biases.   In our experimental study, we find that LSTM-based learners can learn to perform counting, addition, and multiplication by a constant from a single training example. Furthermore, Transformer and LSTM-based learners show a bias toward the hierarchical induction over the linear one, while CNN-based learners prefer the opposite. On the SCAN dataset, we find that CNN-based, and, to a lesser degree, Transformer- and LSTM-based learners have a preference for compositional generalization over memorization. Finally, across all our experiments, description length proved to be a sensitive measure of inductive biases.",
+      "published": "2020-06-26T12:43:10Z",
+      "updated": "2021-03-29T09:43:36Z",
+      "authors": [
+        "Eugene Kharitonov",
+        "Rahma Chaabouni"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IT"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2006.14953v2",
+      "pdf_url": "https://arxiv.org/pdf/2006.14953v2"
+    },
+    {
+      "arxiv_id": "2310.07096v1",
+      "title": "Sparse Universal Transformer",
+      "abstract": "The Universal Transformer (UT) is a variant of the Transformer that shares parameters across its layers. Empirical evidence shows that UTs have better compositional generalization than Vanilla Transformers (VTs) in formal language tasks. The parameter-sharing also affords it better parameter efficiency than VTs. Despite its many advantages, scaling UT parameters is much more compute and memory intensive than scaling up a VT. This paper proposes the Sparse Universal Transformer (SUT), which leverages Sparse Mixture of Experts (SMoE) and a new stick-breaking-based dynamic halting mechanism to reduce UT's computation complexity while retaining its parameter efficiency and generalization ability. Experiments show that SUT achieves the same performance as strong baseline models while only using half computation and parameters on WMT'14 and strong generalization results on formal language tasks (Logical inference and CFQ). The new halting mechanism also enables around 50\\% reduction in computation during inference with very little performance decrease on formal language tasks.",
+      "published": "2023-10-11T00:38:57Z",
+      "updated": "2023-10-11T00:38:57Z",
+      "authors": [
+        "Shawn Tan",
+        "Yikang Shen",
+        "Zhenfang Chen",
+        "Aaron Courville",
+        "Chuang Gan"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2310.07096v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.07096v1"
+    },
+    {
+      "arxiv_id": "2011.09039v1",
+      "title": "Sequence-Level Mixed Sample Data Augmentation",
+      "abstract": "Despite their empirical success, neural networks still have difficulty capturing compositional aspects of natural language. This work proposes a simple data augmentation approach to encourage compositional behavior in neural models for sequence-to-sequence problems. Our approach, SeqMix, creates new synthetic examples by softly combining input/output sequences from the training set. We connect this approach to existing techniques such as SwitchOut and word dropout, and show that these techniques are all approximating variants of a single objective. SeqMix consistently yields approximately 1.0 BLEU improvement on five different translation datasets over strong Transformer baselines. On tasks that require strong compositional generalization such as SCAN and semantic parsing, SeqMix also offers further improvements.",
+      "published": "2020-11-18T02:18:04Z",
+      "updated": "2020-11-18T02:18:04Z",
+      "authors": [
+        "Demi Guo",
+        "Yoon Kim",
+        "Alexander M. Rush"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2011.09039v1",
+      "pdf_url": "https://arxiv.org/pdf/2011.09039v1"
+    },
+    {
+      "arxiv_id": "2109.01135v7",
+      "title": "Sequence-to-Sequence Learning with Latent Neural Grammars",
+      "abstract": "Sequence-to-sequence learning with neural networks has become the de facto standard for sequence prediction tasks. This approach typically models the local distribution over the next word with a powerful neural network that can condition on arbitrary context. While flexible and performant, these models often require large datasets for training and can fail spectacularly on benchmarks designed to test for compositional generalization. This work explores an alternative, hierarchical approach to sequence-to-sequence learning with quasi-synchronous grammars, where each node in the target tree is transduced by a node in the source tree. Both the source and target trees are treated as latent and induced during training. We develop a neural parameterization of the grammar which enables parameter sharing over the combinatorial space of derivation rules without the need for manual feature engineering. We apply this latent neural grammar to various domains -- a diagnostic language navigation task designed to test for compositional generalization (SCAN), style transfer, and small-scale machine translation -- and find that it performs respectably compared to standard baselines.",
+      "published": "2021-09-02T17:58:08Z",
+      "updated": "2021-11-16T17:14:16Z",
+      "authors": [
+        "Yoon Kim"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CL",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2109.01135v7",
+      "pdf_url": "https://arxiv.org/pdf/2109.01135v7"
+    },
+    {
+      "arxiv_id": "2410.18077v2",
+      "title": "ALTA: Compiler-Based Analysis of Transformers",
+      "abstract": "We propose a new programming language called ALTA and a compiler that can map ALTA programs to Transformer weights. ALTA is inspired by RASP, a language proposed by Weiss et al. (2021), and Tracr (Lindner et al., 2023), a compiler from RASP programs to Transformer weights. ALTA complements and extends this prior work, offering the ability to express loops and to compile programs to Universal Transformers, among other advantages. ALTA allows us to constructively show how Transformers can represent length-invariant algorithms for computing parity and addition, as well as a solution to the SCAN benchmark of compositional generalization tasks, without requiring intermediate scratchpad decoding steps. We also propose tools to analyze cases where the expressibility of an algorithm is established, but end-to-end training on a given training set fails to induce behavior consistent with the desired algorithm. To this end, we explore training from ALTA execution traces as a more fine-grained supervision signal. This enables additional experiments and theoretical analyses relating the learnability of various algorithms to data availability and modeling decisions, such as positional encodings. We make the ALTA framework -- language specification, symbolic interpreter, and weight compiler -- available to the community to enable further applications and insights.",
+      "published": "2024-10-23T17:58:49Z",
+      "updated": "2025-06-19T15:55:45Z",
+      "authors": [
+        "Peter Shaw",
+        "James Cohan",
+        "Jacob Eisenstein",
+        "Kenton Lee",
+        "Jonathan Berant",
+        "Kristina Toutanova"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2410.18077v2",
+      "pdf_url": "https://arxiv.org/pdf/2410.18077v2"
+    },
+    {
+      "arxiv_id": "2606.00045v3",
+      "title": "Universal Quantum Transformer",
+      "abstract": "Classical continuous-space neural networks fundamentally struggle to lock into exact formal rules, whether mathematical, such as modular arithmetic and non-Abelian group algebra, or linguistic, such as systematic compositional generalization. To approximate these discrete logical rules, they often rely on massive parameter scaling, resulting in stochastic instability even after delayed generalization phenomena known as grokking. Here, we introduce the Universal Quantum Transformer (UQT), a novel, quantum-native computing architecture that uses the physical properties of multi-qubit systems as a universal inductive bias for exact algebraic and compositional reasoning. Rather than translating classical neural mechanisms, our framework relies entirely on parameterized geometric phase embedding and $SU(2)$ wave-interference. We demonstrate that an identical quantum attention circuit, operating on a highly compact 5 or 6 qubit substrate with only 551 to 1,650 trainable parameters, exactly learns three highly distinct formal classes: cyclic modular arithmetic ($\\mathbb{Z}_{11}$), non-Abelian algebra (the $S_4$ permutation group), and systematic linguistic compositionality (the SCAN language). While standard classical models, including multi-layer perceptrons (MLPs) and Transformers, exhibit stochastic instability at convergence, the UQT achieves mathematically exact, deterministic generalization. We define this stricter regime as crystallization: a step beyond the well-known phenomenon of grokking. Finally, we deploy the UQT on noisy intermediate-scale quantum (NISQ) hardware, achieving 97.5% accuracy on IBM Quantum computers. These results demonstrate that the UQT provides a structurally suited inductive bias for exact formal reasoning that standard classical continuous-space architectures do not natively provide.",
+      "published": "2026-04-29T20:49:23Z",
+      "updated": "2026-07-27T04:41:47Z",
+      "authors": [
+        "Sungyong Chung",
+        "Alireza Talebpour"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.ET",
+        "quant-ph"
+      ],
+      "primary_category": "cs.AI",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2606.00045v3",
+      "pdf_url": "https://arxiv.org/pdf/2606.00045v3"
+    },
+    {
+      "arxiv_id": "2506.00920v2",
+      "title": "Position as Probability: Self-Supervised Transformers that Think Past Their Training for Length Extrapolation",
+      "abstract": "Deep sequence models typically degrade in accuracy when test sequences significantly exceed their training lengths, yet many critical tasks--such as algorithmic reasoning, multi-step arithmetic, and compositional generalization--require robust length extrapolation. We introduce PRISM, a Probabilistic Relative-position Implicit Superposition Model, a novel positional encoding mechanism that enables Transformers to extrapolate accurately up to 10x beyond their training length. PRISM learns continuous relative positions through a differentiable histogram-filter update, preserving position uncertainty via a probabilistic superposition rather than conventional deterministic embeddings. Empirically, PRISM achieves state-of-the-art length extrapolation, successfully generalizing to previously intractable sequence lengths across algorithmic benchmarks--including arithmetic (addition, multiplication), SCAN compositionality tasks, and complex copy variants derived from DeepMind's recent datasets. Our analysis demonstrates that PRISM's stochastic positional encoding maintains sharp and interpretable internal states, providing a theoretical basis for reliable length generalization. These results advance the goal of neural sequence models that remain algorithmically robust at lengths far exceeding their training horizon.",
+      "published": "2025-06-01T09:20:44Z",
+      "updated": "2025-12-22T19:46:45Z",
+      "authors": [
+        "Philip Heejun Lee"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.NE"
+      ],
+      "primary_category": "cs.LG",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2506.00920v2",
+      "pdf_url": "https://arxiv.org/pdf/2506.00920v2"
+    },
+    {
+      "arxiv_id": "1106.5496v2",
+      "title": "A Global Turbulence Model for Neutrino-Driven Convection in Core-Collapse Supernovae",
+      "abstract": "Simulations of core-collapse supernovae (CCSNe) result in successful explosions once the neutrino luminosity exceeds a critical curve, and recent simulations indicate that turbulence further enables explosion by reducing this critical neutrino luminosity. We propose a theoretical framework to derive this result and take the first steps by deriving the governing mean-field equations. Using Reynolds decomposition, we decompose flow variables into background and turbulent flows and derive self-consistent averaged equations for their evolution. As basic requirements for the CCSN problem, these equations naturally incorporate steady-state accretion, neutrino heating and cooling, non-zero entropy gradients, and turbulence terms associated with buoyant driving, redistribution, and dissipation. Furthermore, analysis of two-dimensional (2D) CCSN simulations validate these Reynolds-averaged equations, and we show that the physics of turbulence entirely accounts for the differences between 1D and 2D CCSN simulations. As a prelude to deriving the reduction in the critical luminosity, we identify the turbulent terms that most influence the conditions for explosion. Generically, turbulence equations require closure models, but these closure models depend upon the macroscopic properties of the flow. To derive a closure model that is appropriate for CCSNe, we cull the literature for relevant closure models and compare each with 2D simulations. These models employ local closure approximations and fail to reproduce the global properties of neutrino-driven turbulence. Motivated by the generic failure of these local models, we propose an original model for turbulence which incorporates global properties of the flow. This global model accurately reproduces the turbulence profiles and evolution of 2D CCSN simulations.",
+      "published": "2011-06-27T20:00:02Z",
+      "updated": "2011-10-13T14:23:56Z",
+      "authors": [
+        "Jeremiah W. Murphy",
+        "Casey Meakin"
+      ],
+      "categories": [
+        "astro-ph.SR"
+      ],
+      "primary_category": "astro-ph.SR",
+      "doi": "https://doi.org/10.1088/0004-637X/742/2/74",
+      "arxiv_url": "http://arxiv.org/abs/1106.5496v2",
+      "pdf_url": "https://arxiv.org/pdf/1106.5496v2"
+    },
+    {
+      "arxiv_id": "1805.06327v5",
+      "title": "A Class of Distributions for Linear Demand Markets",
+      "abstract": "In this paper, we study distributions that describe markets with linear stochastic demand. We express the price elasticity of expected demand in terms of the mean residual demand (MRD) function of the demand distribution and characterize optimal prices or equivalently, points of unitary elasticity, as fixed points of the MRD function. This leads to economic interpretable conditions on the demand distribution under which such fixed points exists and are unique. In particular, markets with increasing price elasticity of expected demand that eventually become elastic correspond to distributions with decreasing generalized mean residual demand (DGMRD) and finite second moment. DGMRD distributions strictly generalize the widely used increasing generalized failure rate (IGFR) distributions. In real life economic applications, they arise naturally as mixtures of (possibly) IGFR distributions over disjoint intervals. We further elaborate on the relationship of the two classes and link their limiting behavior at infinity. We examine moment and closure properties of the DGMRD distributions that are important in economic applications and illustrate our results with examples.",
+      "published": "2018-05-15T16:34:37Z",
+      "updated": "2021-07-16T17:27:42Z",
+      "authors": [
+        "Stefanos Leonardos",
+        "Costis Melolidakis"
+      ],
+      "categories": [
+        "math.PR"
+      ],
+      "primary_category": "math.PR",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/1805.06327v5",
+      "pdf_url": "https://arxiv.org/pdf/1805.06327v5"
+    },
+    {
+      "arxiv_id": "2603.19841v1",
+      "title": "Modeling subgrid scale production rates on complex meshes using graph neural networks",
+      "abstract": "Large-eddy simulations (LES) require closures for filtered production rates because the resolved fields do not contain all correlations that govern chemical source terms. We develop a graph neural network (GNN) that predicts filtered species production rates on non-uniform meshes from inputs of filtered mass fractions and temperature. Direct numerical simulations of turbulent premixed hydrogen-methane jet flames with hydrogen fractions of 10%, 50%, and 80% provide the dataset. All fields are Favre filtered with the filter width matched to the operating mesh, and learning is performed on subdomain graphs constructed from mesh-point connectivity. A compact set of reactants, intermediates, and products is used, and their filtered production rates form the targets. The model is trained on 10% and 80% blends and evaluated on the unseen 50% blend to test cross-composition generalization. The GNN is compared against an unclosed reference that evaluates rates at the filtered state, and a convolutional neural network baseline that requires remeshing. Across in-distribution and out-of-distribution cases, the GNN yields lower errors and closer statistical agreement with the reference data. Furthermore, the model demonstrates robust generalization across varying filter widths without retraining, maintaining bounded errors at coarser spatial resolutions. A backward facing step configuration further confirms prediction efficacy on a practically relevant geometry. These results highlight the capability of GNNs as robust data-driven closure models for LES on complex meshes.",
+      "published": "2026-03-20T10:35:46Z",
+      "updated": "2026-03-20T10:35:46Z",
+      "authors": [
+        "Priyabrat Dash",
+        "Mathis Bode",
+        "Konduri Aditya"
+      ],
+      "categories": [
+        "physics.flu-dyn",
+        "cs.LG"
+      ],
+      "primary_category": "physics.flu-dyn",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2603.19841v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.19841v1"
+    },
+    {
+      "arxiv_id": "2305.14345v2",
+      "title": "NCHO: Unsupervised Learning for Neural 3D Composition of Humans and Objects",
+      "abstract": "Deep generative models have been recently extended to synthesizing 3D digital humans. However, previous approaches treat clothed humans as a single chunk of geometry without considering the compositionality of clothing and accessories. As a result, individual items cannot be naturally composed into novel identities, leading to limited expressiveness and controllability of generative 3D avatars. While several methods attempt to address this by leveraging synthetic data, the interaction between humans and objects is not authentic due to the domain gap, and manual asset creation is difficult to scale for a wide variety of objects. In this work, we present a novel framework for learning a compositional generative model of humans and objects (backpacks, coats, scarves, and more) from real-world 3D scans. Our compositional model is interaction-aware, meaning the spatial relationship between humans and objects, and the mutual shape change by physical contact is fully incorporated. The key challenge is that, since humans and objects are in contact, their 3D scans are merged into a single piece. To decompose them without manual annotations, we propose to leverage two sets of 3D scans of a single person with and without objects. Our approach learns to decompose objects and naturally compose them back into a generative human model in an unsupervised manner. Despite our simple setup requiring only the capture of a single subject with objects, our experiments demonstrate the strong generalization of our model by enabling the natural composition of objects to diverse identities in various poses and the composition of multiple objects, which is unseen in training data. https://taeksuu.github.io/ncho/",
+      "published": "2023-05-23T17:59:52Z",
+      "updated": "2023-05-29T13:51:25Z",
+      "authors": [
+        "Taeksoo Kim",
+        "Shunsuke Saito",
+        "Hanbyul Joo"
+      ],
+      "categories": [
+        "cs.CV"
+      ],
+      "primary_category": "cs.CV",
+      "doi": "",
+      "arxiv_url": "http://arxiv.org/abs/2305.14345v2",
+      "pdf_url": "https://arxiv.org/pdf/2305.14345v2"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "search_date": "2026-07-29",
+  "agent": "Reasonix",
+  "review_id": "0981e757-e4ed-4645-9959-0872c316c63c",
+  "databases": {
+    "arxiv_primary": {"query": "ti:\"compositional generalization\" OR abs:\"compositional generalization\" AND abs:\"neural network\" AND abs:\"generalization failure\"", "returned": 200, "file": "arxiv-primary-2026-07-29.json"},
+    "arxiv_safety": {"query": "\"alignment\" OR \"mesa-optimization\" AND abs:\"neural network\"", "returned": 200, "file": "arxiv-safety-2026-07-29.json"},
+    "arxiv_benchmark": {"query": "\"SCAN\" OR \"COGS\" OR \"CFQ\" AND \"compositional generalization\"", "returned": 72, "file": "arxiv-benchmark-2026-07-29.json"},
+    "arxiv_broad": {"query": "\"compositional generalization\" AND \"generalization failure\" OR \"representational structure\"", "returned": 146, "file": "arxiv-broad-2026-07-29.json"},
+    "openalex_primary": {"source": "openalex", "query": "\"compositional generalization\" \"neural network\" \"out-of-distribution\"", "returned": "~200", "file": "in_review_library"},
+    "openalex_safety": {"source": "openalex", "query": "\"compositional generalization\" AND \"alignment\" OR \"goal misgeneralization\"", "returned": "~200", "file": "in_review_library"},
+    "smart_search": {"sources": ["openalex","crossref"], "query": "\"compositional generalization\" AND \"AI alignment\" OR \"schema coherence\"", "returned": 50, "file": "in_review_library"},
+    "semantic_scholar": {"status": "failed", "error": "HTTP 429 rate limit", "retry": true}
+  },
+  "manual_databases": {
+    "scopus_primary": {"records": 411, "file": "scopus-prim-2026-07-29.ris"},
+    "scopus_safety": {"records": 160, "file": "scopus-safety-2026-07-29.ris"},
+    "scopus_secondary": {"records": 71, "file": "scopus-sec-2026-07-29.ris"},
+    "wos_primary": {"records": 208, "file": "wos-2026-07-29.ris"},
+    "wos_safety": {"records": 84, "file": "wos-safety-2026-07-29.ris"},
+    "acm_dl": {"records": 166, "file": "acm-2026-07-29.enw"},
+    "ieee_xplore": {"records": 136, "file": "ieee-2026-07-29-part1.ris + part2.ris"}
+  },
+  "citation_chaining": {
+    "seed_papers_round_1": ["Lake & Baroni 2023 (MLC, Nature)", "Kim & Linzen 2020 (COGS)", "Lake & Baroni 2018 (SCAN)", "Keysers et al. 2020 (CFQ)", "Hupkes et al. 2023 (Taxonomy)"],
+    "seed_papers_round_2": ["Ruis et al. 2020 (gSCAN)", "Bahdanau et al. 2019 (CLOSURE)", "Russin et al. 2019", "Csordas et al. 2021", "SLOG"],
+    "total_harvested_all_rounds": 885,
+    "new_unique_candidates": 503,
+    "search_ids": ["2c163074-e69d-469b-961d-a96562e1cd27", "c7b3627c-5e7c-4386-b37f-c3883fc78c77"],
+    "saturation_note": "Round 2 harvested 360 additional but all were duplicates (0 new unique)"
+  },
+  "summary": {
+    "automated_database_records": 1068,
+    "citation_chaining_harvested": 525,
+    "total_records_retrieved_automated": 1593,
+    "manual_records": 1236,
+    "unique_new_estimate": 2807,
+    "note": "~2,807 is pre-dedup across all sources; review library has 632 unique after dedup"
+  },
+  "review_library": {
+    "total_identified": 1075,
+    "duplicates_removed": 443,
+    "unique_for_screening": 632
+  },
+  "limitations": {
+    "psycinfo": "no institutional access",
+    "philpapers": "API blocked (requires JS)",
+    "google_scholar": "860 found, extraction too difficult (Publish or Perish unavailable)",
+    "semantic_scholar": "API rate-limited (HTTP 429)"
+  },
+  "updated": "2026-07-30"
+}
