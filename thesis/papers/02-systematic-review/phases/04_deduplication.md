@@ -96,7 +96,7 @@
 - [x] CSV and RIS exports prepared for screening
 - [x] PRISMA flow diagram initial numbers recorded
 - [x] CC.4.1 satisfied — clean library in `research/clean-library/`
-- [ ] CC.5.3 satisfied — phase completion committed
+- [x] CC.5.3 satisfied — phase completion committed at `ccfec52`
 
 ### Key data sources not yet integrated
 The following data lives in the academic-research-mcp review library (ID: 0981e757) and was not exported to files:
