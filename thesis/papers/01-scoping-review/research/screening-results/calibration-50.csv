@@ -1,0 +1,51 @@
+id,title,machine,human,agree,notes
+P01_2272,"Loopholes, a Window into Value Alignment and the Learning of Meaning",Exclude,Uncertain,False,R-STRUCT
+P01_2724,IRL is hard,Exclude,Exclude,True,R-SUBJ
+P01_1129,From schnitzel to sustainability: Shifting values at Vienna’s urban farmers markets,Exclude,Exclude,True,R-STRUCT
+P01_2220,"3rd International Workshop on Active Inference, IWAI 2022",Exclude,Exclude,True,R-SUBJ
+P01_2725,"The AI Alignment Problem: Why It’s Hard, and Where to Start",Include,Include,True,
+P01_0633,"Risk, return, and resonance: Symbolic considerations in everyday stock selection",Exclude,Exclude,True,R-SUBJ
+P01_0406,DIKWP-Driven Purpose Lifecycle Modeling and Semantic Path Construction,Exclude,Exclude,True,R-STRUCT
+P01_0921,Reflexive Prompt Engineering: A Framework for Responsible Prompt Engineering and AI Interaction Design,Uncertain,Uncertain,True,
+P01_1108,Body of knowledge and knowledge of the body: The early development of metaphor in bilingual children,Uncertain,Exclude,False,
+P01_0804,Synthesizing Images on Perceptual Boundaries of ANNs for Uncovering Human Perceptual Variability on Facial Expressions,Uncertain,Exclude,False,
+P01_1511,Invited commentary on animal models in psychiatry: Animal models of non-conventional human behavior,Exclude,Exclude,True,R-DATE
+P01_0114,A Technical Survey of Reinforcement Learning Techniques for Large Language Models,Exclude,Exclude,True,R-SUBJ
+P01_2405,Humanistic Considerations in Value Alignment for Large-Scale Artificial Intelligence Models,Uncertain,Include,False,
+P01_0280,New Era of AI in Chemical Process Safety: Foundation Models,Uncertain,Exclude,False,
+P01_0669,Shutdown-seeking AI,Uncertain,Include,False,
+P01_2295,A comparison of learning performance in two-dimensional Q-learning by the difference of Q-values alignment,Exclude,Exclude,True,R-DATE
+P01_1807,Uniboost: Global Coordination with Value Alignment for Fair and Efficient Traffic Allocation,Uncertain,Exclude,False,
+P01_0746,Choice Vectors: Streamlining Personal AI Alignment Through Binary Selection,Uncertain,Include,False,
+P01_2473,The significance of structural innovation for value alignment and social innovation in faith-based organizations,Exclude,Exclude,True,R-STRUCT
+P01_2213,Perspective: The Human Values Project,Uncertain,Include,False,
+P01_1161,"'When the occasion comes, the proverb comes': Value Alignment via Proverbial Bank and Synthetic Rules",Uncertain,Include,False,
+P01_2222,"39th CCF National Conference on Computer Applications, CCF NCCA 2024",Exclude,Exclude,True,R-SUBJ
+P01_1436,A Proposal for Artificial Moral Pedagogical Agents,Uncertain,Uncertain,True,
+P01_0998,Learning How to Vote with Principles: Axiomatic Insights Into the Collective Decisions of Neural Networks,Exclude,Exclude,True,R-SUBJ
+P01_0979,The shutdown problem: an AI engineering puzzle for decision theorists,Include,Include,True,
+P01_0557,Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes,Uncertain,Exclude,False,
+P01_0276,Bidirectional transparency in human-agent communications: effects of direction and level of transparency,Uncertain,Exclude,False,
+P01_1299,Aligning Value Creation in Ecosystems through Roadmapping,Exclude,Exclude,True,R-STRUCT
+P01_0909,Toward children-centric AI: a case for a growth model in children-AI interactions,Uncertain,Exclude,False,
+P01_2208,LIFE OR DEATH: EMPLOYING STATE CONSTITUTIONAL PRINCIPLES OF PROPORTIONALITY TO COMBAT THE EXTREME SENTENCING OF EMERGING ADULTS,Exclude,Exclude,True,R-STRUCT
+P01_0914,Agent-to-Agent Theory of Mind: Testing Interlocutor Awareness among Large Language Models,Exclude,Exclude,True,R-SUBJ
+P01_2695,From value alignment to norm competence: How robots and ai will conform to human society. paper presented at,Uncertain,Include,False,
+P01_0138,Data Extraction via Semantic Regular Expression Synthesis,Exclude,Exclude,True,R-SUBJ
+P01_1718,Foundational Moral Values for AI Alignment,Include,Include,True,
+P01_2700,"AI decisions, risk, and ethics: Beyond value alignment",Uncertain,Include,False,
+P01_2265,Policy Aggregation,Uncertain,Include,False,
+P01_1633,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,Include,Include,True,
+P01_0165,Negative Human Rights as a Basis for Long-term AI Safety and Regulation,Uncertain,Uncertain,True,
+P01_0660,A Reasoning and Value Alignment Test to Assess Advanced GPT Reasoning,Include,Include,True,
+P01_0292,From Individual Advocacy to Collective Action Forming Coalitions for Accessible User Experiences Beyond Compliance,Exclude,Exclude,True,R-STRUCT
+P01_2001,ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents,Exclude,Exclude,True,R-STRUCT
+P01_1111,Human-aware AI —A foundational framework for human–AI interaction,Uncertain,Uncertain,True,
+P01_0059,"Can LLMs Really Reason about Code? Studying How Well LLMs Understand the Relation between Input, Code, and Output",Exclude,Exclude,True,R-SUBJ
+P01_1442,Poster Paper: Towards Blockchain-Based AI Alignment Using a Proof of Personhood Consensus Mechanism,Include,Uncertain,False,
+P01_1933,Explainable Verbal Reasoner Plus (EVR+): A Natural Language Reasoning Framework that Supports Diverse Compositional Reasoning,Exclude,Exclude,True,R-STRUCT
+P01_1549,Organizational alignment: A model to explain the relationships between organizational relevant variables,Exclude,Exclude,True,R-DATE
+P01_1769,Steps Towards Value-Aligned Systems,Uncertain,Include,False,
+P01_1270,Changing bushfire management practices to incorporate diverse values of the public,Exclude,Exclude,True,R-SUBJ
+P01_0394,The Unintended Trade-off of AI Alignment: Balancing Hallucination Mitigation and Safety in LLMs This paper contains text that might be offensive.,Uncertain,Include,False,
+P01_1548,Value Co-creation in Project Exchange,Exclude,Exclude,True,R-STRUCT

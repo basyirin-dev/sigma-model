@@ -1,10 +1,14 @@
-% PRISMA 2020 flow diagram — placeholder
-% To be populated with actual numbers in Phase 3 (Database Search).
+% PRISMA 2020 flow diagram — Paper 01 (Scoping Review)
+% Numbers populated from Phase 5 screening (2026-08-01)
+% Records identified: 4,238 file-based + ~953 supplementary = ~5,191
+% After dedup: 2,867 screened
+% Title screening: 1,317 excluded; abstract screening: +272 excluded
+% To full-text: 1,278 (1,118 included + 160 uncertain)
 \begin{tikzpicture}[
     node distance = 8mm and 12mm,
     box/.style = {
         rectangle, draw, rounded corners=2pt,
-        minimum width=5cm, minimum height=1.2cm,
+        minimum width=5.2cm, minimum height=1.2cm,
         align=center, font=\small,
         fill=gray!5
     },
@@ -14,41 +18,57 @@
 
   % Box 1: Records identified
   \node[box] (identify) {
-    Records identified through database searching\\
-    \annote{n = $\square\square$}
+    Records identified from databases \&\\ supplementary sources\\
+    \annote{n = 5,191\ ($\approx$)}
+  };
+
+  % Box 1a: Duplicates removed
+  \node[box, right=of identify] (dupes) {
+    Duplicates removed\\
+    \annote{n = 2,324\ ($\approx$)}
   };
 
   % Box 2: Records screened
   \node[box, below=of identify] (screened) {
-    Records after duplicates removed\\
-    \annote{n = $\square\square$}
+    Records after duplicates removed (screened)\\
+    \annote{n = 2,867}
   };
 
-  % Arrow 1→2
+  % Arrow 1→dupes, 1→2
+  \draw[arrow] (identify) -- (dupes);
   \draw[arrow] (identify) -- (screened);
+
+  % Box 2a: Records excluded at screening
+  \node[box, right=of screened] (excl_screen) {
+    Records excluded (title + abstract screening)\\
+    \annote{n = 1,589}
+  };
+
+  % Arrow 2→2a
+  \draw[arrow] (screened) -- (excl_screen);
 
   % Box 3: Full-text assessed
   \node[box, below=of screened] (fulltext) {
-    Full-text articles assessed for eligibility\\
-    \annote{n = $\square\square$}
+    Records proceeding to full-text assessment\\
+    \annote{n = 1,278}
   };
 
   % Arrow 2→3
   \draw[arrow] (screened) -- (fulltext);
 
-  % Box 4: Records excluded (side of 3)
+  % Box 4: Full-text excluded (Phase 6 — placeholder)
   \node[box, right=of fulltext] (excluded) {
     Full-text articles excluded\\
-    \annote{n = $\square\square$}
+    \annote{n = TBD\ (Phase 6)}
   };
 
   % Arrow 3→4
   \draw[arrow] (fulltext) -- (excluded);
 
-  % Box 5: Studies included
+  % Box 5: Studies included (Phase 6 — placeholder)
   \node[box, below=of fulltext] (included) {
     Studies included in synthesis\\
-    \annote{n = $\square\square$}
+    \annote{n = TBD\ (Phase 6)}
   };
 
   % Arrow 3→5
