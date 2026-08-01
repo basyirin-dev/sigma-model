@@ -1,0 +1,256 @@
+id,title,screener1,screener2,agree
+P01_1188,Aligning Large Multimodal Models with Factually Augmented RLHF,Include,Include,True
+P01_0780,Embedding an Ethical Mind: Aligning Text-to-Image Synthesis via Lightw,Include,Include,True
+P01_2687,Legible normativity for AI alignment: The value of silly rules,Include,Include,True
+P01_1742,Requisite Variety in Ethical Utility Functions for AI Value Alignment,Include,Include,True
+P01_0250,Human-Machine Moral Divergence,Include,Include,True
+P01_0627,Artificial superintelligence alignment in healthcare,Include,Include,True
+P01_1655,AGI Safety Literature Review,Include,Include,True
+P01_0793,Comparing human text classification performance and explainability wit,Include,Include,True
+P01_0649,Measuring and Enhancing Human Value Alignment in Zero-Shot Document-Le,Include,Include,True
+P01_0593,Enhancing out-of-distribution detection with bilateral distribution sc,Include,Include,True
+P01_0478,Differences in Alignment Behavior between Single-Agent and Multi-Agent,Include,Include,True
+P01_2660,The necessary roadblock to artificial general intelligence: Corrigibil,Include,Include,True
+P01_2684,Cognitive Biases and AI Value Alignment: An Interview with Owain Evans,Include,Include,True
+P01_1768,Unintended Harms of Value-Aligned LLMs: Psychological and Empirical In,Include,Include,True
+P01_1185,Society Protect: Developing A Voting Mechanism for Blockchain-based AI,Include,Include,True
+P01_0391,Moral Anchor System: A Predictive Framework for AI Value Alignment and,Include,Include,True
+P01_0311,High-Dimensional Data Stream Classification: Improving Random Patch On,Include,Include,True
+P01_0479,How smart companions reshape psychological well-being in later life: t,Include,Include,True
+P01_1803,Exploring the Impact of AI Value Alignment in Collaborative Ideation: ,Include,Include,True
+P01_2318,Disentangling AI Alignment: A Structured Taxonomy Beyond Safety and Et,Include,Include,True
+P01_0186,The politics of artificial intelligence alignment: Public reactions to,Include,Include,True
+P01_1811,Cross-cultural value alignment frameworks for responsible AI governanc,Include,Include,True
+P01_2656,Relaxed adversarial training for inner alignment,Include,Include,True
+P01_0624,A novel MRI PET image fusion using shearlet transform and pulse coded ,Include,Include,True
+P01_2302,Democratizing value alignment: From authoritarian to democratic AI eth,Include,Include,True
+P01_2304,Can AI Writing Be Salvaged? Mitigating Idiosyncrasies and Improving Hu,Include,Include,True
+P01_0892,The Impact of Artificial Intelligence on Public Sector Decision-Making,Include,Include,True
+P01_2794,Belief-Driven Value Alignment for Human-Robot Collaboration,Include,Include,True
+P01_0862,STELA: a community-centred approach to norm elicitation for AI alignme,Include,Include,True
+P01_2763,Legal reflection and path selection of Generative AI value alignment[ ,Include,Include,True
+P01_1414,Value FULCRA: Mapping Large Language Models to the Multidimensional Sp,Include,Include,True
+P01_2228,"Theories, Techniques, and Evaluation of AI Alignment",Include,Include,True
+P01_1353,"A functional contextual, observer-centric, quantum mechanical, and neu",Include,Include,True
+P01_0918,Nudging Perceived Credibility: The Impact of AIGC Labeling on User Dis,Include,Include,True
+P01_1593,From LLMs to the Global Brain,Include,Include,True
+P01_0927,"Leveraging Human Input to Enable Robust, Interactive, and Aligned AI S",Include,Include,True
+P01_0209,Indian Culture and Physical Literacy Philosophical Alignment,Exclude,Uncertain,False
+P01_0834,Position Paper: Bounded Alignment: What (Not) To Expect From AGI Agent,Include,Include,True
+P01_0437,Winning at All Cost: A Small Environment for Eliciting Specification G,Include,Include,True
+P01_0933,Immune: Improving Safety Against Jailbreaks in Multi-modal LLMs via In,Include,Include,True
+P01_0428,On the Troubled Relation Between AI Ethics and AI Safety,Include,Include,True
+P01_0211,Contemporary Debates in the Ethics of Artificial Intelligence,Include,Include,True
+P01_2383,"AI agents, automaticity, and value alignment in health care",Include,Include,True
+P01_2140,What's the most important value? INVP: INvestigating the Value Priorit,Include,Include,True
+P01_0678,"Helpful, harmless, honest? Sociotechnical limits of AI alignment and s",Include,Include,True
+P01_1390,"Artificial intelligence, human cognition, and conscious supremacy",Include,Include,True
+P01_2353,Intelligence AI alignment and Mamba,Include,Include,True
+P01_1017,The argument for near-term human disempowerment through AI,Include,Include,True
+P01_0688,Cultural Learning-Based Culture Adaptation of Language Models,Include,Include,True
+P01_2774,Causal Reward Adjustment: Mitigating Reward Hacking in External Reason,Include,Include,True
+P01_2791,"Decolonial AI Alignment: Openness, Visesa-Dharma, and Including Exclud",Include,Include,True
+P01_0604,Against the Manhattan project framing of AI alignment,Include,Include,True
+P01_1363,A Cautionary Tale About AI-Generated Goal Suggestions,Include,Include,True
+P01_0407,Preventing Process Reward Model Hacking When Training Large Language M,Include,Include,True
+P01_1728,Concept Alignment as a Prerequisite for Value Alignment,Include,Include,True
+P01_2172,Guaranteeing the Learning of Ethical Behaviour through Multi-Objective,Include,Include,True
+P01_1697,SoliReward: Mitigating Susceptibility to Reward Hacking and Annotation,Include,Include,True
+P01_0928,Potential for near-term AI risks to evolve into existential threats in,Include,Include,True
+P01_0594,Mechanistic Interpretability: A New Trend in Interpretability Research,Include,Include,True
+P01_2539,Flames: Benchmarking value alignment of chinese large language models,Include,Include,True
+P01_1225,Value Alignment from Unstructured Text,Include,Include,True
+P01_0467,Culturally-Grounded Multi-dimensional Alignment of LLMs with Chinese S,Include,Include,True
+P01_2392,Spontaneous Reward Hacking in Iterative Self-Refinement,Include,Include,True
+P01_2658,Corrigibility with utility preservation,Include,Include,True
+P01_2838,Composable Assurance for AI Alignment: A Framework for Propagating For,Include,Include,True
+P01_1432,A Collective Intelligence Approach to Safe Artificial General Intellig,Include,Include,True
+P01_0357,Multi-objective reinforcement learning for provably incentivising alig,Include,Include,True
+P01_0768,Minding Motivation: The Effect of Intrinsic Motivation on Agent Behavi,Include,Include,True
+P01_2378,Reflections on the AI alignment problem,Include,Include,True
+P01_0881,Analyzing values about gendered language reform in LLMs' revisions,Include,Include,True
+P01_1619,Deceptive Alignment Monitoring,Include,Include,True
+P01_1007,HicAgent: Hierarchical Iterative Cooperative Learning Reward Generatio,Include,Include,True
+P01_1328,AI VALUE ALIGNMENT AND SOCIOLOGY OF MORALITY,Include,Include,True
+P01_1958,The Policy Cliff: A Theoretical Analysis of Reward-Policy Maps in Larg,Include,Include,True
+P01_1599,Value Learning for Value-Aligned Route Choice Modeling via Inverse Rei,Include,Include,True
+P01_1641,The Horcrux: Mechanistically Interpretable Task Decomposition for Dete,Include,Include,True
+P01_2127,Observation Interference in Partially Observable Assistance Games,Include,Include,True
+P01_2387,"For example, recent instances of ‘reward hacking’ reveal how AI system",Include,Include,True
+P01_2827,Generalizing Alignment Paradigm of Text-to-Image Generation with Prefe,Include,Include,True
+P01_0629,Reinforcement Learning without Explicit Rewards: Theory and Practice,Include,Include,True
+P01_1766,Roadmap on Incentive Compatibility for AI Alignment and Governance in ,Include,Include,True
+P01_0755,Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conce,Include,Include,True
+P01_2583,AI alignment and the role of human oversight in generative models,Include,Include,True
+P01_0725,Non-maximizing Policies that Fulfill Multi-criterion Aspirations in Ex,Include,Include,True
+P01_2336,Human Value Alignment in AI,Include,Include,True
+P01_2440,Mechanisms of AI art innovation and AI value alignment in the AIGC era,Include,Include,True
+P01_2152,Environment-Centered Design of Ethical Environments,Include,Include,True
+P01_2844,High-Dimension Human Value Representation in Large Language Models,Include,Include,True
+P01_0363,"Fostering AI alignment through blockchain, proof of personhood and zer",Include,Include,True
+P01_2767,Ethical challenges in AI value alignment and pathways to mitigation[ J,Include,Include,True
+P01_2162,AS SIMPLE AS FINE-TUNING: LLM ALIGNMENT VIA BIDIRECTIONAL NEGATIVE FEE,Include,Include,True
+P01_1706,'AI Alignment' Encompasses Competing Technical Priorities,Include,Include,True
+P01_0961,Anthropology for AI,Include,Include,True
+P01_2831,KorNAT: LLM Alignment Benchmark for Korean Social Values and Common Kn,Include,Include,True
+P01_2810,YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering,Include,Include,True
+P01_1647,Corrigibility Transformation: Constructing Goals That Accept Updates,Include,Include,True
+P01_1278,Shared moral foundations of embodied artificial intelligence,Include,Include,True
+P01_2246,Maia-2: A Unified Model for Human-AI Alignment in Chess,Include,Include,True
+P01_1749,A Revealed Preference Framework for AI Alignment,Include,Include,True
+P01_2329,A Checks-and-Balances Framework for Context-Aware Ethical AI Alignment,Include,Include,True
+P01_0833,Can Large Language Models Grasp Abstract Visual Concepts in Videos? A ,Include,Include,True
+P01_1167,"Value Alignment, Fair Play, and the Rights of Service Robots",Include,Include,True
+P01_0894,Decentering Reformed Martyrdom from Calvin and the Martyrologies Throu,Exclude,Include,False
+P01_1718,Foundational Moral Values for AI Alignment,Include,Include,True
+P01_1366,Friendly AI,Include,Include,True
+P01_2635,Non-obstruction: A simple concept motivating corrigibility,Include,Include,True
+P01_1440,Integrating Quantitative and Qualitative Reasoning for Value Alignment,Include,Include,True
+P01_0019,The Multi-Agent Off-Switch Game,Include,Include,True
+P01_0971,Uncovering Contradictions in Human-AI Interactions: Lessons Learned fr,Include,Include,True
+P01_0797,Artificial Intimacy: Exploring Normativity and Personalization Through,Include,Include,True
+P01_2608,Consequentialism & corrigibility,Include,Include,True
+P01_0969,Uncovering the Impact of Chain-of-Thought Reasoning for Direct Prefere,Include,Include,True
+P01_1694,MO-GRPO: Mitigating Reward Hacking of Group Relative Policy Optimizati,Include,Include,True
+P01_0698,MAJD: Intent-Aware Multi-Agent Framework for Jailbreak Defense,Include,Include,True
+P01_1296,Steps towards value-aligned systems,Include,Include,True
+P01_0569,Aligning explanations with human values: context-sensitive trust calib,Include,Include,True
+P01_0474,Preserving the Integrity of Evidence-Based Social Work in the Age of A,Include,Include,True
+P01_1627,Do Prompt-Elicited Trajectories Reflect Training-Time Reward Hacking? ,Include,Include,True
+P01_0721,Bringing AI participation down to scale,Include,Include,True
+P01_1329,Why the Failure? How Adversarial Examples Can Provide Insights for Int,Include,Include,True
+P01_0307,LLM ethics benchmark: a three-dimensional assessment system for evalua,Include,Include,True
+P01_2427,The obscure politics of artificial intelligence: A Marxian socio-techn,Include,Include,True
+P01_0665,Reversing the logic of generative AI alignment: a pragmatic approach f,Include,Include,True
+P01_2693,AI alignment.,Include,Include,True
+P01_0202,"Artificial Superintelligence: Computational Pathways, Architectures, a",Include,Include,True
+P01_1709,Methodological reflections for AI alignment research using human feedb,Include,Include,True
+P01_0541,TouchAI: Exploring human–AI perceptual alignment in touch through lang,Include,Include,True
+P01_0801,SEAL: Systematic Error Analysis for Value ALignment,Include,Include,True
+P01_2212,Second Thoughts are Best: Learning to Re-Align With Human Values from ,Include,Include,True
+P01_0477,CircuChain: Disentangling Competence and Compliance in LLM Circuit Ana,Include,Include,True
+P01_1307,TauchiGPT_V2: Opensource AI Tool Designed to Assist in Academic Resear,Include,Include,True
+P01_1420,Nicolas de Condorcet and the first intelligence explosion hypothesis,Include,Include,True
+P01_2833,"Taming Simulators: Challenges, Pathways and Vision for the Alignment o",Include,Include,True
+P01_2125,Action-Dependent Optimality-Preserving Reward Shaping,Include,Include,True
+P01_2289,Superintelligence as a cause or cure for risks of astronomical sufferi,Include,Include,True
+P01_1769,Steps Towards Value-Aligned Systems,Include,Include,True
+P01_2852,FGD-Align: Pluralistic Alignment for Large Language Models via Fuzzy G,Include,Include,True
+P01_0987,The Elephant in the Room: Why AI Safety Demands Diverse Teams,Include,Include,True
+P01_0752,Exploring Multilingual Concepts of Human Values in Large Language Mode,Include,Include,True
+P01_1447,Provably safe artificial general intelligence via interactive proofs,Include,Include,True
+P01_2639,AGI safety from first principles,Include,Include,True
+P01_0938,TreeRL: LLM Reinforcement Learning with On-Policy Tree Search,Include,Include,True
+P01_2819,Taking Principles Seriously: A Hybrid Approach to Value Alignment in A,Include,Include,True
+P01_1370,Orthogonality-based disentanglement of responsibilities for ethical in,Include,Include,True
+P01_1797,Dialogical Reasoning Across AI Architectures: A Multi-Model Framework ,Include,Include,True
+P01_2305,Towards friendly AI: A comprehensive review and new perspectives on hu,Include,Include,True
+P01_1216,A short introduction to the ethics of artificial intelligence,Include,Include,True
+P01_1334,Addressing the Value Alignment Problem Through Online Institutions,Include,Include,True
+P01_1676,Information-Theoretic Reward Modeling for Stable RLHF: Detecting and M,Include,Include,True
+P01_0508,Scaling Up AI Alignment,Include,Include,True
+P01_2322,A data-driven generative strategy to avoid reward hacking in multi-obj,Include,Include,True
+P01_1040,Artificial Intelligence: Approaches to Safety,Include,Include,True
+P01_1379,An Enactive Approach to Value Alignment in Artificial Intelligence: A ,Include,Include,True
+P01_1944,MISR: Measuring Instrumental Self-Reasoning in Frontier Models,Include,Include,True
+P01_2215,Transforming and Combining Rewards for Aligning Large Language Models,Include,Include,True
+P01_1693,Value Alignment Verification,Include,Include,True
+P01_2219,THE EFFECTS OF REWARD MISSPECIFICATION: MAPPING AND MITIGATING MISALIG,Include,Include,True
+P01_0867,RMAAC: Joint Markov Games and Robust Multiagent Actor-Critic for Expla,Exclude,Exclude,True
+P01_1223,Interpretable Preferences via Multi-Objective Reward Modeling and Mixt,Include,Include,True
+P01_1137,MoVEMo: A structured approach for engineering reward functions,Include,Include,True
+P01_0812,Normative conflicts and shallow AI alignment,Include,Include,True
+P01_1794,Counterfactual Reasoning for Steerable Pluralistic Value Alignment of ,Include,Include,True
+P01_0825,EXISTENTIAL RISK FROM TRANSFORMATIVE AI: AN ECONOMIC PERSPECTIVE,Include,Include,True
+P01_1078,Decision-Maker Alignment: Benchmark Datasets,Include,Include,True
+P01_1764,Diverse Human Value Alignment for Large Language Models via Ethical Re,Include,Include,True
+P01_0272,"Procedural Compliance, Substantive Transgression: Uncovering How Align",Include,Include,True
+P01_0647,Multi-Value Alignment for LLMs via Value Decorrelation and Extrapolati,Include,Include,True
+P01_0719,CERN for AI: a theoretical framework for autonomous simulation-based a,Include,Include,True
+P01_0251,Parallel Diffusion Solver via Residual Dirichlet Policy Optimization,Include,Include,True
+P01_1714,What Makes a Medical Checker Trainable? Diagnosing Signal Collapse and,Include,Include,True
+P01_1243,Error-correction for ai safety,Include,Include,True
+P01_0818,Unintended Harms of Value-Aligned LLMs: Psychological and Empirical In,Include,Include,True
+P01_0220,Stance-Dependent Fallacy Judgments and Rhetorical Structure: A Computa,Include,Include,True
+P01_2491,AI value alignment: guiding artificial intelligence towards shared hum,Include,Include,True
+P01_1679,Pedagogical Safety in Educational Reinforcement Learning: Formalizing ,Include,Include,True
+P01_2085,WARM: On the Benefits of Weight Averaged Reward Models,Include,Include,True
+P01_2799,To Mask or to Mirror: Human-AI Alignment in Collective Reasoning,Include,Include,True
+P01_1912,Empirical Evidence for Alignment Faking in a Small LLM and Prompt-Base,Include,Include,True
+P01_1638,The Energy Loss Phenomenon in RLHF: A New Perspective on Mitigating Re,Include,Include,True
+P01_1058,A Vision for Value-Aligned AI-Driven Systems,Include,Include,True
+P01_1645,Value Alignment and Trust in Human-Robot Interaction: Insights from Si,Include,Include,True
+P01_2480,Reinforcement-learning-from-human-feedback (RLHF) is a training approa,Include,Include,True
+P01_1325,FLAMES: Benchmarking Value Alignment of LLMs in Chinese,Include,Include,True
+P01_0495,An Explainable HCI-Based Decision Support Framework for Human-AI Co-De,Include,Include,True
+P01_0790,Elucidating Optimal Reward-Diversity Tradeoffs in Text-to-Image Diffus,Include,Include,True
+P01_2781,Empirical Evidence for Alignment Faking in a Small LLM and Prompt-Base,Include,Include,True
+P01_2157,When Can Proxies Improve the Sample Complexity of Preference Learning?,Include,Include,True
+P01_2855,Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignme,Include,Include,True
+P01_2861,Measuring Error Alignment for Decision-Making Systems,Include,Include,True
+P01_2620,Value alignment verification for safe artificial intelligence systems,Include,Include,True
+P01_1652,Teaching Models to Verbalize Reward Hacking in Chain-of-Thought Reason,Include,Include,True
+P01_2446,An ability to respond begins with inner alignment: How phase synchroni,Include,Include,True
+P01_0937,AI alignment is all your need for future drug discovery,Include,Include,True
+P01_2173,Feedback Loops With Language Models Drive In-Context Reward Hacking,Include,Include,True
+P01_2418,A matter of principle? AI alignment as the fair treatment of claims,Include,Include,True
+P01_2186,Learning from Active Human Involvement through Proxy Value Propagation,Include,Include,True
+P01_0643,Evolution of ESG Investing and Its Inclusion in Behavioral Finance,Include,Include,True
+P01_1724,AI Alignment and Social Choice: Fundamental Limitations and Policy Imp,Include,Include,True
+P01_0487,Beyond Chat: A Design Strategy for Enhancing Alignment Between User Re,Include,Include,True
+P01_0744,METAETHICAL FOUNDATIONS OF ARTIFICIAL INTELLIGENCE ALIGNMENT METHODOLO,Include,Include,True
+P01_0810,CARMO: Dynamic Criteria Generation for Context Aware Reward Modelling,Include,Include,True
+P01_0414,Moral Endogeneity in Artificial Intelligence from the Perspective of M,Include,Include,True
+P01_0777,A matter of principle? AI alignment as the fair treatment of claims,Include,Include,True
+P01_2637,Distinguishing Definitions of Takeoff. AI Alignment Forum,Include,Include,True
+P01_1746,Value Alignment Tax: Measuring Value Trade-offs in LLM Alignment,Include,Include,True
+P01_2316,"Helpful, harmless, honest? Sociotechnical limits of AI alignment and s",Include,Include,True
+P01_2541,"Decolonial AI Alignment: Openness, VÍses. a-Dharma, and the Role of In",Include,Include,True
+P01_0448,Cloud Platforms in Transition: AI Agents as Intelligent Intermediaries,Include,Include,True
+P01_2632,AI safety via market making,Include,Exclude,False
+P01_2450,Open-source can be dangerous: On the vulnerability of value alignment ,Include,Include,True
+P01_2361,Training on documents about reward hacking induces reward hacking,Include,Include,True
+P01_1668,Defining and Characterizing Reward Hacking,Include,Include,True
+P01_2367,Position: Towards Bidirectional Human-AI Alignment,Include,Include,True
+P01_2274,Stepwise Alignment for Constrained Language Model Policy Optimization,Include,Include,True
+P01_0847,"Human-Aligned GAI Driven by Conceptual Knowledge: System, Framework, a",Include,Include,True
+P01_0465,Beyond Patches: Mining Interpretable Part-Prototypes for Explainable A,Include,Include,True
+P01_0529,An Affective-Taxis Hypothesis for Alignment and Interpretability,Include,Include,True
+P01_2668,The Main Sources of AI Risk? AI Alignment Forum,Include,Include,True
+P01_0650,Safeguarding the dead donor rule in the age of normothermic regional p,Exclude,Include,False
+P01_0687,User Experience Design Professionals' Perceptions of Generative Artifi,Include,Include,True
+P01_1177,Value Cores for Inner and Outer Alignment: Simulating Personality Form,Include,Include,True
+P01_2823,Value FULCRA: Mapping Large Language Models to the Multidimensional Sp,Include,Include,True
+P01_0910,Exemplarization and Generalization,Exclude,Include,False
+P01_0565,On the Artificial Aesthetic Education of an Architect,Include,Include,True
+P01_0512,VC-Soup: Value-Consistency Guided Multi-Value Alignment for Large Lang,Include,Include,True
+P01_2223,ComVas: Contextual Moral Values Alignment System,Include,Include,True
+P01_2258,Modeling AGI safety frameworks with causal influence diagrams,Include,Include,True
+P01_0229,"AI and My Values: User Perceptions of LLMs' Ability to Extract, Embody",Include,Include,True
+P01_1617,School of Reward Hacks: Hacking harmless tasks generalizes to misalign,Include,Include,True
+P01_2170,Position: Foundation Agents as the Paradigm Shift for Decision Making,Include,Include,True
+P01_2586,Monitoring for deceptive alignment,Include,Include,True
+P01_2311,Rlaif: Reinforcement learning from human feedback to mitigate reward h,Include,Include,True
+P01_2718,The AI alignment problem: Why it is hard,Include,Include,True
+P01_1409,Relationship Between Trust in the Artificial Intelligence Creator and ,Include,Include,True
+P01_0997,To Mask or to Mirror: Human-AI Alignment in Collective Reasoning,Include,Include,True
+P01_1139,Vision Paper: Advancing of AI Explainability for the Use of ChatGPT in,Include,Include,True
+P01_2486,Beyond participation: Towards a community-led approach to value alignm,Include,Include,True
+P01_0582,Homeroom: A Value-Aligned and Community-Centered Homeschooling Platfor,Exclude,Exclude,True
+P01_0858,Developing Effective and Value-Aligned AI Tools for Journalists: 12 Cr,Include,Include,True
+P01_1170,"Norms, Rewards, and the Intentional Stance: Comparing Machine Learning",Include,Include,True
+P01_1064,A tyrannical societal something: Drawing lessons for twenty-first-cent,Include,Include,True
+P01_1323,AI Alignment and Human Reward,Include,Include,True
+P01_0844,Computational Frameworks for Human Care,Include,Include,True
+P01_2449,Challenges and future directions of Data-Centric AI alignment,Include,Include,True
+P01_0672,BeyondGender: A Multifaceted Bilingual Dataset for Practical Sexism De,Include,Include,True
+P01_0817,Philosophical Investigations into AI Alignment: A Wittgensteinian Fram,Include,Include,True
+P01_1671,UMM-RM: An Upcycle-and-Merge MoE Reward Model for Mitigating Reward Ha,Include,Include,True
+P01_0310,Charting cross-cultural AI perception: An exploratory study of expecta,Include,Include,True
+P01_0262,Reward Hacking Mitigation using Verifiable Composite Rewards,Include,Include,True
+P01_0491,An Identity Based Agent Model for AI Value Alignment,Include,Include,True
+P01_0453,Optimising multi-value alignment: a multi-objective evolutionary strat,Include,Include,True
+P01_2110,Decoding Safety Feedback from Diverse Raters: A Data-driven Lens on Re,Include,Include,True
+P01_1750,Enhancing Value Alignment of LLMs with Multi-agent system and Combinat,Include,Include,True
+P01_1809,Moral Anchor System: A Predictive Framework for AI Value Alignment and,Include,Include,True
+P01_0871,A Note on “Philosophical Investigations into AI Alignment: A Wittgenst,Include,Include,True

@@ -13,10 +13,6 @@ hbar_env_stable/
 venv/
 .venv/
 
-# Data archives (large files)
-*.zip
-*.tar.gz
-
 # IDE
 .vscode/
 .idea/
@@ -26,20 +22,6 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
-
-# Kaggle payloads (generated artifacts)
-kaggle_payloads/
-hackathon/kaggle_payloads/
-
-# Hackathon data archives (cancelled tracks)
-hackathon/COGS.zip
-hackathon/COGS/
-hackathon/SCAN.zip
-hackathon/SCAN/
-hackathon/am-i-compositional.zip
-hackathon/am-i-compositional/
-hackathon/hbar_env_stable/
-hackathon/SHA256SUMS
 
 # Jupyter
 .ipynb_checkpoints/
@@ -57,92 +39,24 @@ hackathon/SHA256SUMS
 *.lof
 *.lot
 
-# arXiv submission directory (not to be tracked)
-arxiv-submission/
-
-# Intermediate markdown files (not to be tracked)
-*.md
-!README.md
-!docs/claims-registry.md
-!docs/figure-alt-text.md
-!docs/notation-registry.md
-!artifacts/model-cards/*.md
-!artifacts/datasheets/*.md
-!artifacts/demo-links.md
-!HARDWARE.md
-
-# ==========================================
-# Build Artifacts & Raw Outputs
-# ==========================================
+# Build / Output
 paper/manuscript.pdf
 paper/figures/*.png
-results_b64/
-new_results_b64/
-h-bar-experiment-results/
-experiments/output/
 
-# ==========================================
-# Canonical Results (tracked explicitly)
-# ==========================================
-!results/canonical/
-
-# ==========================================
-# Archive (manifest tracked; tarballs ignored)
-# ==========================================
+# Archive (large files)
 archive/*.tar.gz
-!archive/FAILURE_MANIFEST.md
+archive/*.zip
 
-# ==========================================
-# Local Dev & Personal
-# ==========================================
+# Local / Personal
 .opencode/
 opencode.json.bak*
 
-# ==========================================
-# Internal / Personal Docs (caught by *.md)
-# ==========================================
-gap_conflict_map.md
-program.md
-integration_map.md
-checkpoint_a_review.md
-checkpoint_b_review.md
-CHANGELOG.md
-maintenance_workflow.md
-kaggle-runbook.md
-STUDY_PLAN.md
-STUDY_LOG.md
-STUDY_LESSONS.md
-docs/monitoring/
+# Coverage
+.coverage
 
-# ==========================================
-# Audit Log Tracking (negations)
-# ==========================================
-!docs/drift-log.md
-!docs/issue-compilation.md
-!docs/figure-alt-text.md
-!docs/link-audit.md
-
-# Allow tracking of specific .tex files in documentation
-!documentation/appendix_b_cognitive_extensions.tex
-
-# Python package build artifacts
+# Python package build
 code/*.egg-info/
 
-# OpenCode config
-!opencode.json
-
-# Scripts (track all)
-!scripts/*.py
-
-# ==========================================
-# Personal / Internal (not for public repo)
-# ==========================================
-AGENTS.md
-submission/
-.coverage
-docs/monitoring/*.json
-docs/monitoring/.state.json
-docs/proof-reconstruction/audit-matrix.tex
-docs/proof-reconstruction/erratum.tex
-docs/proof-reconstruction/preamble.tex
-docs/proof-reconstruction/main.bbl
+# Paper 01/02 full-text PDFs (large artifacts — not committed)
+research/pdfs/
+thesis/papers/*/research/pdfs/
