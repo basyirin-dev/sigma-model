@@ -18,7 +18,7 @@ P01_0189,Belief-Driven Value Alignment for Human-Robot Collaboration,2026,10.160
 P01_0194,Beyond Vibe Decision Theory: Asymmetric Manipulation Vulnerabilities in LLM Multi-Agent Coordination,2026,10.65109/CSL07280,,paywalled,openalex,,Include
 P01_0195,Alignment with Psychological Concept Network,2026,10.1007/978-981-95-4384-7_36,,paywalled,openalex,,Include
 P01_0199,Data sparse inference of operator spatial reward models in uncertain environments,2026,10.3389/frobt.2026.1751002,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Ray_2026_oa.pdf,Include
-P01_0202,"Artificial Superintelligence: Computational Pathways, Architectures, and Safety Constraints",2026,10.1109/ICISS67859.2026.11453907,,paywalled,openalex,,Include
+P01_0202,"Artificial Superintelligence: Computational Pathways, Architectures, and Safety Constraints",2026,10.1109/ICISS67859.2026.11453907,,retrieved-manual,openalex,"research/pdfs/Assistant, K.R_2026.pdf",Include
 P01_0204,"Human-AI Interaction Alignment: Designing, Evaluating, and Evolving Value-Centered AI For Reciprocal Human-AI Futures",2026,10.1145/3772363.3778710,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Shen_2026_oa.pdf,Include
 P01_0205,Learning the Value Systems of Societies with Preference-based Multi-objective Reinforcement Learning,2026,10.65109/NLVD8864,,paywalled,openalex,,Include
 P01_0209,Indian Culture and Physical Literacy Philosophical Alignment,2026,10.4324/9781032703466-50,,paywalled,openalex,,Include
@@ -29,7 +29,7 @@ P01_0214,Value Function Shaping-Based Backdoor Attacks on Deep Reinforcement Lea
 P01_0215,ACT: A Conceptual Framework for Understanding and Controlling Trustworthiness in Controllable AI,2026,10.1109/ACCESS.2026.3694817,,oa-link-failed,openalex,,Uncertain
 P01_0217,Beyond Step Pruning: Information Theory Based Step-level Optimization for Self-Refining Large Language Models,2026,10.1609/aaai.v40i41.40798,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Zhao_2026_oa.pdf,Include
 P01_0218,Justifications for Democratizing AI Alignment and Their Prospects,2026,10.1007/978-3-032-07132-3_10,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Steingr_ber_2026_oa.pdf,Include
-P01_0219,The Many Faces of AI Alignment,2026,10.1002/9781394258840.ch18,,paywalled,openalex,,Include
+P01_0219,The Many Faces of AI Alignment,2026,10.1002/9781394258840.ch18,,paywalled-confirmed,openalex,,Include
 P01_0220,Stance-Dependent Fallacy Judgments and Rhetorical Structure: A Computationally Assisted Case Study of Tolstoy’s What Is Art?,2026,10.1007/s10503-026-09704-4,,paywalled,openalex,,Include
 P01_0222,The specification game: rethinking the evaluation of drug response prediction for precision oncology,2025,10.1186/s13321-025-00972-y,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Codic_2025_oa.pdf,Include
 P01_0223,AI-exhibited Personality Traits Can Shape Human Self-concept through Conversations,2026,10.1145/3772318.3790654,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Li_2026_oa.pdf,Include
@@ -47,14 +47,14 @@ P01_0251,Parallel Diffusion Solver via Residual Dirichlet Policy Optimization,20
 P01_0252,The Power of Stories: Narrative Priming in Networked Multi-Agent LLM Interactions,2026,10.1007/978-3-032-09315-8_11,,paywalled,openalex,,Include
 P01_0255,Multi-objective reinforcement learning for designing ethical multi-agent environments,2025,10.1007/s00521-023-08898-y,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Rodriguez_Soto_2025_oa.pdf,Include
 P01_0256,Quantitative Analysis Model for Multi-Component Gas Infrared Spectrum Based on the Transformer Structure,2026,10.3788/LOP250829,,paywalled,openalex,,Include
-P01_0259,Could We Control Superintelligent AI?,2026,10.1002/9781394258840.ch19,,paywalled,openalex,,Include
+P01_0259,Could We Control Superintelligent AI?,2026,10.1002/9781394258840.ch19,,paywalled-confirmed,openalex,,Include
 P01_0261,FGD-Align: Pluralistic Alignment for Large Language Models via Fuzzy Group Decision-Making,2026,10.1609/aaai.v40i21.38819,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Pan_2026_oa.pdf,Include
 P01_0262,Reward Hacking Mitigation using Verifiable Composite Rewards,2025,10.1145/3765612.3767230,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Bin_Tarek_2025_oa.pdf,Include
 P01_0263,"They Do the Right Thing, Right? Large Language Models’ Decisions in Ethical Dilemmas Involving Robots",2026,10.1007/978-3-032-30846-7_36,,paywalled,openalex,,Include
 P01_0264,AI Alignment: The Case for Including Animals,2025,10.1007/s13347-025-00979-1,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Tse_2025_oa.pdf,Include
 P01_0265,"A framework for evaluation of large language models in essay assessment: Reliability, alignment, and causal reasoning",2026,10.1016/j.caeai.2026.100565,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Liu_2026_oa.pdf,Include
 P01_0267,NP-Hard Lower Bound Complexity for Semantic Self-Verification,2026,10.18653/v1/2026.eacl-long.60,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Young_2026_oa.pdf,Uncertain
-P01_0272,"Procedural Compliance, Substantive Transgression: Uncovering How Alignment Failures in the Doubao System Drive Boundary Violations in Professional Contexts",2026,10.1109/AINIT70033.2026.11557612,,paywalled,openalex,,Include
+P01_0272,"Procedural Compliance, Substantive Transgression: Uncovering How Alignment Failures in the Doubao System Drive Boundary Violations in Professional Contexts",2026,10.1109/AINIT70033.2026.11557612,,retrieved-manual,openalex,research/pdfs/Li_2026.pdf,Include
 P01_0273,Thinking Forward and Backward: Multi-Objective Reinforcement Learning for Retrieval-Augmented Reasoning,2026,10.1609/aaai.v40i40.40675,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Wei_2026_oa.pdf,Include
 P01_0274,A Method of Heuristic Human-LLM Collaborative Source Search,2025,10.16182/j.issn1004731x.joss.25-FZ0646E,,paywalled,openalex,,Include
 P01_0275,Exploring ‘Value Alignment’: A Genealogy and Three Conceptions,2026,10.1007/978-3-032-13063-1_11,,paywalled,openalex,,Include
@@ -73,9 +73,9 @@ P01_0310,"Charting cross-cultural AI perception: An exploratory study of expecta
 P01_0311,High-Dimensional Data Stream Classification: Improving Random Patch Online Ensemble Classifier,2025,10.30880/jscdm.2025.06.03.011,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Bensaoula_2025_oa.pdf,Include
 P01_0312,Adaptive Prompt Elicitation for Text-to-Image Generation,2026,10.1145/3742413.3789149,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Wen_2026_oa.pdf,Include
 P01_0313,Composable Assurance for AI Alignment: A Framework for Propagating Formal Safety Properties Through MLOps,2026,10.1609/aaai.v40i44.41151,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Zhao_2026_oa.pdf,Include
-P01_0319,XAI2Brain: A Perspective on Mechanistic Interpretability for Brain–AI Alignment,2026,10.3390/make8060167,,oa-link-failed,openalex,,Include
+P01_0319,XAI2Brain: A Perspective on Mechanistic Interpretability for Brain–AI Alignment,2026,10.3390/make8060167,,retrieved-manual,openalex,research/pdfs/Jiang_2026.pdf,Include
 P01_0320,Interactionless Inverse Reinforcement Learning: A Data-Centric Framework for Durable Alignment,2026,10.65109/LCMH1709,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Malomgr_2026_oa.pdf,Include
-P01_0321,Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligned Agentic Intelligence,2026,10.1109/ACCESS.2026.3654907,,oa-link-failed,openalex,,Include
+P01_0321,Toward Constitutional Autonomy in AI Systems: A Theoretical Framework for Aligned Agentic Intelligence,2026,10.1109/ACCESS.2026.3654907,,retrieved-manual,openalex,research/pdfs/Torgbi Agbemabiese_2026.pdf,Include
 P01_0322,"Governing Generative AI for Healthy Ageing: A Normative Conceptual Framework for Societal Alignment, Epistemic Authority, and Value Convergence in Geriatric Care",2026,10.3390/healthcare14121660,,oa-link-failed,openalex,,Include
 P01_0324,Reinforcement Learning With Verifier Guidance and Penalty Shaping for Vietnamese Summarization Using Small Language Models,2026,10.1109/ACCESS.2026.3701952,,oa-link-failed,openalex,,Include
 P01_0325,Stability of value perception: minimal influence of framing on moral attributions to a humanoid robot,2026,10.1038/s41598-025-28831-8,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Marchesi_2026_oa.pdf,Include
@@ -134,10 +134,10 @@ P01_0447,Metacognition of ChatGPT in confidence judgements,2026,10.3389/frai.202
 P01_0448,Cloud Platforms in Transition: AI Agents as Intelligent Intermediaries Disrupting the Traditional Saas Subscription Model,2026,10.1109/ICCCES62661.2026.11437322,,paywalled,openalex,,Include
 P01_0453,Optimising multi-value alignment: a multi-objective evolutionary strategy for normative multi-agent systems,2025,10.1007/s00521-024-10625-0,,paywalled,openalex,,Include
 P01_0457,On AI Alignment and the Later Wittgenstein: a Response To Sorin Bangu,2025,10.1007/s13347-025-00993-3,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/P_rez_Escobar_2025_oa.pdf,Include
-P01_0460,Transparent by Design: Ensuring Safety in Agentic AI Through Decision Traceability,2026,10.1201/9781003657804-1,,paywalled,openalex,,Include
+P01_0460,Transparent by Design: Ensuring Safety in Agentic AI Through Decision Traceability,2026,10.1201/9781003657804-1,,paywalled-confirmed,openalex,,Include
 P01_0465,Beyond Patches: Mining Interpretable Part-Prototypes for Explainable AI,2026,10.1609/aaai.v40i44.41052,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Alehdaghi_2026_oa.pdf,Include
 P01_0467,Culturally-Grounded Multi-dimensional Alignment of LLMs with Chinese Social Values,2026,10.1007/978-981-95-8525-0_14,,paywalled,openalex,,Include
-P01_0469,Flow-Multi: A Flow-Matching Multi-Reward Framework for Text-to-Image Generation,2026,10.3390/s26041120,,oa-link-failed,openalex,,Include
+P01_0469,Flow-Multi: A Flow-Matching Multi-Reward Framework for Text-to-Image Generation,2026,10.3390/s26041120,,retrieved-manual,openalex,research/pdfs/Lee_2026.pdf,Include
 P01_0470,"Different Models, Different Values: Educational Preference Structures across Alignment Methodologies in Large Language Models",2026,10.5220/0014949500004021,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Autenrieth_2026_oa.pdf,Uncertain
 P01_0472,Four Settings and a Proposal for the Exploration of Value Alignment in AI,2026,10.1007/978-3-032-13063-1_13,,paywalled,openalex,,Include
 P01_0474,Preserving the Integrity of Evidence-Based Social Work in the Age of AI: A Proposed Ethical Framework,2026,10.1080/26408066.2025.2587092,,paywalled,openalex,,Include
@@ -161,18 +161,18 @@ P01_0508,Scaling Up AI Alignment,2026,10.1609/aaai.v40i46.41335,,retrieved-oa,op
 P01_0509,Adaptive Quine Structures for Metacognitive Evolution in Large Language Models: A Functional Framework with Gödelian Bounds and Illustrative Applications,2026,10.3390/math14132371,,oa-link-failed,openalex,,Uncertain
 P01_0511,Learning the value systems of agents with preference-based and inverse reinforcement learning,2026,10.1007/s10458-026-09732-0,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Holgado_S_nchez_2026_oa.pdf,Uncertain
 P01_0512,VC-Soup: Value-Consistency Guided Multi-Value Alignment for Large Language Models,2026,10.1145/3774904.3793058,,paywalled,openalex,,Include
-P01_0514,Hierarchical process-level generative reward modeling with adaptive long-horizon reasoning for robust LLM alignment,2026,10.1016/j.ipm.2026.104957,,paywalled,openalex,,Include
+P01_0514,Hierarchical process-level generative reward modeling with adaptive long-horizon reasoning for robust LLM alignment,2026,10.1016/j.ipm.2026.104957,,retrieved-manual,openalex,research/pdfs/Chen_2026.pdf,Include
 P01_0518,HADA: Human-AI Agent Decision Alignment Architecture,2026,10.1007/978-3-032-15632-7_5,,paywalled,openalex,,Include
 P01_0519,Attribution Analysis-based Concept Alignment: A Human-in-the-loop Data Debugging Framework,2026,10.1609/aaai.v40i21.38793,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Chai_2026_oa.pdf,Include
 P01_0521,Decentralized Value Systems Agreements,2026,10.65109/FXWO5737,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Hern_ndez_S_nchez_2026_oa.pdf,Include
-P01_0522,Neurodivergent influenceability in agentic AI as a contingent solution to the AI alignment problem,2026,10.1093/pnasnexus/pgag076,,oa-link-failed,openalex,,Include
+P01_0522,Neurodivergent influenceability in agentic AI as a contingent solution to the AI alignment problem,2026,10.1093/pnasnexus/pgag076,,retrieved-manual,openalex,research/pdfs/Hernandez-Espinosa_2026.pdf,Include
 P01_0524,Scaling International Legal Workflows with Ordinis: A Neuro-Symbolic Framework for GenAI in High-Stakes Domains,2026,10.1145/3769126.3769223,,paywalled,openalex,,Include
 P01_0525,Getting in Contract with Large Language Models—An Agency Theory Perspective on Large Language Model Alignment,2026,10.1007/978-3-032-08480-4_4,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Kaltenpoth_2026_oa.pdf,Include
 P01_0527,Causal Reward Adjustment: Mitigating Reward Hacking in External Reasoning via Backdoor Correction,2026,10.1609/aaai.v40i39.40584,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Song_2026_oa.pdf,Include
 P01_0529,An Affective-Taxis Hypothesis for Alignment and Interpretability,2026,10.1007/978-3-032-00800-8_17,,paywalled,openalex,,Include
 P01_0531,Do You Trust Me? Cognitive-Affective Signatures of Trustworthiness in Large Language Models,2026,10.1145/3774904.3792925,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Yeo_2026_oa.pdf,Uncertain
 P01_0535,Ethical Governance Frameworks for AGI in Cyber-Physical Systems,2026,10.1109/SoutheastCon63549.2026.11476039,,paywalled,openalex,,Include
-P01_0539,Testing Obedience and Control in AGI: Exploring Irrational Commands and the AI Control Problem,2026,10.1007/978-981-95-3658-0_69,,paywalled,openalex,,Include
+P01_0539,Testing Obedience and Control in AGI: Exploring Irrational Commands and the AI Control Problem,2026,10.1007/978-981-95-3658-0_69,,paywalled-confirmed,openalex,,Include
 P01_0541,TouchAI: Exploring human–AI perceptual alignment in touch through language model representations,2026,10.1016/j.ijhcs.2026.103765,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Zhong_2026_oa.pdf,Include
 P01_0544,Towards culture driven artificial intelligence to bridge the cultural cognition gap,2026,10.1007/s44163-026-01060-2,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Younas_2026_oa.pdf,Include
 P01_0550,What Would It Look Like to Align Humans with Ants?,2026,10.1002/9781394258840.ch17,,paywalled,openalex,,Include
@@ -193,8 +193,8 @@ P01_0584,A Reinforcement Learning Framework for Robust and Secure LLM Watermarki
 P01_0586,"A Mathematical Formulation of AGI in the (C, U, V) Framework",2026,10.1016/j.eng.2025.08.034,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/He_2026_oa.pdf,Include
 P01_0592,Instilling Organisational Values in Firefighters Through Simulation-Based Training,2026,10.1007/978-3-032-13063-1_14,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Osman_2026_oa.pdf,Include
 P01_0593,Enhancing out-of-distribution detection with bilateral distribution score,2026,10.1016/j.neunet.2026.108718,,paywalled,openalex,,Include
-P01_0594,Mechanistic Interpretability: A New Trend in Interpretability Research,2026,10.1527/tjsai.41-4_AN40-D,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Aoki_2026_oa.pdf,Include
-P01_0597,Building Robust Artificial Intelligence Through Multi-Agent Debate,2026,10.1007/978-3-032-06558-2_5,,paywalled,openalex,,Include
+P01_0594,Mechanistic Interpretability: A New Trend in Interpretability Research,2026,10.1527/tjsai.41-4_AN40-D,,retrieved-manual,openalex,research/pdfs/Aoki_2026.pdf,Include
+P01_0597,Building Robust Artificial Intelligence Through Multi-Agent Debate,2026,10.1007/978-3-032-06558-2_5,,paywalled-confirmed,openalex,,Include
 P01_0598,Specification-Guided Reinforcement Learnin,2026,10.1609/aaai.v40i48.42142,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Ambadkar_2026_oa.pdf,Include
 P01_0604,Against the Manhattan project framing of AI alignment,2026,10.1111/mila.12548,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Friederich_2026_oa.pdf,Include
 P01_0607,Value Alignment and Expertise Drift: Value Differences in Manual Data Annotation Based on BERT Models,2026,10.1007/978-3-032-29900-0_12,,paywalled,openalex,,Include
@@ -219,14 +219,14 @@ P01_0641,Why Go Heavy? Rethinking Visual Information Reduction in EEG-to-Image A
 P01_0643,Evolution of ESG Investing and Its Inclusion in Behavioral Finance,2026,10.4324/9781003593881-2,,paywalled,openalex,,Include
 P01_0644,Navigating AI-Animal Alignment: A Reply to Coghlan and Parker,2026,10.1007/s13347-026-01049-w,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Moret_2026_oa.pdf,Uncertain
 P01_0645,When Drawing Is Not Enough: Exploring Spontaneous Speech with Sketch for Intent Alignment in Multimodal LLMs,2026,10.1145/3802974.3809463,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Shi_2026_oa.pdf,Include
-P01_0646,Navigating the Ethics of Artificial Intelligence,2025,10.3390/encyclopedia5040201,,oa-link-failed,openalex,,Include
+P01_0646,Navigating the Ethics of Artificial Intelligence,2025,10.3390/encyclopedia5040201,,retrieved-manual,openalex,research/pdfs/Harris_2025.pdf,Include
 P01_0647,Multi-Value Alignment for LLMs via Value Decorrelation and Extrapolation,2026,10.1609/aaai.v40i40.40708,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Xu_2026_oa.pdf,Include
 P01_0649,Measuring and Enhancing Human Value Alignment in Zero-Shot Document-Level Claim Extraction,2026,10.1145/3774904.3792299,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Hao_2026_oa.pdf,Include
 P01_0650,"Safeguarding the dead donor rule in the age of normothermic regional perfusion: organismic unity, irreversibility, and epistemic responsibility",2026,10.1007/s11017-026-09752-7,,paywalled,openalex,,Uncertain
 P01_0651,A Survey on Quality Metrics for Text-to-Image Generation,2025,10.1109/TVCG.2025.3585077,,paywalled,openalex,,Uncertain
 P01_0652,Weights-Rotated Preference Optimization for Large Language Models,2025,10.18653/v1/2025.emnlp-main.1329,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Yang_2025_oa.pdf,Include
 P01_0653,Towards neuroadaptive chatbots: a feasibility study,2025,10.3389/fnrgo.2025.1589734,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Gherman_2025_oa.pdf,Include
-P01_0655,Is superintelligence necessarily moral?,2024,10.1093/analys/anae033,,oa-link-failed,openalex,,Include
+P01_0655,Is superintelligence necessarily moral?,2024,10.1093/analys/anae033,,retrieved-manual,openalex,research/pdfs/Dung_2024.pdf,Include
 P01_0657,Harnessing Metacognition for Safe and Responsible AI,2025,10.3390/technologies13030107,,oa-link-failed,openalex,,Include
 P01_0660,A Reasoning and Value Alignment Test to Assess Advanced GPT Reasoning,2024,10.1145/3670691,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/McIntosh_2024_oa.pdf,Include
 P01_0664,Generative AI-Enhanced Chatbot Design for Constructionist Gaming,2025,10.1007/978-3-031-74138-8_34,,paywalled,openalex,,Include
@@ -256,9 +256,9 @@ P01_0700,Approximated Variational Bayesian Inverse Reinforcement Learning for La
 P01_0704,Blind Faith? User Preference and Expert Assessment of AI-Generated Religious Content,2025,10.1145/3715275.3732162,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Alam_2025_oa.pdf,Include
 P01_0705,YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering,2025,10.18653/v1/2025.acl-long.675,,paywalled,openalex,,Include
 P01_0707,The neglect of qualia and consciousness in AI alignment research,2025,10.1201/9781003565659-11,,paywalled,openalex,,Include
-P01_0709,Reward Model Interpretability via Optimal and Pessimal Tokens,2025,10.1145/3715275.3732068,,oa-link-failed,openalex,,Include
+P01_0709,Reward Model Interpretability via Optimal and Pessimal Tokens,2025,10.1145/3715275.3732068,,retrieved-manual,openalex,research/pdfs/Christian_2025.pdf,Include
 P01_0710,Diverse Skill Discovery for Quadruped Robots via Unsupervised Learning,2025,10.1109/AIHCIR67580.2025.11405350,,paywalled,openalex,,Include
-P01_0711,Towards Value Alignment for Opaque Agents Through Concept Analysis and Inter-Agent Value Modelling,2024,10.3233/FAIA240212,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/McKinlay_2024_oa.pdf,Include
+P01_0711,Towards Value Alignment for Opaque Agents Through Concept Analysis and Inter-Agent Value Modelling,2024,10.3233/FAIA240212,,retrieved-manual,openalex,research/pdfs/McKinlay_2024.pdf,Include
 P01_0712,Research on Aligning Large Models with Human Values Using Lora Fine-Tuning,2025,10.1109/CEI66465.2025.11398511,,paywalled,openalex,,Include
 P01_0714,When AI “possesses” personality: Roles of good and evil personalities influence moral judgment in large language models,2025,10.3724/SP.J.1041.2025.0929,,oa-link-failed,openalex,,Include
 P01_0715,Expectation Preference Optimization: Reliable Preference Estimation for Improving the Reasoning Capability of Large Language Models,2025,10.18653/v1/2025.emnlp-main.1532,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Li_2025_oa.pdf,Include
@@ -277,7 +277,7 @@ P01_0738,Psychopathia Machinalis: A Nosological Framework for Understanding Path
 P01_0739,Securing AGI-driven drone communications for climate change: A comprehensive review of deep learning-based IDS,2025,10.4018/979-8-3693-6457-4.ch005,,paywalled,openalex,,Include
 P01_0741,An Instructible Chemist-AI Alignment Framework for Generating Quaternary Ammonium Compound Structures,2025,10.1145/3711896.3737227,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Pan_2025_oa.pdf,Include
 P01_0742,Chat Vector: A Simple Approach to Equip LLMs with Instruction Following and Model Alignment in New Languages,2024,10.18653/v1/2024.acl-long.590,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Huang_2024_oa.pdf,Include
-P01_0744,METAETHICAL FOUNDATIONS OF ARTIFICIAL INTELLIGENCE ALIGNMENT METHODOLOGICAL APPROACHES AND THEIR LIMITATIONS,2025,10.17323/2587-8719-2025-3-277-302,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Snetkov_2025_oa.pdf,Include
+P01_0744,METAETHICAL FOUNDATIONS OF ARTIFICIAL INTELLIGENCE ALIGNMENT METHODOLOGICAL APPROACHES AND THEIR LIMITATIONS,2025,10.17323/2587-8719-2025-3-277-302,,retrieved-manual,openalex,research/pdfs/Snetkov_2025.pdf,Include
 P01_0746,Choice Vectors: Streamlining Personal AI Alignment Through Binary Selection,2025,10.3390/mti9030022,,oa-link-failed,openalex,,Include
 P01_0747,User-Feedback-based On Device AI Alignment System for AR HUDs in Automotive Applications,2025,10.1109/ISMAR-Adjunct68609.2025.00220,,paywalled,openalex,,Include
 P01_0750,"Reward Hacking in Reinforcement Learning and RLHF: A Multidisciplinary Examination of Vulnerabilities, Mitigation Strategies, and Alignment Challenges",2025,10.1109/ICSC65596.2025.11140447,,paywalled,openalex,,Include
@@ -295,7 +295,7 @@ P01_0776,The Tong Test: Evaluating Artificial General Intelligence Through Dynam
 P01_0777,A matter of principle? AI alignment as the fair treatment of claims,2025,10.1007/s11098-025-02300-4,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Gabriel_2025_oa.pdf,Include
 P01_0780,Embedding an Ethical Mind: Aligning Text-to-Image Synthesis via Lightweight Value Optimization,2024,10.1145/3664647.3681652,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Wang_2024_oa.pdf,Include
 P01_0783,Collaborative Work with Highly Automated Marine Navigation Systems,2024,10.1007/s10606-022-09450-7,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Veitch_2024_oa.pdf,Include
-P01_0787,Cybersecurity,2025,10.4337/9781035336906.00044,,paywalled,openalex,,Include
+P01_0787,Cybersecurity,2025,10.4337/9781035336906.00044,,retrieved-manual,openalex,research/pdfs/Liu_2026.pdf,Include
 P01_0788,"Exploring the Impact of AI Value Alignment in Collaborative Ideation: Effects on Perception, Ownership, and Output",2024,10.1145/3613905.3650892,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Guo_2024_oa.pdf,Include
 P01_0790,Elucidating Optimal Reward-Diversity Tradeoffs in Text-to-Image Diffusion Models,2025,10.1109/WACV61041.2025.00033,,paywalled,openalex,,Include
 P01_0793,Comparing human text classification performance and explainability with large language and machine learning models using eye-tracking,2024,10.1038/s41598-024-65080-7,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Divya_Venkatesh_2024_oa.pdf,Include
@@ -309,10 +309,10 @@ P01_0804,Synthesizing Images on Perceptual Boundaries of ANNs for Uncovering Hum
 P01_0807,Counter-productivity and suspicion: two arguments against talking about the AGI control problem,2025,10.1007/s11098-025-02379-9,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Stenseke_2025_oa.pdf,Include
 P01_0809,"Bias, machine learning, and conceptual engineering",2025,10.1007/s11098-024-02273-w,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Rudolph_2025_oa.pdf,Include
 P01_0810,CARMO: Dynamic Criteria Generation for Context Aware Reward Modelling,2025,10.18653/v1/2025.findings-acl.114,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Gupta_2025_oa.pdf,Include
-P01_0811,AI welfare risks,2025,10.1007/s11098-025-02343-7,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Moret_2025_oa.pdf,Include
+P01_0811,AI welfare risks,2025,10.1007/s11098-025-02343-7,,retrieved-manual,openalex,research/pdfs/Moret_2025.pdf,Include
 P01_0812,Normative conflicts and shallow AI alignment,2025,10.1007/s11098-025-02347-3,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Milli_re_2025_oa.pdf,Include
 P01_0815,Value-aligned but misguided: a dilemma in AI and AGI decision making,2025,10.1007/s11229-025-05232-y,,paywalled,openalex,,Include
-P01_0816,Refusal Behavior in Large Language Models: A Nonlinear Perspective,2025,10.1109/IJCNN64981.2025.11228760,,paywalled,openalex,,Include
+P01_0816,Refusal Behavior in Large Language Models: A Nonlinear Perspective,2025,10.1109/IJCNN64981.2025.11228760,,retrieved-manual,openalex,research/pdfs/Hildebrandt_2025.pdf,Include
 P01_0817,Philosophical Investigations into AI Alignment: A Wittgensteinian Framework,2024,10.1007/s13347-024-00761-9,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/P_rez_Escobar_2024_oa.pdf,Include
 P01_0818,Unintended Harms of Value-Aligned LLMs: Psychological and Empirical Insights,2025,10.18653/v1/2025.acl-long.1532,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Choi_2025_oa.pdf,Include
 P01_0820,Towards a Distributed Platform for Normative Reasoning and Value Alignment in Multi-agent Systems,2024,10.1007/978-3-031-58202-8_14,,paywalled,openalex,,Include
@@ -368,7 +368,7 @@ P01_0912,ValueCSV: Evaluating Core Socialist Values Understanding in Large Lang
 P01_0916,Bridging the Integrity Gap: Towards AI-assisted Design Research,2024,10.1145/3613905.3647962,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Oksanen_2024_oa.pdf,Include
 P01_0917,A Roadmap for Alignable Algorithmic Decision-Makers in the Medical Triage Domain,2025,10.1109/CAI64502.2025.00203,,paywalled,openalex,,Include
 P01_0918,Nudging Perceived Credibility: The Impact of AIGC Labeling on User Distinction of AI-Generated Content,2025,10.1177/27523543251317572,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Li_2025_oa.pdf,Include
-P01_0920,Aesthetic Value and the AI Alignment Problem,2024,10.1007/s13347-024-00816-x,,paywalled,openalex,,Include
+P01_0920,Aesthetic Value and the AI Alignment Problem,2024,10.1007/s13347-024-00816-x,,retrieved-manual,openalex,research/pdfs/Helliwell_2024.pdf,Include
 P01_0923,Trust in Aligned AI Decision Makers,2025,10.1109/CAI64502.2025.00202,,paywalled,openalex,,Include
 P01_0924,Can AI Model the Complexities of Human Moral Decision-making? A Qualitative Study of Kidney Allocation Decisions,2025,10.1145/3706598.3714167,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Keswani_2025_oa.pdf,Uncertain
 P01_0926,Value-Aware Multiagent Systems,2025,10.1007/978-3-031-82039-7_3,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Osman_2025_oa.pdf,Include
@@ -408,12 +408,12 @@ P01_0984,"Adaptable robots, ethics, and trust: a qualitative and philosophical e
 P01_0987,The Elephant in the Room: Why AI Safety Demands Diverse Teams,2025,10.1007/978-3-031-84457-7_22,,paywalled,openalex,,Include
 P01_0989,An Evolutionary Perspective on AI Alignment,2025,10.1609/aaai.v39i28.35276,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Mattsson_2025_oa.pdf,Include
 P01_0990,Value Learning for Value-Aligned Route Choice Modeling via Inverse Reinforcement Learning,2025,10.1007/978-3-031-85463-7_3,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Holgado_S_nchez_2025_oa.pdf,Uncertain
-P01_0992,The Neglect of Qualia and Consciousness in AI Alignment Research,2025,10.1007/978-3-031-98808-0_11,,paywalled,openalex,,Include
+P01_0992,The Neglect of Qualia and Consciousness in AI Alignment Research,2025,10.1007/978-3-031-98808-0_11,,paywalled-confirmed,openalex,,Include
 P01_0994,Responsible Development of Offensive AI,2025,10.1109/ICAIDE65466.2025.11189736,,paywalled,openalex,,Include
 P01_0997,To Mask or to Mirror: Human-AI Alignment in Collective Reasoning,2025,10.18653/v1/2025.emnlp-main.122,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Qian_2025_oa.pdf,Include
 P01_0999,ChatGPT: towards AI subjectivity,2025,10.1007/s00146-024-01898-z,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/D_Amato_2025_oa.pdf,Include
 P01_1004,Integrating Generative AI into Your Development Workflow,2025,10.1515/9783111677798-009,,paywalled,openalex,,Include
-P01_1007,HicAgent: Hierarchical Iterative Cooperative Learning Reward Generation Guided by a Large Model,2025,10.1109/BDDM68348.2025.11442170,,paywalled,openalex,,Include
+P01_1007,HicAgent: Hierarchical Iterative Cooperative Learning Reward Generation Guided by a Large Model,2025,10.1109/BDDM68348.2025.11442170,,retrieved-manual,openalex,research/pdfs/Kan_2025.pdf,Include
 P01_1008,A Phase-Based Ethical Alignment Framework for Mitigating In-Context Scheming Behaviour in Superintelligent Systems,2025,10.1109/ICECIT67774.2025.11450986,,paywalled,openalex,,Include
 P01_1012,“Provably fair” algorithms may perpetuate racial and gender bias: a study of salary dispute resolution,2025,10.1007/s10458-025-09703-x,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Hale_2025_oa.pdf,Include
 P01_1013,Bidirectional Human-AI Alignment: Emerging Challenges and Opportunities,2025,10.1145/3706599.3716291,,paywalled,openalex,,Include
@@ -488,7 +488,7 @@ P01_1173,Augmented utilitarianism for AGI safety,2019,10.1007/978-3-030-27005-6_
 P01_1174,"On Autonomy, Governance, and Values: An AGV Approach to Value Engineering",2024,10.1007/978-3-031-58202-8_10,,paywalled,openalex,,Include
 P01_1175,AI ethics and value alignment for nonhuman animals,2021,10.3390/philosophies6020031,,oa-link-failed,openalex,,Include
 P01_1176,AI safety: State of the field through quantitative lens,2020,10.23919/MIPRO48935.2020.9245153,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Juric_2020_oa.pdf,Include
-P01_1177,Value Cores for Inner and Outer Alignment: Simulating Personality Formation via Iterated Policy Selection and Preference Learning with Self-World Modeling Active Inference Agents,2023,10.1007/978-3-031-28719-0_24,,paywalled,openalex,,Include
+P01_1177,Value Cores for Inner and Outer Alignment: Simulating Personality Formation via Iterated Policy Selection and Preference Learning with Self-World Modeling Active Inference Agents,2023,10.1007/978-3-031-28719-0_24,,retrieved-manual,openalex,research/pdfs/Safron_2023.pdf,Include
 P01_1180,Cross-lingual Back-Parsing: Utterance Synthesis from Meaning Representation for Zero-Resource Semantic Parsing,2024,10.18653/v1/2024.emnlp-main.792,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Kang_2024_oa.pdf,Include
 P01_1181,Transformers discover an elementary calculation system exploiting local attention and grid-like problem representation,2022,10.1109/IJCNN55064.2022.9892619,,oa-link-failed,openalex,,Include
 P01_1185,Society Protect: Developing A Voting Mechanism for Blockchain-based AI Alignment,2024,10.1109/BCCA62388.2024.10844386,,paywalled,openalex,,Include
@@ -506,7 +506,7 @@ P01_1200,Validating metrics for reward alignment in human-autonomy teaming,2023,
 P01_1204,Hard Choices and Hard Limits in Artificial Intelligence,2021,10.1145/3461702.3462539,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Goodman_2021_oa.pdf,Uncertain
 P01_1206,Cybersecurity and privacy in smart bioprinting,2023,10.1016/j.bprint.2023.e00321,,paywalled,openalex,,Include
 P01_1215,Artificial intelligence and indigenous perspectives: Protecting and empowering intelligent human beings,2020,10.1145/3375627.3375845,,paywalled,openalex,,Include
-P01_1216,A short introduction to the ethics of artificial intelligence,2020,10.1093/oso/9780190905033.003.0001,,paywalled,openalex,,Include
+P01_1216,A short introduction to the ethics of artificial intelligence,2020,10.1093/oso/9780190905033.003.0001,,paywalled-confirmed,openalex,,Include
 P01_1223,Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts,2024,10.18653/v1/2024.findings-emnlp.620,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Wang_2024_oa.pdf,Include
 P01_1225,Value Alignment from Unstructured Text,2024,10.18653/v1/2024.emnlp-industry.81,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Padhi_2024_oa.pdf,Include
 P01_1229,Practical Ethical Issues for Artificial Intelligence in Education,2022,10.1007/978-3-031-22918-3_34,,paywalled,openalex,,Include
@@ -546,7 +546,7 @@ P01_1296,Steps towards value-aligned systems,2020,10.1145/3375627.3375872,,retri
 P01_1301,Exploiting Moral Values to Choose the Right Norms,2018,10.1145/3278721.3278735,,paywalled,openalex,,Include
 P01_1302,Pleasure addiction via brain-manipulating technologies as a possible contributor to civilizational decline,2023,10.1016/j.futures.2023.103215,,paywalled,openalex,,Include
 P01_1303,AI Alignment Dialogues: An Interactive Approach to AI Alignment in Support Agents,2022,10.1145/3514094.3539531,,paywalled,openalex,,Include
-P01_1305,Enhancing Reinforcement Learning Finetuned Text-to-Image Generative Model Using Reward Ensemble,2024,10.1007/978-3-031-63031-6_19,,paywalled,openalex,,Include
+P01_1305,Enhancing Reinforcement Learning Finetuned Text-to-Image Generative Model Using Reward Ensemble,2024,10.1007/978-3-031-63031-6_19,,paywalled-confirmed,openalex,,Include
 P01_1306,Unpacking the Ethical Value Alignment in Big Models,2023,10.7544/issn1000-1239.202330553,,paywalled,openalex,,Include
 P01_1307,TauchiGPT_V2: Opensource AI Tool Designed to Assist in Academic Research,2024,10.54941/ahfe1004567,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Farooq_2024_oa.pdf,Uncertain
 P01_1308,Invited Talk: The Coming AI Hackers,2021,10.1007/978-3-030-78086-9_26,,paywalled,openalex,,Include
@@ -554,7 +554,7 @@ P01_1310,MARNet: Backdoor Attacks Against Cooperative Multi-Agent Reinforcement 
 P01_1312,Back to Basics: Revisiting REINFORCE-Style Optimization for Learning from Human Feedback in LLMs,2024,10.18653/v1/2024.acl-long.662,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Ahmadian_2024_oa.pdf,Include
 P01_1314,Dynamic Automaton-Guided Reward Shaping for Monte Carlo Tree Search,2021,10.1609/aaai.v35i13.17427,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Velasquez_2021_oa.pdf,Include
 P01_1315,"Artificial thinking and doomsday projections: a discourse on trust, ethics and safety",2023,10.1007/s00146-023-01810-1,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/White_2023_oa.pdf,Include
-P01_1316,Towards agi agent safety by iteratively improving the utility function,2020,10.1007/978-3-030-52152-3_21,,paywalled,openalex,,Include
+P01_1316,Towards agi agent safety by iteratively improving the utility function,2020,10.1007/978-3-030-52152-3_21,,retrieved-manual,openalex,research/pdfs/Holtman_2020.pdf,Include
 P01_1318,Training Value-Aligned Reinforcement Learning Agents Using a Normative Prior,2024,10.1109/TAI.2024.3363122,,paywalled,openalex,,Include
 P01_1319,'Affordances' for Machine Learning,2023,10.1145/3593013.3594000,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Davis_2023_oa.pdf,Uncertain
 P01_1320,The Goofus & Gallant Story Corpus for Practical Value Alignment,2024,10.1109/ICMLA61862.2024.00098,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Al_Nahian_2024_oa.pdf,Include
@@ -573,7 +573,7 @@ P01_1342,"A survey of the potential long-Term impacts of ai: How ai could lead t
 P01_1344,Calibrating machine behavior: a challenge for AI alignment,2023,10.1007/s10676-023-09716-8,,paywalled,openalex,,Include
 P01_1349,Human-in-the-Loop Ethical AI for Care Robots and Confucian Virtue Ethics,2022,10.1007/978-3-031-24670-8_59,,paywalled,openalex,,Uncertain
 P01_1352,An Ontology for Value Awareness Engineering,2024,10.5220/0012595500003636,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Holgado_S_nchez_2024_oa.pdf,Uncertain
-P01_1353,"A functional contextual, observer-centric, quantum mechanical, and neuro-symbolic approach to solving the alignment problem of artificial general intelligence: safe AI through intersecting computational psychological neuroscience and LLM architecture for emergent theory of mind",2024,10.3389/fncom.2024.1395901,,retrieved-oa,openalex,thesis/papers/01-scoping-review/research/pdfs/Edwards_2024_oa.pdf,Include
+P01_1353,"A functional contextual, observer-centric, quantum mechanical, and neuro-symbolic approach to solving the alignment problem of artificial general intelligence: safe AI through intersecting computational psychological neuroscience and LLM architecture for emergent theory of mind",2024,10.3389/fncom.2024.1395901,,retrieved-manual,openalex,research/pdfs/Edwards_2024.pdf,Include
 P01_1356,Do We Need to Understand Social Robots to Grant Them Rights?,2020,10.3233/FAIA200960,,paywalled,openalex,,Uncertain
 P01_1359,Less Hallucination and More Factuality: Human Values Alignment in Text Summarization,2024,10.1007/978-981-97-9671-7_14,,paywalled,openalex,,Include
 P01_1363,A Cautionary Tale About AI-Generated Goal Suggestions,2022,10.1145/3543758.3547539,,oa-link-failed,openalex,,Include
@@ -1033,11 +1033,11 @@ P01_2382,Neurodivergent influenceability as a contingent solution to the ai alig
 P01_2383,"AI agents, automaticity, and value alignment in health care",2025,,,no-doi,none,,Uncertain
 P01_2384,New Perspectives on AI Alignment,2025,,,no-doi,none,,Include
 P01_2385,Measuring AI alignment with human flourishing,2025,,,no-doi,none,,Include
-P01_2387,"For example, recent instances of ‘reward hacking’ reveal how AI systems can exploit scoring loopholes in tasks assigned by users to maximize rewards—knowingly deviating from user intent—highlighting the dangers of emergent misalignment even in systems capable of understanding their own deception: ‘Recent frontier models are reward hacking",2025,,,no-doi,none,,Include
+P01_2387,"For example, recent instances of ‘reward hacking’ reveal how AI systems can exploit scoring loopholes in tasks assigned by users to maximize rewards—knowingly deviating from user intent—highlighting the dangers of emergent misalignment even in systems capable of understanding their own deception: ‘Recent frontier models are reward hacking",2025,,,paywalled-confirmed,none,,Include
 P01_2388,Pluralism in AI Value Alignment: Motivations and Methods,2025,,,no-doi,none,,Uncertain
 P01_2391,A neurosymbolic approach to AI alignment,2024,,,no-doi,none,,Include
 P01_2392,Spontaneous Reward Hacking in Iterative Self-Refinement,2024,,,no-doi,none,,Include
-P01_2396,FLAMES: Benchmarking value alignment of LLMs in Chinese,2024,,,no-doi,none,,Uncertain
+P01_2396,FLAMES: Benchmarking value alignment of LLMs in Chinese,2024,,,retrieved-manual,none,research/pdfs/Sun_2024.pdf,Uncertain
 P01_2399,Representative social choice: From learning theory to ai alignment,2024,,,no-doi,none,,Include
 P01_2403,Social choice for ai alignment: Dealing with diverse human feedback,2024,,,no-doi,none,,Include
 P01_2404,Incentive compatibility for ai alignment in sociotechnical systems: Positions and prospects,2024,,,no-doi,none,,Include
@@ -1067,7 +1067,7 @@ P01_2439,Human-AI alignment for responsible governance,2024,,,no-doi,none,,Inclu
 P01_2440,Mechanisms of AI art innovation and AI value alignment in the AIGC era (01),2024,,,no-doi,none,,Uncertain
 P01_2441,Value Alignment without Institutional Change Cannot Prevent the Societal Risks of Artificial Intelligence,2024,,,no-doi,none,,Uncertain
 P01_2442,ValueCompass: A framework for measuring contextual value alignment between human and LLMs,2024,,,no-doi,none,,Uncertain
-P01_2443,Deceptive alignment,2024,,,no-doi,none,,Include
+P01_2443,Deceptive alignment,2024,,,retrieved-manual,none,research/pdfs/Safron_2023.pdf,Include
 P01_2444,How ethical should AI be? How AI alignment shapes the risk preferences of llms,2024,,,no-doi,none,,Include
 P01_2446,An ability to respond begins with inner alignment: How phase synchronisation effects transitions to higher levels of agency,2024,,,no-doi,none,,Include
 P01_2447,Value alignment in the generative ai augmented workforce [Preprint],2024,,,no-doi,none,,Uncertain
@@ -1159,7 +1159,7 @@ P01_2650,Business analysis method for constructing business-AI alignment model,2
 P01_2653,Clarifying inner alignment terminology,2020,,,no-doi,none,,Include
 P01_2654,Incomplete contracting and AI alignment,2019,,,no-doi,none,,Include
 P01_2656,Relaxed adversarial training for inner alignment,2019,,,no-doi,none,,Include
-P01_2657,Augmented Utilitarianism for AGI Safety,2019,,,no-doi,none,,Include
+P01_2657,Augmented Utilitarianism for AGI Safety,2019,,,retrieved-manual,none,research/pdfs/Aliman_2019.pdf,Include
 P01_2658,Corrigibility with utility preservation,2019,,,no-doi,none,,Uncertain
 P01_2660,The necessary roadblock to artificial general intelligence: Corrigibility,2019,,,no-doi,none,,Include
 P01_2665,Implications of quantum computing for artificial intelligence alignment research,2019,,,no-doi,none,,Include
@@ -1215,7 +1215,7 @@ P01_2777,Incomplete Contracting and Al Alignment,2019,,,no-doi,none,,Include
 P01_2778,Minding Motivation: The Effect of Intrinsic Motivation on Agent Behaviors,2025,,,no-doi,none,,Include
 P01_2781,Empirical Evidence for Alignment Faking in a Small LLM and Prompt-Based Mitigation Techniques,2025,,,no-doi,none,,Include
 P01_2782,A Rolling Stone Gathers No Moss: Adaptive Policy Optimization for Stable Self-Evaluation in Large Multimodal Models,2026,,,no-doi,none,,Include
-P01_2783,Regularized Best-of-N Sampling with Minimum Bayes Risk Objective for Language Model Alignment,2025,,,no-doi,none,,Include
+P01_2783,Regularized Best-of-N Sampling with Minimum Bayes Risk Objective for Language Model Alignment,2025,,,retrieved-manual,none,research/pdfs/Jinnai_2025.pdf,Include
 P01_2784,Step-GRPO: Enhancing Reasoning Quality and Efficiency via Structured PRM-Based Reinforcement Learning,2026,,,no-doi,none,,Include
 P01_2785,Multi-Metric Preference Alignment for Generative Speech Restoration,2026,,,no-doi,none,,Include
 P01_2786,ARTIFICIAL INTELLIGENCE CALLS FOR INNER ALIGNMENT (AI FOR IA),2021,,,no-doi,none,,Include
@@ -1254,7 +1254,7 @@ P01_2828,SEAL: Systematic Error Analysis for Value ALignment,2025,,,no-doi,none,
 P01_2829,Back to Basics: Revisiting REINFORCE-Style Optimization for Learning from Human Feedback in LLMs,2024,,,no-doi,none,,Include
 P01_2831,KorNAT: LLM Alignment Benchmark for Korean Social Values and Common Knowledge,2024,,,no-doi,none,,Include
 P01_2832,Second Thoughts are Best: Learning to Re-AlignWith Human Values from Text Edits,2022,,,no-doi,none,,Include
-P01_2833,"Taming Simulators: Challenges, Pathways and Vision for the Alignment of Large Language Models",2023,,,no-doi,none,,Include
+P01_2833,"Taming Simulators: Challenges, Pathways and Vision for the Alignment of Large Language Models",2023,,,retrieved-manual,none,research/pdfs/Bereska_2023.pdf,Include
 P01_2834,Nothing ComesWithout Its World - Practical Challenges of Aligning LLMs to Situated Human Values through RLHF,2024,,,no-doi,none,,Include
 P01_2836,Beyond Patches: Mining Interpretable Part-Prototypes for Explainable AI,2026,,,no-doi,none,,Include
 P01_2837,"Leveraging Human Input to Enable Robust, Interactive, and Aligned AI Systems",2025,,,no-doi,none,,Include

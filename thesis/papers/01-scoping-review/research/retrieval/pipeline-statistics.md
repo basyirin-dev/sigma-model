@@ -3,8 +3,8 @@
 | Stage | Count |
 |-------|------:|
 | Total sought for retrieval | 1,278 |
-| Full texts retrieved (arXiv + OA) | 516 |
-| Paywalled / not retrievable | 762 |
+| Full texts retrieved (arXiv + OA) | 537 |
+| Paywalled / not retrievable | 741 |
 | Excluded after full-text review | 10 |
 |   — FT-NO-SUBJECT | 7 |
 |   — FT-NARROW | 3 |
