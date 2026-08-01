@@ -1,5 +1,7 @@
-%% PRISMA 2020 flow diagram placeholder — to be filled in Phase 3/4
-%% Adapted from PRISMA 2020 template
+%% PRISMA 2020 flow diagram — Paper 02 (σ-Trap Systematic Review)
+%% Numbers from Phase 5 screening (2026-08-01)
+%% Identified ~2,807 (pre-dedup) -> 1,435 screened -> 395 to full-text
+%% Full-text/included/meta-analysis: TBD (Phase 6/9)
 
 \begin{tikzpicture}[
     node distance=1.5cm and 2cm,
@@ -8,42 +10,42 @@
 ]
 
 % Row 1: Identification
-\node[box] (identification) {Records identified from databases ($n = $ \todo{total})};
-\node[box, right=of identification] (grey) {Records from grey literature ($n = $ \todo{total})};
+\node[box] (identification) {Records identified from databases ($n = 2{,}807$ $\approx$)};
+\node[box, right=of identification] (grey) {Records from supplementary sources ($n = 953$ $\approx$)};
 
 % Row 2: Merged — centred below both
-\node[box, below=of identification, anchor=center] (merged) at ([yshift=-1cm]$(identification.south)!0.5!(grey.south)$) {Records after merging ($n = $ \todo{merged})};
+\node[box, below=of identification, anchor=center] (merged) at ([yshift=-1cm]$(identification.south)!0.5!(grey.south)$) {Records after merging ($n = 2{,}807$ $\approx$)};
 
 % Arrow down to merged
 \draw[arrow] (identification.south) -- ++(0,-0.3) -| (merged.north);
 \draw[arrow] (grey.south) -- ++(0,-0.3) -| (merged.north);
 
 % Row 3: Duplicates removed
-\node[box, below=of merged] (duplicates) {Duplicates removed ($n = $ \todo{duplicates})};
+\node[box, below=of merged] (duplicates) {Duplicates removed ($n = 1{,}372$ $\approx$)};
 \draw[arrow] (merged.south) -- (duplicates.north);
 
 % Row 4: Screened
-\node[box, below=of duplicates] (screening) {Records screened ($n = $ \todo{screened})};
+\node[box, below=of duplicates] (screening) {Records screened ($n = 1{,}435$)};
 \draw[arrow] (duplicates.south) -- (screening.north);
 
 % Arrow right to excluded
-\node[box, right=of screening] (excluded) {Records excluded ($n = $ \todo{excluded})};
+\node[box, right=of screening] (excluded) {Records excluded ($n = 1{,}040$)};
 \draw[arrow] (screening.east) -- (excluded.west);
 
 % Row 5: Full-text assessed
-\node[box, below=of screening] (fulltext) {Full-text assessed ($n = $ \todo{fulltext})};
+\node[box, below=of screening] (fulltext) {Full-text assessed ($n = 395$)};
 \draw[arrow] (screening.south) -- (fulltext.north);
 
 % Arrow right to excluded full-text
-\node[box, right=of fulltext] (excluded-ft) {Excluded ($n = $ \todo{ft-excluded})};
+\node[box, right=of fulltext] (excluded-ft) {Excluded ($n = $ \todo{Phase 6})};
 \draw[arrow] (fulltext.east) -- (excluded-ft.west);
 
 % Row 6: Included
-\node[box, below=of fulltext] (included) {Studies included in synthesis ($n = $ \todo{included})};
+\node[box, below=of fulltext] (included) {Studies included in synthesis ($n = $ \todo{Phase 6})};
 \draw[arrow] (fulltext.south) -- (included.north);
 
 % Optional: included in meta-analysis
-\node[box, below=of included] (meta) {Included in meta-analysis ($n = $ \todo{meta})};
+\node[box, below=of included] (meta) {Included in meta-analysis ($n = $ \todo{Phase 9})};
 \draw[arrow] (included.south) -- (meta.north);
 
 \end{tikzpicture}

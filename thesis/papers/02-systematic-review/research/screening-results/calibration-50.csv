@@ -1,0 +1,51 @@
+id,title,screener1,screener2,human
+P02_0291,A two-stage semi-supervised domain generalization network for fault diagnosis under unknown working conditions,Exclude,Exclude,Exclude
+P02_0494,AT-ViT: Area-Targeted Multi-View Vision Transformer With Cross-Attention and Multi-Scale Patching for Plant Trait Recognition in Herbarium Images,Exclude,Exclude,Exclude
+P02_1088,Quantum subspace alignment for domain adaptation,Exclude,Exclude,Exclude
+P02_1292,Random Registers for Cross-Domain Few-Shot Learning,Exclude,Exclude,Exclude
+P02_0736,LAVIB: A Large-scale Video Interpolation Benchmark,Exclude,Exclude,Exclude
+P02_0131,Extending Earth Mover's Distance to Occluded Face Verification,Exclude,Exclude,Exclude
+P02_0618,Structural generalization in COGS: Supertagging is (almost) all you need,Uncertain,Exclude,Include
+P02_1344,TRANSFORMERS LEARN LOW SENSITIVITY FUNCTIONS: INVESTIGATIONS AND IMPLICATIONS,Exclude,Exclude,Exclude
+P02_0766,A Deep Surrogate Model for Robust and Generalizable Long-Term Blast Wave Prediction,Exclude,Exclude,Exclude
+P02_1390,Recursive Algorithmic Reasoning,Exclude,Exclude,Uncertain
+P02_0677,Landscaper: Understanding Loss Landscapes Through Multi-Dimensional Topological Analysis,Exclude,Exclude,Exclude
+P02_0571,ASL-OOD: Hierarchical Contextual Feature Fusion with Angle-Sensitive Loss for Oriented Object Detection,Exclude,Exclude,Exclude
+P02_0377,Optimized Blockchain-Enabled Federated Hybrid Deep Learning Framework for Real-Time Intrusion Detection and Privacy-Preserving Data Governance,Exclude,Exclude,Exclude
+P02_0146,When Modalities Agree Without Meeting: Empirical Consistency in Unpaired CAPTCHA Learning,Uncertain,Exclude,Exclude
+P02_0295,A scale invariant measure of flatness for deep network minima,Exclude,Exclude,Exclude
+P02_0415,High-dimensional macroeconomic forecasting: When three-Pass regression filter meets transformer with sharpness-Aware minimization,Exclude,Exclude,Exclude
+P02_1207,Proceedings of the 31st ACM International Conference on Advances in Geographic Information Systems,Uncertain,Exclude,Exclude
+P02_1173,Proceedings of the 2025 International Conference on Multimedia Retrieval,Uncertain,Exclude,Exclude
+P02_0763,LatentSync: Taming Audio-Conditioned Latent Diffusion Models for Lip Sync with SyncNet Supervision,Exclude,Exclude,Exclude
+P02_1196,Proceedings of the 2026 ACM Sustainability Week,Uncertain,Exclude,Exclude
+P02_1249,Proceedings of the 19th International Conference on the Foundations of Digital Games,Uncertain,Exclude,Exclude
+P02_0038,Test Optimization in DNN Testing: A Survey,Uncertain,Exclude,Exclude
+P02_1150,Locality Alignment Improves Vision-Language Models,Exclude,Exclude,Exclude
+P02_1270,Normalized flat minima: Exploring scale invariant definition of flat minima for neural networks using pac-bayesian analysis,Exclude,Exclude,Exclude
+P02_1409,Sharpness-Aware Minimization with Adaptive Regularization for Training Deep Neural Networks,Exclude,Exclude,Exclude
+P02_1244,"Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency",Uncertain,Exclude,Exclude
+P02_0223,Rethinking generalization of classifiers in separable classes scenarios and over-parameterized regimes,Exclude,Exclude,Exclude
+P02_1353,"Machine Learning and Knowledge Extraction 7th IFIP TC 5, TC 12, WG 8.4, WG 8.9, WG 12.9 International Cross-Domain Conference, CD-MAKE 2023",Exclude,Exclude,Exclude
+P02_0869,ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection,Uncertain,Exclude,Include
+P02_0957,Low-Frequency Shortcuts in Texture-Driven Visual Learning,Uncertain,Exclude,Include
+P02_1090,A Discriminative Neural Model for Cross-Lingual Word Alignment,Uncertain,Exclude,Exclude
+P02_0474,Convergence of Sharpness-Aware Minimization with Momentum,Exclude,Exclude,Exclude
+P02_0124,Handling Out-of-Distribution Data: A Survey,Uncertain,Exclude,Uncertain
+P02_0251,Data efficiency and extrapolation trends in neural network interatomic potentials,Exclude,Exclude,Exclude
+P02_1286,A Stein Identity for q-Gaussians with Bounded Support,Uncertain,Exclude,Exclude
+P02_0150,Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Object Manipulation via Multi-Scale Spatial Fusion,Uncertain,Exclude,Uncertain
+P02_1332,OUT-OF-DISTRIBUTION DETECTION BY LEVERAGING BETWEEN-LAYER TRANSFORMATION SMOOTHNESS,Exclude,Exclude,Exclude
+P02_0083,How Image Corruption and Perturbation Affect Out-of-Distribution Generalization and Calibration,Exclude,Exclude,Exclude
+P02_0887,ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis,Uncertain,Uncertain,Include
+P02_0810,Compositional Generalization via Semantic Tagging,Uncertain,Exclude,Include
+P02_1103,Banana DNA derivatives as homeotropic alignment layers in optical devices,Exclude,Exclude,Exclude
+P02_1394,Pretraining with Random Noise for Fast and Robust Learning without Weight Transport,Exclude,Exclude,Uncertain
+P02_1360,Can You Win Everything with A Lottery Ticket?,Exclude,Exclude,Exclude
+P02_1008,Alignment Elimination from Adams' Grammars,Exclude,Exclude,Exclude
+P02_0335,Complexity-Driven Adversarial Validation for Corrupted Medical Imaging Data,Exclude,Exclude,Exclude
+P02_1077,Improving Knowledge Graph Entity Alignment with Graph Augmentation,Uncertain,Exclude,Exclude
+P02_1208,Proceedings of the 5th ACM International Conference on AI in Finance,Uncertain,Exclude,Exclude
+P02_0126,The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization,Uncertain,Exclude,Uncertain
+P02_1392,Enhancing deep neural networks through complex-valued representations and Kuramoto synchronization dynamics,Exclude,Exclude,Exclude
+P02_0407,Implicit Sharpness-Aware Minimization for Domain Generalization,Exclude,Exclude,Exclude

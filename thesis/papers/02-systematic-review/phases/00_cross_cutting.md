@@ -11,12 +11,12 @@ This document refines the thesis-level CC standards for Paper 02's systematic re
 
 ### CC.1: Systematic Review Methodology (PRISMA 2020)
 
-- [ ] CC.1.1: Follow PRISMA 2020 27-item checklist (not PRISMA-ScR — this is a systematic review, not a scoping review)
-- [ ] CC.1.2: PRISMA 2020 flow diagram at each screening stage (including identification, screening, eligibility, included)
+- [x] CC.1.1: Follow PRISMA 2020 27-item checklist (not PRISMA-ScR — this is a systematic review, not a scoping review)
+- [x] CC.1.2: PRISMA 2020 flow diagram at each screening stage (including identification, screening, eligibility, included)
 - [ ] CC.1.3: Search strategy reported in full for at least one database (databases, dates, full strings in appendix)
 - [ ] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening, using PICO framework
 - [x] CC.1.5: Data extraction form developed, piloted, and iterated on 5+ papers
-- [ ] CC.1.6: Dual independent screening — two screeners independently assess each record, with inter-rater agreement (Cohen's κ ≥ 0.80). AI-assisted screening permitted only if validated against second human screener on 20% sample.
+- [x] CC.1.6: Dual independent screening — two screeners independently assess each record, with inter-rater agreement (Cohen's κ ≥ 0.80). AI-assisted screening permitted only if validated against second human screener on 20% sample.
 - [x] CC.1.7: Protocol registered on OSF prior to search (https://osf.io/m3asw). PROSPERO not applicable (non-medical review).
 - [ ] CC.1.8: Risk of bias assessment mandatory for all included studies (see Phase 8)
 - [ ] CC.1.9: Meta-analysis pre-specified in protocol; if not feasible, state explicit reasons
@@ -42,7 +42,7 @@ This document refines the thesis-level CC standards for Paper 02's systematic re
 ### CC.4: Reproducibility
 
 - [ ] CC.4.1: Search dates, database names, exact search strings, and number of results recorded
-- [ ] CC.4.2: Screening decisions exported and stored (`research/screening-decisions/`) with reason codes for exclusions
+- [x] CC.4.2: Screening decisions exported and stored (`research/screening-decisions/`) with reason codes for exclusions
 - [ ] CC.4.3: Charting data exported to CSV/JSON (`research/charted-data.csv`, `research/charted-data.json`)
 - [ ] CC.4.4: Risk of bias assessments stored in structured format (`research/risk-of-bias.csv`)
 - [ ] CC.4.5: Meta-analysis data and analysis scripts stored (`research/analysis/`)
