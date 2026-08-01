@@ -5,7 +5,7 @@
 ## Summary
 
 - User downloaded top-500-by-relevance PDFs into `research/pdfs/`
-- 26 records newly retrieved (was paywalled/no-doi/oa-link-failed)
+- 25 records newly retrieved (was paywalled/no-doi/oa-link-failed)
 - 33 duplicate downloads detected (paper already retrieved automatically)
 - 9 records confirmed paywalled by user
 
@@ -41,7 +41,6 @@
 - P255: `Christian_2025.pdf`
 - P257: `McKinlay_2024.pdf`
 - P276: `Snetkov_2025.pdf`
-- P294: `Liu_2026.pdf`
 - P308: `Moret_2025.pdf`
 - P311: `Hildebrandt_2025.pdf`
 - P364: `Helliwell_2024.pdf`
@@ -90,7 +89,7 @@
 
 - `Aoki_2026.pdf` (P193): Japanese-language version of Mechanistic Interpretability paper
 - `Snetkov_2025.pdf` (P276): Russian-language version of METAETHICAL FOUNDATIONS
-- `Liu_2026.pdf` (P294): Chinese-language journal paper — verify English record exists
+- `Liu_2026.pdf`: Chinese-language journal paper (计算机学报) — NOT mapped to any included study; likely an extra download; verify against English original
 - `Jin_2025.pdf`: Chinese-language psychology journal — likely an extra download, NOT in included list; verify
 
 ## New Status Distribution

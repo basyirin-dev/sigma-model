@@ -35,7 +35,6 @@ NEW_RETRIEVALS = {
     "P409": "Kan_2025.pdf",
     "P138": "Lee_2026.pdf",
     "P055": "Li_2026.pdf",
-    "P294": "Liu_2026.pdf",          # NOTE: Liu_2026 is Chinese-language; flagged
     "P257": "McKinlay_2024.pdf",
     "P308": "Moret_2025.pdf",
     "P483": "Safron_2023.pdf",       # Value Cores (was the unmatched paste title)
@@ -161,7 +160,8 @@ def main():
         f.write("\n## Language Flags\n\n")
         f.write("- `Aoki_2026.pdf` (P193): Japanese-language version of Mechanistic Interpretability paper\n")
         f.write("- `Snetkov_2025.pdf` (P276): Russian-language version of METAETHICAL FOUNDATIONS\n")
-        f.write("- `Liu_2026.pdf` (P294): Chinese-language journal paper — verify English record exists\n")
+        f.write("- `Liu_2026.pdf`: Chinese-language journal paper (计算机学报) — NOT mapped to any included "
+                "study; likely an extra download; verify against English original\n")
         f.write("- `Jin_2025.pdf`: Chinese-language psychology journal — likely an extra download, "
                 "NOT in included list; verify\n")
         f.write("\n## New Status Distribution\n\n")
