@@ -105,6 +105,30 @@ def main():
 
     print(f"Matched {len(study_pdfs)} studies to PDFs; {len(foreign_pdfs)} foreign-language PDFs skipped")
 
+    # ---- filename-based fallback: first-author surname + year ----
+    # Catches PDFs whose first-page text didn't title-match (publisher
+    # layouts, garbled extraction). Only takes unique, unambiguous files
+    # (single candidate for the surname-year pair, not an automated
+    # _arxiv/_oa download already claimed, not foreign-language).
+    user_files = [p for p in pdfs
+                  if "_arxiv" not in p.name and "_oa" not in p.name
+                  and p.name.lower().endswith(".pdf")]
+    for r in included:
+        if r["study_id"] in study_pdfs:
+            continue
+        authors = (r.get("authors") or "")
+        year = (r.get("year") or "").strip()
+        if not authors or not year:
+            continue
+        surname = authors.split(";")[0].split(",")[0].strip().split()[-1].lower()
+        cands = [p.name for p in user_files
+                 if p.stem.lower().replace("_", " ").startswith(surname) and year in p.name
+                 and p.name not in {f for v in study_pdfs.values() for f in v}]
+        if len(cands) == 1:
+            study_pdfs[r["study_id"]].append(cands[0])
+
+    print(f"After filename fallback: {len(study_pdfs)} studies matched")
+
     # ---- merge with retrieval-status authoritative pdf_path ----
     with open(STATUS_CSV, "r", encoding="utf-8") as f:
         status_rows = list(csv.DictReader(f))
@@ -120,13 +144,16 @@ def main():
     with open(ANNOT_CSV, "r", encoding="utf-8") as f:
         annot = list(csv.DictReader(f))
     cols = list(annot[0].keys())
+    pdf_prefix = "thesis/papers/01-scoping-review/research/pdfs/"
     for r in annot:
         pdfs = study_pdfs.get(r["study_id"], [])
         if pdfs:
             r["has_pdf"] = "yes"
             r["needs_download"] = "no"
             r["pdf_status"] = "retrieved-file"
-            r["pdf_path"] = pdfs[0]
+            # normalize to repo-root-relative path
+            fname = Path(pdfs[0]).name
+            r["pdf_path"] = pdf_prefix + fname
         else:
             r["has_pdf"] = "no"
             r["needs_download"] = "yes"
