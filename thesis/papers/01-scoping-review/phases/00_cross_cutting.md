@@ -15,8 +15,8 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 - [x] CC.1.2: PRISMA flow diagram at each screening stage
 - [x] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix) — §6.1, §6.4, Appendix C
 - [x] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening (see `01_protocol_draft.md` §5.1–5.2)
-- [x] CC.1.5: Data charting form developed, piloted, and iterated (see `01_pilot_results.md` §5; 3 template adjustments applied)
-- [x] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample)
+- [x] CC.1.5: Data charting form developed, piloted, and iterated — schema v1.0, `research/charting/charted-schema.md` + `.yaml`; 5-paper pilot + 3 refinements (`07_data_extraction.md` §7.1)
+- [x] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample) — independent second-pass extractor on 254-paper sample, kappa per field (`charting/validation-report.md`); external-AI pass on sample pending user
 - [x] CC.1.7: Protocol registered on OSF or similar prior to search — https://osf.io/ntuh2/
 
 ### CC.2: Writing & Formatting
@@ -36,7 +36,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 
 - [x] CC.4.1: Search dates, database names, and exact search strings recorded — §6.1, §6.4, Appendix C, §6.7 validation table
 - [x] CC.4.2: Screening decisions exported and stored (`research/screening-results/`)
-- [ ] CC.4.3: Charting data exported to CSV/JSON (`research/charted-data.csv`)
+- [x] CC.4.3: Charting data exported to CSV/JSON (`research/charted-data.csv`, `research/charted-data.json`; schema v1.0, 1,268 papers)
 
 ### CC.5: Git Hygiene
 

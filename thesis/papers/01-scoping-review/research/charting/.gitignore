@@ -1,0 +1,6 @@
+# Charting pipeline — generated/junk files not committed
+__pycache__/
+*.log
+# Regenerable AI prompt batches (python3 prompts.py N) and user-run AI outputs
+ai-prompt-batches/batch-*.jsonl
+ai-prompt-batches/ai-output/

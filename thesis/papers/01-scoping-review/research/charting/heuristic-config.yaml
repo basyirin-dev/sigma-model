@@ -1,0 +1,301 @@
+# Paper 01 — Phase 7 heuristic extraction config (ADR 0004: config-driven).
+# Keyword sets are regex patterns matched (lowercased, word-boundary) against
+# evidence text: full text (first 4 pages) when available, else abstract.
+# Loaded by research/charting/heuristic.py.
+
+# publication_type decision: check buckets in this priority order; first
+# bucket with a hit wins (review-major titles trump empirical hits).
+publication_type:
+  review:
+    - \bsurvey(s| of| on)?\b
+    - \breview(s)?\b
+    - \bstate of the art\b
+    - \bscoping (review|study)\b
+    - \bmeta-?analysis\b
+    - \bliterature (review|survey)\b
+    - \btaxonomy\b
+    - \bmapping (of|the)?\b
+  empirical:
+    - \bwe (evaluate|train|test|conduct|collect|measure|analyze)\b
+    - \bempiric(al|ally)?\b
+    - \bexperiment(s|al|ally)?\b
+    - \bbenchmark(s|ing)?\b
+    - \bdatasets?\b
+    - \bresults? show\b
+    - \bcase stud(y|ies)\b
+    - \buser stud(y|ies)\b
+    - \bsimulation(s)?\b
+    - \bfine[- ]tun(e|ing|ed)\b
+  theoretical:
+    - \btheorem(s)?\b
+    - \bproof(s)?\b
+    - \bproposition(s)?\b
+    - \bformal (framework|model|definition|characterization|analysis)\b
+    - \bmathematical (framework|model|formulation)\b
+    - \baxiom(s|atic)?\b
+    - \bprovable?\b
+    - \bformaliz(ed|ation)?\b
+  position:
+    - \bwe argue\b
+    - \bposition paper\b
+    - \bwe claim\b
+    - \bthis paper argues\b
+    - \bwe (propose|advocate) that\b
+  opinion:
+    - \bopinion (paper|piece)?\b
+    - \bcommentary\b
+    - \bviewpoint\b
+    - \bperspective (paper|piece)?\b
+    - \beditorial\b
+  technical_report:
+    - \btechnical report\b
+    - \bwhite paper\b
+    - \bposition statement\b
+
+# AGI safety subdomains — multi-select, all buckets with hits kept.
+# Uses subdomain_mapping from charted-schema.yaml (regex terms there are
+# plain substrings; treated as word-boundary patterns here).
+subdomains:
+  value alignment:
+    - \bvalue alignment\b
+    - \bai alignment\b
+    - \balignment\b
+    - \bcorrigib\w*\b
+    - \binner alignment\b
+    - \bouter alignment\b
+    - \bgoal (preservation|misgeneralization|specification)\b
+    - \breward (modeling|modelling|hacking|misspecification)\b
+    - \brlhf\b
+    - \bpreference (learning|optimization)\b
+    - \bhuman values\b
+    - \bcoherent extrapolated volition\b
+  interpretability:
+    - \binterpretab\w*\b
+    - \bexplainab\w*\b
+    - \btransparen\w*\b
+    - \bmechanistic\b
+    - \bcircuits?\b
+    - \bprobes?\b
+    - \battribution\b
+    - \bconcept[- ]based\b
+    - \bintelligibility\b
+  robustness:
+    - \brobust\w*\b
+    - \badversarial\b
+    - \bout[- ]of[- ]distribution\b
+    - \bood\b
+    - \bdistributional shift\b
+    - \bformal verification\b
+    - \bworst[- ]case\b
+    - \bgeneralization (gap|failure)\b
+    - \bspecification gaming\b
+    - \bsafet(y|ies)\b
+  mesa-optimization:
+    - \bmesa[- ]optimiz\w*\b
+    - \bdeceptive alignment\b
+    - \bdeception\b
+    - \blearned optimization\b
+    - \binner alignment\b
+  governance:
+    - \bgovernance\b
+    - \bai policy\b
+    - \bpolicy (making|makers?|analysis|design|brief|framework|interventions?)\b
+    - \bpolicymakers?\b
+    - \bpublic policy\b
+    - \bregulat\w*\b
+    - \boversight\b
+    - \baudit\w*\b
+    - \blegislation\b
+    - \btreaty\b
+    - \baccountability\b
+  ethics:
+    - \bethics?\b
+    - \bethical\b
+    - \bmoral\w*\b
+    - \bfairness\b
+    - \bbias(es|ed)?\b
+    - \bsociet\w*\b
+    - \bdignity\b
+    - \bhuman rights\b
+    - \bvalue pluralism\b
+  capabilities:
+    - \bcapabilit\w*\b
+    - \bpower[- ]seeking\b
+    - \binstrumental convergence\b
+    - \bexistential risk\b
+    - \btransformative ai\b
+    - \bsuperintelligence\b
+    - \bx[- ]risk\b
+    - \bscaling\b
+
+# Formal framework — multi-select.
+formal_framework:
+  game theory:
+    - \bgame[- ]theor\w*\b
+    - \bequilibrium\b
+    - \bmechanism design\b
+    - \bnash\b
+    - \bbargaining\b
+    - \bpayoffs?\b
+    - \bstrategic interaction\b
+  decision theory:
+    - \bdecision[- ]theor\w*\b
+    - \bexpected utility\b
+    - \bdecision problem\b
+    - \bpreference (relation|ordering)\b
+    - \butility function\b
+    - \bnewcomb\b
+  dynamical systems:
+    - \bdynamical systems?\b
+    - \bdifferential equations?\b
+    - \b\bode\b\b
+    - \battractor\w*\b
+    - \bbifurcation\w*\b
+    - \bfixed points?\b
+    - \bphase space\b
+    - \blyapunov\b
+  information theory:
+    - \binformation[- ]theor\w*\b
+    - \bentropy\b
+    - \bmutual information\b
+    - \bshannon\b
+    - \bkl divergence\b
+    - \bkl[- ]divergence\b
+    - \bcoding theory\b
+  other:
+    - \bformaliz\w*\b
+    - \bformal model\b
+    - \bformal methods?\b
+    - \bformal mechanism\b
+    - \bmathematical framework\b
+    - \bproof[- ]based\b
+    - \baxiomat\w*\b
+
+# Mathematical formalism — multi-select.
+mathematical_formalism:
+  ODEs:
+    - \bdifferential equations?\b
+    - \b\bode\b\b
+    - \b\bpde\b\b
+    - \bdynamical systems?\b
+  probability:
+    - \bprobabil\w*\b
+    - \bbayesian\b
+    - \bstochastic\b
+    - \bdistribution(s|al)?\b
+    - \bexpectation\b
+    - \bentropy\b
+  logic:
+    - \b\blogic\b\b
+    - \blogical\b
+    - \bpropositional\b
+    - \bfirst[- ]order\b
+    - \bmodal logic\b
+    - \bproofs?\b
+    - \btheorems?\b
+  optimization:
+    - \boptimiz\w*\b
+    - \bgradient\b
+    - \bobjective function\b
+    - \bconvex\b
+    - \bloss function\b
+    - \breward function\b
+    - \butility function\b
+    - \bmaximiz\w*\b
+
+# Methodology (empirical papers only) — single best bucket, else not_applicable.
+methodology:
+  experiment:
+    - \bexperiment\w*\b
+    - \buser stud\w*\b
+    - \bhuman stud\w*\b
+    - \bcontrolled\b
+    - \bevaluat\w*\b
+  simulation:
+    - \bsimulation\w*\b
+    - \bagent[- ]based\b
+    - \bgridworld\b
+    - \benvironments?\b
+    - \brandom seeds?\b
+  analysis:
+    - \bwe analy\w*\b
+    - \bobservational\b
+    - \bcross[- ]sectional\b
+    - \bsurvey\w*\b
+    - \bquestionnaire\w*\b
+    - \blikert\b
+    - \bregression\b
+    - \bcorrelation\b
+  theory:
+    - \btheoretical\b
+    - \bformal (framework|model|analysis)\b
+    - \bconceptual\b
+  case study:
+    - \bcase stud\w*\b
+
+# Internal representations trinary.
+discusses_internal_representations:
+  strong:
+    - \binternal representation\w*\b
+    - \blatent representation\w*\b
+    - \brepresentation structure\w*\b
+    - \blatent space\b
+    - \bfeature geometr\w*\b
+    - \bconcept geometr\w*\b
+    - \brepresentational structure\w*\b
+    - \bcircuits?\b
+    - \blatent ontology\w*\b
+    - \bactivations?\b
+    - \bembeddings?\b
+    - \binternal states?\b
+  safety_context:
+    - \bsafety\b
+    - \balignment\b
+    - \brisk\b
+    - \bfailure\b
+    - \bdeception\b
+    - \bhack\w*\b
+
+# Schema coherence trinary.
+discusses_schema_coherence:
+  "yes":
+    - \bschema coherence\b
+    - \bsigma[- ]coherence\b
+    - \bcoherence of (the )?(internal )?representation\w*\b
+  related:
+    - \bcompositional generalization\b
+    - \bcompositionalit\w*\b
+    - \bcompositional\b
+    - \binternal representation structure\w*\b
+    - \blatent ontology\w*\b
+    - \bfeature geometry\b
+    - \babstraction hierarch\w*\b
+    - \bdeep principles?\b
+    - \bknowledge (graph|structure)\b
+    - \bconceptual structure\w*\b
+    - \bschema(s)?\b
+    - \bstructural generalization\b
+    - \bsystematic generalization\b
+    - \bdisentangl\w*\b
+
+# Limitations trinary.
+limitations_stated:
+  "yes":
+    - \blimitation(s)? (of|in|we|to|this)\b
+    - \bwe acknowledge\b
+    - \bthis (work|study|paper) (has|had|suffers)\b
+    - \bcaveat\w*\b
+    - \bnot (generaliz\w+|applicable|complete)\b
+    - \bscope is (limited|narrow)\b
+    - \bassumption(s)? (we|made|limit|restrict)\b
+    - \bdoes not (address|cover|handle|consider)\b
+    - \bwe (do|did) not\b
+    - \bfail(s|ed)? to\b
+    - \bunder[- ]evaluat\w*\b
+  partial:
+    - \bfuture work\b
+    - \bfuture research\b
+    - \bopen (question|problem|issue|challenge)s?\b
+    - \bremains (an )?(open )?question\b
+    - \bwarrant\w* (further|future)\b
+    - \bremains to be\b

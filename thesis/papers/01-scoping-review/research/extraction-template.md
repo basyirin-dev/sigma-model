@@ -342,3 +342,17 @@ Complete only for fields marked with [†] in dual-extraction workflow
 - inclusion_recommendation: Include
 - quality_tier: Tier 1 (foundational)
 - extractor_notes: "Seminal paper that defines mesa-optimization; should be a core reference in the review."
+---
+
+## 7. Phase 7 Finalization (2026-08)
+
+Reviewed against Phase 6 full-text experience (516 local PDFs; 1,268 included studies). The operational
+charting form is the **finalized v1.0 schema** in `charting/charted-schema.md` (machine-readable:
+`charting/charted-schema.yaml`). It maps this template's sections A–K onto the 25-field Task 7.1.2
+field list; ~47 template fields were merged or dropped as redundant for the scoping review (full list
+in §4 of `charting/charted-schema.md`). Controlled vocabularies for `subdomains` are bucketed per
+`subdomain_mapping` in the YAML. Fields marked [†] in the finalized schema are dual-extraction fields
+for the 20% validation sample (CC.1.6). Schema drafting adjustments: merged publication type into
+single primary; folded evidence types into methodology; added `evidence_basis` audit column.
+Pilot results (5 papers) and any post-pilot refinements are recorded in `phases/07_data_extraction.md`
+§7.1 and this file is updated there if the pilot changes the schema.
