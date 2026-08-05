@@ -51,22 +51,24 @@
 | **FEXC** | Final exclude | ≥1 criterion fails after full-text review |
 
 ### Exclusion Reasons (full-text)
+Codes per `phases/06_full_text.md` Task 6.2.4 (authoritative for Phase 6):
 | Code | Reason | Details |
 |------|--------|---------|
-| **FT1** | ID/OOD accuracy not reported | Outcome (must report both separately) |
-| **FT2** | Metric aggregated across splits | Outcome (e.g., only mean accuracy across ID+OOD) |
-| **FT3** | No standard baseline | Comparator (no ERM/SGD comparison on same arch/data) |
-| **FT4** | Intervention same as baseline | Intervention (identical conditions) |
-| **FT5** | No OOD split in benchmark | Outcome (dataset lacks systematic OOD design) |
-| **FT6** | Full text not retrievable | Practical |
-| **FT7** | Full text not in English | Timing/setting |
-| **FT8** | Irrelevant content | Title/abstract screening error: paper not about compositionality |
+| **FT1** | No OOD/compositional split reported | Intervention/Comparison: benchmark lacks held-out OOD/compositional split |
+| **FT2** | Only ID results reported | Outcome: no OOD condition at all |
+| **FT3** | Insufficient quantitative detail | Outcome: no accuracy numbers, no extractable data |
+| **FT4** | Not actually about neural network models | Population: screening error |
+| **FT5** | Full text unavailable | Practical: not retrievable after 3 attempts (task 6.1.4) |
+| **FT6** | Duplicate content | Superseded by later publication |
+| **FT7** | Review or opinion paper without original results | Study design |
+| **FT8** | Other (specify) | — |
 
 ### Full-Text Retrieval Priority
-1. DOI → CrossRef/Unpaywall
+1. DOI → CrossRef/Unpaywall/OpenAlex OA
 2. arXiv PDF
 3. Author's institutional repository
-4. Email corresponding author (one attempt)
+4. Email corresponding author (one attempt) / ResearchGate request
+   → 3 distinct attempts (task 6.1.4), then code `Unavailable` + reason
 
 ---
 

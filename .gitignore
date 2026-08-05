@@ -60,3 +60,7 @@ code/*.egg-info/
 # Paper 01/02 full-text PDFs (large artifacts — not committed)
 research/pdfs/
 thesis/papers/*/research/pdfs/
+research/full-text-pdfs/
+thesis/papers/*/research/full-text-pdfs/
+research/full-text-txt/
+thesis/papers/*/research/full-text-txt/
