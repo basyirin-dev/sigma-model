@@ -1,0 +1,396 @@
+id,title,year,decision,reason,retrieved,s1,s2,note
+P02_0003,SFP: Spurious Feature-Targeted Pruning for Out-of-Distribution Generalization,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0007,Feature-granularity-based spurious correlation and causal analysis in CNNs Exploring Feature Granularity to Uncover Spurious Correlations,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0017,Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0021,Causality and Independence Enhancement for Biased Node Classification,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0081,Evaluating Out-of-Distribution Robustness of TabPFN on Tabular Data,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0082,On the Out-of-Distribution Evaluation of ML-Based End-to-End Communications Systems,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0087,Evading the Simplicity Bias: Training a Diverse Set of Models Discovers Solutions with Superior OOD Generalization,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0088,Compositional Generalization in Emergent Communication via Metropolis-Hastings Naming Game with Transformer Language Models,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0092,Data Distributional Properties As Inductive Bias for Systematic Generalization,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0093,Dynamic Multi-Path Learning For Out-of-Distribution Node Classification on Heterophilic Graphs,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0096,Out-of-Distribution Generalization on Graphs: A Survey,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0110,Efficient Out-of-Distribution Generalization for Pre-trained GNNs via Prompt Learning,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0116,Complexity Control Facilitates Reasoning-Based Compositional Generalization in Transformers,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0150,Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Object Manipulation via Multi-Scale Spatial Fusion,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0179,General Greedy De-Bias Learning,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0238,Three approaches to facilitate invariant neurons and generalization to out-of-distribution orientations and illuminations,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0280,SSGNN: Simple siamese graph neural networks for out-of-distribution generalization,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0290,Boosting Rice Disease Diagnosis: A Systematic Benchmark of Five Deep Convolutional Neural Network Models in Precision Agriculture,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0322,A two-stage co-adversarial perturbation to mitigate out-of-distribution generalization of large-scale graph,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0410,Invariant Graph Transformer for Out-of-Distribution Generalization,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0444,Improving Generalization in Collision Avoidance for Multiple Unmanned Aerial Vehicles via Causal Representation Learning †,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0493,Coupled data-driven and experience-informed neural networks for prediction of pile base resistance with consideration of data limitation,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0495,MiMu: mitigating multiple shortcut learning behavior of transformers,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0497,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,2022,Include,,yes,Include,Include,s1=Include s2=Include | FT6-dup-candidate | adj: Canonical published version of the duplicate pair (NAACL Findings 2022
+P02_0500,Accurate Classification of Pathological Whole-Slide Images for Out-of-Distribution Generalization,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0503,A Structure-aware Invariant Learning Framework for Node-level Graph OOD Generalization,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0507,I2CD: An Invertible Causal Framework for Compositional Zero-Shot Learning via Disentangle-Compose-Disentangle,2026,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0510,Compositional Generalization for Neural Semantic Parsing via Span-level Supervised Attention,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0542,Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of-Distribution Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0556,Spectral Distribution Alignment for Enhanced Generalization in Regression,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0576,Improving Group Robustness on Spurious Correlation via Evidential Alignment,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0594,COGS: A Compositional Generalization Challenge Based on Semantic Interpretation,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0595,Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP),2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0596,SLOG: A Structural Generalization Benchmark for Semantic Parsing,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0597,Grounded Graph Decoding Improves Compositional Generalization in Question Answering,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0598,Towards Understanding the Relationship between In-context Learning and Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0599,Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0600,Learning to Substitute Components for Compositional Generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0602,Harnessing Dataset Cartography for Improved Compositional Generalization in Transformers,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0604,On the Compositional Generalization Gap of In-Context Learning,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0605,Representational Homomorphism Predicts and Improves Compositional Generalization In Transformer Language Model,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0607,Revisiting Iterative Back-Translation from the Perspective of Compositional Generalization,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0608,*-CFQ: Analyzing the Scalability of Machine Learning on a Compositional Task,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0610,Think before you act: A simple baseline for compositional generalization,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0611,How Do In-Context Examples Affect Compositional Generalization?,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0612,Hierarchical Poset Decoding for Compositional Generalization in Language,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0613,Unlocking Compositional Generalization in Pre-trained Models Using Intermediate Representations,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0614,Compositional Generalization by Learning Analytical Expressions,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0615,Compositional Generalization in Multilingual Semantic Parsing over Wikidata,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0616,Data Factors for Better Compositional Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0617,Iterative Decoding for Compositional Generalization in Transformers,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0618,Structural generalization in COGS: Supertagging is (almost) all you need,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0619,When Can Transformers Ground and Compose: Insights from Compositional Generalization Benchmarks,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0622,Measuring Compositional Generalization: A Comprehensive Method on Realistic Data,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0623,Recursive Decoding: A Situated Cognition Approach to Compositional Generation in Grounded Language Understanding,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0624,Compositional Generalization without Trees using Multiset Tagging and Latent Permutations,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0625,Compositional Generalization via Neural-Symbolic Stack Machines,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0627,Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0628,A Neuroscience-Inspired Dual-Process Model of Compositional Generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0629,Compositional generalization in a deep seq2seq model by separating syntax and semantics,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0630,Compositional Generalization and Decomposition in Neural Program Synthesis,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0632,Can Transformers Jump Around Right in Natural Language? Assessing Performance Transfer from SCAN,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0633,Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0634,Compositional generalization in semantic parsing with pretrained transformers,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0635,CNNs found to jump around more skillfully than RNNs: Compositional generalization in seq2seq convolutional networks,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0640,ReaSCAN: Compositional Reasoning in Language Grounding,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0642,Compositional Semantic Parsing with Large Language Models,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0643,A Benchmark for Systematic Generalization in Grounded Language Understanding,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0648,Inducing Transformer's Compositional Generalization Ability via Auxiliary Sequence Prediction Tasks,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0651,Early-Warning Signals of Grokking via Loss-Landscape Geometry,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0654,A Compositional Framework for Open-ended Intelligence,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0657,Sequence-Level Mixed Sample Data Augmentation,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0691,Invariant Graph Transformer for Out-of-Distribution Generalization,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0693,Early Period of Training Impacts Adaptation for Out-of-Distribution Generalization: An Empirical Study,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0702,Benign Overfitting in Out-of-Distribution Generalization of Linear Models,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0703,Can Agents Run Relay Race with Strangers? Generalization of RL to Out-of-Distribution Trajectories,2023,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: OOD generalization of cooperative agents to unseen partners (S1 evidence: ood_nums=10) | adj: OOD generalization of cooperative agents to unseen partners (S1 evidence: ood_nums=10)
+P02_0708,Making Foresight Actionable: Repurposing Representation Alignment in World Action Models,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0712,Low-rank Orthogonal Subspace Intervention for Generalizable Face Forgery Detection,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0719,Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in Robot Instruction Following,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0724,General Greedy De-bias Learning,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0746,"Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines",2026,Exclude,FT7,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Title is 'A Survey of Datasets | adj: Title is 'A Survey of Datasets
+P02_0753,Evaluating Reward Model Generalization via Pairwise Maximum Discrepancy Competitions,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0768,Neural Language of Thought Models,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0769,GA-Field: Geometry-Aware Vehicle Aerodynamic Field Prediction,2026,Include,,yes,Uncertain,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0773,Robust OOD Graph Learning via Mean Constraints and Noise Reduction,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0783,Improving Latent Generalization Using Test-time Compute,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0789,Frequency Bias and OOD Generalization in Neural Operators under a Variable-Coefficient Wave Equation,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0791,SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0810,Compositional Generalization via Semantic Tagging,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0811,Systematic Generalization with Edge Transformers,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0812,Compositional Generalization from First Principles,2023,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0813,Improving Compositional Generalization in Semantic Parsing,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0819,Scalable Evaluation and Neural Models for Compositional Generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0821,Improving Compositional Generalization in Classification Tasks via Structure Annotations,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0822,Compositional Generalization with Tree Stack Memory Units,2019,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0823,Reinforcement Learning for Compositional Generalization with Outcome-Level Optimization,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0824,Provable Compositional Generalization for Object-Centric Learning,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0826,Disentangled Sequence to Sequence Learning for Compositional Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0827,"Concepts, Properties and an Approach for Compositional Generalization",2021,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0828,Consistency of Compositional Generalization across Multiple Levels,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0829,On Provable Length and Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0831,DiNeR: a Large Realistic Dataset for Evaluating Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0832,The Mystery of Compositional Generalization in Graph-based Generative Commonsense Reasoning,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0836,"Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0838,When does compositional structure yield compositional generalization? A kernel theory,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0839,Syntax-Guided Transformers: Elevating Compositional Generalization and Grounding in Multimodal Environments,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0843,Towards Compositional Generalization of LLMs via Skill Taxonomy Guided Data Synthesis,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0845,Are Object-Centric Representations Better At Compositional Generalization?,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0850,Layer-wise Representation Fusion for Compositional Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0851,Block-Operations: Using Modular Routing to Improve Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0854,The Role of Linguistic Priors in Measuring Compositional Generalization of Vision-Language Models,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0855,Compositional Generalization and Natural Language Variation: Can a Semantic Parsing Approach Handle Both?,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0856,Enhancing Compositional Generalization via Compositional Feature Alignment,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0857,Evaluating Morphological Compositional Generalization in Large Language Models,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0858,Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0859,Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0861,Improving Compositional Generalization with Latent Structure and Data Augmentation,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0863,Can LLM find the green circle? Investigation and Human-guided tool manipulation for compositional generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0864,Multi-Sourced Compositional Generalization in Visual Question Answering,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0865,Analyzing the Inner Workings of Transformers in Compositional Generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0866,Improving Systematic Generalization Through Modularity and Augmentation,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0867,NeSyCoCo: A Neuro-Symbolic Concept Composer for Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0868,Compositional Generalization via Forced Rendering of Disentangled Latents,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0869,ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection,2023,Include,,yes,Uncertain,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0872,Compositional generalization through abstract representations in human and artificial neural networks,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0873,Systematic Generalization in Language Models Scales with Information Entropy,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0874,How Modular Should Neural Module Networks Be for Systematic Generalization?,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0877,SPOR: A Comprehensive and Practical Evaluation Method for Compositional Generalization in Data-to-Text Generation,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0878,Neural-Symbolic Recursive Machine for Systematic Generalization,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0879,An explainable transformer circuit for compositional generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0881,Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0882,Differentiable Tree Operations Promote Compositional Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0883,Factorization Regret mediates compositional generalization in latent space,2026,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0884,Counterfactual Recipe Generation: Exploring Compositional Generalization in a Realistic Scenario,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0885,Swing-by Dynamics in Concept Learning and Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0886,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,2022,Exclude,FT6,yes,Include,Include,s1=Include s2=Include | FT6-dup-candidate | adj: Duplicate of P02_0497 (arXiv 2205.02054v1 = NAACL Findings 2022 version) | adj: Duplicate of P02_0497 (arXiv 2205.02054v1 = NAACL Findings 2022 version)
+P02_0890,Compositional Generalization with Grounded Language Models,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0891,Scaling can lead to compositional generalization,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0893,Learning to Compose Representations of Different Encoder Layers towards Improving Compositional Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0894,Systematic Generalization on gSCAN with Language Conditioned Embedding,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0895,On a Built-in Conflict between Deep Learning and Systematic Generalization,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0898,What Do You Need for Compositional Generalization in Diffusion Planning?,2025,Include,,yes,Uncertain,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0899,D3: Data Diversity Design for Systematic Generalization in Visual Question Answering,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0900,RoboHiMan: A Hierarchical Evaluation Paradigm for Compositional Generalization in Long-Horizon Manipulation,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0901,AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents,2026,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0903,Policy Architectures for Compositional Generalization in Control,2022,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Policy architectures for compositional generalization in control (ood_nums=33) | adj: Policy architectures for compositional generalization in control (ood_nums=33)
+P02_0904,Transformer Module Networks for Systematic Generalization in Visual Question Answering,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0906,Realistic Evaluation of Model Merging for Compositional Generalization,2024,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0907,Learning Algebraic Representation for Systematic Generalization in Abstract Reasoning,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0913,Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0914,Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0915,Systematic Generalization in Neural Networks-based Multivariate Time Series Forecasting Models,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0921,Measuring Systematic Generalization in Neural Proof Generation with Transformers,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0922,Systematic Generalization on gSCAN: What is Nearly Solved and What is Next?,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0926,Revisit Systematic Generalization via Meaningful Learning,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0930,Rule Extrapolation in Language Models: A Study of Compositional Generalization on OOD Prompts,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0931,Language Plays a Pivotal Role in the Object-Attribute Compositional Generalization of CLIP,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0932,The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0934,Three approaches to facilitate DNN generalization to objects in out-of-distribution orientations and illuminations,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0935,Siamese recurrent networks learn first-order logic reasoning and exhibit zero-shot compositional generalization,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0937,CLOSURE: Assessing Systematic Generalization of CLEVR Models,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0939,Understanding out-of-distribution accuracies through quantifying difficulty of test samples,2022,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Out-of-distribution accuracies via quantization analysis (id_nums=16 | adj: Out-of-distribution accuracies via quantization analysis (id_nums=16
+P02_0940,SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0944,ORCHARD: A Benchmark For Measuring Systematic Generalization of Multi-Hierarchical Reasoning,2021,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0945,Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0947,Data Distributional Properties As Inductive Bias for Systematic Generalization,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0948,The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0949,Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0951,Systematic Generalization and Emergent Structures in Transformers Trained on Structured Tasks,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0956,Mixture Data for Training Cannot Ensure Out-of-distribution Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0959,What makes Models Compositional? A Theoretical View: With Supplement,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0962,Robust Subtask Learning for Compositional Generalization,2023,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Robust subtask learning for compositional generalization (ood_nums=57) | adj: Robust subtask learning for compositional generalization (ood_nums=57)
+P02_0965,Causal Structural Hypothesis Testing and Data Generation Models,2022,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0967,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,2026,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Adversarial reward auditing in RL; safety stream; default Include per 6.3.3 (flagged) | adj: Adversarial reward auditing in RL; safety stream; default Include per 6.3.3 (flagged)
+P02_1159,Probing the Probes: Methods and Metrics for Concept Alignment,2025,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_1308,Vision Transformer Neural Architecture Search for Out-of-Distribution Generalization: Benchmark and Insights,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1381,Sparse Mixture-of-Experts for Compositional Generalization: Empirical Evidence and Theoretical Foundations of Optimal Sparsity,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1395,Compositional generalization by factorizing alignment and translation,2020,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1398,Neural Collapse Inspired Feature Alignment for Out-of-Distribution Generalization,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0002,Graph Representation Learning via Causal Diffusion for Out-of-Distribution Recommendation,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0004,Research on Causal Robustness Enhancement Methods and Out-of-Distribution Generalization for Deep Classification Models,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0005,Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0011,Beyond Mimicry: Toward Lifelong Adaptability in Imitation Learning,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0016,Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0018,Human Heterogeneity Invariant Stress Sensing,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0023,Environment Agnostic Invariant Risk Minimization for Classification of Sequential Datasets,2021,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0031,Causal Disentangled Recommendation against User Preference Shifts,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0032,NILMBENCH2026: A Benchmark for Energy Disaggregation,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0033,Normalized Space Alignment: A Versatile Metric for Representation Analysis,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0034,Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-Trained Inverse RF Rendering,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0038,Test Optimization in DNN Testing: A Survey,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0045,,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0048,Mitigating Distributed Backdoor Attack in Federated Learning Through Mode Connectivity,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0051,Responsive DNN Adaptation for Video Analytics against Environment Shift via Hierarchical Mobile-Cloud Collaborations,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0054,The Worst of Both Worlds: A Comparative Analysis of Errors in Learning from Data in Psychology and Machine Learning,2022,Exclude,FT8,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Comparative analysis of errors psychology-vs-ML; not an OOD/compositional generalization study | adj: Comparative analysis of errors psychology-vs-ML; not an OOD/compositional generalization study
+P02_0055,A.I. Robustness: a Human-Centered Perspective on Technological Challenges and Opportunities,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0058,A Survey of Model Inversion Attacks: An Interface-Prior Perspective,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0060,AI Alignment: A Contemporary Survey,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0064,Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conceptual Relationships,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0066,A Survey of Dataset Refinement for Problems in Computer Vision Datasets,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0069,Uniformly Distributed Category Prototype-Guided Vision-Language Framework for Long-Tail Recognition,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0071,A Survey of Multilingual Neural Machine Translation,2020,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0072,Contrastive Curriculum Learning for Sequential User Behavior Modeling via Data Augmentation,2021,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0073,Efficient Knowledge Graph Unlearning with Zeroth-order Information,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0074,Cacophony: An Improved Contrastive Audio-Text Model,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0075,Neural Dehydration: Effective Erasure of Black-box Watermarks from DNNs with Limited Data,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0124,Handling Out-of-Distribution Data: A Survey,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0126,The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization,2021,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0128,A System-Level Analysis of Cross-Domain Generalization Failure in Audio Deepfake Detection,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0136,Defeating Multimodal Information Manipulation By A Web 3.0 Decentralized Identity (DID)-Based Accountability Framework,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0138,Utilizing Confidence in Localization Predictions for Improved Spectrum Management,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0151,Leveraging Vision-Language Models for Improving Domain Generalization in Image Classification,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0154,"Roses are Red, Violets are Blue… But Should VQA expect Them To?",2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0200,Handling Dual Skewness in Citywide Crime Prediction Using Personalized Graph Federated Learning,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0380,A Physics-Guided Symbolic Regression Framework for Multi-Resolution Dynamic Equivalent Modeling of Power Systems,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0386,Rethinking Graph Generalization through the Lens of Sharpness-Aware Minimization,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0442,Producing plankton classifiers that are robust to dataset shift,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0511,PTAN: Principal Token-aware Adjacent Network for Compositional Temporal Grounding,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0514,Towards Domain-Aware Stable Meta Learning for Out-of-Distribution Generalization,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0517,A Cascade Registration Method Based on Transformation Transfer for Multiscale Point Clouds,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0522,Avoiding Shortcuts: Enhancing Channel-Robust Specific Emitter Identification via Single-Source Domain Generalization,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0601,Span-based Semantic Parsing for Compositional Generalization,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0603,Learning to Substitute Spans towards Improving Compositional Generalization,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0606,Compositional Generalization in Dependency Parsing,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0609,Compositional Generalization Requires Compositional Parsers,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0620,Compositional Generalization for Natural Language Interfaces to Web APIs,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0621,Revisiting the Compositional Generalization Abilities of Neural Sequence Models,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0626,Compositional Generalization for Primitive Substitutions,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0631,Learning to Recombine and Resample Data for Compositional Generalization,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0636,SUBS: Subtree Substitution for Compositional Semantic Parsing,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0637,On graph-based reentrancy-free semantic parsing,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0638,LAGr: Labeling Aligned Graphs for Improving Systematic Generalization in Semantic Parsing,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0639,ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0647,Compositional generalization through meta sequence-to-sequence learning,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0649,Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0663,A Class of Distributions for Linear Demand Markets,2018,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_0665,NCHO: Unsupervised Learning for Neural 3D Composition of Humans and Objects,2023,Exclude,FT8,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: 'Composition' of 3D human parts — object-part composition | adj: 'Composition' of 3D human parts — object-part composition
+P02_0667,Does Data Scaling Lead to Visual Compositional Generalization?,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0668,Towards Robust Out-of-Distribution Generalization Bounds via Sharpness,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0669,Aggregation Hides Out-of-Distribution Generalization Failures from Spurious Correlations,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0673,Learning to Think in Physics: Breaking Shortcut Learning in Scientific Diffusion via Representation Alignment,2026,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Shortcut learning in physics word problems; OOD generalization (id_nums=19 | adj: Shortcut learning in physics word problems; OOD generalization (id_nums=19
+P02_0678,"Sharp analysis of out-of-distribution error for ""importance-weighted"" estimators in the overparameterized regime",2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0679,Principled Out-of-Distribution Generalization via Simplicity,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0688,Using Interventions to Improve Out-of-Distribution Generalization of Text-Matching Recommendation Systems,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0689,Correct-N-Contrast: A Contrastive Approach for Improving Robustness to Spurious Correlations,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0690,CausPref: Causal Preference Learning for Out-of-Distribution Recommendation,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0692,Fishr: Invariant Gradient Variances for Out-of-Distribution Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0698,Invariance Principle Meets Information Bottleneck for Out-of-Distribution Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0700,What Matters to You? Towards Visual Representation Alignment for Robot Learning,2023,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0705,Diagnosing Generalization Failures from Representational Geometry Markers,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0713,"Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias",2026,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_0717,Incorporating Surrogate Gradient Norm to Improve Offline Optimization Techniques,2025,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0738,DSL: Understanding and Improving Softmax Recommender Systems with Competition-Aware Scaling,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0740,VLA^2: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0741,Navigating High Dimensional Concept Space with Metalearning,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0757,FedSoup: Improving Generalization and Personalization in Federated Learning via Selective Model Interpolation,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0781,Thermodynamically-Informed Iterative Neural Operators for Heterogeneous Elastic Localization,2024,Exclude,FT1,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: PDE neural operator; non-compositional OOD / covariate shift (E8 precedent) | adj: PDE neural operator; non-compositional OOD / covariate shift (E8 precedent)
+P02_0795,TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models,2025,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0797,Predictable GRPO: A Closed-Form Model of Training Dynamics,2026,Include,,yes,Include,Exclude,conflict: default Include (6.3.3); flagged | adj: Predictable GRPO training dynamics; OOD terms + numbers (flagged) | adj: Predictable GRPO training dynamics; OOD terms + numbers (flagged)
+P02_0798,Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0814,A Survey on Compositional Generalization in Applications,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0815,Composition-Incremental Learning for Compositional Generalization,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0816,Toward Compositional Generalization in Object-Oriented World Modeling,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0817,On Evaluating Multilingual Compositional Generalization with Translated Datasets,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0818,Learning Algebraic Recombination for Compositional Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0820,Improving Compositional Generalization in Math Word Problem Solving,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0825,A General Theory for Compositional Generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0830,On Compositional Generalization of Neural Machine Translation,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0833,Simple and effective data augmentation for compositional generalization,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0834,Unobserved Local Structures Make Compositional Generalization Hard,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0837,When and How Does CLIP Enable Domain and Compositional Generalization?,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0840,Diverse Demonstrations Improve In-context Compositional Generalization,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0841,Exploring the Compositional Generalization in Context Dependent Text-to-SQL Parsing,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0842,Improving Compositional Generalization Using Iterated Learning and Simplicial Embeddings,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0847,A Short Survey of Systematic Generalization,2022,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0848,Compositional Generalization for Multi-label Text Classification: A Data-Augmentation Approach,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0849,Exploring Continual Learning of Compositional Generalization in NLI,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0852,Local Mechanisms of Compositional Generalization in Conditional Diffusion,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0853,A Theoretical Analysis of Compositional Generalization in Neural Networks: A Necessary and Sufficient Condition,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0862,Compositional Generalization in Image Captioning,2019,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0870,The Impact of Depth on Compositional Generalization in Transformer Language Models,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0871,Compositional Generalization Across Distributional Shifts with Sparse Tree Operations,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0875,Pretraining Frequency Predicts Compositional Generalization of CLIP on Real-World Tasks,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0880,Finding needles in a haystack: Sampling Structurally-diverse Training Sets from Synthetic Data for Compositional Generalization,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0887,ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0888,Compositional Generalization for Data-to-Text Generation,2023,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0889,What Drives Compositional Generalization? The Importance of Continuous Training Objectives in Visual Generative Models,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0892,Sequential Compositional Generalization in Multimodal Models,2024,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0902,ViLPAct: A Benchmark for Compositional Generalization on Multimodal Human Activities,2022,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0908,From Reasoning Traces to Reusable Modules: Understanding Compositional Generalization in Language Model Reasoning,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0909,Systematic Generalization: What Is Required and Can It Be Learned?,2018,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0910,Learning by Analogy: A Causal Framework for Composition Generalization,2025,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0912,Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization,2022,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0917,Seen to Unseen: Exploring Compositional Generalization of Multi-Attribute Controllable Dialogue Generation,2023,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0919,Latent Compositional Representations Improve Systematic Generalization in Grounded Question Answering,2020,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0923,LAGr: Label Aligned Graphs for Better Systematic Generalization in Semantic Parsing,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_0924,COVR: A test-bed for Visually Grounded Compositional Generalization with real images,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0927,ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle Games for Evaluating Compositional Generalization,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0928,HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating the Systematic Generalization Performance of Human-Object Interaction Detection Models,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0929,"InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",2026,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0933,Inductive Biases for Zero-shot Systematic Generalization in Language-informed Reinforcement Learning,2025,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0936,"A Minimalist Dataset for Systematic Generalization of Perception, Syntax, and Semantics",2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0938,Towards Systematic Generalization for Power Grid Optimization Problems,2026,Include,,yes,Uncertain,Exclude,conflict: default Include (6.3.3); flagged
+P02_0941,Challenges in Generalization in Open Domain Question Answering,2021,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0942,Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0946,ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies,2026,Include,,yes,Include,Uncertain,conflict: default Include (6.3.3); flagged
+P02_0957,Low-Frequency Shortcuts in Texture-Driven Visual Learning,2026,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0964,Compositional Generalization in Spoken Language Understanding,2023,Include,,yes,Include,Include,s1=Include s2=Include
+P02_0985,Point-SRA: Self-Representation Alignment for 3D Representation Learning,2026,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1078,Adversarial Image Alignment and Interpolation,2017,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1122,A model to assess customer alignment through customer experience concepts,2019,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1128,Intelligent Angle Map-based Beam Alignment for RIS-aided mmWave Communication Networks,2024,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1141,Deep Unfolding Network with Spatial Alignment for multi-modal MRI reconstruction,2023,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1144,Aleena: Alignment Agent for Research Software Engineering Collaborations,2026,Exclude,FT1,yes,Exclude,Exclude,s1=Exclude s2=Exclude
+P02_1172,Learning to optimize: a primer and a benchmark,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1173,Proceedings of the 2025 International Conference on Multimedia Retrieval,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1175,Proceedings of the 2024 International Conference on Multimedia Retrieval,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1176,Proceedings of the 2026 ACM Workshop on Information Hiding and Multimedia Security,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1177,"Proceedings of the 2026 5th International Conference on Networks, Communications and Information Technology",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1178,"Proceedings of the 17th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1179,"Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1180,Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1181,"Proceedings of the 2026 5th International Conference on Big Data, Information and Computer Network",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1182,Proceedings of the 2025 6th International Conference on Computer Science and Management Technology,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1183,"Proceedings of the 2022 5th International Conference on Algorithms, Computing and Artificial Intelligence",2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1184,"Proceedings of the 5th International Conference on Computer, Artificial Intelligence and Control Engineering",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1185,Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1186,"Proceedings of the 2026 5th International Conference on Cryptography, Network Security and Communication Technology",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1187,Proceedings of the 7th ACM International Conference on Multimedia in Asia,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1188,Proceedings of the Third International Conference on AI-ML Systems,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1189,Proceedings of the 22nd ACM SIGGRAPH European Conference on Visual Media Production,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1190,Proceedings of the 12th International Symposium on Information and Communication Technology,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1191,Proceedings of the 2025 11th International Conference on Communication and Information Processing,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1192,Proceedings of the 32nd ACM International Conference on Multimedia,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1193,Proceedings of the 2024 International Conference on Generative Artificial Intelligence and Information Security,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1194,Proceedings of the 2025 6th International Conference on Big Data Economy and Information Management,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1195,Proceedings of the 2023 15th International Conference on Machine Learning and Computing,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1196,Proceedings of the 2026 ACM Sustainability Week,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1197,Proceedings of the 6th Joint International Conference on Data Science &amp; Management of Data (10th ACM IKDD CODS and 28th COMAD),2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1198,"Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering",2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1199,Proceedings of the 2024 8th International Conference on Natural Language Processing and Information Retrieval,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1200,Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1201,Proceedings of the 2024 16th International Conference on Machine Learning and Computing,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1202,Proceedings of the Fourth ACM International Conference on AI in Finance,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1203,Proceedings of the 2024 5th International Conference on Computer Science and Management Technology,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1204,Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1205,Proceedings of the ACM on Web Conference 2025,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1206,Proceedings of the 2026 2nd International Conference on Digital Education and Information Technology,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1207,Proceedings of the 31st ACM International Conference on Advances in Geographic Information Systems,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1208,Proceedings of the 5th ACM International Conference on AI in Finance,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1209,Proceedings of the 2026 International Conference on Multimedia Retrieval,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1210,Proceedings of the 2024 5th International Symposium on Artificial Intelligence for Medicine Science,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1211,Proceedings of the 17th ACM Conference on Recommender Systems,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1212,Proceedings of the 6th ACM International Conference on Multimedia in Asia,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1213,Proceedings of the 7th Joint International Conference on Data Science &amp; Management of Data (11th ACM IKDD CODS and 29th COMAD),2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1214,Proceedings of the 17th ACM International Conference on Web Search and Data Mining,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1215,Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1216,Proceedings of the 2024 ACM Workshop on Information Hiding and Multimedia Security,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1217,Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1218,Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1219,Proceedings of the Companion Conference on Genetic and Evolutionary Computation,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1220,Proceedings of the 2025 15th International Conference on Communication and Network Security,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1221,Proceedings of the Genetic and Evolutionary Computation Conference Companion,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1222,Proceedings of the 18th ACM Conference on Recommender Systems,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1223,Companion Proceedings of the Web Conference 2022,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1224,Proceedings of the 2025 ACM Workshop on Information Hiding and Multimedia Security,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1225,Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1226,Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering,2022,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1227,Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1228,Proceedings of the 30th International Conference on Intelligent User Interfaces,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1229,Proceedings of the 2026 ACM Secure Development Conference,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1230,"Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services",2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1231,Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1233,Proceedings of the 23rd International Conference on Autonomous Agents and Multiagent Systems,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1234,Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1235,Proceedings of the SIGGRAPH Asia 2025 Conference Papers,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1236,SIGGRAPH Asia 2024 Conference Papers,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1237,Proceedings of the Fifth International Conference on Distributed Artificial Intelligence,2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1238,Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security,2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1240,Proceedings of the IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Practice,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1241,Proceedings of the ACM Asia Conference on Computer and Communications Security,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1242,The World Wide Web Conference,2019,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1243,Proceedings of the Genetic and Evolutionary Computation Conference,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1244,"Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1245,Proceedings of the 19th ACM Asia Conference on Computer and Communications Security,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1246,Optimal locally private nonparametric classification with public data,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1247,"Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency",2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1248,"Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency",2023,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1249,Proceedings of the 19th International Conference on the Foundations of Digital Games,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1250,Proceedings of the 2026 Designing Interactive Systems Conference,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1329,"4th Conference on Lifelong Learning Agents, CoLLAs 2025",2025,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1339,TOWARDS ROBUST OUT-OF-DISTRIBUTION GENERALIZATION BOUNDS VIA SHARPNESS,2024,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1388,"14th National CCF Conference on Natural Language Processing and Chinese Computing, NLPCC 2025",2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1389,Weight Space Correlation Analysis: Quantifying Feature Utilization in Deep Learning Models,2026,Exclude,FT5,no,,,full text unavailable after 3 attempts
+P02_1407,"*SEM 2022 - 11th Joint Conference on Lexical and Computational Semantics, Proceedings of the Conference",2022,Exclude,FT5,no,,,full text unavailable after 3 attempts

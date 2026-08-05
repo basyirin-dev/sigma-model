@@ -1,0 +1,14 @@
+id,decision,reason,note
+P02_0703,Include,,OOD generalization of cooperative agents to unseen partners (S1 evidence: ood_nums=10)
+P02_0903,Include,,Policy architectures for compositional generalization in control (ood_nums=33)
+P02_0939,Include,,Out-of-distribution accuracies via quantization analysis (id_nums=16, ood_nums=27)
+P02_0962,Include,,Robust subtask learning for compositional generalization (ood_nums=57)
+P02_0967,Include,,Adversarial reward auditing in RL; safety stream; default Include per 6.3.3 (flagged)
+P02_0673,Include,,Shortcut learning in physics word problems; OOD generalization (id_nums=19, ood_nums=36)
+P02_0797,Include,,Predictable GRPO training dynamics; OOD terms + numbers (flagged)
+P02_0746,Exclude,FT7,Title is 'A Survey of Datasets, Benchmarks...' — review paper without original results
+P02_0054,Exclude,FT8,Comparative analysis of errors psychology-vs-ML; not an OOD/compositional generalization study
+P02_0665,Exclude,FT8,'Composition' of 3D human parts — object-part composition, not compositional generalization (E10 precedent)
+P02_0781,Exclude,FT1,PDE neural operator; non-compositional OOD / covariate shift (E8 precedent)
+P02_0886,Exclude,FT6,Duplicate of P02_0497 (arXiv 2205.02054v1 = NAACL Findings 2022 version)
+P02_0497,Include,,Canonical published version of the duplicate pair (NAACL Findings 2022, DOI 10.18653/v1/2022.findings-naacl.62)

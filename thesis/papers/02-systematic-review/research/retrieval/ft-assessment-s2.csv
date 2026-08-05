@@ -1,0 +1,242 @@
+id,title,decision,reason,note
+P02_0497,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,Include,,nn=9 ood=3 id_ev=14 ood_nums=27
+P02_0507,I2CD: An Invertible Causal Framework for Compositional Zero-Shot Learning via Disentangle-Compose-Disentangle,Uncertain,,"ood_nums=75, id_ev=0 (ID baseline missing?)"
+P02_0510,Compositional Generalization for Neural Semantic Parsing via Span-level Supervised Attention,Include,,nn=11 ood=3 id_ev=96 ood_nums=114
+P02_0542,Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of-Distribution Generalization,Include,,nn=5 ood=3 id_ev=11 ood_nums=34
+P02_0594,COGS: A Compositional Generalization Challenge Based on Semantic Interpretation,Include,,nn=12 ood=8 id_ev=77 ood_nums=96
+P02_0595,Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP),Include,,nn=14 ood=5 id_ev=144 ood_nums=136
+P02_0596,SLOG: A Structural Generalization Benchmark for Semantic Parsing,Include,,nn=10 ood=8 id_ev=110 ood_nums=130
+P02_0597,Grounded Graph Decoding Improves Compositional Generalization in Question Answering,Include,,nn=13 ood=4 id_ev=56 ood_nums=76
+P02_0598,Towards Understanding the Relationship between In-context Learning and Compositional Generalization,Include,,nn=13 ood=9 id_ev=85 ood_nums=131
+P02_0599,Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures,Include,,nn=17 ood=7 id_ev=124 ood_nums=117
+P02_0600,Learning to Substitute Components for Compositional Generalization,Include,,nn=15 ood=7 id_ev=176 ood_nums=213
+P02_0602,Harnessing Dataset Cartography for Improved Compositional Generalization in Transformers,Include,,nn=12 ood=6 id_ev=245 ood_nums=280
+P02_0604,On the Compositional Generalization Gap of In-Context Learning,Include,,nn=8 ood=7 id_ev=65 ood_nums=100
+P02_0605,Representational Homomorphism Predicts and Improves Compositional Generalization In Transformer Language Model,Include,,nn=8 ood=11 id_ev=32 ood_nums=57
+P02_0607,Revisiting Iterative Back-Translation from the Perspective of Compositional Generalization,Include,,nn=11 ood=6 id_ev=73 ood_nums=106
+P02_0608,*-CFQ: Analyzing the Scalability of Machine Learning on a Compositional Task,Include,,nn=14 ood=4 id_ev=204 ood_nums=220
+P02_0610,Think before you act: A simple baseline for compositional generalization,Include,,nn=10 ood=5 id_ev=14 ood_nums=27
+P02_0611,How Do In-Context Examples Affect Compositional Generalization?,Include,,nn=9 ood=9 id_ev=19 ood_nums=78
+P02_0612,Hierarchical Poset Decoding for Compositional Generalization in Language,Include,,nn=12 ood=4 id_ev=33 ood_nums=58
+P02_0613,Unlocking Compositional Generalization in Pre-trained Models Using Intermediate Representations,Include,,nn=10 ood=5 id_ev=189 ood_nums=195
+P02_0614,Compositional Generalization by Learning Analytical Expressions,Include,,nn=15 ood=5 id_ev=93 ood_nums=83
+P02_0615,Compositional Generalization in Multilingual Semantic Parsing over Wikidata,Include,,nn=13 ood=6 id_ev=112 ood_nums=144
+P02_0616,Data Factors for Better Compositional Generalization,Include,,nn=15 ood=9 id_ev=69 ood_nums=147
+P02_0617,Iterative Decoding for Compositional Generalization in Transformers,Include,,nn=11 ood=5 id_ev=83 ood_nums=88
+P02_0618,Structural generalization in COGS: Supertagging is (almost) all you need,Include,,nn=9 ood=7 id_ev=30 ood_nums=92
+P02_0619,When Can Transformers Ground and Compose: Insights from Compositional Generalization Benchmarks,Include,,nn=15 ood=9 id_ev=78 ood_nums=110
+P02_0622,Measuring Compositional Generalization: A Comprehensive Method on Realistic Data,Include,,nn=12 ood=5 id_ev=159 ood_nums=168
+P02_0623,Recursive Decoding: A Situated Cognition Approach to Compositional Generation in Grounded Language Understanding,Include,,nn=14 ood=7 id_ev=71 ood_nums=66
+P02_0624,Compositional Generalization without Trees using Multiset Tagging and Latent Permutations,Include,,nn=14 ood=6 id_ev=216 ood_nums=156
+P02_0625,Compositional Generalization via Neural-Symbolic Stack Machines,Include,,nn=15 ood=7 id_ev=33 ood_nums=81
+P02_0627,Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models,Include,,nn=12 ood=10 id_ev=54 ood_nums=102
+P02_0628,A Neuroscience-Inspired Dual-Process Model of Compositional Generalization,Include,,nn=9 ood=5 id_ev=19 ood_nums=48
+P02_0629,Compositional generalization in a deep seq2seq model by separating syntax and semantics,Include,,nn=13 ood=5 id_ev=49 ood_nums=78
+P02_0630,Compositional Generalization and Decomposition in Neural Program Synthesis,Include,,nn=13 ood=6 id_ev=64 ood_nums=120
+P02_0632,Can Transformers Jump Around Right in Natural Language? Assessing Performance Transfer from SCAN,Include,,nn=16 ood=4 id_ev=49 ood_nums=46
+P02_0633,Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks,Include,,nn=13 ood=6 id_ev=124 ood_nums=162
+P02_0634,Compositional generalization in semantic parsing with pretrained transformers,Include,,nn=9 ood=5 id_ev=61 ood_nums=53
+P02_0635,CNNs found to jump around more skillfully than RNNs: Compositional generalization in seq2seq convolutional networks,Include,,nn=13 ood=4 id_ev=36 ood_nums=15
+P02_0640,ReaSCAN: Compositional Reasoning in Language Grounding,Include,,nn=12 ood=8 id_ev=86 ood_nums=137
+P02_0642,Compositional Semantic Parsing with Large Language Models,Include,,nn=14 ood=7 id_ev=100 ood_nums=145
+P02_0643,A Benchmark for Systematic Generalization in Grounded Language Understanding,Include,,nn=10 ood=10 id_ev=50 ood_nums=70
+P02_0648,Inducing Transformer's Compositional Generalization Ability via Auxiliary Sequence Prediction Tasks,Include,,nn=15 ood=11 id_ev=102 ood_nums=74
+P02_0651,Early-Warning Signals of Grokking via Loss-Landscape Geometry,Include,,nn=10 ood=2 id_ev=151 ood_nums=16
+P02_0654,A Compositional Framework for Open-ended Intelligence,Include,,nn=9 ood=3 id_ev=39 ood_nums=31
+P02_0657,Sequence-Level Mixed Sample Data Augmentation,Include,,nn=9 ood=3 id_ev=46 ood_nums=13
+P02_0691,Invariant Graph Transformer for Out-of-Distribution Generalization,Uncertain,,"ood_nums=120, id_ev=0 (ID baseline missing?)"
+P02_0693,Early Period of Training Impacts Adaptation for Out-of-Distribution Generalization: An Empirical Study,Include,,nn=13 ood=3 id_ev=15 ood_nums=44
+P02_0702,Benign Overfitting in Out-of-Distribution Generalization of Linear Models,Include,,nn=5 ood=3 id_ev=14 ood_nums=39
+P02_0703,Can Agents Run Relay Race with Strangers? Generalization of RL to Out-of-Distribution Trajectories,Exclude,FT1,ood_hits=0 (<2)
+P02_0708,Making Foresight Actionable: Repurposing Representation Alignment in World Action Models,Include,,nn=4 ood=2 id_ev=20 ood_nums=14
+P02_0712,Low-rank Orthogonal Subspace Intervention for Generalizable Face Forgery Detection,Include,,nn=8 ood=2 id_ev=64 ood_nums=8
+P02_0719,Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in Robot Instruction Following,Include,,nn=9 ood=3 id_ev=10 ood_nums=56
+P02_0724,General Greedy De-bias Learning,Include,,nn=11 ood=5 id_ev=35 ood_nums=39
+P02_0746,"Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines",Exclude,FT1,ood_hits=1 (<2)
+P02_0753,Evaluating Reward Model Generalization via Pairwise Maximum Discrepancy Competitions,Include,,nn=4 ood=3 id_ev=2 ood_nums=20
+P02_0768,Neural Language of Thought Models,Include,,nn=14 ood=5 id_ev=19 ood_nums=24
+P02_0769,GA-Field: Geometry-Aware Vehicle Aerodynamic Field Prediction,Uncertain,,"ood_nums=10, id_ev=0 (ID baseline missing?)"
+P02_0773,Robust OOD Graph Learning via Mean Constraints and Noise Reduction,Uncertain,,"ood_nums=34, id_ev=0 (ID baseline missing?)"
+P02_0783,Improving Latent Generalization Using Test-time Compute,Include,,nn=4 ood=3 id_ev=77 ood_nums=71
+P02_0789,Frequency Bias and OOD Generalization in Neural Operators under a Variable-Coefficient Wave Equation,Include,,nn=8 ood=2 id_ev=13 ood_nums=40
+P02_0791,SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding,Include,,nn=7 ood=2 id_ev=4 ood_nums=17
+P02_0810,Compositional Generalization via Semantic Tagging,Include,,nn=12 ood=3 id_ev=2 ood_nums=42
+P02_0811,Systematic Generalization with Edge Transformers,Include,,nn=14 ood=6 id_ev=103 ood_nums=126
+P02_0812,Compositional Generalization from First Principles,Uncertain,,"ood_nums=48, id_ev=0 (ID baseline missing?)"
+P02_0813,Improving Compositional Generalization in Semantic Parsing,Include,,nn=10 ood=7 id_ev=208 ood_nums=48
+P02_0819,Scalable Evaluation and Neural Models for Compositional Generalization,Include,,nn=15 ood=8 id_ev=79 ood_nums=128
+P02_0821,Improving Compositional Generalization in Classification Tasks via Structure Annotations,Include,,nn=11 ood=4 id_ev=85 ood_nums=102
+P02_0822,Compositional Generalization with Tree Stack Memory Units,Uncertain,,"ood_nums=52, id_ev=0 (ID baseline missing?)"
+P02_0823,Reinforcement Learning for Compositional Generalization with Outcome-Level Optimization,Include,,nn=7 ood=10 id_ev=120 ood_nums=159
+P02_0824,Provable Compositional Generalization for Object-Centric Learning,Include,,nn=8 ood=6 id_ev=5 ood_nums=52
+P02_0826,Disentangled Sequence to Sequence Learning for Compositional Generalization,Include,,nn=15 ood=7 id_ev=119 ood_nums=154
+P02_0827,"Concepts, Properties and an Approach for Compositional Generalization",Uncertain,,"ood_nums=46, id_ev=0 (ID baseline missing?)"
+P02_0828,Consistency of Compositional Generalization across Multiple Levels,Include,,nn=8 ood=3 id_ev=4 ood_nums=64
+P02_0829,On Provable Length and Compositional Generalization,Include,,nn=10 ood=8 id_ev=8 ood_nums=152
+P02_0831,DiNeR: a Large Realistic Dataset for Evaluating Compositional Generalization,Include,,nn=10 ood=5 id_ev=22 ood_nums=68
+P02_0832,The Mystery of Compositional Generalization in Graph-based Generative Commonsense Reasoning,Include,,nn=10 ood=6 id_ev=90 ood_nums=134
+P02_0836,"Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",Include,,nn=10 ood=6 id_ev=4 ood_nums=153
+P02_0838,When does compositional structure yield compositional generalization? A kernel theory,Include,,nn=16 ood=6 id_ev=18 ood_nums=93
+P02_0839,Syntax-Guided Transformers: Elevating Compositional Generalization and Grounding in Multimodal Environments,Include,,nn=12 ood=9 id_ev=45 ood_nums=75
+P02_0843,Towards Compositional Generalization of LLMs via Skill Taxonomy Guided Data Synthesis,Include,,nn=9 ood=2 id_ev=6 ood_nums=28
+P02_0845,Are Object-Centric Representations Better At Compositional Generalization?,Include,,nn=10 ood=7 id_ev=109 ood_nums=94
+P02_0850,Layer-wise Representation Fusion for Compositional Generalization,Include,,nn=14 ood=6 id_ev=49 ood_nums=62
+P02_0851,Block-Operations: Using Modular Routing to Improve Compositional Generalization,Include,,nn=9 ood=5 id_ev=5 ood_nums=52
+P02_0854,The Role of Linguistic Priors in Measuring Compositional Generalization of Vision-Language Models,Include,,nn=12 ood=4 id_ev=7 ood_nums=39
+P02_0855,Compositional Generalization and Natural Language Variation: Can a Semantic Parsing Approach Handle Both?,Include,,nn=11 ood=7 id_ev=65 ood_nums=65
+P02_0856,Enhancing Compositional Generalization via Compositional Feature Alignment,Include,,nn=10 ood=5 id_ev=8 ood_nums=51
+P02_0857,Evaluating Morphological Compositional Generalization in Large Language Models,Include,,nn=10 ood=7 id_ev=14 ood_nums=652
+P02_0858,Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing,Include,,nn=14 ood=9 id_ev=175 ood_nums=208
+P02_0859,Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning,Include,,nn=12 ood=5 id_ev=43 ood_nums=90
+P02_0861,Improving Compositional Generalization with Latent Structure and Data Augmentation,Include,,nn=10 ood=10 id_ev=154 ood_nums=158
+P02_0863,Can LLM find the green circle? Investigation and Human-guided tool manipulation for compositional generalization,Include,,nn=6 ood=6 id_ev=15 ood_nums=59
+P02_0864,Multi-Sourced Compositional Generalization in Visual Question Answering,Include,,nn=8 ood=4 id_ev=30 ood_nums=68
+P02_0865,Analyzing the Inner Workings of Transformers in Compositional Generalization,Include,,nn=11 ood=5 id_ev=21 ood_nums=42
+P02_0866,Improving Systematic Generalization Through Modularity and Augmentation,Include,,nn=10 ood=9 id_ev=31 ood_nums=97
+P02_0867,NeSyCoCo: A Neuro-Symbolic Concept Composer for Compositional Generalization,Include,,nn=12 ood=5 id_ev=16 ood_nums=63
+P02_0868,Compositional Generalization via Forced Rendering of Disentangled Latents,Include,,nn=12 ood=6 id_ev=7 ood_nums=75
+P02_0869,ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection,Uncertain,,"ood_nums=20, id_ev=0 (ID baseline missing?)"
+P02_0872,Compositional generalization through abstract representations in human and artificial neural networks,Include,,nn=7 ood=5 id_ev=34 ood_nums=59
+P02_0873,Systematic Generalization in Language Models Scales with Information Entropy,Include,,nn=16 ood=5 id_ev=36 ood_nums=71
+P02_0874,How Modular Should Neural Module Networks Be for Systematic Generalization?,Include,,nn=8 ood=5 id_ev=81 ood_nums=93
+P02_0877,SPOR: A Comprehensive and Practical Evaluation Method for Compositional Generalization in Data-to-Text Generation,Include,,nn=11 ood=5 id_ev=4 ood_nums=130
+P02_0878,Neural-Symbolic Recursive Machine for Systematic Generalization,Include,,nn=16 ood=7 id_ev=67 ood_nums=54
+P02_0879,An explainable transformer circuit for compositional generalization,Include,,nn=10 ood=4 id_ev=25 ood_nums=17
+P02_0881,Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability,Include,,nn=12 ood=3 id_ev=9 ood_nums=31
+P02_0882,Differentiable Tree Operations Promote Compositional Generalization,Include,,nn=10 ood=5 id_ev=40 ood_nums=92
+P02_0883,Factorization Regret mediates compositional generalization in latent space,Uncertain,,"ood_nums=42, id_ev=0 (ID baseline missing?)"
+P02_0884,Counterfactual Recipe Generation: Exploring Compositional Generalization in a Realistic Scenario,Include,,nn=6 ood=5 id_ev=6 ood_nums=43
+P02_0885,Swing-by Dynamics in Concept Learning and Compositional Generalization,Include,,nn=13 ood=8 id_ev=5 ood_nums=36
+P02_0886,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,Include,,nn=9 ood=3 id_ev=14 ood_nums=28
+P02_0890,Compositional Generalization with Grounded Language Models,Include,,nn=11 ood=10 id_ev=13 ood_nums=98
+P02_0891,Scaling can lead to compositional generalization,Uncertain,,"ood_nums=160, id_ev=0 (ID baseline missing?)"
+P02_0893,Learning to Compose Representations of Different Encoder Layers towards Improving Compositional Generalization,Include,,nn=16 ood=5 id_ev=72 ood_nums=117
+P02_0894,Systematic Generalization on gSCAN with Language Conditioned Embedding,Include,,nn=11 ood=8 id_ev=16 ood_nums=30
+P02_0895,On a Built-in Conflict between Deep Learning and Systematic Generalization,Uncertain,,"ood_nums=78, id_ev=0 (ID baseline missing?)"
+P02_0898,What Do You Need for Compositional Generalization in Diffusion Planning?,Uncertain,,"ood_nums=23, id_ev=0 (ID baseline missing?)"
+P02_0899,D3: Data Diversity Design for Systematic Generalization in Visual Question Answering,Include,,nn=12 ood=7 id_ev=23 ood_nums=69
+P02_0900,RoboHiMan: A Hierarchical Evaluation Paradigm for Compositional Generalization in Long-Horizon Manipulation,Uncertain,,"ood_nums=17, id_ev=0 (ID baseline missing?)"
+P02_0901,AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents,Uncertain,,"ood_nums=25, id_ev=0 (ID baseline missing?)"
+P02_0903,Policy Architectures for Compositional Generalization in Control,Exclude,FT1,ood_hits=1 (<2)
+P02_0904,Transformer Module Networks for Systematic Generalization in Visual Question Answering,Include,,nn=12 ood=8 id_ev=250 ood_nums=156
+P02_0906,Realistic Evaluation of Model Merging for Compositional Generalization,Uncertain,,"ood_nums=14, id_ev=0 (ID baseline missing?)"
+P02_0907,Learning Algebraic Representation for Systematic Generalization in Abstract Reasoning,Include,,nn=9 ood=5 id_ev=24 ood_nums=202
+P02_0913,Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning,Include,,nn=16 ood=9 id_ev=11 ood_nums=166
+P02_0914,Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models,Uncertain,,"ood_nums=46, id_ev=0 (ID baseline missing?)"
+P02_0915,Systematic Generalization in Neural Networks-based Multivariate Time Series Forecasting Models,Include,,nn=12 ood=6 id_ev=64 ood_nums=38
+P02_0921,Measuring Systematic Generalization in Neural Proof Generation with Transformers,Include,,nn=13 ood=6 id_ev=7 ood_nums=30
+P02_0922,Systematic Generalization on gSCAN: What is Nearly Solved and What is Next?,Include,,nn=12 ood=9 id_ev=76 ood_nums=126
+P02_0926,Revisit Systematic Generalization via Meaningful Learning,Include,,nn=17 ood=6 id_ev=199 ood_nums=94
+P02_0930,Rule Extrapolation in Language Models: A Study of Compositional Generalization on OOD Prompts,Include,,nn=14 ood=6 id_ev=14 ood_nums=45
+P02_0931,Language Plays a Pivotal Role in the Object-Attribute Compositional Generalization of CLIP,Include,,nn=7 ood=6 id_ev=25 ood_nums=37
+P02_0932,The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers,Include,,nn=10 ood=7 id_ev=279 ood_nums=249
+P02_0934,Three approaches to facilitate DNN generalization to objects in out-of-distribution orientations and illuminations,Include,,nn=5 ood=4 id_ev=15 ood_nums=38
+P02_0935,Siamese recurrent networks learn first-order logic reasoning and exhibit zero-shot compositional generalization,Include,,nn=9 ood=2 id_ev=17 ood_nums=15
+P02_0937,CLOSURE: Assessing Systematic Generalization of CLEVR Models,Include,,nn=10 ood=6 id_ev=104 ood_nums=23
+P02_0939,Understanding out-of-distribution accuracies through quantifying difficulty of test samples,Exclude,FT1,ood_hits=1 (<2)
+P02_0940,SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics,Include,,nn=11 ood=8 id_ev=11 ood_nums=117
+P02_0945,Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System,Uncertain,,"ood_nums=62, id_ev=0 (ID baseline missing?)"
+P02_0947,Data Distributional Properties As Inductive Bias for Systematic Generalization,Include,,nn=13 ood=8 id_ev=27 ood_nums=165
+P02_0948,The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization,Include,,nn=15 ood=5 id_ev=52 ood_nums=52
+P02_0949,Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning,Include,,nn=14 ood=8 id_ev=12 ood_nums=57
+P02_0951,Systematic Generalization and Emergent Structures in Transformers Trained on Structured Tasks,Uncertain,,"ood_nums=34, id_ev=0 (ID baseline missing?)"
+P02_0956,Mixture Data for Training Cannot Ensure Out-of-distribution Generalization,Include,,nn=8 ood=3 id_ev=3 ood_nums=57
+P02_0959,What makes Models Compositional? A Theoretical View: With Supplement,Include,,nn=11 ood=6 id_ev=6 ood_nums=41
+P02_0962,Robust Subtask Learning for Compositional Generalization,Exclude,FT1,ood_hits=1 (<2)
+P02_0965,Causal Structural Hypothesis Testing and Data Generation Models,Exclude,FT1,ood_hits=1 (<2)
+P02_0967,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,Exclude,FT1,ood_hits=1 (<2)
+P02_1159,Probing the Probes: Methods and Metrics for Concept Alignment,Exclude,FT1,ood_hits=1 (<2)
+P02_0054,The Worst of Both Worlds: A Comparative Analysis of Errors in Learning from Data in Psychology and Machine Learning,Exclude,FT1,ood_hits=1 (<2)
+P02_0154,"Roses are Red, Violets are Blue… But Should VQA expect Them To?",Include,,nn=8 ood=2 id_ev=19 ood_nums=20
+P02_0601,Span-based Semantic Parsing for Compositional Generalization,Include,,nn=14 ood=4 id_ev=129 ood_nums=50
+P02_0603,Learning to Substitute Spans towards Improving Compositional Generalization,Include,,nn=14 ood=8 id_ev=141 ood_nums=133
+P02_0606,Compositional Generalization in Dependency Parsing,Include,,nn=5 ood=7 id_ev=51 ood_nums=65
+P02_0609,Compositional Generalization Requires Compositional Parsers,Include,,nn=15 ood=6 id_ev=92 ood_nums=99
+P02_0620,Compositional Generalization for Natural Language Interfaces to Web APIs,Include,,nn=12 ood=6 id_ev=75 ood_nums=80
+P02_0621,Revisiting the Compositional Generalization Abilities of Neural Sequence Models,Include,,nn=9 ood=6 id_ev=64 ood_nums=62
+P02_0626,Compositional Generalization for Primitive Substitutions,Include,,nn=12 ood=5 id_ev=112 ood_nums=51
+P02_0631,Learning to Recombine and Resample Data for Compositional Generalization,Include,,nn=13 ood=6 id_ev=83 ood_nums=33
+P02_0636,SUBS: Subtree Substitution for Compositional Semantic Parsing,Uncertain,,"ood_nums=41, id_ev=0 (ID baseline missing?)"
+P02_0637,On graph-based reentrancy-free semantic parsing,Include,,nn=10 ood=5 id_ev=6 ood_nums=52
+P02_0638,LAGr: Labeling Aligned Graphs for Improving Systematic Generalization in Semantic Parsing,Include,,nn=10 ood=8 id_ev=107 ood_nums=114
+P02_0639,ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation,Include,,nn=11 ood=7 id_ev=107 ood_nums=107
+P02_0647,Compositional generalization through meta sequence-to-sequence learning,Include,,nn=10 ood=4 id_ev=47 ood_nums=39
+P02_0649,Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing,Include,,nn=12 ood=5 id_ev=64 ood_nums=105
+P02_0663,A Class of Distributions for Linear Demand Markets,Exclude,FT1,ood_hits=0 (<2)
+P02_0665,NCHO: Unsupervised Learning for Neural 3D Composition of Humans and Objects,Exclude,FT1,ood_hits=0 (<2)
+P02_0667,Does Data Scaling Lead to Visual Compositional Generalization?,Include,,nn=11 ood=8 id_ev=14 ood_nums=118
+P02_0668,Towards Robust Out-of-Distribution Generalization Bounds via Sharpness,Include,,nn=4 ood=4 id_ev=16 ood_nums=52
+P02_0669,Aggregation Hides Out-of-Distribution Generalization Failures from Spurious Correlations,Include,,nn=14 ood=5 id_ev=38 ood_nums=49
+P02_0673,Learning to Think in Physics: Breaking Shortcut Learning in Scientific Diffusion via Representation Alignment,Exclude,FT1,ood_hits=1 (<2)
+P02_0678,"Sharp analysis of out-of-distribution error for ""importance-weighted"" estimators in the overparameterized regime",Include,,nn=3 ood=3 id_ev=6 ood_nums=14
+P02_0679,Principled Out-of-Distribution Generalization via Simplicity,Include,,nn=10 ood=6 id_ev=2 ood_nums=36
+P02_0688,Using Interventions to Improve Out-of-Distribution Generalization of Text-Matching Recommendation Systems,Include,,nn=6 ood=5 id_ev=82 ood_nums=30
+P02_0689,Correct-N-Contrast: A Contrastive Approach for Improving Robustness to Spurious Correlations,Include,,nn=9 ood=3 id_ev=1 ood_nums=12
+P02_0690,CausPref: Causal Preference Learning for Out-of-Distribution Recommendation,Include,,nn=7 ood=3 id_ev=2 ood_nums=34
+P02_0692,Fishr: Invariant Gradient Variances for Out-of-Distribution Generalization,Include,,nn=7 ood=5 id_ev=10 ood_nums=162
+P02_0698,Invariance Principle Meets Information Bottleneck for Out-of-Distribution Generalization,Include,,nn=6 ood=3 id_ev=4 ood_nums=32
+P02_0700,What Matters to You? Towards Visual Representation Alignment for Robot Learning,Exclude,FT1,ood_hits=0 (<2)
+P02_0705,Diagnosing Generalization Failures from Representational Geometry Markers,Include,,nn=11 ood=5 id_ev=20 ood_nums=54
+P02_0713,"Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias",Exclude,FT1,ood_hits=1 (<2)
+P02_0717,Incorporating Surrogate Gradient Norm to Improve Offline Optimization Techniques,Exclude,FT1,ood_hits=0 (<2)
+P02_0738,DSL: Understanding and Improving Softmax Recommender Systems with Competition-Aware Scaling,Include,,nn=4 ood=2 id_ev=52 ood_nums=5
+P02_0740,VLA^2: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation,Include,,nn=4 ood=2 id_ev=3 ood_nums=3
+P02_0741,Navigating High Dimensional Concept Space with Metalearning,Include,,nn=5 ood=5 id_ev=17 ood_nums=22
+P02_0757,FedSoup: Improving Generalization and Personalization in Federated Learning via Selective Model Interpolation,Include,,nn=4 ood=4 id_ev=8 ood_nums=42
+P02_0781,Thermodynamically-Informed Iterative Neural Operators for Heterogeneous Elastic Localization,Exclude,FT1,ood_hits=1 (<2)
+P02_0795,TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models,Exclude,FT1,ood_hits=1 (<2)
+P02_0797,Predictable GRPO: A Closed-Form Model of Training Dynamics,Exclude,FT1,ood_hits=1 (<2)
+P02_0798,Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?,Uncertain,,"ood_nums=15, id_ev=0 (ID baseline missing?)"
+P02_0814,A Survey on Compositional Generalization in Applications,Include,,nn=10 ood=7 id_ev=6 ood_nums=63
+P02_0815,Composition-Incremental Learning for Compositional Generalization,Uncertain,,"ood_nums=50, id_ev=0 (ID baseline missing?)"
+P02_0816,Toward Compositional Generalization in Object-Oriented World Modeling,Uncertain,,"ood_nums=49, id_ev=0 (ID baseline missing?)"
+P02_0817,On Evaluating Multilingual Compositional Generalization with Translated Datasets,Include,,nn=14 ood=5 id_ev=20 ood_nums=61
+P02_0818,Learning Algebraic Recombination for Compositional Generalization,Include,,nn=13 ood=4 id_ev=115 ood_nums=174
+P02_0820,Improving Compositional Generalization in Math Word Problem Solving,Include,,nn=13 ood=8 id_ev=12 ood_nums=50
+P02_0825,A General Theory for Compositional Generalization,Include,,nn=7 ood=3 id_ev=25 ood_nums=95
+P02_0830,On Compositional Generalization of Neural Machine Translation,Include,,nn=12 ood=4 id_ev=12 ood_nums=57
+P02_0833,Simple and effective data augmentation for compositional generalization,Include,,nn=12 ood=8 id_ev=252 ood_nums=262
+P02_0834,Unobserved Local Structures Make Compositional Generalization Hard,Include,,nn=11 ood=5 id_ev=11 ood_nums=67
+P02_0837,When and How Does CLIP Enable Domain and Compositional Generalization?,Uncertain,,"ood_nums=91, id_ev=0 (ID baseline missing?)"
+P02_0840,Diverse Demonstrations Improve In-context Compositional Generalization,Uncertain,,"ood_nums=70, id_ev=0 (ID baseline missing?)"
+P02_0841,Exploring the Compositional Generalization in Context Dependent Text-to-SQL Parsing,Include,,nn=13 ood=4 id_ev=3 ood_nums=65
+P02_0842,Improving Compositional Generalization Using Iterated Learning and Simplicial Embeddings,Include,,nn=15 ood=7 id_ev=1 ood_nums=63
+P02_0847,A Short Survey of Systematic Generalization,Include,,nn=19 ood=9 id_ev=46 ood_nums=163
+P02_0848,Compositional Generalization for Multi-label Text Classification: A Data-Augmentation Approach,Include,,nn=20 ood=2 id_ev=41 ood_nums=43
+P02_0849,Exploring Continual Learning of Compositional Generalization in NLI,Include,,nn=10 ood=4 id_ev=4 ood_nums=64
+P02_0852,Local Mechanisms of Compositional Generalization in Conditional Diffusion,Include,,nn=9 ood=4 id_ev=4 ood_nums=44
+P02_0853,A Theoretical Analysis of Compositional Generalization in Neural Networks: A Necessary and Sufficient Condition,Include,,nn=15 ood=5 id_ev=10 ood_nums=76
+P02_0862,Compositional Generalization in Image Captioning,Include,,nn=16 ood=6 id_ev=4 ood_nums=27
+P02_0870,The Impact of Depth on Compositional Generalization in Transformer Language Models,Include,,nn=13 ood=6 id_ev=52 ood_nums=72
+P02_0871,Compositional Generalization Across Distributional Shifts with Sparse Tree Operations,Include,,nn=13 ood=8 id_ev=121 ood_nums=83
+P02_0875,Pretraining Frequency Predicts Compositional Generalization of CLIP on Real-World Tasks,Include,,nn=11 ood=5 id_ev=8 ood_nums=68
+P02_0880,Finding needles in a haystack: Sampling Structurally-diverse Training Sets from Synthetic Data for Compositional Generalization,Include,,nn=5 ood=5 id_ev=29 ood_nums=93
+P02_0887,ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis,Include,,nn=12 ood=6 id_ev=35 ood_nums=56
+P02_0888,Compositional Generalization for Data-to-Text Generation,Uncertain,,"ood_nums=21, id_ev=0 (ID baseline missing?)"
+P02_0889,What Drives Compositional Generalization? The Importance of Continuous Training Objectives in Visual Generative Models,Uncertain,,"ood_nums=125, id_ev=0 (ID baseline missing?)"
+P02_0892,Sequential Compositional Generalization in Multimodal Models,Include,,nn=17 ood=8 id_ev=17 ood_nums=80
+P02_0902,ViLPAct: A Benchmark for Compositional Generalization on Multimodal Human Activities,Uncertain,,"ood_nums=20, id_ev=0 (ID baseline missing?)"
+P02_0908,From Reasoning Traces to Reusable Modules: Understanding Compositional Generalization in Language Model Reasoning,Include,,nn=6 ood=9 id_ev=7 ood_nums=21
+P02_0909,Systematic Generalization: What Is Required and Can It Be Learned?,Include,,nn=10 ood=4 id_ev=4 ood_nums=21
+P02_0910,Learning by Analogy: A Causal Framework for Composition Generalization,Uncertain,,"ood_nums=45, id_ev=0 (ID baseline missing?)"
+P02_0912,Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization,Exclude,FT1,ood_hits=1 (<2)
+P02_0917,Seen to Unseen: Exploring Compositional Generalization of Multi-Attribute Controllable Dialogue Generation,Uncertain,,"ood_nums=113, id_ev=0 (ID baseline missing?)"
+P02_0919,Latent Compositional Representations Improve Systematic Generalization in Grounded Question Answering,Include,,nn=13 ood=6 id_ev=12 ood_nums=27
+P02_0924,COVR: A test-bed for Visually Grounded Compositional Generalization with real images,Include,,nn=8 ood=7 id_ev=5 ood_nums=60
+P02_0927,ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle Games for Evaluating Compositional Generalization,Include,,nn=8 ood=7 id_ev=9 ood_nums=35
+P02_0928,HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating the Systematic Generalization Performance of Human-Object Interaction Detection Models,Include,,nn=9 ood=8 id_ev=51 ood_nums=189
+P02_0929,"InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",Uncertain,,"ood_nums=42, id_ev=0 (ID baseline missing?)"
+P02_0933,Inductive Biases for Zero-shot Systematic Generalization in Language-informed Reinforcement Learning,Include,,nn=15 ood=8 id_ev=21 ood_nums=49
+P02_0936,"A Minimalist Dataset for Systematic Generalization of Perception, Syntax, and Semantics",Include,,nn=18 ood=7 id_ev=23 ood_nums=33
+P02_0938,Towards Systematic Generalization for Power Grid Optimization Problems,Exclude,FT1,ood_hits=1 (<2)
+P02_0941,Challenges in Generalization in Open Domain Question Answering,Include,,nn=10 ood=4 id_ev=7 ood_nums=19
+P02_0942,Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation,Include,,nn=7 ood=4 id_ev=2 ood_nums=48
+P02_0946,ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies,Uncertain,,"ood_nums=28, id_ev=0 (ID baseline missing?)"
+P02_0957,Low-Frequency Shortcuts in Texture-Driven Visual Learning,Include,,nn=10 ood=3 id_ev=68 ood_nums=34
+P02_0964,Compositional Generalization in Spoken Language Understanding,Include,,nn=12 ood=7 id_ev=7 ood_nums=112
+P02_0985,Point-SRA: Self-Representation Alignment for 3D Representation Learning,Exclude,FT1,ood_hits=0 (<2)
+P02_1078,Adversarial Image Alignment and Interpolation,Exclude,FT1,ood_hits=0 (<2)
+P02_1122,A model to assess customer alignment through customer experience concepts,Exclude,FT7,survey/review signals dominate; <3 experiment markers
+P02_1128,Intelligent Angle Map-based Beam Alignment for RIS-aided mmWave Communication Networks,Exclude,FT1,ood_hits=0 (<2)
+P02_1141,Deep Unfolding Network with Spatial Alignment for multi-modal MRI reconstruction,Exclude,FT1,ood_hits=0 (<2)
+P02_1144,Aleena: Alignment Agent for Research Software Engineering Collaborations,Exclude,FT1,ood_hits=1 (<2)
