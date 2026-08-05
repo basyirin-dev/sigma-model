@@ -5,37 +5,37 @@
 
 | ID | Title | Status | Attempts | Reason | PDF |
 |----|-------|--------|----------|--------|-----|
-| P02_0003 | SFP: Spurious Feature-Targeted Pruning for Out-of-Distributi | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0007 | Feature-granularity-based spurious correlation and causal an | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0017 | Mitigating Dynamic Graph Distribution Shifts via Mixture of  | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0021 | Causality and Independence Enhancement for Biased Node Class | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0081 | Evaluating Out-of-Distribution Robustness of TabPFN on Tabul | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0082 | On the Out-of-Distribution Evaluation of ML-Based End-to-End | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0087 | Evading the Simplicity Bias: Training a Diverse Set of Model | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0088 | Compositional Generalization in Emergent Communication via M | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0092 | Data Distributional Properties As Inductive Bias for Systema | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0093 | Dynamic Multi-Path Learning For Out-of-Distribution Node Cla | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0096 | Out-of-Distribution Generalization on Graphs: A Survey | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0110 | Efficient Out-of-Distribution Generalization for Pre-trained | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0116 | Complexity Control Facilitates Reasoning-Based Compositional | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0150 | Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Ob | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0179 | General Greedy De-Bias Learning | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0238 | Three approaches to facilitate invariant neurons and general | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0280 | SSGNN: Simple siamese graph neural networks for out-of-distr | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0290 | Boosting Rice Disease Diagnosis: A Systematic Benchmark of F | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0322 | A two-stage co-adversarial perturbation to mitigate out-of-d | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0410 | Invariant Graph Transformer for Out-of-Distribution Generali | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0444 | Improving Generalization in Collision Avoidance for Multiple | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0493 | Coupled data-driven and experience-informed neural networks  | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0495 | MiMu: mitigating multiple shortcut learning behavior of tran | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_0003 | SFP: Spurious Feature-Targeted Pruning for Out-of-Distributi | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0007 | Feature-granularity-based spurious correlation and causal an | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0017 | Mitigating Dynamic Graph Distribution Shifts via Mixture of  | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0021 | Causality and Independence Enhancement for Biased Node Class | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0081 | Evaluating Out-of-Distribution Robustness of TabPFN on Tabul | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0082 | On the Out-of-Distribution Evaluation of ML-Based End-to-End | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0087 | Evading the Simplicity Bias: Training a Diverse Set of Model | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0088 | Compositional Generalization in Emergent Communication via M | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0092 | Data Distributional Properties As Inductive Bias for Systema | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0093 | Dynamic Multi-Path Learning For Out-of-Distribution Node Cla | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0096 | Out-of-Distribution Generalization on Graphs: A Survey | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0110 | Efficient Out-of-Distribution Generalization for Pre-trained | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0116 | Complexity Control Facilitates Reasoning-Based Compositional | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0150 | Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Ob | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0179 | General Greedy De-Bias Learning | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0238 | Three approaches to facilitate invariant neurons and general | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0280 | SSGNN: Simple siamese graph neural networks for out-of-distr | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0290 | Boosting Rice Disease Diagnosis: A Systematic Benchmark of F | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0322 | A two-stage co-adversarial perturbation to mitigate out-of-d | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0410 | Invariant Graph Transformer for Out-of-Distribution Generali | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0444 | Improving Generalization in Collision Avoidance for Multiple | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0493 | Coupled data-driven and experience-informed neural networks  | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0495 | MiMu: mitigating multiple shortcut learning behavior of tran | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0497 | Measuring and Improving Compositional Generalization in Text | retrieved-oa | openalex:ok |  | ✓ |
-| P02_0500 | Accurate Classification of Pathological Whole-Slide Images f | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0503 | A Structure-aware Invariant Learning Framework for Node-leve | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_0500 | Accurate Classification of Pathological Whole-Slide Images f | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0503 | A Structure-aware Invariant Learning Framework for Node-leve | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0507 | I2CD: An Invertible Causal Framework for Compositional Zero- | retrieved-oa | openalex:ok |  | ✓ |
 | P02_0510 | Compositional Generalization for Neural Semantic Parsing via | retrieved-oa | openalex:ok |  | ✓ |
 | P02_0542 | Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of- | retrieved-oa | openalex:ok |  | ✓ |
-| P02_0556 | Spectral Distribution Alignment for Enhanced Generalization  | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0576 | Improving Group Robustness on Spurious Correlation via Evide | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_0556 | Spectral Distribution Alignment for Enhanced Generalization  | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0576 | Improving Group Robustness on Spurious Correlation via Evide | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0594 | COGS: A Compositional Generalization Challenge Based on Sema | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0595 | Exploring Compositional Generalization (in COGS/ReCOGS_pos)  | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0596 | SLOG: A Structural Generalization Benchmark for Semantic Par | retrieved-arxiv | arxiv:ok |  | ✓ |
@@ -168,7 +168,7 @@
 | P02_0937 | CLOSURE: Assessing Systematic Generalization of CLEVR Models | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0939 | Understanding out-of-distribution accuracies through quantif | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0940 | SyGNS: A Systematic Generalization Testbed Based on Natural  | retrieved-arxiv | arxiv:ok |  | ✓ |
-| P02_0944 | ORCHARD: A Benchmark For Measuring Systematic Generalization | unavailable | arxiv:fail |  |  |
+| P02_0944 | ORCHARD: A Benchmark For Measuring Systematic Generalization | retrieved-manual | arxiv:fail; manual:ok |  | ✓ |
 | P02_0945 | Atomic-to-Compositional Generalization for Mobile Agents wit | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0947 | Data Distributional Properties As Inductive Bias for Systema | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0948 | The Neural Data Router: Adaptive Control Flow in Transformer | retrieved-arxiv | arxiv:ok |  | ✓ |
@@ -180,52 +180,52 @@
 | P02_0965 | Causal Structural Hypothesis Testing and Data Generation Mod | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0967 | Adversarial Reward Auditing for Active Detection and Mitigat | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_1159 | Probing the Probes: Methods and Metrics for Concept Alignmen | retrieved-arxiv | arxiv:ok |  | ✓ |
-| P02_1308 | Vision Transformer Neural Architecture Search for Out-of-Dis | unavailable |  |  |  |
-| P02_1381 | Sparse Mixture-of-Experts for Compositional Generalization:  | unavailable |  |  |  |
-| P02_1395 | Compositional generalization by factorizing alignment and tr | unavailable |  |  |  |
-| P02_1398 | Neural Collapse Inspired Feature Alignment for Out-of-Distri | unavailable |  |  |  |
-| P02_0002 | Graph Representation Learning via Causal Diffusion for Out-o | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0004 | Research on Causal Robustness Enhancement Methods and Out-of | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0005 | Robust Neural Information Retrieval: An Adversarial and Out- | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0011 | Beyond Mimicry: Toward Lifelong Adaptability in Imitation Le | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0016 | Don't Blind Your VLA: Aligning Visual Representations for OO | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0018 | Human Heterogeneity Invariant Stress Sensing | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0023 | Environment Agnostic Invariant Risk Minimization for Classif | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0031 | Causal Disentangled Recommendation against User Preference S | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0032 | NILMBENCH2026: A Benchmark for Energy Disaggregation | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0033 | Normalized Space Alignment: A Versatile Metric for Represent | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0034 | Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-T | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0038 | Test Optimization in DNN Testing: A Survey | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0045 |  | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0048 | Mitigating Distributed Backdoor Attack in Federated Learning | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0051 | Responsive DNN Adaptation for Video Analytics against Enviro | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_1308 | Vision Transformer Neural Architecture Search for Out-of-Dis | retrieved-manual | manual:ok |  | ✓ |
+| P02_1381 | Sparse Mixture-of-Experts for Compositional Generalization:  | retrieved-manual | manual:ok |  | ✓ |
+| P02_1395 | Compositional generalization by factorizing alignment and tr | retrieved-manual | manual:ok |  | ✓ |
+| P02_1398 | Neural Collapse Inspired Feature Alignment for Out-of-Distri | retrieved-manual | manual:ok |  | ✓ |
+| P02_0002 | Graph Representation Learning via Causal Diffusion for Out-o | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0004 | Research on Causal Robustness Enhancement Methods and Out-of | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0005 | Robust Neural Information Retrieval: An Adversarial and Out- | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0011 | Beyond Mimicry: Toward Lifelong Adaptability in Imitation Le | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0016 | Don't Blind Your VLA: Aligning Visual Representations for OO | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0018 | Human Heterogeneity Invariant Stress Sensing | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0023 | Environment Agnostic Invariant Risk Minimization for Classif | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0031 | Causal Disentangled Recommendation against User Preference S | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0032 | NILMBENCH2026: A Benchmark for Energy Disaggregation | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0033 | Normalized Space Alignment: A Versatile Metric for Represent | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0034 | Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-T | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0038 | Test Optimization in DNN Testing: A Survey | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0045 |  | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0048 | Mitigating Distributed Backdoor Attack in Federated Learning | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0051 | Responsive DNN Adaptation for Video Analytics against Enviro | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0054 | The Worst of Both Worlds: A Comparative Analysis of Errors i | retrieved-oa | openalex:ok |  | ✓ |
-| P02_0055 | A.I. Robustness: a Human-Centered Perspective on Technologic | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0058 | A Survey of Model Inversion Attacks: An Interface-Prior Pers | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0060 | AI Alignment: A Contemporary Survey | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0064 | Abstraction Alignment: Comparing Model-Learned and Human-Enc | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0066 | A Survey of Dataset Refinement for Problems in Computer Visi | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0069 | Uniformly Distributed Category Prototype-Guided Vision-Langu | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0071 | A Survey of Multilingual Neural Machine Translation | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0072 | Contrastive Curriculum Learning for Sequential User Behavior | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0073 | Efficient Knowledge Graph Unlearning with Zeroth-order Infor | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0074 | Cacophony: An Improved Contrastive Audio-Text Model | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0075 | Neural Dehydration: Effective Erasure of Black-box Watermark | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0124 | Handling Out-of-Distribution Data: A Survey | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0126 | The Many Faces of Robustness: A Critical Analysis of Out-of- | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0128 | A System-Level Analysis of Cross-Domain Generalization Failu | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0136 | Defeating Multimodal Information Manipulation By A Web 3.0 D | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0138 | Utilizing Confidence in Localization Predictions for Improve | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0151 | Leveraging Vision-Language Models for Improving Domain Gener | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_0055 | A.I. Robustness: a Human-Centered Perspective on Technologic | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0058 | A Survey of Model Inversion Attacks: An Interface-Prior Pers | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0060 | AI Alignment: A Contemporary Survey | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0064 | Abstraction Alignment: Comparing Model-Learned and Human-Enc | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0066 | A Survey of Dataset Refinement for Problems in Computer Visi | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0069 | Uniformly Distributed Category Prototype-Guided Vision-Langu | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0071 | A Survey of Multilingual Neural Machine Translation | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0072 | Contrastive Curriculum Learning for Sequential User Behavior | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0073 | Efficient Knowledge Graph Unlearning with Zeroth-order Infor | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0074 | Cacophony: An Improved Contrastive Audio-Text Model | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0075 | Neural Dehydration: Effective Erasure of Black-box Watermark | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0124 | Handling Out-of-Distribution Data: A Survey | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0126 | The Many Faces of Robustness: A Critical Analysis of Out-of- | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0128 | A System-Level Analysis of Cross-Domain Generalization Failu | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0136 | Defeating Multimodal Information Manipulation By A Web 3.0 D | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0138 | Utilizing Confidence in Localization Predictions for Improve | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0151 | Leveraging Vision-Language Models for Improving Domain Gener | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0154 | Roses are Red, Violets are Blue… But Should VQA expect Them  | retrieved-oa | openalex:ok |  | ✓ |
-| P02_0200 | Handling Dual Skewness in Citywide Crime Prediction Using Pe | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0380 | A Physics-Guided Symbolic Regression Framework for Multi-Res | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0386 | Rethinking Graph Generalization through the Lens of Sharpnes | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0442 | Producing plankton classifiers that are robust to dataset sh | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0511 | PTAN: Principal Token-aware Adjacent Network for Composition | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0514 | Towards Domain-Aware Stable Meta Learning for Out-of-Distrib | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0517 | A Cascade Registration Method Based on Transformation Transf | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
-| P02_0522 | Avoiding Shortcuts: Enhancing Channel-Robust Specific Emitte | unavailable | openalex:no-oa; unpaywall:no-oa |  |  |
+| P02_0200 | Handling Dual Skewness in Citywide Crime Prediction Using Pe | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0380 | A Physics-Guided Symbolic Regression Framework for Multi-Res | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0386 | Rethinking Graph Generalization through the Lens of Sharpnes | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0442 | Producing plankton classifiers that are robust to dataset sh | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0511 | PTAN: Principal Token-aware Adjacent Network for Composition | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0514 | Towards Domain-Aware Stable Meta Learning for Out-of-Distrib | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0517 | A Cascade Registration Method Based on Transformation Transf | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
+| P02_0522 | Avoiding Shortcuts: Enhancing Channel-Robust Specific Emitte | retrieved-manual | openalex:no-oa; unpaywall:no-oa; manual:ok |  | ✓ |
 | P02_0601 | Span-based Semantic Parsing for Compositional Generalization | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0603 | Learning to Substitute Spans towards Improving Compositional | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0606 | Compositional Generalization in Dependency Parsing | retrieved-arxiv | arxiv:ok |  | ✓ |
@@ -300,7 +300,7 @@
 | P02_0912 | Provably Efficient Causal Model-Based Reinforcement Learning | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0917 | Seen to Unseen: Exploring Compositional Generalization of Mu | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0919 | Latent Compositional Representations Improve Systematic Gene | retrieved-arxiv | arxiv:ok |  | ✓ |
-| P02_0923 | LAGr: Label Aligned Graphs for Better Systematic Generalizat | unavailable | arxiv:fail |  |  |
+| P02_0923 | LAGr: Label Aligned Graphs for Better Systematic Generalizat | retrieved-manual | arxiv:fail; manual:ok |  | ✓ |
 | P02_0924 | COVR: A test-bed for Visually Grounded Compositional General | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0927 | ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_0928 | HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating th | retrieved-arxiv | arxiv:ok |  | ✓ |
@@ -319,48 +319,48 @@
 | P02_1128 | Intelligent Angle Map-based Beam Alignment for RIS-aided mmW | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_1141 | Deep Unfolding Network with Spatial Alignment for multi-moda | retrieved-arxiv | arxiv:ok |  | ✓ |
 | P02_1144 | Aleena: Alignment Agent for Research Software Engineering Co | retrieved-arxiv | arxiv:ok |  | ✓ |
-| P02_1172 | Learning to optimize: a primer and a benchmark | unavailable |  |  |  |
-| P02_1173 | Proceedings of the 2025 International Conference on Multimed | unavailable |  |  |  |
-| P02_1175 | Proceedings of the 2024 International Conference on Multimed | unavailable |  |  |  |
-| P02_1176 | Proceedings of the 2026 ACM Workshop on Information Hiding a | unavailable |  |  |  |
-| P02_1177 | Proceedings of the 2026 5th International Conference on Netw | unavailable |  |  |  |
-| P02_1178 | Proceedings of the 17th ACM International Conference on Bioi | unavailable |  |  |  |
-| P02_1179 | Proceedings of the 13th ACM International Conference on Syst | unavailable |  |  |  |
-| P02_1180 | Proceedings of the 2024 2nd International Conference on Inte | unavailable |  |  |  |
-| P02_1181 | Proceedings of the 2026 5th International Conference on Big  | unavailable |  |  |  |
-| P02_1182 | Proceedings of the 2025 6th International Conference on Comp | unavailable |  |  |  |
-| P02_1183 | Proceedings of the 2022 5th International Conference on Algo | unavailable |  |  |  |
-| P02_1184 | Proceedings of the 5th International Conference on Computer, | unavailable |  |  |  |
-| P02_1185 | Proceedings of the 31st ACM SIGKDD Conference on Knowledge D | unavailable |  |  |  |
-| P02_1186 | Proceedings of the 2026 5th International Conference on Cryp | unavailable |  |  |  |
-| P02_1187 | Proceedings of the 7th ACM International Conference on Multi | unavailable |  |  |  |
-| P02_1188 | Proceedings of the Third International Conference on AI-ML S | unavailable |  |  |  |
-| P02_1189 | Proceedings of the 22nd ACM SIGGRAPH European Conference on  | unavailable |  |  |  |
-| P02_1190 | Proceedings of the 12th International Symposium on Informati | unavailable |  |  |  |
-| P02_1191 | Proceedings of the 2025 11th International Conference on Com | unavailable |  |  |  |
-| P02_1192 | Proceedings of the 32nd ACM International Conference on Mult | unavailable |  |  |  |
-| P02_1193 | Proceedings of the 2024 International Conference on Generati | unavailable |  |  |  |
-| P02_1194 | Proceedings of the 2025 6th International Conference on Big  | unavailable |  |  |  |
-| P02_1195 | Proceedings of the 2023 15th International Conference on Mac | unavailable |  |  |  |
-| P02_1196 | Proceedings of the 2026 ACM Sustainability Week | unavailable |  |  |  |
-| P02_1197 | Proceedings of the 6th Joint International Conference on Dat | unavailable |  |  |  |
-| P02_1198 | Proceedings of the 2025 2nd International Conference on Imag | unavailable |  |  |  |
-| P02_1199 | Proceedings of the 2024 8th International Conference on Natu | unavailable |  |  |  |
-| P02_1200 | Proceedings of the 2026 ACM/IEEE International Conference on | unavailable |  |  |  |
-| P02_1201 | Proceedings of the 2024 16th International Conference on Mac | unavailable |  |  |  |
-| P02_1202 | Proceedings of the Fourth ACM International Conference on AI | unavailable |  |  |  |
-| P02_1203 | Proceedings of the 2024 5th International Conference on Comp | unavailable |  |  |  |
-| P02_1204 | Proceedings of the 47th International ACM SIGIR Conference o | unavailable |  |  |  |
-| P02_1205 | Proceedings of the ACM on Web Conference 2025 | unavailable |  |  |  |
-| P02_1206 | Proceedings of the 2026 2nd International Conference on Digi | unavailable |  |  |  |
-| P02_1207 | Proceedings of the 31st ACM International Conference on Adva | unavailable |  |  |  |
-| P02_1208 | Proceedings of the 5th ACM International Conference on AI in | unavailable |  |  |  |
-| P02_1209 | Proceedings of the 2026 International Conference on Multimed | unavailable |  |  |  |
-| P02_1210 | Proceedings of the 2024 5th International Symposium on Artif | unavailable |  |  |  |
-| P02_1211 | Proceedings of the 17th ACM Conference on Recommender System | unavailable |  |  |  |
-| P02_1212 | Proceedings of the 6th ACM International Conference on Multi | unavailable |  |  |  |
-| P02_1213 | Proceedings of the 7th Joint International Conference on Dat | unavailable |  |  |  |
-| P02_1214 | Proceedings of the 17th ACM International Conference on Web  | unavailable |  |  |  |
+| P02_1172 | Learning to optimize: a primer and a benchmark | retrieved-manual | manual:ok |  | ✓ |
+| P02_1173 | Proceedings of the 2025 International Conference on Multimed | retrieved-manual | manual:ok |  | ✓ |
+| P02_1175 | Proceedings of the 2024 International Conference on Multimed | retrieved-manual | manual:ok |  | ✓ |
+| P02_1176 | Proceedings of the 2026 ACM Workshop on Information Hiding a | retrieved-manual | manual:ok |  | ✓ |
+| P02_1177 | Proceedings of the 2026 5th International Conference on Netw | retrieved-manual | manual:ok |  | ✓ |
+| P02_1178 | Proceedings of the 17th ACM International Conference on Bioi | retrieved-manual | manual:ok |  | ✓ |
+| P02_1179 | Proceedings of the 13th ACM International Conference on Syst | retrieved-manual | manual:ok |  | ✓ |
+| P02_1180 | Proceedings of the 2024 2nd International Conference on Inte | retrieved-manual | manual:ok |  | ✓ |
+| P02_1181 | Proceedings of the 2026 5th International Conference on Big  | retrieved-manual | manual:ok |  | ✓ |
+| P02_1182 | Proceedings of the 2025 6th International Conference on Comp | retrieved-manual | manual:ok |  | ✓ |
+| P02_1183 | Proceedings of the 2022 5th International Conference on Algo | retrieved-manual | manual:ok |  | ✓ |
+| P02_1184 | Proceedings of the 5th International Conference on Computer, | retrieved-manual | manual:ok |  | ✓ |
+| P02_1185 | Proceedings of the 31st ACM SIGKDD Conference on Knowledge D | retrieved-manual | manual:ok |  | ✓ |
+| P02_1186 | Proceedings of the 2026 5th International Conference on Cryp | retrieved-manual | manual:ok |  | ✓ |
+| P02_1187 | Proceedings of the 7th ACM International Conference on Multi | retrieved-manual | manual:ok |  | ✓ |
+| P02_1188 | Proceedings of the Third International Conference on AI-ML S | retrieved-manual | manual:ok |  | ✓ |
+| P02_1189 | Proceedings of the 22nd ACM SIGGRAPH European Conference on  | retrieved-manual | manual:ok |  | ✓ |
+| P02_1190 | Proceedings of the 12th International Symposium on Informati | retrieved-manual | manual:ok |  | ✓ |
+| P02_1191 | Proceedings of the 2025 11th International Conference on Com | retrieved-manual | manual:ok |  | ✓ |
+| P02_1192 | Proceedings of the 32nd ACM International Conference on Mult | retrieved-manual | manual:ok |  | ✓ |
+| P02_1193 | Proceedings of the 2024 International Conference on Generati | retrieved-manual | manual:ok |  | ✓ |
+| P02_1194 | Proceedings of the 2025 6th International Conference on Big  | retrieved-manual | manual:ok |  | ✓ |
+| P02_1195 | Proceedings of the 2023 15th International Conference on Mac | retrieved-manual | manual:ok |  | ✓ |
+| P02_1196 | Proceedings of the 2026 ACM Sustainability Week | retrieved-manual | manual:ok |  | ✓ |
+| P02_1197 | Proceedings of the 6th Joint International Conference on Dat | retrieved-manual | manual:ok |  | ✓ |
+| P02_1198 | Proceedings of the 2025 2nd International Conference on Imag | retrieved-manual | manual:ok |  | ✓ |
+| P02_1199 | Proceedings of the 2024 8th International Conference on Natu | retrieved-manual | manual:ok |  | ✓ |
+| P02_1200 | Proceedings of the 2026 ACM/IEEE International Conference on | retrieved-manual | manual:ok |  | ✓ |
+| P02_1201 | Proceedings of the 2024 16th International Conference on Mac | retrieved-manual | manual:ok |  | ✓ |
+| P02_1202 | Proceedings of the Fourth ACM International Conference on AI | retrieved-manual | manual:ok |  | ✓ |
+| P02_1203 | Proceedings of the 2024 5th International Conference on Comp | retrieved-manual | manual:ok |  | ✓ |
+| P02_1204 | Proceedings of the 47th International ACM SIGIR Conference o | retrieved-manual | manual:ok |  | ✓ |
+| P02_1205 | Proceedings of the ACM on Web Conference 2025 | retrieved-manual | manual:ok |  | ✓ |
+| P02_1206 | Proceedings of the 2026 2nd International Conference on Digi | retrieved-manual | manual:ok |  | ✓ |
+| P02_1207 | Proceedings of the 31st ACM International Conference on Adva | retrieved-manual | manual:ok |  | ✓ |
+| P02_1208 | Proceedings of the 5th ACM International Conference on AI in | retrieved-manual | manual:ok |  | ✓ |
+| P02_1209 | Proceedings of the 2026 International Conference on Multimed | retrieved-manual | manual:ok |  | ✓ |
+| P02_1210 | Proceedings of the 2024 5th International Symposium on Artif | retrieved-manual | manual:ok |  | ✓ |
+| P02_1211 | Proceedings of the 17th ACM Conference on Recommender System | retrieved-manual | manual:ok |  | ✓ |
+| P02_1212 | Proceedings of the 6th ACM International Conference on Multi | retrieved-manual | manual:ok |  | ✓ |
+| P02_1213 | Proceedings of the 7th Joint International Conference on Dat | retrieved-manual | manual:ok |  | ✓ |
+| P02_1214 | Proceedings of the 17th ACM International Conference on Web  | retrieved-manual | manual:ok |  | ✓ |
 | P02_1215 | Proceedings of the 33rd ACM SIGSOFT International Symposium  | unavailable |  |  |  |
 | P02_1216 | Proceedings of the 2024 ACM Workshop on Information Hiding a | unavailable |  |  |  |
 | P02_1217 | Proceedings of the 48th International ACM SIGIR Conference o | unavailable |  |  |  |
@@ -401,4 +401,4 @@
 | P02_1389 | Weight Space Correlation Analysis: Quantifying Feature Utili | unavailable |  |  |  |
 | P02_1407 | *SEM 2022 - 11th Joint Conference on Lexical and Computation | unavailable |  |  |  |
 
-**Unavailable after 3 attempts**: 154 — see `research/retrieval/paywalled-to-fetch.csv` for the manual fetch workflow.
+**Unavailable after 3 attempts**: 39 — see `research/retrieval/paywalled-to-fetch.csv` for the manual fetch workflow.

@@ -81,15 +81,30 @@ def normalize_title(t: str) -> str:
     return re.sub(r"[^a-z0-9 ]", "", t.lower()).strip()
 
 
+def is_proceedings_title(t: str) -> bool:
+    """Records whose title is the proceedings/venue name (not the paper title)
+    cannot be duplicate-detected reliably — skip them."""
+    n = normalize_title(t)
+    return n.startswith("proceedings of") or n.startswith("companion proceedings")
+
+
 def find_duplicate_candidates(titles: dict[str, str]) -> list[tuple[str, str, float]]:
     """Near-duplicate title pairs -> FT6 candidates (human confirms)."""
-    norms = {rid: normalize_title(t) for rid, t in titles.items() if t}
+    norms = {
+        rid: normalize_title(t)
+        for rid, t in titles.items()
+        if t and not is_proceedings_title(t)
+    }
     ids = list(norms)
     out = []
     for i in range(len(ids)):
         for j in range(i + 1, len(ids)):
             a, b = norms[ids[i]], norms[ids[j]]
             if not a or not b:
+                continue
+            # cheap pre-filter: length must be within 25% before the O(n*m)
+            # SequenceMatcher runs (most unrelated titles differ in length)
+            if abs(len(a) - len(b)) / max(len(a), len(b)) > 0.25:
                 continue
             r = difflib.SequenceMatcher(None, a, b).ratio()
             if r >= 0.90:

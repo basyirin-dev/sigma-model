@@ -5,10 +5,10 @@
 | Records sought | 395 |
 | retrieved-arxiv | 235 |
 | retrieved-oa | 6 |
-| retrieved-manual | 0 |
-| unavailable | 154 |
+| retrieved-manual | 115 |
+| unavailable | 39 |
 | pending | 0 |
-| **Total PDFs retrieved** | **241** |
+| **Total PDFs retrieved** | **356** |
 
 - PDFs: `research/full-text-pdfs/` (gitignored)
 - Status: `research/retrieval/retrieval-status.csv`

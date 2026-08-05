@@ -1,9 +1,11 @@
 %% PRISMA 2020 flow diagram — Paper 02 (σ-Trap Systematic Review)
 %% Identification: Phase 3 (2026-07-29); screening: Phase 5 (2026-08-01)
-%% Full-text stage: Phase 6 (2026-08-05) — assessed 395, excluded 167
-%%   FT1: 9 (no OOD/compositional split)  FT5: 154 (unavailable)
-%%   FT6: 1 (duplicate)  FT7: 1 (review)  FT8: 2 (other)
-%% Included in synthesis: 228. Meta-analysis: TBD (Phase 9).
+%% Full-text stage: Phase 6 (2026-08-05, incl. manual recovery of 115 paywalled
+%%   PDFs 2026-08-05) — assessed 395, excluded 109
+%%   FT1: 17 (no OOD/compositional split)  FT2: 1 (ID only)  FT3: 1 (no data)
+%%   FT5: 39 (unavailable)  FT6: 5 (duplicates)  FT7: 3 (reviews)  FT8: 43 (other:
+%%   41 conference-proceedings volumes + 2 non-compositional)
+%% Included in synthesis: 286. Meta-analysis: TBD (Phase 9).
 
 \begin{tikzpicture}[
     node distance=1.5cm and 2cm,
@@ -40,20 +42,22 @@
 \draw[arrow] (screening.south) -- (fulltext.north);
 
 % Arrow right to excluded full-text + reasons
-\node[box, right=of fulltext] (excluded-ft) {Full-text articles excluded ($n = 167$)};
+\node[box, right=of fulltext] (excluded-ft) {Full-text articles excluded ($n = 109$)};
 \draw[arrow] (fulltext.east) -- (excluded-ft.west);
 \node[smallbox, below=of excluded-ft] (ft-reasons) {
     \begin{tabular}{@{}l@{}}
-    FT1 no OOD/CG split: 9\\
-    FT5 full text unavailable: 154\\
-    FT6 duplicate: 1\\
-    FT7 review/opinion: 1\\
-    FT8 other: 2
+    FT1 no OOD/CG split: 17\\
+    FT2 ID only: 1\\
+    FT3 no extractable data: 1\\
+    FT5 full text unavailable: 39\\
+    FT6 duplicate: 5\\
+    FT7 review/opinion: 3\\
+    FT8 other (incl. 41 proceedings volumes): 43
     \end{tabular}};
 \draw[arrow] (excluded-ft.south) -- (ft-reasons.north);
 
 % Row 6: Included
-\node[box, below=of fulltext] (included) {Studies included in synthesis ($n = 228$)};
+\node[box, below=of fulltext] (included) {Studies included in synthesis ($n = 286$)};
 \draw[arrow] (fulltext.south) -- (included.north);
 
 % Optional: included in meta-analysis

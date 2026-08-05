@@ -1,8 +1,35 @@
 id,title,decision,reason,note
+P02_0003,SFP: Spurious Feature-Targeted Pruning for Out-of-Distribution Generalization,Include,,nn=5 ood=3 id_ev=3 ood_nums=50
+P02_0007,Feature-granularity-based spurious correlation and causal analysis in CNNs Exploring Feature Granularity to Uncover Spurious Correlations,Include,,nn=6 ood=3 id_ev=1 ood_nums=11
+P02_0017,Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts,Include,,nn=10 ood=4 id_ev=9 ood_nums=91
+P02_0021,Causality and Independence Enhancement for Biased Node Classification,Uncertain,,"ood_nums=54, id_ev=0 (ID baseline missing?)"
+P02_0081,Evaluating Out-of-Distribution Robustness of TabPFN on Tabular Data,Include,,nn=3 ood=3 id_ev=50 ood_nums=31
+P02_0082,On the Out-of-Distribution Evaluation of ML-Based End-to-End Communications Systems,Include,,nn=4 ood=3 id_ev=15 ood_nums=17
+P02_0087,Evading the Simplicity Bias: Training a Diverse Set of Models Discovers Solutions with Superior OOD Generalization,Include,,nn=9 ood=6 id_ev=34 ood_nums=64
+P02_0088,Compositional Generalization in Emergent Communication via Metropolis-Hastings Naming Game with Transformer Language Models,Exclude,FT1,ood_hits=1 (<2)
+P02_0092,Data Distributional Properties As Inductive Bias for Systematic Generalization,Include,,nn=13 ood=8 id_ev=27 ood_nums=165
+P02_0093,Dynamic Multi-Path Learning For Out-of-Distribution Node Classification on Heterophilic Graphs,Include,,nn=6 ood=4 id_ev=1 ood_nums=67
+P02_0096,Out-of-Distribution Generalization on Graphs: A Survey,Include,,nn=11 ood=3 id_ev=6 ood_nums=139
+P02_0110,Efficient Out-of-Distribution Generalization for Pre-trained GNNs via Prompt Learning,Uncertain,,"ood_nums=79, id_ev=0 (ID baseline missing?)"
+P02_0116,Complexity Control Facilitates Reasoning-Based Compositional Generalization in Transformers,Include,,nn=10 ood=8 id_ev=19 ood_nums=59
+P02_0150,Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Object Manipulation via Multi-Scale Spatial Fusion,Exclude,FT1,ood_hits=0 (<2)
+P02_0179,General Greedy De-Bias Learning,Include,,nn=8 ood=4 id_ev=33 ood_nums=46
+P02_0238,Three approaches to facilitate invariant neurons and generalization to out-of-distribution orientations and illuminations,Include,,nn=5 ood=4 id_ev=10 ood_nums=46
+P02_0280,SSGNN: Simple siamese graph neural networks for out-of-distribution generalization,Include,,nn=9 ood=4 id_ev=34 ood_nums=85
+P02_0290,Boosting Rice Disease Diagnosis: A Systematic Benchmark of Five Deep Convolutional Neural Network Models in Precision Agriculture,Include,,nn=10 ood=4 id_ev=1 ood_nums=9
+P02_0322,A two-stage co-adversarial perturbation to mitigate out-of-distribution generalization of large-scale graph,Include,,nn=9 ood=4 id_ev=6 ood_nums=21
+P02_0410,Invariant Graph Transformer for Out-of-Distribution Generalization,Uncertain,,"ood_nums=120, id_ev=0 (ID baseline missing?)"
+P02_0444,Improving Generalization in Collision Avoidance for Multiple Unmanned Aerial Vehicles via Causal Representation Learning †,Exclude,FT1,ood_hits=0 (<2)
+P02_0493,Coupled data-driven and experience-informed neural networks for prediction of pile base resistance with consideration of data limitation,Include,,nn=6 ood=2 id_ev=5 ood_nums=31
+P02_0495,MiMu: mitigating multiple shortcut learning behavior of transformers,Include,,nn=8 ood=5 id_ev=56 ood_nums=47
 P02_0497,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,Include,,nn=9 ood=3 id_ev=14 ood_nums=27
+P02_0500,Accurate Classification of Pathological Whole-Slide Images for Out-of-Distribution Generalization,Include,,nn=7 ood=3 id_ev=5 ood_nums=8
+P02_0503,A Structure-aware Invariant Learning Framework for Node-level Graph OOD Generalization,Include,,nn=6 ood=3 id_ev=3 ood_nums=96
 P02_0507,I2CD: An Invertible Causal Framework for Compositional Zero-Shot Learning via Disentangle-Compose-Disentangle,Uncertain,,"ood_nums=75, id_ev=0 (ID baseline missing?)"
 P02_0510,Compositional Generalization for Neural Semantic Parsing via Span-level Supervised Attention,Include,,nn=11 ood=3 id_ev=96 ood_nums=114
 P02_0542,Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of-Distribution Generalization,Include,,nn=5 ood=3 id_ev=11 ood_nums=34
+P02_0556,Spectral Distribution Alignment for Enhanced Generalization in Regression,Include,,nn=4 ood=2 id_ev=11 ood_nums=23
+P02_0576,Improving Group Robustness on Spurious Correlation via Evidential Alignment,Include,,nn=9 ood=3 id_ev=2 ood_nums=13
 P02_0594,COGS: A Compositional Generalization Challenge Based on Semantic Interpretation,Include,,nn=12 ood=8 id_ev=77 ood_nums=96
 P02_0595,Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP),Include,,nn=14 ood=5 id_ev=144 ood_nums=136
 P02_0596,SLOG: A Structural Generalization Benchmark for Semantic Parsing,Include,,nn=10 ood=8 id_ev=110 ood_nums=130
@@ -135,6 +162,7 @@ P02_0935,Siamese recurrent networks learn first-order logic reasoning and exhibi
 P02_0937,CLOSURE: Assessing Systematic Generalization of CLEVR Models,Include,,nn=10 ood=6 id_ev=104 ood_nums=23
 P02_0939,Understanding out-of-distribution accuracies through quantifying difficulty of test samples,Exclude,FT1,ood_hits=1 (<2)
 P02_0940,SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics,Include,,nn=11 ood=8 id_ev=11 ood_nums=117
+P02_0944,ORCHARD: A Benchmark For Measuring Systematic Generalization of Multi-Hierarchical Reasoning,Exclude,FT1,ood_hits=1 (<2)
 P02_0945,Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System,Uncertain,,"ood_nums=62, id_ev=0 (ID baseline missing?)"
 P02_0947,Data Distributional Properties As Inductive Bias for Systematic Generalization,Include,,nn=13 ood=8 id_ev=27 ood_nums=165
 P02_0948,The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization,Include,,nn=15 ood=5 id_ev=52 ood_nums=52
@@ -146,8 +174,52 @@ P02_0962,Robust Subtask Learning for Compositional Generalization,Exclude,FT1,oo
 P02_0965,Causal Structural Hypothesis Testing and Data Generation Models,Exclude,FT1,ood_hits=1 (<2)
 P02_0967,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,Exclude,FT1,ood_hits=1 (<2)
 P02_1159,Probing the Probes: Methods and Metrics for Concept Alignment,Exclude,FT1,ood_hits=1 (<2)
+P02_1308,Vision Transformer Neural Architecture Search for Out-of-Distribution Generalization: Benchmark and Insights,Include,,nn=8 ood=3 id_ev=23 ood_nums=152
+P02_1381,Sparse Mixture-of-Experts for Compositional Generalization: Empirical Evidence and Theoretical Foundations of Optimal Sparsity,Uncertain,,"ood_nums=33, id_ev=0 (ID baseline missing?)"
+P02_1395,Compositional generalization by factorizing alignment and translation,Include,,nn=11 ood=7 id_ev=54 ood_nums=77
+P02_1398,Neural Collapse Inspired Feature Alignment for Out-of-Distribution Generalization,Include,,nn=7 ood=3 id_ev=14 ood_nums=25
+P02_0002,Graph Representation Learning via Causal Diffusion for Out-of-Distribution Recommendation,Include,,nn=8 ood=3 id_ev=31 ood_nums=75
+P02_0004,Research on Causal Robustness Enhancement Methods and Out-of-Distribution Generalization for Deep Classification Models,Uncertain,,"ood_nums=12, id_ev=0 (ID baseline missing?)"
+P02_0005,Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective,Exclude,FT1,ood_hits=1 (<2)
+P02_0011,Beyond Mimicry: Toward Lifelong Adaptability in Imitation Learning,Uncertain,,"ood_nums=13, id_ev=0 (ID baseline missing?)"
+P02_0016,Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization,Uncertain,,"ood_nums=22, id_ev=0 (ID baseline missing?)"
+P02_0018,Human Heterogeneity Invariant Stress Sensing,Include,,nn=12 ood=4 id_ev=231 ood_nums=69
+P02_0023,Environment Agnostic Invariant Risk Minimization for Classification of Sequential Datasets,Uncertain,,"ood_nums=28, id_ev=0 (ID baseline missing?)"
+P02_0031,Causal Disentangled Recommendation against User Preference Shifts,Include,,nn=18 ood=3 id_ev=7 ood_nums=39
+P02_0032,NILMBENCH2026: A Benchmark for Energy Disaggregation,Uncertain,,"ood_nums=8, id_ev=0 (ID baseline missing?)"
+P02_0033,Normalized Space Alignment: A Versatile Metric for Representation Analysis,Exclude,FT1,ood_hits=0 (<2)
+P02_0034,Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-Trained Inverse RF Rendering,Exclude,FT1,ood_hits=0 (<2)
+P02_0038,Test Optimization in DNN Testing: A Survey,Exclude,FT1,ood_hits=1 (<2)
+P02_0045,,Exclude,FT1,ood_hits=0 (<2)
+P02_0048,Mitigating Distributed Backdoor Attack in Federated Learning Through Mode Connectivity,Exclude,FT1,ood_hits=0 (<2)
+P02_0051,Responsive DNN Adaptation for Video Analytics against Environment Shift via Hierarchical Mobile-Cloud Collaborations,Exclude,FT1,ood_hits=1 (<2)
 P02_0054,The Worst of Both Worlds: A Comparative Analysis of Errors in Learning from Data in Psychology and Machine Learning,Exclude,FT1,ood_hits=1 (<2)
+P02_0055,A.I. Robustness: a Human-Centered Perspective on Technological Challenges and Opportunities,Include,,nn=14 ood=2 id_ev=21 ood_nums=41
+P02_0058,A Survey of Model Inversion Attacks: An Interface-Prior Perspective,Exclude,FT1,ood_hits=1 (<2)
+P02_0060,AI Alignment: A Contemporary Survey,Include,,nn=11 ood=4 id_ev=4 ood_nums=44
+P02_0064,Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conceptual Relationships,Include,,nn=15 ood=2 id_ev=6 ood_nums=6
+P02_0066,A Survey of Dataset Refinement for Problems in Computer Vision Datasets,Exclude,FT1,ood_hits=0 (<2)
+P02_0069,Uniformly Distributed Category Prototype-Guided Vision-Language Framework for Long-Tail Recognition,Exclude,FT1,ood_hits=1 (<2)
+P02_0071,A Survey of Multilingual Neural Machine Translation,Exclude,FT1,ood_hits=0 (<2)
+P02_0072,Contrastive Curriculum Learning for Sequential User Behavior Modeling via Data Augmentation,Exclude,FT1,ood_hits=0 (<2)
+P02_0073,Efficient Knowledge Graph Unlearning with Zeroth-order Information,Exclude,FT1,ood_hits=0 (<2)
+P02_0074,Cacophony: An Improved Contrastive Audio-Text Model,Exclude,FT1,ood_hits=1 (<2)
+P02_0075,Neural Dehydration: Effective Erasure of Black-box Watermarks from DNNs with Limited Data,Exclude,FT1,ood_hits=0 (<2)
+P02_0124,Handling Out-of-Distribution Data: A Survey,Include,,nn=12 ood=4 id_ev=16 ood_nums=120
+P02_0126,The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization,Include,,nn=11 ood=4 id_ev=65 ood_nums=76
+P02_0128,A System-Level Analysis of Cross-Domain Generalization Failure in Audio Deepfake Detection,Include,,nn=8 ood=3 id_ev=6 ood_nums=16
+P02_0136,Defeating Multimodal Information Manipulation By A Web 3.0 Decentralized Identity (DID)-Based Accountability Framework,Exclude,FT1,ood_hits=0 (<2)
+P02_0138,Utilizing Confidence in Localization Predictions for Improved Spectrum Management,Exclude,FT1,ood_hits=1 (<2)
+P02_0151,Leveraging Vision-Language Models for Improving Domain Generalization in Image Classification,Uncertain,,"ood_nums=50, id_ev=0 (ID baseline missing?)"
 P02_0154,"Roses are Red, Violets are Blue… But Should VQA expect Them To?",Include,,nn=8 ood=2 id_ev=19 ood_nums=20
+P02_0200,Handling Dual Skewness in Citywide Crime Prediction Using Personalized Graph Federated Learning,Exclude,FT1,ood_hits=0 (<2)
+P02_0380,A Physics-Guided Symbolic Regression Framework for Multi-Resolution Dynamic Equivalent Modeling of Power Systems,Exclude,FT1,ood_hits=1 (<2)
+P02_0386,Rethinking Graph Generalization through the Lens of Sharpness-Aware Minimization,Include,,nn=8 ood=4 id_ev=26 ood_nums=87
+P02_0442,Producing plankton classifiers that are robust to dataset shift,Include,,nn=10 ood=2 id_ev=7 ood_nums=46
+P02_0511,PTAN: Principal Token-aware Adjacent Network for Compositional Temporal Grounding,Include,,nn=11 ood=5 id_ev=7 ood_nums=72
+P02_0514,Towards Domain-Aware Stable Meta Learning for Out-of-Distribution Generalization,Uncertain,,"ood_nums=47, id_ev=0 (ID baseline missing?)"
+P02_0517,A Cascade Registration Method Based on Transformation Transfer for Multiscale Point Clouds,Exclude,FT1,ood_hits=1 (<2)
+P02_0522,Avoiding Shortcuts: Enhancing Channel-Robust Specific Emitter Identification via Single-Source Domain Generalization,Exclude,FT1,ood_hits=0 (<2)
 P02_0601,Span-based Semantic Parsing for Compositional Generalization,Include,,nn=14 ood=4 id_ev=129 ood_nums=50
 P02_0603,Learning to Substitute Spans towards Improving Compositional Generalization,Include,,nn=14 ood=8 id_ev=141 ood_nums=133
 P02_0606,Compositional Generalization in Dependency Parsing,Include,,nn=5 ood=7 id_ev=51 ood_nums=65
@@ -222,6 +294,7 @@ P02_0910,Learning by Analogy: A Causal Framework for Composition Generalization,
 P02_0912,Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization,Exclude,FT1,ood_hits=1 (<2)
 P02_0917,Seen to Unseen: Exploring Compositional Generalization of Multi-Attribute Controllable Dialogue Generation,Uncertain,,"ood_nums=113, id_ev=0 (ID baseline missing?)"
 P02_0919,Latent Compositional Representations Improve Systematic Generalization in Grounded Question Answering,Include,,nn=13 ood=6 id_ev=12 ood_nums=27
+P02_0923,LAGr: Label Aligned Graphs for Better Systematic Generalization in Semantic Parsing,Include,,nn=10 ood=8 id_ev=113 ood_nums=119
 P02_0924,COVR: A test-bed for Visually Grounded Compositional Generalization with real images,Include,,nn=8 ood=7 id_ev=5 ood_nums=60
 P02_0927,ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle Games for Evaluating Compositional Generalization,Include,,nn=8 ood=7 id_ev=9 ood_nums=35
 P02_0928,HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating the Systematic Generalization Performance of Human-Object Interaction Detection Models,Include,,nn=9 ood=8 id_ev=51 ood_nums=189
@@ -240,3 +313,45 @@ P02_1122,A model to assess customer alignment through customer experience concep
 P02_1128,Intelligent Angle Map-based Beam Alignment for RIS-aided mmWave Communication Networks,Exclude,FT1,ood_hits=0 (<2)
 P02_1141,Deep Unfolding Network with Spatial Alignment for multi-modal MRI reconstruction,Exclude,FT1,ood_hits=0 (<2)
 P02_1144,Aleena: Alignment Agent for Research Software Engineering Collaborations,Exclude,FT1,ood_hits=1 (<2)
+P02_1172,Learning to optimize: a primer and a benchmark,Exclude,FT1,ood_hits=0 (<2)
+P02_1173,Proceedings of the 2025 International Conference on Multimedia Retrieval,Exclude,FT1,ood_hits=0 (<2)
+P02_1175,Proceedings of the 2024 International Conference on Multimedia Retrieval,Exclude,FT1,ood_hits=0 (<2)
+P02_1176,Proceedings of the 2026 ACM Workshop on Information Hiding and Multimedia Security,Include,,nn=16 ood=2 id_ev=13 ood_nums=13
+P02_1177,"Proceedings of the 2026 5th International Conference on Networks, Communications and Information Technology",Exclude,FT1,ood_hits=0 (<2)
+P02_1178,"Proceedings of the 17th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics",Include,,nn=16 ood=2 id_ev=4 ood_nums=15
+P02_1179,"Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation",Exclude,FT1,ood_hits=0 (<2)
+P02_1180,Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology,Exclude,FT1,ood_hits=1 (<2)
+P02_1181,"Proceedings of the 2026 5th International Conference on Big Data, Information and Computer Network",Exclude,FT1,ood_hits=1 (<2)
+P02_1182,Proceedings of the 2025 6th International Conference on Computer Science and Management Technology,Include,,nn=15 ood=2 id_ev=8 ood_nums=4
+P02_1183,"Proceedings of the 2022 5th International Conference on Algorithms, Computing and Artificial Intelligence",Exclude,FT1,ood_hits=0 (<2)
+P02_1184,"Proceedings of the 5th International Conference on Computer, Artificial Intelligence and Control Engineering",Exclude,FT1,ood_hits=0 (<2)
+P02_1185,Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2,Exclude,FT1,ood_hits=1 (<2)
+P02_1186,"Proceedings of the 2026 5th International Conference on Cryptography, Network Security and Communication Technology",Exclude,FT1,ood_hits=0 (<2)
+P02_1187,Proceedings of the 7th ACM International Conference on Multimedia in Asia,Exclude,FT1,ood_hits=0 (<2)
+P02_1188,Proceedings of the Third International Conference on AI-ML Systems,Exclude,FT1,ood_hits=0 (<2)
+P02_1189,Proceedings of the 22nd ACM SIGGRAPH European Conference on Visual Media Production,Exclude,FT1,ood_hits=0 (<2)
+P02_1190,Proceedings of the 12th International Symposium on Information and Communication Technology,Exclude,FT1,ood_hits=0 (<2)
+P02_1191,Proceedings of the 2025 11th International Conference on Communication and Information Processing,Exclude,FT1,ood_hits=0 (<2)
+P02_1192,Proceedings of the 32nd ACM International Conference on Multimedia,Exclude,FT1,ood_hits=0 (<2)
+P02_1193,Proceedings of the 2024 International Conference on Generative Artificial Intelligence and Information Security,Exclude,FT1,ood_hits=0 (<2)
+P02_1194,Proceedings of the 2025 6th International Conference on Big Data Economy and Information Management,Exclude,FT1,ood_hits=1 (<2)
+P02_1195,Proceedings of the 2023 15th International Conference on Machine Learning and Computing,Exclude,FT1,ood_hits=0 (<2)
+P02_1196,Proceedings of the 2026 ACM Sustainability Week,Exclude,FT1,ood_hits=0 (<2)
+P02_1197,Proceedings of the 6th Joint International Conference on Data Science &amp; Management of Data (10th ACM IKDD CODS and 28th COMAD),Exclude,FT1,ood_hits=0 (<2)
+P02_1198,"Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering",Exclude,FT1,ood_hits=1 (<2)
+P02_1199,Proceedings of the 2024 8th International Conference on Natural Language Processing and Information Retrieval,Exclude,FT1,ood_hits=0 (<2)
+P02_1200,Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems,Exclude,FT1,ood_hits=0 (<2)
+P02_1201,Proceedings of the 2024 16th International Conference on Machine Learning and Computing,Exclude,FT1,ood_hits=0 (<2)
+P02_1202,Proceedings of the Fourth ACM International Conference on AI in Finance,Exclude,FT1,ood_hits=0 (<2)
+P02_1203,Proceedings of the 2024 5th International Conference on Computer Science and Management Technology,Exclude,FT1,ood_hits=0 (<2)
+P02_1204,Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval,Exclude,FT1,ood_hits=1 (<2)
+P02_1205,Proceedings of the ACM on Web Conference 2025,Exclude,FT1,ood_hits=1 (<2)
+P02_1206,Proceedings of the 2026 2nd International Conference on Digital Education and Information Technology,Exclude,FT1,ood_hits=0 (<2)
+P02_1207,Proceedings of the 31st ACM International Conference on Advances in Geographic Information Systems,Exclude,FT1,ood_hits=0 (<2)
+P02_1208,Proceedings of the 5th ACM International Conference on AI in Finance,Exclude,FT1,ood_hits=1 (<2)
+P02_1209,Proceedings of the 2026 International Conference on Multimedia Retrieval,Exclude,FT1,ood_hits=1 (<2)
+P02_1210,Proceedings of the 2024 5th International Symposium on Artificial Intelligence for Medicine Science,Exclude,FT1,ood_hits=1 (<2)
+P02_1211,Proceedings of the 17th ACM Conference on Recommender Systems,Exclude,FT1,ood_hits=1 (<2)
+P02_1212,Proceedings of the 6th ACM International Conference on Multimedia in Asia,Exclude,FT1,ood_hits=0 (<2)
+P02_1213,Proceedings of the 7th Joint International Conference on Data Science &amp; Management of Data (11th ACM IKDD CODS and 29th COMAD),Include,,nn=16 ood=2 id_ev=2 ood_nums=13
+P02_1214,Proceedings of the 17th ACM International Conference on Web Search and Data Mining,Exclude,FT1,ood_hits=0 (<2)

@@ -174,8 +174,8 @@ def main() -> None:
     for rec in pool:
         text = load_text(rec["id"])
         if not text:
-            # no extracted text: handled by reconcile as FT5
-            decision, reason, note = EXCLUDE, FT5, "no extracted full text"
+            # scanned/image-only PDF (or missing text): no extractable data
+            decision, reason, note = EXCLUDE, FT3, "no extractable text (scanned PDF)"
         else:
             decision, reason, note = classify(text)
         rows.append({
