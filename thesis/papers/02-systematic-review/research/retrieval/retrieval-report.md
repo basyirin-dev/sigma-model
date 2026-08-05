@@ -3,12 +3,12 @@
 | Metric | Count |
 |--------|------:|
 | Records sought | 395 |
-| retrieved-arxiv | 0 |
-| retrieved-oa | 0 |
+| retrieved-arxiv | 235 |
+| retrieved-oa | 6 |
 | retrieved-manual | 0 |
-| unavailable | 0 |
-| pending | 395 |
-| **Total PDFs retrieved** | **0** |
+| unavailable | 154 |
+| pending | 0 |
+| **Total PDFs retrieved** | **241** |
 
 - PDFs: `research/full-text-pdfs/` (gitignored)
 - Status: `research/retrieval/retrieval-status.csv`

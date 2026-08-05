@@ -1,0 +1,155 @@
+id,doi,arxiv_id,title,year,journal,url,reason,attempts
+P02_0003,10.1145/3664647.3680969,,SFP: Spurious Feature-Targeted Pruning for Out-of-Distribution Generalization,2024,Proceedings of the 32nd ACM International Conference on Multimedia,https://doi.org/10.1145/3664647.3680969,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0007,10.1145/3702879.3702937,,Feature-granularity-based spurious correlation and causal analysis in CNNs Exploring Feature Granularity to Uncover Spurious Correlations,2024,Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology,https://doi.org/10.1145/3702879.3702937,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0017,10.1145/3774904.3792190,,Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts,2026,Proceedings of the ACM Web Conference 2026,https://doi.org/10.1145/3774904.3792190,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0021,10.1145/3583780.3614804,,Causality and Independence Enhancement for Biased Node Classification,2023,Proceedings of the 32nd ACM International Conference on Information and Knowledge Management,https://doi.org/10.1145/3583780.3614804,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0081,10.1109/icatc68823.2025.11407733,,Evaluating Out-of-Distribution Robustness of TabPFN on Tabular Data,2025,2025 International Conference on Advances in Technology and Computing (ICATC),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0082,10.1109/icc51166.2024.10622985,,On the Out-of-Distribution Evaluation of ML-Based End-to-End Communications Systems,2024,ICC 2024 - IEEE International Conference on Communications,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0087,10.1109/cvpr52688.2022.01626,,Evading the Simplicity Bias: Training a Diverse Set of Models Discovers Solutions with Superior OOD Generalization,2022,2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0088,10.1109/tcds.2026.3699989,,Compositional Generalization in Emergent Communication via Metropolis-Hastings Naming Game with Transformer Language Models,2026,IEEE Transactions on Cognitive and Developmental Systems,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0092,10.1109/cvpr52734.2025.02383,,Data Distributional Properties As Inductive Bias for Systematic Generalization,2025,2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0093,10.1109/icassp55912.2026.11461751,,Dynamic Multi-Path Learning For Out-of-Distribution Node Classification on Heterophilic Graphs,2026,"ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0096,10.1109/tpami.2025.3593897,,Out-of-Distribution Generalization on Graphs: A Survey,2025,IEEE Transactions on Pattern Analysis and Machine Intelligence,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0110,10.1109/tai.2026.3666523,,Efficient Out-of-Distribution Generalization for Pre-trained GNNs via Prompt Learning,2026,IEEE Transactions on Artificial Intelligence,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0116,10.1109/tpami.2025.3646483,,Complexity Control Facilitates Reasoning-Based Compositional Generalization in Transformers,2026,IEEE Transactions on Pattern Analysis and Machine Intelligence,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0150,10.1109/ccdc69976.2026.11559647,,Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Object Manipulation via Multi-Scale Spatial Fusion,2026,2026 38th Chinese Control and Decision Conference (CCDC),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0179,10.1109/tpami.2023.3240337,,General Greedy De-Bias Learning,2023,IEEE Transactions on Pattern Analysis and Machine Intelligence,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0238,10.1016/j.neunet.2022.07.026,,Three approaches to facilitate invariant neurons and generalization to out-of-distribution orientations and illuminations,2022,Neural Networks,https://www.scopus.com/pages/publications/85138443531?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0280,10.1016/j.knosys.2025.114290,,SSGNN: Simple siamese graph neural networks for out-of-distribution generalization,2025,Knowledge-Based Systems,https://www.scopus.com/pages/publications/105013996842?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0290,10.3390/agriculture15232494,,Boosting Rice Disease Diagnosis: A Systematic Benchmark of Five Deep Convolutional Neural Network Models in Precision Agriculture,2025,Agriculture (Switzerland),https://www.scopus.com/pages/publications/105024609139?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0322,10.1016/j.eswa.2024.124472,,A two-stage co-adversarial perturbation to mitigate out-of-distribution generalization of large-scale graph,2024,Expert Systems with Applications,https://www.scopus.com/pages/publications/85196423777?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0410,10.1145/3770854.3780247,,Invariant Graph Transformer for Out-of-Distribution Generalization,2026,Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,https://www.scopus.com/pages/publications/105038093712?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0444,10.3390/s25113303,,Improving Generalization in Collision Avoidance for Multiple Unmanned Aerial Vehicles via Causal Representation Learning †,2025,Sensors,https://www.scopus.com/pages/publications/105007652360?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0493,10.1016/j.engappai.2025.113384,,Coupled data-driven and experience-informed neural networks for prediction of pile base resistance with consideration of data limitation,2026,Engineering Applications of Artificial Intelligence,https://www.scopus.com/pages/publications/105023827687?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0495,10.1007/s11704-025-50448-3,,MiMu: mitigating multiple shortcut learning behavior of transformers,2025,Frontiers of Computer Science,https://www.scopus.com/pages/publications/105020260197?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0500,10.1155/int/9988577,,Accurate Classification of Pathological Whole-Slide Images for Out-of-Distribution Generalization,2025,International Journal of Intelligent Systems,https://www.scopus.com/pages/publications/105008447710?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0503,10.1145/3690624.3709227,,A Structure-aware Invariant Learning Framework for Node-level Graph OOD Generalization,2025,Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,https://www.scopus.com/pages/publications/105014319311?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0556,10.1007/978-3-032-06106-5_16,,Spectral Distribution Alignment for Enhanced Generalization in Regression,2025,Lecture Notes in Computer Science,https://www.scopus.com/pages/publications/105020019263?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0576,10.1145/3711896.3737002,,Improving Group Robustness on Spurious Correlation via Evidential Alignment,2025,Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,https://www.scopus.com/pages/publications/105014587407?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0944,,2111.14034v1,ORCHARD: A Benchmark For Measuring Systematic Generalization of Multi-Hierarchical Reasoning,2021,,http://arxiv.org/abs/2111.14034v1,download-failed,arxiv:fail
+P02_1308,,,Vision Transformer Neural Architecture Search for Out-of-Distribution Generalization: Benchmark and Insights,2024,Advances in Neural Information Processing Systems,https://www.scopus.com/pages/publications/105000546063?origin=resultslist,no-identifier,
+P02_1381,,,Sparse Mixture-of-Experts for Compositional Generalization: Empirical Evidence and Theoretical Foundations of Optimal Sparsity,2026,Proceedings of Machine Learning Research,https://www.scopus.com/pages/publications/105039559541?origin=resultslist,no-identifier,
+P02_1395,,,Compositional generalization by factorizing alignment and translation,2020,Proceedings of the Annual Meeting of the Association for Computational Linguistics,https://www.scopus.com/pages/publications/85101107244?origin=resultslist,no-identifier,
+P02_1398,,,Neural Collapse Inspired Feature Alignment for Out-of-Distribution Generalization,2024,Advances in Neural Information Processing Systems,https://www.scopus.com/pages/publications/105000520399?origin=resultslist,no-identifier,
+P02_0002,10.1145/3696410.3714849,,Graph Representation Learning via Causal Diffusion for Out-of-Distribution Recommendation,2025,Proceedings of the ACM on Web Conference 2025,https://doi.org/10.1145/3696410.3714849,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0004,10.1145/3795154.3795263,,Research on Causal Robustness Enhancement Methods and Out-of-Distribution Generalization for Deep Classification Models,2026,Proceedings of the 2025 6th International Conference on Computer Science and Management Technology,https://doi.org/10.1145/3795154.3795263,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0005,10.1145/3768153,,Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective,2025,,https://doi.org/10.1145/3768153,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0011,10.65109/ldhn8550,,Beyond Mimicry: Toward Lifelong Adaptability in Imitation Learning,2026,Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems,https://doi.org/10.65109/LDHN8550,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0016,10.65109/pper9186,,Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization,2026,Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems,https://doi.org/10.65109/PPER9186,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0018,10.1145/3749465,,Human Heterogeneity Invariant Stress Sensing,2025,,https://doi.org/10.1145/3749465,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0023,10.1145/3447548.3467324,,Environment Agnostic Invariant Risk Minimization for Classification of Sequential Datasets,2021,Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery &amp; Data Mining,https://doi.org/10.1145/3447548.3467324,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0031,10.1145/3593022,,Causal Disentangled Recommendation against User Preference Shifts,2023,,https://doi.org/10.1145/3593022,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0032,10.1145/3744256.3812587,,NILMBENCH2026: A Benchmark for Energy Disaggregation,2026,"Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation",https://doi.org/10.1145/3744256.3812587,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0033,10.1145/3711896.3737065,,Normalized Space Alignment: A Versatile Metric for Representation Analysis,2025,Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2,https://doi.org/10.1145/3711896.3737065,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0034,10.1145/3774906.3802762,,Stereo-Fi: Free-Form 3D Reconstruction via Generatively Co-Trained Inverse RF Rendering,2026,Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems,https://doi.org/10.1145/3774906.3802762,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0038,10.1145/3643678,,Test Optimization in DNN Testing: A Survey,2024,,https://doi.org/10.1145/3643678,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0045,10.1145/3530911,,,2022,,https://doi.org/10.1145/3530911,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0048,10.1145/3634737.3637682,,Mitigating Distributed Backdoor Attack in Federated Learning Through Mode Connectivity,2024,Proceedings of the 19th ACM Asia Conference on Computer and Communications Security,https://doi.org/10.1145/3634737.3637682,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0051,10.1145/3715014.3722044,,Responsive DNN Adaptation for Video Analytics against Environment Shift via Hierarchical Mobile-Cloud Collaborations,2025,Proceedings of the 23rd ACM Conference on Embedded Networked Sensor Systems,https://doi.org/10.1145/3715014.3722044,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0055,10.1145/3665926,,A.I. Robustness: a Human-Centered Perspective on Technological Challenges and Opportunities,2025,,https://doi.org/10.1145/3665926,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0058,10.1145/3789456.3789473,,A Survey of Model Inversion Attacks: An Interface-Prior Perspective,2026,Proceedings of the 2025 15th International Conference on Communication and Network Security,https://doi.org/10.1145/3789456.3789473,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0060,10.1145/3770749,,AI Alignment: A Contemporary Survey,2025,,https://doi.org/10.1145/3770749,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0064,10.1145/3706598.3713406,,Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conceptual Relationships,2025,Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems,https://doi.org/10.1145/3706598.3713406,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0066,10.1145/3627157,,A Survey of Dataset Refinement for Problems in Computer Vision Datasets,2024,,https://doi.org/10.1145/3627157,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0069,10.1145/3581783.3611904,,Uniformly Distributed Category Prototype-Guided Vision-Language Framework for Long-Tail Recognition,2023,Proceedings of the 31st ACM International Conference on Multimedia,https://doi.org/10.1145/3581783.3611904,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0071,10.1145/3406095,,A Survey of Multilingual Neural Machine Translation,2020,,https://doi.org/10.1145/3406095,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0072,10.1145/3459637.3481905,,Contrastive Curriculum Learning for Sequential User Behavior Modeling via Data Augmentation,2021,Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management,https://doi.org/10.1145/3459637.3481905,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0073,10.1145/3746252.3761379,,Efficient Knowledge Graph Unlearning with Zeroth-order Information,2025,Proceedings of the 34th ACM International Conference on Information and Knowledge Management,https://doi.org/10.1145/3746252.3761379,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0074,10.1109/taslp.2024.3485170,,Cacophony: An Improved Contrastive Audio-Text Model,2024,,https://doi.org/10.1109/TASLP.2024.3485170,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0075,10.1145/3658644.3690334,,Neural Dehydration: Effective Erasure of Black-box Watermarks from DNNs with Limited Data,2024,Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security,https://doi.org/10.1145/3658644.3690334,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0124,10.1109/tkde.2025.3592614,,Handling Out-of-Distribution Data: A Survey,2025,IEEE Transactions on Knowledge and Data Engineering,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0126,10.1109/iccv48922.2021.00823,,The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization,2021,2021 IEEE/CVF International Conference on Computer Vision (ICCV),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0128,10.1109/access.2026.3716180,,A System-Level Analysis of Cross-Domain Generalization Failure in Audio Deepfake Detection,2026,IEEE Access,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0136,10.1109/aiiot65859.2025.11105270,,Defeating Multimodal Information Manipulation By A Web 3.0 Decentralized Identity (DID)-Based Accountability Framework,2025,2025 IEEE World AI IoT Congress (AIIoT),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0138,10.1109/dyspan60163.2024.10632736,,Utilizing Confidence in Localization Predictions for Improved Spectrum Management,2024,2024 IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0151,10.1109/cvpr52733.2024.02258,,Leveraging Vision-Language Models for Improving Domain Generalization in Image Classification,2024,2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0200,10.1109/tcss.2025.3641377,,Handling Dual Skewness in Citywide Crime Prediction Using Personalized Graph Federated Learning,2025,IEEE Transactions on Computational Social Systems,,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0380,10.3390/electronics15122733,,A Physics-Guided Symbolic Regression Framework for Multi-Resolution Dynamic Equivalent Modeling of Power Systems,2026,Electronics (Switzerland),https://www.scopus.com/pages/publications/105042867295?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0386,10.1145/3774904.3792707,,Rethinking Graph Generalization through the Lens of Sharpness-Aware Minimization,2026,WWW 2026 - Proceedings of the ACM Web Conference 2026,https://www.scopus.com/pages/publications/105038558542?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0442,10.1002/lom3.10659,,Producing plankton classifiers that are robust to dataset shift,2025,Limnology and Oceanography: Methods,https://www.scopus.com/pages/publications/85210377627?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0511,10.1145/3652583.3658113,,PTAN: Principal Token-aware Adjacent Network for Compositional Temporal Grounding,2024,ICMR 2024 - Proceedings of the 2024 International Conference on Multimedia Retrieval,https://www.scopus.com/pages/publications/85199197563?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0514,10.1145/3676558,,Towards Domain-Aware Stable Meta Learning for Out-of-Distribution Generalization,2024,ACM Transactions on Knowledge Discovery from Data,https://www.scopus.com/pages/publications/85202442187?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0517,10.1109/jstars.2026.3655786,,A Cascade Registration Method Based on Transformation Transfer for Multiscale Point Clouds,2026,IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing,https://www.scopus.com/pages/publications/105028274076?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0522,10.1109/twc.2025.3528568,,Avoiding Shortcuts: Enhancing Channel-Robust Specific Emitter Identification via Single-Source Domain Generalization,2025,IEEE Transactions on Wireless Communications,https://www.scopus.com/pages/publications/105002491437?origin=resultslist,paywalled,openalex:no-oa; unpaywall:no-oa
+P02_0923,,2205.09607v2,LAGr: Label Aligned Graphs for Better Systematic Generalization in Semantic Parsing,2022,,http://arxiv.org/abs/2205.09607v2,download-failed,arxiv:fail
+P02_1172,,,Learning to optimize: a primer and a benchmark,2022,,,no-identifier,
+P02_1173,,,Proceedings of the 2025 International Conference on Multimedia Retrieval,2025,,,no-identifier,
+P02_1175,,,Proceedings of the 2024 International Conference on Multimedia Retrieval,2024,,,no-identifier,
+P02_1176,,,Proceedings of the 2026 ACM Workshop on Information Hiding and Multimedia Security,2026,,,no-identifier,
+P02_1177,,,"Proceedings of the 2026 5th International Conference on Networks, Communications and Information Technology",2026,,,no-identifier,
+P02_1178,,,"Proceedings of the 17th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics",2026,,,no-identifier,
+P02_1179,,,"Proceedings of the 13th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation",2026,,,no-identifier,
+P02_1180,,,Proceedings of the 2024 2nd International Conference on Internet of Things and Cloud Computing Technology,2024,,,no-identifier,
+P02_1181,,,"Proceedings of the 2026 5th International Conference on Big Data, Information and Computer Network",2026,,,no-identifier,
+P02_1182,,,Proceedings of the 2025 6th International Conference on Computer Science and Management Technology,2025,,,no-identifier,
+P02_1183,,,"Proceedings of the 2022 5th International Conference on Algorithms, Computing and Artificial Intelligence",2022,,,no-identifier,
+P02_1184,,,"Proceedings of the 5th International Conference on Computer, Artificial Intelligence and Control Engineering",2026,,,no-identifier,
+P02_1185,,,Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2,2025,,,no-identifier,
+P02_1186,,,"Proceedings of the 2026 5th International Conference on Cryptography, Network Security and Communication Technology",2026,,,no-identifier,
+P02_1187,,,Proceedings of the 7th ACM International Conference on Multimedia in Asia,2025,,,no-identifier,
+P02_1188,,,Proceedings of the Third International Conference on AI-ML Systems,2023,,,no-identifier,
+P02_1189,,,Proceedings of the 22nd ACM SIGGRAPH European Conference on Visual Media Production,2025,,,no-identifier,
+P02_1190,,,Proceedings of the 12th International Symposium on Information and Communication Technology,2023,,,no-identifier,
+P02_1191,,,Proceedings of the 2025 11th International Conference on Communication and Information Processing,2025,,,no-identifier,
+P02_1192,,,Proceedings of the 32nd ACM International Conference on Multimedia,2024,,,no-identifier,
+P02_1193,,,Proceedings of the 2024 International Conference on Generative Artificial Intelligence and Information Security,2024,,,no-identifier,
+P02_1194,,,Proceedings of the 2025 6th International Conference on Big Data Economy and Information Management,2025,,,no-identifier,
+P02_1195,,,Proceedings of the 2023 15th International Conference on Machine Learning and Computing,2023,,,no-identifier,
+P02_1196,,,Proceedings of the 2026 ACM Sustainability Week,2026,,,no-identifier,
+P02_1197,,,Proceedings of the 6th Joint International Conference on Data Science &amp; Management of Data (10th ACM IKDD CODS and 28th COMAD),2023,,,no-identifier,
+P02_1198,,,"Proceedings of the 2025 2nd International Conference on Image Processing, Intelligent Control and Computer Engineering",2025,,,no-identifier,
+P02_1199,,,Proceedings of the 2024 8th International Conference on Natural Language Processing and Information Retrieval,2024,,,no-identifier,
+P02_1200,,,Proceedings of the 2026 ACM/IEEE International Conference on Embedded Artificial Intelligence and Sensing Systems,2026,,,no-identifier,
+P02_1201,,,Proceedings of the 2024 16th International Conference on Machine Learning and Computing,2024,,,no-identifier,
+P02_1202,,,Proceedings of the Fourth ACM International Conference on AI in Finance,2023,,,no-identifier,
+P02_1203,,,Proceedings of the 2024 5th International Conference on Computer Science and Management Technology,2024,,,no-identifier,
+P02_1204,,,Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval,2024,,,no-identifier,
+P02_1205,,,Proceedings of the ACM on Web Conference 2025,2025,,,no-identifier,
+P02_1206,,,Proceedings of the 2026 2nd International Conference on Digital Education and Information Technology,2026,,,no-identifier,
+P02_1207,,,Proceedings of the 31st ACM International Conference on Advances in Geographic Information Systems,2023,,,no-identifier,
+P02_1208,,,Proceedings of the 5th ACM International Conference on AI in Finance,2024,,,no-identifier,
+P02_1209,,,Proceedings of the 2026 International Conference on Multimedia Retrieval,2026,,,no-identifier,
+P02_1210,,,Proceedings of the 2024 5th International Symposium on Artificial Intelligence for Medicine Science,2024,,,no-identifier,
+P02_1211,,,Proceedings of the 17th ACM Conference on Recommender Systems,2023,,,no-identifier,
+P02_1212,,,Proceedings of the 6th ACM International Conference on Multimedia in Asia,2024,,,no-identifier,
+P02_1213,,,Proceedings of the 7th Joint International Conference on Data Science &amp; Management of Data (11th ACM IKDD CODS and 29th COMAD),2024,,,no-identifier,
+P02_1214,,,Proceedings of the 17th ACM International Conference on Web Search and Data Mining,2024,,,no-identifier,
+P02_1215,,,Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis,2024,,,no-identifier,
+P02_1216,,,Proceedings of the 2024 ACM Workshop on Information Hiding and Multimedia Security,2024,,,no-identifier,
+P02_1217,,,Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval,2025,,,no-identifier,
+P02_1218,,,Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers,2026,,,no-identifier,
+P02_1219,,,Proceedings of the Companion Conference on Genetic and Evolutionary Computation,2023,,,no-identifier,
+P02_1220,,,Proceedings of the 2025 15th International Conference on Communication and Network Security,2025,,,no-identifier,
+P02_1221,,,Proceedings of the Genetic and Evolutionary Computation Conference Companion,2024,,,no-identifier,
+P02_1222,,,Proceedings of the 18th ACM Conference on Recommender Systems,2024,,,no-identifier,
+P02_1223,,,Companion Proceedings of the Web Conference 2022,2022,,,no-identifier,
+P02_1224,,,Proceedings of the 2025 ACM Workshop on Information Hiding and Multimedia Security,2025,,,no-identifier,
+P02_1225,,,Proceedings of the 32nd ACM SIGSOFT International Symposium on Software Testing and Analysis,2023,,,no-identifier,
+P02_1226,,,Proceedings of the 37th IEEE/ACM International Conference on Automated Software Engineering,2022,,,no-identifier,
+P02_1227,,,Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security,2024,,,no-identifier,
+P02_1228,,,Proceedings of the 30th International Conference on Intelligent User Interfaces,2025,,,no-identifier,
+P02_1229,,,Proceedings of the 2026 ACM Secure Development Conference,2026,,,no-identifier,
+P02_1230,,,"Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services",2023,,,no-identifier,
+P02_1231,,,Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation,2024,,,no-identifier,
+P02_1233,,,Proceedings of the 23rd International Conference on Autonomous Agents and Multiagent Systems,2024,,,no-identifier,
+P02_1234,,,Proceedings of the 38th ACM/SIGAPP Symposium on Applied Computing,2023,,,no-identifier,
+P02_1235,,,Proceedings of the SIGGRAPH Asia 2025 Conference Papers,2025,,,no-identifier,
+P02_1236,,,SIGGRAPH Asia 2024 Conference Papers,2024,,,no-identifier,
+P02_1237,,,Proceedings of the Fifth International Conference on Distributed Artificial Intelligence,2023,,,no-identifier,
+P02_1238,,,Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security,2025,,,no-identifier,
+P02_1240,,,Proceedings of the IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Practice,2026,,,no-identifier,
+P02_1241,,,Proceedings of the ACM Asia Conference on Computer and Communications Security,2026,,,no-identifier,
+P02_1242,,,The World Wide Web Conference,2019,,,no-identifier,
+P02_1243,,,Proceedings of the Genetic and Evolutionary Computation Conference,2024,,,no-identifier,
+P02_1244,,,"Proceedings of the 2026 ACM Conference on Fairness, Accountability, and Transparency",2026,,,no-identifier,
+P02_1245,,,Proceedings of the 19th ACM Asia Conference on Computer and Communications Security,2024,,,no-identifier,
+P02_1246,,,Optimal locally private nonparametric classification with public data,2024,,,no-identifier,
+P02_1247,,,"Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency",2024,,,no-identifier,
+P02_1248,,,"Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency",2023,,,no-identifier,
+P02_1249,,,Proceedings of the 19th International Conference on the Foundations of Digital Games,2024,,,no-identifier,
+P02_1250,,,Proceedings of the 2026 Designing Interactive Systems Conference,2026,,,no-identifier,
+P02_1329,,,"4th Conference on Lifelong Learning Agents, CoLLAs 2025",2025,Proceedings of Machine Learning Research,https://www.scopus.com/pages/publications/105039413569?origin=resultslist,no-identifier,
+P02_1339,,,TOWARDS ROBUST OUT-OF-DISTRIBUTION GENERALIZATION BOUNDS VIA SHARPNESS,2024,"12th International Conference on Learning Representations, ICLR 2024",https://www.scopus.com/pages/publications/85200608839?origin=resultslist,no-identifier,
+P02_1388,,,"14th National CCF Conference on Natural Language Processing and Chinese Computing, NLPCC 2025",2026,Lecture Notes in Computer Science,https://www.scopus.com/pages/publications/105025895730?origin=resultslist,no-identifier,
+P02_1389,,,Weight Space Correlation Analysis: Quantifying Feature Utilization in Deep Learning Models,2026,Proceedings of Machine Learning Research,https://www.scopus.com/pages/publications/105040248049?origin=resultslist,no-identifier,
+P02_1407,,,"*SEM 2022 - 11th Joint Conference on Lexical and Computational Semantics, Proceedings of the Conference",2022,"*SEM 2022 - 11th Joint Conference on Lexical and Computational Semantics, Proceedings of the Conference",https://www.scopus.com/pages/publications/85139127779?origin=resultslist,no-identifier,

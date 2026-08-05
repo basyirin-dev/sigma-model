@@ -21,6 +21,7 @@ import csv
 import json
 import os
 import re
+import ssl
 import urllib.request
 from pathlib import Path
 
@@ -35,6 +36,14 @@ MANIFEST_CSV = RETR_DIR / "oa-manifest.csv"
 PAYWALL_CSV = RETR_DIR / "paywalled-to-fetch.csv"
 LOG_MD = BASE / "research" / "full-text-retrieval-log.md"
 REPORT_MD = RETR_DIR / "retrieval-report.md"
+
+for _dir in (PDF_DIR, TXT_DIR, RETR_DIR):
+    _dir.mkdir(parents=True, exist_ok=True)
+
+# Sandboxed/dev networks may MITM TLS with an untrusted CA; set
+# SIGMA_SSL_VERIFY=0 to disable verification (default keeps it ON).
+SSL_VERIFY = os.environ.get("SIGMA_SSL_VERIFY", "1") not in ("0", "false", "no")
+_SSL_CTX = None if SSL_VERIFY else ssl._create_unverified_context()
 
 HEADERS = {"User-Agent": ("Mozilla/5.0 (X11; Linux x86_64) SigmaModel/2.0 "
                           "(mailto:research@example.org)")}
@@ -55,7 +64,7 @@ def openalex_lookup(doi: str) -> str | None:
     url = f"https://api.openalex.org/works/doi:{doi}?mailto={UNPAYWALL_EMAIL}"
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        with urllib.request.urlopen(req, timeout=20, context=_SSL_CTX) as resp:
             d = json.loads(resp.read().decode())
         best = d.get("best_oa_location") or {}
         pdf = best.get("pdf_url")
@@ -74,7 +83,7 @@ def unpaywall_lookup(doi: str) -> str | None:
     url = f"https://api.unpaywall.org/v2/{doi}?email={UNPAYWALL_EMAIL}"
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        with urllib.request.urlopen(req, timeout=20, context=_SSL_CTX) as resp:
             d = json.loads(resp.read().decode())
         loc = d.get("best_oa_location") or {}
         pdf = loc.get("url_for_pdf") or loc.get("url")
@@ -84,13 +93,14 @@ def unpaywall_lookup(doi: str) -> str | None:
 
 
 def download(url: str, dest: Path, timeout: int = 30) -> bool:
-    """Download a PDF (or HTML fallback) to dest. Returns success."""
+    """Download a PDF to dest. Returns success (rejects non-PDF payloads)."""
     try:
         req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CTX) as resp:
             data = resp.read()
-        if len(data) < 2000:
+        if len(data) < 2000 or data[:4] != b"%PDF":
             return False
+        dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
         return True
     except Exception:
