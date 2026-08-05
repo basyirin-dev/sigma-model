@@ -1,0 +1,229 @@
+study_id,id,title,year,venue,architectures,benchmarks,seeds_runs
+S001,P02_0154,"Roses are Red, Violets are Blue… But Should VQA expect Them To?",2021,2021 IEEE/CVF Conference on Computer Vision and Pattern Reco,Transformer-family; RNN-family; MLP; GNN,CLOSURE; Vision; NLP-OOD,
+S002,P02_0497,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,2022,Findings of the Association for Computational Linguistics: N,Transformer-family; RNN-family; GNN,SCAN; NLP-OOD,
+S003,P02_0507,I2CD: An Invertible Causal Framework for Compositional Zero-Shot Learning via Disentangle-Compose-Disentangle,2026,Proceedings of the AAAI Conference on Artificial Intelligenc,Transformer-family; MLP,NLP-OOD,
+S004,P02_0510,Compositional Generalization for Neural Semantic Parsing via Span-level Supervised Attention,2021,NAACL-HLT 2021 - 2021 Conference of the North American Chapt,Transformer-family; RNN-family,CFQ; Math/MW,
+S005,P02_0542,Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of-Distribution Generalization,2023,Proceedings of the 37th AAAI Conference on Artificial Intell,Transformer-family; CNN; VAE/AE,Math/MW; Vision; OOD-CV,
+S006,P02_0594,COGS: A Compositional Generalization Challenge Based on Semantic Interpretation,2020,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; PCFG; Math/MW; Vision,5
+S007,P02_0595,Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP),2025,arXiv:benchmark,Transformer-family; RNN-family; MLP; RL-agent,COGS; SLOG,
+S008,P02_0596,SLOG: A Structural Generalization Benchmark for Semantic Parsing,2023,arXiv:benchmark,Transformer-family; RNN-family; MLP,COGS; SLOG; Math/MW; Vision,
+S009,P02_0597,Grounded Graph Decoding Improves Compositional Generalization in Question Answering,2021,arXiv:benchmark,Transformer-family; RNN-family; VAE/AE,SCAN; CFQ; Math/MW,
+S010,P02_0598,Towards Understanding the Relationship between In-context Learning and Compositional Generalization,2024,arXiv:benchmark,Transformer-family; RNN-family; MLP; RL-agent,SCAN; COGS; CFQ; PCFG; Math/MW,2
+S011,P02_0599,Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN; GNN; RL-agent,SCAN; CFQ; CLOSURE; NLU-bench; Vision,
+S012,P02_0600,Learning to Substitute Components for Compositional Generalization,2025,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; Math/MW,
+S013,P02_0601,Span-based Semantic Parsing for Compositional Generalization,2020,arXiv:benchmark,Transformer-family; RNN-family; RL-agent; VAE/AE,SCAN; CLOSURE; Vision,
+S014,P02_0602,Harnessing Dataset Cartography for Improved Compositional Generalization in Transformers,2023,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; Math/MW; NLU-bench,3
+S015,P02_0603,Learning to Substitute Spans towards Improving Compositional Generalization,2023,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; Math/MW,
+S016,P02_0604,On the Compositional Generalization Gap of In-Context Learning,2022,arXiv:benchmark,Transformer-family; RNN-family,SCAN; CFQ,
+S017,P02_0605,Representational Homomorphism Predicts and Improves Compositional Generalization In Transformer Language Model,2026,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; gSCAN; Math/MW,5
+S018,P02_0606,Compositional Generalization in Dependency Parsing,2021,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; CFQ; gSCAN; CLOSURE; Vision,
+S019,P02_0607,Revisiting Iterative Back-Translation from the Perspective of Compositional Generalization,2020,arXiv:benchmark,Transformer-family; RNN-family,SCAN; CFQ; Math/MW; Vision,
+S020,P02_0608,*-CFQ: Analyzing the Scalability of Machine Learning on a Compositional Task,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN,CFQ; Tabular,
+S021,P02_0609,Compositional Generalization Requires Compositional Parsers,2022,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; PCFG; CLOSURE,5
+S022,P02_0610,Think before you act: A simple baseline for compositional generalization,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN,SCAN; gSCAN; Math/MW; Vision,
+S023,P02_0611,How Do In-Context Examples Affect Compositional Generalization?,2023,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; CFQ,
+S024,P02_0612,Hierarchical Poset Decoding for Compositional Generalization in Language,2020,arXiv:benchmark,Transformer-family; RNN-family; RL-agent; VAE/AE,CFQ,
+S025,P02_0613,Unlocking Compositional Generalization in Pre-trained Models Using Intermediate Representations,2021,arXiv:benchmark,Transformer-family; RNN-family; VAE/AE,SCAN; CFQ,
+S026,P02_0614,Compositional Generalization by Learning Analytical Expressions,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN; GNN; RL-agent,SCAN; COGS; CFQ; Math/MW; Vision,1
+S027,P02_0615,Compositional Generalization in Multilingual Semantic Parsing over Wikidata,2021,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; CFQ; Math/MW; NLU-bench,
+S028,P02_0616,Data Factors for Better Compositional Generalization,2023,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP,SCAN; COGS; CFQ; Math/MW,5
+S029,P02_0617,Iterative Decoding for Compositional Generalization in Transformers,2021,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; CFQ; PCFG; Math/MW,
+S030,P02_0618,Structural generalization in COGS: Supertagging is (almost) all you need,2023,arXiv:benchmark,Transformer-family; RNN-family,COGS; Math/MW,3
+S031,P02_0619,When Can Transformers Ground and Compose: Insights from Compositional Generalization Benchmarks,2022,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP; GNN,COGS; gSCAN; CLOSURE; Math/MW; Vision,
+S032,P02_0620,Compositional Generalization for Natural Language Interfaces to Web APIs,2021,arXiv:benchmark,Transformer-family; RNN-family; RL-agent,SCAN; COGS; CFQ,5
+S033,P02_0621,Revisiting the Compositional Generalization Abilities of Neural Sequence Models,2022,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS,
+S034,P02_0622,Measuring Compositional Generalization: A Comprehensive Method on Realistic Data,2019,arXiv:benchmark,Transformer-family; RNN-family,SCAN; CFQ; Math/MW; Vision,
+S035,P02_0623,Recursive Decoding: A Situated Cognition Approach to Compositional Generation in Grounded Language Understanding,2022,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP; RL-agent,SCAN; COGS; gSCAN; Math/MW; Vision; NLP-OOD,
+S036,P02_0624,Compositional Generalization without Trees using Multiset Tagging and Latent Permutations,2023,arXiv:benchmark,Transformer-family; RNN-family; MLP; VAE/AE,COGS; Math/MW,10
+S037,P02_0625,Compositional Generalization via Neural-Symbolic Stack Machines,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN; RL-agent,SCAN; CLOSURE; Vision,5
+S038,P02_0626,Compositional Generalization for Primitive Substitutions,2019,arXiv:benchmark,Transformer-family; RNN-family; CNN,SCAN; COGS; Vision,
+S039,P02_0627,Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models,2022,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP,SCAN; COGS; CFQ,
+S040,P02_0628,A Neuroscience-Inspired Dual-Process Model of Compositional Generalization,2025,arXiv:benchmark,Transformer-family; RNN-family; GNN; RL-agent,SCAN,4
+S041,P02_0629,Compositional generalization in a deep seq2seq model by separating syntax and semantics,2019,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP; GNN,SCAN; Vision,25
+S042,P02_0630,Compositional Generalization and Decomposition in Neural Program Synthesis,2022,arXiv:benchmark,Transformer-family; RNN-family; MLP; GNN; RL-agent,SCAN; COGS; CLOSURE; Math/MW; Vision,
+S043,P02_0631,Learning to Recombine and Resample Data for Compositional Generalization,2020,arXiv:benchmark,Transformer-family; RNN-family; GNN; VAE/AE,SCAN; COGS; CLOSURE; Math/MW; Vision,
+S044,P02_0632,Can Transformers Jump Around Right in Natural Language? Assessing Performance Transfer from SCAN,2021,arXiv:benchmark,Transformer-family; RNN-family; CNN; GNN; RL-agent,SCAN; Math/MW,
+S045,P02_0633,Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks,2021,arXiv:benchmark,Transformer-family; RNN-family; GNN,SCAN; COGS; Math/MW; Tabular,
+S046,P02_0634,Compositional generalization in semantic parsing with pretrained transformers,2021,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; NLU-bench; Vision,
+S047,P02_0635,CNNs found to jump around more skillfully than RNNs: Compositional generalization in seq2seq convolutional networks,2019,arXiv:benchmark,Transformer-family; RNN-family; CNN; GNN,SCAN; COGS; Math/MW,5
+S048,P02_0636,SUBS: Subtree Substitution for Compositional Semantic Parsing,2022,arXiv:benchmark,Transformer-family; RNN-family; MLP; GNN,Math/MW,
+S049,P02_0637,On graph-based reentrancy-free semantic parsing,2023,arXiv:benchmark,Transformer-family; RNN-family; VAE/AE,CLOSURE; Math/MW; Vision,
+S050,P02_0638,LAGr: Labeling Aligned Graphs for Improving Systematic Generalization in Semantic Parsing,2021,arXiv:benchmark,Transformer-family; RNN-family,COGS; CFQ; CLOSURE; Math/MW; Vision,10
+S051,P02_0639,ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation,2023,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; Math/MW; NLP-OOD,20
+S052,P02_0640,ReaSCAN: Compositional Reasoning in Language Grounding,2021,arXiv:benchmark,Transformer-family; RNN-family; CNN; GNN,SCAN; gSCAN; CLOSURE; Math/MW; Vision,3
+S053,P02_0642,Compositional Semantic Parsing with Large Language Models,2022,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; CFQ; CLOSURE; Math/MW; NLU-bench; Vision,
+S054,P02_0643,A Benchmark for Systematic Generalization in Grounded Language Understanding,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN; RL-agent,SCAN; gSCAN; CLOSURE; Vision,3
+S055,P02_0647,Compositional generalization through meta sequence-to-sequence learning,2019,arXiv:benchmark,Transformer-family; RNN-family,SCAN,
+S056,P02_0648,Inducing Transformer's Compositional Generalization Ability via Auxiliary Sequence Prediction Tasks,2021,arXiv:benchmark,Transformer-family; RNN-family; CNN; MLP; RL-agent,SCAN; COGS; CFQ; gSCAN,5
+S057,P02_0649,Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing,2023,arXiv:benchmark,Transformer-family; RNN-family,SCAN; COGS; CFQ; Math/MW,
+S058,P02_0651,Early-Warning Signals of Grokking via Loss-Landscape Geometry,2026,arXiv:benchmark,Transformer-family; RNN-family; MLP,SCAN; Math/MW,3
+S059,P02_0654,A Compositional Framework for Open-ended Intelligence,2026,arXiv:benchmark,Transformer-family; RNN-family; GNN; RL-agent; Diffusion,SCAN; CLOSURE; Math/MW; NLP-OOD,
+S060,P02_0657,Sequence-Level Mixed Sample Data Augmentation,2020,arXiv:benchmark,Transformer-family; RNN-family; CNN,SCAN,
+S061,P02_0667,Does Data Scaling Lead to Visual Compositional Generalization?,2025,arXiv:broad,Transformer-family; CNN; MLP; Diffusion,Math/MW; Vision,
+S062,P02_0668,Towards Robust Out-of-Distribution Generalization Bounds via Sharpness,2024,arXiv:broad,Transformer-family; MLP,Math/MW; Vision; OOD-CV,6
+S063,P02_0669,Aggregation Hides Out-of-Distribution Generalization Failures from Spurious Correlations,2025,arXiv:broad,Transformer-family; CNN,SCAN; NLU-bench; Vision; OOD-CV,
+S064,P02_0673,Learning to Think in Physics: Breaking Shortcut Learning in Scientific Diffusion via Representation Alignment,2026,arXiv:broad,Transformer-family; CNN; MLP; Diffusion,CoCoGen; Math/MW; Vision,3
+S065,P02_0678,"Sharp analysis of out-of-distribution error for ""importance-weighted"" estimators in the overparameterized regime",2024,arXiv:broad,unknown,Math/MW; OOD-CV,
+S066,P02_0679,Principled Out-of-Distribution Generalization via Simplicity,2025,arXiv:broad,Transformer-family; CNN; MLP; Diffusion,Math/MW; Vision,10
+S067,P02_0688,Using Interventions to Improve Out-of-Distribution Generalization of Text-Matching Recommendation Systems,2022,arXiv:broad,Transformer-family; GNN,NLU-bench,3
+S068,P02_0689,Correct-N-Contrast: A Contrastive Approach for Improving Robustness to Spurious Correlations,2022,arXiv:broad,Transformer-family; CNN; GNN; VAE/AE,COGS; Vision; OOD-CV,
+S069,P02_0690,CausPref: Causal Preference Learning for Out-of-Distribution Recommendation,2022,arXiv:broad,Transformer-family; CNN; MLP; GNN; RL-agent,Math/MW,
+S070,P02_0691,Invariant Graph Transformer for Out-of-Distribution Generalization,2025,arXiv:broad,Transformer-family; CNN; MLP; GNN; RL-agent,Math/MW,
+S071,P02_0692,Fishr: Invariant Gradient Variances for Out-of-Distribution Generalization,2021,arXiv:broad,Transformer-family; CNN; MLP; VAE/AE,SCAN; Math/MW; Vision; OOD-CV,10
+S072,P02_0693,Early Period of Training Impacts Adaptation for Out-of-Distribution Generalization: An Empirical Study,2024,arXiv:broad,Transformer-family; RNN-family; CNN; VAE/AE,Math/MW; NLU-bench; Vision; OOD-CV,6
+S073,P02_0698,Invariance Principle Meets Information Bottleneck for Out-of-Distribution Generalization,2021,arXiv:broad,CNN; MLP; GNN; VAE/AE,Vision; OOD-CV,4
+S074,P02_0700,What Matters to You? Towards Visual Representation Alignment for Robot Learning,2023,arXiv:broad,Transformer-family; CNN; RL-agent; VAE/AE,Math/MW; Vision; NLP-OOD,
+S075,P02_0702,Benign Overfitting in Out-of-Distribution Generalization of Linear Models,2024,arXiv:broad,Transformer-family,Math/MW; Vision; NLP-OOD,10
+S076,P02_0703,Can Agents Run Relay Race with Strangers? Generalization of RL to Out-of-Distribution Trajectories,2023,arXiv:broad,Transformer-family; RL-agent,none-detected,
+S077,P02_0705,Diagnosing Generalization Failures from Representational Geometry Markers,2026,arXiv:broad,Transformer-family; RNN-family; CNN; MLP; RL-agent; VAE/AE,Math/MW; NLU-bench; Vision,
+S078,P02_0708,Making Foresight Actionable: Repurposing Representation Alignment in World Action Models,2026,arXiv:broad,Transformer-family; MLP; VAE/AE; Diffusion,CLOSURE,
+S079,P02_0712,Low-rank Orthogonal Subspace Intervention for Generalizable Face Forgery Detection,2026,arXiv:broad,Transformer-family; RNN-family; CNN; Diffusion,COGS; NLP-OOD,
+S080,P02_0717,Incorporating Surrogate Gradient Norm to Improve Offline Optimization Techniques,2025,arXiv:broad,Transformer-family; GNN; RL-agent; VAE/AE; Diffusion,Math/MW; NLP-OOD,16
+S081,P02_0719,Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in Robot Instruction Following,2025,arXiv:broad,Transformer-family; CNN; MLP; GNN; RL-agent; Diffusion,COGS; Math/MW; Vision; NLP-OOD; Robotics/RL,10
+S082,P02_0724,General Greedy De-bias Learning,2021,arXiv:broad,Transformer-family; RNN-family; CNN; GNN,COGS; NLU-bench; Vision; NLP-OOD,
+S083,P02_0738,DSL: Understanding and Improving Softmax Recommender Systems with Competition-Aware Scaling,2026,arXiv:broad,Transformer-family; GNN,Math/MW,
+S084,P02_0740,VLA^2: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation,2025,arXiv:broad,Transformer-family; RL-agent,none-detected,
+S085,P02_0741,Navigating High Dimensional Concept Space with Metalearning,2025,arXiv:broad,RNN-family; MLP,SCAN; PCFG,5
+S086,P02_0753,Evaluating Reward Model Generalization via Pairwise Maximum Discrepancy Competitions,2026,arXiv:broad,Transformer-family; RL-agent,SCAN; Math/MW; OOD-CV,10
+S087,P02_0757,FedSoup: Improving Generalization and Personalization in Federated Learning via Selective Model Interpolation,2023,arXiv:broad,RNN-family; CNN,none-detected,
+S088,P02_0768,Neural Language of Thought Models,2024,arXiv:broad,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent; VAE/AE,SCAN; Vision,
+S089,P02_0769,GA-Field: Geometry-Aware Vehicle Aerodynamic Field Prediction,2026,arXiv:broad,Transformer-family; CNN; MLP; GNN; VAE/AE; Diffusion,Math/MW,
+S090,P02_0773,Robust OOD Graph Learning via Mean Constraints and Noise Reduction,2025,arXiv:broad,CNN; MLP; GNN,none-detected,
+S091,P02_0783,Improving Latent Generalization Using Test-time Compute,2026,arXiv:broad,Transformer-family; RL-agent,SCAN; CLOSURE; Math/MW,
+S092,P02_0789,Frequency Bias and OOD Generalization in Neural Operators under a Variable-Coefficient Wave Equation,2026,arXiv:broad,Transformer-family; RNN-family; CNN; GNN,Math/MW,
+S093,P02_0791,SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding,2026,arXiv:broad,Transformer-family; RNN-family; GNN,SCAN; Math/MW; Vision,
+S094,P02_0795,TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models,2025,arXiv:broad,Transformer-family; GNN,Math/MW; Vision,
+S095,P02_0797,Predictable GRPO: A Closed-Form Model of Training Dynamics,2026,arXiv:broad,Transformer-family; MLP; GNN; RL-agent; Diffusion,CLOSURE; Math/MW; Tabular,
+S096,P02_0798,Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?,2025,arXiv:broad,Transformer-family; RL-agent; VAE/AE,Math/MW; NLP-OOD,
+S097,P02_0810,Compositional Generalization via Semantic Tagging,2020,arXiv:primary,Transformer-family; RNN-family; RL-agent,SCAN; Vision,5
+S098,P02_0811,Systematic Generalization with Edge Transformers,2021,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE,COGS; CFQ; Math/MW; Vision,10
+S099,P02_0812,Compositional Generalization from First Principles,2023,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; RL-agent; VAE/AE,Math/MW,5
+S100,P02_0813,Improving Compositional Generalization in Semantic Parsing,2020,arXiv:primary,Transformer-family; RNN-family,SCAN; gSCAN; CLOSURE; Vision; NLP-OOD,
+S101,P02_0814,A Survey on Compositional Generalization in Applications,2023,arXiv:primary,Transformer-family; RNN-family; GNN; RL-agent; VAE/AE,SCAN; COGS; Math/MW,
+S102,P02_0815,Composition-Incremental Learning for Compositional Generalization,2025,arXiv:primary,Transformer-family; RL-agent; VAE/AE,Vision,
+S103,P02_0816,Toward Compositional Generalization in Object-Oriented World Modeling,2022,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent; VAE/AE,CLOSURE; Math/MW; Vision,3
+S104,P02_0817,On Evaluating Multilingual Compositional Generalization with Translated Datasets,2023,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; Math/MW,
+S105,P02_0818,Learning Algebraic Recombination for Compositional Generalization,2021,arXiv:primary,Transformer-family; RNN-family; RL-agent; VAE/AE,SCAN; COGS; CFQ,5
+S106,P02_0819,Scalable Evaluation and Neural Models for Compositional Generalization,2025,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE; Diffusion,Vision; NLP-OOD,
+S107,P02_0820,Improving Compositional Generalization in Math Word Problem Solving,2022,arXiv:primary,Transformer-family; RNN-family; RL-agent,COGS; CLOSURE; Math/MW; Vision; NLP-OOD,13
+S108,P02_0821,Improving Compositional Generalization in Classification Tasks via Structure Annotations,2021,arXiv:primary,Transformer-family; RNN-family; RL-agent,SCAN; CFQ; Math/MW,
+S109,P02_0822,Compositional Generalization with Tree Stack Memory Units,2019,arXiv:primary,Transformer-family; RNN-family; MLP; GNN,Math/MW; Vision,
+S110,P02_0823,Reinforcement Learning for Compositional Generalization with Outcome-Level Optimization,2026,arXiv:primary,Transformer-family; RNN-family; RL-agent,SCAN; COGS; CFQ; Math/MW,
+S111,P02_0824,Provable Compositional Generalization for Object-Centric Learning,2023,arXiv:primary,Transformer-family; CNN; RL-agent; VAE/AE,Math/MW,10
+S112,P02_0825,A General Theory for Compositional Generalization,2024,arXiv:primary,Transformer-family; RNN-family; RL-agent,Math/MW,
+S113,P02_0826,Disentangled Sequence to Sequence Learning for Compositional Generalization,2021,arXiv:primary,Transformer-family; RNN-family; MLP; VAE/AE,COGS; CFQ; Math/MW,3
+S114,P02_0827,"Concepts, Properties and an Approach for Compositional Generalization",2021,arXiv:primary,Transformer-family; RNN-family; VAE/AE,none-detected,
+S115,P02_0828,Consistency of Compositional Generalization across Multiple Levels,2024,arXiv:primary,Transformer-family; MLP,Vision,
+S116,P02_0829,On Provable Length and Compositional Generalization,2024,arXiv:primary,Transformer-family; RNN-family; MLP; VAE/AE,COGS; CLOSURE; Math/MW,5
+S117,P02_0830,On Compositional Generalization of Neural Machine Translation,2021,arXiv:primary,Transformer-family; RNN-family; CNN,SCAN; CFQ; Math/MW; Vision,
+S118,P02_0831,DiNeR: a Large Realistic Dataset for Evaluating Compositional Generalization,2024,arXiv:primary,Transformer-family; RNN-family; GNN,SCAN; COGS; NLP-OOD,
+S119,P02_0832,The Mystery of Compositional Generalization in Graph-based Generative Commonsense Reasoning,2024,arXiv:primary,Transformer-family; RNN-family; MLP,COGS; Math/MW,
+S120,P02_0833,Simple and effective data augmentation for compositional generalization,2024,arXiv:primary,Transformer-family; RNN-family,SCAN; COGS; CFQ; PCFG; Math/MW,1
+S121,P02_0834,Unobserved Local Structures Make Compositional Generalization Hard,2022,arXiv:primary,Transformer-family; RNN-family,SCAN; COGS; CLOSURE; Vision,
+S122,P02_0836,"Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",2026,arXiv:primary,Transformer-family; RNN-family; VAE/AE; Diffusion,Math/MW; Vision; NLP-OOD,
+S123,P02_0837,When and How Does CLIP Enable Domain and Compositional Generalization?,2025,arXiv:primary,Transformer-family; CNN; VAE/AE; Diffusion,Vision,
+S124,P02_0838,When does compositional structure yield compositional generalization? A kernel theory,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE,Math/MW; Vision,
+S125,P02_0839,Syntax-Guided Transformers: Elevating Compositional Generalization and Grounding in Multimodal Environments,2023,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; VAE/AE,SCAN; COGS; CFQ; gSCAN; Math/MW,
+S126,P02_0840,Diverse Demonstrations Improve In-context Compositional Generalization,2022,arXiv:primary,Transformer-family; RNN-family,none-detected,3
+S127,P02_0841,Exploring the Compositional Generalization in Context Dependent Text-to-SQL Parsing,2023,arXiv:primary,Transformer-family; RNN-family; GNN,SCAN; CFQ; PCFG; Math/MW,
+S128,P02_0842,Improving Compositional Generalization Using Iterated Learning and Simplicial Embeddings,2023,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; RL-agent; VAE/AE,Math/MW; Vision,5
+S129,P02_0843,Towards Compositional Generalization of LLMs via Skill Taxonomy Guided Data Synthesis,2026,arXiv:primary,Transformer-family; RNN-family; RL-agent; Diffusion,Math/MW; NLP-OOD; Tabular,
+S130,P02_0845,Are Object-Centric Representations Better At Compositional Generalization?,2026,arXiv:primary,Transformer-family; RNN-family; MLP; RL-agent; Diffusion,Vision; NLP-OOD,
+S131,P02_0847,A Short Survey of Systematic Generalization,2022,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; RL-agent; VAE/AE; Diffusion,SCAN; COGS; CFQ; gSCAN; PCFG; CLOSURE; Math/MW; Vision; OOD-CV; NLP-OOD,
+S132,P02_0848,Compositional Generalization for Multi-label Text Classification: A Data-Augmentation Approach,2023,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE,NLP-OOD,
+S133,P02_0849,Exploring Continual Learning of Compositional Generalization in NLI,2024,arXiv:primary,Transformer-family; CNN,Math/MW; NLU-bench,
+S134,P02_0850,Layer-wise Representation Fusion for Compositional Generalization,2023,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; CFQ,
+S135,P02_0851,Block-Operations: Using Modular Routing to Improve Compositional Generalization,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN,Math/MW; Vision,
+S136,P02_0852,Local Mechanisms of Compositional Generalization in Conditional Diffusion,2025,arXiv:primary,Transformer-family; CNN; GNN; VAE/AE; Diffusion,Math/MW; Vision,10
+S137,P02_0853,A Theoretical Analysis of Compositional Generalization in Neural Networks: A Necessary and Sufficient Condition,2025,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; RL-agent; VAE/AE,SCAN; COGS; Math/MW; NLP-OOD,
+S138,P02_0854,The Role of Linguistic Priors in Measuring Compositional Generalization of Vision-Language Models,2023,arXiv:primary,Transformer-family; RNN-family; GNN; Diffusion,SCAN; COGS; Vision; NLP-OOD,
+S139,P02_0855,Compositional Generalization and Natural Language Variation: Can a Semantic Parsing Approach Handle Both?,2020,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; CLOSURE; Math/MW,3
+S140,P02_0856,Enhancing Compositional Generalization via Compositional Feature Alignment,2024,arXiv:primary,Transformer-family; CNN; GNN; VAE/AE,Math/MW; Vision; OOD-CV; NLP-OOD,3
+S141,P02_0857,Evaluating Morphological Compositional Generalization in Large Language Models,2024,arXiv:primary,Transformer-family; RNN-family,COGS; NLP-OOD,
+S142,P02_0858,Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing,2022,arXiv:primary,Transformer-family; RNN-family,COGS; CFQ,
+S143,P02_0859,Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning,2022,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ,
+S144,P02_0861,Improving Compositional Generalization with Latent Structure and Data Augmentation,2021,arXiv:primary,Transformer-family; RNN-family,SCAN; COGS; CFQ; PCFG; Math/MW,3
+S145,P02_0862,Compositional Generalization in Image Captioning,2019,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; VAE/AE,COGS; Vision,
+S146,P02_0863,Can LLM find the green circle? Investigation and Human-guided tool manipulation for compositional generalization,2023,arXiv:primary,Transformer-family; RNN-family; GNN,COGS; gSCAN,
+S147,P02_0864,Multi-Sourced Compositional Generalization in Visual Question Answering,2025,arXiv:primary,Transformer-family; RNN-family; CNN,Vision; NLP-OOD,
+S148,P02_0865,Analyzing the Inner Workings of Transformers in Compositional Generalization,2025,arXiv:primary,Transformer-family; RNN-family; MLP,COGS; PCFG; SLOG; NLP-OOD,
+S149,P02_0866,Improving Systematic Generalization Through Modularity and Augmentation,2022,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; COGS; gSCAN; Math/MW; Vision,5
+S150,P02_0867,NeSyCoCo: A Neuro-Symbolic Concept Composer for Compositional Generalization,2024,arXiv:primary,Transformer-family; CNN,gSCAN; Math/MW; NLU-bench; Vision,
+S151,P02_0868,Compositional Generalization via Forced Rendering of Disentangled Latents,2025,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; VAE/AE; Diffusion,Math/MW; Vision; Tabular,
+S152,P02_0869,ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection,2023,arXiv:primary,Transformer-family; CNN,Vision,10
+S153,P02_0870,The Impact of Depth on Compositional Generalization in Transformer Language Models,2023,arXiv:primary,Transformer-family; RNN-family; MLP,COGS,5
+S154,P02_0871,Compositional Generalization Across Distributional Shifts with Sparse Tree Operations,2024,arXiv:primary,Transformer-family; RNN-family; MLP; GNN,SCAN; COGS; SLOG; Math/MW,5
+S155,P02_0872,Compositional generalization through abstract representations in human and artificial neural networks,2022,arXiv:primary,Transformer-family; RNN-family; MLP; GNN; RL-agent; VAE/AE,SCAN; Math/MW,
+S156,P02_0873,Systematic Generalization in Language Models Scales with Information Entropy,2025,arXiv:primary,Transformer-family; RNN-family; CNN; GNN,SCAN; PCFG; Math/MW,
+S157,P02_0874,How Modular Should Neural Module Networks Be for Systematic Generalization?,2021,arXiv:primary,Transformer-family; RNN-family; CNN; MLP,CLOSURE; Vision; NLP-OOD,
+S158,P02_0875,Pretraining Frequency Predicts Compositional Generalization of CLIP on Real-World Tasks,2025,arXiv:primary,Transformer-family; RNN-family; CNN; Diffusion,COGS; Math/MW; Vision; NLP-OOD,
+S159,P02_0877,SPOR: A Comprehensive and Practical Evaluation Method for Compositional Generalization in Data-to-Text Generation,2024,arXiv:primary,Transformer-family; RNN-family; GNN,COGS; Math/MW,
+S160,P02_0878,Neural-Symbolic Recursive Machine for Systematic Generalization,2022,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; RL-agent,SCAN; COGS; CFQ; PCFG; CLOSURE; Math/MW; Vision,5
+S161,P02_0879,An explainable transformer circuit for compositional generalization,2025,arXiv:primary,Transformer-family; RNN-family; CNN; MLP,SCAN; Math/MW,
+S162,P02_0880,Finding needles in a haystack: Sampling Structurally-diverse Training Sets from Synthetic Data for Compositional Generalization,2021,arXiv:primary,Transformer-family; RNN-family,COGS; CFQ; Tabular,5
+S163,P02_0881,Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability,2025,arXiv:primary,Transformer-family; RNN-family; GNN; RL-agent,SLOG; Math/MW,192
+S164,P02_0882,Differentiable Tree Operations Promote Compositional Generalization,2023,arXiv:primary,Transformer-family; RNN-family; MLP,COGS; Math/MW,
+S165,P02_0883,Factorization Regret mediates compositional generalization in latent space,2026,arXiv:primary,Transformer-family; RNN-family; MLP; RL-agent; Diffusion,Math/MW,
+S166,P02_0884,Counterfactual Recipe Generation: Exploring Compositional Generalization in a Realistic Scenario,2022,arXiv:primary,Transformer-family; RNN-family,COGS; Math/MW; Vision; NLP-OOD,
+S167,P02_0885,Swing-by Dynamics in Concept Learning and Compositional Generalization,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; Diffusion,Math/MW; Vision; NLP-OOD,
+S168,P02_0887,ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis,2023,arXiv:primary,Transformer-family; RNN-family; MLP; GNN,SCAN; COGS; CLOSURE; Math/MW; Vision,
+S169,P02_0888,Compositional Generalization for Data-to-Text Generation,2023,arXiv:primary,Transformer-family; RNN-family; MLP; GNN; RL-agent,none-detected,
+S170,P02_0889,What Drives Compositional Generalization? The Importance of Continuous Training Objectives in Visual Generative Models,2025,arXiv:primary,Transformer-family; CNN; MLP; VAE/AE; Diffusion,Math/MW; Vision; NLP-OOD,
+S171,P02_0890,Compositional Generalization with Grounded Language Models,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN,COGS; Math/MW; Tabular,
+S172,P02_0891,Scaling can lead to compositional generalization,2025,arXiv:primary,Transformer-family; RNN-family; MLP; Diffusion,Math/MW; NLP-OOD,
+S173,P02_0892,Sequential Compositional Generalization in Multimodal Models,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN,SCAN; COGS; CFQ; CLOSURE; Math/MW; Vision; NLP-OOD,3
+S174,P02_0893,Learning to Compose Representations of Different Encoder Layers towards Improving Compositional Generalization,2023,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; CFQ,6
+S175,P02_0894,Systematic Generalization on gSCAN with Language Conditioned Embedding,2020,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; RL-agent,SCAN; gSCAN; Math/MW; Vision; NLP-OOD,
+S176,P02_0895,On a Built-in Conflict between Deep Learning and Systematic Generalization,2022,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; RL-agent; VAE/AE; Diffusion,Math/MW; Vision; NLP-OOD,
+S177,P02_0898,What Do You Need for Compositional Generalization in Diffusion Planning?,2025,arXiv:primary,Transformer-family; RNN-family; CNN; RL-agent; Diffusion,Vision; Robotics/RL,50
+S178,P02_0899,D3: Data Diversity Design for Systematic Generalization in Visual Question Answering,2023,arXiv:primary,Transformer-family; RNN-family; CNN; GNN,CFQ; CLOSURE; Vision; NLP-OOD,
+S179,P02_0900,RoboHiMan: A Hierarchical Evaluation Paradigm for Compositional Generalization in Long-Horizon Manipulation,2025,arXiv:primary,Transformer-family; Diffusion,Vision,
+S180,P02_0901,AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents,2026,arXiv:primary,Transformer-family; RL-agent,Math/MW; Vision; NLP-OOD,
+S181,P02_0902,ViLPAct: A Benchmark for Compositional Generalization on Multimodal Human Activities,2022,arXiv:primary,Transformer-family,none-detected,
+S182,P02_0903,Policy Architectures for Compositional Generalization in Control,2022,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent,none-detected,5
+S183,P02_0904,Transformer Module Networks for Systematic Generalization in Visual Question Answering,2022,arXiv:primary,Transformer-family; RNN-family; CNN,CFQ; CLOSURE; Vision,
+S184,P02_0906,Realistic Evaluation of Model Merging for Compositional Generalization,2024,arXiv:primary,Transformer-family; MLP; GNN; Diffusion,NLU-bench,
+S185,P02_0907,Learning Algebraic Representation for Systematic Generalization in Abstract Reasoning,2021,arXiv:primary,RNN-family; CNN; MLP; RL-agent; VAE/AE,COGS; CLOSURE; Math/MW; Vision; NLP-OOD,
+S186,P02_0908,From Reasoning Traces to Reusable Modules: Understanding Compositional Generalization in Language Model Reasoning,2026,arXiv:primary,Transformer-family; GNN; RL-agent; VAE/AE,CLOSURE; Math/MW,
+S187,P02_0909,Systematic Generalization: What Is Required and Can It Be Learned?,2018,arXiv:primary,Transformer-family; RNN-family; CNN,SCAN; Vision,5
+S188,P02_0910,Learning by Analogy: A Causal Framework for Composition Generalization,2025,arXiv:primary,Transformer-family; VAE/AE; Diffusion,Vision,
+S189,P02_0912,Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization,2022,arXiv:primary,Transformer-family; RL-agent,Math/MW; Tabular,
+S190,P02_0913,Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning,2025,arXiv:primary,Transformer-family; RNN-family; MLP; RL-agent; VAE/AE,SCAN; COGS; CFQ; CLOSURE; Math/MW; NLP-OOD,25
+S191,P02_0914,Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models,2025,arXiv:primary,Transformer-family; Diffusion,Math/MW; Vision; NLP-OOD,
+S192,P02_0915,Systematic Generalization in Neural Networks-based Multivariate Time Series Forecasting Models,2021,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent; VAE/AE,Math/MW; Vision,
+S193,P02_0917,Seen to Unseen: Exploring Compositional Generalization of Multi-Attribute Controllable Dialogue Generation,2023,arXiv:primary,Transformer-family; MLP,Math/MW; Vision,
+S194,P02_0919,Latent Compositional Representations Improve Systematic Generalization in Grounded Question Answering,2020,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE,SCAN; gSCAN; CLOSURE; Vision,
+S195,P02_0921,Measuring Systematic Generalization in Neural Proof Generation with Transformers,2020,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; CFQ; CLOSURE; Vision,
+S196,P02_0922,Systematic Generalization on gSCAN: What is Nearly Solved and What is Next?,2021,arXiv:primary,Transformer-family; RNN-family; CNN; GNN,SCAN; gSCAN; CLOSURE; Vision,5
+S197,P02_0924,COVR: A test-bed for Visually Grounded Compositional Generalization with real images,2021,arXiv:primary,Transformer-family; RNN-family; CNN,COGS; CLOSURE; NLU-bench; Vision; NLP-OOD,
+S198,P02_0926,Revisit Systematic Generalization via Meaningful Learning,2020,arXiv:primary,Transformer-family; RNN-family; CNN; MLP,SCAN; COGS; Math/MW,
+S199,P02_0927,ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle Games for Evaluating Compositional Generalization,2026,arXiv:primary,Transformer-family; RNN-family; RL-agent,SCAN; COGS; CFQ; gSCAN; Math/MW; Vision; OOD-CV,
+S200,P02_0928,HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating the Systematic Generalization Performance of Human-Object Interaction Detection Models,2023,arXiv:primary,Transformer-family; RNN-family; CNN; MLP,COGS; CLOSURE; Vision; NLP-OOD,
+S201,P02_0929,"InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",2026,arXiv:primary,Transformer-family; GNN; VAE/AE; Diffusion,Vision,
+S202,P02_0930,Rule Extrapolation in Language Models: A Study of Compositional Generalization on OOD Prompts,2024,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; VAE/AE,PCFG; Math/MW,5
+S203,P02_0931,Language Plays a Pivotal Role in the Object-Attribute Compositional Generalization of CLIP,2024,arXiv:primary,Transformer-family; CNN,Vision,
+S204,P02_0932,The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers,2021,arXiv:primary,Transformer-family; RNN-family; MLP,SCAN; COGS; CFQ; PCFG; CLOSURE; Math/MW; Vision,5
+S205,P02_0933,Inductive Biases for Zero-shot Systematic Generalization in Language-informed Reinforcement Learning,2025,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; RL-agent,gSCAN,
+S206,P02_0934,Three approaches to facilitate DNN generalization to objects in out-of-distribution orientations and illuminations,2021,arXiv:primary,CNN; MLP; VAE/AE,Vision; NLP-OOD,
+S207,P02_0935,Siamese recurrent networks learn first-order logic reasoning and exhibit zero-shot compositional generalization,2019,arXiv:primary,Transformer-family; RNN-family; GNN,Math/MW,
+S208,P02_0936,"A Minimalist Dataset for Systematic Generalization of Perception, Syntax, and Semantics",2021,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN,SCAN; COGS; CFQ; gSCAN; PCFG; CLOSURE; Math/MW; Vision,5
+S209,P02_0937,CLOSURE: Assessing Systematic Generalization of CLEVR Models,2019,arXiv:primary,Transformer-family; RNN-family; CNN; MLP,SCAN; CLOSURE; Math/MW; Vision; Tabular,10
+S210,P02_0938,Towards Systematic Generalization for Power Grid Optimization Problems,2026,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent,Math/MW,
+S211,P02_0939,Understanding out-of-distribution accuracies through quantifying difficulty of test samples,2022,arXiv:primary,Transformer-family; CNN; MLP,Vision; NLP-OOD,10
+S212,P02_0940,SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics,2021,arXiv:primary,Transformer-family; RNN-family; GNN,SCAN; COGS; CFQ; NLU-bench; NLP-OOD,3
+S213,P02_0941,Challenges in Generalization in Open Domain Question Answering,2021,arXiv:primary,Transformer-family; RNN-family,SCAN,
+S214,P02_0942,Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation,2026,arXiv:primary,Transformer-family; RNN-family; RL-agent,NLP-OOD,
+S215,P02_0945,Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System,2025,arXiv:primary,Transformer-family; RNN-family; GNN; RL-agent,none-detected,20
+S216,P02_0946,ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies,2026,arXiv:primary,RL-agent,Vision,
+S217,P02_0947,Data Distributional Properties As Inductive Bias for Systematic Generalization,2025,arXiv:primary,Transformer-family; RNN-family; CNN; GNN; VAE/AE,COGS; gSCAN; Vision,3
+S218,P02_0948,The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization,2021,arXiv:primary,Transformer-family; RNN-family; CNN; MLP; GNN; RL-agent,SCAN; CLOSURE; Math/MW; Vision; NLP-OOD,
+S219,P02_0949,Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning,2025,arXiv:primary,Transformer-family; RNN-family; RL-agent; Diffusion,Math/MW; NLP-OOD,3
+S220,P02_0951,Systematic Generalization and Emergent Structures in Transformers Trained on Structured Tasks,2022,arXiv:primary,Transformer-family; RNN-family; MLP; GNN; RL-agent,Math/MW,
+S221,P02_0956,Mixture Data for Training Cannot Ensure Out-of-distribution Generalization,2023,arXiv:primary,Transformer-family; CNN; RL-agent; VAE/AE,Math/MW; Vision; OOD-CV; Tabular,10
+S222,P02_0957,Low-Frequency Shortcuts in Texture-Driven Visual Learning,2026,arXiv:primary,Transformer-family; CNN,SCAN; Vision; NLP-OOD,4
+S223,P02_0959,What makes Models Compositional? A Theoretical View: With Supplement,2024,arXiv:primary,Transformer-family; RNN-family; CNN; GNN,SCAN; COGS; CFQ; Math/MW,
+S224,P02_0962,Robust Subtask Learning for Compositional Generalization,2023,arXiv:primary,Transformer-family; RL-agent; VAE/AE,none-detected,10
+S225,P02_0964,Compositional Generalization in Spoken Language Understanding,2023,arXiv:primary,Transformer-family; RNN-family; GNN,gSCAN; Vision,5
+S226,P02_0965,Causal Structural Hypothesis Testing and Data Generation Models,2022,arXiv:primary,MLP; GNN; VAE/AE,NLP-OOD; Tabular,
+S227,P02_0967,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,2026,arXiv:safety,Transformer-family; MLP; GNN; RL-agent,none-detected,3
+S228,P02_1159,Probing the Probes: Methods and Metrics for Concept Alignment,2025,arXiv:safety,Transformer-family; CNN; VAE/AE,Math/MW; Vision; NLP-OOD; Tabular,
