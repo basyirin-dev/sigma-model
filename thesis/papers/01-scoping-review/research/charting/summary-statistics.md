@@ -6,24 +6,25 @@
 
 | Type | n |
 |---|---|
-| other | 535 |
-| empirical | 504 |
-| review | 108 |
-| position | 54 |
-| theoretical | 34 |
-| opinion | 33 |
+| empirical | 526 |
+| other | 375 |
+| position | 131 |
+| theoretical | 123 |
+| review | 85 |
+| opinion | 28 |
 
 ## By AGI safety subdomain (multi-select)
 
 | Subdomain | n |
 |---|---|
-| value alignment | 1191 |
-| ethics | 695 |
-| robustness | 620 |
-| capabilities | 466 |
-| interpretability | 405 |
-| governance | 332 |
-| mesa-optimization | 85 |
+| value alignment | 1143 |
+| ethics | 671 |
+| robustness | 605 |
+| capabilities | 450 |
+| interpretability | 390 |
+| governance | 320 |
+| mesa-optimization | 82 |
+| other | 39 |
 
 ## By year
 
@@ -47,15 +48,15 @@
 
 | Framework | n |
 |---|---|
-| none | 944 |
-| other | 99 |
-| information theory | 71 |
-| decision theory | 41 |
+| none | 778 |
+| other | 270 |
+| information theory | 69 |
+| decision theory | 40 |
 | game theory | 27 |
 | information theory; other | 17 |
 | decision theory; other | 16 |
 | game theory; other | 13 |
-| dynamical systems | 11 |
+| dynamical systems | 9 |
 | game theory; decision theory | 6 |
 | game theory; decision theory; other | 4 |
 | decision theory; information theory | 4 |
@@ -73,15 +74,15 @@
 
 | Formalism | n |
 |---|---|
-| none | 527 |
-| probability; optimization | 218 |
+| none | 532 |
+| probability; optimization | 217 |
 | optimization | 184 |
 | probability | 96 |
 | probability; logic; optimization | 94 |
-| logic | 54 |
-| logic; optimization | 53 |
+| logic | 53 |
+| logic; optimization | 51 |
 | probability; logic | 30 |
-| ODEs; probability; optimization | 6 |
+| ODEs; probability; optimization | 5 |
 | ODEs; probability; logic; optimization | 3 |
 | ODEs; logic | 1 |
 | ODEs; probability; logic | 1 |
@@ -91,12 +92,12 @@
 
 | Methodology | n |
 |---|---|
-| not_applicable | 801 |
-| experiment | 340 |
-| simulation | 71 |
-| theory | 31 |
-| analysis | 19 |
-| case study | 6 |
+| not_applicable | 787 |
+| experiment | 367 |
+| simulation | 58 |
+| analysis | 33 |
+| theory | 18 |
+| case study | 5 |
 
 ## By evidence basis
 
@@ -110,9 +111,10 @@
 
 | Score | n |
 |---|---|
-| 2 | 11 |
-| 3 | 737 |
-| 4 | 358 |
-| 5 | 162 |
+| 1 | 30 |
+| 2 | 41 |
+| 3 | 687 |
+| 4 | 364 |
+| 5 | 146 |
 
 Figures: `figures/` (bar charts, timeseries-year.png, treemap-subdomains.png)

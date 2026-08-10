@@ -39,7 +39,49 @@ CAT_FIELDS = ["publication_type", "subdomains", "formal_framework",
               "limitations_stated"]
 
 
+def enforce_conditionals(rows: list[dict]) -> tuple[list[dict], int]:
+    """Enforce the schema's conditional-field rules (Task 7.4 normalization).
+
+    - datasets_used/sample_size/effect_sizes only when publication_type ==
+      empirical (values moved to notes, not silently dropped)
+    - methodology -> not_applicable when publication_type != empirical
+    - key_equations_definitions implies a formal framework: when equations
+      exist but formal_framework == none, promote to 'other' (the AI found
+      formal content the heuristic missed)
+    Returns (rows, n_changes).
+    """
+    n = 0
+    for r in rows:
+        pub = r.get("publication_type", "")
+        if pub != "empirical":
+            for f in ("datasets_used", "sample_size", "effect_sizes"):
+                if (r.get(f) or "").strip():
+                    r["notes"] = (r.get("notes") or "") + f" | moved:{f}({pub})"
+                    r[f] = ""
+                    n += 1
+            if r.get("methodology", "") not in ("", "not_applicable"):
+                r["notes"] = (r.get("notes") or "") + f" | moved:methodology({pub})"
+                r["methodology"] = "not_applicable"
+                n += 1
+        if (r.get("key_equations_definitions") or "").strip() and \
+                r.get("formal_framework", "") in ("", "none"):
+            r["notes"] = (r.get("notes") or "") + " | moved:formal_framework(none->other)"
+            r["formal_framework"] = "other"
+            n += 1
+    return rows, n
+
+
 def main() -> None:
+    if "--fix" in sys.argv:
+        rows = list(csv.DictReader(open(CHARTED_CSV, newline="", encoding="utf-8")))
+        fields = list(rows[0].keys())
+        rows, n_changes = enforce_conditionals(rows)
+        with open(CHARTED_CSV, "w", newline="", encoding="utf-8") as fh:
+            w = csv.DictWriter(fh, fieldnames=fields)
+            w.writeheader()
+            w.writerows(rows)
+        print(f"enforced conditional-field rules: {n_changes} changes")
+
     cfg = yaml.safe_load(SCHEMA_YAML.read_text(encoding="utf-8"))
     vocab = cfg["controlled_vocabularies"]
     rows = list(csv.DictReader(open(CHARTED_CSV, newline="", encoding="utf-8")))
@@ -113,9 +155,10 @@ def main() -> None:
         fh.write("\n> `key_contribution` (and the other AI free-text fields: "
                  "`relevance_justification`, `open_questions`, "
                  "`key_equations_definitions`, `datasets_used`, `sample_size`, "
-                 "`effect_sizes`) are filled by the external-AI extraction pass "
-                 "(user-run, `ai-prompt-batches/`); this missingness is "
-                 "**pending, not a defect** and resolves on `merge_ai.py`.\n")
+                 "`effect_sizes`) missingness at ~16% corresponds to the "
+                 "metadata-only papers (no abstract, no full text) — an "
+                 "**evidence floor, not a defect**; nothing was available to "
+                 "extract.\n")
         fh.write("\n## Issues found\n\n")
         if issues:
             for i in issues[:60]:

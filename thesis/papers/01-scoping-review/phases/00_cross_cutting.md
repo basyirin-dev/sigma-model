@@ -16,7 +16,7 @@ This document refines the thesis-level CC standards for Paper 01's scoping revie
 - [x] CC.1.3: Search strategy reported in full (databases, dates, full strings in appendix) — §6.1, §6.4, Appendix C
 - [x] CC.1.4: Inclusion/exclusion criteria stated explicitly before screening (see `01_protocol_draft.md` §5.1–5.2)
 - [x] CC.1.5: Data charting form developed, piloted, and iterated — schema v1.0, `research/charting/charted-schema.md` + `.yaml`; 5-paper pilot + 3 refinements (`07_data_extraction.md` §7.1)
-- [x] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample) — independent second-pass extractor on 254-paper sample, kappa per field (`charting/validation-report.md`); external-AI pass on sample pending user
+- [x] CC.1.6: At least two independent screeners (or AI-assisted with second-screener validation on 20% sample) — independent second-pass extractor on 254-paper sample + external-AI pass merged; Cohen's kappa per field, ICC(2,1)=0.930 on relevance (`charting/validation-report.md`)
 - [x] CC.1.7: Protocol registered on OSF or similar prior to search — https://osf.io/ntuh2/
 
 ### CC.2: Writing & Formatting

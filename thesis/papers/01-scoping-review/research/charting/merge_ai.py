@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -39,13 +40,40 @@ CAT_FIELDS = ["publication_type", "subdomains", "formal_framework",
               "mathematical_formalism", "methodology",
               "discusses_internal_representations", "discusses_schema_coherence",
               "limitations_stated"]
-# Flag-field name -> controlled-vocabulary key in charted-schema.yaml
-# (the trinary fields live under trinary/schema_coherence/limitations).
+MULTI_FIELDS = {"subdomains", "formal_framework", "mathematical_formalism"}
+# field name -> controlled-vocabulary key in charted-schema.yaml
 FIELD_VOCAB = {
     "discusses_internal_representations": "trinary",
     "discusses_schema_coherence": "schema_coherence",
     "limitations_stated": "limitations",
 }
+# tolerant normalization for single-value flags: strip parenthetical
+# annotations and map common AI phrasings onto the controlled vocabulary.
+SINGLE_SYNONYMS = {
+    "survey": "analysis", "qualitative": "analysis", "user study": "experiment",
+    "evaluation": "experiment", "simulation study": "simulation",
+    "case-study": "case study", "case study analysis": "case study",
+}
+
+
+def normalize_flag_value(field: str, raw: str, vocab: dict[str, set[str]]) -> str | None:
+    """Return a valid controlled-vocabulary value for the flag, or None.
+
+    Multi-value fields: split on ';' and ',' keeping valid tokens.
+    Single-value fields: strip parentheticals, lowercase, try exact match,
+    then SINGLE_SYNONYMS.
+    """
+    if field in MULTI_FIELDS:
+        allowed = vocab.get(field, set())
+        tokens = [t.strip() for t in re.split(r"[;,]+", raw) if t.strip()]
+        valid = [t for t in tokens if t in allowed]
+        return "; ".join(valid) if valid else None
+    vkey = FIELD_VOCAB.get(field, field)
+    v = re.sub(r"\s*\(.*?\)\s*", " ", raw).strip().lower().rstrip(".")
+    if v in vocab.get(vkey, set()):
+        return v
+    return SINGLE_SYNONYMS.get(v)
+
 
 BOOL_TO_STR = {True: "yes", False: "no"}
 
@@ -71,8 +99,10 @@ def main() -> None:
     missing: list[tuple[str, str]] = []   # (file, paper_id)
     bad_rows: list[tuple[str, str, str]] = []  # (file, paper_id, reason)
     revisions: list[str] = []
+    duplicates: list[tuple[str, str]] = []  # (file, paper_id) repeated in one file
 
     for f in out_files:
+        seen_in_file: set[str] = set()
         for lineno, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
             line = line.strip()
             if not line:
@@ -91,10 +121,14 @@ def main() -> None:
             if "pilot=manual-review" in (row.get("notes") or ""):
                 n_skipped_pilot += 1
                 continue
-            # free-text AI fields
+            if pid in seen_in_file:
+                duplicates.append((f.name, pid))
+            seen_in_file.add(pid)
+            # free-text AI fields (skip empty strings — never clobber a
+            # filled value with a placeholder row)
             for k in AI_TEXT_FIELDS:
                 v = obj.get(k)
-                if isinstance(v, str):
+                if isinstance(v, str) and v.strip():
                     row[k] = v
             # relevance revision
             rel = obj.get("relevance_sigma_trap")
@@ -114,9 +148,13 @@ def main() -> None:
                 if field not in CAT_FIELDS:
                     bad_rows.append((f.name, pid, f"unknown flag field {field}"))
                     continue
-                vkey = FIELD_VOCAB.get(field, field)
-                if not (isinstance(val, str) and val in vocab[vkey]):
-                    bad_rows.append((f.name, pid, f"flag {field} value not in vocabulary: {val!r}"))
+                if not isinstance(val, str):
+                    bad_rows.append((f.name, pid, f"flag {field} not a string: {val!r}"))
+                    continue
+                val = normalize_flag_value(field, val, vocab)
+                if val is None:
+                    bad_rows.append((f.name, pid,
+                                     f"flag {field} value not in vocabulary: {flags[field]!r}"))
                     continue
                 old = row[field]
                 if old == val:
@@ -142,6 +180,8 @@ def main() -> None:
         fh.write(f"- relevance revisions: **{n_revisions}**\n")
         fh.write(f"- Unknown/missing paper_ids: **{len(missing)}**\n")
         fh.write(f"- Invalid rows: **{len(bad_rows)}**\n")
+        fh.write(f"- Duplicate paper_ids within a file: **{len(duplicates)}** "
+                 f"(last occurrence wins: {', '.join(p for _, p in duplicates) or '—'})\n")
         if revisions:
             fh.write("\n## Revisions applied\n\n")
             for r in revisions:
