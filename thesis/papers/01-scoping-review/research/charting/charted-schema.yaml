@@ -164,9 +164,9 @@ controlled_vocabularies:
   formal_framework: [none, game theory, decision theory, dynamical systems, information theory, other]
   mathematical_formalism: [ODEs, probability, logic, optimization, none, other]
   methodology: [theory, simulation, experiment, analysis, case study, not_applicable]
-  trinary: [yes, no, implicitly]
-  schema_coherence: [yes, related concept, no]
-  limitations: [yes, partially, no]
+  trinary: ["yes", "no", "implicitly"]
+  schema_coherence: ["yes", "related concept", "no"]
+  limitations: ["yes", "partially", "no"]
   evidence_basis: [full-text, abstract, metadata]
 
 # Subdomain bucket mapping — finer concepts from Phase 0.5 template mapped

@@ -21,7 +21,6 @@ from __future__ import annotations
 
 import csv
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -40,12 +39,21 @@ CAT_FIELDS = ["publication_type", "subdomains", "formal_framework",
               "mathematical_formalism", "methodology",
               "discusses_internal_representations", "discusses_schema_coherence",
               "limitations_stated"]
+# Flag-field name -> controlled-vocabulary key in charted-schema.yaml
+# (the trinary fields live under trinary/schema_coherence/limitations).
+FIELD_VOCAB = {
+    "discusses_internal_representations": "trinary",
+    "discusses_schema_coherence": "schema_coherence",
+    "limitations_stated": "limitations",
+}
+
+BOOL_TO_STR = {True: "yes", False: "no"}
 
 
 def load_vocabularies() -> dict[str, set[str]]:
     cfg = yaml.safe_load(SCHEMA_YAML.read_text(encoding="utf-8"))
     v = cfg["controlled_vocabularies"]
-    return {k: set(vals) for k, vals in v.items()}
+    return {k: {BOOL_TO_STR.get(x, x) for x in vals} for k, vals in v.items()}
 
 
 def main() -> None:
@@ -106,7 +114,8 @@ def main() -> None:
                 if field not in CAT_FIELDS:
                     bad_rows.append((f.name, pid, f"unknown flag field {field}"))
                     continue
-                if field not in vocab or not (isinstance(val, str) and val in vocab[field]):
+                vkey = FIELD_VOCAB.get(field, field)
+                if not (isinstance(val, str) and val in vocab[vkey]):
                     bad_rows.append((f.name, pid, f"flag {field} value not in vocabulary: {val!r}"))
                     continue
                 old = row[field]
