@@ -44,6 +44,7 @@ def main() -> None:
     missing: list[tuple[str, str]] = []
     bad_rows: list[tuple[str, str, str]] = []
     duplicates: list[tuple[str, str]] = []
+    remerged: list[tuple[str, str, str]] = []
     audit: list[str] = []
 
     for f in out_files:
@@ -81,8 +82,15 @@ def main() -> None:
                                      f"{dim} on non-empirical ({pubtype}) paper"))
                     continue
                 if row.get(dim, "") != "":
+                    # Already scored. Identical value = benign re-processing of
+                    # an already-merged batch; different value = a genuine
+                    # conflict that must not silently overwrite.
+                    if str(row.get(dim, "")) == str(v):
+                        remerged.append((f.name, pid, dim))
+                        continue
                     bad_rows.append((f.name, pid,
-                                     f"{dim} already scored {row.get(dim)}; refusing overwrite"))
+                                     f"{dim} already scored {row.get(dim)}; "
+                                     f"refusing overwrite with {v}"))
                     continue
                 row[dim] = str(v)
                 row["notes"] = (row.get("notes") or "").strip()
@@ -105,6 +113,8 @@ def main() -> None:
         fh.write(f"- Unknown/missing paper_ids: **{len(missing)}**\n")
         fh.write(f"- Invalid rows: **{len(bad_rows)}**\n")
         fh.write(f"- Duplicate paper_ids within a file: **{len(duplicates)}**\n")
+        fh.write(f"- Re-processed identical scores (already merged, benign): "
+                 f"**{len(remerged)}**\n")
         if audit:
             fh.write("\n## Scores applied\n\n")
             for a in audit:
@@ -119,7 +129,8 @@ def main() -> None:
                 fh.write(f"- {f_}: {p} — {reason}\n")
 
     print(f"processed {n_out} objects; merged {n_merged}, scores {n_scores}, "
-          f"missing {len(missing)}, bad {len(bad_rows)}")
+          f"missing {len(missing)}, bad {len(bad_rows)}, "
+          f"remerged {len(remerged)}")
     print(f"wrote {SCORES_CSV.name} and {REPORT_MD.name}")
 
 
