@@ -36,8 +36,8 @@ max_composite: 4.0
 # (0 = blog/no review, 2 = arXiv/workshop, 4 = top-tier peer-reviewed).
 d1_venue:
   - {label: grey,            score: 0, keywords: [lesswrong, alignment forum, substack, blog, forum]}
-  - {label: arxiv,           score: 1, keywords: [arxiv, "10.48550"]}
-  - {label: workshop,        score: 1, keywords: [workshop]}
+  - {label: arxiv,           score: 2, keywords: [arxiv, "10.48550"]}
+  - {label: workshop,        score: 2, keywords: [workshop]}
   - {label: journal,         score: 3, keywords: [journal, "doi.org/10."]}
   - {label: proceedings,     score: 2, keywords: [proceedings, conference, iclr, neurips, icml, aaai, acl, emnlp, naacl, coling, facct, "chi conference", "chi 20"]}
   - {label: doi_peer,        score: 2, keywords: ["doi:", "10.1145", "10.1016", "10.1109", "10.1007", "10.18653"]}
@@ -50,7 +50,9 @@ d1_venue:
 # citations). Anchors 0–4 mapped to cohort percentile bands below.
 # Cohorts smaller than d6_min_cohort_size fall back to the global
 # percentile. Missing citation_count is left blank (needs the AF/LW inbound
-# supplement per §8.2), never fabricated as 0.
+# supplement per §8.2), never fabricated as 0. composite.py renormalizes the
+# remaining dimension weights to sum to 1.00 when D6 is blank (see below).
+renormalize_missing_d6: true
 d6:
   min_cohort_size: 10
   # Anchor "0 = zero citations after 12mo": 0-citation papers outside the
