@@ -64,3 +64,6 @@ research/full-text-pdfs/
 thesis/papers/*/research/full-text-pdfs/
 research/full-text-txt/
 thesis/papers/*/research/full-text-txt/
+
+# Paper 01 phase-doc build artifacts
+thesis/papers/01-scoping-review/phases/*.pdf

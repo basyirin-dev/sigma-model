@@ -86,7 +86,7 @@
 - [x] Screening infrastructure set up (CSV with decision columns)
 - [x] CC.4.1 satisfied — all search results, logs, and clean library in `research/`
 - [x] CC.4.2 satisfied — screening data structure ready for Phase 5
-- [ ] CC.5.3 satisfied — phase completion committed
+- [x] CC.5.3 satisfied — phase completion committed at `bcae6cf`
 
 ### Key limitations noted for Phase 5 handoff
 1. **DOI coverage (56.2%)** is expected — arXiv-heavy corpus. Screening can proceed by title + abstract.

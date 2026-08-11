@@ -152,13 +152,13 @@ Two-pass scoring reusing the Phase 7 pipeline pattern (heuristic prefill → ext
 ---
 
 **Phase 8 Exit Criteria**:
-- [ ] Credibility rubric = Phase 0.5 D1–D8 weighted scheme, piloted on 10 papers with dual-scorer kappa/ICC reported
-- [ ] All 1,268 papers scored (scripted D1/D6 + rater/AI D2–D8); composite and tier recorded in `research/quality-scores.csv`
-- [ ] 20% validation sample scored by independent rater; kappa/ICC reported in `charting/quality-validation-report.md`
-- [ ] Sensitivity scenarios defined (full set vs tiers A+B, composite ≥ 2.4); low-credibility flag threshold quantified (tier D/E < 1.6)
-- [ ] Quality assessment report generated (distribution, by-subdomain, by-year, figures)
-- [ ] CC.1.1 satisfied (credibility signal, not exclusion); CC.2.4 and CC.3.2/CC.3.3 satisfied
-- [ ] CC.5.3 satisfied — phase completion committed with exit-criteria summary (Paper-01 CC numbering)
+- [x] Credibility rubric = Phase 0.5 D1–D8 weighted scheme, piloted on 10 papers with dual-scorer kappa/ICC reported (8.1.4–8.1.6 pilot log above)
+- [x] All 1,268 papers scored (scripted D1/D6 + rater/AI D2–D8); composite and tier recorded in `research/quality-scores.csv` (tiers A=2, B=315, C=826, D=123, E=2)
+- [x] 20% validation sample scored by independent rater; kappa/ICC reported in `charting/quality-validation-report.md` (kappa 0.924–1.000, composite ICC 0.947, n=252)
+- [x] Sensitivity scenarios defined (full set vs tiers A+B, composite ≥ 2.4); low-credibility flag threshold quantified (tier D/E < 1.6) — σ-trap 46.3% vs 50.2% (A+B, n=317); low-cred flag n=125
+- [x] Quality assessment report generated (distribution, by-subdomain, by-year, figures) — `charting/quality-report.md` + 4 figures
+- [x] CC.1.1 satisfied (credibility signal, not exclusion); CC.2.4 and CC.3.2/CC.3.3 satisfied
+- [x] CC.5.3 satisfied — phase completion committed with exit-criteria summary (Paper-01 CC numbering)
 
 > **CC numbering note**: this phase uses the Paper-01 numbering from `00_cross_cutting.md`
 > (CC.1.1 = PRISMA-ScR checklist, CC.5.3 = phase-completion commit, per Phase 7 precedent).
