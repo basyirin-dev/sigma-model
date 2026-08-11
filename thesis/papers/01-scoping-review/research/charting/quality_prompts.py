@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Paper 01 — Phase 8: generate external-AI scoring batches for D2–D8
-(Task 8.2.2; pilot uses --pilot).
+(Task 8.2.2; pilot uses --pilot; full run may drop already-scored
+pilot papers with --exclude-pilot).
 
 Reuses the Phase 7 pattern (prompts.py): self-contained JSONL tasks that
 carry the paper's evidence (abstract + full-text excerpt when a verified
@@ -117,11 +118,14 @@ def pdf_excerpt(pdf_file: str) -> str:
     return (out.stdout or "")[:FT_CAP]
 
 
-def build_tasks(rows: list[dict], inc: dict, pmap: dict, only: set[str] | None) -> list[dict]:
+def build_tasks(rows: list[dict], inc: dict, pmap: dict,
+                 only: set[str] | None, exclude: set[str] | None = None) -> list[dict]:
     tasks = []
     for r in rows:
         pid = r["paper_id"]
         if only is not None and pid not in only:
+            continue
+        if exclude is not None and pid in exclude:
             continue
         abstract = (inc.get(pid, {}).get("abstract") or "")[:ABS_CAP]
         pdf = pmap.get(pid, "")
@@ -158,16 +162,25 @@ def build_tasks(rows: list[dict], inc: dict, pmap: dict, only: set[str] | None) 
     return tasks
 
 
-def main() -> None:
+def main() -> int:
     n_batches = N_BATCHES
     only: set[str] | None = None
+    exclude: set[str] | None = None
     pilot_csv = BASE / "research" / "charting" / "quality-pilot.csv"
     args = [a for a in sys.argv[1:]]
+    if "--pilot" in args and "--exclude-pilot" in args:
+        print("error: --pilot and --exclude-pilot are mutually exclusive",
+              file=sys.stderr)
+        return 1
     if "--pilot" in args:
         with open(pilot_csv, newline="", encoding="utf-8") as pfh:
             only = {r["paper_id"] for r in csv.DictReader(pfh)}
         n_batches = 1
         args.remove("--pilot")
+    if "--exclude-pilot" in args:
+        with open(pilot_csv, newline="", encoding="utf-8") as pfh:
+            exclude = {r["paper_id"] for r in csv.DictReader(pfh)}
+        args.remove("--exclude-pilot")
     if args:
         n_batches = max(1, int(args[0]))
 
@@ -180,7 +193,7 @@ def main() -> None:
             csv.DictReader(open(PDF_MAP_CSV, newline="", encoding="utf-8"))}
     rows = list(csv.DictReader(open(CHARTED_CSV, newline="", encoding="utf-8")))
 
-    tasks = build_tasks(rows, inc, pmap, only)
+    tasks = build_tasks(rows, inc, pmap, only, exclude=exclude)
     batches = [[] for _ in range(n_batches)]
     for i, t in enumerate(tasks):
         batches[i % n_batches].append(t)
@@ -197,7 +210,9 @@ def main() -> None:
         fh.write(f"""# External-AI quality-scoring batches — Paper 01 Phase 8
 
 {len(tasks)} papers split into {n_batches} JSONL batches
-(full run: {len(rows)} papers across 5 batches; --pilot: the 10 pilot papers in 1 batch).
+(default full run: {len(rows)} papers across {N_BATCHES} batches;
+--pilot: the pilot papers in 1 batch; --exclude-pilot: drop the already-scored
+pilot papers from the full run).
 
 ## How to run (user)
 

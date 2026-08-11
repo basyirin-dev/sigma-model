@@ -1,7 +1,9 @@
 # External-AI quality-scoring batches — Paper 01 Phase 8
 
-10 papers split into 1 JSONL batches
-(full run: 1268 papers across 5 batches; --pilot: the 10 pilot papers in 1 batch).
+1258 papers split into 10 JSONL batches
+(default full run: 1268 papers across 5 batches;
+--pilot: the pilot papers in 1 batch; --exclude-pilot: drop the already-scored
+pilot papers from the full run).
 
 ## How to run (user)
 
