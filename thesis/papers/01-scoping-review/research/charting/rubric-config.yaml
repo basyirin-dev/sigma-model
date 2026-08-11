@@ -1,0 +1,71 @@
+# Paper 01 — Phase 8 quality scoring config (ADR 0004: config-driven).
+# Loaded by research/charting/quality_score.py (Task 8.2.1).
+# Rubric source of truth: research/quality-criteria.md §6 (D1–D8 weighted
+# scheme, composite 0–4, tiers A–E). This config only parametrizes the
+# SCRIPTED dimensions (D1 venue baseline, D6 citation/uptake baseline) and
+# the tier/threshold cutoffs; D2, D3, D4, D5, D7, D8 are rater/AI-scored
+# and refined after the scripted pass.
+
+# Composite tiers (quality-criteria.md §6).
+tiers:
+  A: 3.2    # high credibility
+  B: 2.4    # moderate–high
+  C: 1.6    # moderate
+  D: 0.8    # low–moderate
+  # E: below D (0.0–0.79)
+
+# Sensitivity-analysis thresholds (Phase 8 doc Task 8.2.6 / 8.3.1).
+# Low-credibility flag: tier D or E  -> composite < low_credibility_max
+# High-credibility subset (sensitivity scenario): tiers A+B -> composite >= sensitivity_min
+low_credibility_max_tier: D
+low_credibility_max: 1.6
+sensitivity_min_tier: B
+sensitivity_min: 2.4
+
+# Replication bonus (quality-criteria.md §6): +0.4, capped at 4.0.
+# Applied only where independent replication/extension is documented by a
+# rater — the script does NOT apply it automatically.
+replication_bonus: 0.4
+max_composite: 4.0
+
+# D1 — venue / peer-review tier baseline.
+# Ordered priority list; first matching rule wins. This is a HEURISTIC
+# baseline from venue/doi strings (quality-criteria.md §3: venue is a weak
+# proxy — 10% weight; most-cited AGI Safety work is arXiv-first). Raters/AI
+# refine per the §4 source-type tiers. Scores follow the D1 anchors
+# (0 = blog/no review, 2 = arXiv/workshop, 4 = top-tier peer-reviewed).
+d1_venue:
+  - {label: grey,            score: 0, keywords: [lesswrong, alignment forum, substack, blog, forum]}
+  - {label: arxiv,           score: 1, keywords: [arxiv, "10.48550"]}
+  - {label: workshop,        score: 1, keywords: [workshop]}
+  - {label: journal,         score: 3, keywords: [journal, "doi.org/10."]}
+  - {label: proceedings,     score: 2, keywords: [proceedings, conference, iclr, neurips, icml, aaai, acl, emnlp, naacl, coling, facct, "chi conference", "chi 20"]}
+  - {label: doi_peer,        score: 2, keywords: ["doi:", "10.1145", "10.1016", "10.1109", "10.1007", "10.18653"]}
+  # unknown venue -> default score 1 (preprint-tier pending rater review)
+  - {label: unknown,         score: 1, keywords: []}
+
+# D6 — citation / field uptake baseline.
+# Time-normalized: percentile of citation_count WITHIN the paper's year
+# cohort (quality-criteria.md §8.1: recent work has less time to accumulate
+# citations). Anchors 0–4 mapped to cohort percentile bands below.
+# Cohorts smaller than d6_min_cohort_size fall back to the global
+# percentile. Missing citation_count is left blank (needs the AF/LW inbound
+# supplement per §8.2), never fabricated as 0.
+d6:
+  min_cohort_size: 10
+  # Anchor "0 = zero citations after 12mo": 0-citation papers outside the
+  # most-recent grace cohort get D6 = 0 outright (no percentile treatment).
+  zero_citation_grace_years: 1
+  bands:            # percentile cutoff -> score
+    - {percentile_ge: 80, score: 4}
+    - {percentile_ge: 60, score: 3}
+    - {percentile_ge: 40, score: 2}
+    - {percentile_ge: 20, score: 1}
+    # below 20th percentile -> 0
+
+# Paper-type weight sets (quality-criteria.md §6). publication_type values
+# in charted-data.csv: empirical / theoretical / position / opinion / review / other.
+weight_sets:
+  empirical:  {D1: 0.10, D2: 0.15, D3: 0.15, D4: 0.20, D5: 0.15, D6: 0.15, D7: 0.05, D8: 0.05}
+  theoretical: {D1: 0.10, D2: 0.15, D3: 0.25, D4: 0.00, D5: 0.25, D6: 0.15, D7: 0.05, D8: 0.05}
+  pos_review:  {D1: 0.10, D2: 0.15, D3: 0.15, D4: 0.00, D5: 0.25, D6: 0.15, D7: 0.05, D8: 0.15}
