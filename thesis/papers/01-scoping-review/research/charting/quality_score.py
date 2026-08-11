@@ -174,6 +174,13 @@ def main(argv: list[str] | None = None) -> int:
         d1_counts[d1] += 1
         prior = prev.get(r.get("paper_id", ""), {})
         rater_dims = {d: prior.get(d, "") for d in ("D2", "D3", "D4", "D5", "D7", "D8")}
+        # Preserve the audit trail from a previous run (scored:, reconcile:,
+        # pilot=, ai-revised:, ft_file=) while refreshing d1:/d6: flags.
+        prior_notes = (prior.get("notes") or "").strip()
+        kept = [n.strip() for n in prior_notes.split("|")
+                if n.strip() and not n.strip().startswith(("d1:", "d6:"))]
+        kept.append(notes)
+        notes = " | ".join([n for n in kept if n]).strip(" |")
         out.append({
             "paper_id": r.get("paper_id", ""),
             "year": year or "",
