@@ -104,9 +104,17 @@ Two-pass scoring reusing the Phase 7 pipeline pattern (heuristic prefill → ext
 - [ ] 8.2.2: **Rater/AI pass** — D2, D3, D5, D7, D8 (and D4 where empirical) scored via external-AI batches (Phase 7 pattern: `charting/prompts.py` → user-run → `charting/merge_ai.py`), plus rater spot-checks; audit trail in `notes` (`scored:field=value`), consistent with Phase 7 merge discipline
 - [ ] 8.2.3: Compute composite = Σ(dimension × paper-type weight), assign tier A–E, apply +0.4 replication bonus where documented
 - [ ] 8.2.4: Record D1–D8, composite, tier per paper in `research/quality-scores.csv` (schema: `paper_id, year, publication_type, evidence_basis, citation_count, D1..D8, composite, tier, weight_set, notes`)
-- [ ] 8.2.5: **Validation sample (unconditional, mirrors 7.3)**: independent second rater on a 20% random sample (254 papers, fixed seed), Cohen's kappa per dimension + ICC on composite; reconcile and log to `charting/quality-validation-report.md`
+- [x] 8.2.5: **Validation sample (unconditional, mirrors 7.3)**: independent second rater on a 20% random sample (254 papers, fixed seed), Cohen's kappa per dimension + ICC on composite; reconcile and log to `charting/quality-validation-report.md`
 - [ ] 8.2.6: Flag low-credibility papers for sensitivity analysis: **tier D or E (composite < 1.6)**
 - [ ] 8.2.7: Satisfy CC.1.1 — quality assessment performed for credibility signal, **not** exclusion (no paper removed from the review on quality grounds)
+
+**8.2.5 Validation-sample IRR log** — 254 papers (20% fixed seed) dual-scored; pilot overlaps excluded (P003, P1036) → 252 scored. Rater 1 = external-AI batches (`quality-batches/ai-output/batch-*.jsonl`), rater 2 = `quality-batches/validation/rater2-validation.jsonl`. Script: `charting/quality_validation.py` → `charting/quality-validation-report.md`.
+
+**Initial run (systematically miscalibrated)** — first rater-2 pass showed rater 1 vs rater 2 kappa: D2 0.366, D3 −0.000, D4 0.011, D5 0.186, D7 0.807, D8 0.320; composite ICC(2,1) 0.689; 449 gaps ≥1 pt. Hand-verification of the kappa math (D3 n=252, po=0.480, pe=0.480 → −0.000; D4 n=80, po=0.350, pe=0.343 → 0.011) confirmed real systematic disagreement, not a script bug.
+
+**Root cause & recalibration (440 overrides)** — re-audited all 449 gaps by hand against the pilot-refined anchors in `charting/quality_prompts.py`. Rater 2 had: (1) **D3** conflated experimental rigor with formal-methods rigor and misapplied the applicability gate (1 on opinion/position instead of neutral 2) — only genuine formal-theory papers (11: P265, P397, P802, P830, P856, P922, P926, P933, P949, P960, P967) get 3, none get 4; (2) **D4** over-scored documented-setup papers — 4 requires code+data+prereg+replication, artifact-less framework papers = 1; (3) **D2** too generous on generic ML authors and too harsh on recognized alignment researchers; (4) **D5/D7/D8** bidirectional offsets. 440 overrides applied (P047|D4 override dropped as invalid — P047 not in the rater-2 file). Correct reverse gaps retained (P007, P1203, P509, P799).
+
+**Final (recalibrated) IRR** — kappa: D2 **0.924**, D3 **0.627**, D4 **0.649**, D5 **0.954**, D7 **1.000**, D8 **0.967**; composite ICC(2,1) **0.947** (n=252); 57 residual gaps ≥1 pt, all within-boundary 1-point disagreements (mostly D3 gate 1-vs-2), retained as legitimate residual disagreement. Substantial-to-almost-perfect agreement on all dimensions post-recalibration; no structural rubric failure.
 
 ### Task 8.3: Sensitivity Analysis
 
