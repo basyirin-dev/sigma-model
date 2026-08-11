@@ -42,12 +42,59 @@
   | D6 | Scripted, time-normalized (`quality_score.py`); supplement AF/LW inbound links per §8.2 of `quality-criteria.md` | `citation_count`, `year` |
   | D7 | Rater/AI | `limitations_stated` |
   | D8 | Rater/AI | `key_contribution` |
-- [ ] 8.1.4: Pilot the rubric on **10 papers** spanning diverse subdomains and publication types (mirror 7.1.3: mix of theoretical/empirical/position/opinion; arXiv + journal + proceedings + grey source)
-- [ ] 8.1.5: **Dual-scorer inter-rater reliability on the pilot (unconditional, not optional)**: two raters score the 10 papers independently; report Cohen's kappa per dimension and ICC on the composite; reconcile discrepancies ≥1 point via discussion, log resolutions in `notes`
-- [ ] 8.1.6: Refine rubric anchors from pilot results (anchor wording only — keep weights and tier cutoffs fixed unless the pilot shows structural failure); record refinements below
+- [x] 8.1.4: Pilot the rubric on **10 papers** spanning diverse subdomains and publication types (mirror 7.1.3: mix of theoretical/empirical/position/opinion; arXiv + journal + proceedings + grey source)
+- [x] 8.1.5: **Dual-scorer inter-rater reliability on the pilot (unconditional, not optional)**: two raters score the 10 papers independently; report Cohen's kappa per dimension and ICC on the composite; reconcile discrepancies ≥1 point via discussion, log resolutions in `notes`
+- [x] 8.1.6: Refine rubric anchors from pilot results (anchor wording only — keep weights and tier cutoffs fixed unless the pilot shows structural failure); record refinements below
 - [ ] 8.1.7: Satisfy CC.1.1 — critical appraisal for credibility signal (PRISMA-ScR item 10, optional element; see `quality-criteria.md` §1 rationale)
 
-**Pilot log (8.1.4–8.1.6)** — *to be filled during execution.*
+**Pilot log (8.1.4–8.1.6)**
+
+**8.1.4 Pilot selection** — 10 papers across all 5 publication types and venue strata
+(arXiv / journal / proceedings / AF-grey / workshop), all with full text: P002 (off-switch game,
+theoretical, AAMAS), P003 (keynote, review, ACM), P032 (spec-game DRP, empirical, J. Cheminformatics),
+P034 (societal benchmark, empirical, HSS Communications), P040 (sociotechnological, opinion, AI & Society),
+P073 (CAF MLOps, empirical, AAAI), P1030 (rep. social choice, theoretical, NeurIPS workshop),
+P1036 (formal-verif limits, theoretical, AI Alignment Forum), P1170 (AGI-safety review, arXiv),
+P635 (spec gaming, empirical, arXiv). Pilot file: `charting/quality-pilot.csv`.
+
+**8.1.5 Inter-rater reliability (dual-scorer, independent)** — two raters scored the 10 pilots
+blind (rater 1 = external AI on `charting/quality-batches/batch-01.jsonl`; rater 2 = human, `rater2-pilot.jsonl`).
+Cohen's kappa per dimension, ICC on the dimension pool and on the composite:
+
+| Dim | n | kappa | % exact match | interpretation |
+|-----|---|-------|---------------|----------------|
+| D2 | 10 | 0.459 | 60% | moderate (leniency: generic prominence vs safety-specific track record) |
+| D3 | 10 | 0.783 | 90% | strong |
+| D4 | 4 | −0.231 | 0% | systematic 1–2 pt gap: AI required artifact evidence; rater 2 lenient on documented setups |
+| D5 | 10 | 0.211 | 70% | weak (mid-scale 2-vs-3 disagreements) |
+| D7 | 10 | 0.286 | 40% | weak (rater 2 counted scope statements as limitations) |
+| D8 | 10 | 0.667 | 80% | substantial |
+| ICC(2,1) dimension pool | 54 | 0.985 | — | excellent |
+| ICC(2,1) composite (mean of dims) | 10 | 0.951 | — | excellent |
+
+**Reconciliation (8.1.5)** — every ≥1-point discrepancy discussed; resolutions logged in
+`research/quality-scores.csv` `notes` as `reconcile:dim=value`. Systematic pattern: the external AI
+was *correct* in applying two rubric principles the human rater initially over-scored against —
+**D2 is scored on safety-specific track record, not generic h-index** (quality-criteria.md §5), so
+P032/P034/P040/P073 drop to 1 (prominent but non-alignment authors); and **D4 = 4 requires all four
+of code + data + prereg + replication**, so P073 (framework paper, no artifacts) = 1, P032/P034 = 2,
+P635 (open-source suite, no prereg/replication) = 3. D7 resolved to 2 where the paper states scope/risks
+but no explicit threat model + funding (all three needed for 4). Final composites look plausible:
+P1170 review B=2.88, P002 formal B=2.80, P1030 B=2.85, P635 B=2.59, P1036 AF post C=1.88. No structural
+failure → weights/tier cutoffs unchanged (8.1.6).
+
+**8.1.6 Anchor refinements (wording only)** — `charting/quality_prompts.py` ANCHORS updated:
+(1) D2 explicitly says "score on SAFETY-SPECIFIC track record, not generic h-index: prominent
+bioinformatics/ML researchers without alignment contributions score 1, not 2–3"; (2) D3 applicability
+gate widened to cover policy/conceptual-opinion/review/keynote and "score neutral 2 — do not penalize";
+(3) D4 spells out that all four of code+data+prereg+replication are needed for 4, open-source suite
+without prereg/replication = 3, artifact-less framework paper = 1; (4) D5 adds "empirical surveys with
+modest depth = 2; structured philosophical arguments engaging counterarguments = 3"; (5) D7 requires
+explicit threat model + funding for 4, scope statements alone = 2; (6) D8 field-scoped: judge prior-lit
+engagement against the *field's* canonical references for non-alignment work. Config (`rubric-config.yaml`):
+D1 `doi_peer` gained a bare-DOI regex (`10\.\d{4,}`) so journal DOIs not caught by the `journal` keyword
+(e.g. P034 `10.1057/s41599-…`, Springer Nature) no longer fall to `unknown`=1 — D1 `unknown` dropped
+303→170. `quality_score.py` now preserves existing D2–D8/composite/tier cells on regeneration.
 
 ### Task 8.2: Score All Papers (1,268)
 

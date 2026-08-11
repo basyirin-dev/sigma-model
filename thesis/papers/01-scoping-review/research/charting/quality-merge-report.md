@@ -1,0 +1,66 @@
+# AI quality-score merge report — Paper 01 Phase 8
+
+- Output files read: **1**
+- Paper objects processed: **10**
+- Rows merged/updated: **10**
+- Dimension scores applied: **54**
+- Unknown/missing paper_ids: **0**
+- Invalid rows: **0**
+- Duplicate paper_ids within a file: **0**
+
+## Scores applied
+
+- P002:D2=2
+- P002:D3=3
+- P002:D5=3
+- P002:D7=1
+- P002:D8=3
+- P003:D2=2
+- P003:D3=2
+- P003:D5=2
+- P003:D7=2
+- P003:D8=2
+- P032:D2=1
+- P032:D3=2
+- P032:D4=2
+- P032:D5=3
+- P032:D7=1
+- P032:D8=2
+- P034:D2=1
+- P034:D3=2
+- P034:D4=2
+- P034:D5=3
+- P034:D7=2
+- P034:D8=2
+- P040:D2=1
+- P040:D3=2
+- P040:D5=3
+- P040:D7=2
+- P040:D8=2
+- P073:D2=1
+- P073:D3=3
+- P073:D4=1
+- P073:D5=3
+- P073:D7=2
+- P073:D8=2
+- P1030:D2=2
+- P1030:D3=3
+- P1030:D5=3
+- P1030:D7=2
+- P1030:D8=3
+- P1036:D2=1
+- P1036:D3=2
+- P1036:D5=2
+- P1036:D7=2
+- P1036:D8=2
+- P1170:D2=4
+- P1170:D3=2
+- P1170:D5=3
+- P1170:D7=2
+- P1170:D8=4
+- P635:D2=3
+- P635:D3=2
+- P635:D4=3
+- P635:D5=3
+- P635:D7=1
+- P635:D8=3

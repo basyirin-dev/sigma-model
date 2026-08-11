@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -63,10 +64,16 @@ def _parse_int(value: str) -> int | None:
 
 
 def d1_venue_baseline(venue: str, doi: str, rules: list[dict]) -> tuple[int, str]:
-    """First matching rule wins (ordered priority). Returns (score, label)."""
+    """First matching rule wins (ordered priority). Returns (score, label).
+
+    Rules may carry `keywords` (substring match) and/or `keywords_re`
+    (regex match); either set matching satisfies the rule.
+    """
     haystack = f"{(venue or '').lower()} {(doi or '').lower()}"
     for rule in rules:
-        if any(kw in haystack for kw in rule["keywords"]):
+        if any(kw in haystack for kw in rule.get("keywords", [])):
+            return int(rule["score"]), rule["label"]
+        if any(re.search(p, haystack) for p in rule.get("keywords_re", [])):
             return int(rule["score"]), rule["label"]
     return int(rules[-1]["score"]), rules[-1]["label"]  # unknown default
 
@@ -134,6 +141,10 @@ def main(argv: list[str] | None = None) -> int:
     max_year = max(_parse_int(r.get("year", "")) or 0 for r in rows)
     grace_years = int(cfg["d6"]["zero_citation_grace_years"])
     grace_cutoff = max_year - grace_years + 1  # years >= cutoff are within grace
+    prev = {}
+    if SCORES_CSV.exists():
+        with open(SCORES_CSV, encoding="utf-8") as f:
+            prev = {p["paper_id"]: p for p in csv.DictReader(f)}
     for r in rows:
         year = _parse_int(r.get("year", "")) or 0
         d1, d1_label = d1_venue_baseline(r.get("venue", ""), r.get("doi", ""),
@@ -161,6 +172,8 @@ def main(argv: list[str] | None = None) -> int:
         if d6 is not None:
             d6_counts[d6] += 1
         d1_counts[d1] += 1
+        prior = prev.get(r.get("paper_id", ""), {})
+        rater_dims = {d: prior.get(d, "") for d in ("D2", "D3", "D4", "D5", "D7", "D8")}
         out.append({
             "paper_id": r.get("paper_id", ""),
             "year": year or "",
@@ -169,8 +182,10 @@ def main(argv: list[str] | None = None) -> int:
             "citation_count": r.get("citation_count", ""),
             "D1": d1,
             "D6": "" if d6 is None else d6,
-            "D2": "", "D3": "", "D4": "", "D5": "", "D7": "", "D8": "",
-            "composite": "", "tier": "", "weight_set": ws,
+            "D2": rater_dims["D2"], "D3": rater_dims["D3"], "D4": rater_dims["D4"],
+            "D5": rater_dims["D5"], "D7": rater_dims["D7"], "D8": rater_dims["D8"],
+            "composite": prior.get("composite", ""), "tier": prior.get("tier", ""),
+            "weight_set": ws,
             "notes": (" | ".join([notes] + flags)).strip(" |") if flags else notes,
         })
 

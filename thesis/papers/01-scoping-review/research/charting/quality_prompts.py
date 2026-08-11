@@ -67,28 +67,40 @@ EMPIRICAL_ONLY = {"D4"}
 
 ANCHORS = """Scoring anchors (quality-criteria.md §6, each dimension 0-4):
 D2 Author authority: 0=anonymous/first-time;
-   2=recognized safety researcher (2-5 prior contributions);
+   2=recognized safety researcher (2-5 prior safety-specific contributions);
    4=field leader (10+ cited, institutional grounding).
-   Base on safety-specific track record, not generic h-index.
+   Score on SAFETY-SPECIFIC track record, not generic h-index: prominent
+   bioinformatics/ML researchers without alignment contributions score 1,
+   not 2-3 (quality-criteria.md §5).
 D3 Formal methods rigor: 0=no formal apparatus;
    2=semi-formal (definitions, structured argument);
    4=machine-checked proof / SLT-grade analysis.
    APPLICABILITY GATE: if the contribution type does not admit formal
-   methods (policy, conceptual opinion), score neutral 2 — do not penalize
-   for absence of formal apparatus where none is expected; reward 3-4 only
-   when formal methods add genuine rigor.
+   methods (policy, conceptual opinion, review, keynote), score neutral 2 —
+   do not penalize for absence of formal apparatus where none is expected;
+   reward 3-4 only when formal methods add genuine rigor.
 D4 Empirical reproducibility (EMPIRICAL PAPERS ONLY, else null):
    0=no code/data/seeds; 2=partial code or documented setup;
    4=full code + data + preregistration + replication.
+   All four elements are required for 4; an open-source suite without
+   preregistration or independent replication scores 3. A framework or
+   methodology paper with no evidenced code/data/artifacts scores 1,
+   even if classified empirical.
 D5 Argumentative rigor: 0=undefined terms, no counterarguments;
    2=explicit definitions, some counterarguments;
    4=all premises identified, counterarguments fully addressed.
+   Empirical surveys with modest argumentative depth score 2; structured
+   philosophical arguments or analyses engaging counterarguments score 3.
 D7 Transparency: 0=no limitations, no threat model;
    2=limitations stated but vague;
    4=explicit limitations + threat model + disclosed funding.
+   A paper stating risks/scope but without an explicit threat model or
+   funding disclosure scores 2, not 3 (all three elements are needed for 4).
 D8 Prior-lit engagement: 0=reinvents known concepts; 2=cites some prior work;
    4=positioned relative to canonical references (Hubinger, Christiano, Ngo,
-   Carlsmith, Wentworth, etc.).
+   Carlsmith, Wentworth, etc.). For non-alignment fields, judge against the
+   field's canonical references and build-on-prior-work, not the alignment
+   canon.
 Return an integer 0-4 per dimension, or null when the evidence genuinely
 cannot support a judgment. Never guess venue prestige (D1) or citation
 uptake (D6) — those are scripted."""

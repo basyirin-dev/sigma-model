@@ -40,7 +40,7 @@ d1_venue:
   - {label: workshop,        score: 2, keywords: [workshop]}
   - {label: journal,         score: 3, keywords: [journal, "doi.org/10."]}
   - {label: proceedings,     score: 2, keywords: [proceedings, conference, iclr, neurips, icml, aaai, acl, emnlp, naacl, coling, facct, "chi conference", "chi 20"]}
-  - {label: doi_peer,        score: 2, keywords: ["doi:", "10.1145", "10.1016", "10.1109", "10.1007", "10.18653"]}
+  - {label: doi_peer,        score: 2, keywords: ["doi:", "10.1145", "10.1016", "10.1109", "10.1007", "10.18653"], keywords_re: ["10\\.\\d{4,}"]}
   # unknown venue -> default score 1 (preprint-tier pending rater review)
   - {label: unknown,         score: 1, keywords: []}
 
