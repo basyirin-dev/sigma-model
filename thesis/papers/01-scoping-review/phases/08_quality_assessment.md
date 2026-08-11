@@ -105,8 +105,8 @@ Two-pass scoring reusing the Phase 7 pipeline pattern (heuristic prefill → ext
 - [ ] 8.2.3: Compute composite = Σ(dimension × paper-type weight), assign tier A–E, apply +0.4 replication bonus where documented
 - [ ] 8.2.4: Record D1–D8, composite, tier per paper in `research/quality-scores.csv` (schema: `paper_id, year, publication_type, evidence_basis, citation_count, D1..D8, composite, tier, weight_set, notes`)
 - [x] 8.2.5: **Validation sample (unconditional, mirrors 7.3)**: independent second rater on a 20% random sample (254 papers, fixed seed), Cohen's kappa per dimension + ICC on composite; reconcile and log to `charting/quality-validation-report.md`
-- [ ] 8.2.6: Flag low-credibility papers for sensitivity analysis: **tier D or E (composite < 1.6)**
-- [ ] 8.2.7: Satisfy CC.1.1 — quality assessment performed for credibility signal, **not** exclusion (no paper removed from the review on quality grounds)
+- [x] 8.2.6: Flag low-credibility papers for sensitivity analysis: **tier D or E (composite < 1.6)** — `low_credibility` column in `quality-scores.csv` via `quality_report.py` (125 flagged)
+- [x] 8.2.7: Satisfy CC.1.1 — quality assessment performed for credibility signal, **not** exclusion (no paper removed from the review on quality grounds) — see 8.4.7
 
 **8.2.5 Validation-sample IRR log** — 254 papers (20% fixed seed) dual-scored; pilot overlaps excluded (P003, P1036) → 252 scored. Rater 1 = external-AI batches (`quality-batches/ai-output/batch-*.jsonl`), rater 2 = `quality-batches/validation/rater2-validation.jsonl`. Script: `charting/quality_validation.py` → `charting/quality-validation-report.md`.
 
@@ -118,21 +118,36 @@ Two-pass scoring reusing the Phase 7 pipeline pattern (heuristic prefill → ext
 
 ### Task 8.3: Sensitivity Analysis
 
-- [ ] 8.3.1: Define the two analysis scenarios:
+- [x] 8.3.1: Define the two analysis scenarios:
   - **Primary**: all 1,268 included papers (full set)
-  - **Sensitivity**: high-credibility subset = **tiers A + B (composite ≥ 2.4)** — replaces the earlier ambiguous "peer-reviewed + highly-cited preprints" framing; the tier scheme already absorbs venue, citations, rigor, and author authority
-- [ ] 8.3.2: Compare key synthesis inputs between the two sets (subdomain distributions, σ-trap signal prevalence from `sigma-trap-signal.csv`, score-by-year trend); document where conclusions would differ
-- [ ] 8.3.3: If conclusions differ substantively, report both analyses in the scoping review (primary in main text, sensitivity in appendix)
+  - **Sensitivity**: high-credibility subset = **tiers A + B (composite ≥ 2.4)** — 317 papers; replaces the earlier ambiguous "peer-reviewed + highly-cited preprints" framing; the tier scheme already absorbs venue, citations, rigor, and author authority
+- [x] 8.3.2: Compare key synthesis inputs between the two sets (subdomain distributions, σ-trap signal prevalence from `sigma-trap-signal.csv`, score-by-year trend); document where conclusions would differ — `quality_report.py` → `charting/quality-report.md` §8.3 (σ-trap signal 46.3% full vs 50.2% A+B)
+- [x] 8.3.3: If conclusions differ substantively, report both analyses in the scoping review (primary in main text, sensitivity in appendix) — see coherence note in 8.4.6
 
 ### Task 8.4: Quality Assessment Report
 
-- [ ] 8.4.1: Summary statistics: composite score distribution, median, IQR, plus per-dimension medians
-- [ ] 8.4.2: Score-by-subdomain analysis: which subdomains have higher/lower credibility?
-- [ ] 8.4.3: Score-by-year analysis: is credibility improving over time?
-- [ ] 8.4.4: Figures generated from `research/quality-scores.csv` → `research/charting/figures/quality-*` (CC.2.4 — reproducible from charted data)
-- [ ] 8.4.5: Archive quality scores in `research/quality-scores.csv` (CSV only — no large artifacts; CC.5.2)
-- [ ] 8.4.6: Coherence notes (CC.3.2/CC.3.3): record how the credibility distribution feeds the σ-trap synthesis (Paper 02) and the final scoping review (Paper 09); draft the "Relation to Other Chapters" note
-- [ ] 8.4.7: Satisfy CC.1.1 — quality assessment documented for transparency
+- [x] 8.4.1: Summary statistics: composite score distribution, median, IQR, plus per-dimension medians — `quality-report.md` §8.4.1 (median 2.15, IQR 1.94–2.35)
+- [x] 8.4.2: Score-by-subdomain analysis: which subdomains have higher/lower credibility? — `quality-report.md` §8.4.2
+- [x] 8.4.3: Score-by-year analysis: is credibility improving over time? — `quality-report.md` §8.4.3
+- [x] 8.4.4: Figures generated from `research/quality-scores.csv` → `research/charting/figures/quality-*` (CC.2.4 — reproducible from charted data) — `quality-composite-hist.png`, `quality-tiers.png`, `quality-subdomains.png`, `quality-year-trend.png`
+- [x] 8.4.5: Archive quality scores in `research/quality-scores.csv` (CSV only — no large artifacts; CC.5.2)
+- [x] 8.4.6: Coherence notes (CC.3.2/CC.3.3): record how the credibility distribution feeds the σ-trap synthesis (Paper 02) and the final scoping review (Paper 09); draft the "Relation to Other Chapters" note — see below
+- [x] 8.4.7: Satisfy CC.1.1 — quality assessment documented for transparency — see below
+
+**Quality report** (`research/charting/quality-report.md`, generated by `charting/quality_report.py` from `quality-scores.csv` + `charted-data.csv` + `sigma-trap-signal.csv`; CC.2.4 reproducible):
+
+- **Composite**: median 2.15 (IQR 1.94–2.35), n=1,268; tiers A=2, B=315, C=826, D=123, E=2
+- **8.2.6 low-credibility flag**: 125 papers (tier D/E, composite < 1.6) — `low_credibility` column in `quality-scores.csv`
+- **Per-dimension medians** (full set): D1=2, D2=1, D3=2, D4=2, D5=3, D6=3, D7=1, D8=3 — D2 (author authority) is the binding constraint on composite, D7 (transparency/limitations) the weakest-reported dimension
+- **8.4.2 by-subdomain**: value alignment (1,143) and ethics (671) dominate; governance has the highest A+B share (112/320 = 35%); mesa-optimization (82) and interpretability (390) track the alignment core
+- **8.4.3 by-year**: mean composite is stable 2.05–2.25 across 2016–2026 (slight dip 2024–25 with the preprint surge, recovering in 2026) — no strong trend, so year is not a confounder for synthesis
+- **8.3 sensitivity (full vs A+B, n=317)**: σ-trap signal prevalence **46.3%** full vs **50.2%** A+B — the high-credibility subset carries a slightly *higher* concentration of σ-trap-relevant papers, so conclusions are robust (and marginally strengthened) under the sensitivity scenario; subdomain ranking and year trend are unchanged between sets
+
+**8.3.3 interpretation** — sensitivity conclusions do **not** differ substantively from the primary set (σ-trap prevalence directionally higher in A+B, distributions rank-identical). Per the roadmap rule, the scoping review therefore reports the full set as primary; the sensitivity comparison is documented here and in `quality-report.md` §8.3 (appendix material only if the paper-09 drafting chooses to include it).
+
+**8.4.6 Coherence notes (CC.3.2/CC.3.3)** — credibility feeds the σ-trap synthesis (Paper 02) and the final scoping review (Paper 09) as a **weighting/context signal, not a filter**: no paper is excluded on quality grounds (CC.1.1). Draft "Relation to Other Chapters" note: Paper 01 provides the credibility distribution (D1–D8, composite, tiers) over the full 1,268-paper landscape; Paper 02's σ-trap synthesis can use the composite/tier to stratify alignment-failure evidence by credibility (e.g., restrict primary claims to tiers A+B = 317 papers if needed, knowing the σ-trap signal holds at 50.2% there); Paper 09's scoping review reports the quality assessment per PRISMA-ScR item 10 (optional element), with the low-credibility flag (125 papers) available for sensitivity-only reporting. The D2/D7 medians (1/1) are a finding in their own right: much of the corpus is written by researchers without an established safety-specific track record and rarely states limitations — relevant context for how far the review's credibility signal reaches.
+
+**8.4.7 CC.1.1 statement** — quality assessment was performed as a **credibility signal** for synthesis weighting and sensitivity analysis only. **No paper was removed from the review on quality grounds.** The 125 low-credibility papers remain in the full set and are reportable; the flag exists solely to test robustness of conclusions (8.3), per Phase 0.5 rubric and PRISMA-ScR item 10 (optional element).
 
 ---
 
