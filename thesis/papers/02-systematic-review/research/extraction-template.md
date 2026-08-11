@@ -2,8 +2,19 @@
 
 **Document type:** Reference — feeds Phase 7 (Data Extraction & Charting)
 **Purpose:** Structured extraction form with 80 fields, controlled vocabularies, validation rules, and IRR protocol for systematic coding of included studies
-**Status:** Draft
+**Status:** Finalized (v1.0 — see changelog below)
 **Cross-references:** `meta-analysis-feasibility.md` §8 (SAP), `review-methodology.md` §3 (ROB tools), `quality-criteria.md` §8 (IRR protocol), `landmark-papers.md` (benchmark names), `interventions.md` (intervention names), `coherence-proxies.md` (proxy measures)
+
+### Changelog (Phase 7.1 finalization)
+
+| Date | Change | Reason |
+|---|---|---|
+| 2026-08 | Status Draft → Finalized; machine-readable mirror at `research/charting/charted-schema.yaml` v1.0 | Phase 7.1 schema reconciliation (CC.1.5) |
+| 2026-08 | `paper_id` (P001–P999) → `study_id` (S001–S286) per `included-studies.csv`; internal key kept as `id` (P02_XXXX) | Study IDs finalized in Phase 6 |
+| 2026-08 | Added `pub_venue_type` (journal/conference/workshop/preprint/tech_report/thesis/other) | Phase doc 7.1.2 publication-type list is distinct from `pub_type` (study design); both coded |
+| 2026-08 | Added `ood_difficulty_metric` (bool) + `ood_difficulty_metric_name` | Phase doc 7.1.2 "OOD difficulty metric reported?" |
+| 2026-08 | Added `other_metrics_reported` (free text) | Phase doc 7.1.2 "Any other metrics reported (F1, precision, recall, perplexity, BLEU)" |
+| 2026-08 | Pilot (5 papers) found no missing fields; recorded guidance: (1) confirm `peer_reviewed` from full text when library source_db is arXiv; (2) code both `n_seeds_value` and per-metric seed counts when distinct; (3) fill CI *or* SD as reported, note the other | See `research/charting/pilot-report.md` |
 
 ---
 

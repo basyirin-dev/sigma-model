@@ -1,0 +1,903 @@
+# Paper 02 (Systematic Review — σ-Trap) — Phase 7 Finalized Charting Schema
+# ------------------------------------------------------------------
+# Canonical, machine-readable data-extraction form (Task 7.1, CC.1.5).
+# Loaded by scripts under research/charting/ (config-driven, ADR 0004).
+# Reconciled from research/extraction-template.md (Phase 0.5, status: Finalized)
+# against Phase 7 task doc 7.1.2 field list (thesis/papers/02-systematic-review/phases/07_data_extraction.md).
+#
+# Field attributes:
+#   source        prefill    = copied verbatim from Phase 6 artifacts (included-studies.csv)
+#                 hint       = candidate value seeded from study-characteristics.csv (Phase 6.5.1);
+#                              the AI pass must confirm or correct from full text (flag if changed)
+#                 ai         = field filled by the external AI pass from full-text excerpts
+#                 calculated = derived from other fields (never filled by AI)
+#   dual          [†] field: re-extracted by the independent second extractor on the
+#                 20% validation sample (Task 7.3, CC.1.6) and compared via kappa/ICC
+#   conditional   only populated when the stated condition holds
+#
+# Reconciliations vs template (logged in history):
+#   R1  paper_id (P001-P999) -> study_id (S001-S286) from included-studies.csv;
+#       internal P02_XXXX key kept as field `id` (joins full-text-txt/).
+#   R2  Template §1B pub_type = STUDY DESIGN type (empirical/theoretical/...).
+#       Phase doc 7.1.2 publication-type list (journal/conference/preprint/...) is a
+#       DISTINCT axis -> new field pub_venue_type, prefilled heuristically from venue.
+#   R3  Phase doc "OOD difficulty metric reported?" -> new fields
+#       ood_difficulty_metric (bool) + ood_difficulty_metric_name.
+#   R4  Phase doc "Any other metrics reported (F1, precision, ...)" -> new field
+#       other_metrics_reported (free text).
+#   R5  Long-format export carries template §3 sub-experiment rows keyed by
+#       sub_exp_id = {study_id}_E{NN}; split_id / arch_id / intervention_id
+#       implement Tasks 7.2.4-7.2.6 (one row per study x split x arch x intervention).
+
+schema_version: "1.0"
+status: finalized
+history:
+  - "v1.0: mapped Phase 7 doc 7.1.2 fields onto Phase 0.5 extraction-template.md sections 1A-1Q + 3; adopted study_id S001-S286 (R1); split pub_type vs pub_venue_type (R2); added ood_difficulty_metric, other_metrics_reported (R3,R4); long-format sub-experiment contract per template section 3 (R5)"
+
+key_fields:
+  - study_id      # S001-S286 (primary key, joins included-studies.csv)
+  - id            # P02_XXXX internal key (joins full-text-txt/)
+  - split_id      # OOD-split instance within study (7.2.4); "default" when single
+  - arch_id       # architecture instance within study (7.2.5); "default" when single
+  - intervention_id  # intervention-vs-baseline instance (7.2.6); "default" when single
+  - sub_exp_id    # {study_id}_E{NN} per template section 3 (S1)
+
+# ------------------------------------------------------------------
+# Study-level (main form) fields — template sections 1A-1Q
+# ------------------------------------------------------------------
+study_fields:
+  # --- 1A Bibliographic ---
+  - name: study_id
+    data_type: text
+    required: true
+    source: prefill
+    description: "S001-S286 (included-studies.csv study_id)"
+  - name: id
+    data_type: text
+    required: true
+    source: prefill
+    description: "P02_XXXX internal key"
+  - name: title
+    data_type: text
+    required: true
+    source: prefill
+  - name: authors
+    data_type: text
+    required: true
+    source: prefill
+  - name: year
+    data_type: integer
+    required: true
+    source: prefill
+    range: [1990, 2026]
+  - name: venue
+    data_type: text
+    required: true
+    source: prefill
+    description: "journal or conference name; 'arXiv preprint' when unreviewed"
+  - name: doi
+    data_type: text
+    required: false
+    source: prefill
+  - name: arxiv_id
+    data_type: text
+    required: false
+    source: prefill
+  - name: peer_reviewed
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+    description: "prefilled from venue/source_db; CONFIRM from full text — arXiv-coded records are often peer-reviewed (pilot finding)"
+  # --- 1B Publication type ---
+  - name: pub_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: pub_type
+    description: "STUDY DESIGN type (empirical/theoretical/review/...); distinct from pub_venue_type"
+  - name: pub_type_other
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "pub_type == other"
+  - name: pub_venue_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: pub_venue_type
+    description: "R2: publication venue category; prefilled heuristically from venue — CONFIRM from full text"
+  # --- 1C Task & benchmark ---
+  - name: task_primary
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: task
+    description: "seeded from study-characteristics.csv benchmarks hint; confirm/correct from full text"
+  - name: tasks_secondary
+    data_type: categorical-multi
+    required: false
+    source: ai
+    dual: true
+    vocabulary: task
+  - name: task_custom_name
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "task_primary == custom"
+  - name: ood_split_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: ood_split_type
+    description: "use section 5.4 decision tree of the template"
+  - name: ood_difficulty_metric
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+    description: "R3: does the paper report an OOD difficulty metric (e.g., compound divergence)?"
+  - name: ood_difficulty_metric_name
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "ood_difficulty_metric == TRUE"
+  # --- 1D Model architecture ---
+  - name: arch_primary
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: arch_primary
+    description: "seeded from study-characteristics.csv architectures hint; confirm/correct from full text"
+  - name: arch_family
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: arch_family
+  - name: arch_detail
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "free text, e.g. '6-layer Transformer, 8 heads' (<=200 chars)"
+  # --- 1E Model scale ---
+  - name: param_count
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000000000]
+  - name: n_layers
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+  - name: hidden_dim
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000]
+  - name: model_scale_category
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: model_scale_category
+    description: "small <1M; medium 1M-100M; large 100M-10B; xl >10B; unspecified"
+  # --- 1F Training data ---
+  - name: train_n_examples
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000000000]
+  - name: train_n_tokens
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000000000000]
+  - name: train_data_note
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "free text (<=200 chars)"
+  # --- 1G Training regime ---
+  - name: train_regime
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: train_regime
+  - name: train_regime_sigma
+    data_type: categorical-single
+    required: false
+    source: ai
+    dual: true
+    vocabulary: train_regime_sigma
+    conditional: "train_regime == sigma_coupled"
+  - name: train_regime_other
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "train_regime == other"
+  - name: baseline_regime
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: baseline_regime
+  - name: augmentation_used
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: augmentation_type
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "augmentation_used == TRUE"
+  - name: curriculum_used
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: meta_learning_used
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  # --- 1H ID results ---
+  - name: id_acc_mean
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+    description: "proportion 0-1 (convert percentages)"
+  - name: id_acc_sd
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: id_acc_n_seeds
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+  - name: id_acc_n_test
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000000000]
+  - name: id_acc_ci_lower
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: id_acc_ci_upper
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: id_metric_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: metric_type
+  - name: id_metric_other
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "id_metric_type == other"
+  # --- 1I OOD results ---
+  - name: ood_acc_mean
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_acc_sd
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_acc_n_seeds
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+  - name: ood_acc_n_test
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000000000000]
+  - name: ood_acc_ci_lower
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_acc_ci_upper
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_metric_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: metric_type
+  - name: ood_metric_other
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "ood_metric_type == other"
+  # --- 1J ID-OOD gap (calculated) ---
+  - name: id_ood_gap_raw
+    data_type: numeric
+    required: false
+    source: calculated
+    description: "id_acc_mean - ood_acc_mean (auto)"
+  - name: id_ood_gap_se
+    data_type: numeric
+    required: false
+    source: calculated
+    description: "sqrt(sd_id^2/n_id + sd_ood^2/n_ood) (auto)"
+  - name: id_ood_gap_reported
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    description: "gap value if the paper reports it directly"
+  # --- 1K Effect size ---
+  - name: effect_size_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: effect_size_type
+  - name: effect_size_value
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    conditional: "effect_size_type != none"
+  - name: effect_size_se
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 10.0]
+  - name: effect_size_ci_lower
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+  - name: effect_size_ci_upper
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+  - name: effect_size_computed_by_extractor
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: effect_size_notes
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "<=300 chars"
+  # --- 1L Schema coherence ---
+  - name: schema_coherence_measured
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: schema_coherence_proxy
+    data_type: categorical-single
+    required: false
+    source: ai
+    dual: true
+    vocabulary: schema_coherence_proxy
+    conditional: "schema_coherence_measured == TRUE"
+  - name: schema_coherence_proxy_other
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "schema_coherence_proxy == other"
+  - name: schema_coherence_value_intervention
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    conditional: "schema_coherence_measured == TRUE"
+  - name: schema_coherence_value_baseline
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    conditional: "schema_coherence_measured == TRUE"
+  - name: schema_coherence_notes
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "<=300 chars"
+  # --- 1M Internal representation analysis ---
+  - name: repr_analysis
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: repr_analysis
+  - name: repr_analysis_secondary
+    data_type: categorical-multi
+    required: false
+    source: ai
+    dual: true
+    vocabulary: repr_analysis
+  - name: repr_analysis_finding
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "<=300 chars"
+  - name: repr_analysis_layer
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "e.g. 'layer 4', 'residual stream' (<=100 chars)"
+  # --- 1N Statistical rigor ---
+  - name: ci_reported
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: error_bars_reported
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: n_seeds_reported
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: n_seeds_value
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+    conditional: "n_seeds_reported == TRUE"
+    description: "seeded from study-characteristics.csv seeds_runs hint when present"
+  - name: sig_test_reported
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: sig_test_type
+    data_type: categorical-single
+    required: false
+    source: ai
+    dual: true
+    vocabulary: sig_test_type
+    conditional: "sig_test_reported == TRUE"
+  - name: sig_test_pvalue
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: multiple_testing_correction
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: multiple_testing_correction
+  - name: data_leakage_check
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: data_leakage_check
+    description: "code only from explicit statements; 'not_addressed' if silent"
+  # --- 1O Code & data availability ---
+  - name: code_available
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: code_url
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "code_available == TRUE"
+  - name: data_available
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: data_url
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "data_available == TRUE"
+  - name: model_weights_available
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: reproducibility_score
+    data_type: categorical-single
+    required: true
+    source: calculated
+    vocabulary: reproducibility_score
+    description: "high = all 3 of code/data/weights; medium = code+data; partial = 1 of 3; low = none"
+  # --- 1P Relevance scoring ---
+  - name: relevance_sigma_trap
+    data_type: integer
+    required: true
+    source: ai
+    dual: true
+    range: [1, 5]
+    description: "use template section 2.5 rubric"
+  - name: relevance_sigma_justification
+    data_type: text
+    required: true
+    source: ai
+    dual: true
+    description: ">=50 chars, <=300 chars"
+  - name: relevance_alignment
+    data_type: integer
+    required: true
+    source: ai
+    dual: true
+    range: [1, 5]
+  - name: relevance_alignment_justification
+    data_type: text
+    required: true
+    source: ai
+    dual: true
+    description: ">=50 chars, <=300 chars"
+  # --- 1Q Limitations & open questions ---
+  - name: limitations_stated
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: limitations_text
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "limitations_stated == TRUE"
+    description: "<=500 chars"
+  - name: limitations_extractor
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "extractor-identified limitations not stated by authors (<=300 chars)"
+  - name: open_questions_stated
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: boolean
+  - name: open_questions_text
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    conditional: "open_questions_stated == TRUE"
+    description: "<=500 chars"
+  - name: open_questions_extractor
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "extractor-identified gaps (<=300 chars)"
+  # --- Additions & audit ---
+  - name: other_metrics_reported
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "R4: F1/precision/recall/perplexity/BLEU etc. reported (free text)"
+  - name: extractor_id
+    data_type: text
+    required: true
+    source: prefill
+    description: "PILOT (schema pilot) | EX1 (AI pass) | EX2 (validation pass)"
+  - name: notes
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "free-text notes (Task 7.2.2)"
+
+# ------------------------------------------------------------------
+# Sub-experiment form fields — template section 3 (S1-S18)
+# One row per unique configuration (7.2.4 multiple splits, 7.2.5 multiple
+# architectures, 7.2.6 multiple interventions). Linked to study via study_id.
+# ------------------------------------------------------------------
+subexp_fields:
+  - name: sub_exp_id
+    data_type: text
+    required: true
+    source: ai
+    description: "S1: {study_id}_E{NN} zero-padded"
+  - name: experiment_label
+    data_type: text
+    required: true
+    source: ai
+    description: "S3: short label (<=50 chars), e.g. 'SCAN split; LSTM; curriculum'"
+  - name: task
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: task
+  - name: arch
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: arch_primary
+  - name: train_regime
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: train_regime
+  - name: id_acc_mean
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: id_acc_sd
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: id_acc_n_seeds
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+  - name: ood_acc_mean
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_acc_sd
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 1.0]
+  - name: ood_acc_n_seeds
+    data_type: integer
+    required: false
+    source: ai
+    dual: true
+    range: [1, 1000]
+  - name: id_ood_gap
+    data_type: numeric
+    required: false
+    source: calculated
+    description: "S13: id_acc_mean - ood_acc_mean (auto)"
+  - name: effect_size_type
+    data_type: categorical-single
+    required: true
+    source: ai
+    dual: true
+    vocabulary: effect_size_type
+  - name: effect_size_value
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    conditional: "effect_size_type != none"
+  - name: effect_size_se
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+    range: [0.0, 10.0]
+  - name: schema_coherence_value
+    data_type: numeric
+    required: false
+    source: ai
+    dual: true
+  - name: notes
+    data_type: text
+    required: false
+    source: ai
+    dual: true
+    description: "<=300 chars"
+
+# ------------------------------------------------------------------
+# Controlled vocabularies — template section 2 codebook (+ phase doc 7.1.2)
+# ------------------------------------------------------------------
+vocabularies:
+  boolean: ["TRUE", "FALSE"]
+  pub_type: [empirical, theoretical, review, position, dataset_benchmark, survey_ma, other]
+  pub_venue_type: [journal, conference, workshop, preprint, tech_report, thesis, other]
+  task: [SCAN, COGS, CFQ, PCFG_SET, gSCAN, CREAK, GeoQuery, WILDS, PACS, OfficeHome, VLCS,
+         TerraIncognita, DomainNet, ImageNet_C, ImageNet_R, ImageNet_A, Camelyon17, FMoW,
+         PovertyMap, CivilComments, MNIST, CIFAR10, CIFAR100, ImageNet, ColoredMNIST,
+         Waterbirds, CelebA, MultiNLI, HANS, BBQ, custom, other]
+  ood_split_type: [compositional, covariate_shift, concept_shift, label_shift, domain_shift,
+                   adversarial, temporal, none, mixed]
+  arch_primary: [LSTM, GRU, VanillaRNN, TransformerEnc, TransformerDec, TransformerEncDec,
+                 BERT, GPT, T5, ResNet, DenseNet, ConvNeXt, ViT, Swin, MLP, MLPMixer, GCN,
+                 GAT, NeuralSymbolic, ODE, Diffusion, other]
+  arch_family: [rnn_family, transformer, cnn_family, vit, mlp, gnn, neurosymbolic, ode,
+                diffusion, other]
+  model_scale_category: [small, medium, large, xl, unspecified]
+  train_regime: [standard_SGD, standard_Adam, momentum, curriculum, augmentation, multi_task,
+                 meta_learning, sigma_coupled, contrastive, invariant_learning,
+                 adversarial_train, regularized, other]
+  train_regime_sigma: [SAM, ASAM, Friendly-SAM, Tilted-SAM, SWAD, entropy-SGD, MESA,
+                       other_sigma, not_applicable]
+  baseline_regime: [standard_SGD, standard_Adam, other]
+  metric_type: [accuracy, F1, AUC, BLEU, exact_match, other]
+  effect_size_type: [log_odds_ratio, hedges_g, cohens_d, raw_delta, none, other]
+  schema_coherence_proxy: [linear_probe_acc, CKA, RSA, effective_rank, disentanglement_metric,
+                           mutual_info, causal_probe_acc, logical_consistency,
+                           compositionality_score, feature_sparsity, cluster_purity,
+                           attention_entropy, neuron_monosemanticity, other]
+  repr_analysis: [probing, RSA, CKA, clustering, PCA, SAE, attention_patterns, CAV,
+                  activation_max, none, other]
+  sig_test_type: [t-test, wilcoxon, bootstrap, permutation, friedman, ANOVA, other, none]
+  multiple_testing_correction: [bonferroni, holm, BH, none, other, unclear]
+  data_leakage_check: [explicit_no, not_addressed, suspected, confirmed_yes]
+  reproducibility_score: [high, medium, low, partial]
+
+# ------------------------------------------------------------------
+# Cross-field validation rules — template section 4.1 (V01-V20)
+# ------------------------------------------------------------------
+validation_rules:
+  - id: V01
+    fields: [id_acc_mean, id_acc_n_test]
+    rule: "if id_acc_mean present, id_acc_n_test should be present"
+    severity: warning
+  - id: V02
+    fields: [ood_acc_mean, ood_acc_n_test]
+    rule: "if ood_acc_mean present, ood_acc_n_test should be present"
+    severity: warning
+  - id: V03
+    fields: [id_acc_sd, id_acc_n_seeds]
+    rule: "if id_acc_sd present, id_acc_n_seeds >= 2"
+    severity: error
+  - id: V04
+    fields: [ood_acc_sd, ood_acc_n_seeds]
+    rule: "if ood_acc_sd present, ood_acc_n_seeds >= 2"
+    severity: error
+  - id: V05
+    fields: [id_ood_gap_raw]
+    rule: "id_ood_gap_raw == id_acc_mean - ood_acc_mean (+-0.001)"
+    severity: error
+  - id: V06
+    fields: [effect_size_type, effect_size_value]
+    rule: "if effect_size_type != none, effect_size_value must be present"
+    severity: error
+  - id: V07
+    fields: [train_regime, train_regime_sigma]
+    rule: "if train_regime == sigma_coupled, train_regime_sigma != not_applicable"
+    severity: error
+  - id: V08
+    fields: [schema_coherence_measured, schema_coherence_proxy]
+    rule: "if schema_coherence_measured == TRUE, schema_coherence_proxy must be present"
+    severity: error
+  - id: V09
+    fields: [n_seeds_reported, n_seeds_value]
+    rule: "if n_seeds_reported == TRUE, n_seeds_value >= 1"
+    severity: error
+  - id: V10
+    fields: [sig_test_reported, sig_test_type]
+    rule: "if sig_test_reported == TRUE, sig_test_type != none"
+    severity: error
+  - id: V11
+    fields: [code_available, code_url]
+    rule: "if code_available == TRUE, code_url should be present"
+    severity: warning
+  - id: V12
+    fields: [data_available, data_url]
+    rule: "if data_available == TRUE, data_url should be present"
+    severity: warning
+  - id: V13
+    fields: [relevance_sigma_trap, relevance_sigma_justification]
+    rule: "if relevance_sigma_trap >= 4, justification >= 100 chars"
+    severity: error
+  - id: V14
+    fields: [relevance_alignment, relevance_alignment_justification]
+    rule: "if relevance_alignment >= 4, justification >= 100 chars"
+    severity: error
+  - id: V15
+    fields: [ood_split_type, ood_acc_mean]
+    rule: "if ood_split_type == none, ood results fields should be empty"
+    severity: error
+  - id: V16
+    fields: [id_metric_type, ood_metric_type]
+    rule: "id_metric_type and ood_metric_type should match for gap calculation"
+    severity: warning
+  - id: V17
+    fields: [effect_size_computed_by_extractor, effect_size_notes]
+    rule: "if effect_size_computed_by_extractor == TRUE, effect_size_notes should explain derivation"
+    severity: warning
+  - id: V18
+    fields: [pub_type, limitations_stated]
+    rule: "if pub_type == review, limitations_stated may be FALSE (info only)"
+    severity: info
+  - id: V19
+    fields: [param_count, model_scale_category]
+    rule: "model_scale_category should be consistent with param_count"
+    severity: warning
+  - id: V20
+    fields: [train_regime_sigma]
+    rule: "if train_regime_sigma == SAM, check rho (perturbation radius) in notes"
+    severity: warning
+
+# ------------------------------------------------------------------
+# Export contract — template section 7
+# ------------------------------------------------------------------
+export:
+  csv_long: research/charted-data.csv          # one row per study x split x arch x intervention
+  csv_main: research/charted-data-main.csv     # one row per study (main form only)
+  json: research/charted-data.json             # nested: study -> sub_experiments

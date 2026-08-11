@@ -9,8 +9,8 @@
 
 ### Task 7.1: Finalize Extraction Template
 
-- [ ] 7.1.1: Review Phase 0.5 `research/extraction-template.md` and iterate based on full-text experience (5 pilot papers from Phase 6)
-- [ ] 7.1.2: Finalize extraction fields for the systematic review:
+- [x] 7.1.1: Review Phase 0.5 `research/extraction-template.md` and iterate based on full-text experience (5 pilot papers from Phase 6)
+- [x] 7.1.2: Finalize extraction fields for the systematic review:
 
   **Bibliographic:**
   - Study ID (S001–SXXX)
@@ -71,9 +71,9 @@
   - Key limitations (free text)
   - Extracted by (reviewer initials)
 
-- [ ] 7.1.3: Pilot extraction on 5 papers (already retrieved full text) — verify template covers all relevant information
-- [ ] 7.1.4: Refine template based on pilot — add missing fields, merge redundant, clarify ambiguous field definitions
-- [ ] 7.1.5: Satisfy CC.1.5 — data extraction form developed, piloted, and iterated
+- [x] 7.1.3: Pilot extraction on 5 papers (already retrieved full text) — verify template covers all relevant information
+- [x] 7.1.4: Refine template based on pilot — add missing fields, merge redundant, clarify ambiguous field definitions
+- [x] 7.1.5: Satisfy CC.1.5 — data extraction form developed, piloted, and iterated
 
 ### Task 7.2: Full Data Extraction
 
