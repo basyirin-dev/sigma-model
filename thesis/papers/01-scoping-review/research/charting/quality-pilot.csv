@@ -1,0 +1,11 @@
+paper_id,publication_type,venue_stratum,notes
+P002,theoretical,proceedings,pilot gold (Phase 7); full-text
+P034,empirical,journal,pilot gold (Phase 7); full-text
+P040,opinion,journal,pilot gold (Phase 7); full-text
+P073,empirical,proceedings,pilot gold (Phase 7); full-text
+P1170,review,grey,pilot gold (Phase 7); full-text
+P635,empirical,arxiv,pilot new; full-text; spec gaming
+P1036,theoretical,grey-af,pilot new; full-text; formal verification limits
+P003,position,proceedings,pilot new; full-text; architectural alignment
+P032,empirical,journal,pilot new; full-text; spec gaming (cheminformatics)
+P1030,theoretical,workshop,pilot new; full-text; social choice
