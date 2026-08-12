@@ -56,6 +56,7 @@ def main() -> None:
                 ex2[obj["study_id"]] = obj
 
     fields = [f["name"] for f in cfg["study_fields"] if f.get("dual", False)]
+    meta = {f["name"]: f for f in cfg["study_fields"]}
     items: list[tuple[str, str, str, str]] = []
     field_diff: Counter[str] = Counter()
     n_compared = 0
@@ -79,8 +80,11 @@ def main() -> None:
                 resolution = "UNRESOLVED — senior reviewer decides; see action"
             items.append((s, f, v1, v2, resolution))
 
+    # systematic trigger: structured fields only (free-text fields differ by
+    # construction — wording, not coding; excluded per validation-report note 3)
     systematic = {f: c for f, c in field_diff.items()
-                  if c >= SYSTEMATIC_THRESHOLD * n_compared}
+                  if c >= SYSTEMATIC_THRESHOLD * n_compared
+                  and meta.get(f, {}).get("data_type") not in ("text", "long_text")}
 
     lines = [
         "# Reconciliation items — Paper 02 Phase 7 (Task 7.3.4)",
@@ -99,7 +103,8 @@ def main() -> None:
                 f"- `{f}`: {c}/{n_compared} differ — "
                 "**refine template/codebook and re-extract** (7.3.4)")
         lines.append("")
-        lines.append("## Template refinement notes", "")
+        lines.append("## Template refinement notes")
+        lines.append("")
         lines.append("Review the fields above; if the disagreement is a codebook")
         lines.append("ambiguity, update `research/extraction-template.md` and")
         lines.append("`charting/charted-schema.yaml` (bump minor version), then")
@@ -111,9 +116,11 @@ def main() -> None:
 
     lines += ["", "## Itemized disagreements", ""]
     if items:
-        lines.append("| Study | Field | Extractor 1 | Extractor 2 | Resolution |",
-                     "|---|---|---|---|---|")
+        lines.append("| Study | Field | Extractor 1 | Extractor 2 | Resolution |")
+        lines.append("|---|---|---|---|---|")
         for s, f, v1, v2, res in sorted(items, key=lambda t: (t[0], t[1])):
+            v1 = str(v1)
+            v2 = str(v2)
             v1s = (v1[:60] + "…") if len(v1) > 60 else (v1 or "—")
             v2s = (v2[:60] + "…") if len(v2) > 60 else (v2 or "—")
             lines.append(f"| {s} | {f} | {v1s} | {v2s} | {res} |")

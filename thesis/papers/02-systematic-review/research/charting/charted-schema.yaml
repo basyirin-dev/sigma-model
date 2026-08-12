@@ -29,10 +29,11 @@
 #       sub_exp_id = {study_id}_E{NN}; split_id / arch_id / intervention_id
 #       implement Tasks 7.2.4-7.2.6 (one row per study x split x arch x intervention).
 
-schema_version: "1.0"
+schema_version: "1.1"
 status: finalized
 history:
   - "v1.0: mapped Phase 7 doc 7.1.2 fields onto Phase 0.5 extraction-template.md sections 1A-1Q + 3; adopted study_id S001-S286 (R1); split pub_type vs pub_venue_type (R2); added ood_difficulty_metric, other_metrics_reported (R3,R4); long-format sub-experiment contract per template section 3 (R5)"
+  - "v1.1 (validation refinement, Task 7.3.4): codebook rules added for fields with systematic extractor disagreement — (R-A) task_primary: 'custom' wins over 'other' when task_custom_name is populated; (R-B) model_scale_category: derived from param_count when present, else unspecified; (R-C) multiple_testing_correction: 'unclear' maps to 'none' when no significance test reported (silent papers); (R-D) metric_type: code exact_match only when the paper literally reports exact-match accuracy, else accuracy; (R-E) ood_split_type: apply template section 5.4 decision tree, adjudicating against full text"
 
 key_fields:
   - study_id      # S001-S286 (primary key, joins included-studies.csv)

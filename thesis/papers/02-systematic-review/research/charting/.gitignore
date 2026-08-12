@@ -7,3 +7,6 @@ ai-prompt-batches/batch-*.jsonl
 ai-prompt-batches/ai-output/
 validation-batches/batch-*.jsonl
 validation-batches/ai-output/
+
+# Adjudication worksheet (regenerable from EX1/EX2 + full texts)
+adjudication-worksheet.tsv

@@ -97,21 +97,32 @@ def main() -> None:
         if not fm or "vocabulary" not in fm:
             continue
         allowed = vocab.get(fm["vocabulary"], set())
+        multi = fm.get("data_type") == "categorical-multi"
+
+        def tokens(v: str) -> list[str]:
+            return [t.strip() for t in v.split(";")] if multi else [v.strip()]
+
         seen: Counter[str] = Counter()
         for r in rows:
             v = r.get(f, "")
             if not is_empty(v):
-                seen[v.strip()] += 1
+                for t in tokens(v):
+                    if t:
+                        seen[t] += 1
         # detect variants: lowercase/case-folded duplicates of allowed values
         for raw, cnt in sorted(seen.items(), key=lambda kv: -kv[1]):
             up = raw.upper()
             if up in allowed and raw != up:
                 for r in rows:
-                    if r.get(f, "").strip() == raw:
-                        r[f] = up
-                        remediation.append({"field": f, "study_id": r["study_id"],
-                                            "row": r["sub_exp_id"], "old": raw, "new": up})
-                        norm_count += 1
+                    if not is_empty(r.get(f, "")):
+                        toks = tokens(r[f])
+                        if raw in toks:
+                            new_toks = [up if t == raw else t for t in toks]
+                            new = "; ".join(t for t in new_toks if t) if multi else new_toks[0]
+                            r[f] = new
+                            remediation.append({"field": f, "study_id": r["study_id"],
+                                                "row": r["sub_exp_id"], "old": raw, "new": up})
+                            norm_count += 1
                 report.append(f"- `{f}`: '{raw}' x{cnt} normalized -> '{up}'")
             elif raw not in allowed:
                 report.append(f"- `{f}`: **{raw!r} x{cnt} not in vocabulary "
@@ -155,9 +166,71 @@ def main() -> None:
     report += ["", "## 7.4.5 Cross-field validation (V01-V20)", "",
                "| Rule | Severity | Violations |", "|---|---|---|"]
     rule_violations: list[tuple[str, str, str]] = []
+    # honest per-rule error counts (not capped) for the summary
+    error_counts: Counter[str] = Counter()
 
     def field(r: dict, name: str) -> str:
         return r.get(name, "")
+
+    def fnum(v: str) -> float:
+        """Parse numeric cell; raises ValueError for junk (rule = violation)."""
+        return float(v)
+
+    def check_rule(rid: str, vals: list[str], r: dict) -> bool:
+        """Evaluate one V-rule for one row; junk numerics count as violations."""
+        if rid == "V01":
+            return is_empty(vals[0]) or not is_empty(vals[1])
+        if rid == "V02":
+            return is_empty(vals[0]) or not is_empty(vals[1])
+        if rid == "V03":
+            return is_empty(vals[0]) or (not is_empty(vals[1]) and fnum(vals[1]) >= 2)
+        if rid == "V04":
+            return is_empty(vals[0]) or (not is_empty(vals[1]) and fnum(vals[1]) >= 2)
+        if rid == "V05":
+            # sub-exp gap (S13) must equal its own id/ood means; study-level
+            # gap (id_ood_gap_raw) is checked separately on the main CSV
+            gap = field(r, "id_ood_gap")
+            if is_empty(gap):
+                return True
+            return abs(fnum(gap) - (fnum(field(r, "id_acc_mean"))
+                                    - fnum(field(r, "ood_acc_mean")))) <= 0.001
+        if rid == "V06":
+            return vals[0] == "none" or not is_empty(vals[1])
+        if rid == "V07":
+            return (vals[0] != "sigma_coupled"
+                    or (not is_empty(vals[1]) and vals[1] != "not_applicable"))
+        if rid == "V08":
+            return vals[0] != "TRUE" or not is_empty(vals[1])
+        if rid == "V09":
+            return vals[0] != "TRUE" or (not is_empty(vals[1]) and fnum(vals[1]) >= 1)
+        if rid == "V10":
+            return vals[0] != "TRUE" or vals[1] not in ("", "none")
+        if rid == "V11":
+            return vals[0] != "TRUE" or not is_empty(vals[1])
+        if rid == "V12":
+            return vals[0] != "TRUE" or not is_empty(vals[1])
+        if rid == "V13":
+            return is_empty(vals[0]) or fnum(vals[0]) < 4 or len(vals[1] or "") >= 100
+        if rid == "V14":
+            return is_empty(vals[0]) or fnum(vals[0]) < 4 or len(vals[1] or "") >= 100
+        if rid == "V15":
+            return vals[0] != "none" or is_empty(field(r, "ood_acc_mean"))
+        if rid == "V16":
+            return is_empty(vals[0]) or is_empty(vals[1]) or vals[0] == vals[1]
+        if rid == "V17":
+            return vals[0] != "TRUE" or len(vals[1] or "") > 0
+        if rid == "V18":
+            return True  # info-only
+        if rid == "V19":
+            # model_scale_category consistent with param_count (when both present)
+            if is_empty(vals[0]) or is_empty(field(r, "model_scale_category")):
+                return True
+            pc = fnum(vals[0])
+            expect = ("small" if pc < 1e6 else
+                      "medium" if pc < 1e8 else
+                      "large" if pc < 1e10 else "xl")
+            return field(r, "model_scale_category").strip().lower() == expect
+        return True  # V20 advisory + unknown
 
     for rule in rules:
         rid = rule["id"]
@@ -166,73 +239,38 @@ def main() -> None:
         bad = 0
         for r in rows:
             vals = [field(r, f) for f in fields_]
-            ok = True
-            if rid == "V01":
-                ok = is_empty(vals[0]) or not is_empty(vals[1])
-            elif rid == "V02":
-                ok = is_empty(vals[0]) or not is_empty(vals[1])
-            elif rid == "V03":
-                ok = is_empty(vals[0]) or (not is_empty(vals[1]) and float(vals[1]) >= 2)
-            elif rid == "V04":
-                ok = is_empty(vals[0]) or (not is_empty(vals[1]) and float(vals[1]) >= 2)
-            elif rid == "V05":
-                # long-format: check the sub-experiment gap (S13) against its own
-                # id/ood means; study-level gap checked on charted-data-main.csv
-                gap = field(r, "id_ood_gap")
-                if not is_empty(gap):
-                    idm = float(field(r, "id_acc_mean") or "nan")
-                    ood = float(field(r, "ood_acc_mean") or "nan")
-                    ok = (abs(float(gap) - (idm - ood)) <= 0.001
-                          or math.isnan(idm) or math.isnan(ood))
-            elif rid == "V06":
-                ok = vals[0] == "none" or not is_empty(vals[1])
-            elif rid == "V07":
-                ok = (vals[0] != "sigma_coupled"
-                      or (not is_empty(vals[1]) and vals[1] != "not_applicable"))
-            elif rid == "V08":
-                ok = vals[0] != "TRUE" or not is_empty(vals[1])
-            elif rid == "V09":
-                ok = vals[0] != "TRUE" or (not is_empty(vals[1]) and float(vals[1]) >= 1)
-            elif rid == "V10":
-                ok = vals[0] != "TRUE" or vals[1] not in ("", "none")
-            elif rid == "V11":
-                ok = vals[0] != "TRUE" or not is_empty(vals[1])
-            elif rid == "V12":
-                ok = vals[0] != "TRUE" or not is_empty(vals[1])
-            elif rid == "V13":
-                ok = is_empty(vals[0]) or int(float(vals[0])) < 4 or len(vals[1] or "") >= 100
-            elif rid == "V14":
-                ok = is_empty(vals[0]) or int(float(vals[0])) < 4 or len(vals[1] or "") >= 100
-            elif rid == "V15":
-                ok = vals[0] != "none" or is_empty(field(r, "ood_acc_mean"))
-            elif rid == "V16":
-                ok = is_empty(vals[0]) or is_empty(vals[1]) or vals[0] == vals[1]
-            elif rid == "V17":
-                ok = vals[0] != "TRUE" or len(vals[1] or "") > 0
-            elif rid == "V18":
-                ok = True  # info-only
-            elif rid == "V19":
-                # model_scale_category consistent with param_count (when both present)
-                if not is_empty(vals[0]) and not is_empty(field(r, "model_scale_category")):
-                    try:
-                        pc = float(vals[0])
-                        expect = ("small" if pc < 1e6 else
-                                  "medium" if pc < 1e8 else
-                                  "large" if pc < 1e10 else "xl")
-                        ok = field(r, "model_scale_category").strip().lower() == expect
-                    except ValueError:
-                        ok = False
-            elif rid == "V20":
-                ok = True  # advisory
-            else:
-                ok = True
+            try:
+                ok = check_rule(rid, vals, r)
+            except ValueError:
+                ok = False  # non-numeric cell where a number is required
             if not ok:
                 bad += 1
-                if len(rule_violations) < 60:
+                if sev == "error":
+                    error_counts[rid] += 1
+                if sum(1 for rid_, _, _ in rule_violations if rid_ == rid) < 60:
                     rule_violations.append((rid, sev, f"{r['study_id']}/{r['sub_exp_id']}"))
         flag = " ⚠" if bad and sev == "error" else ""
         report.append(
             f"| {rid} | {sev} | {bad}{flag} |")
+
+    # study-level gap consistency (V05 on charted-data-main.csv)
+    main_rows = list(csv.DictReader(
+        open(BASE / "research" / "charted-data-main.csv", newline="", encoding="utf-8")))
+    main_gap_bad = 0
+    for r in main_rows:
+        if is_empty(r.get("id_ood_gap_raw")):
+            continue
+        try:
+            idm = float(r["id_acc_mean"] or "nan")
+            ood = float(r["ood_acc_mean"] or "nan")
+            if not math.isnan(idm) and not math.isnan(ood) and \
+                    abs(float(r["id_ood_gap_raw"]) - (idm - ood)) > 0.001:
+                main_gap_bad += 1
+        except ValueError:
+            main_gap_bad += 1
+    report.append(
+        f"- V05 (study-level, main CSV): {main_gap_bad} rows with id_ood_gap_raw "
+        f"!= id_acc_mean - ood_acc_mean")
 
     # --- remediation log ---
     with open(REMEDIATION_CSV, "w", newline="", encoding="utf-8") as fh:
@@ -244,7 +282,7 @@ def main() -> None:
         w.writeheader()
         w.writerows(rows)
 
-    n_error_violations = sum(1 for rid, sev, _ in rule_violations if sev == "error")
+    n_error_violations = sum(error_counts.values())
     report += [
         "",
         "## Summary",
@@ -254,7 +292,8 @@ def main() -> None:
         f"- Vocabulary values auto-normalized: **{norm_count}** "
         f"(see remediation-log.csv)",
         f"- Numeric range violations: **{len(out_of_range)}**",
-        f"- V01-V20 error-level violations: **{n_error_violations}**",
+        f"- V01-V20 error-level violations: **{n_error_violations}** "
+        f"(per-rule: {', '.join(f'{k}={v}' for k, v in sorted(error_counts.items()))})",
     ]
     with open(REPORT_MD, "w", encoding="utf-8") as fh:
         fh.write("\n".join(report) + "\n")

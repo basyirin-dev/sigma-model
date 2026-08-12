@@ -115,7 +115,12 @@ def validate_study_record(obj: dict, meta: dict, vocab: dict,
             continue
         if "vocabulary" in fm:
             allowed = vocab.get(fm["vocabulary"], set())
-            if normalize_vocab(val, allowed) is None:
+            if fm.get("data_type") == "categorical-multi":
+                parts = [p.strip() for p in val.split(";")]
+                if any(p and normalize_vocab(p, allowed) is None for p in parts):
+                    errors.append(f"field {key} value {val!r} not in vocabulary "
+                                  f"{fm['vocabulary']}")
+            elif normalize_vocab(val, allowed) is None:
                 errors.append(f"field {key} value {val!r} not in vocabulary "
                               f"{fm['vocabulary']}")
         elif fm.get("data_type") in ("numeric", "integer"):
@@ -143,9 +148,14 @@ def normalize_record(obj: dict, meta: dict, vocab: dict) -> dict:
             continue
         if "vocabulary" in fm:
             allowed = vocab.get(fm["vocabulary"], set())
-            norm = normalize_vocab(val, allowed)
-            if norm is not None:
-                out[key] = norm
+            if fm.get("data_type") == "categorical-multi":
+                parts = [p.strip() for p in val.split(";")]
+                normed = [normalize_vocab(p, allowed) or p for p in parts]
+                out[key] = "; ".join(p for p in normed if p)
+            else:
+                norm = normalize_vocab(val, allowed)
+                if norm is not None:
+                    out[key] = norm
         elif fm.get("data_type") == "numeric":
             try:
                 out[key] = f"{float(val):g}"
@@ -157,6 +167,33 @@ def normalize_record(obj: dict, meta: dict, vocab: dict) -> dict:
             except ValueError:
                 pass
     return out
+
+
+def apply_codebook_rules(row: dict) -> None:
+    """Schema v1.1 codebook refinements (Task 7.3.4), applied at merge time.
+
+    R-A: task_primary 'custom' wins over 'other' when task_custom_name filled.
+    R-B: model_scale_category derived from param_count when present.
+    R-C: multiple_testing_correction 'unclear' -> 'none' when no sig test.
+    Keeps charted data coded under the finalized codebook regardless of AI raw
+    values (deterministic, documented in charted-schema.yaml history v1.1).
+    """
+    t = row.get("task_primary", "")
+    if t in ("custom", "other") and (row.get("task_custom_name") or "").strip():
+        row["task_primary"] = "custom"
+    pc = row.get("param_count", "")
+    if isinstance(pc, str) and pc.strip():
+        try:
+            pcf = float(pc)
+            row["model_scale_category"] = (
+                "small" if pcf < 1e6 else
+                "medium" if pcf < 1e8 else
+                "large" if pcf < 1e10 else "xl")
+        except ValueError:
+            pass
+    if row.get("multiple_testing_correction", "") == "unclear" \
+            and row.get("sig_test_reported", "") != "TRUE":
+        row["multiple_testing_correction"] = "none"
 
 
 def calc_gap(row: dict) -> None:
@@ -290,6 +327,7 @@ def main() -> None:
                 if k in prefill[sid] and prefill[sid][k] not in ("", None):
                     row[k] = prefill[sid][k]
         calc_gap(row)
+        apply_codebook_rules(row)
         main_rows.append(row)
 
         subexps = rec.get("sub_experiments") or []
@@ -305,6 +343,12 @@ def main() -> None:
                 continue
             lrow = dict(row)
             lrow.update({k: se.get(k, "") for k in subexp_field_names})
+            apply_codebook_rules(lrow)
+            # study-level gap fields are study-level only — blank them in long
+            # rows so they can't be misread against sub-exp accuracies (V05);
+            # the sub-exp gap (S13) is the correct per-row value
+            for k in ("id_ood_gap_raw", "id_ood_gap_se", "id_ood_gap_reported"):
+                lrow[k] = ""
             # ensure key linkage
             lrow["study_id"] = sid
             lrow["id"] = row["id"]

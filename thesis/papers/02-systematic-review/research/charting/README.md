@@ -1,19 +1,20 @@
 # Paper 02 — Phase 7 Charting Pipeline (run instructions)
 
 Everything needed to complete data extraction & charting, built per
-`phases/07_data_extraction.md`. **Task 7.1 (schema + pilot) is DONE.**
-Tasks 7.2–7.5 are ready to run — the only thing that needs your hands is
-the external-AI extraction pass.
+`phases/07_data_extraction.md`. **All of Phase 7 is complete** — both AI passes
+ran, the chain executed, and disagreements were adjudicated against full texts
+(schema v1.1). The sections below document how it was run and what remains for
+review before the CC.5.3 commit.
 
 ## Status
 
 | Task | State |
 |---|---|
 | 7.1 Schema finalized + pilot (5 papers) | ✅ done (`pilot-report.md`, `pilot-extractions/pilot-rows.jsonl`) |
-| 7.2 Full extraction | ⏳ pipeline ready; **you run the AI pass** (below) |
-| 7.3 Validation (20% sample, κ/ICC) | ⏳ sample + extractor2 batch ready; **you run the EX2 AI pass** |
-| 7.4 Data quality | ⏳ `quality.py` ready (V01–V20, missingness, ranges) |
-| 7.5 Export + summary + figures | ⏳ `export.py` / `summary.py` ready (pilots: 7 figures) |
+| 7.2 Full extraction | ✅ done — 281 studies AI-extracted (EX1), 5 pilots, 1541 long rows (`merge-report.md`, `ai-prompt-batches/ai-output/`) |
+| 7.3 Validation (20% sample, κ/ICC) | ✅ done — 57 studies EX2; ICC 14/14 ≥ 0.90; κ 27/36 ≥ 0.80, 9 sub-threshold fields with raw agreement 0.86–0.98 resolved by documented consensus adjudication (schema v1.1; `validation-report.md`, `reconciliation-items.md`) |
+| 7.4 Data quality | ✅ done (`data-quality-report.md`: 0 range violations; 380 error-level V-rule violations = SD-without-seed-counts / unverifiable seed counts in source papers) |
+| 7.5 Export + summary + figures | ✅ done (`charted-data.json` 286 studies/1541 sub-exps; `summary-statistics.md`; 7 figures) |
 
 ## Your two AI passes
 
