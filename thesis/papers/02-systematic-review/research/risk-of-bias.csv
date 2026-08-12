@@ -1,0 +1,287 @@
+study_id,title,D1,D2,D3,D4,D5,D6,overall,rule_trace
+S001,Graph Representation Learning via Causal Diffusion for Out-of-Distribution Recommendation,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S002,SFP: Spurious Feature-Targeted Pruning for Out-of-Distribution Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S003,Research on Causal Robustness Enhancement Methods and Out-of-Distribution Generalization for Deep Classification Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S004,Robust Neural Information Retrieval: An Adversarial and Out-of-Distribution Perspective,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S005,Feature-granularity-based spurious correlation and causal analysis in CNNs Exploring Feature Granularity to Uncover Spurious Correlations,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S006,Beyond Mimicry: Toward Lifelong Adaptability in Imitation Learning,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S007,Don't Blind Your VLA: Aligning Visual Representations for OOD Generalization,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:default;D4:default;D5:unclear;D6:default
+S008,Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S009,Human Heterogeneity Invariant Stress Sensing,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S010,Causality and Independence Enhancement for Biased Node Classification,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S011,Environment Agnostic Invariant Risk Minimization for Classification of Sequential Datasets,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S012,Causal Disentangled Recommendation against User Preference Shifts,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S013,NILMBENCH2026: A Benchmark for Energy Disaggregation,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S014,,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S015,A.I. Robustness: a Human-Centered Perspective on Technological Challenges and Opportunities,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S016,A Survey of Model Inversion Attacks: An Interface-Prior Perspective,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S017,AI Alignment: A Contemporary Survey,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S018,Abstraction Alignment: Comparing Model-Learned and Human-Encoded Conceptual Relationships,HIGH,HIGH,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:high;D3:na;D4:high;D5:high;D6:high
+S019,Uniformly Distributed Category Prototype-Guided Vision-Language Framework for Long-Tail Recognition,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S020,A Survey of Multilingual Neural Machine Translation,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S021,Contrastive Curriculum Learning for Sequential User Behavior Modeling via Data Augmentation,HIGH,HIGH,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:high;D3:na;D4:high;D5:high;D6:high
+S022,Efficient Knowledge Graph Unlearning with Zeroth-order Information,HIGH,HIGH,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:high;D3:default;D4:high;D5:high;D6:default
+S023,Neural Dehydration: Effective Erasure of Black-box Watermarks from DNNs with Limited Data,LOW,HIGH,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:high;D3:na;D4:default;D5:high;D6:default
+S024,Evaluating Out-of-Distribution Robustness of TabPFN on Tabular Data,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S025,On the Out-of-Distribution Evaluation of ML-Based End-to-End Communications Systems,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S026,Evading the Simplicity Bias: Training a Diverse Set of Models Discovers Solutions with Superior OOD Generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:low
+S027,Compositional Generalization in Emergent Communication via Metropolis-Hastings Naming Game with Transformer Language Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S028,Data Distributional Properties As Inductive Bias for Systematic Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,HIGH,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:high
+S029,Dynamic Multi-Path Learning For Out-of-Distribution Node Classification on Heterophilic Graphs,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S030,Out-of-Distribution Generalization on Graphs: A Survey,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S031,Efficient Out-of-Distribution Generalization for Pre-trained GNNs via Prompt Learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S032,Complexity Control Facilitates Reasoning-Based Compositional Generalization in Transformers,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S033,Handling Out-of-Distribution Data: A Survey,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S034,The Many Faces of Robustness: A Critical Analysis of Out-of-Distribution Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S035,A System-Level Analysis of Cross-Domain Generalization Failure in Audio Deepfake Detection,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S036,Defeating Multimodal Information Manipulation By A Web 3.0 Decentralized Identity (DID)-Based Accountability Framework,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S037,Spatial-DiT: Generalizable 3D Visuomotor Policy for Cross-Object Manipulation via Multi-Scale Spatial Fusion,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S038,Leveraging Vision-Language Models for Improving Domain Generalization in Image Classification,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:low
+S039,"Roses are Red, Violets are Blue… But Should VQA expect Them To?",HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S040,General Greedy De-Bias Learning,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S041,Handling Dual Skewness in Citywide Crime Prediction Using Personalized Graph Federated Learning,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S042,Three approaches to facilitate invariant neurons and generalization to out-of-distribution orientations and illuminations,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S043,SSGNN: Simple siamese graph neural networks for out-of-distribution generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S044,Boosting Rice Disease Diagnosis: A Systematic Benchmark of Five Deep Convolutional Neural Network Models in Precision Agriculture,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S045,A two-stage co-adversarial perturbation to mitigate out-of-distribution generalization of large-scale graph,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S046,Rethinking Graph Generalization through the Lens of Sharpness-Aware Minimization,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S047,Invariant Graph Transformer for Out-of-Distribution Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S048,Producing plankton classifiers that are robust to dataset shift,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S049,Coupled data-driven and experience-informed neural networks for prediction of pile base resistance with consideration of data limitation,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S050,MiMu: mitigating multiple shortcut learning behavior of transformers,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S051,Measuring and Improving Compositional Generalization in Text-to-SQL via Component Alignment,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S052,Accurate Classification of Pathological Whole-Slide Images for Out-of-Distribution Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S053,A Structure-aware Invariant Learning Framework for Node-level Graph OOD Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S054,I2CD: An Invertible Causal Framework for Compositional Zero-Shot Learning via Disentangle-Compose-Disentangle,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S055,Compositional Generalization for Neural Semantic Parsing via Span-level Supervised Attention,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:low
+S056,PTAN: Principal Token-aware Adjacent Network for Compositional Temporal Grounding,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S057,Towards Domain-Aware Stable Meta Learning for Out-of-Distribution Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S058,Bayesian Cross-Modal Alignment Learning for Few-Shot Out-of-Distribution Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S059,Spectral Distribution Alignment for Enhanced Generalization in Regression,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S060,Improving Group Robustness on Spurious Correlation via Evidential Alignment,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S061,COGS: A Compositional Generalization Challenge Based on Semantic Interpretation,LOW,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S062,Exploring Compositional Generalization (in COGS/ReCOGS_pos) by Transformers using Restricted Access Sequence Processing (RASP),HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S063,SLOG: A Structural Generalization Benchmark for Semantic Parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S064,Grounded Graph Decoding Improves Compositional Generalization in Question Answering,HIGH,LOW,UNCLEAR,HIGH,HIGH,LOW,HIGH,D1:high;D2:default;D3:default;D4:high;D5:high;D6:low
+S065,Towards Understanding the Relationship between In-context Learning and Compositional Generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:low
+S066,Compositional Generalization in Semantic Parsing: Pre-training vs. Specialized Architectures,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S067,Learning to Substitute Components for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S068,Span-based Semantic Parsing for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S069,Harnessing Dataset Cartography for Improved Compositional Generalization in Transformers,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S070,Learning to Substitute Spans towards Improving Compositional Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S071,On the Compositional Generalization Gap of In-Context Learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S072,Representational Homomorphism Predicts and Improves Compositional Generalization In Transformer Language Model,LOW,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:default;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S073,Compositional Generalization in Dependency Parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S074,Revisiting Iterative Back-Translation from the Perspective of Compositional Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S075,*-CFQ: Analyzing the Scalability of Machine Learning on a Compositional Task,HIGH,LOW,N/A,LOW,HIGH,UNCLEAR,HIGH,D1:high;D2:default;D3:na;D4:low;D5:high;D6:default
+S076,Compositional Generalization Requires Compositional Parsers,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S077,Think before you act: A simple baseline for compositional generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S078,How Do In-Context Examples Affect Compositional Generalization?,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S079,Hierarchical Poset Decoding for Compositional Generalization in Language,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S080,Unlocking Compositional Generalization in Pre-trained Models Using Intermediate Representations,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S081,Compositional Generalization by Learning Analytical Expressions,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S082,Compositional Generalization in Multilingual Semantic Parsing over Wikidata,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S083,Data Factors for Better Compositional Generalization,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S084,Iterative Decoding for Compositional Generalization in Transformers,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:low
+S085,Structural generalization in COGS: Supertagging is (almost) all you need,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S086,When Can Transformers Ground and Compose: Insights from Compositional Generalization Benchmarks,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S087,Compositional Generalization for Natural Language Interfaces to Web APIs,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S088,Revisiting the Compositional Generalization Abilities of Neural Sequence Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S089,Measuring Compositional Generalization: A Comprehensive Method on Realistic Data,LOW,LOW,UNCLEAR,LOW,HIGH,LOW,HIGH,D1:default;D2:default;D3:default;D4:low;D5:high;D6:low
+S090,Recursive Decoding: A Situated Cognition Approach to Compositional Generation in Grounded Language Understanding,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S091,Compositional Generalization without Trees using Multiset Tagging and Latent Permutations,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S092,Compositional Generalization via Neural-Symbolic Stack Machines,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S093,Compositional Generalization for Primitive Substitutions,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S094,Uncontrolled Lexical Exposure Leads to Overestimation of Compositional Generalization in Pretrained Models,HIGH,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:high;D3:default;D4:default;D5:high;D6:high
+S095,A Neuroscience-Inspired Dual-Process Model of Compositional Generalization,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S096,Compositional generalization in a deep seq2seq model by separating syntax and semantics,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S097,Compositional Generalization and Decomposition in Neural Program Synthesis,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S098,Learning to Recombine and Resample Data for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S099,Can Transformers Jump Around Right in Natural Language? Assessing Performance Transfer from SCAN,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S100,Learning to Generalize Compositionally by Transferring Across Semantic Parsing Tasks,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S101,Compositional generalization in semantic parsing with pretrained transformers,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S102,CNNs found to jump around more skillfully than RNNs: Compositional generalization in seq2seq convolutional networks,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S103,SUBS: Subtree Substitution for Compositional Semantic Parsing,HIGH,HIGH,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:high;D3:na;D4:high;D5:high;D6:default
+S104,On graph-based reentrancy-free semantic parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S105,LAGr: Labeling Aligned Graphs for Improving Systematic Generalization in Semantic Parsing,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S106,ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S107,ReaSCAN: Compositional Reasoning in Language Grounding,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S108,Compositional Semantic Parsing with Large Language Models,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S109,A Benchmark for Systematic Generalization in Grounded Language Understanding,LOW,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S110,Compositional generalization through meta sequence-to-sequence learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S111,Inducing Transformer's Compositional Generalization Ability via Auxiliary Sequence Prediction Tasks,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S112,Laziness Is a Virtue When It Comes to Compositionality in Neural Semantic Parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S113,Early-Warning Signals of Grokking via Loss-Landscape Geometry,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S114,A Compositional Framework for Open-ended Intelligence,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S115,Sequence-Level Mixed Sample Data Augmentation,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S116,Does Data Scaling Lead to Visual Compositional Generalization?,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S117,Towards Robust Out-of-Distribution Generalization Bounds via Sharpness,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S118,Aggregation Hides Out-of-Distribution Generalization Failures from Spurious Correlations,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S119,Learning to Think in Physics: Breaking Shortcut Learning in Scientific Diffusion via Representation Alignment,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S120,"Sharp analysis of out-of-distribution error for ""importance-weighted"" estimators in the overparameterized regime",HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S121,Principled Out-of-Distribution Generalization via Simplicity,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S122,Using Interventions to Improve Out-of-Distribution Generalization of Text-Matching Recommendation Systems,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S123,Correct-N-Contrast: A Contrastive Approach for Improving Robustness to Spurious Correlations,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S124,CausPref: Causal Preference Learning for Out-of-Distribution Recommendation,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S125,Fishr: Invariant Gradient Variances for Out-of-Distribution Generalization,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S126,Early Period of Training Impacts Adaptation for Out-of-Distribution Generalization: An Empirical Study,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S127,Invariance Principle Meets Information Bottleneck for Out-of-Distribution Generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S128,What Matters to You? Towards Visual Representation Alignment for Robot Learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S129,Benign Overfitting in Out-of-Distribution Generalization of Linear Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S130,Can Agents Run Relay Race with Strangers? Generalization of RL to Out-of-Distribution Trajectories,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S131,Diagnosing Generalization Failures from Representational Geometry Markers,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S132,Making Foresight Actionable: Repurposing Representation Alignment in World Action Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S133,Low-rank Orthogonal Subspace Intervention for Generalizable Face Forgery Detection,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S134,Incorporating Surrogate Gradient Norm to Improve Offline Optimization Techniques,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S135,Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in Robot Instruction Following,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S136,DSL: Understanding and Improving Softmax Recommender Systems with Competition-Aware Scaling,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S137,VLA^2: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S138,Navigating High Dimensional Concept Space with Metalearning,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S139,Evaluating Reward Model Generalization via Pairwise Maximum Discrepancy Competitions,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S140,FedSoup: Improving Generalization and Personalization in Federated Learning via Selective Model Interpolation,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S141,Neural Language of Thought Models,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S142,GA-Field: Geometry-Aware Vehicle Aerodynamic Field Prediction,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S143,Robust OOD Graph Learning via Mean Constraints and Noise Reduction,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S144,Improving Latent Generalization Using Test-time Compute,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S145,Frequency Bias and OOD Generalization in Neural Operators under a Variable-Coefficient Wave Equation,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S146,SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S147,TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S148,Predictable GRPO: A Closed-Form Model of Training Dynamics,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S149,Can Large Reasoning Models do Analogical Reasoning under Perceptual Uncertainty?,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S150,Compositional Generalization via Semantic Tagging,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S151,Systematic Generalization with Edge Transformers,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,LOW,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:low
+S152,Compositional Generalization from First Principles,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S153,Improving Compositional Generalization in Semantic Parsing,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S154,A Survey on Compositional Generalization in Applications,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S155,Composition-Incremental Learning for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S156,Toward Compositional Generalization in Object-Oriented World Modeling,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S157,On Evaluating Multilingual Compositional Generalization with Translated Datasets,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S158,Learning Algebraic Recombination for Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S159,Scalable Evaluation and Neural Models for Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S160,Improving Compositional Generalization in Math Word Problem Solving,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S161,Improving Compositional Generalization in Classification Tasks via Structure Annotations,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S162,Compositional Generalization with Tree Stack Memory Units,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S163,Reinforcement Learning for Compositional Generalization with Outcome-Level Optimization,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S164,Provable Compositional Generalization for Object-Centric Learning,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S165,A General Theory for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S166,Disentangled Sequence to Sequence Learning for Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S167,"Concepts, Properties and an Approach for Compositional Generalization",HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S168,Consistency of Compositional Generalization across Multiple Levels,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S169,On Provable Length and Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S170,On Compositional Generalization of Neural Machine Translation,HIGH,LOW,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:default;D3:default;D4:high;D5:high;D6:high
+S171,DiNeR: a Large Realistic Dataset for Evaluating Compositional Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S172,The Mystery of Compositional Generalization in Graph-based Generative Commonsense Reasoning,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S173,Simple and effective data augmentation for compositional generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S174,Unobserved Local Structures Make Compositional Generalization Hard,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S175,"Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S176,When and How Does CLIP Enable Domain and Compositional Generalization?,HIGH,HIGH,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:high;D3:na;D4:default;D5:unclear;D6:default
+S177,When does compositional structure yield compositional generalization? A kernel theory,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S178,Syntax-Guided Transformers: Elevating Compositional Generalization and Grounding in Multimodal Environments,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S179,Diverse Demonstrations Improve In-context Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S180,Exploring the Compositional Generalization in Context Dependent Text-to-SQL Parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S181,Improving Compositional Generalization Using Iterated Learning and Simplicial Embeddings,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S182,Towards Compositional Generalization of LLMs via Skill Taxonomy Guided Data Synthesis,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S183,Are Object-Centric Representations Better At Compositional Generalization?,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S184,A Short Survey of Systematic Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S185,Compositional Generalization for Multi-label Text Classification: A Data-Augmentation Approach,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S186,Exploring Continual Learning of Compositional Generalization in NLI,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S187,Layer-wise Representation Fusion for Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S188,Block-Operations: Using Modular Routing to Improve Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S189,Local Mechanisms of Compositional Generalization in Conditional Diffusion,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S190,A Theoretical Analysis of Compositional Generalization in Neural Networks: A Necessary and Sufficient Condition,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S191,The Role of Linguistic Priors in Measuring Compositional Generalization of Vision-Language Models,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S192,Compositional Generalization and Natural Language Variation: Can a Semantic Parsing Approach Handle Both?,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S193,Enhancing Compositional Generalization via Compositional Feature Alignment,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S194,Evaluating Morphological Compositional Generalization in Large Language Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S195,Evaluating the Impact of Model Scale for Compositional Generalization in Semantic Parsing,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S196,Real-World Compositional Generalization with Disentangled Sequence-to-Sequence Learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S197,Improving Compositional Generalization with Latent Structure and Data Augmentation,HIGH,UNCLEAR,N/A,HIGH,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:low
+S198,Compositional Generalization in Image Captioning,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S199,Can LLM find the green circle? Investigation and Human-guided tool manipulation for compositional generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S200,Multi-Sourced Compositional Generalization in Visual Question Answering,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S201,Analyzing the Inner Workings of Transformers in Compositional Generalization,LOW,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:default;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S202,Improving Systematic Generalization Through Modularity and Augmentation,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S203,NeSyCoCo: A Neuro-Symbolic Concept Composer for Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S204,Compositional Generalization via Forced Rendering of Disentangled Latents,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S205,ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S206,The Impact of Depth on Compositional Generalization in Transformer Language Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S207,Compositional Generalization Across Distributional Shifts with Sparse Tree Operations,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:low
+S208,Compositional generalization through abstract representations in human and artificial neural networks,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S209,Systematic Generalization in Language Models Scales with Information Entropy,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S210,How Modular Should Neural Module Networks Be for Systematic Generalization?,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S211,Pretraining Frequency Predicts Compositional Generalization of CLIP on Real-World Tasks,HIGH,LOW,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:default;D3:na;D4:default;D5:unclear;D6:default
+S212,SPOR: A Comprehensive and Practical Evaluation Method for Compositional Generalization in Data-to-Text Generation,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S213,Neural-Symbolic Recursive Machine for Systematic Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,LOW,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:low
+S214,An explainable transformer circuit for compositional generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S215,Finding needles in a haystack: Sampling Structurally-diverse Training Sets from Synthetic Data for Compositional Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S216,Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S217,Differentiable Tree Operations Promote Compositional Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S218,Factorization Regret mediates compositional generalization in latent space,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S219,Counterfactual Recipe Generation: Exploring Compositional Generalization in a Realistic Scenario,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S220,Swing-by Dynamics in Concept Learning and Compositional Generalization,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S221,ExeDec: Execution Decomposition for Compositional Generalization in Neural Program Synthesis,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:unclear;D6:default
+S222,Compositional Generalization for Data-to-Text Generation,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S223,What Drives Compositional Generalization? The Importance of Continuous Training Objectives in Visual Generative Models,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S224,Compositional Generalization with Grounded Language Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S225,Scaling can lead to compositional generalization,UNCLEAR,LOW,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:default;D3:na;D4:default;D5:unclear;D6:default
+S226,Sequential Compositional Generalization in Multimodal Models,HIGH,HIGH,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:high;D3:na;D4:default;D5:high;D6:default
+S227,Learning to Compose Representations of Different Encoder Layers towards Improving Compositional Generalization,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S228,Systematic Generalization on gSCAN with Language Conditioned Embedding,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S229,On a Built-in Conflict between Deep Learning and Systematic Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S230,What Do You Need for Compositional Generalization in Diffusion Planning?,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S231,D3: Data Diversity Design for Systematic Generalization in Visual Question Answering,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S232,RoboHiMan: A Hierarchical Evaluation Paradigm for Compositional Generalization in Long-Horizon Manipulation,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S233,AGEL-Comp: A Neuro-Symbolic Framework for Compositional Generalization in Interactive Agents,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S234,ViLPAct: A Benchmark for Compositional Generalization on Multimodal Human Activities,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S235,Policy Architectures for Compositional Generalization in Control,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:unclear;D6:default
+S236,Transformer Module Networks for Systematic Generalization in Visual Question Answering,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S237,Realistic Evaluation of Model Merging for Compositional Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S238,Learning Algebraic Representation for Systematic Generalization in Abstract Reasoning,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S239,From Reasoning Traces to Reusable Modules: Understanding Compositional Generalization in Language Model Reasoning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S240,Systematic Generalization: What Is Required and Can It Be Learned?,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S241,Learning by Analogy: A Causal Framework for Composition Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S242,Provably Efficient Causal Model-Based Reinforcement Learning for Systematic Generalization,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S243,Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S244,Impact of Pretraining Word Co-occurrence on Compositional Generalization in Multimodal Models,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S245,Systematic Generalization in Neural Networks-based Multivariate Time Series Forecasting Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S246,Seen to Unseen: Exploring Compositional Generalization of Multi-Attribute Controllable Dialogue Generation,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S247,Latent Compositional Representations Improve Systematic Generalization in Grounded Question Answering,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S248,Measuring Systematic Generalization in Neural Proof Generation with Transformers,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:default
+S249,Systematic Generalization on gSCAN: What is Nearly Solved and What is Next?,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S250,COVR: A test-bed for Visually Grounded Compositional Generalization with real images,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S251,Revisit Systematic Generalization via Meaningful Learning,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S252,ClassicLogic: A Knowledge-Driven Benchmark of Classic Puzzle Games for Evaluating Compositional Generalization,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S253,HICO-DET-SG and V-COCO-SG: New Data Splits for Evaluating the Systematic Generalization Performance of Human-Object Interaction Detection Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S254,"InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S255,Rule Extrapolation in Language Models: A Study of Compositional Generalization on OOD Prompts,UNCLEAR,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:unclear;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S256,Language Plays a Pivotal Role in the Object-Attribute Compositional Generalization of CLIP,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S257,The Devil is in the Detail: Simple Tricks Improve Systematic Generalization of Transformers,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S258,Inductive Biases for Zero-shot Systematic Generalization in Language-informed Reinforcement Learning,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S259,Three approaches to facilitate DNN generalization to objects in out-of-distribution orientations and illuminations,HIGH,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S260,Siamese recurrent networks learn first-order logic reasoning and exhibit zero-shot compositional generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S261,"A Minimalist Dataset for Systematic Generalization of Perception, Syntax, and Semantics",HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S262,CLOSURE: Assessing Systematic Generalization of CLEVR Models,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S263,Towards Systematic Generalization for Power Grid Optimization Problems,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S264,Understanding out-of-distribution accuracies through quantifying difficulty of test samples,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S265,SyGNS: A Systematic Generalization Testbed Based on Natural Language Semantics,LOW,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:default;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S266,Challenges in Generalization in Open Domain Question Answering,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S267,Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S268,ORCHARD: A Benchmark For Measuring Systematic Generalization of Multi-Hierarchical Reasoning,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S269,Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S270,ATOM-Bench: A Real-World Benchmark for Atomic Skills and Compositional Generalization in Manipulation Policies,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S271,The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S272,Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S273,Systematic Generalization and Emergent Structures in Transformers Trained on Structured Tasks,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S274,Mixture Data for Training Cannot Ensure Out-of-distribution Generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default
+S275,Low-Frequency Shortcuts in Texture-Driven Visual Learning,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:default
+S276,What makes Models Compositional? A Theoretical View: With Supplement,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S277,Robust Subtask Learning for Compositional Generalization,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,D1:unclear;D2:unclear;D3:default;D4:default;D5:high;D6:high
+S278,Compositional Generalization in Spoken Language Understanding,HIGH,UNCLEAR,N/A,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:high
+S279,Causal Structural Hypothesis Testing and Data Generation Models,UNCLEAR,UNCLEAR,N/A,UNCLEAR,UNCLEAR,UNCLEAR,UNCLEAR,D1:unclear;D2:unclear;D3:na;D4:default;D5:unclear;D6:default
+S280,Adversarial Reward Auditing for Active Detection and Mitigation of Reward Hacking,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S281,Probing the Probes: Methods and Metrics for Concept Alignment,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S282,Learning to optimize: a primer and a benchmark,HIGH,UNCLEAR,UNCLEAR,HIGH,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:default;D4:high;D5:high;D6:high
+S283,Vision Transformer Neural Architecture Search for Out-of-Distribution Generalization: Benchmark and Insights,HIGH,UNCLEAR,N/A,HIGH,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:na;D4:high;D5:high;D6:default
+S284,Sparse Mixture-of-Experts for Compositional Generalization: Empirical Evidence and Theoretical Foundations of Optimal Sparsity,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S285,Compositional generalization by factorizing alignment and translation,HIGH,UNCLEAR,N/A,UNCLEAR,HIGH,HIGH,HIGH,D1:high;D2:unclear;D3:na;D4:default;D5:high;D6:high
+S286,Neural Collapse Inspired Feature Alignment for Out-of-Distribution Generalization,HIGH,UNCLEAR,UNCLEAR,UNCLEAR,HIGH,UNCLEAR,HIGH,D1:high;D2:unclear;D3:default;D4:default;D5:high;D6:default

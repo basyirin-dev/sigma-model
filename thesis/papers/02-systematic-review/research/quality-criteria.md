@@ -2,7 +2,7 @@
 
 **Document type:** Reference — feeds Phase 8 (Quality Assessment)
 **Purpose:** Adapted risk of bias tool for ML experiments on the σ-trap, incorporating 6 domains with signaling questions, scoring rubrics, and embedded extraction forms
-**Status:** Draft
+**Status:** Finalized (2026-08, Phase 8 — see Finalization Notes §12)
 **Cross-references:** `review-methodology.md` §3 (ROB tools), `extraction-template.md` §5 (IRR protocol), `meta-analysis-feasibility.md` §8 (SAP, sensitivity analyses), `empirical-evidence.md` (evidence gaps)
 
 ---
@@ -554,3 +554,26 @@ Before finalizing a RoB assessment:
 >
 > **Overall**: **LOW RISK OF BIAS**
 > **Decision**: Include in primary meta-analysis
+
+---
+
+## 12. Finalization Notes (Phase 8, 2026-08)
+
+**12.1 Amendment — N/A domains (§7.1 algorithm).** A domain is judged **N/A** when the
+study type cannot answer its signalling questions — in this corpus, Domain 3
+(Confounding) for studies without an intervention-vs-baseline comparison (no
+`train_regime_sigma`/`baseline_regime` evidence in the charted data). N/A domains are
+excluded from the §7.1 overall algorithm (overall = worst of the *applicable* domains).
+
+**12.2 Amendment — assessment protocol (§8).** The Phase 8 run implements the tool with a
+single human rater + a scripted judgment engine over the Phase 7 charted fields
+(`research/charting/rob_score.py` + `rob-rules.yaml`), per the phase-doc
+Operationalizations (single-rater protocol, substitution of the dual-reviewer
+requirement). IRR is reported as script-vs-manual agreement (Cohen's κ where
+computable) on the 5-pilot and the 20% validation sample (57 studies). The §8 protocol
+remains normative for future runs with two extractors.
+
+**12.3 Amendment — Unclear semantics (§0.4).** "Unclear" = the charted field is blank
+(information genuinely not recorded in extraction) and the full-text check on the
+verification sample did not resolve it; explicit FALSE/negative charted values are
+**High** triggers, not Unclear.

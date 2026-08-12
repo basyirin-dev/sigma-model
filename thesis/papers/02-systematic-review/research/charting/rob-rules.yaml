@@ -1,0 +1,89 @@
+# Paper 02 — Phase 8: σ-ROB judgment rules (ADR-0004 config-driven)
+# Loaded by charting/rob_score.py. Maps charted fields -> domain judgments.
+# Rubrics: research/quality-criteria.md §1.3–§6.3; overall §7.1 (+ N/A amendment 12.1).
+#
+# Condition syntax: each rule is an OR-list of AND-groups.
+#   field  : study-level charted column (charted-data-main.csv)
+#   in     : value must be one of the listed strings ("" = blank)
+#   computed: precomputed aggregate (see rob_score.py COMPUTED)
+#   eq     : computed flag must equal this boolean
+# Judgments are evaluated in order: na -> high -> unclear -> low.
+
+domains:
+  D1:
+    name: Reproducibility
+    default: LOW
+    high:
+      - - {field: reproducibility_score, in: [low]}
+      - - {field: code_available, in: ["FALSE"]}
+      - - {field: n_seeds_reported, in: ["FALSE"]}
+    unclear:
+      - - {field: reproducibility_score, in: [partial]}
+      - - {field: code_available, in: [""]}
+      - - {field: n_seeds_reported, in: [""]}
+    low: []
+  D2:
+    name: Benchmark Validity
+    default: LOW
+    high:
+      - - {field: ood_split_type, in: ["none"]}
+      - - {field: data_leakage_check, in: [confirmed_yes, suspected]}
+    unclear:
+      - - {field: ood_split_type, in: [""]}
+      - - {field: data_leakage_check, in: [not_addressed]}
+      - - {field: ood_difficulty_metric, in: ["FALSE", ""]}
+    low: []
+  D3:
+    name: Confounding
+    default: UNCLEAR
+    na:
+      - - {computed: interventional, eq: false}
+        - {field: baseline_regime, in: [""]}
+    unclear:
+      - - {field: baseline_regime, in: [""]}
+    low: []
+  D4:
+    name: Reporting Completeness
+    default: UNCLEAR
+    high:
+      - - {field: n_seeds_reported, in: ["FALSE"]}
+    low:
+      - - {field: n_seeds_reported, in: ["TRUE"]}
+        - {field: ci_reported, in: ["TRUE"]}
+        - {field: error_bars_reported, in: ["TRUE"]}
+        - {field: limitations_stated, in: ["TRUE"]}
+        - {field: open_questions_stated, in: ["TRUE"]}
+    unclear: []
+  D5:
+    name: Statistical Rigor
+    default: UNCLEAR
+    high:
+      - - {computed: no_uq, eq: true}
+      - - {field: n_seeds_reported, in: ["FALSE"]}
+      - - {computed: seeds_lt3, eq: true}
+      - - {field: sig_test_reported, in: ["FALSE"]}
+    unclear:
+      - - {field: ci_reported, in: [""]}
+      - - {computed: seeds_val_blank, eq: true}
+      - - {computed: sig_no_corr, eq: true}
+      - - {computed: no_effect_size, eq: true}
+    low:
+      - - {field: ci_reported, in: ["TRUE"]}
+        - {computed: seeds_ge3, eq: true}
+        - {field: sig_test_reported, in: ["TRUE"]}
+        - {computed: has_effect_size, eq: true}
+  D6:
+    name: External Validity
+    default: UNCLEAR
+    high:
+      - - {computed: multi_bench, eq: false}
+        - {field: limitations_stated, in: ["FALSE"]}
+    unclear: []
+    low:
+      - - {computed: multi_bench, eq: true}
+        - {computed: multi_arch, eq: true}
+        - {field: limitations_stated, in: ["TRUE"]}
+
+overall:
+  # worst of applicable (N/A excluded); §7.1 + amendment 12.1
+  order: [HIGH, UNCLEAR, LOW]
