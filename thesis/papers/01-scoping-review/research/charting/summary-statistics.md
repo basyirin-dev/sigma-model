@@ -118,3 +118,31 @@
 | 5 | 146 |
 
 Figures: `figures/` (bar charts, timeseries-year.png, treemap-subdomains.png)
+
+
+---
+
+## Phase 9 supplement (Task 9.1)
+
+See `phase9-summary.md` + `figures/phase9-*` (venue distribution, subdomain x year, conditional co-occurrence, methodology x subdomain, formal vs conceptual, venue-country proxy). Figures exported publication-ready as PDF/SVG with PNG previews.
+
+
+---
+
+## Phase 9 supplement (Task 9.1)
+
+See `phase9-summary.md` + `figures/phase9-*` (venue distribution, subdomain x year, conditional co-occurrence, methodology x subdomain, formal vs conceptual, venue-country proxy). Figures exported publication-ready as PDF/SVG with PNG previews.
+
+
+---
+
+## Phase 9 supplement (Task 9.1)
+
+See `phase9-summary.md` + `figures/phase9-*` (venue distribution, subdomain x year, conditional co-occurrence, methodology x subdomain, formal vs conceptual, venue-country proxy). Figures exported publication-ready as PDF/SVG with PNG previews.
+
+
+---
+
+## Phase 9 supplement (Task 9.1)
+
+See `phase9-summary.md` + `figures/phase9-*` (venue distribution, subdomain x year, conditional co-occurrence, methodology x subdomain, formal vs conceptual, venue-country proxy). Figures exported publication-ready as PDF/SVG with PNG previews.

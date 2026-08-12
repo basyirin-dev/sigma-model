@@ -120,3 +120,51 @@ Wang, G., & Murfet, D. (2026). Patterning: The Dual of Interpretability. *arXiv 
 Watanabe, S. (2009). *Algebraic Geometry and Statistical Learning Theory*. Cambridge University Press.
 
 Zou, A., Phan, L., Chen, S., et al. (2023). Representation engineering: A top-down approach to AI transparency. *arXiv preprint arXiv:2310.01405*.
+---
+
+# Phase 9 Update — Charted-Data Evidence (Task 9.3, 2026-08)
+
+*Evidence base: `research/charting/charted-data.csv` (1,268 papers), `research/quality-scores.csv` (Phase 8), theme statistics (`research/charting/theme-stats.md`, `research/thematic-synthesis.md`). Phrase counts are over the charted text fields (`key_contribution`, `relevance_justification`, `open_questions`); "formal" = `formal_framework` ≠ none or `mathematical_formalism` ≠ none.*
+
+## 9.3.1 Gap evidence from the charted data
+
+**Subdomain coverage.** Value alignment dominates at 1,143/1,268 (90.1%); ethics 671 (52.9%), robustness 605 (47.7%), capabilities 450 (35.5%), interpretability 390 (30.8%), governance 320 (25.2%), mesa-optimization 82 (6.5%), other 39 (3.1%). Coverage is highly skewed: the two thesis-critical subdomains (mesa-optimization, governance) are the least represented.
+
+**Methodological evidence.** `methodology` is `not_applicable` for 787/1,268 (62.1%); experiments 367 (28.9%), simulation 58, analysis 33, theory 18, case study 5. By publication type, 526 (41.5%) are empirical. Formal-framework coverage: 490/1,268 (38.6%) have `formal_framework` ≠ none (decision theory 77, information theory 100, game theory 55, dynamical systems 18, other 330); `mathematical_formalism` ≠ none on 736 (58.0%) (optimization 555, probability 446, logic 233, ODEs 11). **Dynamical-systems formalism appears in 18 papers (1.4%) and ODEs in 11 (0.9%)** — the formal language of the σ-trap thesis is nearly absent.
+
+**Temporal evidence.** No subdomain is in decline over 2015–2026; growth is recent and steep (911/1,268 = 71.8% from 2024–2026). Governance rose 7 → 100 papers (2018 → 2026), interpretability 2 → 135, mesa-optimization 2 → 24 (low but persistent). Emerging themes: deceptive alignment/sycophancy (2 → 11), internal representation structure (8 → 39).
+
+## 9.3.2 Status of Phase 0.5 gaps (G1–G5) against charted data
+
+| Gap | Status | Charted-data evidence |
+|---|---|---|
+| G1 — no formal axiomatisation of representation structure as safety property | **CONFIRMED (refined)** | 203 papers (16.0%) discuss internal representations, of which 115 (56.7%) carry a formal framework (vs 38.6% corpus baseline) — so formalism exists but is not safety-axiomatic; only 16 use "internal representation" literally; schema/compositionality vocabulary absent. |
+| G2 — no unified CG ↔ alignment formalism | **CONFIRMED** | "compositional generalization" in 48 papers, "sigma-trap" in 102; intersection only 8; "alignment failure" ∩ CG = 6; "goal misgeneralization" 0; "misgeneralization" 6; "compositionality" 0. The two literatures do not connect in the corpus. |
+| G3 — no dynamical-systems safety treatment | **CONFIRMED** | `dynamical systems` framework in 18 papers (1.4%); ODEs formalism in 11 (0.9%). |
+| G4 — schema theory absent | **CONFIRMED** | `discusses_schema_coherence` = related concept for 90 papers (7.1%); literal "schema coherence" in 15; "schema" in 50. |
+| G5a — capabilities-vs-alignment informal | **Partially confirmed** | Capabilities/control theme: 200 papers, 43.5% tier A+B (high-credibility strand); no formal derivation vocabulary present ("simplicity prior"/"simplicity bias": 0 papers). |
+| G5b — no shared information-theoretic measure | **Confirmed** | Information-theory framework in 100 papers (7.9%) — measure exists per-literature, but no shared CG↔alignment measure (see G2 intersection evidence). |
+| G5c — forgetting-to-alignment disconnect | **Confirmed** | Continual-learning/forgetting vocabulary in 3 papers. |
+| G5d — no joint CG+alignment protocol | **Confirmed** | CG ∩ σ-trap = 8 papers; no joint-benchmark vocabulary. |
+| G5e — value compositionality unstudied | **Confirmed** | "compositionality" appears in 0 papers. |
+| G5f — no simplicity-prior safety result | **Confirmed** | "simplicity prior"/"simplicity bias" in 0 papers. |
+
+No Phase 0.5 gap was refuted; the charted data confirms the gap structure and sharpens it.
+
+## 9.3.3 Newly discovered gaps
+
+| # | New gap | Evidence |
+|---|---|---|
+| NG1 | Evaluation infrastructure is the weakest large strand | Evaluation/measurement theme = 281 papers (22.2%), second-largest theme, but only 17.8% tier A+B; benchmark leakage ("evaluation chronoeffect", P864) flagged in the corpus. |
+| NG2 | Governance is the least empirical subdomain | Governance: 88/320 (27.5%) empirical methods vs value alignment 380/1,143 (33.2%); governance claims rest on conceptual/sociotechnical analysis. |
+| NG3 | Deceptive-alignment detection is tiny despite high stakes | Theme = 33 papers (2.6%) but 42.4% tier A+B; 14 of 33 tier B. High-quality, under-served. |
+
+## 9.3.4 Prioritisation and mapping to subsequent papers
+
+Priority by thesis relevance (per the Phase 0.5 dependency topology): **G4 + G3** (foundational — the formal language), then **G1, G2** (inherited), then NG1–NG3 (quality of the field's evidence base).
+
+| Gap | Feeds | How |
+|---|---|---|
+| G1, G2, G3, G4 | **Paper 02** (Systematic Review — σ-trap) | Defines the σ-trap corpus (587-paper signal, 46.3%; CG subset = 48 papers); the review's synthesis targets the unlinked joints (CG ∩ σ-trap = 8). |
+| G3, G4, G5b, G5e, G5f | **Paper 03** (Conceptual — Σ-Align) | The formalization work: schema as structured singularity (G4+G3), shared measure (G5b), value compositionality (G5e), simplicity prior (G5f). |
+| NG1, NG2, NG3, G5a | **Paper 09** (Final Scoping Review) | Synthesis narrative on where the field's evidence base is thin (evaluation quality, governance empirics, deceptive-alignment detection) and where credibility concentrates. |

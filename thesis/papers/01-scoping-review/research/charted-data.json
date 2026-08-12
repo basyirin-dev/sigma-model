@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "n_papers": 1268,
- "exported_at": "2026-08-11",
+ "exported_at": "2026-08-12",
  "fields": [
   "paper_id",
   "title",
@@ -41,7 +41,7 @@
    "subdomains": "value alignment",
    "formal_framework": "none",
    "mathematical_formalism": "none",
-   "key_contribution": "P001 is a pilot? no, but let's test flag on unknown field",
+   "key_contribution": "Contemporary survey of AI alignment: systematic synthesis of the misalignment problem space, alignment approaches and open challenges",
    "methodology": "not_applicable",
    "discusses_internal_representations": "no",
    "discusses_schema_coherence": "no",
