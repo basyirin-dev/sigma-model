@@ -143,3 +143,49 @@ Locked before drafting; governs the whole manuscript.
 - [x] CC.1.1 (PRISMA-ScR checklist complete), CC.2.1 (structured abstract), CC.3.2/CC.3.3 (thesis coherence) satisfied
 - [x] Anti-JAIR guardrail pass recorded (clarity, one claim, incremental significance)
 - [x] CC.5.3 satisfied — phase completion committed
+
+---
+
+## Journal-ready revision — research-tips alignment (2026-08, follow-up)
+
+The first draft was expanded to a journal-ready length and audited against the
+research-tips reference (topic selection, review types, gaps, critical review, PEER,
+funnel introduction, VRGC problem statement, 5-part abstract, tenses, original
+contribution, citation density, exhibits limit, per-section word bands).
+
+**Length decision**: journal-ready manuscript (ACM Computing Surveys), target
+~6,500-7,500 main-text words; thesis-chapter-length duplication avoided (the accepted
+paper becomes the chapter). Final: **~6,586 words** main text (Intro 1,124; Background
+621; Methods 1,407; Results 1,708; Discussion 1,233; Conclusion 493), abstract 221
+words (5 parts), 3 figures + 2 main-text tables (+1 appendix table = 5 main exhibits),
+**50 references**.
+
+**Changes**:
+- Abstract: added Objectives component + eligibility criteria (2015-2026, English,
+  peer-reviewed and grey) — 5-part structure.
+- Introduction: explicit review-type justification (scoping over systematic/narrative
+  for a mapping question over heterogeneous grey+peer-reviewed evidence); VRGC problem
+  statement sharpened; existing-reviews comparison expanded to per-review critique.
+- Background: critical PEER restructure (unsettled terminology, wave-framing
+  assumptions, lens validity caveats), each paragraph motivating an SQ.
+- Methods: 25 charted fields enumerated in six groups (PRISMA-ScR item 11); 2015
+  start-date and English-only justified; dedup/calibration detail; data-quality and
+  missing-data subsection; GRADE-informed synthesis note.
+- Results: SQ1-SQ5 mapping paragraph; subdomain characteristics table; methodology-
+  by-subdomain and credibility-by-evidence-basis paragraphs; theme-credibility
+  inversion observation; consolidated exhibits (fig-corpus-overview, fig-time-series).
+- Discussion: per-review comparison (Triantafyllopoulos, Shen, Gyevnar, prior AGI-risk
+  reviews); "Answers to the Review Questions" subsection; expanded limitations (8
+  items); comparative-value closing.
+- Conclusion: verbatim RQ restatement + answer; four conclusions; Recommendations
+  subsection (what/who/how, each tied to a finding).
+- References: 32 → 52 bib entries, 50 cited (landmarks: CEV, corrigibility,
+  mesa-optimisation, goal misgeneralisation, ELK, sleeper agents, natural abstractions,
+  alignment survey, mechanistic-interpretability review; methods: Egger, DerSimonian-
+  Laird, trim-and-fill, GRADE).
+
+**Verification**: `make paper01` clean — 0 LaTeX errors, 0 undefined citations, 0
+undefined references; abstract 221 ≤ 250; exhibits 5 main-text; 50 bibliography items;
+tense audit (Methods/Results past, Discussion/Conclusion present); research-tips
+checklist items mapped and satisfied (deferred to Phase 11: PRISMA-ScR checklist page
+column real page numbers at submission).
