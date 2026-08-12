@@ -14,13 +14,13 @@
 \begin{document}
 
 \begin{abstract}
-\textbf{Background:} \todo{Write background}
+\textbf{Background:} AGI safety has grown into a large, fast-moving field, but existing reviews are fragmented across subdomains and under-cover the preprint and forum literature where much of the field develops. Whether the compositional-generalisation and alignment literatures are connected remains open.
 
-\textbf{Methods:} \todo{Write methods}
+\textbf{Methods:} We conducted a PRISMA-ScR scoping review of AGI safety research (2015--2026) across six databases plus grey literature. Of 5,191 records identified, 2,867 were screened and 1,268 studies were included. Structured fields were charted with a hybrid extraction pipeline (validation ICC 0.930); credibility was scored on an eight-dimension rubric (validation kappa 0.924--1.000); 13 axial themes were derived by open coding.
 
-\textbf{Results:} \todo{Write results}
+\textbf{Results:} The corpus grew sharply (71.8\% from 2024--2026). Value alignment dominated (90.1\% of studies); mesa-optimization was thin (6.5\%). Only 25.0\% of studies reached the high-credibility tiers; evaluation work was large (281 studies) but low-credibility (17.8\%). Internal representations were discussed by 16.0\% of studies, but ``compositional generalization'' appeared in 48, ``goal misgeneralization'' in none, and sigma-trap-relevant studies (46.3\%) rarely intersected compositional-generalisation work (8 studies).
 
-\textbf{Conclusions:} \todo{Write conclusions}
+\textbf{Conclusions:} The AGI safety landscape is mapped: the ingredients of a schema-coherence account are present in the literature, the connecting joints are missing, and the evidence base is uneven. These findings bound and motivate the thesis papers that follow.
 \end{abstract}
 
 \maketitle
@@ -31,23 +31,47 @@
 \section{Introduction}\label{sec:introduction}
 % ============================================================
 
-\todo{Write introduction}
+Artificial general intelligence (AGI) safety has moved from a niche philosophical concern to a central problem of computer science and technical governance. Frontier systems now exhibit broad, domain-transcending capabilities, and the hazards associated with those capabilities---misaligned objectives, deceptive behaviour, and out-of-distribution (OOD) failure---are no longer hypothetical~\cite{amodei2016concrete,bostrom2014superintelligence,russell2019human}. The field's founding analyses framed the core difficulty as a control problem: how to build systems that pursue objectives reliably aligned with human values even as their capabilities exceed human-level performance on an expanding range of tasks~\cite{bostrom2014superintelligence}. Two decades of subsequent work have produced a large and rapidly growing body of research on this problem, spanning value alignment, interpretability, robustness, governance, and the study of emergent failure modes~\cite{hendrycks2023overview}.
 
-This scoping review follows the PRISMA extension for Scoping Reviews (PRISMA-ScR) methodology~\cite{tricco2018prismascr} (see Appendix~\ref{app:prisma-scr} for the completed 22-item checklist).
+AGI safety is distinct from narrow AI safety. Narrow AI safety addresses the immediate harms of deployed, task-specific systems---algorithmic bias, privacy violations, and adversarial vulnerability. AGI safety addresses the structural and existential hazards of highly generalised, autonomous, and self-improving systems, including inner misalignment, corrigibility failure, and loss of control~\cite{hendrycks2023overview,russell2019human}. The distinction matters because the failure modes, the formal tools, and the governance regimes differ: a system that must remain aligned across an unbounded distribution of novel tasks poses questions that do not arise for a single-purpose classifier~\cite{russell2019human}.
+
+The empirical literature that now constitutes the bulk of AGI safety research is organised around a shared observation: models trained to optimise in-distribution performance frequently fail---sometimes catastrophically---when deployed out of distribution. Shortcut learning, compositional generalisation failure, and domain shift have each been studied extensively and largely independently~\cite{geirhos2020shortcut,lake2018generalization,hupkes2023taxonomy,keysers2020measuring,liu2021towards,zhou2023domain}. A parallel literature studies misalignment as a failure of the same kind: a model optimising a proxy objective, or a goal that generalises poorly beyond its training environment~\cite{amodei2016concrete}. Whether these two families of failure---compositional generalisation failure and alignment failure---are connected, and if so how, remains open.
+
+Existing reviews of this landscape are real but fragmented. Recent systematic and scoping reviews have covered value alignment in advisory AI~\cite{triantafyllopoulos2026value}, bidirectional human-AI alignment~\cite{shen2024bidirectional}, and broad AI safety with an explicit focus on peer-reviewed sources~\cite{gyevnar2025aisafety}. Their coverage is uneven: preprint and forum literature---where much of the field actually develops---is under-represented, terminology is unsettled, and no review integrates the safety subdomains, the formal methods used across them, and the treatment of internal representation structure into a single map~\cite{gyevnar2025aisafety,shen2024bidirectional,triantafyllopoulos2026value}. A scoping review that spans this full landscape is therefore needed now, before the field's growth outpaces the ability of any single survey to organise it.
+
+This review is one component of a thesis-by-publication project organised around a specific thesis: that compositional generalisation failure and alignment failure are manifestations of the same underlying phenomenon, the ``$\sigma$-trap''---a low-schema-coherence equilibrium in which a model internalises surface statistics rather than the generative structure of its training distribution~\cite{amsyar2026sigma}. Schema coherence ($\sigma_A$) refers to the degree to which a model's internal representations reflect the latent generative structure of the data~\cite{huvard2023notion}. The present review does not attempt to establish this thesis; its contribution is deliberately narrower and incremental: to map the AGI safety landscape as it currently exists, to quantify how the literature distributes across subdomains, methodologies, and credibility levels, and to document the gaps---including the treatment of internal representation structure---that a schema-coherence framework would need to address~\cite{amsyar2026sigma}.
+
+The research question guiding this scoping review, specified prospectively in a registered protocol (https://osf.io/ntuh2/), is: \emph{How is the landscape of AGI safety research structured in terms of subdomains, formal methods, and the treatment of internal representation structure, and what gaps exist that a schema-coherence framework could address?} The review is organised around five sub-questions: (SQ1) what taxonomy of subdomains does the literature exhibit; (SQ2) how are formal methods and mathematical formalisms distributed across the field; (SQ3) how is internal representation structure treated in safety research; (SQ4) how do the compositional generalisation and alignment literatures relate; and (SQ5) what gaps exist that a schema-coherence framework could address. Five objectives map onto these sub-questions: to produce a subdomain taxonomy, a catalogue of methods, a structure-safety map, a gap analysis, and a thesis-aligned evidence map.
+
+The remainder of this paper is organised as follows. Section~\ref{sec:background} defines the core concepts and traces the development of the field. Section~\ref{sec:methods} describes the scoping-review methodology, following the PRISMA extension for Scoping Reviews (PRISMA-ScR)~\cite{tricco2018prismascr} (see Appendix~\ref{app:prisma-scr} for the completed 22-item checklist). Section~\ref{sec:results} presents the results: a descriptive numerical summary, subdomain-by-subdomain findings, cross-cutting themes, and an analysis of gaps. Section~\ref{sec:discussion} interprets the findings, and Section~\ref{sec:conclusion} concludes.
 
 % ============================================================
 \section{Background}\label{sec:background}
 % ============================================================
 
-\todo{Write background}
+AGI safety research is organised around a small set of recurring concepts. \emph{Value alignment} is the problem of ensuring that an AI system's objectives and behaviour are consistent with human values~\cite{russell2019human,amodei2016concrete}. \emph{Interpretability} concerns understanding what a model computes and why, from individual features to full circuits~\cite{huvard2023notion}. \emph{Robustness} concerns performance under distribution shift, adversarial input, and other departures from the training distribution~\cite{zhou2023domain,liu2021towards}. \emph{Capabilities and control} concern the relationship between a system's competence and the ability to keep it aligned as it becomes more capable~\cite{bostrom2014superintelligence}. \emph{Mesa-optimisation} concerns learned optimisers inside models whose objectives may diverge from the training objective~\cite{amodei2016concrete}. \emph{Governance} concerns the institutional and regulatory structures around AI development. \emph{Ethics} concerns the normative foundations of these problems, including whose values are aligned and how they are elicited.
+
+The field has developed in identifiable waves. Early work in the 2000s was theoretical, formalising goal structures such as Coherent Extrapolated Volition and the control problem~\cite{bostrom2014superintelligence}. The deep-learning era of the 2010s reframed safety around concrete, empirical failure modes such as reward hacking, safe exploration, and distributional shift~\cite{amodei2016concrete}. A third wave, from roughly 2021 onward, turned to the internal structure of models: eliciting latent knowledge, mechanistic interpretability, and the study of deceptive alignment~\cite{huvard2023notion}. This progression---from external behaviour to internal structure---is the historical context in which schema coherence and the $\sigma$-trap arise as organising concepts~\cite{amsyar2026sigma}.
+
+Schema coherence ($\sigma_A$) is the degree to which a model's internal representations reflect the latent generative structure of the data. The $\sigma$-trap is the failure regime in which training dynamics suppress schema coherence, producing models that fit the surface statistics of their training distribution and therefore fail to generalise compositionally or remain aligned under distribution shift~\cite{amsyar2026sigma}. The thesis underlying this project treats compositional generalisation failure and alignment failure as two faces of this single phenomenon. The present review uses schema coherence and the $\sigma$-trap as an analytic lens for organising the literature---asking where the ingredients of this thesis are present in the corpus and where the connecting joints are missing---without claiming that the thesis is established by the review itself~\cite{amsyar2026sigma,huvard2023notion}.
 
 % ============================================================
 \section{Methods}\label{sec:methods}
 % ============================================================
 
-\todo{Write methods}
+This scoping review was conducted and reported in accordance with the PRISMA extension for Scoping Reviews (PRISMA-ScR)~\cite{tricco2018prismascr,arksey2005scoping,levac2010scoping}, with a protocol registered prospectively on the Open Science Framework (https://osf.io/ntuh2/).
 
-The screening process will be documented using a PRISMA flow diagram (Figure~\ref{fig:prisma-flow}), reporting numbers of records identified, screened, assessed for eligibility, and included in the review.
+\subsection{Protocol and Registration}
+The protocol (including the research question, objectives, eligibility criteria, search strategy, and analysis plan) was registered on the Open Science Framework prior to the search (https://osf.io/ntuh2/).
+
+\subsection{Eligibility Criteria}
+Studies were eligible if they addressed AGI safety as defined in Section~\ref{sec:background}---that is, the structural, technical, or existential hazards of highly generalised systems---rather than narrow AI safety alone. The Population-Concept-Context framework was used: the population is the AI/AGI research community; the concept is AGI safety frameworks, approaches, and failure modes; the context is peer-reviewed and grey literature published between 2015 and 2026. Studies were required to be in English. Records that addressed only narrow AI safety concerns (algorithmic bias, privacy, post-hoc interpretability of narrow systems) without a structural AGI-safety component were excluded, as were records outside the date range or not in English.
+
+\subsection{Information Sources and Search Strategy}
+We searched six databases: Scopus, Web of Science, ACM Digital Library, IEEE Xplore, arXiv, and PhilPapers, supplemented by Google Scholar, OpenAlex, and Semantic Scholar for grey literature and citation tracking. Database-specific Boolean strings are provided in full in Appendix~\ref{app:search-strings}. The search covered the period 2015--2026 and was executed in July--August 2026.
+
+\subsection{Screening}
+Records were screened in three stages: title screening, abstract screening, and full-text assessment. Screening was performed by the single author using Rayyan~\cite{ouzzani2016rayyan} for title and abstract screening. Figure~\ref{fig:prisma-flow} summarises the flow of records. A total of 5,191 records were identified from databases and supplementary sources; after removing 2,324 duplicates, 2,867 records were screened at title and abstract level, and 1,589 were excluded. The remaining 1,278 records proceeded to full-text assessment, of which 10 were excluded (3 for not addressing AGI-safety structure, 7 for no AGI-safety subdomain engagement), leaving 1,268 included studies.
 
 \begin{figure}[htbp]
 \centering
@@ -57,26 +81,181 @@ The screening process will be documented using a PRISMA flow diagram (Figure~\re
 \label{fig:prisma-flow}
 \end{figure}
 
+\subsection{Data Extraction}
+A 25-field charting schema was developed, piloted on five studies, and finalised (available in the supplementary materials). Structured fields (publication type, subdomains, methodology, formal framework, mathematical formalism, evidence basis, and sigma-trap relevance) were charted by a hybrid pipeline: scripted heuristic extraction from full texts, followed by a large-language-model (LLM)-assisted extraction pass with audit-trail merging of revisions. A 20\% random sample (254 studies) was independently re-extracted by a second implementation to estimate inter-extractor agreement: Cohen's kappa for categorical fields and an intraclass correlation coefficient (ICC) of 0.930 on the continuous sigma-relevance rating.
+
+\subsection{Quality Assessment}
+Quality was assessed as a credibility signal, not an exclusion criterion: no study was removed from the review on quality grounds. Each study was scored on eight weighted dimensions (D1--D8) covering venue tier, author authority, formal-methods rigour, empirical reproducibility, argumentative rigour, citation uptake, transparency, and prior-literature engagement, using a paper-type-adjusted rubric adapted from QUADAS-2 and related instruments~\cite{whiting2011quadas2,sterne2016robinsi,moons2025probastaialpha}. Scripted rules scored venue and citation-based dimensions; an LLM-assisted rating pass scored the remaining dimensions, with a 20\% independent-rater validation sample yielding per-dimension kappa values of 0.924--1.000 and a composite ICC of 0.947. Composite scores were mapped to tiers A--E (A = 2, B = 315, C = 826, D = 123, E = 2). A sensitivity analysis compared conclusions on the full set against the high-credibility subset (tiers A+B, n = 317): the prevalence of the sigma-trap signal was 46.3\% in the full set and 50.2\% in the subset, indicating that the headline conclusions are robust to credibility filtering.
+
+\subsection{Synthesis}
+The synthesis was descriptive and thematic, consistent with the scoping-review methodology~\cite{campbell2020swim}. Descriptive statistics summarised the corpus by publication type, subdomain, year, venue, methodology, and formal content. Thematic analysis proceeded by open coding of the charted text fields, grouping open codes into 13 axial themes, and mapping themes to the thesis-relevant constructs of schema coherence and the sigma-trap. Theme membership was operationalised as keyword rules over the charted fields for reproducibility; theme sizes are indicative, and the full charted data and rules are provided as supplementary material.
+
 % ============================================================
 \section{Results}\label{sec:results}
 % ============================================================
 
-\todo{Write results}
+\subsection{Descriptive Overview}
+The review included 1,268 studies. The corpus grew sharply over time: annual counts rose from 1 in 2015 to 386 in 2025 (290 in 2026, a partial year), with 911 studies (71.8\%) published in 2024--2026; 14 studies had no recorded year. By publication type, empirical studies were most common (526; 41.5\%), followed by other (375; 29.6\%), position papers (131; 10.3\%), theoretical studies (123; 9.7\%), reviews (85; 6.7\%), and opinion pieces (28; 2.2\%).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\columnwidth]{figures/bar-publication-type.png}
+\caption{Distribution of included studies by publication type (n = 1,268).}
+\Description{Bar chart of publication types.}
+\label{fig:pubtype}
+\end{figure}
+
+Venue coverage was fragmented: arXiv was the single largest venue (228 studies; 18.0\%), and the remainder was distributed across 573 raw venue strings, with a long tail of low-frequency venues accounting for 50.4\% of the corpus. By venue category, preprints (18.0\%), conference proceedings (12.3\%), and journals (9.1\%) dominated (Figure~\ref{fig:venue}). Under a venue-country proxy, 48.4\% of studies were attributable to a publisher or association headquarters country: US-associated venues accounted for 151 studies (11.9\%), Springer Nature (Germany) for 145 (11.4\%), and arXiv as a global platform for 228 (18.0\%).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/phase9-venue-distribution.pdf}
+\caption{Venue distribution (normalized, top 15 plus other).}
+\Description{Bar chart of venue distribution.}
+\label{fig:venue}
+\end{figure}
+
+Methodologically, 787 studies (62.1\%) had no applicable empirical methodology recorded; experiments were reported in 367 (28.9\%), simulations in 58 (4.6\%), analyses in 33 (2.6\%), theory in 18 (1.4\%), and case studies in 5 (0.4\%). Under a permissive definition (any formal framework or mathematical formalism reported), 810 studies (63.9\%) were formal; 490 (38.6\%) named a formal framework (information theory 100, decision theory 77, game theory 55, dynamical systems 18) and 736 (58.0\%) named a mathematical formalism (optimization 555, probability 446, logic 233, ODEs 11). The share of formal content grew over time (Figure~\ref{fig:formal}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/phase9-formal-conceptual-year.pdf}
+\caption{Formal vs.\ conceptual studies by year. Formal = formal framework or mathematical formalism reported.}
+\Description{Stacked bar chart of formal vs conceptual studies by year.}
+\label{fig:formal}
+\end{figure}
+
+Subdomain coverage was highly skewed (multi-select; Figure~\ref{fig:subdomains}): value alignment 1,143 (90.1\%), ethics 671 (52.9\%), robustness 605 (47.7\%), capabilities 450 (35.5\%), interpretability 390 (30.8\%), governance 320 (25.2\%), mesa-optimization 82 (6.5\%), and other 39 (3.1\%). All subdomains grew over 2015--2026, with most growth concentrated after 2023 (Figure~\ref{fig:subdomains-year}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\columnwidth]{figures/bar-subdomains.png}
+\caption{Distribution of included studies by AGI safety subdomain (multi-select).}
+\Description{Bar chart of subdomain counts.}
+\label{fig:subdomains}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/phase9-subdomains-year.pdf}
+\caption{Subdomain focus over time (multi-select counts).}
+\Description{Line chart of subdomain counts by year.}
+\label{fig:subdomains-year}
+\end{figure}
+
+Quality assessment scored all 1,268 studies (median composite 2.15, IQR 1.94--2.35): 2 tier-A, 315 tier-B, 826 tier-C, 123 tier-D, and 2 tier-E studies, giving a high-credibility subset (tiers A+B) of 317 studies (25.0\%); 125 studies (9.9\%) were flagged low-credibility (Figure~\ref{fig:quality}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/quality-composite-hist.png}
+\caption{Distribution of composite credibility scores (D1--D8 rubric).}
+\Description{Histogram of composite credibility scores.}
+\label{fig:quality}
+\end{figure}
+
+Of the 1,268 studies, 587 (46.3\%) were sigma-trap relevant per the charted signal (core relevance $\geq$ 4: 510 studies, 40.2\%).
+
+\subsection{Results by Subdomain}
+\textbf{Value alignment} (1,143; 90.1\%) was the ubiquitous framing, co-occurring with every named subdomain in at least 92\% of cases. Its literature grew from 1 study in 2015 to 354 in 2025; 380 studies (33.2\%) reported empirical methods. Dominant themes were proxy-reward failures (e.g., reward hacking~\cite{P688}), preference and value learning, and ethics. Credibility was at baseline (25.7\% tier A+B).
+
+\textbf{Ethics} (671; 52.9\%) was the second-largest subdomain, with a strong moral-philosophy strand; growth from 0 studies in 2015--2016 to 212 in 2025. It was among the least empirical subdomains (210 studies; 31.3\% empirical). Credibility was above baseline (30.1\%).
+
+\textbf{Robustness} (605; 47.7\%) comprised security and adversarial work (jailbreak, poisoning, prompt injection) and proxy-reward robustness; growth from 6 in 2017 to 200 in 2025; 236 studies (39.0\%) empirical. Robustness coupled strongly with the reward-hacking theme (Jaccard 0.200). Credibility was 28.8\%.
+
+\textbf{Capabilities and control} (450; 35.5\%) covered the control problem, corrigibility (20 studies), and existential risk; growth from 1 in 2015 to 137 in 2025. It had the highest credibility among major subdomains (28.4\% tier A+B, including both tier-A studies).
+
+\textbf{Interpretability} (390; 30.8\%) covered mechanistic analysis, feature attribution, and probing; growth from 2 in 2017 to 135 in 2026; 155 studies (39.7\%) empirical. Its theme-level credibility was the lowest of any theme (11.7\% tier A+B); subdomain-level credibility was 25.4\%.
+
+\textbf{Governance} (320; 25.2\%) covered oversight, regulation, and sociotechnical framing (e.g., principal-agent analyses of misalignment~\cite{P007} and incentive-compatibility formulations~\cite{P128}). It was the least empirical subdomain (88 studies; 27.5\%), yet had the highest subdomain-level credibility (35.0\% tier A+B), with the governance theme at 41.7\%.
+
+\textbf{Mesa-optimization} (82; 6.5\%) was the smallest thesis-critical subdomain: 29 studies (35.4\%) empirical, 2 in 2018 rising to 24 in 2026. Deceptive-alignment and sycophancy work concentrated here and carried high credibility (42.4\% tier A+B), e.g., monitoring proposals for deceptive alignment~\cite{P1097}.
+
+\subsection{Cross-Cutting Themes}
+Thematic analysis grouped open codes into 13 axial themes (Table~\ref{tab:themes}). All themes spanned at least three subdomains; the strongest couplings define four clusters (Figure~\ref{fig:cooccurrence}).
+
+\begin{table}[htbp]
+\centering
+\caption{The 13 axial themes: membership and credibility. RLHF = reinforcement learning from human feedback; DPO = direct preference optimization.}
+\label{tab:themes}
+\begin{tabular}{lrr}
+\toprule
+Theme & Studies & \% tier A+B \\
+\midrule
+Ethics, fairness \& human values & 333 & 31.2 \\
+Evaluation, benchmarks \& measurement & 281 & 17.8 \\
+Proxy reward \& reward hacking & 206 & 17.5 \\
+Capabilities, control \& existential risk & 200 & 43.5 \\
+Compositional generalization \& $\sigma$-trap & 178 & 31.5 \\
+Formal methods \& mathematical theory & 173 & 44.5 \\
+Robustness, security \& adversarial & 166 & 26.5 \\
+Preference \& value learning (RLHF/DPO) & 146 & 21.9 \\
+Governance, incentives \& sociotechnical & 120 & 41.7 \\
+Human-AI interaction \& collaborative alignment & 117 & 24.8 \\
+Internal representation structure \& schema & 104 & 23.1 \\
+Interpretability \& mechanistic analysis & 77 & 11.7 \\
+Deceptive alignment \& sycophancy & 33 & 42.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \emph{reward-hacking cluster} linked proxy-reward and reward-hacking work (206 studies), preference and value learning (146), and robustness (166): the strongest couplings in the corpus (Jaccard 0.214 and 0.200). Proxy misspecification was the fastest-growing theme, from 4 studies in 2023 to 83 in 2025.
+
+The \emph{thesis cluster} linked internal representation structure and schema (104 studies) with compositional generalization and the $\sigma$-trap (178; coupling 0.195). Representation structure was discussed operationally---features, activations, latents---rather than axiomatically: 203 studies (16.0\%) discussed internal representations, but only 16 used the phrase ``internal representation'' literally.
+
+The \emph{mechanism cluster} coupled interpretability and mechanistic analysis (77 studies) with the thesis cluster (0.153). The \emph{society cluster} coupled governance (120) with capabilities and control (200; 0.151) and ethics (333; 0.121).
+
+\subsection{Gaps}
+The charted data confirmed all five gaps identified in the project's earlier gap analysis and surfaced three new ones. (i) \emph{Internal representation structure as a safety property} (G1): 203 studies discussed internal representations, of which 115 carried a formal framework, but the vocabulary of structure---``schema'' in 50 studies, ``compositionality'' in 0---was not axiomatised as a safety property. (ii) \emph{Compositional-generalisation-to-alignment bridge} (G2): ``compositional generalization'' appeared in 48 studies, ``goal misgeneralization'' in 0, and the intersection with $\sigma$-trap language was 8 studies. (iii) \emph{Dynamical-systems safety treatment} (G3): 18 studies (1.4\%) used a dynamical-systems framework. (iv) \emph{Schema theory} (G4): 90 studies (7.1\%) discussed a concept related to schema coherence; 15 used the phrase literally. (v) \emph{Secondary gaps} (G5): continual-learning/forgetting vocabulary appeared in 3 studies, ``simplicity prior'' in 0. Three new gaps emerged: evaluation infrastructure quality (the evaluation theme, 281 studies, had 17.8\% tier A+B and included critiques of static-benchmark leakage~\cite{P864}), governance empirics (27.5\% empirical), and deceptive-alignment detection (33 studies, 2.6\% of the corpus despite 42.4\% tier A+B).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/phase9-subdomain-cooccurrence.pdf}
+\caption{Conditional subdomain co-occurrence: P(subdomain B $\mid$ subdomain A).}
+\Description{Heatmap of conditional subdomain co-occurrence.}
+\label{fig:cooccurrence}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\columnwidth]{figures/phase9-themes-year.pdf}
+\caption{Thematic focus over time (keyword-rule membership).}
+\Description{Line chart of theme membership by year.}
+\label{fig:themes-year}
+\end{figure}
 
 % ============================================================
 \section{Discussion}\label{sec:discussion}
 % ============================================================
 
-\todo{Write discussion}
+This scoping review mapped the landscape of AGI safety research as represented by 1,268 studies published between 2015 and 2026. The results describe a field that is large, recent, and skewed: 71.8\% of the corpus appeared in 2024--2026; value alignment is the near-universal framing (90.1\% of studies), while mesa-optimization, the subdomain closest to the thesis's structural failure mode, accounts for 6.5\%. The literature is dominated by empirical work (41.5\% of studies by type) that reports point estimates without uncertainty quantification, and the credibility assessment---used as a signal, not a filter---found that only 25.0\% of studies reach the high-credibility tiers.
+
+The most consequential finding for the thesis project concerns the joints between the field's parts. The corpus contains the ingredients of a schema-coherence account of safety---203 studies (16.0\%) discuss internal representations, 587 (46.3\%) are sigma-trap relevant, and 48 studies discuss compositional generalization---but the connecting vocabulary is nearly absent: ``goal misgeneralization'' appears in no charted record, ``compositionality'' in none, and the intersection between compositional-generalization and sigma-trap language is 8 studies. The two literatures that the thesis seeks to unify, compositional generalisation and alignment, do not currently speak to each other in the published record. This is consistent with the project's gap analysis (G1--G5) and with the framing of the $\sigma$-trap as a missing bridge rather than a missing component~\cite{amsyar2026sigma}.
+
+The review's findings align with, and extend, the existing review literature. Prior reviews have documented the fragmentation of the field---value alignment in advisory AI~\cite{triantafyllopoulos2026value}, bidirectional human-AI alignment~\cite{shen2024bidirectional}, broad AI safety with peer-reviewed coverage~\cite{gyevnar2025aisafety}, and risk taxonomies---but none has mapped the subdomains, formal methods, and internal-structure treatment of the field in a single corpus, and the preprint and forum literature where much of the field develops has been under-covered~\cite{gyevnar2025aisafety,shen2024bidirectional}. The present review's contribution is this integrated map, produced with a registered protocol and a reproducible charting and quality pipeline.
+
+Three findings carry implications for research practice. First, evaluation infrastructure is the largest low-credibility strand: the evaluation theme (281 studies) has the second-largest membership but only 17.8\% high-credibility tiers, and the corpus itself contains critiques of static-benchmark leakage~\cite{P864}. The field's measurement base needs methodological investment. Second, governance---the highest-credibility subdomain (35.0\%)---is the least empirical (27.5\%), meaning its claims rest on conceptual analysis; sociotechnical and principal-agent framings~\cite{P007,P128} would benefit from empirical evaluation. Third, deceptive-alignment detection is small (33 studies) despite high credibility, and mesa-optimization remains thinly covered (6.5\%) relative to its role in alignment failure.
+
+These results bound the claims the thesis can make. They do not establish the $\sigma$-trap thesis; they establish that its ingredients are present in the literature, that the joints are missing, and that the field's evidence base is uneven in ways that subsequent work---including this project's systematic review, conceptual framework, and final synthesis---must respect~\cite{amsyar2026sigma}.
+
+\subsection{Limitations}
+Several limitations qualify the findings. First, the review was conducted by a single reviewer, including screening, charting, and thematic coding; dual-reviewer screening and dual-coder thematic analysis were not performed, and the thematic synthesis relies on keyword-rule operationalizations whose sizes are indicative rather than exact. Second, the field moves quickly: the corpus is a snapshot (searches run July--August 2026) in a literature whose volume doubled in two years. Third, grey literature is included by design (arXiv alone is 18.0\% of the corpus), which broadens coverage but complicates venue-based credibility assessment. Fourth, the geographic analysis uses a venue-country proxy covering 48.4\% of studies and does not attribute authors' institutions. Fifth, quality was assessed as a credibility signal with LLM-assisted scoring; the validation sample showed strong agreement (kappa 0.924--1.000, ICC 0.947), but the approach cannot substitute for full dual-reviewer critical appraisal. Sixth, 213 studies (16.8\%) were charted on a metadata basis and contribute little free text to the thematic analysis. Finally, the LLM-assisted extraction pass introduces a tool-specific variability that the 20\% validation sample (ICC 0.930) bounds but does not eliminate.
+
+\subsection{Relation to Other Chapters}
+This review is Paper 01 of a thesis-by-publication project. Its results feed the subsequent papers as follows. Paper 02, the systematic review of the $\sigma$-trap, inherits the credibility distribution (a high-credibility subset of 317 studies and a sigma-trap signal of 587 studies) and the compositional-generalisation subset (48 studies) as its evidence base. Paper 03, the conceptual framework, targets the gaps documented here---schema theory, dynamical-systems treatment, and the CG--alignment bridge. Paper 09, the final scoping review, will report the field's evolution against this baseline and the credibility-based appraisal of its evidence base. The present review's single-reviewer and LLM-assisted methodology bounds the strength of the evidence map it provides to these papers.
 
 % ============================================================
 \section{Conclusion}\label{sec:conclusion}
 % ============================================================
 
-\todo{Write conclusion}
+This scoping review mapped the AGI safety landscape across 1,268 studies, providing the first integrated account of its subdomains, methodologies, credibility distribution, and gap structure. Four conclusions follow. First, the field is young and rapidly growing, dominated by value alignment and empirical evaluation, with credibility concentrated in theoretical and governance work. Second, the literature exhibits a structural gap that a schema-coherence framework could address: internal representation structure is discussed by a substantial minority of studies, but the connecting concepts---schema coherence, compositional generalization, goal misgeneralization---are almost entirely absent from the corpus. Third, the field's evidence base is uneven: evaluation infrastructure is large but low-credibility, governance is high-credibility but non-empirical, and deceptive-alignment detection is under-developed. Fourth, the thesis's claim that compositional generalisation failure and alignment failure are the same phenomenon is neither established nor contradicted by this corpus; the review establishes that the ingredients are present and the joints are missing.
+
+For AGI safety researchers, three priorities follow from these findings: invest in evaluation and benchmarking methodology with uncertainty quantification; build empirical bridges between governance theory and deployed systems; and develop the internal-structure measurement---schema coherence among them---that the field's own trajectory towards internal structure makes timely. The review concludes by pointing to the systematic review and conceptual framework that follow in this thesis, which take up the gaps mapped here.
+
+\section*{Funding}
+\noindent This research received no external funding.
 
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{../../../bibliography}
+\bibliography{../../../bibliography,../research/included-studies}
 
 \appendix
 
@@ -85,5 +264,58 @@ The screening process will be documented using a PRISMA flow diagram (Figure~\re
 % ============================================================
 
 \input{prisma-scr-checklist}
+
+% ============================================================
+\section{Full Search Strings}\label{app:search-strings}
+% ============================================================
+
+The search was block-structured around three concept blocks (safety, generalisation, internal structure), with database-specific strings for all six databases executed July--August 2026. The exemplar Scopus string (PRISMA-ScR item 8) was:
+
+\begin{verbatim}
+F2 (safety block) AND (generalisation block):
+TITLE-ABS-KEY ( "AI alignment" OR "AGI safety" OR "mesa-optimization"
+  OR "deceptive alignment" OR "inner alignment" OR "corrigibility"
+  OR "reward hacking" OR "value alignment" )
+AND
+TITLE-ABS-KEY ( "compositional generalization" OR "compositional generalisation"
+  OR "systematic generalization" OR "compositional learning"
+  OR "out-of-distribution generalization" OR "distribution shift" )
+
+F3 (narrow intersection): safety block AND ("compositional generalization"
+  OR "compositional generalisation" OR "systematic generalization"
+  OR "compositional learning" OR "schema" OR "schematic"
+  OR "representational structure" OR "latent structure"
+  OR "internal representation" ) AND ( "safety" OR "alignment"
+  OR "robustness" OR "interpretability" )
+\end{verbatim}
+
+The complete set of 14 strings (four query families $\times$ six databases, with syntax adaptations per database) is provided in the protocol appendix and as supplementary material (`research/search-terms.md`).
+
+% ============================================================
+\section{Included Studies and Charted Data}\label{app:studies}
+% ============================================================
+
+The 1,268 included studies are listed in full in the supplementary material (`research/included-studies.csv`, with bib entries in `research/included-studies.bib`). Table~\ref{tab:year} summarises the corpus by year of publication.
+
+\begin{table}[htbp]
+\centering
+\caption{Included studies by year of publication.}
+\label{tab:year}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+Year & 2015 & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 & 2026 \\
+\midrule
+Studies & 1 & 10 & 12 & 37 & 45 & 40 & 34 & 57 & 107 & 235 & 386 & 290 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Fourteen studies had no recorded year and are excluded from Table~\ref{tab:year}. The full charted data (25-field schema), the quality scores (D1--D8, composite, tier per study), the sigma-trap signal export, and the theme statistics are provided as supplementary material (`research/charted-data.csv`, `research/quality-scores.csv`, `research/sigma-trap-signal.csv`, `research/charting/theme-stats.md`).
+
+% ============================================================
+\section{Quality Assessment Rubric and Scores}\label{app:quality}
+% ============================================================
+
+Quality was assessed on eight weighted dimensions (D1--D8), with paper-type-adjusted weights: D1 venue/peer-review tier (0.10); D2 author authority (0.15); D3 formal-methods rigour (0.15--0.25); D4 empirical reproducibility (0.20, empirical studies only); D5 argumentative rigour (0.15--0.25); D6 citation/field uptake (0.15); D7 transparency (0.05); D8 prior-literature engagement (0.05--0.15). Composite scores map to tiers: A (3.2--4.0), B (2.4--3.19), C (1.6--2.39), D ($<$ 1.6). Tier distribution across the 1,268 included studies: A = 2, B = 315, C = 826, D = 123, E = 2; median composite 2.15 (IQR 1.94--2.35). The full rubric, per-dimension weights, and per-study scores are in the supplementary material (`research/quality-criteria.md`, `research/quality-scores.csv`). Quality was used as a credibility signal only; no study was excluded on quality grounds.
 
 \end{document}
