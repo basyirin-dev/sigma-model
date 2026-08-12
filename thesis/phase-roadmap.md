@@ -8,7 +8,7 @@ YEAR 1 (Months 1-12)          YEAR 2 (Months 13-24)       YEAR 3 (Months 25-36)
 TRACK A: Literature & Framework
 ┌──────────────────────┐      ┌──────────────────────┐
 │ 01. Scoping Review   │──────│ 03. Conceptual Paper │
-│ 🟢 Phases 0–9 done  │      │ 🟡 Pending           │
+│ 🟢 Phases 0–10 done │      │ 🟡 Pending           │
 └──────────────────────┘      └──────────────────────┘
 ┌──────────────────────┐
 │ 02. Systematic Review│
@@ -38,7 +38,7 @@ TRACK C: Synthesis                                                            �
 
 | # | Paper | Type | Phases Status | Phase Docs | Next Action |
 |:-:|:------|:-----|:--------------|:-----------|:------------|
-| 1 | Landscape of AGI Safety | Scoping Review | 🟢 Phases 0–9 done | ✅ 19 files | Begin Phase 10 (first draft) |
+| 1 | Landscape of AGI Safety | Scoping Review | 🟢 Phases 0–10 done (first draft) | ✅ 19 files | Begin Phase 11 (revision) |
 | 2 | Schema Coherence and the σ-Trap | Systematic Review | 🟡 Phases 0–8 done | ✅ 16 files | Begin Phase 9 (synthesis & meta-analysis) |
 | 3 | The Σ-Align Framework | Conceptual | ⚪ Not started | — | Wait for Review #1 and #2 |
 | 4 | σ-Coupling Interventions | Pilot Study | ⚪ Not started | — | Wait for Conceptual Paper |
@@ -52,7 +52,7 @@ TRACK C: Synthesis                                                            �
 
 | Paper | Phases |
 |:------|:-------|
-| 01-scoping-review | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`12` ✅ `99_finale` ✅ — Phases 0–9 complete |
+| 01-scoping-review | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`12` ✅ `99_finale` ✅ — Phases 0–10 complete |
 | 02-systematic-review | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`12` ✅ `99_finale` ✅ — Phases 0–8 complete |
 | 03, 04, 05, 07, 09 | ⚪ Phase documents not yet created |
 | 06, 08 | ⚪ Empirical track — no phase docs (06: complete, under JAIR review; 08: placeholder README only) |
