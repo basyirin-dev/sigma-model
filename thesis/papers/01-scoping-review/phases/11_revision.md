@@ -112,3 +112,32 @@ PRISMA numbers exact ✓; arithmetic chain verified ✓; supplementary files exi
 **Verification**: `make paper01` clean — 0 LaTeX errors, 0 undefined citations, 0 undefined references; abstract 250 words (≤250); main text ~7,347 words; per-section bands: Intro 1,010 (1,000–1,500), Methods 2,150 (1,500–2,500), Results 1,747, Discussion 1,442, Conclusion 377 (review-recommended length); tense audit passed; ruff clean on both new analysis scripts.
 
 **Deferred to Phase 12 (submission)**: real ACM metadata (journal, DOI, article number) replacing the screen-mode placeholders; final formatting pass; acknowledgements (no reviewers to thank this round).
+
+---
+
+## Execution log — third revision round (2026-08, consolidated Reviews #1-#3)
+
+Three structured reviews (FastTrack 8.5/10; referee 3.5/5; prior FastTrack 7.1/10) were consolidated; all substantive items accepted.
+
+**Voice, COI, framing (Phase A)**
+- Positionality/COI statement added after the title block (author = author of the σ-trap hypothesis; independent evidence map; mitigations cited).
+- Manuscript fully de-thesisfied: 0 standalone "thesis"/"thesis-by-publication"/"Paper 09"; Discussion+Conclusion neutral; Relation-to-Programme rewritten to the referee's PEER version; theme/search labels renamed (schema-coherence/theory-oriented).
+- Framing sentence ("ingredients of a schema-coherence account") deduplicated to 1 (Abstract); hedges propagated (heuristic-signal coding-rule caveat + RQ2 vocabulary-artefact caveat in Abstract/§4.5/§5/§6); "least-validated methods" → "lowest scores on the source-and-rigour composite used here"; inversion promoted in Abstract.
+- Intro σ-trap condensed to two sentences; RQ1-RQ3 as a numbered list.
+
+**Methods transparency (Phase B)**
+- §3.5.1 LLM pipeline disclosure (model not fixed across batches; prompts archived; validation = scripted, pipeline-internal); §3.5.2 human-adjudicated spot-check (30 records vs full texts: subdomains 80%, methodology 93%, formal framework 83%, relevance 87%) — the non-pipeline anchor.
+- §3.4 eligibility-stage screening validation: 15% seeded re-screen (n=430), kappa 0.39, abstract-stage 72%; screening ratio explained (liberal screen, 44.6% carried to full text).
+- Credibility: E-tier boundary fixed (D 0.8-1.59, E 0.0-0.79 per rubric); D1-D2/-0.16 non-redundancy; D6 time-discounting specified; AI-Forum inclusion rule specified; 2026 partial-year flagged in Results.
+
+**Gap demonstration (Phase C)**
+- Prior-review comparison table (tab:prior-reviews) — gap demonstrated, not asserted.
+- Supplementary S4 (48 CG studies), S5 (8 intersection studies, §4.5.1 characterisation: vocabulary-level, not programme-level), S6 (gaps pre-specified vs confirmed; the 3 new gaps marketed as independently discovered).
+
+**Compression/presentation (Phase D)**
+- Venue-country proxy cut from main text (supplementary pointer); §4.3 compressed ~66%; 71.8%/72.6% denominator clarified; evidence-landscape figure regenerated (legibility) + fig-graphical-abstract created; two longest sentences split.
+
+**Cleanup (Phase E)**
+- Bibliography artefacts stripped: all 1,268 "Paper 01 study; source: ..." note fields removed from included-studies.bib (provenance retained in the CSV); 0 artefacts in the compiled PDF.
+
+**Verification**: `make paper01` clean from scratch — 0 errors, 0 undefined citations, 0 undefined references; abstract 248 ≤ 250; main text ~7,909 words; exhibits 3 figures + 5 tables (4 main-text + 1 appendix; prior-review table per review request); 50 cited keys; voice audit 0 thesis references; framing sentence ×1; hedges present in Abstract; ruff clean on all new scripts (spot_check, screening_validation, evidence_landscape, search_sensitivity).
