@@ -112,8 +112,6 @@ def main() -> None:
                 }
             )
 
-    unique = [r for r in rows if r["paper_id"] in kept_ids or r["paper_id"] not in {x for g in clusters for x in [r2["paper_id"] for r2 in g]}]
-    # equivalent: keep rows not in any cluster, plus the kept row of each cluster
     cluster_ids = {r["paper_id"] for g in clusters for r in g}
     unique = [r for r in rows if r["paper_id"] not in cluster_ids] + [
         g[0] for g in clusters if g[0]["paper_id"] in kept_ids
@@ -132,14 +130,16 @@ def main() -> None:
         w.writerows(removed)
 
     with open(REPORT, "w") as f:
-        f.write(f"# Duplicate-version reconciliation — Paper 01\n\n")
+        f.write("# Duplicate-version reconciliation — Paper 01\n\n")
         f.write(f"- Raw included records: **{n}**\n")
-        f.write(f"- Version-clusters (normalized-title groups with >=1 strict pair): **{len(clusters)}**\n")
+        f.write(f"- Version-clusters (normalized-title groups with >=1 strict pair): "
+                f"**{len(clusters)}**\n")
         f.write(f"- Rows removed: **{len(removed)}**\n")
         f.write(f"- Unique studies (analysis corpus): **{len(unique)}**\n\n")
-        f.write("Rule: cluster key = normalized title; strict pair = shared author token AND year within +/-1 (or missing). ")
-        f.write("Kept row = DOI-bearing version, else fuller evidence basis, else lower paper_id. ")
-        f.write("Raw `charted-data.csv` is untouched (audit trail); all analysis now reads `charted-data-unique.csv`.\n\n")
+        f.write("Rule: cluster key = normalized title; strict pair = shared author token AND "
+                "year within +/-1 (or missing). Kept row = DOI-bearing version, else fuller "
+                "evidence basis, else lower paper_id. Raw `charted-data.csv` is untouched "
+                "(audit trail); all analysis now reads `charted-data-unique.csv`.\n\n")
         f.write(f"Full removal log: `version-removals.csv` ({len(removed)} rows).\n")
     print(f"clusters: {len(clusters)} | removed: {len(removed)} | unique: {len(unique)}")
 

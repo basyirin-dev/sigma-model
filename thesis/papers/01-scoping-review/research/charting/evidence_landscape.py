@@ -74,8 +74,8 @@ def main() -> int:
         ax.annotate(f"n={r['n']}", (r["empirical_pct"], r["ab_pct"]),
                     xytext=(8, -14), textcoords="offset points", fontsize=7,
                     color="#333")
-    ax.axhline(25.0, color="#888", lw=0.8, ls="--")
-    ax.text(2, 25.6, "corpus baseline (25.0% tier A+B)", fontsize=7, color="#555")
+    ax.axhline(24.7, color="#888", lw=0.8, ls="--")
+    ax.text(2, 25.3, "corpus baseline (24.7% tier A+B)", fontsize=8, color="#555")
     ax.set_xlabel("% empirical methods (empirical $\\leftrightarrow$ conceptual)",
                   fontsize=10)
     ax.set_ylabel("% high-credibility (tier A+B)", fontsize=10)
@@ -101,8 +101,8 @@ def main() -> int:
                     xytext=(0, 0), textcoords="offset points",
                     ha="center", va="center", fontsize=8, fontweight="bold",
                     color="white")
-    ax.axhline(25.0, color="#888", lw=0.8, ls="--")
-    ax.text(2, 25.7, "corpus baseline", fontsize=7, color="#555")
+    ax.axhline(24.7, color="#888", lw=0.8, ls="--")
+    ax.text(2, 25.3, "corpus baseline", fontsize=8, color="#555")
     ax.set_xlabel("empirical $\\rightarrow$ conceptual")
     ax.set_ylabel("high-credibility (tier A+B)")
     ax.set_xlim(-5, 105)
