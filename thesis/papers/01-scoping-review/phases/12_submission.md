@@ -69,3 +69,28 @@
 - [ ] README.md updated with submission status
 - [ ] CC.6.1, CC.6.2, CC.6.3, CC.6.4, CC.6.5, CC.6.6 satisfied
 - [ ] CC.5.3 satisfied — phase completion committed
+
+---
+
+## Phase 12 preparation notes (2026-08, from the Phase-12 addendum review)
+
+### Cover-letter bullet points (draft, for the editor)
+
+Do not mention the 9-paper thesis arc; present the paper as a standalone contribution.
+
+1. **Scale and rigour**: a PRISMA-ScR scoping review of 1,268 studies (5,191 records → 2,867 screened) across six databases plus grey literature, with a prospectively registered OSF protocol and no amendments.
+2. **The contribution**: the first credibility-stratified map of the AGI-safety landscape — an eight-subdomain taxonomy, a methods/formalism census, and the treatment of internal representation structure, in one reproducible evidence map (prior reviews map at most one of these; see Table 1).
+3. **The headline finding**: the credibility inversion — the field's largest empirical strand (evaluation, 281 studies) carries the lowest credibility (17.8% tier A+B), while its most credible strands (governance, formal theory) are the least empirical. This is field-level, not thesis-specific.
+4. **A structural gap mapped**: only 48 studies use compositional-generalisation vocabulary and 8 intersect with σ-trap language — mapped as a vocabulary finding with the appropriate caveats.
+5. **Transparency**: hybrid extraction with a human-adjudicated spot-check (80–93% agreement) and a search-sensitivity analysis showing the headline results are robust to the targeted search families.
+6. **Positioning**: schema coherence is used strictly as a heuristic search lens, not as a conclusion; the review is an evidence baseline for testing any structural account.
+
+### Phase-12 checklist additions (thesis-specific)
+
+- [ ] **Stranger test** (manual): give the manuscript to someone who knows nothing about the Σ-Align thesis; ask "does this read like an objective map of AI safety, or like an argument for a specific theory?" Apply the voice-separation edits if the latter.
+- [ ] **Preprint strategy**: if posting to arXiv while under review, ensure the arXiv abstract matches the standalone journal abstract (no thesis-chapter framing).
+- [ ] **Supplementary data schema lock**: `research/charted-data.csv` and `research/quality-scores.csv` are the ingestible base for Papers 05–07 — do not change the schema after submission without a versioned note.
+- [ ] **Placeholder metadata**: replace the ACM screen-mode placeholders (journal, DOI, article number) with real values at submission.
+- [ ] **DOI/URL verification**: verify all DOIs/URLs in the reference list resolve.
+- [ ] **Venue finalisation**: ACM Computing Surveys vs a methods/AI-safety venue (reviews split; decide before formatting).
+- [ ] **Acknowledgments**: no external reviewers to thank this round (single-author, self-funded); state "no external funding" (already in the manuscript).
