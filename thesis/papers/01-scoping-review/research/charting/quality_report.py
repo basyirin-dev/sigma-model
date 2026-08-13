@@ -34,9 +34,9 @@ import yaml
 matplotlib.use("Agg")
 
 BASE = Path(__file__).resolve().parent.parent.parent  # .../01-scoping-review/
-SCORES_CSV = BASE / "research" / "quality-scores.csv"
+SCORES_CSV = BASE / "research" / "quality-scores-unique.csv"
 CHARTED_CSV = BASE / "research" / "charting" / "charted-data.csv"
-SIGNAL_CSV = BASE / "research" / "sigma-trap-signal.csv"
+SIGNAL_CSV = BASE / "research" / "sigma-trap-signal-unique.csv"
 REPORT_MD = BASE / "research" / "charting" / "quality-report.md"
 FIG_DIR = BASE / "research" / "charting" / "figures"
 CONFIG = BASE / "research" / "charting" / "rubric-config.yaml"

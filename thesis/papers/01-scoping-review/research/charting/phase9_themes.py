@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 BASE = Path(__file__).resolve().parent.parent.parent  # .../01-scoping-review/
 CHARTED_CSV = BASE / "research" / "charting" / "charted-data.csv"
-QUALITY_CSV = BASE / "research" / "quality-scores.csv"
+QUALITY_CSV = BASE / "research" / "quality-scores-unique.csv"
 KEYWORDS_MD = BASE / "research" / "charting" / "theme-keywords.md"
 STATS_MD = BASE / "research" / "charting" / "theme-stats.md"
 FIG_DIR = BASE / "research" / "charting" / "figures"
@@ -199,7 +199,7 @@ def stage2(rows: list[dict], qual: dict[str, dict]) -> None:
            f"({', '.join(TEXT_FIELDS)}); membership = any keyword hit. "
            f"Total papers: {n}.",
            "",
-           "| Theme | cross-cutting | papers | % of 1268 | tier A | tier B | "
+           "| Theme | cross-cutting | papers | % of 1136 | tier A | tier B | "
            "tier C | tier D/E | low-cred |",
            "|---|---|---|---|---|---|---|---|---|"]
     rows_by_id = {r["paper_id"]: r for r in rows}
@@ -223,7 +223,7 @@ def stage2(rows: list[dict], qual: dict[str, dict]) -> None:
            f"Single words are token-prefix matches, phrases are substring matches. "
            f"Total papers: {n}.",
            "",
-           "| Theme | cross-cutting | papers | % of 1268 | tier A | tier B | "
+           "| Theme | cross-cutting | papers | % of 1136 | tier A | tier B | "
            "tier C | tier D/E | low-cred |",
            "|---|---|---|---|---|---|---|---|---|"]
     for label, members in theme_members.items():

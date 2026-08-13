@@ -55,4 +55,4 @@ Curated mapping used for the geographic distribution. Basis: publisher/associati
 | arXiv | preprint | global (arXiv) |
 | undefined | unassigned | unassigned |
 
-Venues not listed map to `unassigned` (tail of 500+ low-frequency venues). Coverage: rows with an assigned venue-country = 614/1268 (48.4%).
+Venues not listed map to `unassigned` (tail of 500+ low-frequency venues). Coverage: rows with an assigned venue-country = 555/1136 (48.9%).

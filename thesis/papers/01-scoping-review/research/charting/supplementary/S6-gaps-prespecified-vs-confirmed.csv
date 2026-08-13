@@ -1,9 +1,9 @@
 gap_id,gap_as_pre_specified,charted_data_confirmation,status
-G1,Internal representation structure not axiomatised as a safety property,203/1268 discuss internal representations; 115 with formal framework; 'schema' in 50; 'compositionality' in 0,confirmed
-G2,Compositional-generalisation-to-alignment bridge absent,48 studies use CG vocabulary; 8 also use sigma-trap language; 'goal misgeneralization' in 0,confirmed
-G3,No dynamical-systems treatment of safety,18/1268 (1.4%) use a dynamical-systems framework,confirmed
-G4,Schema theory absent from safety vocabulary,90/1268 (7.1%) discuss a related concept; 15 use 'schema coherence' literally,confirmed
-G5,Secondary gaps (measure, forgetting, simplicity, compositionality),continual/forgetting 3; 'simplicity prior' 0; 'compositionality' 0,confirmed
-NG1,not pre-specified,Evaluation theme 281 studies at 17.8% tier A+B; static-benchmark leakage critiques,newly discovered
-NG2,not pre-specified,Governance 27.5% empirical despite 35.0% tier A+B,newly discovered
-NG3,not pre-specified,Deceptive-alignment detection 33 studies (2.6%) at 42.4% tier A+B,newly discovered
+G1,Internal representation structure not axiomatised as a safety property,176/1136 discuss internal representations; 96 with formal framework; 'schema' in 40; 'compositionality' in 0,confirmed
+G2,Compositional-generalisation-to-alignment bridge absent,44 studies use CG vocabulary; 8 also use sigma-trap language; 'goal misgeneralization' in 0,confirmed
+G3,No dynamical-systems treatment of safety,18/1136 (1.6%) use a dynamical-systems framework,confirmed
+G4,Schema theory absent from safety vocabulary,40/1136 (3.5%) discuss a related concept; 29 use 'schema coherence' literally,confirmed
+G5,Secondary gaps (measure, forgetting, simplicity, compositionality),continual/forgetting 2; 'simplicity prior' 0; 'compositionality' 0,confirmed
+NG1,not pre-specified,Evaluation theme 251 studies at 17.9% tier A+B; static-benchmark leakage critiques,newly discovered
+NG2,not pre-specified,Governance 33.7% empirical despite 33.3% tier A+B,newly discovered
+NG3,not pre-specified,Deceptive-alignment detection 29 studies (2.6%) at 41.4% tier A+B,newly discovered

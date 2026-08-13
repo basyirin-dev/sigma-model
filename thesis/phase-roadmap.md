@@ -43,7 +43,7 @@ TRACK C: Synthesis                                                            �
 | 3 | The Σ-Align Framework | Conceptual | ⚪ Not started | — | Wait for Review #1 and #2 |
 | 4 | σ-Coupling Interventions | Pilot Study | ⚪ Not started | — | Wait for Conceptual Paper |
 | 5 | Quantifying the σ-Trap | Evidence Synthesis | ⚪ Not started | — | Build on Paper 02 Phase 9 effect-size pools (k≈27–31); venue TMLR/TDS |
-| 6 | Σ-Model: Compositional Generalisation Failure | Empirical | 🟢 Complete | — | Desk-rejected by JAIR 2026-07-15; revision per `Σ-Align/10-jair-desk-rejection-response.md` |
+| 6 | Σ-Model: Compositional Generalisation Failure | Empirical | 🟢 Complete | — | Desk-rejected by JAIR 2026-07-15; **pivot to TMLR** (P7 analysis: single-claim narrowing, 3–5 weeks, no desk-reject filter; `Σ-Align/10-jair-desk-rejection-response.md`) |
 | 7 | Mesa-Optimization via Schema Coherence | Empirical | ⚪ Not started | — | Wait for Pilot Study results; venue TMLR or ICLR/NeurIPS main track (incl. folded Paper 08 scope) |
 | 8 | ~~TBD~~ → merged into Paper 07 | Empirical | — | — | Merged 2026-08: standalone "TBD" cut; experiments fold into Paper 07 |
 | 9 | Schema-Coherent Training for Safe AGI | Final Scoping | ⚪ Not started | — | Wait for all empirical results |

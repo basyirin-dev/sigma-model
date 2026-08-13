@@ -1,9 +1,9 @@
-paper_id,title,year
-P002,The Multi-Agent Off-Switch Game,2026
-P040,A sociotechnological-system approach to AI ethics,2025
-P090,"The Bateson Game: A Model of Strategic Ambiguity, Frame Uncertainty, and Pathological Learning",2025
-P692,LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking,2026
-P794,System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI,2024
-P820,An explainable transformer circuit for compositional generalization,2025
-P827,Skills-in-Context Prompting: Unlocking Compositionality in Large Language Models,2023
-P829,Can Models Learn Skill Composition from Examples?,2024
+paper_id,title,year,subdomains,relevance_final
+P002,The Multi-Agent Off-Switch Game,2026,value alignment; robustness; governance,
+P040,A sociotechnological-system approach to AI ethics,2025,value alignment; robustness; ethics,
+P090,"The Bateson Game: A Model of Strategic Ambiguity, Frame Uncertainty, and Pathological Learning",2025,value alignment; interpretability,
+P692,LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking,2026,value alignment; capabilities,
+P794,System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI,2024,value alignment; interpretability; robustness; capabilities,
+P820,An explainable transformer circuit for compositional generalization,2025,interpretability; robustness; capabilities,
+P827,Skills-in-Context Prompting: Unlocking Compositionality in Large Language Models,2023,robustness; capabilities,
+P829,Can Models Learn Skill Composition from Examples?,2024,value alignment; robustness; ethics; capabilities,

@@ -9,7 +9,7 @@
 
 ### Task 12.1: Venue Finalization
 
-- [ ] 12.1.1: Confirm target venue (ACM Computing Surveys, arXiv pre-print, or alternative)
+- [ ] 12.1.1: Confirm target venue — **resolved 2026-08: Artificial Intelligence Review first** (P2 analysis: lowest desk-rejection risk for scoping reviews, faster handling, solo-author + LLM-pipeline friendly, Scopus/SCIE-indexed; ACM Computing Surveys as the prestige fallback accepting a ~12-month timeline)
 - [ ] 12.1.2: Download and read venue's author guidelines
 - [ ] 12.1.3: Check page/word limits, formatting requirements, abstract limits
 - [ ] 12.1.4: Check LaTeX class file and template requirements (ACM uses `acmart.cls`)

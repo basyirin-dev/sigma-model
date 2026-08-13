@@ -1,49 +1,45 @@
-paper_id,title,year
-P002,The Multi-Agent Off-Switch Game,2026
-P008,Understanding the Process of Human-AI Value Alignment,2026
-P011,Language Models’ Hall of Mirrors Problem: Why AI Alignment Requires Peircean Semiosis,2026
-P034,Towards a societal AI alignment benchmark for evaluating human–machine value convergence,2026
-P040,A sociotechnological-system approach to AI ethics,2025
-P049,FGD-Align: Pluralistic Alignment for Large Language Models via Fuzzy Group Decision-Making,2026
-P069,MIRA: An LLM-Driven Dual-Loop Architecture for Metacognitive Reward Design,2025
-P090,"The Bateson Game: A Model of Strategic Ambiguity, Frame Uncertainty, and Pathological Learning",2025
-P1208,Step-GRPO: Enhancing Reasoning Quality and Efficiency via Structured PRM-Based Reinforcement Learning,2026
-P1226,Multi-Value Alignment for LLMs via Value Decorrelation and Extrapolation,2026
-P1231,Visual Adversarial Examples Jailbreak Aligned Large Language Models,2024
-P1250,Composable Assurance for AI Alignment: A Framework for Propagating Formal Safety Properties Through MLOps,2026
-P1262,Identical Human Preference Alignment Paradigm for Text -to -Image Models,2025
-P187,Cooperative Multi-Agent Alignment via Boolean Task Algebras and Team Morality Chains,2026
-P193,Mechanistic Interpretability: A New Trend in Interpretability Research,2026
-P222,A Survey on Quality Metrics for Text-to-Image Generation,2025
-P238,"Alignment Problem as Cultural and Legal Challenge: Artificial Intelligence, Interpretability, and Searching for Sense",2025
-P260,Expectation Preference Optimization: Reliable Preference Estimation for Improving the Reasoning Capability of Large Language Models,2025
-P425,AI Assurance Needs a Systems Engineering Approach,2025
-P440,On the relevance of value system structure for automated value-aligned decision-making,2024
-P445,"Have a Break from Making Decisions, Have a MARS: The Multi-valued Action Reasoning System",2022
-P604,Integrating Quantitative and Qualitative Reasoning for Value Alignment,2022
-P634,PRISM: Perspective Reasoning for Integrated Synthesis and Mediation as a Multi-Perspective Framework for AI Alignment,2025
-P649,Corrigibility with Utility Preservation,2019
-P664,Mitigating Reward Hacking in RLHF via Advantage Sign Robustness,2026
-P679,Recontextualization Mitigates Specification Gaming without Modifying the Specification,2025
-P689,Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction,2025
-P692,LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking,2026
-P703,The AI Alignment Paradox,2024
-P719,Gradient Regularization Mitigates Reward Hacking in Reinforcement Learning from Human Feedback and Verifiable Rewards,2026
-P754,Configurable Preference Tuning with Rubric-Guided Synthetic Data,2025
-P769,Gradual Vigilance and Interval Communication: Enhancing Value Alignment in Multi-Agent Debates,2024
-P779,Multi-Value Alignment in Normative Multi-Agent System: Evolutionary Optimisation Approach,2023
-P794,System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI,2024
-P820,An explainable transformer circuit for compositional generalization,2025
-P827,Skills-in-Context Prompting: Unlocking Compositionality in Large Language Models,2023
-P829,Can Models Learn Skill Composition from Examples?,2024
-P831,Language-Guided World Models: A Model-Based Approach to AI Control,2024
-P834,WARM: On the Benefits of Weight Averaged Reward Models,2024
-P854,Action-Dependent Optimality-Preserving Reward Shaping,2025
-P869,TOWARDS FEDERATED RLHF WITH AGGREGATED CLIENT PREFERENCE FOR LLMS,2025
-P874,Clone-Robust AI Alignment,2025
-P884,AS SIMPLE AS FINE-TUNING: LLM ALIGNMENT VIA BIDIRECTIONAL NEGATIVE FEEDBACK LOSS,2025
-P889,Safe Imitation Learning via Fast Bayesian Reward Inference from Preferences,2020
-P904,Value-guided synthesis of parametric normative systems,2021
-P909,"An efficient, generalized bellman update for cooperative inverse reinforcement learning",2018
-P929,ODIN: Disentangled Reward Mitigates Hacking in RLHF,2024
-P954,Stepwise Alignment for Constrained Language Model Policy Optimization,2024
+paper_id,title,year,subdomains,relevance_final
+P002,The Multi-Agent Off-Switch Game,2026,value alignment; robustness; governance,
+P008,Understanding the Process of Human-AI Value Alignment,2026,value alignment; interpretability; governance; ethics; capabilities,
+P011,Language Models’ Hall of Mirrors Problem: Why AI Alignment Requires Peircean Semiosis,2026,value alignment; robustness; ethics,
+P034,Towards a societal AI alignment benchmark for evaluating human–machine value convergence,2026,value alignment; robustness; governance; ethics; capabilities,
+P040,A sociotechnological-system approach to AI ethics,2025,value alignment; robustness; ethics,
+P049,FGD-Align: Pluralistic Alignment for Large Language Models via Fuzzy Group Decision-Making,2026,value alignment; interpretability; robustness; governance; ethics,
+P069,MIRA: An LLM-Driven Dual-Loop Architecture for Metacognitive Reward Design,2025,value alignment; interpretability; robustness; ethics; capabilities,
+P090,"The Bateson Game: A Model of Strategic Ambiguity, Frame Uncertainty, and Pathological Learning",2025,value alignment; interpretability,
+P1208,Step-GRPO: Enhancing Reasoning Quality and Efficiency via Structured PRM-Based Reinforcement Learning,2026,value alignment,
+P1262,Identical Human Preference Alignment Paradigm for Text -to -Image Models,2025,value alignment; ethics; capabilities,
+P187,Cooperative Multi-Agent Alignment via Boolean Task Algebras and Team Morality Chains,2026,value alignment; interpretability; robustness; ethics; capabilities,
+P193,Mechanistic Interpretability: A New Trend in Interpretability Research,2026,value alignment; interpretability; robustness; ethics; capabilities,
+P222,A Survey on Quality Metrics for Text-to-Image Generation,2025,value alignment,
+P238,"Alignment Problem as Cultural and Legal Challenge: Artificial Intelligence, Interpretability, and Searching for Sense",2025,value alignment; interpretability; robustness; governance; ethics; capabilities,
+P260,Expectation Preference Optimization: Reliable Preference Estimation for Improving the Reasoning Capability of Large Language Models,2025,value alignment; capabilities,
+P425,AI Assurance Needs a Systems Engineering Approach,2025,value alignment; robustness; governance; ethics; capabilities,
+P440,On the relevance of value system structure for automated value-aligned decision-making,2024,value alignment,
+P445,"Have a Break from Making Decisions, Have a MARS: The Multi-valued Action Reasoning System",2022,interpretability; ethics,
+P604,Integrating Quantitative and Qualitative Reasoning for Value Alignment,2022,value alignment; interpretability; ethics,
+P634,PRISM: Perspective Reasoning for Integrated Synthesis and Mediation as a Multi-Perspective Framework for AI Alignment,2025,value alignment; interpretability; robustness; mesa-optimization; ethics; capabilities,
+P649,Corrigibility with Utility Preservation,2019,value alignment; robustness,
+P664,Mitigating Reward Hacking in RLHF via Advantage Sign Robustness,2026,value alignment; robustness,
+P679,Recontextualization Mitigates Specification Gaming without Modifying the Specification,2025,robustness,
+P689,Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction,2025,value alignment; robustness,
+P692,LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking,2026,value alignment; capabilities,
+P719,Gradient Regularization Mitigates Reward Hacking in Reinforcement Learning from Human Feedback and Verifiable Rewards,2026,value alignment; robustness; ethics,
+P754,Configurable Preference Tuning with Rubric-Guided Synthetic Data,2025,value alignment; interpretability; robustness; ethics; capabilities,
+P769,Gradual Vigilance and Interval Communication: Enhancing Value Alignment in Multi-Agent Debates,2024,value alignment; robustness; ethics; capabilities,
+P779,Multi-Value Alignment in Normative Multi-Agent System: Evolutionary Optimisation Approach,2023,value alignment,
+P794,System 2 Reasoning for Human-AI Alignment: Generality and Adaptivity via ARC-AGI,2024,value alignment; interpretability; robustness; capabilities,
+P820,An explainable transformer circuit for compositional generalization,2025,interpretability; robustness; capabilities,
+P827,Skills-in-Context Prompting: Unlocking Compositionality in Large Language Models,2023,robustness; capabilities,
+P829,Can Models Learn Skill Composition from Examples?,2024,value alignment; robustness; ethics; capabilities,
+P831,Language-Guided World Models: A Model-Based Approach to AI Control,2024,interpretability; robustness; governance; capabilities,
+P834,WARM: On the Benefits of Weight Averaged Reward Models,2024,value alignment; robustness; ethics; capabilities,
+P854,Action-Dependent Optimality-Preserving Reward Shaping,2025,value alignment,
+P869,TOWARDS FEDERATED RLHF WITH AGGREGATED CLIENT PREFERENCE FOR LLMS,2025,value alignment,
+P874,Clone-Robust AI Alignment,2025,value alignment; robustness,
+P884,AS SIMPLE AS FINE-TUNING: LLM ALIGNMENT VIA BIDIRECTIONAL NEGATIVE FEEDBACK LOSS,2025,value alignment,
+P889,Safe Imitation Learning via Fast Bayesian Reward Inference from Preferences,2020,value alignment; robustness,
+P904,Value-guided synthesis of parametric normative systems,2021,value alignment; governance; ethics,
+P909,"An efficient, generalized bellman update for cooperative inverse reinforcement learning",2018,value alignment,
+P929,ODIN: Disentangled Reward Mitigates Hacking in RLHF,2024,value alignment; ethics,
+P954,Stepwise Alignment for Constrained Language Model Policy Optimization,2024,value alignment; robustness,

@@ -33,7 +33,7 @@
 
 ### What to do
 
-1. Open Scopus in your browser. Click "Sign in" → "Other institution login" → search for "University of Melbourne" → authenticate via UM OpenAthens.
+1. Open Scopus in your browser. Click "Sign in" → "Other institution login" → search for "Universiti Malaya" → authenticate via UM OpenAthens.
 
 2. Go to the **Advanced Search** tab (next to the basic search bar).
 
@@ -122,7 +122,7 @@
 
 ### What to do
 
-1. Log in via UM OpenAthens. You may need to click "Institutional Sign In" and find "University of Melbourne".
+1. Log in via UM OpenAthens. You may need to click "Institutional Sign In" and find "Universiti Malaya".
 
 2. Click **Advanced Search** (under the search bar).
 

@@ -1,293 +1,293 @@
 # Theme extraction raw material — Paper 01 Phase 9 (9.2)
 
-Corpus: `key_contribution`, `relevance_justification`, `open_questions` of 1268 papers. Single-coder method; 83.4% key_contribution fill.
+Corpus: `key_contribution`, `relevance_justification`, `open_questions` of 1136 papers. Single-coder method; 83.4% key_contribution fill.
 
 ## Top unigrams (overall)
 
 | term | n |
 |---|---|
-| alignment | 2136 |
-| relevant | 1126 |
-| value | 967 |
-| reward | 764 |
-| human | 486 |
-| values | 401 |
-| hacking | 369 |
-| models | 320 |
-| framework | 299 |
-| model | 284 |
-| directly | 254 |
-| via | 234 |
-| systems | 233 |
-| safety | 232 |
-| moral | 212 |
-| llms | 209 |
-| agents | 205 |
-| learning | 201 |
-| llm | 196 |
-| behavior | 186 |
-| reasoning | 185 |
-| problem | 184 |
-| across | 177 |
-| ethical | 176 |
-| introduces | 175 |
-| mechanism | 166 |
-| failure | 149 |
-| between | 146 |
-| data | 145 |
-| rlhf | 135 |
-| evaluation | 134 |
-| optimization | 131 |
-| preference | 131 |
-| research | 130 |
-| method | 130 |
-| rather | 129 |
-| preferences | 129 |
-| into | 129 |
-| theory | 126 |
-| training | 126 |
+| alignment | 1864 |
+| relevant | 994 |
+| value | 820 |
+| reward | 645 |
+| human | 417 |
+| values | 345 |
+| hacking | 323 |
+| models | 275 |
+| framework | 263 |
+| model | 247 |
+| directly | 215 |
+| via | 208 |
+| systems | 203 |
+| moral | 201 |
+| safety | 198 |
+| agents | 182 |
+| learning | 180 |
+| llms | 175 |
+| llm | 173 |
+| problem | 169 |
+| across | 159 |
+| reasoning | 159 |
+| behavior | 159 |
+| ethical | 157 |
+| introduces | 153 |
+| mechanism | 146 |
+| failure | 138 |
+| between | 126 |
+| data | 124 |
+| rlhf | 118 |
+| only | 116 |
+| method | 114 |
+| evaluation | 114 |
+| into | 114 |
+| research | 113 |
+| theory | 112 |
+| optimization | 112 |
+| rather | 111 |
+| preferences | 110 |
+| confidence | 109 |
 
 ## Top bigrams (overall)
 
 | term | n |
 |---|---|
-| value alignment | 598 |
-| reward hacking | 323 |
-| directly relevant | 151 |
-| relevant alignment | 104 |
-| human values | 84 |
-| alignment problem | 79 |
-| low confidence | 69 |
-| tangentially relevant | 64 |
-| alignment failure | 61 |
-| revised down | 60 |
-| down seed | 60 |
-| alignment relevant | 56 |
-| compositional generalization | 53 |
-| relevant value | 52 |
-| human-ai alignment | 51 |
-| reward model | 47 |
-| reinforcement learning | 45 |
-| relevant value-alignment | 45 |
-| abstract-only low | 44 |
-| reward models | 43 |
-| relevant formal | 36 |
-| alignment robustness | 34 |
-| specification gaming | 34 |
-| human feedback | 33 |
-| llm alignment | 33 |
-| alignment research | 31 |
-| relevant reward | 31 |
-| alignment via | 30 |
-| reward functions | 29 |
-| failure modes | 29 |
-| agi safety | 27 |
-| alignment mechanism | 26 |
-| alignment method | 26 |
-| relevant reward-hacking | 25 |
-| sigma-trap mechanism | 25 |
-| preference optimization | 25 |
-| human preferences | 24 |
-| full-text basis | 24 |
-| framing alignment | 23 |
-| values relevant | 23 |
+| value alignment | 509 |
+| reward hacking | 280 |
+| directly relevant | 126 |
+| relevant alignment | 84 |
+| alignment problem | 73 |
+| human values | 71 |
+| low confidence | 64 |
+| tangentially relevant | 61 |
+| alignment failure | 55 |
+| revised down | 53 |
+| down seed | 53 |
+| alignment relevant | 50 |
+| compositional generalization | 49 |
+| human-ai alignment | 44 |
+| abstract-only low | 43 |
+| reward model | 41 |
+| reinforcement learning | 40 |
+| relevant value | 39 |
+| relevant value-alignment | 37 |
+| relevant formal | 33 |
+| reward models | 32 |
+| specification gaming | 32 |
+| alignment research | 29 |
+| failure modes | 28 |
+| llm alignment | 27 |
+| relevant reward | 27 |
+| alignment robustness | 26 |
+| alignment via | 26 |
+| human feedback | 25 |
+| alignment mechanism | 24 |
+| alignment method | 24 |
+| reward functions | 23 |
+| full-text basis | 22 |
+| framing alignment | 21 |
+| relevant reward-hacking | 21 |
+| alignment human | 21 |
+| alignment approaches | 20 |
+| highly relevant | 20 |
+| preference optimization | 20 |
+| only low | 19 |
 
 ## Top unigrams — capabilities
 
 | term | n |
 |---|---|
-| alignment | 897 |
-| relevant | 479 |
-| value | 336 |
-| reward | 336 |
-| human | 199 |
-| hacking | 197 |
-| models | 147 |
-| values | 146 |
-| framework | 145 |
-| directly | 123 |
-| model | 119 |
-| safety | 111 |
-| systems | 106 |
-| via | 103 |
-| llms | 95 |
-| agents | 95 |
-| problem | 93 |
-| llm | 93 |
-| reasoning | 89 |
-| failure | 88 |
+| alignment | 795 |
+| relevant | 433 |
+| reward | 292 |
+| value | 280 |
+| human | 176 |
+| hacking | 176 |
+| framework | 132 |
+| models | 128 |
+| values | 123 |
+| directly | 108 |
+| model | 102 |
+| safety | 100 |
+| via | 91 |
+| systems | 91 |
+| problem | 85 |
+| failure | 83 |
+| llm | 82 |
+| agents | 81 |
+| llms | 76 |
+| reasoning | 75 |
 
 ## Top unigrams — ethics
 
 | term | n |
 |---|---|
-| alignment | 1409 |
-| relevant | 714 |
-| value | 707 |
-| human | 328 |
-| values | 310 |
-| reward | 258 |
-| moral | 210 |
-| framework | 191 |
-| ethical | 173 |
-| systems | 171 |
-| models | 159 |
-| llms | 152 |
-| directly | 145 |
-| problem | 139 |
-| agents | 137 |
-| via | 126 |
-| model | 122 |
-| llm | 122 |
-| safety | 119 |
-| mechanism | 117 |
+| alignment | 1226 |
+| relevant | 631 |
+| value | 587 |
+| human | 279 |
+| values | 263 |
+| reward | 235 |
+| moral | 199 |
+| framework | 172 |
+| ethical | 154 |
+| systems | 149 |
+| models | 140 |
+| problem | 132 |
+| directly | 126 |
+| llms | 122 |
+| agents | 119 |
+| via | 114 |
+| model | 111 |
+| hacking | 107 |
+| llm | 107 |
+| mechanism | 104 |
 
 ## Top unigrams — governance
 
 | term | n |
 |---|---|
-| alignment | 667 |
-| relevant | 351 |
-| value | 283 |
-| values | 123 |
-| reward | 109 |
-| human | 107 |
-| framework | 100 |
-| safety | 94 |
-| systems | 92 |
-| directly | 80 |
-| hacking | 80 |
-| governance | 79 |
-| problem | 74 |
-| models | 71 |
-| agents | 68 |
-| llms | 68 |
-| research | 63 |
-| across | 61 |
-| via | 61 |
-| mechanism | 60 |
+| alignment | 599 |
+| relevant | 311 |
+| value | 241 |
+| values | 105 |
+| reward | 96 |
+| framework | 93 |
+| human | 93 |
+| safety | 81 |
+| systems | 80 |
+| governance | 74 |
+| hacking | 74 |
+| problem | 71 |
+| directly | 70 |
+| models | 59 |
+| llms | 58 |
+| agents | 57 |
+| mechanism | 57 |
+| across | 56 |
+| via | 54 |
+| failure | 50 |
 
 ## Top unigrams — interpretability
 
 | term | n |
 |---|---|
-| alignment | 819 |
-| relevant | 412 |
-| value | 353 |
-| reward | 202 |
-| human | 180 |
-| values | 152 |
-| framework | 128 |
-| models | 111 |
-| hacking | 107 |
-| model | 102 |
-| safety | 100 |
-| directly | 94 |
-| systems | 94 |
-| via | 87 |
-| reasoning | 83 |
-| llms | 81 |
-| llm | 80 |
-| behavior | 78 |
-| across | 77 |
-| agents | 76 |
+| alignment | 755 |
+| relevant | 380 |
+| value | 305 |
+| reward | 184 |
+| human | 163 |
+| values | 133 |
+| framework | 121 |
+| models | 104 |
+| hacking | 99 |
+| safety | 93 |
+| model | 92 |
+| directly | 84 |
+| systems | 82 |
+| via | 77 |
+| reasoning | 76 |
+| behavior | 71 |
+| llm | 70 |
+| mechanism | 69 |
+| agents | 68 |
+| llms | 67 |
 
 ## Top unigrams — mesa-optimization
 
 | term | n |
 |---|---|
-| alignment | 150 |
-| relevant | 75 |
+| alignment | 128 |
+| relevant | 67 |
 | reward | 42 |
-| models | 37 |
-| deceptive | 33 |
-| directly | 32 |
-| value | 32 |
-| model | 30 |
-| reasoning | 29 |
+| models | 33 |
 | hacking | 29 |
-| deception | 23 |
-| framework | 23 |
-| llm | 22 |
-| agents | 22 |
-| human | 21 |
-| failure | 21 |
-| research | 19 |
-| safety | 19 |
-| behavior | 17 |
-| across | 17 |
+| deceptive | 28 |
+| directly | 28 |
+| reasoning | 27 |
+| model | 25 |
+| value | 22 |
+| framework | 22 |
+| deception | 21 |
+| failure | 20 |
+| llm | 20 |
+| agents | 19 |
+| safety | 17 |
+| via | 16 |
+| misalignment | 15 |
+| human | 14 |
+| across | 14 |
 
 ## Top unigrams — other
 
 | term | n |
 |---|---|
-| alignment | 100 |
-| value | 33 |
-| off-topic | 30 |
-| revised | 22 |
-| down | 22 |
-| seed | 22 |
-| human-ai | 18 |
-| refers | 17 |
-| model | 15 |
+| alignment | 96 |
+| value | 32 |
+| off-topic | 29 |
+| revised | 21 |
+| down | 21 |
+| seed | 21 |
+| human-ai | 16 |
+| refers | 16 |
+| model | 14 |
 | content | 12 |
 | learning | 11 |
-| human | 11 |
 | design | 11 |
-| between | 11 |
+| between | 10 |
+| human | 9 |
 | here | 9 |
 | data | 9 |
 | user | 8 |
 | intent | 7 |
-| across | 7 |
 | via | 7 |
+| reward | 7 |
 
 ## Top unigrams — robustness
 
 | term | n |
 |---|---|
-| alignment | 1148 |
-| relevant | 643 |
-| reward | 506 |
-| value | 434 |
-| hacking | 259 |
-| human | 249 |
-| safety | 220 |
-| framework | 194 |
-| models | 190 |
-| values | 170 |
-| directly | 166 |
-| model | 142 |
-| via | 133 |
-| systems | 119 |
-| llms | 116 |
-| failure | 107 |
-| agents | 106 |
-| llm | 105 |
-| behavior | 102 |
-| problem | 101 |
+| alignment | 994 |
+| relevant | 566 |
+| reward | 451 |
+| value | 355 |
+| hacking | 237 |
+| human | 204 |
+| safety | 186 |
+| framework | 176 |
+| models | 159 |
+| directly | 143 |
+| values | 142 |
+| model | 128 |
+| via | 121 |
+| systems | 101 |
+| failure | 99 |
+| agents | 96 |
+| problem | 93 |
+| llms | 93 |
+| llm | 93 |
+| mechanism | 90 |
 
 ## Top unigrams — value alignment
 
 | term | n |
 |---|---|
-| alignment | 1952 |
-| relevant | 1068 |
-| value | 894 |
-| reward | 746 |
-| human | 446 |
-| values | 394 |
-| hacking | 360 |
-| models | 293 |
-| framework | 281 |
-| directly | 243 |
-| model | 236 |
-| via | 217 |
-| systems | 212 |
-| llms | 198 |
-| safety | 197 |
-| moral | 196 |
-| agents | 192 |
-| llm | 186 |
-| learning | 172 |
-| problem | 171 |
+| alignment | 1694 |
+| relevant | 939 |
+| value | 751 |
+| reward | 627 |
+| human | 380 |
+| values | 338 |
+| hacking | 314 |
+| models | 249 |
+| framework | 248 |
+| directly | 204 |
+| model | 204 |
+| via | 193 |
+| systems | 185 |
+| moral | 185 |
+| safety | 173 |
+| agents | 169 |
+| llms | 164 |
+| llm | 163 |
+| problem | 157 |
+| learning | 152 |

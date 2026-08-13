@@ -32,7 +32,7 @@ import pandas as pd  # noqa: E402
 
 BASE = Path(__file__).resolve().parent.parent.parent
 CHARTED = BASE / "research" / "charting" / "charted-data.csv"
-QUALITY = BASE / "research" / "quality-scores.csv"
+QUALITY = BASE / "research" / "quality-scores-unique.csv"
 OUT = BASE / "manuscript" / "figures"
 
 SUBS = ["value alignment", "ethics", "robustness", "capabilities",

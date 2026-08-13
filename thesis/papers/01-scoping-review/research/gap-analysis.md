@@ -124,21 +124,21 @@ Zou, A., Phan, L., Chen, S., et al. (2023). Representation engineering: A top-do
 
 # Phase 9 Update — Charted-Data Evidence (Task 9.3, 2026-08)
 
-*Evidence base: `research/charting/charted-data.csv` (1,268 papers), `research/quality-scores.csv` (Phase 8), theme statistics (`research/charting/theme-stats.md`, `research/thematic-synthesis.md`). Phrase counts are over the charted text fields (`key_contribution`, `relevance_justification`, `open_questions`); "formal" = `formal_framework` ≠ none or `mathematical_formalism` ≠ none.*
+*Evidence base: `research/charting/charted-data.csv` (1,136 unique studies from 1,268 included records; version-pair collapse per `research/charting/dedup_versions.py`), `research/quality-scores.csv` (Phase 8), theme statistics (`research/charting/theme-stats.md`, `research/thematic-synthesis.md`). Phrase counts are over the charted text fields (`key_contribution`, `relevance_justification`, `open_questions`); "formal" = `formal_framework` ≠ none or `mathematical_formalism` ≠ none.*
 
 ## 9.3.1 Gap evidence from the charted data
 
-**Subdomain coverage.** Value alignment dominates at 1,143/1,268 (90.1%); ethics 671 (52.9%), robustness 605 (47.7%), capabilities 450 (35.5%), interpretability 390 (30.8%), governance 320 (25.2%), mesa-optimization 82 (6.5%), other 39 (3.1%). Coverage is highly skewed: the two thesis-critical subdomains (mesa-optimization, governance) are the least represented.
+**Subdomain coverage.** Value alignment dominates at 1,020/1,136 (89.8%); ethics 603 (53.1%), robustness 537 (47.3%), capabilities 406 (35.7%), interpretability 360 (31.7%), governance 291 (25.6%), mesa-optimization 73 (6.4%), other 38 (3.3%). Coverage is highly skewed: the two thesis-critical subdomains (mesa-optimization, governance) are the least represented.
 
-**Methodological evidence.** `methodology` is `not_applicable` for 787/1,268 (62.1%); experiments 367 (28.9%), simulation 58, analysis 33, theory 18, case study 5. By publication type, 526 (41.5%) are empirical. Formal-framework coverage: 490/1,268 (38.6%) have `formal_framework` ≠ none (decision theory 77, information theory 100, game theory 55, dynamical systems 18, other 330); `mathematical_formalism` ≠ none on 736 (58.0%) (optimization 555, probability 446, logic 233, ODEs 11). **Dynamical-systems formalism appears in 18 papers (1.4%) and ODEs in 11 (0.9%)** — the formal language of the σ-trap thesis is nearly absent.
+**Methodological evidence.** `methodology` is `not_applicable` for 717/1,136 (63.1%); experiments 320 (28.2%), simulation 52, analysis 30, theory 13, case study 4. By publication type, 459 (40.4%) are empirical. Formal-framework coverage: 428/1,136 (37.7%) have `formal_framework` ≠ none (decision theory 64, information theory 77, game theory 50, dynamical systems 18); `mathematical_formalism` ≠ none on 650 (57.2%) (optimization 486, probability 393, logic 207, ODEs 11). **Dynamical-systems formalism appears in 18 papers (1.6%) and ODEs in 11 (1.0%)** — the formal language of the σ-trap thesis is nearly absent.
 
-**Temporal evidence.** No subdomain is in decline over 2015–2026; growth is recent and steep (911/1,268 = 71.8% from 2024–2026). Governance rose 7 → 100 papers (2018 → 2026), interpretability 2 → 135, mesa-optimization 2 → 24 (low but persistent). Emerging themes: deceptive alignment/sycophancy (2 → 11), internal representation structure (8 → 39).
+**Temporal evidence.** No subdomain is in decline over 2015–2026; growth is recent and steep (825/1,136 = 72.6% from 2024–2026). Governance rose 7 → 100 papers (2018 → 2026), interpretability 2 → 135, mesa-optimization 2 → 24 (low but persistent). Emerging themes: deceptive alignment/sycophancy (2 → 11), internal representation structure (8 → 39).
 
 ## 9.3.2 Status of Phase 0.5 gaps (G1–G5) against charted data
 
 | Gap | Status | Charted-data evidence |
 |---|---|---|
-| G1 — no formal axiomatisation of representation structure as safety property | **CONFIRMED (refined)** | 203 papers (16.0%) discuss internal representations, of which 115 (56.7%) carry a formal framework (vs 38.6% corpus baseline) — so formalism exists but is not safety-axiomatic; only 16 use "internal representation" literally; schema/compositionality vocabulary absent. |
+| G1 — no formal axiomatisation of representation structure as safety property | **CONFIRMED (refined)** | 176 papers (15.5%) discuss internal representations, of which 96 (54.5%) carry a formal framework (vs 37.7% corpus baseline) — so formalism exists but is not safety-axiomatic; only 14 use "internal representation" literally; schema/compositionality vocabulary absent. |
 | G2 — no unified CG ↔ alignment formalism | **CONFIRMED** | "compositional generalization" in 48 papers, "sigma-trap" in 102; intersection only 8; "alignment failure" ∩ CG = 6; "goal misgeneralization" 0; "misgeneralization" 6; "compositionality" 0. The two literatures do not connect in the corpus. |
 | G3 — no dynamical-systems safety treatment | **CONFIRMED** | `dynamical systems` framework in 18 papers (1.4%); ODEs formalism in 11 (0.9%). |
 | G4 — schema theory absent | **CONFIRMED** | `discusses_schema_coherence` = related concept for 90 papers (7.1%); literal "schema coherence" in 15; "schema" in 50. |
@@ -155,9 +155,9 @@ No Phase 0.5 gap was refuted; the charted data confirms the gap structure and sh
 
 | # | New gap | Evidence |
 |---|---|---|
-| NG1 | Evaluation infrastructure is the weakest large strand | Evaluation/measurement theme = 281 papers (22.2%), second-largest theme, but only 17.8% tier A+B; benchmark leakage ("evaluation chronoeffect", P864) flagged in the corpus. |
-| NG2 | Governance is the least empirical subdomain | Governance: 88/320 (27.5%) empirical methods vs value alignment 380/1,143 (33.2%); governance claims rest on conceptual/sociotechnical analysis. |
-| NG3 | Deceptive-alignment detection is tiny despite high stakes | Theme = 33 papers (2.6%) but 42.4% tier A+B; 14 of 33 tier B. High-quality, under-served. |
+| NG1 | Evaluation infrastructure is the weakest large strand | Evaluation/measurement theme = 251 papers (22.1%), second-largest theme, but only 17.9% tier A+B; benchmark leakage ("evaluation chronoeffect", P864) flagged in the corpus. |
+| NG2 | Governance is the least empirical subdomain | Governance: 98/291 (33.7%) empirical methods vs value alignment 352/1,020 (34.5%); governance claims rest on conceptual/sociotechnical analysis. |
+| NG3 | Deceptive-alignment detection is tiny despite high stakes | Theme = 29 papers (2.6%) but 41.4% tier A+B. High-quality, under-served. |
 
 ## 9.3.4 Prioritisation and mapping to subsequent papers
 
