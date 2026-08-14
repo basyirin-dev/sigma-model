@@ -1,21 +1,29 @@
-# Σ-Align Thesis: Schema Coherence and the σ-Trap in AGI Safety
+# Σ-Align Monograph: Schema Coherence and the σ-Trap in AGI Safety
 
 ## Overarching Thesis
 
 **Compositional generalization failure and AI alignment failure are the same phenomenon — a bifurcation in the agent's internal schema coherence (the σ-trap) — and solving one solves the other.**
 
-> **Positioning note (2026-08):** Papers 01–02 are *neutral mapping stages* and do not assert this claim. They use schema-coherence/σ-trap vocabulary strictly as a heuristic search and synthesis lens, state that lens explicitly, and report the evidence-base findings (including the limited explicit intersection between the CG and alignment literatures) without requiring the arc claim to hold. The claim itself is argued from Paper 03 onward. This separation is deliberate: it keeps the reviews submission-ready as standalone contributions and addresses the circular-reasoning concern that the mapping stages presuppose the thesis.
+> **Positioning note (2026-08):** Chapters 2–3 are *neutral mapping stages* and do not assert this claim. They use schema-coherence/σ-trap vocabulary strictly as a heuristic search and synthesis lens, state that lens explicitly, and report the evidence-base findings (including the limited explicit intersection between the CG and alignment literatures) without requiring the arc claim to hold. The claim itself is argued from Chapter 4 onward. This separation is deliberate: it keeps the review chapters honest as scholarship and addresses the circular-reasoning concern that the mapping stages presuppose the thesis.
+
+> **Format note (2026-08):** The thesis is written as a **monograph** (continuous, chapter-based prose), not a thesis-by-publication. Completed publications (Papers 01, 02, 06) are *adapted* into chapters, and their venue-formatted manuscripts are archived under `thesis/publications/` (they appear in the LIST OF PUBLICATIONS front matter). Pending publications are developed *as chapters first*; journal submission is an optional byproduct extracted from a completed chapter (see `phase-roadmap.md`).
 
 ---
 
-## Thesis Arc
+## Monograph Arc
 
-| Chapter | Papers | Core Claim |
+| Chapter | Source | Core Claim |
 |:--------|:-------|:------------|
-| **Ch 1–2:** Diagnosis | 01. Scoping Review, 02. Systematic Review | "There is an undiagnosed failure mode in deep learning — the σ-trap." |
-| **Ch 3:** Framework | 03. Conceptual Paper | "We can measure and intervene on the σ-trap through schema coherence." |
-| **Ch 4:** Evidence | 04. Pilot Study, 05. Meta-Analysis, 06. Empirical #1, 07. Empirical #2, 08. Empirical #3 | "The σ-trap is robust (meta), real (Sigma-Model), and safety-relevant (mesa-opt)." |
-| **Ch 5:** Implications | 09. Final Scoping Review | "Schema-coherent training is the optimal path to safe, long-term AGI — directly relevant to CEV and Indirect Normativity." |
+| **Ch 1:** Introduction | original | "There is an undiagnosed failure mode in deep learning — the σ-trap — and this thesis shows it is the same phenomenon as alignment failure." |
+| **Ch 2:** The Landscape of AGI Safety | Paper 01 (Scoping Review) | "The AGI safety literature is fragmented; no existing framework treats internal schema coherence as the central failure mode." |
+| **Ch 3:** Schema Coherence and the σ-Trap | Paper 02 (Systematic Review) | "The evidence base supports σ-trap as a measurable construct with real consequences." |
+| **Ch 4:** The Σ-Align Framework | Paper 03 (Conceptual) | "We can measure and intervene on the σ-trap through schema coherence." |
+| **Ch 5:** σ-Coupling Interventions | Paper 04 (Pilot Study) | "Schema-coherence interventions are feasible and their effects are estimable." |
+| **Ch 6:** Quantifying the σ-Trap | Paper 05 (Meta-Analysis) | "The σ-trap is robust across the literature." |
+| **Ch 7:** The Σ-Model: Compositional Generalisation Failure | Paper 06 (Empirical #1) | "Compositional generalisation failure is a bifurcation in schema coherence — the σ-trap is real in a minimal mechanistic model." |
+| **Ch 8:** Mesa-Optimization via Schema Coherence | Paper 07 (Empirical #2, absorbs Paper 08) | "The σ-trap is safety-relevant: mesa-optimization arises as a schema-coherence phenomenon." |
+| **Ch 9:** Implications: Schema-Coherent Training for Safe AGI | Paper 09 (Final Scoping) | "Schema-coherent training is the optimal path to safe, long-term AGI — directly relevant to CEV and Indirect Normativity." |
+| **Ch 10:** Conclusion | original | Synthesis, limitations, and the research programme forward. |
 
 ---
 
@@ -26,35 +34,34 @@ YEAR 1 (Months 1-12)          YEAR 2 (Months 13-24)       YEAR 3 (Months 25-36)
 ──────────────────────────────────────────────────────────────────────────────
 TRACK A: Literature & Framework
 ┌──────────────────────┐      ┌──────────────────────┐
-│ 01. Scoping Review   │──────│ 03. Conceptual Paper │
-│ (AGI Safety landscape)│     │ (Σ-Align framework)  │
+│ Ch 2. Landscape      │──────│ Ch 4. Σ-Align        │
+│ (Paper 01 — draft ✓) │      │ (Paper 03)           │
 │ Months 1-6           │      │ Months 13-16         │
 └──────────────────────┘      └──────────────────────┘
 ┌──────────────────────┐
-│ 02. Systematic Review│
-│ (σ-trap evidence)    │
+│ Ch 3. σ-Trap evidence│
+│ (Paper 02)           │
 │ Months 1-9           │
 └──────────────────────┘
 
 TRACK B: Empirical Core
                               ┌──────────────────────┐      ┌──────────────────────┐
-                          │ 04. Pilot Study        │──────│ 07. Empirical #2     │
-                          │ (σ-coupling experiments)│      │ (Mesa-opt detection) │
+                          │ Ch 5. Pilot Study      │──────│ Ch 8. Mesa-Opt.      │
+                          │ (Paper 04)             │      │ (Paper 07)           │
                           │ Months 13-18           │      │ Months 19-25         │
                           └──────────────────────┘      └──────────────────────┘
                                                                                 │
 ┌──────────────────────┐      ┌──────────────────────┐      ┌──────────────────────┐
-│ 06. Empirical #1     │──────│ 05. Meta-Analysis    │      │ 08. Empirical #3    │
-│ (Σ-Model — DONE ✓)  │      │ (Quantify σ-trap)    │      │ (TBD)               │
-│ Already under review │      │ Months 12-20         │      │ Months 22-30        │
+│ Ch 7. Σ-Model        │──────│ Ch 6. Meta-Analysis  │      │ Ch 9. Implications   │
+│ (Paper 06 — done ✓)  │      │ (Paper 05)           │      │ (Paper 09)           │
+│ Already written      │      │ Months 12-20         │      │ Months 26-32         │
 └──────────────────────┘      └──────────────────────┘      └──────────────────────┘
                                                                                 │
 TRACK C: Synthesis                                                            │
                                                                                 ↓
                               ┌──────────────────────────────────────────────────────┐
-                              │ 09. Final Scoping Review                             │
-                              │ (Implications for Long-Term Agency & CEV)            │
-                              │ Months 26-32                                          │
+                              │ Ch 1 + Ch 10: Introduction & Conclusion              │
+                              │ Ch 1 drafted 2026-08; Ch 10 at Months 33-36          │
                               └──────────────────────────────────────────────────────┘
 ```
 
@@ -62,29 +69,30 @@ TRACK C: Synthesis                                                            �
 
 ## Minimum Viable Thesis & Contingency (2026-08)
 
-**MVT (graduate-able core): Papers 1, 3, 4, 6** — a Scoping Review, a Conceptual Framework, an Empirical Paper, and a Pilot Study. Papers 2, 5, 7, 9 are stretch goals; 8 is merged into 7.
+**MVT (graduate-able core): Chapters 2, 4, 5, 7** — Landscape, Framework, Pilot, Σ-Model. Chapters 3, 6, 8, 9 are stretch goals; former Paper 08 scope is folded into Chapter 8.
 
-- **If the Pilot (04) yields null results:** the pre-registered analysis plan governs interpretation — a null result showing schema coherence does *not* bridge the domains is still a publishable finding (falsification of the mechanism claim) and Paper 07 pivots to a mechanism-contrast design. The thesis narrative is written to accommodate both outcomes (see the positioning note above: the mapping stages do not require the arc claim).
-- **If JAIR rejects Paper 06 again (or revision stalls):** fallback venues are *TMLR* (fast, certified review) or *ICLR* workshop → main track; the MVT core is unaffected because Paper 06 can be replaced by Paper 04 + Paper 07 as the empirical evidence.
-- **If Paper 07 is rejected at a top-tier venue:** the TMLR fallback (guaranteed review) is already the default timeline path; no milestone re-planning needed.
-- **Thesis submission decoupling:** confirm with the university that "under review" or preprint status suffices for thesis submission at Month 36; do not wait for final acceptance of Papers 7/9.
-- **Universiti Malaya facts (2026-08, from the P8 rules lookup):** UM allows the thesis-by-publication / article-style format **only for Doctoral (PhD by Research) candidates** — not for Master's/undergraduate/foundation theses. The in-candidature route requires papers "published or accepted" in high-impact (WoS-indexed) journals; **under-review and preprint-only papers do NOT count** toward the thesis at submission (FSKTM Guidelines §1.3). The publication-in-fulfilment policy requires candidate first-authorship with supervisor co-authorship and UM affiliation — a solo-authored corpus conflicts with this unless a written faculty exclusion is granted, so **flag supervisor co-authorship early**. Practical consequence: the 9-paper arc is executed during a future PhD-by-Research enrolment at UM (or comparable institution); the current pre-university phase builds the paper pipeline, and the thesis compilation happens within candidature. The conventional monograph format remains the fallback (published papers appear in the "LIST OF PUBLICATIONS" section, not as embedded chapters).
+- **If the Pilot (Ch 5 / Paper 04) yields null results:** the pre-registered analysis plan governs interpretation — a null result showing schema coherence does *not* bridge the domains is still a publishable finding (falsification of the mechanism claim) and Ch 8 pivots to a mechanism-contrast design. The monograph narrative is written to accommodate both outcomes (see the positioning note above: the mapping stages do not require the arc claim).
+- **If JAIR/TMLR rejects Paper 06 again (or revision stalls):** the monograph is unaffected — Ch 7 is *adapted from* the manuscript but does not depend on its acceptance. Fallback venues for the extracted publication remain *TMLR* (fast, certified review) or *ICLR* workshop → main track.
+- **If Paper 07 is rejected at a top-tier venue:** the TMLR fallback (guaranteed review) is already the default timeline path; Ch 8 stands regardless.
+- **Monograph decoupling from publication status:** because the thesis is a monograph, no chapter's completion waits on journal acceptance. Under-review/preprint status of extracted papers never blocks thesis submission.
+- **Universiti Malaya facts (2026-08, from the P8 rules lookup):** UM allows the thesis-by-publication / article-style format **only for Doctoral (PhD by Research) candidates** — not for Master's/undergraduate/foundation theses. The in-candidature route requires papers "published or accepted" in high-impact (WoS-indexed) journals; **under-review and preprint-only papers do NOT count** toward the thesis at submission (FSKTM Guidelines §1.3). The publication-in-fulfilment policy requires candidate first-authorship with supervisor co-authorship and UM affiliation — a solo-authored corpus conflicts with this unless a written faculty exclusion is granted, so **flag supervisor co-authorship early**. Practical consequence: the **monograph is the primary format** for the current pre-university phase; the 9-paper corpus becomes the underlying research programme executed during a future PhD-by-Research enrolment at UM (or comparable institution), with published papers appearing in the "LIST OF PUBLICATIONS" section, not as embedded chapters. The thesis compilation happens within candidature.
 
 ---
 
-## Paper-by-Paper Plan
+## Chapter-by-Chapter Plan
 
-| # | Paper | Type | Venue Target | Timeline | Status |
-|:--|:------|:-----|:-------------|:---------|:-------|
-| 1 | **Landscape of AGI Safety** | Scoping Review | *ACM Computing Surveys* or pre-print | M1–6 | 🟡 Pending |
-| 2 | **Schema Coherence and the σ-Trap** | Systematic Review | *Artificial Intelligence Review* | M1–9 | 🟡 Pending |
-| 3 | **The Σ-Align Framework** | Conceptual Paper | *Journal of AI Research* or *Synthese* | M13–16 | 🟡 Pending |
-| 4 | **σ-Coupling Interventions** | Pilot Study | *NeurIPS* workshop → *TMLR* | M13–18 | 🟡 Pending |
-| 5 | **Quantifying the σ-Trap** | Evidence Synthesis (meta-analysis of the existing σ-trap-adjacent literature, pooling Paper 02 Phase 9 effect sizes) | *TMLR* or *ACM/IMS TDS* (not psych/methods journals) | M12–20 | 🟡 Pending |
-| 6 | **Σ-Model: Compositional Generalisation Failure** | Empirical | *JAIR* (desk-rejected 2026-07-15; revision) | **DONE** | 🟠 Revising |
-| 7 | **Mesa-Optimization via Schema Coherence** | Empirical (absorbs the former Paper 08 scope) | *TMLR* or *ICLR/NeurIPS* main track | M19–25 | 🟡 Pending |
-| 8 | ~~TBD~~ merged into Paper 07 | — | — | — | ⚪ Merged 2026-08 |
-| 9 | **Schema-Coherent Training for Safe AGI** | Final Scoping | *arXiv* → thesis compilation | M26–32 | 🟡 Pending |
+| Ch | Chapter | Source | Status | Phase Status |
+|:--:|:--------|:-------|:-------|:-------------|
+| 1 | **Introduction** | original | 🟡 Drafted (2026-08) | 🟢 phases 00–10 done |
+| 2 | **The Landscape of AGI Safety** | Paper 01 (Scoping Review, revised draft) | 🟡 Adapting | 🟢 phases 00–11 done (as Paper 01) |
+| 3 | **Schema Coherence and the σ-Trap** | Paper 02 (Systematic Review) | 🟡 Pending | 🟢 phases 00–09 done (as Paper 02) |
+| 4 | **The Σ-Align Framework** | Paper 03 (Conceptual) | ⚪ Not started | ⚪ Pending Ch 2–3 adaptation |
+| 5 | **σ-Coupling Interventions** | Paper 04 (Pilot Study) | ⚪ Not started | ⚪ Pending Ch 4 |
+| 6 | **Quantifying the σ-Trap** | Paper 05 (Meta-Analysis) | ⚪ Not started | ⚪ Builds on Ch 3 effect-size pools (k≈27–31) |
+| 7 | **The Σ-Model** | Paper 06 (Empirical #1) | 🟢 Source complete | 🟢 manuscript done; JAIR desk-rejected 2026-07-15, pivoting to TMLR |
+| 8 | **Mesa-Optimization via Schema Coherence** | Paper 07 (Empirical #2, absorbs Paper 08 scope) | ⚪ Not started | ⚪ Pending Ch 5 results |
+| 9 | **Implications: Schema-Coherent Training for Safe AGI** | Paper 09 (Final Scoping) | ⚪ Not started | ⚪ Pending Ch 6–8 results |
+| 10 | **Conclusion** | original | ⚪ Not started | ⚪ Months 33–36 |
 
 ---
 
@@ -92,62 +100,70 @@ TRACK C: Synthesis                                                            �
 
 | Milestone | Month | Deliverable |
 |:----------|:------|:------------|
-| M0 | 0 | Sigma-Model paper under JAIR review ✓ |
-| M1 | 6 | Scoping Review #1 submitted |
-| M2 | 9 | Systematic Review submitted |
-| M3 | 12 | Sigma-Model paper decision (hopefully accepted) |
-| M4 | 16 | Conceptual Paper submitted |
-| M5 | 18 | Pilot Study submitted |
-| M6 | 20 | Meta-Analysis submitted |
-| M7 | 25 | Empirical #2 submitted |
-| M8 | 30 | Empirical #3 submitted |
-| M9 | 32 | Final Scoping Review submitted |
-| M10 | 36 | Thesis compiled and published |
+| M0 | 0 | Σ-Model manuscript complete (under JAIR review at the time; now pivoting to TMLR) ✓ |
+| M1 | 6 | Ch 2 (Landscape) adapted from Scoping Review draft |
+| M2 | 9 | Ch 3 (σ-Trap evidence) adapted from Systematic Review |
+| M3 | 12 | Ch 7 (Σ-Model) adapted; TMLR decision on extracted Paper 06 |
+| M4 | 16 | Ch 4 (Σ-Align Framework) drafted |
+| M5 | 18 | Ch 5 (Pilot Study) drafted |
+| M6 | 20 | Ch 6 (Meta-Analysis) drafted |
+| M7 | 25 | Ch 8 (Mesa-Optimization) drafted |
+| M8 | 30 | Ch 9 (Implications) drafted |
+| M9 | 32 | First full monograph draft compiled (Ch 1–10) |
+| M10 | 36 | Monograph submitted per institution format |
 
 ---
 
-## Thesis Structure (Document-Level)
+## Monograph Structure (Document-Level)
 
 ```
 thesis/
 ├── narrative.md              ← This file — overarching arc
-├── phase-roadmap.md          ← Master roadmap & dependency graph
-├── cross-cutting.md          ← Thesis-level cross-cutting standards
+├── phase-roadmap.md          ← Master roadmap & dependency graph (chapters)
+├── cross-cutting.md          ← Monograph-level cross-cutting standards
 ├── metadata.yaml             ← Author info, ORCID, degrees, institution
-├── compilation.tex           ← LaTeX compilation of all papers
+├── monograph.tex             ← Main LaTeX compilation (report, 12pt)
+├── bibliography.bib          ← Shared bibliography
+├── Makefile                  ← latexmk build (`make pdf`)
 │
-├── papers/
-│   ├── 01-scoping-review/    ← Scoping Review of AGI Safety landscape
-│   │   ├── README.md         ← Paper overview & phase table
-│   │   ├── phases/           ← 14 phase documents (Phase 0–99)
-│   │   │   ├── 00_cross_cutting.md
-│   │   │   ├── 00_repo.md
-│   │   │   ├── 00_5_research.md  ← AI-assisted research prompts
-│   │   │   ├── 01_*.md → 12_*.md
-│   │   │   └── 99_finale.md
-│   │   └── research/         ← Phase 0.5 research artifacts
-│   ├── 02-systematic-review/ ← Systematic Review of σ-trap evidence
-│   ├── 03-conceptual-paper/  ← Σ-Align Framework
-│   ├── 04-pilot-study/       ← σ-coupling experiments
-│   ├── 05-meta-analysis/     ← Quantifying the σ-trap
-│   ├── 06-empirical-1-sigma-model/ ← Sigma-Model (under JAIR review)
-│   │   └── manuscript/ → ../../paper/  (symlink)
-│   ├── 07-empirical-2/       ← Mesa-optimization detection
-│   ├── 08-empirical-3/       ← TBD (placeholder)
-│   └── 09-final-scoping-review/ ← Implications & CEV
+├── chapters/                 ← The monograph itself
+│   ├── 01-introduction/      ← Ch 1 (drafted 2026-08)
+│   │   ├── README.md         ← Chapter overview & phase table
+│   │   ├── phases/           ← Chapter phase roadmaps
+│   │   ├── manuscript/       ← Chapter .tex source
+│   │   └── figures/
+│   ├── 02-agi-safety-landscape/   ← Ch 2 (adapts Paper 01)
+│   ├── 03-sigma-trap-evidence/    ← Ch 3 (adapts Paper 02)
+│   ├── 04-sigma-align-framework/  ← Ch 4 (Paper 03)
+│   ├── 05-pilot-study/            ← Ch 5 (Paper 04)
+│   ├── 06-meta-analysis/          ← Ch 6 (Paper 05)
+│   ├── 07-sigma-model/            ← Ch 7 (Paper 06)
+│   ├── 08-mesa-optimization/      ← Ch 8 (Paper 07)
+│   ├── 09-implications/           ← Ch 9 (Paper 09)
+│   └── 10-conclusion/             ← Ch 10
+│
+├── front-matter/             ← Title, abstract, acknowledgements, LIST OF PUBLICATIONS
+├── back-matter/              ← Glossary, notation registry, appendices
+└── publications/             ← Venue-formatted manuscripts (standalone artifacts)
+    ├── 01-scoping-review/    ← Paper 01 manuscript (ACM Computing Surveys format)
+    ├── 02-systematic-review/ ← Paper 02 manuscript (Springer sn-jnl format)
+    └── 06-sigma-model/       ← Paper 06 → symlink to ../../paper/ (JAIR/TMLR)
 ```
 
-## Phase Convention
+## Chapter Phase Convention
 
-Every paper follows this phase structure (see `README.md` for full details):
+Every chapter follows this phase structure (see `README.md` for full details):
 
 | Phase | Purpose |
 |:------|:--------|
-| 00_cross_cutting | Paper-level cross-cutting standards |
+| 00_cross_cutting | Chapter-level cross-cutting standards |
 | 00_repo | Repository setup, LaTeX template, tooling |
 | 00_5_research | AI-assisted research phase (user-led) |
-| 01–10+ | Paper-specific phases with exhaustive tasks |
-| 99_finale | Unify into thesis compilation |
+| 01–11 | Chapter-specific phases (research, drafting, revision) |
+| 12_paper_extraction | Optional: extract a submission-ready paper from the chapter |
+| 99_finale | Unify into monograph compilation |
+
+For chapters adapted from completed papers (Ch 2, 3, 7), phases 01–11 carry over from the paper's phase docs nearly unchanged, since they document the research behind the chapter; phase 12 is re-framed from "submission" to "paper extraction".
 
 ---
 
@@ -155,8 +171,8 @@ Every paper follows this phase structure (see `README.md` for full details):
 
 ```
 sigma-model/
-├── paper/                    ← Sigma-Model manuscript (Empirical #1)
-├── thesis/                   ← Thesis compilation & paper folders
+├── paper/                    ← Σ-Model manuscript (Paper 06, JAIR → TMLR)
+├── thesis/                   ← Monograph compilation & chapter folders
 ├── code/sigma_align/         ← Reusable ODE + config framework
 ├── Σ-Align/                  ← Decision documentation (MCDAs, audit trails)
 ├── docs/adrs/                ← Architecture Decision Records

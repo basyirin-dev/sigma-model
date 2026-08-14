@@ -1,0 +1,89 @@
+% ============================================================
+% Σ-Align Monograph — main document
+% Schema Coherence and the Sigma Trap:
+% A Unified Framework for AI Alignment and AGI Safety
+%
+% Build:  make pdf   (delegates to latexmk)
+% ============================================================
+\documentclass[12pt,a4paper]{report}
+
+% ---------- Encoding & fonts ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Math & theorems ----------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------- Layout ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+% PRISMA flow figure support (fragment authored for Paper 01)
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit}
+\definecolor{okabe-ito-blue}{RGB}{0,114,178}
+\newcommand{\annote}[1]{\textcolor{okabe-ito-blue}{[#1]}}
+
+% ---------- Bibliography (natbib + shared thesis bib, CC.1.3) ----------
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{plainnat}
+
+% Shared notation (see back-matter/notation-registry.tex)
+\newcommand{\sigmacrit}{\sigma_{\mathrm{crit}}}
+\newcommand{\sigmaA}{\sigma_{A}}
+
+\begin{document}
+
+% ============================================================
+% FRONT MATTER
+% ============================================================
+\pagenumbering{roman}
+\input{front-matter/title}
+\input{front-matter/abstract}
+\input{front-matter/acknowledgements}
+\input{front-matter/list-of-publications}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+% ============================================================
+% CHAPTERS
+% ============================================================
+\input{chapters/01-introduction/manuscript/chapter1}
+\input{chapters/02-agi-safety-landscape/manuscript/chapter2}
+\input{chapters/03-sigma-trap-evidence/manuscript/chapter3}
+\input{chapters/04-sigma-align-framework/manuscript/chapter4}
+\input{chapters/05-pilot-study/manuscript/chapter5}
+\input{chapters/06-meta-analysis/manuscript/chapter6}
+\input{chapters/07-sigma-model/manuscript/chapter7}
+\input{chapters/08-mesa-optimization/manuscript/chapter8}
+\input{chapters/09-implications/manuscript/chapter9}
+\input{chapters/10-conclusion/manuscript/chapter10}
+
+% ============================================================
+% BACK MATTER
+% ============================================================
+\appendix
+\input{back-matter/appendices}
+\input{back-matter/glossary}
+\input{back-matter/notation-registry}
+
+\bibliography{bibliography}
+
+\end{document}

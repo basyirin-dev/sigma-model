@@ -10,7 +10,7 @@ Each prompt is self-contained (context + task + constraints + output). Replace `
 You are an independent manuscript editor who knows NOTHING about the Σ-Align thesis,
 the σ-trap hypothesis, or its author. Do not assume any background beyond the text.
 
-Read thesis/papers/01-scoping-review/manuscript/manuscript.tex in full.
+Read thesis/publications/01-scoping-review/manuscript.tex in full.
 
 Answer ONLY these three questions, each with a yes/no and a quoted example:
 1. Does this read like an objective map of the AI-safety field, or like an argument
@@ -59,7 +59,7 @@ state which single venue you would submit to first and why.
 
 ```
 You are drafting a submission cover letter for a journal editor. Use ONLY the
-bullet points in thesis/papers/01-scoping-review/phases/12_submission.md (section
+bullet points in thesis/chapters/02-agi-safety-landscape/phases/12_paper_extraction.md (section
 "Cover-letter bullet points") and the manuscript title/abstract. Do NOT invent
 facts, do NOT mention any thesis, thesis-by-publication, 9-paper arc, or future
 papers, and do NOT mention the author's other research programme.
@@ -78,7 +78,7 @@ could not verify and should be double-checked by the author.
 ## P4. Preprint-abstract consistency check
 
 ```
-Read thesis/papers/01-scoping-review/manuscript/manuscript.tex (the structured
+Read thesis/publications/01-scoping-review/manuscript.tex (the structured
 abstract) and the file <your-abstract.txt> (the abstract you intend to post on
 arXiv/SSRN). Compare them and report:
 1. Word count of each (the journal limit is 250).
@@ -94,7 +94,7 @@ arXiv/SSRN). Compare them and report:
 ## P5. Supplementary-data quality audit (pre-package check)
 
 ```
-You are a data-quality auditor. Load thesis/papers/01-scoping-review/research/
+You are a data-quality auditor. Load thesis/chapters/02-agi-safety-landscape/research/
 charted-data.csv and quality-scores.csv (1,268 rows each).
 
 Audit and report:
@@ -117,7 +117,7 @@ report I can paste into the supplementary README.
 
 ```
 You have web access. Read the reference list in
-thesis/papers/01-scoping-review/manuscript/manuscript.tex (the bibliography is
+thesis/publications/01-scoping-review/manuscript.tex (the bibliography is
 compiled from thesis/bibliography.bib + research/included-studies.bib; the cited
 keys are the ~50 entries with \cite commands).
 
@@ -139,7 +139,7 @@ Do not edit the bib files; produce the table only.
 You are a research strategist. Read Σ-Align/10-jair-desk-rejection-response.md
 (the JAIR desk-rejection analysis: grounds = unclear exposition/notation, overbroad
 claims, insufficient breadth-of-significance) and skim the manuscript under
-thesis/papers/06-sigma-model/manuscript/manuscript.tex.
+paper/manuscript.tex.
 
 Produce a revision plan with two options:
 A. Revise for resubmission to JAIR (or another strong AI journal).

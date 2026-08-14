@@ -1,7 +1,8 @@
-# Σ-Align Thesis — Root Makefile
-# Per-paper builds delegate to each paper's local Makefile.
+# Σ-Align — Root Makefile
+# Per-paper builds delegate to each publication's local Makefile.
+# The monograph builds from thesis/ (thesis/monograph.tex).
 
-.PHONY: help all paper01 paper01-clean paper02 paper02-clean paper06 paper06-clean
+.PHONY: help all monograph monograph-clean paper01 paper01-clean paper02 paper02-clean paper06 paper06-clean
 
 help:           ## Show available targets
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -9,17 +10,23 @@ help:           ## Show available targets
 
 all: paper01 paper02 paper06  ## Build all papers
 
+monograph:      ## Build the monograph (thesis/monograph.tex)
+	$(MAKE) -C thesis pdf
+
+monograph-clean: ## Clean monograph build artifacts
+	$(MAKE) -C thesis clean
+
 paper01:        ## Build Paper 01 (Scoping Review)
-	$(MAKE) -C thesis/papers/01-scoping-review/manuscript
+	$(MAKE) -C thesis/publications/01-scoping-review
 
 paper01-clean:  ## Clean Paper 01 build artifacts
-	$(MAKE) -C thesis/papers/01-scoping-review/manuscript clean
+	$(MAKE) -C thesis/publications/01-scoping-review clean
 
 paper02:        ## Build Paper 02 (Systematic Review)
-	$(MAKE) -C thesis/papers/02-systematic-review/manuscript
+	$(MAKE) -C thesis/publications/02-systematic-review
 
 paper02-clean:  ## Clean Paper 02 build artifacts
-	$(MAKE) -C thesis/papers/02-systematic-review/manuscript clean
+	$(MAKE) -C thesis/publications/02-systematic-review clean
 
 paper06:        ## Build Paper 06 (Σ-Model)
 	$(MAKE) -C paper

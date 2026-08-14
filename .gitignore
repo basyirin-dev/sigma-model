@@ -59,11 +59,17 @@ code/*.egg-info/
 
 # Paper 01/02 full-text PDFs (large artifacts — not committed)
 research/pdfs/
-thesis/papers/*/research/pdfs/
+thesis/chapters/*/research/pdfs/
+thesis/publications/*/research/pdfs/
 research/full-text-pdfs/
-thesis/papers/*/research/full-text-pdfs/
+thesis/chapters/*/research/full-text-pdfs/
 research/full-text-txt/
-thesis/papers/*/research/full-text-txt/
+thesis/chapters/*/research/full-text-txt/
 
-# Paper 01 phase-doc build artifacts
-thesis/papers/01-scoping-review/phases/*.pdf
+# Chapter phase-doc build artifacts
+thesis/chapters/02-agi-safety-landscape/phases/*.pdf
+
+# Publication manuscript build outputs (like paper/manuscript.pdf)
+thesis/publications/*/manuscript.pdf
+thesis/publications/*/protocol.pdf
+thesis/monograph.pdf

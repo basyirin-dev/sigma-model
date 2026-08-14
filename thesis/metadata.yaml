@@ -1,0 +1,16 @@
+thesis_title: "Schema Coherence and the Sigma Trap: A Unified Framework for AI Alignment and AGI Safety"
+format: "monograph"            # monograph (chapter-based), not thesis-by-publication
+degree: "Doctor of Philosophy"
+institution: "[TBD]"
+department: "[TBD — Computer Science / Cognitive Science / Philosophy]"
+author: "[Anonymous]"
+orcid: "[TBD]"
+submission_date: "TBD (target: ~Month 36)"
+total_chapters: 10
+source_papers: 7              # Papers 01–09 folded into Ch 2–9 (Paper 08 merged into Paper 07)
+adaptation_chapters: 3        # Ch 2 (P01), Ch 3 (P02), Ch 7 (P06) — adapted from completed papers
+empirical_chapters: 3         # Ch 5 (P04), Ch 7 (P06), Ch 8 (P07)
+review_chapters: 4            # Ch 2 (P01), Ch 3 (P02), Ch 6 (P05), Ch 9 (P09)
+conceptual_chapters: 1        # Ch 4 (P03)
+primary_advisor: "[TBD]"
+committee_members: []
