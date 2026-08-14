@@ -165,6 +165,6 @@ Priority by thesis relevance (per the Phase 0.5 dependency topology): **G4 + G3*
 
 | Gap | Feeds | How |
 |---|---|---|
-| G1, G2, G3, G4 | **Paper 02** (Systematic Review — σ-trap) | Defines the σ-trap corpus (587-paper signal, 46.3%; CG subset = 48 papers); the review's synthesis targets the unlinked joints (CG ∩ σ-trap = 8). |
+| G1, G2, G3, G4 | **Paper 02** (Systematic Review — σ-trap) | Defines the σ-trap corpus (464-paper signal, 40.8%; CG subset = 48 papers); the review's synthesis targets the unlinked joints (CG ∩ σ-trap = 8). |
 | G3, G4, G5b, G5e, G5f | **Paper 03** (Conceptual — Σ-Align) | The formalization work: schema as structured singularity (G4+G3), shared measure (G5b), value compositionality (G5e), simplicity prior (G5f). |
 | NG1, NG2, NG3, G5a | **Paper 09** (Final Scoping Review) | Synthesis narrative on where the field's evidence base is thin (evaluation quality, governance empirics, deceptive-alignment detection) and where credibility concentrates. |

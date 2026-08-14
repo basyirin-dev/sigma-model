@@ -117,8 +117,9 @@ overlap of memberships, theme-stats.md):
 Mapping the themes onto the overarching thesis (schema coherence, σ-trap,
 compositional generalization ↔ alignment):
 
-1. **σ-trap signal**: 587/1,268 papers (46.3%) are σ-trap-relevant per the
-   Phase 7 signal export (relevance ≥ 4 core: 510 papers, 40.2%). The
+1. **σ-trap signal**: 464/1,136 papers (40.8%) carry the signal under the
+   corrected definition (final rating ≥ 4; the Phase 7 export's 534-row working file
+   included 70 AI-revised non-signal rows). The
    Compositional generalization & σ-trap theme (178 papers, 14.0%) is the
    thesis's home theme and is above baseline credibility (31.5% A+B).
 2. **Schema coherence (G4)**: `discusses_schema_coherence` flags 90 papers
@@ -138,8 +139,8 @@ compositional generalization ↔ alignment):
    the two literatures do not cite or speak to each other in the charted data,
    confirming G2/G5d.
 5. **Net**: the corpus contains the thesis's ingredients (representation
-   structure: 15.8% of papers; σ-trap relevance: 46.3%; compositional
-   generalization: 48 papers) but not the joints — the themes do not connect
+   structure: 15.5% of papers; σ-trap relevance: 40.8%; compositional
+   generalization: 44 papers) but not the joints — the themes do not connect
    them. This is direct charted-data evidence for the thesis's central claim
    that the failure modes are co-present but formally unlinked.
 

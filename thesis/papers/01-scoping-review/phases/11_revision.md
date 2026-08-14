@@ -141,3 +141,28 @@ Three structured reviews (FastTrack 8.5/10; referee 3.5/5; prior FastTrack 7.1/1
 - Bibliography artefacts stripped: all 1,268 "Paper 01 study; source: ..." note fields removed from included-studies.bib (provenance retained in the CSV); 0 artefacts in the compiled PDF.
 
 **Verification**: `make paper01` clean from scratch — 0 errors, 0 undefined citations, 0 undefined references; abstract 248 ≤ 250; main text ~7,909 words; exhibits 3 figures + 5 tables (4 main-text + 1 appendix; prior-review table per review request); 50 cited keys; voice audit 0 thesis references; framing sentence ×1; hedges present in Abstract; ruff clean on all new scripts (spot_check, screening_validation, evidence_landscape, search_sensitivity).
+
+---
+
+## Execution log — Review #17 major-revision round (2026-08, adjudication + signal fix)
+
+Four structured reviews now consolidated (two FastTrack, two referee reports). This round implemented the major-revision items of Review #17 with the author acting as the human second reviewer.
+
+**Human-judgment layer (Review #17 Concerns 1/2/4/7)**
+- Author adjudicated three seeded samples (original decisions hidden): screening 100 (74% raw, κ=0.48 vs mechanical κ=0.39), σ-trap relevance 30 (80% exact-scale κ=0.72; 100% membership κ=1.00), borderline 15 (80% vs final status). Folded into §3.4, §3.5.2, §3.2, and the Limitations; instruments + full disagreement logs in `research/charting/adjudication/`.
+- These are now the review's only "validation" numbers; all pipeline statistics were renamed to consistency checks (0 "validation" occurrences remain).
+
+**Claim-tempering (priorities 1–2)**
+- Abstract/conclusion reframed to "a provisional credibility-stratified map"; three-layer separation (descriptive / reviewer-defined heuristic / theoretical) made explicit; intersection restated as vocabulary-level absence; inversion framed as rubric-dependent.
+
+**Credibility rubric (Concern 3, priority 4)**
+- Renamed source-and-rigour index in the appendix; new no-D2/D6 sensitivity (A+B 24.7%→30.6%; inversion persists, governance 33.3%→40.9%); weights + grey-literature penalty discussed.
+
+**Signal-definition correction (found via the author's Round-4 notes)**
+- The Phase 7 export conflated "final ≥ 4" with "AI-revised" (70 extra rows). Corrected signal = final ≥ 4: **464 (40.8%)** (was 534/47.0%), renumbered through the manuscript, abstract, discussion, sensitivity (49.5% A+B subset), submission artifacts, and research docs (gap-analysis, results-draft, thematic-synthesis, keyword-dictionary).
+- Round-4 keyword critique verified: 2 external-AI claims rejected (no `reward missecif` typo; `sigma-trap` already in Theme 13); false-positive flags confirmed; synonym deltas + safe-token adoption documented in `keyword-dictionary.md`.
+
+**Consistency fixes (minors 4.1/4.2/4.5/4.6/4.8/4.9)**
+- arXiv 18.0%→15.5%; figure baseline 24.7% + label-rendering fix; theme-size caveat at Table 4; AI-Forum record handling; goal-misgen search-scope statement; new 8-intersection Table; keyword dictionary published as supplementary.
+
+**Verification**: `make paper01` clean — 0 errors, 0 undefined, 23 pages; abstract 250; framing ×1; stale-number sweep clean (0 remaining 534/47.0/587/46.3/18.0 references); ruff-clean. Commits: `f14b111` (part 1), `bab6256` (adjudication + signal fix).

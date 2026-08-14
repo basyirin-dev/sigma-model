@@ -2,7 +2,7 @@
 
 **Status**: draft for Phase 10 (10.4) · **Data sources (traceability, CC.2.4)**:
 `research/charting/charted-data.csv` (working copy, n=1,268) · `research/quality-scores.csv`
-(Phase 8) · `research/sigma-trap-signal.csv` (Phase 7, 587 rows) ·
+(Phase 8) · `research/sigma-trap-signal-unique.csv` (Phase 7 export, 534 rows; signal = final ≥ 4: 464) ·
 `research/charting/summary-statistics.md` (Phase 7) · `research/charting/phase9-summary.md`
 (9.1) · `research/charting/theme-stats.md` + `research/thematic-synthesis.md` (9.2) ·
 `research/gap-analysis.md` §Phase 9 (9.3). Every count below is recomputable from these
@@ -44,8 +44,8 @@ mesa-optimization 82 (6.5%), other 39 (3.1%) — multi-select.
 **Credibility (Phase 8).** Composite median 2.15 (IQR 1.94–2.35); tiers A=2, B=315, C=826,
 D=123, E=2; A+B = 317 (25.0%); 125 low-credibility (9.9%).
 
-**σ-trap relevance.** 587/1,268 (46.3%) in the Phase 7 signal export; core relevance ≥ 4:
-510 (40.2%).
+**σ-trap relevance.** 464/1,136 (40.8%) carry the signal (final rating ≥ 4; corrected definition —
+the Phase 7 export's 534-row working file included 70 AI-revised non-signal rows).
 
 ## 2. Results by subdomain (9.4.2)
 
@@ -147,7 +147,7 @@ the σ-trap diagnosis; subsequent papers (02, 03, 09) inherit this gap structure
 
 | Gap | Paper 02 (Systematic Review) | Paper 03 (Conceptual) | Paper 09 (Final Scoping) |
 |---|---|---|---|
-| G1/G2 (structure, CG↔alignment) | σ-trap corpus definition (587 signal; CG subset 48) | shared formalism target | synthesis narrative |
+| G1/G2 (structure, CG↔alignment) | σ-trap corpus definition (464 signal; CG subset 44) | shared formalism target | synthesis narrative |
 | G3/G4 (dynamical, schema) | formal-language review | schema-as-singularity formalization | field-evolution narrative |
 | G5 (measure, forgetting, simplicity, compositionality) | evidence of absence | theorems for Papers 03 | gap reporting |
 | NG1–NG3 (evaluation quality, governance empirics, deception detection) | credibility-stratified synthesis (tiers A+B) | — | evidence-base appraisal |
