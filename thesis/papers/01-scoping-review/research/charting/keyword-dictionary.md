@@ -46,8 +46,34 @@ variants; they reflect vocabulary sparsity in the corpus, not a narrow rule.
 ## σ-trap relevance signal
 
 Rating scale 1–5 (reviewer-defined heuristic; `research/charting/sigma_signal.py`).
-Studies with final rating ≥ 4 carry the signal (534 of 1,136; 47.0%). The rating
+Studies with final rating ≥ 4 carry the signal (464 of 1,136; 40.8%); the working export file additionally holds AI-revised rows below 4. The rating
 is seeded from a phrase scan and revised by the LLM-assisted pass with recorded
 justification; the author-adjudicated reliability check (Round 2 of the
 adjudication instruments, `research/charting/adjudication/`) reports the
 human-vs-pipeline agreement on this high-inference variable.
+
+## Synonym-sensitivity: author-proposed token additions (Round 4)
+
+The author proposed additional tokens per theme (Goodhart, scheming, rlaif/kto,
+dictionary learning, red-teaming, pluralism, combinatorial generalisation, OOD,
+inductive bias). New studies these would add beyond the current rules
+(n = 1,136; deltas are upper bounds, overlap not subtracted):
+
+| Theme | Proposed tokens | New studies hit |
+|---|---|---|
+| Proxy reward & reward hacking | goodhart, underspecification, proxy overoptim | +8 |
+| Deceptive alignment & sycophancy | scheming, treacherous turn, power-seeking | +3 |
+| Preference & value learning | rlaif, kto, preference elicitation | +8 |
+| Interpretability & mechanistic analysis | dictionary learning, activation patching, linear represent | +1 |
+| Robustness, security & adversarial | red-teaming, red teaming, trojan | +1 |
+| Ethics, fairness & human values | pluralism, moral disagreement | +18 |
+| Compositional generalization & σ-trap | combinatorial general, out-of-distribution, ood, inductive bias | +46 |
+
+**Decision (recorded)**: headline theme counts remain on the current rules; the
+deltas are reported here as sensitivity evidence. Two proposed tokens were not
+adopted: `ood` / `out-of-distribution` (broad — would pull in distribution-shift
+robustness work unrelated to compositional generalisation, the same over-inclusion
+class the Round-4 false-positive notes flag) and `pluralism` (similarly broad
+across ethics). `Goodhart`, `scheming`, `rlaif`, `kto`, `red teaming`, and
+`combinatorial general` are safe additions and are adopted for future
+re-operationalisations.

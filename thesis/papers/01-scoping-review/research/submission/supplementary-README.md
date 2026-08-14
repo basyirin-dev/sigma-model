@@ -13,7 +13,7 @@
 | `research/quality-scores.csv` | 1,268 rows | Raw credibility scores (D1–D8, composite, tier). |
 | `research/quality-scores-unique.csv` | 1,136 rows | Credibility scores for the analysis corpus. |
 | `research/sigma-trap-signal.csv` | 587 rows | Raw heuristic schema-coherence signal (researcher-defined). |
-| `research/sigma-trap-signal-unique.csv` | 534 rows | Signal for the analysis corpus (47.0% of 1,136). |
+| `research/sigma-trap-signal-unique.csv` | 534 rows | Working export: final rating ≥ 4 OR AI-revised (464 carry the signal, 40.8% of 1,136). |
 | `research/charting/version-removals.csv` | 132 rows | Every removed row with its kept row + reason (the reconciliation log). |
 | `research/charting/dedup_versions.py` | — | The reconciliation script (rules: normalized-title cluster; strict pair = shared author + year±1; kept = DOI > evidence basis > paper_id). |
 | `research/charting/version-reconciliation.md` | — | Reconciliation summary. |
