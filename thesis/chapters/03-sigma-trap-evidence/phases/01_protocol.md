@@ -54,7 +54,7 @@
 
 ### Task 1.3: Write Protocol
 
-- [ ] 1.3.1: Draft protocol following PRISMA-P (PRISMA for Protocols) guidelines:
+- [x] 1.3.1: Draft protocol following PRISMA-P (PRISMA for Protocols) guidelines — **done 2026-07-08, in `thesis/publications/02-systematic-review/protocol.tex`**: covers PRISMA-P 2015 items 1–17 plus a full Statistical Analysis Plan (SAP-1..8) and a PRISMA-P 2025 checklist table; appendices defer search strings (Phase 2) and excluded-study lists (post-screening):
   - Title: "Schema Coherence and the σ-Trap: A Systematic Review and Meta-Analysis of Compositional Generalisation Failure in Neural Networks"
   - Abstract (structured)
   - Introduction / rationale — with explicit reference to the broader thesis
@@ -69,9 +69,10 @@
   - Synthesis methods (meta-analysis plan if feasible, narrative synthesis otherwise)
   - Meta-analysis plan (effect size measure, model, heterogeneity assessment, subgroup analyses, sensitivity analyses, publication bias assessment)
   - Confidence in cumulative evidence (GRADE)
-- [ ] 1.3.2: Decide on staged approach (whether to search simultaneously or iteratively)
-- [ ] 1.3.3: Protocol length: ~10-15 pages (PRISMA-P standard)
-- [ ] 1.3.4: Satisfy CC.1.7 — register protocol on PROSPERO and OSF
+- [x] 1.3.2: Decide on staged approach — **iterative** (PICO-derived query families developed and sensitivity-tested in sequence against the 27-paper gold set); documented in the protocol's Search Strategy subsection so the Phase 3 search log is auditable against it
+- [x] 1.3.3: Protocol length: ~10-15 pages (PRISMA-P standard) — confirmed (sn-jnl format, protocol.tex)
+- [x] 1.3.4: Register protocol on OSF — **osf.io/m3asw (Open-Ended Registration, 2026-07-08)**; PROSPERO not applicable (non-medical systematic review of computer-science literature)
+  - **Manual step (user)**: upload the final protocol PDF/TeX to the OSF registration m3asw once compiled
 
 ### Task 1.4: Pilot Search Test
 
