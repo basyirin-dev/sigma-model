@@ -54,7 +54,7 @@ TRACK C: Synthesis                                                            �
 
 | Chapter | Phases |
 |:--------|:-------|
-| 01-introduction | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`10` ✅ — chapter drafted |
+| 01-introduction | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `10_draft` ✅ (phases 01–09 N/A) — chapter drafted |
 | 02-agi-safety-landscape | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`11` ✅ (carried over from Paper 01) `12_paper_extraction` ⬜ `99_finale` ⬜ |
 | 03-sigma-trap-evidence | `00_cross_cutting` ✅ `00_repo` ✅ `00_5_research` ✅ `01`–`09` ✅ (carried over from Paper 02) `10`+ ⬜ |
 | 04, 05, 06, 08, 09, 10 | ⚪ Phase documents not yet created |
