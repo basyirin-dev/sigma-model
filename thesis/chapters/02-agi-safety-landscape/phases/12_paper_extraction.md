@@ -9,10 +9,10 @@
 
 ### Task 12.1: Venue Finalization
 
-- [ ] 12.1.1: Confirm target venue — **resolved 2026-08: Artificial Intelligence Review first** (P2 analysis: lowest desk-rejection risk for scoping reviews, faster handling, solo-author + LLM-pipeline friendly, Scopus/SCIE-indexed; ACM Computing Surveys as the prestige fallback accepting a ~12-month timeline)
+- [ ] 12.1.1: Confirm target venue — **resolved 2026-08-14: Artificial Intelligence Review first** (P2 analysis: lowest desk-rejection risk for scoping reviews, faster handling, solo-author + LLM-pipeline friendly, Scopus/SCIE-indexed; ACM Computing Surveys as the prestige fallback accepting a ~12-month timeline)
 - [ ] 12.1.2: Download and read venue's author guidelines
 - [ ] 12.1.3: Check page/word limits, formatting requirements, abstract limits
-- [ ] 12.1.4: Check LaTeX class file and template requirements (ACM uses `acmart.cls`)
+- [ ] 12.1.4: Check LaTeX class file and template requirements (AI Review uses Springer's `sn-jnl.cls`; the current manuscript is `acmart`/`acmsmall` — a template conversion is required)
 - [ ] 12.1.5: Satisfy CC.6.2 — abstract length confirmed
 
 ### Task 12.2: Formatting Pass
@@ -54,8 +54,8 @@
 
 ### Task 12.6: Post-Submission Documentation
 
-- [ ] 12.6.1: Archive the submitted version in `research/submitted-version/`
-- [ ] 12.6.2: Update `README.md` with submission status and manuscript ID
+- [ ] 12.6.1: Archive the submitted version in `research/submitted-version/` (relative to this chapter: `thesis/chapters/02-agi-safety-landscape/research/submitted-version/`)
+- [ ] 12.6.2: Update `README.md` (this chapter's README: `thesis/chapters/02-agi-safety-landscape/README.md`) with submission status and manuscript ID
 - [ ] 12.6.3: Satisfy CC.6.1 — submitted version compiles and is archived
 
 ---
@@ -78,11 +78,11 @@
 
 Do not mention the 9-paper thesis arc; present the paper as a standalone contribution.
 
-1. **Scale and rigour**: a PRISMA-ScR scoping review of 1,268 studies (5,191 records → 2,867 screened) across six databases plus grey literature, with a prospectively registered OSF protocol and no amendments.
-2. **The contribution**: the first credibility-stratified map of the AGI-safety landscape — an eight-subdomain taxonomy, a methods/formalism census, and the treatment of internal representation structure, in one reproducible evidence map (prior reviews map at most one of these; see Table 1).
-3. **The headline finding**: the credibility inversion — the field's largest empirical strand (evaluation, 281 studies) carries the lowest credibility (17.8% tier A+B), while its most credible strands (governance, formal theory) are the least empirical. This is field-level, not thesis-specific.
-4. **A structural gap mapped**: only 48 studies use compositional-generalisation vocabulary and 8 intersect with σ-trap language — mapped as a vocabulary finding with the appropriate caveats.
-5. **Transparency**: hybrid extraction with a human-adjudicated spot-check (80–93% agreement) and a search-sensitivity analysis showing the headline results are robust to the targeted search families.
+1. **Scale and rigour**: a PRISMA-ScR scoping review of 1,268 included records (1,136 unique studies after collapsing 132 duplicate versions; 5,191 records → 2,867 screened → 1,278 full-text) across six databases plus grey literature, with a prospectively registered OSF protocol and no amendments.
+2. **The contribution**: the first credibility-stratified map of the AGI-safety landscape — an eight-subdomain taxonomy (7 named subdomains + other), a methods/formalism census, and the treatment of internal representation structure, in one reproducible evidence map (prior reviews map at most one of these; see Table 1).
+3. **The headline finding**: the credibility inversion — the field's largest empirical strand (evaluation; 251 studies) is among the least credible (17.9% tier A+B), while the most credible strands are the least empirical. This is field-level, not thesis-specific.
+4. **A structural gap mapped**: only 48 studies use compositional-generalisation vocabulary, of which 8 intersect with σ-trap language ("goal misgeneralization" appears in none) — mapped as a vocabulary finding with the appropriate caveats.
+5. **Transparency**: hybrid extraction with a 20% consistency sample (extraction ICC 0.930; credibility scoring κ 0.924–1.000, composite ICC 0.947) and human re-adjudication samples (screening 74% raw agreement, κ 0.48; σ-relevance 80%, κ 0.72), plus a search-sensitivity analysis showing the headline results are robust to the targeted search families.
 6. **Positioning**: schema coherence is used strictly as a heuristic search lens, not as a conclusion; the review is an evidence baseline for testing any structural account.
 
 ### Phase-12 checklist additions (thesis-specific)
@@ -90,7 +90,7 @@ Do not mention the 9-paper thesis arc; present the paper as a standalone contrib
 - [ ] **Stranger test** (manual): give the manuscript to someone who knows nothing about the Σ-Align thesis; ask "does this read like an objective map of AI safety, or like an argument for a specific theory?" Apply the voice-separation edits if the latter.
 - [ ] **Preprint strategy**: if posting to arXiv while under review, ensure the arXiv abstract matches the standalone journal abstract (no thesis-chapter framing).
 - [ ] **Supplementary data schema lock**: `research/charted-data.csv` and `research/quality-scores.csv` are the ingestible base for Papers 05–07 — do not change the schema after submission without a versioned note.
-- [ ] **Placeholder metadata**: replace the ACM screen-mode placeholders (journal, DOI, article number) with real values at submission.
+- [ ] **Placeholder metadata**: convert the manuscript from `acmart` (acmsmall, screen, review) to Springer `sn-jnl.cls` for AI Review (see Task 12.1.4); replace placeholders (journal, DOI, article number) with real values at submission.
 - [ ] **DOI/URL verification**: verify all DOIs/URLs in the reference list resolve.
-- [ ] **Venue finalisation**: ACM Computing Surveys vs a methods/AI-safety venue (reviews split; decide before formatting).
+- [ ] **Venue finalisation**: **resolved 2026-08-14 — Artificial Intelligence Review first** (Task 12.1.1); ACM Computing Surveys as fallback. No further venue decision needed before formatting.
 - [ ] **Acknowledgments**: no external reviewers to thank this round (single-author, self-funded); state "no external funding" (already in the manuscript).
