@@ -1,6 +1,6 @@
 # Σ-Align: Schema Coherence Framework for AI Alignment and AGI Safety
 
-**Core thesis:** *Compositional generalization failure and AI alignment failure are the same phenomenon — a bifurcation in the agent's internal schema coherence (the σ-trap) — and solving one solves the other.*
+**Core thesis (three-tier, cumulative):** *Schema coherence is a measurable property of learned representation structure whose deterioration can produce a stable low-coherence regime (the σ-trap) associated with systematic generalisation failure.* The same mechanism provides a testable account of some safety-relevant forms of objective divergence, and — if it persists in more capable systems — schema-coherent training may be a candidate component of alignment strategy. (Identity formulation "CG failure = alignment failure" is documented but not the working claim.)
 
 ---
 
@@ -31,7 +31,7 @@ are adapted into chapters; their venue manuscripts are archived in `thesis/publi
 | 6 | Quantifying the σ-Trap | Paper 05 (Meta-Analysis) | ⚪ Pending |
 | 7 | The Σ-Model | Paper 06 (Empirical #1) | 🟢 Source complete |
 | 8 | Mesa-Optimization via Schema Coherence | Paper 07 (Empirical #2) | ⚪ Pending |
-| 9 | Implications: Schema-Coherent Training for Safe AGI | Paper 09 (Final Scoping) | ⚪ Pending |
+| 9 | What Schema Coherence Can and Cannot Tell Us About Alignment | Paper 09 (Final Scoping) | ⚪ Pending |
 | 10 | Conclusion | original | ⚪ Pending |
 
 Build the monograph with `make monograph` (from repo root).

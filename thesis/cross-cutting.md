@@ -31,9 +31,11 @@ These requirements apply to **every** chapter in the monograph. Each chapter's `
 - [ ] CC.3.1: Scoping-review chapters follow PRISMA-ScR checklist (Ch 2, Ch 9)
 - [ ] CC.3.2: Systematic-review chapters follow PRISMA 2020 checklist (Ch 3)
 - [ ] CC.3.3: Meta-analysis chapters follow PRISMA-MA reporting standards, including heterogeneity and publication-bias assessment (Ch 6)
-- [ ] CC.3.4: Conceptual chapters provide formal definitions for all key constructs (Ch 4)
+- [ ] CC.3.4: Conceptual chapters provide formal definitions for all key constructs (Ch 4). Schema coherence σ must be **operationally specified**: construct; unit of measurement (neuron / layer / representation / latent space / model / task-conditioned representation / trajectory); the mathematical metric; the range (e.g. σ ∈ [0,1] vs ℝ); and invariance properties (rotation, permutation, scaling, reparameterisation, basis change). A representation-space metric that changes under a latent-basis rotation is not measuring a meaningful model property.
 - [ ] CC.3.5: Empirical chapters include ablation studies, hyperparameter sensitivity, and failure analysis (Ch 7, Ch 8)
 - [ ] CC.3.6: Pilot-study chapters include power analysis or justification of sample size (Ch 5)
+- [ ] CC.3.7: LLM-assisted pipelines (Ch 3 screening/extraction, Ch 5 analysis, Ch 6 meta-analysis) must report independent human adjudication samples and sensitivity analyses (e.g. conclusions re-run on the high-quality subset); AI assistance is disclosed, not a substitute for independent review
+- [ ] CC.3.8: Chapters that draw implications from evidence (esp. Ch 9) must state limitations *before* implications; bounded "candidate component" wording — no "optimal path to safe AGI" claims
 
 ### CC.4: Monograph Coherence
 
@@ -43,6 +45,9 @@ These requirements apply to **every** chapter in the monograph. Each chapter's `
 - [ ] CC.4.4: Shared glossary maintained at `thesis/back-matter/glossary.md`
 - [ ] CC.4.5: Chapters cross-reference each other (e.g., "this builds on Chapter 2's findings")
 - [ ] CC.4.6: No contradiction between chapters — any differences in assumptions/findings explicitly noted
+- [ ] CC.4.7: Every chapter opens and closes with "What this chapter establishes / does not establish" bookends
+- [ ] CC.4.8: Chapters making causal or mechanistic claims (Ch 5, 7, 8) include an explicit competing-hypotheses section (ruling out simpler explanations)
+- [ ] CC.4.9: Claims tracked in `thesis/claim-evidence-ledger.md`; no claim cited as established in a later chapter before its establishing chapter has produced the evidence (ledger updated at each phase completion)
 
 ### CC.5: Code Quality (for empirical chapters)
 

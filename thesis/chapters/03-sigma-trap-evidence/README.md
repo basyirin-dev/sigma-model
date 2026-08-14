@@ -39,7 +39,18 @@ This chapter adapts the Paper 02 systematic review into monograph prose. It is a
 ## Chapter Dependencies
 
 - **Depends on**: Ch 2 (Landscape) — specifically Phase 0.5 outputs (landscape boundary, schema coherence mapping, gap analysis)
-- **Provides foundation for**: Ch 4 (Σ-Align Framework), Ch 6 (Meta-Analysis — effect-size pools, k≈27–31), Ch 8 (Mesa-Optimization), Ch 9 (Implications)
+- **Provides foundation for**: Ch 4 (Σ-Align Framework), Ch 6 (Meta-Analysis), Ch 8 (Safety-relevant optimisation), Ch 9 (Bounded implications)
+
+## Evidence Table (required before Ch 6 relies on this chapter)
+
+Per external assessment (FastTrack F2): the systematic review must produce a complete
+**study-level evidence table** — not just narrative summaries — containing at minimum:
+
+| Study | Construct | Operationalisation | Design | N | Outcome | Effect | Variance | Quality | σ relevance |
+|-------|-----------|--------------------|--------|---|---------|--------|----------|---------|-------------|
+
+Tracked as a Phase 9/10 task in `phases/`; the effect-size pools for Ch 6 are drawn from this
+table, and every effect entering Ch 6 must be auditable back to it.
 
 ## Methodology
 
@@ -64,5 +75,9 @@ This chapter adapts the Paper 02 systematic review into monograph prose. It is a
 | Focus | Broad AGI safety landscape | Narrow σ-trap evidence |
 | Timeline | 6 months | 9 months |
 
-See `phases/` for detailed phase-by-phase task breakdowns (carried over from Paper 02).
-See `research/` for Phase 0.5 AI-assisted research artifacts.
+## Goal-Misgeneralization Reconciliation (assessment B5)
+
+Ch 2's charted records lacked "goal misgeneralization" as an explicit concept. This chapter's
+discussion (and Ch 8) must reconcile it with the σ-trap: is goal misgeneralization another
+expression of a low-σ regime (objective decoupled from intended semantics), and why did the
+keyword mapping miss it? A dedicated theoretical reconciliation is a tracked task.

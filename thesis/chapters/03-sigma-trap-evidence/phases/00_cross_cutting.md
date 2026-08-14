@@ -34,7 +34,7 @@ This document refines the thesis-level CC standards for Paper 02's systematic re
 
 ### CC.3: Thesis Coherence
 
-- [ ] CC.3.1: Introduction explicitly references overarching thesis statement: compositional generalization failure and alignment failure are the same phenomenon
+- [ ] CC.3.1: Introduction explicitly references the overarching thesis statement (three-tier cumulative claim — primary: measurable σ whose deterioration produces a stable low-coherence regime associated with systematic generalisation failure; see `thesis/narrative.md` and `thesis/claim-evidence-ledger.md`)
 - [ ] CC.3.2: "Relation to Other Chapters" section included — specifically forward references to Papers 03 (conceptual framework), 07 (mesa-optimization), and 09 (final synthesis)
 - [ ] CC.3.3: Gaps identified explicitly mapped to how the Σ-Model framework (Paper 06) addresses them
 - [ ] CC.3.4: Shared notation registry updated with any new σ-trap-related terms defined in this review

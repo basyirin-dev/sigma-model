@@ -25,35 +25,81 @@ that is coherent \emph{internally} but detached from the intended semantics
 relationship between the internal structure of the system and the structure of the
 world it is supposed to track.
 
-\section{The $\sigma$-trap thesis}
+\section{The thesis: a cumulative claim hierarchy}
 
-This monograph develops a single claim:
+This monograph develops its claim in three tiers, deliberately structured so that each
+tier can stand or fall on its own evidence.
 
+\paragraph{Primary thesis.}
 \begin{quote}
-\emph{Compositional generalisation failure and AI alignment failure are the same
-phenomenon --- a bifurcation in the agent's internal schema coherence (the
-$\sigma$-trap) --- and solving one solves the other.}
+\emph{Schema coherence is a measurable property of learned representation structure
+whose deterioration can produce a stable low-coherence regime (the $\sigma$-trap)
+associated with systematic generalisation failure.}
+\end{quote}
+
+\paragraph{Secondary thesis (extension).}
+\begin{quote}
+\emph{The same mechanism provides a testable account of some safety-relevant forms of
+objective divergence} --- in particular where internal optimisation develops around
+representations that have become decoupled from the intended semantic structure.
+\end{quote}
+
+\paragraph{Long-term implication (bounded).}
+\begin{quote}
+\emph{If these relationships persist in more capable systems, schema-coherent training
+may constitute a candidate component of alignment strategy.}
 \end{quote}
 
 We call the internal degree of consistency of an agent's representation structure its
-\emph{schema coherence} $\sigma$ (Chapter~4 gives the formal definition). The claim is
-that under gradient-based learning, $\sigma$ behaves like an order parameter of a
-dynamical system: above a critical value $\sigmacrit$ learning is compositional and
-robust; below it, the system is trapped in a stable equilibrium of low coherence from
-which ordinary training does not escape. The $\Sigma$-Model, a minimal mechanistic
-model developed in Chapter~7, exhibits exactly this bifurcation
-\citep{amsyar2026sigma}. If the claim holds, alignment is not a separate engineering
-problem bolted onto the top of a model: it is the same structural problem as
-compositional generalisation, and interventions that raise schema coherence
-($\sigma$-coupling, curriculum design) are simultaneously safety interventions.
+\emph{schema coherence} $\sigma$ (Chapter~4 gives the operational definition). The
+primary thesis asserts that under gradient-based learning, $\sigma$ behaves like an
+order parameter of a dynamical system: above a critical value $\sigmacrit$ learning is
+compositional and robust; below it, the system is trapped in a stable equilibrium of
+low coherence from which ordinary training does not escape. The $\Sigma$-Model, a
+minimal mechanistic model developed in Chapter~7, is designed to exhibit exactly this
+bifurcation \citep{amsyar2026sigma}.
 
-The thesis is deliberately structured so that this strong claim is not presupposed by
+It is important to be precise about what the thesis does \emph{not} claim. A stronger
+formulation --- \emph{compositional generalisation failure and AI alignment failure are
+the same phenomenon} --- has been considered and is explicitly rejected as the working
+claim. Two complex, multiply-realised phenomena need not be identical as observables
+for a common mechanism to connect them; claiming identity would invite the obvious
+objection that a supervised benchmark failure and a sociotechnical alignment failure
+are plainly different events. Instead, the thesis claims a \emph{unified-framework
+hypothesis}: $\sigma$ is a common structural variable across both domains, and a
+\emph{mechanistic hypothesis}: the $\sigma$-trap produces compositional generalisation
+failure and, under the conditions specified in Chapter~8, safety-relevant optimisation
+failures. Every link in the chain from compositional generalisation to alignment is
+presented with an explicit evidential status --- literature-supported, observed,
+modelled, experimentally manipulated, inferred, or speculative --- so that the reader
+can see at each step what the evidence does and does not carry.
+
+The thesis is deliberately structured so that no tier of the claim is presupposed by
 the evidence reviews. Chapters~2--3 map the literature and the evidence base using
 schema-coherence vocabulary strictly as a heuristic lens, and report what is found
 --- including the limited explicit intersection between the compositional
-generalisation and alignment literatures --- without requiring the arc claim to hold.
-The claim is argued from Chapter~4 onward, where the framework, the mechanistic
-model, and the interventions can carry the weight.
+generalisation and alignment literatures --- without requiring the claims to hold.
+A literature gap establishes \emph{novelty}, not \emph{truth}; the reviews establish the
+baseline, and the claims are argued cumulatively from Chapter~4 onward.
+
+\subsection{What would falsify this thesis}
+
+The mechanism claim is falsified if $\sigma$ is measured, interventions demonstrably
+raise $\sigma$, and the predicted outcome does not change. Concretely, any of the
+following would falsify the primary thesis:
+
+\begin{enumerate}
+  \item a low-$\sigma$ regime observed with intact systematic generalisation;
+  \item a mediation analysis (Ch.~5) in which raising $\sigma$ leaves compositional
+    generalisation unchanged;
+  \item a $\Sigma$-Model in which the transition to non-compositional learning is not
+    predicted by an independently measured $\sigma$ (Ch.~7).
+\end{enumerate}
+
+The secondary thesis additionally concedes the converse direction explicitly: some
+alignment failures may lie entirely outside the framework, and Chapter~9 states which
+ones those are. A thesis without a falsifiability criterion reads as dogma; these
+criteria are the price of the claim being scientific.
 
 \section{Why a monograph}
 
@@ -86,19 +132,24 @@ The monograph makes the following contributions.
     a meta-analysis quantifying the $\sigma$-trap (Ch.~6), the $\Sigma$-Model showing
     compositional generalisation failure as a bifurcation (Ch.~7), and a study linking
     the trap to mesa-optimization (Ch.~8).
-  \item \textbf{Implications.} An argument that schema-coherent training is the
-    optimal path to safe, long-term AGI, with direct relevance to corrigibility, CEV,
-    and indirect normativity (Ch.~9).
+  \item \textbf{Implications.} A bounded argument that schema-coherent training is a
+    candidate component of alignment strategy, with limitations stated before
+    implications, and with direct relevance to corrigibility, CEV, and indirect
+    normativity framed as long-term programme questions rather than established
+    results (Ch.~9).
 \end{enumerate}
 
 \section{Reader's guide}
 
 Chapter~2 maps the landscape of AGI safety research and identifies the gaps a
 schema-coherence framework could address. Chapter~3 reviews the evidence for the
-$\sigma$-trap as a measurable construct. Chapter~4 builds the $\Sigma$-Align
-framework. Chapters~5--8 present the empirical programme: the pilot, the
-meta-analysis, the $\Sigma$-Model, and the mesa-optimization study. Chapter~9 draws
-out the implications for safe AGI, and Chapter~10 concludes.
+$\sigma$-trap as a measurable construct, study by study. Chapter~4 gives the
+operational definition of $\sigma$ and its construct-validity tests. Chapters~5--8
+present the empirical programme: the pilot (testing the causal chain
+intervention $\rightarrow \sigma \rightarrow$ generalisation), the meta-analysis,
+the $\Sigma$-Model (the flagship mechanism test), and the safety-relevant
+optimisation study. Chapter~9 asks what the evidence can and cannot justify
+concluding about alignment, and Chapter~10 concludes.
 
 The chapters are written to be read in order, but each chapter opens with a summary of
 its position in the argument and closes with a ``Relation to Other Chapters'' section,

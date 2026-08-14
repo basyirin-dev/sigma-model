@@ -39,15 +39,15 @@ TRACK C: Synthesis                                                            �
 
 | Ch | Chapter | Source | Phases Status | Phase Docs | Next Action |
 |:--:|:--------|:-------|:--------------|:-----------|:------------|
-| 1 | Introduction | original | 🟢 Phases 00–10 done | ✅ `phases/` created | Adapt Ch 2 |
+| 1 | Introduction | original | 🟢 Phases 00–10 done | ✅ `phases/` created | Adapt Ch 2; add falsifiability subsection (drafted) |
 | 2 | Landscape of AGI Safety | Paper 01 (Scoping Review) | 🟡 Adapting — source phases 0–11 done (revised draft) | ✅ carried over from Paper 01 | Adapt manuscript to monograph prose |
-| 3 | Schema Coherence and the σ-Trap | Paper 02 (Systematic Review) | 🟡 Pending — source phases 0–9 done | ✅ carried over from Paper 02 | Begin chapter adaptation after Ch 2 |
-| 4 | The Σ-Align Framework | Paper 03 (Conceptual) | ⚪ Not started | — | Wait for Ch 2–3 adaptation |
-| 5 | σ-Coupling Interventions | Paper 04 (Pilot Study) | ⚪ Not started | — | Wait for Ch 4 |
-| 6 | Quantifying the σ-Trap | Paper 05 (Meta-Analysis) | ⚪ Not started | — | Build on Ch 3 Phase 9 effect-size pools (k≈27–31) |
-| 7 | The Σ-Model | Paper 06 (Empirical #1) | 🟢 Source complete | — | Adapt; extracted Paper 06 desk-rejected by JAIR 2026-07-15 → pivot to TMLR (`Σ-Align/10-jair-desk-rejection-response.md`) |
-| 8 | Mesa-Optimization via Schema Coherence | Paper 07 (Empirical #2, incl. former Paper 08 scope) | ⚪ Not started | — | Wait for Ch 5 results; extracted paper venue TMLR or ICLR/NeurIPS main track |
-| 9 | Schema-Coherent Training for Safe AGI | Paper 09 (Final Scoping) | ⚪ Not started | — | Wait for Ch 6–8 results |
+| 3 | Schema Coherence and the σ-Trap | Paper 02 (Systematic Review) | 🟡 Pending — source phases 0–9 done | ✅ carried over from Paper 02 | Complete **study-level evidence table** (study, construct, operationalisation, design, N, outcome, effect, variance, quality, σ-relevance) before Ch 6 relies on it |
+| 4 | The Σ-Align Framework | Paper 03 (Conceptual) | ⚪ Not started | — | Operational definition of σ (construct/unit/metric/range/invariance) + construct-validity tests (convergent, discriminant, predictive, intervention) |
+| 5 | σ-Coupling Interventions | Paper 04 (Pilot Study) | ⚪ Not started | — | Mediation design: control vs σ-coupling measuring σ, CG, in-distribution performance, robustness, training dynamics (intervention → σ → CG) |
+| 6 | Quantifying the σ-Trap | Paper 05 (Meta-Analysis) | ⚪ Not started | — | Predefine effect families A–E (coherence, CG, collapse, proxy optimisation, alignment divergence); subgroup + leave-one-construct-out + high-quality-only sensitivities |
+| 7 | The Σ-Model | Paper 06 (Empirical #1) | 🟢 Source complete | — | Adapt; **flagship question** (transition predicted by independently measurable σ); σcrit dynamical-systems checklist (multiple equilibria, control parameter, hysteresis/basin, stability, initial-condition reproducibility, parameterisation robustness, σ-causes-vs-accompanies); add non-toy (Transformer/SSM) validation; extracted Paper 06 JAIR desk-rejected 2026-07-15 → TMLR (`Σ-Align/10-jair-desk-rejection-response.md`) |
+| 8 | Schema Coherence and Safety-Relevant Optimisation | Paper 07 (Empirical #2, incl. former Paper 08 scope) | ⚪ Not started | — | Mesa-opt **diagnostic criteria** (internally represented objective, optimisation of it, persistence across distributional change, distinction from outer objective, optimisation-vs-correlation evidence); proxy-vs-mesa distinction; wait for Ch 5 results |
+| 9 | What Schema Coherence Can and Cannot Tell Us About Alignment | Paper 09 (Final Scoping) | ⚪ Not started | — | Limitations-before-implications; bounded "candidate component" conclusions; wait for Ch 6–8 results |
 | 10 | Conclusion | original | ⚪ Not started | — | Months 33–36 |
 
 ## Phase Document Status
