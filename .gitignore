@@ -94,3 +94,7 @@ archive/thesis/chapters/*/phases/*.pdf
 archive/thesis/publications/*/manuscript.pdf
 archive/thesis/publications/*/protocol.pdf
 archive/thesis/monograph.pdf
+
+# Phase 04 mechanism gate — raw experiment outputs (never committed)
+output/
+archive/gate-results/

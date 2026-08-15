@@ -5,7 +5,7 @@
 **Dependencies**: Phases 01, 03 (novelty audit)
 **Output**: `paper/planning/gate-result.md` + committed configs/scripts; claim level locked
 **Executor**: Agent (port, notebook prep, analysis) + **user** (Kaggle GPU run)
-**Status**: 🔶 In progress — port drafted, then reverted per user steer; full spec below
+**Status**: 🔶 In progress — harness ported to `code/sigma_align` + smoke-verified (4 arms, CPU); Kaggle notebook ready; awaiting the user's T4 gate run
 
 ## Purpose
 

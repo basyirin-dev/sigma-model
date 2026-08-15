@@ -1,0 +1,81 @@
+# Σ-Model — Phase 04 Mechanism-Gate Experiment Configuration (ADR-0004)
+# Ported from archive/experiments/configs/base.yaml + the canonical pilot notebook
+# (archive/experiments/h-bar-experiment.ipynb); adds the fixed_weight arm and the
+# measured Stage-1 proxy settings. No parameters are hardcoded in code.
+
+reproducibility:
+  global_seed: 2024
+
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 2
+  dim_ff: 512
+  dropout: 0.1
+  pad_idx: 0
+
+data:
+  n_train: 16000
+  n_test_id: 4000
+  n_test_ood: 1500
+  n_comp: 2000
+
+training:
+  n_timesteps: 2000
+  eval_every: 25          # finer early resolution for the σ-leading-indicator test
+  eval_max_batches: 8     # fast_evaluate batches per eval pass (pilot value)
+  lr: 0.001
+  batch_size: 64
+  max_seq_len: 50
+  gradient_clip_norm: 1.0
+  use_amp: true           # effective only on CUDA
+  num_workers: 2
+  lambda_sigma: 0.3       # comp-injection weight λ_σ in phase-2 curriculum (Eq 25)
+  comp_every: 5           # comp-batch cadence (phase-2 injection and fixed_weight)
+
+ode:
+  sigma_critical: 0.15
+  delta_star: 0.55
+  noise_std: 0.012
+  gompertz_a: -4.0
+  gompertz_b: -3e-3
+  sigma_amplitude: 0.85
+  sigma_drift_step: 3e-4
+  sigma_add_step: 2.5e-4
+
+conditions:
+  baseline:
+    use_curriculum: false
+    coupling_mode: null
+    coupling_str: 0.0
+    sigma_init: 0.10
+  fixed_weight:
+    use_curriculum: false
+    coupling_mode: null
+    coupling_str: 0.0
+    sigma_init: 0.10        # diagnostic only — no σ modulation in this arm
+    comp_weight: 0.3        # constant λ (deliberately strong plain-compositional baseline)
+    comp_every: 5
+  additive:
+    use_curriculum: true
+    coupling_mode: additive
+    coupling_str: 0.20
+    sigma_init: 0.05
+  multiplicative:
+    use_curriculum: true
+    coupling_mode: multiplicative
+    coupling_str: 0.20
+    sigma_init: 0.05
+
+proxy:
+  gca_slice: [output_proj, encoder_layer0, embedding]
+  rga_n_examples: 256
+  rga_operators: [X2, X3, OPPOSITE, AFTER, AND, AROUND]
+  rga_n_pairs: 5000
+  fuse_gca: 0.5
+  fuse_rga: 0.5
+
+experiment:
+  n_runs_per_condition: 15
+  conditions: [baseline, fixed_weight, additive, multiplicative]
+  save_checkpoints: false
