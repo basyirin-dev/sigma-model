@@ -5,7 +5,25 @@
 **Dependencies**: Phases 01, 03 (novelty audit)
 **Output**: `paper/planning/gate-result.md` + committed configs/scripts; claim level locked
 **Executor**: Agent (port, notebook prep, analysis) + **user** (Kaggle GPU run)
-**Status**: 🔶 In progress — harness ported to `code/sigma_align` + smoke-verified (4 arms, CPU); Kaggle notebook ready; awaiting the user's T4 gate run
+**Status**: ✅ Complete — gate run on Kaggle T4 (60 runs) + analysis; **verdict: PHENOMENOLOGICAL** (see `paper/planning/gate-result.md`); claim level locked for P05
+
+## Result (2026-08-16)
+
+- **Discriminator A (fixed-weight vs ODE-guided)**: FAILS the mechanistic branch —
+  `fixed_weight` matches `additive` exactly (OOD 98.9 vs 98.9, p=0.99); the σ
+  scheduling adds nothing over constant-weight comp loss.
+- **Discriminator B (measured σ̃_A leads OOD)**: FAILS the mechanistic branch —
+  crossing-time test degenerate (σ̃_A starts at its normalized max: GCA ≈ 0.95 at
+  random init); dynamic partial-corr test σ̃_A,t → OOD_{t+1} ≈ 0 (pooled ODE
+  +0.018, one-sided t p=0.24). Scheduled-knob diagnostic reproduces the archived
+  finding (leads-fraction 0.00 in all arms).
+- **Nuance**: the RGA component alone significantly predicts OOD_{t+1} in the
+  comp-exposure arms (pooled +0.125, p≈0.005) — but also in `fixed_weight`
+  (no σ dynamics), i.e. it tracks comp-loss exposure, not the σ-scheduling; GCA's
+  init dominance masks it in the fused proxy. Rework lead for the companion:
+  fix GCA (per-layer normalisation / reweighted fusion) before any mechanistic claim.
+- **Claim level for P05**: **phenomenological/descriptive** — "dynamical model of
+  σ-trap behaviour".
 
 ## Purpose
 

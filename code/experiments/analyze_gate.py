@@ -132,6 +132,16 @@ def partial_corr(x: np.ndarray, y: np.ndarray, covs: list[np.ndarray]) -> float:
     return float(np.corrcoef(rx, ry)[0, 1])
 
 
+def one_sided_t(vals: list[float]) -> tuple[float, float]:
+    """One-sample t-test (one-sided) that the mean of ``vals`` is > 0."""
+    v = np.array([x for x in vals if not np.isnan(x)], dtype=float)
+    if len(v) < 3:
+        return float("nan"), 1.0
+    t, p_two = stats.ttest_1samp(v, 0.0)
+    p_one = p_two / 2 if np.mean(v) > 0 else 1.0 - p_two / 2
+    return float(np.mean(v)), float(p_one)
+
+
 def leading_analysis(
     run: dict[str, Any],
     sigma_key: str = "sigma_tilde",
@@ -158,7 +168,14 @@ def leading_analysis(
         ood[1:],
         [ood[:-1], np.array(run["loss"])[:-1], np.array(run["param_norm"])[:-1]],
     )
-    return {"sigma_cross": cross, "ood_rise": rise, "partial_corr": pc}
+    return {
+        "sigma_cross": cross,
+        "ood_rise": rise,
+        "partial_corr": pc,
+        # Degenerate when the proxy starts at (or above) its normalized max:
+        # the crossing-time test then carries no precedence information.
+        "crossing_degenerate": bool(cross == steps[0]),
+    }
 
 
 def fmt_time(t: float) -> str:
@@ -211,13 +228,21 @@ def competing_check(runs: list[dict[str, Any]]) -> dict[str, float]:
 
 def apply_decision(
     ood_means: dict[str, float],
-    lead_fraction_ode: float,
     mean_partial_corr: float,
+    p_partial_corr: float,
+    crossing_degenerate_fraction: float,
     fw_vs_ode: dict[str, dict[str, float]],
 ) -> dict[str, Any]:
-    """Apply the phase-04 decision rule; returns verdict + evidence flags."""
+    """Apply the phase-04 decision rule; returns verdict + evidence flags.
+
+    The leading test is judged by the **dynamic** partial-correlation test
+    (σ̃_A,t → OOD_{t+1} controlling OOD_t, loss_t, param_norm_t), pooled across the
+    ODE-guided arms and tested with a one-sample (one-sided) t-test: the crossing-time
+    test is reported separately but treated as degenerate when the proxy starts at
+    its normalized maximum (GCA ≈ 0.95 at random init).
+    """
     ood_improves = max(ood_means[c] for c in ODE_GUIDED) >= OOD_IMPROVES_MIN
-    leading_ok = lead_fraction_ode >= LEAD_FRACTION_MIN and mean_partial_corr > 0.0
+    leading_ok = mean_partial_corr > 0.0 and p_partial_corr < FW_P_ALPHA
     # fixed_weight does not match ODE-guided = it is *worse* (σ mechanism adds value).
     fw_worse = all(
         fw_vs_ode[c]["d_mean"] < 0 and fw_vs_ode[c]["p"] < FW_P_ALPHA for c in ODE_GUIDED
@@ -240,7 +265,7 @@ def apply_decision(
         verdict = "phenomenological"
         flags = []
         if not leading_ok:
-            flags.append("measured σ̃_A does not precede OOD improvement")
+            flags.append("measured σ̃_A does not precede OOD (dynamic partial-corr test)")
         if not fw_worse:
             flags.append("fixed-weight matches (or beats) ODE-guided OOD")
         rationale = (
@@ -252,6 +277,7 @@ def apply_decision(
         "ood_improves": ood_improves,
         "leading_ok": leading_ok,
         "fw_worse": fw_worse,
+        "crossing_degenerate_fraction": crossing_degenerate_fraction,
         "rationale": rationale,
     }
 
@@ -270,6 +296,14 @@ def render_md(
     leading: dict[str, dict[str, float]],
     lead_fraction: dict[str, float],
     mean_pc: dict[str, float],
+    pos_pc_frac: dict[str, float],
+    degenerate_frac: dict[str, float],
+    rga_cross: dict[str, float],
+    rga_pc: dict[str, dict[str, float]],
+    mean_pc_ode: float,
+    p_pc_ode: float,
+    rga_mean_ode: float,
+    rga_p_ode: float,
     lead_fraction_sched: dict[str, float],
     competing: dict[str, dict[str, float]],
     decision: dict[str, Any],
@@ -288,9 +322,12 @@ def render_md(
     add("")
     add(f"- OOD improves (best ODE-guided arm ≥ {OOD_IMPROVES_MIN:.0f}%): "
         f"**{decision['ood_improves']}**")
-    add(f"- σ̃_A (measured) precedes OOD: **{decision['leading_ok']}**")
+    add(f"- σ̃_A (measured) precedes OOD (dynamic partial-corr test, pooled ODE n=30, "
+        f"one-sided t): **{decision['leading_ok']}**")
     add(f"- fixed_weight does not match ODE-guided (significantly worse): "
         f"**{decision['fw_worse']}**")
+    add(f"- crossing-time test degenerate (σ̃_A starts at its normalized max): "
+        f"{decision['crossing_degenerate_fraction']:.0%} of ODE-guided runs")
     add("")
     add("Decision rule applied (phases/04_mechanism_gate.md): " + decision["rationale"])
     add("")
@@ -367,21 +404,57 @@ def render_md(
     add("")
     add("## 5. Discriminator B — does measured σ̃_A precede OOD?")
     add("")
-    add("Per run: σ̃_A crossing time = first step where min-max-normalized σ̃_A ≥ 0.5; "
-        "OOD-rise time = first step where OOD ≥ 0.5 × final OOD. Partial correlation: "
-        "σ̃_A,t → OOD_{t+1} controlling OOD_t, loss_t, param_norm_t.")
+    add("Two tests. **(a) Crossing-time test** (spec): σ̃_A crossing time = first step "
+        "where min-max-normalized σ̃_A ≥ 0.5; OOD-rise time = first step where OOD ≥ "
+        "0.5 × final OOD. **(b) Dynamic test**: partial correlation σ̃_A,t → OOD_{t+1} "
+        "controlling OOD_t, loss_t, param_norm_t. The crossing-time test is **degenerate** "
+        "here: σ̃_A starts at its normalized maximum (GCA ≈ 0.95 on a random-initialised "
+        "model — the untrained output projection makes any two loss gradients nearly "
+        "parallel), so the crossing time is 0 by construction. The dynamic test is decisive.")
     add("")
-    add("| Condition | σ-leads fraction | mean partial corr | median σ cross | median OOD rise |")
-    add("|-----------|------------------|-------------------|----------------|-----------------|")
+    add("### (a) Crossing-time test")
+    add("")
+    add("| Condition | σ-leads fraction | % crossing-degenerate | median σ cross | "
+        "median OOD rise |")
+    add("|-----------|------------------|-----------------------|----------------|-----------------|")
     for c in CONDITION_ORDER:
         if c not in leading:
             continue
         crosses = [v["sigma_cross"] for v in leading[c].values()]
         rises = [v["ood_rise"] for v in leading[c].values()]
         add(
-            f"| {c} | {lead_fraction[c]:.2f} | {mean_pc[c]:+.3f} | "
+            f"| {c} | {lead_fraction[c]:.2f} | {degenerate_frac[c]:.0%} | "
             f"{fmt_time(float(np.median(crosses)))} | {fmt_time(float(np.median(rises)))} |"
         )
+    add("")
+    add("### (b) Dynamic test (partial correlation) — decisive")
+    add("")
+    add("| Condition | mean partial corr | fraction runs PC>0 | RGA-only mean PC (one-sided t p) |")
+    add("|-----------|-------------------|--------------------|---------------------------------|")
+    for c in CONDITION_ORDER:
+        if c not in leading:
+            continue
+        rp = rga_pc.get(c, {})
+        add(
+            f"| {c} | {mean_pc[c]:+.3f} | {pos_pc_frac[c]:.2f} | "
+            f"{rp.get('mean', float('nan')):+.3f} (p={rp.get('p', 1.0):.3f}) |"
+        )
+    add("")
+    add(f"Pooled ODE-guided (n=30): fused σ̃_A partial corr = {mean_pc_ode:.3f} "
+        f"(one-sided t p = {p_pc_ode:.3f}) — **no dynamic leading evidence for the "
+        f"measured σ̃_A**. In contrast, the RGA-only partial corr is "
+        f"{rga_mean_ode:+.3f} (mean one-sided p = {rga_p_ode:.3f}): the geometry "
+        "component significantly predicts OOD_{t+1} **but only in the arms with "
+        "compositional-loss exposure (including `fixed_weight`, which has no σ "
+        "dynamics)** — it tracks comp-loss exposure, not the σ-scheduling. GCA is "
+        "init-dominated (≈ 0.95 at step 0, decaying) and masks this signal in the "
+        "fused proxy. Model-rework lead for the companion: fix GCA (per-layer "
+        "normalisation / reweighted fusion) before any mechanistic claim.")
+    add("")
+    add("RGA normalized half-rise (crossing-time diagnostic): "
+        + ", ".join(f"{c}={fmt_time(rga_cross[c])}" for c in CONDITION_ORDER if c in rga_cross)
+        + " vs OOD-rise medians above — RGA nominally precedes in the comp-exposure "
+        "arms, consistent with its positive dynamic test.")
     add("")
     add("Scheduled knob diagnostic (same test on `sigma_sched`, archived finding: "
         "leads-fraction = 0.00):")
@@ -466,6 +539,30 @@ def main() -> None:
         c: float(np.nanmean([v["partial_corr"] for v in leading[c].values()]))
         for c in all_results
     }
+    pos_pc_frac = {
+        c: float(
+            np.nanmean([1.0 if v["partial_corr"] > 0 else 0.0 for v in leading[c].values()])
+        )
+        for c in all_results
+    }
+    degenerate_frac = {
+        c: float(
+            np.mean(
+                [1.0 if v["crossing_degenerate"] else 0.0 for v in leading[c].values()]
+            )
+        )
+        for c in all_results
+    }
+    # RGA-component crossing (normalized half-rise), per arm — diagnostic showing
+    # whether the rising proxy component leads the OOD rise.
+    rga_cross = {
+        c: float(
+            np.nanmedian(
+                [crossing_time(np.array(r["step"]), np.array(r["rga"])) for r in runs]
+            )
+        )
+        for c, runs in all_results.items()
+    }
     lead_fraction_sched = {
         c: float(
             np.mean(
@@ -477,14 +574,41 @@ def main() -> None:
         )
         for c in leading_sched
     }
-    lead_fraction_ode = float(np.mean([lead_fraction[c] for c in ODE_GUIDED if c in lead_fraction]))
-    mean_partial_corr_ode = float(np.nanmean([mean_pc[c] for c in ODE_GUIDED if c in mean_pc]))
+    # RGA-only dynamic test: does the rising geometry component predict OOD_{t+1}?
+    rga_pc: dict[str, dict[str, float]] = {}
+    for c, runs in all_results.items():
+        vals = []
+        for r in runs:
+            ood = np.array(r["acc_ood"])
+            covs = [ood[:-1], np.array(r["loss"])[:-1], np.array(r["param_norm"])[:-1]]
+            vals.append(partial_corr(np.array(r["rga"])[:-1], ood[1:], covs))
+        m, p = one_sided_t(vals)
+        rga_pc[c] = {"mean": m, "p": p, "pos_frac": float(np.mean([v > 0 for v in vals]))}
+    pc_ode_pooled = [
+        v["partial_corr"]
+        for c in ODE_GUIDED
+        for v in leading[c].values()
+        if not np.isnan(v["partial_corr"])
+    ]
+    mean_partial_corr_ode, p_partial_corr_ode = one_sided_t(pc_ode_pooled)
+    rga_ode_pooled = [rga_pc[c]["mean"] for c in ODE_GUIDED]
+    rga_mean_ode = float(np.mean(rga_ode_pooled))
+    rga_p_ode = float(np.mean([rga_pc[c]["p"] for c in ODE_GUIDED]))
+    degenerate_fraction_ode = float(
+        np.mean([degenerate_frac[c] for c in ODE_GUIDED if c in degenerate_frac])
+    )
 
     # Competing-variable check.
     competing = {c: competing_check(runs) for c, runs in all_results.items()}
 
     ood_means = {c: stats_ood[c]["mean"] for c in all_results}
-    decision = apply_decision(ood_means, lead_fraction_ode, mean_partial_corr_ode, fw_vs_ode)
+    decision = apply_decision(
+        ood_means,
+        mean_partial_corr_ode,
+        p_partial_corr_ode,
+        degenerate_fraction_ode,
+        fw_vs_ode,
+    )
 
     md = render_md(
         all_results,
@@ -495,6 +619,14 @@ def main() -> None:
         leading,
         lead_fraction,
         mean_pc,
+        pos_pc_frac,
+        degenerate_frac,
+        rga_cross,
+        rga_pc,
+        mean_partial_corr_ode,
+        p_partial_corr_ode,
+        rga_mean_ode,
+        rga_p_ode,
         lead_fraction_sched,
         competing,
         decision,
