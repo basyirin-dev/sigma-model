@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "timestamp": "2026-06-20T19:20:17.992247",
+  "axes": [
+    {
+      "name": "Mathematical Foundation",
+      "score": 4.67,
+      "pass": true,
+      "rationale": "Mathematical foundation: 11/12 subchecks pass. Equations define 7/7 ODE functions, proof docs cover 5/5 propositions. Manuscript has Picard-Lindeloef existence proof. Foundation is rigorous.",
+      "subchecks": {
+        "equations.py exists": true,
+        "solver.py exists": true,
+        "ODE functions defined (7/7)": true,
+        "has nonlinear activation (max/clip)": false,
+        "solver has sigma clamping": true,
+        "solver supports phase transitions": true,
+        "ODE proposition proof files (5/5)": true,
+        "manuscript proves local existence (Picard-Lindeloef)": true,
+        "manuscript discusses Lipschitz continuity": true,
+        "manuscript has forward invariance proof": true,
+        "manuscript has global existence claim": true,
+        "manuscript has bifurcation analysis (Prop 4.1)": true
+      },
+      "details": "equations.py: 181 lines, 7 ODE functions"
+    },
+    {
+      "name": "Empirical Validation",
+      "score": 5.0,
+      "pass": true,
+      "rationale": "Empirical validation: 11/11 subchecks pass. All benchmarks configured, experiment notebook contains ID/OOD analysis.",
+      "subchecks": {
+        "config declares n_runs": true,
+        "n_runs >= 10 (got 15)": true,
+        "config h-ptb.yaml exists": true,
+        "config h-afb.yaml exists": true,
+        "config h-mcb.yaml exists": true,
+        "config h-dcb.yaml exists": true,
+        "config h-stb.yaml exists": true,
+        "experiment notebook exists": true,
+        "notebook has statistical reporting": true,
+        "notebook has ID/OOD comparison": true,
+        "metrics module has effect-size helpers": true
+      },
+      "details": "n_runs_per_condition=15"
+    },
+    {
+      "name": "Proof Rigor",
+      "score": 4.5,
+      "pass": true,
+      "rationale": "Proof reconstruction: 7/8 checks pass. Proof files exist with circularity/boundary awareness.",
+      "subchecks": {
+        "proof-reconstruction dir exists": true,
+        "proof files exist": true,
+        "circularity-check sections (19/21)": true,
+        "boundary-case sections (21/21)": true,
+        "audit-matrix.tex exists": true,
+        "erratum.tex exists": true,
+        "manuscript contains proof environments": false,
+        "claims registry has entries": true
+      },
+      "details": "found 21 .tex proof files\nfiles with circularity checks: 19\nclaims registered: 38"
+    },
+    {
+      "name": "Codebase Quality",
+      "score": 5.0,
+      "pass": true,
+      "rationale": "Code quality: 12/12 checks pass. Package structure is clean with 6 subpackages.",
+      "subchecks": {
+        "subpackage ode has __init__": true,
+        "subpackage models has __init__": true,
+        "subpackage utils has __init__": true,
+        "subpackage benchmarks has __init__": true,
+        "subpackage config has __init__": true,
+        "subpackage monitoring has __init__": true,
+        "sufficient code volume (>500 lines)": true,
+        "test files exist": true,
+        "lint-clean (ruff)": true,
+        "config loader exists": true,
+        "training module exists": true,
+        "type annotations widespread": true
+      },
+      "details": "code/sigma: ~3141 Python lines\ntest files: ['test_config.py', 'test_ode.py']\nruff errors: 0"
+    },
+    {
+      "name": "Reproducibility",
+      "score": 5.0,
+      "pass": true,
+      "rationale": "Reproducibility: 12/12 checks pass. ",
+      "subchecks": {
+        "Dockerfile exists": true,
+        ".dockerignore exists": true,
+        "requirements-lock.txt exists": true,
+        "requirements.txt exists": true,
+        "pyproject.toml exists": true,
+        "HARDWARE.md exists": true,
+        "deterministic seed set in training": true,
+        "cudnn deterministic configured": true,
+        "config has global_seed": true,
+        "paper mentions reproducibility": true,
+        "paper has seeding section": true,
+        "AGENTS.md has reproducibility info": true
+      },
+      "details": ""
+    },
+    {
+      "name": "Claim Completeness",
+      "score": 5.0,
+      "pass": true,
+      "rationale": "Claim tracking: 10/10 checks pass. Registry has 38 claims.",
+      "subchecks": {
+        "claims-registry.md exists": true,
+        "claims have IDs": true,
+        "has category LITERATURE": true,
+        "has category DESIGNED": true,
+        "has category COLLECTED": true,
+        "has category PENDING": true,
+        "has status descriptions": true,
+        "has verification status": true,
+        "claim IDs are consecutive": true,
+        "paper has claim anchors": true
+      },
+      "details": "total claim IDs found (table format): 38\nclaim anchors in manuscript: 38 (38 LaTeX, 0 HTML)"
+    },
+    {
+      "name": "Benchmark Coverage",
+      "score": 5.0,
+      "pass": true,
+      "rationale": "Benchmark coverage: 26/26 checks pass. All 5 benchmarks have configs, payload generators, and paper mentions.",
+      "subchecks": {
+        "H-PTB config exists": true,
+        "H-PTB has benchmark field": true,
+        "H-PTB has predictions_tested": true,
+        "H-AFB config exists": true,
+        "H-AFB has benchmark field": true,
+        "H-AFB has predictions_tested": true,
+        "H-MCB config exists": true,
+        "H-MCB has benchmark field": true,
+        "H-MCB has predictions_tested": true,
+        "H-DCB config exists": true,
+        "H-DCB has benchmark field": true,
+        "H-DCB has predictions_tested": true,
+        "H-STB config exists": true,
+        "H-STB has benchmark field": true,
+        "H-STB has predictions_tested": true,
+        "H-PTB payload generator exists": true,
+        "H-AFB payload generator exists": true,
+        "H-MCB payload generator exists": true,
+        "H-DCB payload generator exists": true,
+        "H-STB payload generator exists": true,
+        "benchmark suite notebook exists": true,
+        "H-PTB mentioned in paper": true,
+        "H-AFB mentioned in paper": true,
+        "H-MCB mentioned in paper": true,
+        "H-DCB mentioned in paper": true,
+        "H-STB mentioned in paper": true
+      },
+      "details": ""
+    }
+  ]
+}

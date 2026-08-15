@@ -1,0 +1,41 @@
+# H-STB (Schema Transmission Benchmark) — Social Cognition Track
+# Tests models' ability to transmit structural rules (schemas) vs surface facts between agents
+
+benchmark: H-STB
+track: Social
+
+dataset: COGS
+sample_size: 200
+
+conditions:
+  Schema:
+    name: Schema-Transmission
+    description: Structural rule communicated between agents (high compression)
+  Fact:
+    name: Fact-Transmission
+    description: Observed input-output mappings communicated (low compression)
+  Mixed:
+    name: Mixed
+    description: Both rule and examples communicated
+  ToM:
+    name: Theory of Mind
+    description: Predict receiver accuracy from sender's communication
+    temperature: 0.7
+  Cooperative:
+    name: Cooperative
+    description: Joint rule application by two agents
+
+metrics:
+  primary: ROI_Schema                     # return on investment for schema vs fact transmission
+  secondary:
+    - mu_hat_AB (schema legibility)       # how learnable the transmitted schema is
+  validity:
+    CI: 0.936
+    FD: 0.830
+    DG: 0.509
+    RA: 0.999
+    VA: 0.395
+
+predictions_tested:
+  - P1
+  - P4

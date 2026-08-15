@@ -1,0 +1,31 @@
+{
+  "experiment": {
+    "date": "2026-06-09T17:02:36.156542",
+    "gpu": "Tesla T4",
+    "runs": 45,
+    "amp": true,
+    "global_seed": 2024
+  },
+  "results": {
+    "baseline": {
+      "mean_ood": 45.453894176645164,
+      "std_ood": 5.390258154188263,
+      "mean_id": 90.11313131313132,
+      "n_runs": 15
+    },
+    "additive": {
+      "mean_ood": 94.23805137652236,
+      "std_ood": 7.948584896724206,
+      "mean_id": 97.51111111111112,
+      "n_runs": 15
+    },
+    "multiplicative": {
+      "mean_ood": 87.3769317367721,
+      "std_ood": 12.694821373493136,
+      "mean_id": 96.17720057720058,
+      "n_runs": 15
+    }
+  },
+  "best_condition": "additive",
+  "compositional_gap": 44.659237136486155
+}

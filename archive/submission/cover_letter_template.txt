@@ -1,0 +1,26 @@
+Dear Editor,
+
+We are submitting the manuscript entitled "The Σ-Model: Schema Coherence, Cognitive
+Faculty Evaluation, and Phase-Structured Curriculum Design for AI Agents" for
+consideration in the Journal of Artificial Intelligence Research.
+
+This paper introduces a formal dynamical-systems framework for understanding and
+ameliorating compositional generalisation failure in neural agents. The core
+contribution is the Schema Coherence (Σ-Model) framework, which:
+  (1) Formalises schema coherence σ_A as a latent state variable governed by an
+      autocatalytic ODE with a transcritical bifurcation (R_0 = 1);
+  (2) Derives nine falsifiable predictions experimentally validated on a synthetic
+      compositional benchmark;
+  (3) Proposes a phase-structured curriculum that closes the OOD generalisation gap
+      from 45.6pp to 0.0pp (Cohen's d = 9.1).
+
+The supplementary code archive contains the full implementation, a minimal reproducible
+example (scripts/mre_sigma.py, 0.5s CPU), and all experimental configurations. The
+manuscript, code, and data are fully reproducible via the provided Dockerfile.
+
+We confirm that this work is original, has not been published previously, and is not
+under consideration elsewhere. All authors have approved the manuscript and agree
+with its submission to JAIR.
+
+Sincerely,
+[Anonymous]

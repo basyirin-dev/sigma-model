@@ -1,0 +1,38 @@
+# H-PTB (Phase Transition Benchmark) — Learning Track
+# Measures when (tau*) and how abruptly models transition from memorisation to generalisation
+
+benchmark: H-PTB
+track: Learning
+
+dataset: PCFG-SET
+sample_size: 200
+
+conditions:
+  A:
+    name: Random/IID
+    description: Baseline random sample ordering
+  B:
+    name: Difficulty-Ordered
+    description: Easy-to-hard difficulty schedule (tests curriculum benefit)
+  C:
+    name: Structure-Targeted
+    description: Contrastive pairs targeting structural rules (tests rule vs surface discrimination)
+  D:
+    name: Structure-Targeted + Alpha-Building
+    description: Contrastive pairs with explicit rule/surface discrimination + alpha scaffolding
+
+metrics:
+  primary: OOD ratio at breakpoint tau*   # generalisation accuracy at phase transition
+  change_point_algorithm: PELT            # pruned exact linear time (Killick et al. 2012)
+  validity:
+    CI: 0.836    # Compositionality Index
+    FD: 0.750    # Faculty Diversity
+    DG: 0.426    # Discrimination Gradient
+    RA: 0.999    # Rule Alignment
+    VA: 0.267    # Variance Accounted
+
+predictions_tested:
+  - P1
+  - P2
+  - P6
+  - P6b

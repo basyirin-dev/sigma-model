@@ -1,0 +1,80 @@
+% ============================================================
+% Erratum: Documented Corrections to Original Manuscript
+% ============================================================
+
+\begin{enumerate}
+
+\item \textbf{Lemma~3.1 (Latentness):}
+  The argument roadmap (Step~1: ``$\sigma_A$ cannot be inferred from
+  $\delta_A$ alone'') is supported by Propositions~3.6--3.7, which bound
+  estimator error. A direct non-injectivity proof is absent from the manuscript.
+  \textit{Correction:} Lemma~3.1 provides a constructive teacher-student
+  counterexample with explicit weight configurations $W_1$ (surface
+  memorization) and $W_2$ (compositional generalization).
+
+\item \textbf{Proposition~3.1 (Local Existence):}
+  Original claims vector field is $C^\infty$ on $\text{int}(\mathcal{X})$.
+  False because the fusion term uses $\max(0,\cdot)$ and
+  the GCE diagnostic uses $\Corr$, both of which break $C^\infty$
+  smoothness at measure-zero subsets.
+  \textit{Correction:} Vector field is piecewise-$C^\infty$ and locally
+  Lipschitz. Picard--Lindelöf applies without $C^\infty$ requirement.
+
+\item \textbf{Proposition~3.2 (Forward Invariance):}
+  \begin{enumerate}
+  \item \textbf{Critical error} at $\sigma_A = 0$: Original states
+    ``$\dot{\sigma}_A \geq 0$ (growth term $\rho P_A \alpha_A > 0$).''
+    False because $\dot{\sigma}_A = \sigma_A \times [\cdots]$, so
+    $\dot{\sigma}_A = 0$ on $\sigma_A = 0$ regardless of the bracket.
+    $\sigma_A = 0$ is an invariant manifold, not a reflecting boundary.
+    \textit{Correction:} Exact integral $\sigma_A(t) = \sigma_A(0) \times
+    \exp(\int_0^t [\cdots]\,ds)$ proves non-negativity.
+  \item $\sigma_A \leq 1$ is not guaranteed by the ODE alone for all
+    parameter regimes (requires $R_0 < 1/(1 - \gamma_\sigma)$ or
+    numerical clamping). Original proof incorrectly cites a
+    ``vanishing $(1-\sigma_A)$ factor'' that does not exist in the ODE.
+  \end{enumerate}
+
+\item \textbf{Proposition~3.3 (Fast-Slow Decomposition):}
+  Original proof sketch claims ``eigenvalues have
+  strictly negative real parts (due to the saturating nonlinearities
+  in the Gompertz efficiency and the $(1-\sigma_A)$, $(1-\alpha_A)$
+  factors)'' without computing any eigenvalues.
+  \textit{Correction:} Full 3$\times$3 Jacobian computed explicitly.
+  Block-triangular structure yields $\lambda_1 = -(\gamma C_A +
+  \zeta_\alpha R_A^{\text{surface}}) < 0$; the $2\times2$ sub-block
+  has negative trace and (for $R_0 \neq 1$) positive determinant,
+  confirming two remaining eigenvalues with negative real parts.
+  Normal hyperbolicity holds away from $R_0 = 1$.
+
+\item \textbf{Proposition~4.1 (Bifurcation):}
+  Original manuscript does not verify the transversality conditions
+  for a transcritical bifurcation. The stability analysis is stated
+  without checking $\partial^2 f / \partial \sigma_A^2 \neq 0$ or
+  $\partial^2 f / (\partial \sigma_A \partial R_0) \neq 0$.
+  \textit{Correction:} Direct 1D Taylor expansion with explicit
+  verification of both transversality conditions:
+  $f''(0) = -2\gamma_\sigma \rho P_A \alpha_A \neq 0$ and
+  $\partial^2 f / (\partial \sigma_A \partial r_{\text{net}}) = 1 \neq 0$.
+
+\item \textbf{Proposition~4.2 (Depth Threshold):}
+  The shift from $\delta^* \approx 0.54$ (computed base) to
+  $\delta^*_{\text{oper}} = 0.65$ (operational threshold) is presented
+  without derivation: ``adopt a nominal threshold of $\delta^* \approx 0.65$
+  to account for the lag between intersection activation and sustained
+  discovery'' \citep{redhardt2025}.
+  \textit{Correction:} Formalized as a hysteresis delay $\tau$ in
+  the intersection activation function $\Psi_A(t - \tau)$. For
+  $\tau \approx 0.11$, the delayed condition yields the operational
+  threshold. The general formula is
+  $\delta_{\text{oper}}^* = (\theta_I + \tau \eta_{\max}) / (1 + \tau \lambda_c)$.
+
+\item \textbf{Stage~1/2 Circular Dependency (Phase~6):}
+  Stage~1 requires $\tilde{\sigma}_A$ from Stage~2 to estimate depth;
+  Stage~2 requires $\delta_A$ from Stage~1 to compute schema coherence.
+  The original manuscript does not address this dependency.
+  \textit{Resolution:} Formulated as a piecewise-smooth (Filippov)
+  hybrid system with fixed-point iteration converging in 2--3 rounds.
+  See \texttt{phase-6-hybrid.tex}.
+
+\end{enumerate}

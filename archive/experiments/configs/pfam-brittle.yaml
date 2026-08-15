@@ -1,0 +1,13 @@
+# Σ-Model — Pfam-Brittle: Brittle domain recombination experiment (N=500)
+# Intended for merge with pfam-base.yaml via sigma.config.merge_configs
+
+experiment:
+  n_runs_per_condition: 167  # 167 × 3 conditions = 501 ≈ N=500
+  conditions:
+    - familiar_combos        # seen domain pairs during training
+    - new_families            # unseen families — tests cross-family transfer
+    - cross_fold              # domains from different folds recombined
+
+statistical:
+  alpha: 0.00625              # Bonferroni-corrected: 0.05 / 8 comparisons
+  test: "welch_t"             # unequal variance t-test (robust to heteroscedasticity)

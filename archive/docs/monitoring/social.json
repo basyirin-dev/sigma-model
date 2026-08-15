@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-06-09T08:07:39.220471",
+  "reddit": {
+    "subreddits_scanned": [
+      "MachineLearning",
+      "artificial",
+      "compsci",
+      "language technology"
+    ],
+    "queries_used": 8,
+    "results": {
+      "MachineLearning": [],
+      "artificial": [],
+      "compsci": [],
+      "language technology": []
+    }
+  },
+  "hacker_news": {
+    "queries_used": 5,
+    "results": [
+      {
+        "title": "Scale Leads to Compositional Generalization",
+        "url": "https://arxiv.org/abs/2507.07207",
+        "hn_url": "https://news.ycombinator.com/item?id=44786325",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-08-04"
+      },
+      {
+        "title": "Impact of Pretraining Word Co-Occurrence on Compositional Generalization In",
+        "url": "https://arxiv.org/abs/2507.08000",
+        "hn_url": "https://news.ycombinator.com/item?id=44535220",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2025-07-11"
+      },
+      {
+        "title": "Exploring Compositional Generalization by Transformers",
+        "url": "https://arxiv.org/abs/2504.15349",
+        "hn_url": "https://news.ycombinator.com/item?id=43931950",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-05-08"
+      },
+      {
+        "title": "Show HN: Rocky \u2013 Rust SQL engine with branches, replay, column lineage",
+        "url": "https://github.com/rocky-data/rocky",
+        "hn_url": "https://news.ycombinator.com/item?id=47935246",
+        "points": 122,
+        "num_comments": 48,
+        "created_at": "2026-04-28"
+      },
+      {
+        "title": "Code Is Cheap. Coherence Is the New Bottleneck",
+        "url": "https://news.ycombinator.com/item?id=46600376",
+        "hn_url": "https://news.ycombinator.com/item?id=46600376",
+        "points": 2,
+        "num_comments": 2,
+        "created_at": "2026-01-13"
+      },
+      {
+        "title": "Portabase: Agent-Based Database Operations Platform (Backup/Restoration)",
+        "url": "https://news.ycombinator.com/item?id=46468750",
+        "hn_url": "https://news.ycombinator.com/item?id=46468750",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-01-02"
+      },
+      {
+        "title": "Show HN: PgDog \u2013 Scale Postgres without changing the app",
+        "url": "https://github.com/pgdogdev/pgdog",
+        "hn_url": "https://news.ycombinator.com/item?id=47123631",
+        "points": 326,
+        "num_comments": 63,
+        "created_at": "2026-02-23"
+      },
+      {
+        "title": "PgDog: Connection pooler, load balancer and sharder for PostgreSQL",
+        "url": "https://news.ycombinator.com/item?id=47048265",
+        "hn_url": "https://news.ycombinator.com/item?id=47048265",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-17"
+      },
+      {
+        "title": "Nuclear Fusion tokamak simulator FUSION CIRCUS beta",
+        "url": "https://news.ycombinator.com/item?id=46818067",
+        "hn_url": "https://news.ycombinator.com/item?id=46818067",
+        "points": 1,
+        "num_comments": 3,
+        "created_at": "2026-01-29"
+      },
+      {
+        "title": "Show HN: Run the popular LLM-Course tutorials on HyperAI",
+        "url": "https://hyper.ai/cn/notebooks/49873",
+        "hn_url": "https://news.ycombinator.com/item?id=47395047",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-16"
+      },
+      {
+        "title": "Ask HN: How to learn AI from first principles?",
+        "url": "https://news.ycombinator.com/item?id=42827913",
+        "hn_url": "https://news.ycombinator.com/item?id=42827913",
+        "points": 145,
+        "num_comments": 56,
+        "created_at": "2025-01-26"
+      },
+      {
+        "title": "Show HN: Introduction to Algorithms and Machine Learning [pdf]",
+        "url": "https://www.justinmath.com/files/introduction-to-algorithms-and-machine-learning.pdf",
+        "hn_url": "https://news.ycombinator.com/item?id=36895578",
+        "points": 6,
+        "num_comments": 0,
+        "created_at": "2023-07-27"
+      },
+      {
+        "title": "India's school for the poor but gifted",
+        "url": "http://www.thenational.ae/apps/pbcs.dll/article?AID=/20090725/FOREIGN/707249814/1001",
+        "hn_url": "https://news.ycombinator.com/item?id=724071",
+        "points": 43,
+        "num_comments": 14,
+        "created_at": "2009-07-26"
+      }
+    ]
+  }
+}

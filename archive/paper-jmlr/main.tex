@@ -1,0 +1,98 @@
+% ======================================================================
+% Main file: Global Dynamics of Schema-Coherence Suppression
+% JMLR submission — companion to Basri (2026) TMLR
+% ======================================================================
+\documentclass[twoside]{article}
+
+\usepackage{jmlr2e}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{xr}
+
+% --- External references to companion TMLR paper (currently unused; all refs are internal) ---
+%\externaldocument{../paper/manuscript}
+
+% --- Notation registry (fully aligned with TMLR) ---
+\input{jmlr-notation}
+
+% --- Theorem environments (jmlr2e defines theorem, lemma, etc.) ---
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+\newtheorem{assumption}[theorem]{Assumption}
+
+% --- JMLR metadata ---
+\jmlrheading{1}{2026}{1--48}{6/2026}{}{jmlr-sigma-foundations}
+{Basyirin Amsyar Basri}
+
+\ShortHeadings{Global Dynamics of Schema-Coherence Suppression}{Basri}
+
+\firstpageno{1}
+
+\title{Global Dynamics of Schema-Coherence Suppression:\\
+Existence, Stability, and Stochastic Extensions
+of the $\Sigma$-Model}
+
+\author{\name Basyirin Amsyar Basri \addr Independent Researcher\\
+  \email{basri@sigma-model.dev}
+}
+
+\editor{}
+
+% ======================================================================
+\begin{document}
+% ======================================================================
+
+\maketitle
+
+\begin{abstract}
+The $\Sigma$-Model (Basri, 2026) introduces a dynamical-systems framework
+for compositional generalisation failure, formalising schema-coherence
+suppression ($\sigma_A$) as the origin of the high-depth/low-out-of-distribution
+performance gap. The companion TMLR paper establishes the framework,
+presents pilot empirical validation, and identifies four outstanding
+mathematical questions. This paper resolves all four open problems:
+(i)~global existence and uniqueness of the coupled ODE system,
+(ii)~rigorous timescale separation bounds for the fast-slow decomposition,
+(iii)~the complete global stability landscape across the full parameter
+space, and (iv)~convergence analysis of the stochastic differential
+equation extension. We further contribute two novel results:
+(v)~rate constant identifiability via differential algebra, proving
+which parameters can be recovered from observable learning curves,
+and (vi)~an axiomatic derivation establishing the optimality of the
+$\Psi_A$ intersection activation form. All theorems are accompanied by
+computational verification using the existing $\Sigma$-Model simulation
+infrastructure, bridging pure theory and machine learning practice.
+Together, these results establish the $\Sigma$-Model as a mathematically
+well-posed, structurally stable, and empirically identifiable framework,
+providing a rigorous foundation for phase-aware curriculum design.
+\end{abstract}
+
+\begin{keywords}
+Dynamical systems, compositional generalisation, schema coherence,
+bifurcation theory, singular perturbation, stochastic differential equations
+\end{keywords}
+
+% ======================================================================
+\input{contribution-1-global-existence}
+\input{contribution-2-timescale-bounds}
+\input{contribution-3-stability-landscape}
+\input{contribution-4-sde-extension}
+\input{contribution-5-coupling-optimality}
+\input{contribution-6-identifiability}
+% ======================================================================
+
+\acks{
+The author thanks the anonymous TMLR reviewers for identifying the four
+open problems that motivated this work. No external funding was received
+for this research.
+}
+
+% ======================================================================
+\bibliography{../paper/bibliography}
+% ======================================================================
+
+\end{document}

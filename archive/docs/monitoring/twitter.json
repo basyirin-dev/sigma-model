@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-06-09T08:07:04.622873",
+  "status": "not_configured",
+  "message": "Twitter/X API requires OAuth 2.0 Bearer Token. Set TWITTER_BEARER_TOKEN environment variable. See module docstring for setup instructions.",
+  "queries_skipped": [
+    "compositional generalization",
+    "schema coherence AI",
+    "grokking phase transition",
+    "Σ-Model model",
+    "sigma suppression neural"
+  ],
+  "results": []
+}

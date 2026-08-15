@@ -1,6 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "lsp": true,
+  "lsp": {
+    "pyright": { "command": ["pyright-langserver", "--stdio"], "extensions": ["py"], "disabled": false },
+    "ruff": { "command": ["ruff", "server"], "extensions": ["py"], "disabled": false },
+    "yaml": { "command": ["yaml-language-server", "--stdio"], "extensions": ["yaml", "yml"], "disabled": false },
+    "taplo": { "command": ["taplo", "lsp", "stdio"], "extensions": ["toml"], "disabled": false },
+    "marksman": { "command": ["marksman"], "extensions": ["md"], "disabled": false },
+    "bash": { "command": ["bash-language-server", "start"], "extensions": ["sh", "bash"], "disabled": false },
+    "typescript": { "disabled": true },
+    "gopls": { "disabled": true },
+    "dockerfile": { "disabled": true }
+  },
   "mcp": {
     "sequential_thinking": {
       "type": "local",
@@ -22,10 +32,21 @@
       "command": ["uvx", "mcp-server-fetch"],
       "enabled": true
     },
-    "memory": {
+    "academic_research": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "command": ["academic-research-mcp"],
+      "enabled": true
+    },
+    "zotero": {
+      "type": "local",
+      "command": ["zotero-mcp", "serve"],
+      "enabled": true
+    },
+    "arxiv": {
+      "type": "local",
+      "command": ["arxiv-mcp-server"],
       "enabled": true
     }
-  }
+  },
+  "permission": "allow"
 }

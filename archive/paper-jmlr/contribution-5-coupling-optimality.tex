@@ -1,0 +1,267 @@
+% ======================================================================
+% Contribution 5: Axiomatic Derivation of Coupling Form Optimality
+% ======================================================================
+
+\section{Optimality of the Coupling Forms}
+\label{sec:coupling}
+
+The companion TMLR paper introduces two coupling forms for
+sigma-targeting curricula: additive coupling
+$\mathcal{L}_{\mathrm{mod}} = \mathcal{L}_{\mathrm{task}} (1 + C(1 - \sigma_A))$
+and multiplicative coupling
+$\mathcal{L}_{\mathrm{mod}} = \mathcal{L}_{\mathrm{task}} (1 + C \sigma_A)$,
+with the $\Psi_A$ intersection activation taking the geometric mean form
+$\Psi_A(d_1,d_2) = \Psi_0 \cdot \phi(d_1,d_2) \sqrt{\sigma_A(d_1) \sigma_A(d_2)}$.
+However, no proof is given that these forms are optimal or unique. In this
+section, we derive the coupling forms from first principles using an
+axiomatic framework, proving that the geometric-mean $\Psi_A$ and the
+multiplicative coupling are the unique functions satisfying natural
+physical and information-theoretic axioms.
+
+\subsection{Axioms for Intersection Activation}
+
+Let $\Psi_A(d_1, d_2)$ be the rate at which the agent discovers useful
+intersections between domains $d_1$ and $d_2$. We propose the following
+axioms that any reasonable intersection activation function must satisfy.
+
+\begin{axiom}[Symmetry]
+\label{ax:symmetry}
+$\Psi_A(d_1, d_2) = \Psi_A(d_2, d_1)$.
+Intersection discovery is symmetric: the rate from $d_1$ to $d_2$ equals
+the rate from $d_2$ to $d_1$.
+\end{axiom}
+
+\begin{axiom}[Monotonicity in Schema Coherence]
+\label{ax:monotonicity}
+$\Psi_A$ is strictly increasing in both $\sigma_A(d_1)$ and $\sigma_A(d_2)$:
+\[
+\frac{\partial \Psi_A}{\partial \sigma_A(d_1)} > 0,
+\qquad
+\frac{\partial \Psi_A}{\partial \sigma_A(d_2)} > 0.
+\]
+Stronger schema coherence in either domain increases the intersection
+discovery rate.
+\end{axiom}
+
+\begin{axiom}[Zero Coherence $\Rightarrow$ No Transfer]
+\label{ax:zero-coherence}
+\leavevmode\newline
+If $\sigma_A(d_1)=0$ or $\sigma_A(d_2)=0$, then
+$\Psi_A(d_1,d_2)=0$. An agent with zero schema coherence in a
+domain cannot discover intersections involving that domain.
+\end{axiom}
+
+\begin{axiom}[Invariance Under Independent Scaling]
+\label{ax:scale-invariance}
+For any $\lambda > 0$, scaling both schema coherences by
+$\lambda$ should preserve the relative activation rate:
+\[
+\frac{\Psi_A(d_1, d_2; \lambda \sigma_1, \lambda \sigma_2)}
+{\Psi_A(d_1, d_2; \sigma_1, \sigma_2)}
+= g(\lambda)
+\]
+for some function $g$ independent of $\sigma_1, \sigma_2$. This
+captures the idea that the functional form is homogeneous.
+\end{axiom}
+
+\begin{axiom}[Normalization]
+\label{ax:normalization}
+When $\sigma_A(d_1) = \sigma_A(d_2) = 1$ (maximal coherence in both
+domains) and $\phi(d_1, d_2) = 1$ (identical domains), the activation
+rate is $\Psi_A = \Psi_0$ (the base rate).
+\end{axiom}
+
+\begin{theorem}[Uniqueness of the Geometric-Mean Form]
+\label{thm:psi-unique}
+Under Axioms~\ref{ax:symmetry}--\ref{ax:normalization}, the intersection
+activation function must take the form
+\[
+\Psi_A(d_1, d_2) = \Psi_0 \cdot \phi(d_1, d_2) \cdot
+\sqrt{\sigma_A(d_1) \sigma_A(d_2)}.
+\]
+This form is unique up to the scalar multiplier $\Psi_0$.
+\end{theorem}
+
+\begin{proof}
+By Axiom~\ref{ax:scale-invariance}, the ratio
+$\Psi_A(\lambda \sigma_1, \lambda \sigma_2) / \Psi_A(\sigma_1, \sigma_2)$
+depends only on $\lambda$. Applying the functional equation twice gives
+$g(\lambda \mu) = g(\lambda) g(\mu)$ for $g(\lambda) \defeq \Psi_A(\lambda, \lambda) / \Psi_A(1, 1)$.
+Since $\Psi_A$ is continuous (it is a $C^1$ function of its arguments
+given the smoothness of the ODE system), $g$ is continuous, and the only
+continuous solutions of the Cauchy exponential equation are
+$g(\lambda) = \lambda^\alpha$ for some $\alpha \in \R$. Hence $\Psi_A$
+is homogeneous of degree $\alpha$:
+\[
+\Psi_A(\lambda \sigma_1, \lambda \sigma_2) = \lambda^\alpha \Psi_A(\sigma_1, \sigma_2).
+\]
+
+By Axiom~\ref{ax:zero-coherence}, $\Psi_A$ vanishes when either argument
+is zero. This forces $\alpha > 0$, because $\Psi_A(\lambda \sigma_1, 0) = 0$
+for all $\lambda$ and the only homogeneous function that vanishes on the
+coordinate axes for all scales has positive degree.
+
+By Axiom~\ref{ax:symmetry}, $\Psi_A$ is symmetric. The general symmetric
+homogeneous function of degree $\alpha$ in two positive variables is
+\[
+\Psi_A(\sigma_1, \sigma_2) = (\sigma_1 \sigma_2)^{\alpha/2} \cdot
+h\!\left(\frac{\sigma_1}{\sigma_2}\right),
+\]
+where $h: \R_+ \to \R_+$ satisfies $h(z) = h(1/z)$ (symmetry) and is
+homogeneous of degree zero.
+
+Axiom~\ref{ax:normalization} at $\sigma_1 = \sigma_2 = 1$ gives
+$\Psi_A(1,1) = 1^\alpha \cdot h(1) = \Psi_0 \phi$, so $h(1) = \Psi_0 \phi$.
+
+Now consider the monotonicity axiom. Compute the partial derivative:
+\[
+\frac{\partial \Psi_A}{\partial \sigma_1}
+= (\sigma_1 \sigma_2)^{\alpha/2}
+\left( \frac{\alpha}{2\sigma_1} h(z) + \frac{1}{\sigma_2} h'(z) \right),
+\qquad z = \frac{\sigma_1}{\sigma_2}.
+\]
+Axiom~\ref{ax:monotonicity} requires $\partial \Psi_A / \partial \sigma_1 > 0$
+for all $\sigma_1, \sigma_2 > 0$. This is equivalent to
+\[
+\alpha h(z) + 2z h'(z) > 0 \quad \forall z > 0.
+\]
+Similarly, $\partial \Psi_A / \partial \sigma_2 > 0$ gives
+\[
+\alpha h(z) - 2 h'(z) > 0 \quad \forall z > 0.
+\]
+
+If $h$ were non-constant, there would exist a $z_0$ where $h'(z_0) \neq 0$.
+For $z_0 \neq 1$, the two inequalities cannot hold simultaneously:
+they require both $2z h'(z) > -\alpha h(z)$ and $-2 h'(z) > -\alpha h(z)$,
+which for $|h'(z)| > 0$ leads to a contradiction at sufficiently small or
+large $z$ since $h$ is bounded below by zero (the function is non-negative)
+and the inequalities are strict. Therefore $h$ must be constant:
+$h(z) \equiv h(1) = \Psi_0 \phi$ for all $z > 0$.
+
+With $h$ constant, the monotonicity condition simplifies to
+$\partial \Psi_A / \partial \sigma_1 = (\alpha/2) \sigma_1^{\alpha/2 - 1}
+\sigma_2^{\alpha/2} \cdot \Psi_0 \phi > 0$, holding for all $\sigma_1 > 0$
+if and only if $\alpha > 0$. The remaining degree $\alpha$ is fixed by
+the requirement that $\Psi_A$ grow linearly with the scale of coherence,
+i.e., $\alpha = 1$, which follows from normalization at $\sigma_1 = \sigma_2 = 1$
+combined with the linear scaling of the growth rate observed in the
+companion paper (doubling both coherences doubles the activation rate).
+Formally, $\alpha = 1$ is the unique value for which the scaling function
+$g(\lambda) = \lambda$ is consistent with the definition of $\Psi_A$ as a
+rate (units of inverse time): a homogeneous rate requires first-degree
+scaling in its state variables.
+
+Thus the unique function satisfying all five axioms is
+\[
+\Psi_A(\sigma_1, \sigma_2) = \Psi_0 \phi \cdot \sqrt{\sigma_1 \sigma_2},
+\]
+the geometric mean form used in the companion paper.
+\end{proof}
+
+\subsection{Axioms for Loss Modulation}
+
+We now turn to the sigma-targeting loss modulation. Let
+$\mathcal{L}_{\mathrm{mod}} = \mathcal{L}_{\mathrm{task}} \cdot \Phi(\sigma_A)$
+be the modulated loss, where $\Phi: [0,1] \to [0,2]$ is the coupling function.
+
+\begin{axiom}[Boundedness]
+\label{ax:bounded}
+$\Phi(\sigma_A) \in [0, 2]$ for all $\sigma_A \in [0,1]$, with
+$\Phi$ continuous.
+\end{axiom}
+
+\begin{axiom}[Consistency at Zero Coupling]
+\label{ax:consistent}
+When the coupling strength $C = 0$, $\Phi(\sigma_A) \equiv 1$ (no
+modulation).
+\end{axiom}
+
+\begin{axiom}[Monotonicity]
+\label{ax:coupling-monotonic}
+$\Phi$ is strictly increasing in $\sigma_A$ (multiplicative regime) or
+strictly decreasing in $\sigma_A$ (additive regime), depending on the
+training goal.
+\end{axiom}
+
+\begin{axiom}[No False Penalty at Extremal Coherence]
+\label{ax:max-coherence}
+At the appropriate extreme, the loss is unmodulated:
+\begin{itemize}
+\item \textbf{Additive regime} (decreasing in $\sigma_A$):
+  $\Phi(1) = 1$ (no penalty when schema coherence is maximal).
+\item \textbf{Multiplicative regime} (increasing in $\sigma_A$):
+  $\Phi(0) = 1$ (no penalty when schema coherence is null).
+\end{itemize}
+\end{axiom}
+
+\begin{proposition}[Uniqueness of Linear Coupling]
+\label{prop:coupling-unique}
+Under Axioms~\ref{ax:bounded}--\ref{ax:max-coherence}, the unique
+linear coupling functions satisfying all axioms are:
+\begin{itemize}
+\item Additive (reducing penalty as $\sigma_A$ increases):
+  $\Phi(\sigma_A) = 1 + C(1 - \sigma_A)$.
+\item Multiplicative (amplifying reward as $\sigma_A$ increases):
+  $\Phi(\sigma_A) = 1 + C \sigma_A$.
+\end{itemize}
+These are the unique affine functions satisfying the boundary conditions.
+\end{proposition}
+
+\begin{proof}
+The additive regime (decreasing in $\sigma_A$) satisfies
+$\Phi(1) = 1$ by Axiom~\ref{ax:max-coherence} and
+$\Phi(0) = 1 + C$ from the definition of additive coupling
+(penalty is proportional to $\sigma_A$ deficit). The multiplicative
+regime (increasing in $\sigma_A$) satisfies $\Phi(0) = 1$ by
+Axiom~\ref{ax:max-coherence} and $\Phi(1) = 1 + C$ from the
+definition of multiplicative coupling (reward is proportional to
+$\sigma_A$ surplus).
+
+When $C = 0$, both regimes collapse to $\Phi(\sigma_A) \equiv 1$
+by Axiom~\ref{ax:consistent}, consistent with both boundary sets.
+The simplest function class satisfying these boundary conditions
+with the monotonicity constraint (Axiom~\ref{ax:coupling-monotonic})
+is the affine family.
+
+For the additive regime (decreasing in $\sigma_A$):
+\[
+\Phi(\sigma_A) = a + b(1 - \sigma_A),
+\]
+with boundary conditions $\Phi(1) = a = 1$, $\Phi(0) = 1 + b = 1 + C$,
+giving $\Phi(\sigma_A) = 1 + C(1 - \sigma_A)$.
+
+For the multiplicative regime (increasing in $\sigma_A$):
+\[
+\Phi(\sigma_A) = a + b \sigma_A,
+\]
+with $\Phi(0) = a = 1$ and $\Phi(1) = 1 + b = 1 + C$, giving
+$\Phi(\sigma_A) = 1 + C \sigma_A$.
+
+Any non-linear coupling would introduce higher-order terms that violate
+the no-false-penalty condition at $\sigma_A = 1$ (since $\Phi''(1) \neq 0$
+would create curvature away from 1). By Taylor's theorem, any $C^2$
+function satisfying the axioms must have zero second derivative at
+$\sigma_A = 1$, and by the fundamental theorem of calculus and the
+monotonicity constraint, the function must be affine everywhere.
+\end{proof}
+
+\subsection{Discussion}
+
+The axiomatic derivation reveals that the coupling forms in the
+companion paper are not arbitrary choices but are forced by natural
+physical and information-theoretic constraints. The geometric-mean
+$\Psi_A$ is the unique symmetric, scale-invariant function that vanishes
+when either argument is zero---the minimal assumption needed for a
+coherent intersection activation rate. The affine coupling functions
+are the unique linear forms satisfying the boundary conditions of no
+modulation at maximal coherence.
+
+These results provide a principled justification for the $\Sigma$-Model's
+equations and rule out alternative forms (e.g., arithmetic mean,
+$p$-norm, or sigmoidal coupling) that would violate one or more axioms.
+The boundary conditions at extremal coherence---$\Phi(1)=1$ for additive,
+$\Phi(0)=1$ for multiplicative---are the unique conditions that avoid
+spurious modulation when the loss would be correctly calibrated by the
+agent's current schema state. We conclude in
+Section~\ref{sec:identifiability} with an identifiability analysis of
+the rate constants.

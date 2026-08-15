@@ -1,0 +1,36 @@
+# H-AFB (Attentional Fidelity Benchmark) — Attention Track
+# Tests whether models attend to structurally relevant tokens or rely on surface heuristics
+
+benchmark: H-AFB
+track: Attention
+
+dataset: SCAN
+sample_size: 200
+
+conditions:
+  ID:
+    name: In-Distribution
+    description: Standard SCAN format (seen compositions)
+  OOD_Structural:
+    name: OOD-Structural
+    description: Novel compositional recombination of seen primitives
+  OOD_SurfaceConflict:
+    name: OOD-Surface-Conflict
+    description: Spurious colour token injected to test surface vs structural attention
+
+metrics:
+  primary: alpha_hat_A at s=0.80   # attention fidelity at 80% structure strength
+  secondary:
+    - Delta_surf (Surface Reliance Index)  # accuracy drop when surface cue conflicts
+    - SRI
+  validity:
+    CI: 0.931
+    FD: 0.830
+    DG: 0.442
+    RA: 0.999
+    VA: 0.341
+
+predictions_tested:
+  - P2
+  - P1
+  - P8

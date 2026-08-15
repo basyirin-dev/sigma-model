@@ -1,0 +1,60 @@
+# Σ-Model — Pfam-Base: Shared protein experiment configuration
+# See also: code/sigma/proteins/
+
+reproducibility:
+  global_seed: 2024
+
+model:
+  d_model: 256
+  nhead: 8
+  num_layers: 4
+  dim_ff: 1024              # 4× d_model (same ratio as base.yaml)
+  dropout: 0.1
+  pad_idx: 0
+  vocab_size: 22000         # Pfam domain vocabulary size (~20K families)
+
+training:
+  n_timesteps: 5000         # 2.5× base.yaml — protein task needs more steps
+  eval_every: 100           # matches n_timesteps/50 ratio from base.yaml
+  lr: 0.001
+  batch_size: 32
+  max_seq_len: 20
+  gradient_clip_norm: 1.0
+  use_amp: true
+  num_workers: 2
+  lambda_sigma: 0.3
+
+data:
+  pfam_version: "38.2"                          # pin to specific release for reproducibility
+  min_domain_arch_length: 2                     # single-domain architectures are trivial
+  max_domain_arch_length: 15                    # 95th percentile of Pfam arch length
+  recombination_distance_metric: "hmm_bit_score"  # HMMER3 domain–domain bit score via pyhmmer
+
+ode:
+  sigma_critical: 0.15
+  delta_star: 0.55
+  noise_std: 0.012
+  gompertz_a: -4.0
+  gompertz_b: -3e-3
+  sigma_amplitude: 0.85
+
+conditions:
+  baseline:
+    use_curriculum: false
+    coupling_mode: null
+    coupling_str: 0.0
+    sigma_init: 0.10         # higher than H-bar (0.10 vs 0.05) — larger vocab, more initial structure
+  additive:
+    use_curriculum: true
+    coupling_mode: additive
+    coupling_str: 0.20
+    sigma_init: 0.08         # slightly below baseline — curriculum helps initial coherence
+  multiplicative:
+    use_curriculum: true
+    coupling_mode: multiplicative
+    coupling_str: 0.20
+    sigma_init: 0.08         # symmetric with additive for fair comparison
+
+experiment:
+  n_runs_per_condition: 15   # scales to N=500 per condition in Phase 3 (pfam-brittle overrides to 167)
+  save_checkpoints: false

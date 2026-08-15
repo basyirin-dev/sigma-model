@@ -1,0 +1,13 @@
+Task: Swap neurips_2026.sty -> neurips_2027.sty
+
+When: Q1 2027 (after official release)
+Where: paper-neurips/main.tex line ~10
+       \documentclass[final]{neurips_2026}  ->  neurips_2027
+
+Steps:
+1. Download neurips_2027.sty from https://media.neurips.cc/Conferences/NeurIPS2027/Styles/
+2. Replace neurips_2026.sty with the new file
+3. Update \documentclass in main.tex
+4. Check for any class option changes (checklist format, author block, etc.)
+5. make clean && make pdf
+6. Verify page limit compliance (8 pages for main text)

@@ -1,0 +1,22 @@
+# Σ-Model — PfamCG-1.0: Domain architecture recombination benchmark
+# Intended for merge with pfam-base.yaml via sigma.config.merge_configs
+
+benchmark: PfamCG-1.0
+
+metrics:
+  primary: "recombination_accuracy"  # exact-match accuracy on recombined architectures
+  secondary:
+    - "domain_retention_rate"         # fraction of original domains preserved in recombination
+    - "novel_combination_precision"   # precision on unseen domain pairs only (not trivial)
+    - "fold_consistency"              # cross-fold transfer accuracy (Split C only)
+
+baselines:
+  - name: "random"
+    description: "Random domain ordering (chance-level baseline)"
+  - name: "frequency"
+    description: "Most frequent domain ordering (unigram prior — tests marginal distribution knowledge only)"
+  - name: "cooccurrence"
+    description: "Pairwise co-occurrence probability (bigram prior — tests adjacency statistics)"
+
+experiment:
+  n_runs_per_condition: 10   # benchmark is low-N by design; statistical power from task count

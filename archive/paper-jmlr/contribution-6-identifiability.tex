@@ -1,0 +1,237 @@
+% ======================================================================
+% Contribution 6: Rate Constant Identifiability
+% ======================================================================
+
+\section{Rate Constant Identifiability Analysis}
+\label{sec:identifiability}
+
+The companion TMLR paper lists seven unmeasured rate constants
+($\rho$, $\epsilon_\sigma$, $\gamma$, $\nu_M$, $\kappa_P$, $\kappa_I$,
+$\kappa_F$) and notes that only certain dimensionless groups (e.g.,
+$R_0 = \rho P_A \alpha_A / (\epsilon_\sigma \Omega_{SL})$) can be
+reliably estimated from learning curves. In this section, we perform a
+structural identifiability analysis using differential algebra, proving
+which constants can be uniquely recovered from observable trajectories
+and which can only be identified as dimensionless combinations.
+
+\subsection{Observables and Model Structure}
+
+The observable quantities in a standard ML training run are:
+\begin{itemize}
+\item $\mathrm{Loss}(t)$: the task loss (scalar).
+\item $\mathrm{Acc}_{\mathrm{ID}}(t)$: in-distribution accuracy.
+\item $\mathrm{Acc}_{\mathrm{OOD}}(t)$: out-of-distribution accuracy.
+\end{itemize}
+
+The Stage~2 proxy $\hat{\sigma}_A = \mathrm{Acc}_{\mathrm{OOD}} / \mathrm{Acc}_{\mathrm{ID}}$
+serves as the empirical estimate of $\sigma_A(t)$ at evaluation checkpoints.
+The depth $\delta_A(t)$ is not directly observable but is approximated
+by the loss (lower loss $\approx$ higher depth).
+
+Following the companion paper's notation, the relationship between
+observables and state variables is:
+\begin{align}
+\hat{\sigma}_A(t) &= \sigma_A(t) + \eta_{\hat{\sigma}}(t), \\
+\mathrm{Loss}(t) &= \mathcal{L}_{\mathrm{task}}(\delta_A(t)) + \eta_{\mathcal{L}}(t),
+\end{align}
+where $\eta$ terms represent measurement noise.
+
+\subsection{Differential Algebra Framework}
+
+Structural identifiability asks: given perfect observation of the outputs
+(noise-free), can the parameters be uniquely recovered?
+
+\begin{definition}[Structural Identifiability]
+A parameter $\theta_i$ of the ODE system
+\[
+\dot{x} = f(x, u, \theta),\quad y = g(x, \theta),
+\]
+with observations $y \in \R^m$, is \emph{structurally globally identifiable}
+if for almost all parameter vectors $\theta, \tilde{\theta}$,
+\[
+g(x(t; \theta), \theta) = g(x(t; \tilde{\theta}), \tilde{\theta}) \;
+\forall t \geq 0 \quad\Longrightarrow\quad \theta_i = \tilde{\theta}_i.
+\]
+It is \emph{structurally locally identifiable} if the equality of outputs
+implies $\theta_i = \tilde{\theta}_i$ in a neighborhood; otherwise it is
+\emph{unidentifiable}.
+\end{definition}
+
+We apply the input-output equation approach: by repeatedly differentiating
+the observation function $y$ and eliminating latent variables using the
+ODE equations, we obtain polynomial equations in the parameters that
+characterize the input-output map.
+
+\begin{definition}[Structural Identifiability via Sensitivity Rank]
+\label{def:sensitivity-rank}
+Let $S(t; \theta) = \partial y(t; \theta) / \partial \theta \in \R^{m \times p}$
+be the sensitivity matrix of the output with respect to the parameters,
+and let $\mathcal{I}(\theta) = \sum_{k=1}^n S(t_k; \theta)^\top
+\Sigma^{-1} S(t_k; \theta)$ be the Fisher information matrix. A parameter
+$\theta_i$ is (locally) structurally identifiable if the corresponding
+column of $S$ is linearly independent of the remaining columns for
+almost all $t$, or equivalently if $\mathcal{I}(\theta)$ has full rank.
+Parameters corresponding to columns in the nullspace of $\mathcal{I}$
+are unidentifiable: infinitesimal perturbations in those directions
+produce no change in the output trajectory.
+\end{definition}
+
+\subsection{Identifiability Results}
+
+\begin{theorem}[Parameter Identifiability]
+\label{thm:identifiability}
+In the $\Sigma$-Model ODE system with observations
+$y(t) = (\hat{\sigma}_A(t), \mathrm{Loss}(t))$, the identifiability
+structure is:
+\begin{itemize}
+\item \textbf{Globally identifiable:} $\gamma_\sigma$ (schema saturation),
+  $R_0$ (basic reproduction number) as a composite parameter.
+\item \textbf{Locally identifiable:} $\rho$ (schema growth rate),
+  $\epsilon_\sigma$ (shortcut suppression) --- only identifiable up to
+  the ratio $\rho/\epsilon_\sigma$.
+\item \textbf{Unidentifiable:} $\nu_M$ (self-model rate), $\kappa_P,
+  \kappa_I, \kappa_F$ (executive rates) --- not recoverable from
+  $(\hat{\sigma}_A, \mathrm{Loss})$ observations alone.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+We derive the input-output equations for each parameter group.
+
+\paragraph{$\sigma_A$ subsystem identifiability.}
+The $\sigma_A$ ODE with observation $\hat{\sigma}_A = \sigma_A$ is:
+\[
+\dot{\sigma}_A = \sigma_A \bigl[ \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A)
+- \epsilon_\sigma \Omega_{SL} \bigr], \quad y = \sigma_A.
+\]
+
+Computing the first time-derivative of $y$:
+\[
+\dot{y} = y \bigl[ \rho P_A \alpha_A (1 - \gamma_\sigma y)
+- \epsilon_\sigma \Omega_{SL} \bigr].
+\]
+
+This equation contains the product $\rho P_A \alpha_A$ and the ratio
+$R_0 = \rho P_A \alpha_A / (\epsilon_\sigma \Omega_{SL})$. Grouping
+identifiable combinations:
+\[
+\alpha := \rho P_A \alpha_A \quad\text{(composite growth rate)},
+\qquad
+R_0 = \frac{\rho P_A \alpha_A}{\epsilon_\sigma \Omega_{SL}}.
+\]
+
+From the equilibrium value $\sigma_A^* = (1/\gamma_\sigma)(1 - 1/R_0)$,
+the parameter $\gamma_\sigma$ is identifiable when $R_0 \neq 1$ (the
+equilibrium value directly reveals $\gamma_\sigma$ given $R_0$). The
+individual parameters $\rho$ and $\epsilon_\sigma$ are only identifiable
+up to the ratio because they appear only through the products
+$\rho P_A \alpha_A$ and $\epsilon_\sigma \Omega_{SL}$.
+
+\paragraph{$\delta_A$ subsystem identifiability.}
+The $\delta_A$ ODE is observed through $\mathrm{Loss}(t)$. The loss
+depends on $\delta_A$ through the model's prediction error, which is a
+monotone decreasing function of depth. From the $\delta_A$ ODE:
+\[
+\dot{\delta}_A = f_{\mathrm{learn}} \eta(\delta_A) T_A
+- \lambda_c (1 - \gamma_\sigma \sigma_A) \delta_A (1 - r_A).
+\]
+
+Given $y_{\sigma} = \sigma_A$ (from the $\sigma_A$ observation), the
+second-derivative of $\mathrm{Loss}$ with respect to time provides
+information about $\lambda_c$:
+\[
+\ddot{y}_{\mathrm{loss}} = \frac{d}{dt}
+\left( \frac{\partial \mathcal{L}}{\partial \delta_A} \dot{\delta}_A \right).
+\]
+
+This reveals $\lambda_c$ as identifiable when the system is near
+equilibrium (where $\dot{\delta}_A = 0$). Away from equilibrium, the
+Gompertz parameters $a, b$ and $\eta_{\max}$ interact with $\lambda_c$,
+making isolation difficult.
+
+\paragraph{Slow subsystem unidentifiability.}
+The slow parameters $(\nu_M, \kappa_P, \kappa_I, \kappa_F)$ are
+unidentifiable, which we establish via the Fisher information
+matrix (FIM). The observable trajectory $y(t; \theta) \in \R^m$ depends
+on $\theta \in \R^p$ through the ODE solution.
+The FIM at discrete times $t_1, \ldots, t_n$ is
+\[
+\mathcal{I}(\theta)_{ij} = \sum_{k=1}^n
+\left( \frac{\partial y(t_k)}{\partial \theta_i} \right)^\top
+\Sigma^{-1}
+\left( \frac{\partial y(t_k)}{\partial \theta_j} \right),
+\]
+where $\Sigma$ is the observation noise covariance. A parameter is
+structurally unidentifiable if the corresponding column of the
+sensitivity matrix $S_{ik} = \partial y(t_k) / \partial \theta_i$ is
+a linear combination of other columns, or equivalently if
+$\mathcal{I}(\theta)$ is singular.
+
+For the slow subsystem, the sensitivity equations are
+\[
+\frac{d}{dt} \frac{\partial y}{\partial \nu_M}
+= \frac{\partial f}{\partial \hat{M}_A} \frac{\partial \hat{M}_A}{\partial \nu_M}
++ \frac{\partial f}{\partial \nu_M},
+\]
+with analogous equations for $\kappa_P, \kappa_I, \kappa_F$.
+Over a training horizon $T = 10^4$ steps (typically $< 100$ effective
+slow-timescale units), the sensitivity $\partial y / \partial \nu_M$
+remains $O(\epsilon)$ smaller than the sensitivities of the fast parameters,
+because the slow variables have moved only $O(\epsilon)$ of their full range.
+Formally, the FIM restricted to the slow parameters has condition number
+$\kappa(\mathcal{I}_{\mathrm{slow}}) = O(1/\epsilon) \gg 1$, and the
+profile likelihood for each slow parameter is flat (likelihood ratio
+$D(\theta_i) < 3.84$ threshold).
+
+These parameters are therefore unidentifiable from
+$(\hat{\sigma}_A, \mathrm{Loss})$ observations alone. To identify them,
+additional observations are required: direct measurements of $\hat{M}_A$
+(via metacognitive confidence reports) or $\Xi_A$ (via behavioral tasks).
+This is consistent with the companion paper's design of dedicated
+cognitive benchmarks (H-MCB, H-DCB).
+\end{proof}
+
+\subsection{Practical Implications}
+
+The identifiability analysis has concrete implications for parameter
+calibration in the $\Sigma$-Model:
+
+\begin{enumerate}
+\item \textbf{Calibrate dimensionless groups, not individual constants.}
+  The analysis shows that $R_0$ and $\gamma_\sigma$ are identifiable,
+  while $\rho$ and $\epsilon_\sigma$ individually are not. Calibration
+  protocols should target $R_0$ directly (e.g., from the $\sigma_A$
+  equilibrium value).
+
+\item \textbf{Profile likelihood for identifiability.}
+  We propose a systematic calibration protocol: fit the coupled ODE
+  system to learning curves using nonlinear least squares, then compute
+  profile likelihood confidence intervals. Parameters with flat
+  likelihood profiles (the slow subsystem rates) should be fixed at
+  prior estimates rather than estimated from data.
+
+\item \textbf{Design complementary observations.}
+  For the slow subsystem parameters, dedicated experiments (e.g.,
+  intervention studies where $\nu_M$ is directly manipulated) are
+  necessary for identification. The benchmark protocols (H-PTB through
+  H-STB) provide the necessary variation in experimental conditions.
+\end{enumerate}
+
+\subsection{Supplementary Code: Profile Likelihood Computation}
+
+The accompanying supplementary code implements the profile likelihood
+analysis for all seven rate constants using the pilot experimental data.
+For each parameter $\theta_i$:
+\begin{enumerate}
+\item Fix $\theta_i$ at a grid of values spanning $\pm 50\%$ of the
+  estimated optimum.
+\item Re-optimize all other parameters.
+\item Compute the likelihood ratio statistic
+  $D(\theta_i) = -2\log(\mathcal{L}_{\mathrm{profile}}(\theta_i) / \mathcal{L}_{\max})$.
+\end{enumerate}
+
+Parameters with $D(\theta_i)$ exceeding the $\chi^2_1(0.95) = 3.84$
+threshold for fewer than 2 grid points are classified as unidentifiable.
+The results confirm Theorem~\ref{thm:identifiability}: $\nu_M$,
+$\kappa_P$, $\kappa_I$, $\kappa_F$ show flat profile likelihoods,
+while $\gamma_\sigma$ and $R_0$ show well-defined minima.

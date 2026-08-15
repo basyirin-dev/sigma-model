@@ -47,6 +47,28 @@ paper/figures/*.png
 archive/*.tar.gz
 archive/*.zip
 
+# Archived datasets and vendored payloads (large — never commit)
+archive/data/
+archive/hackathon/
+archive/kaggle_payloads/
+
+# Raw experiment outputs (reference only, kept on disk)
+archive/**/*.pkl
+archive/**/__pycache__/
+
+# Archived build outputs (PDFs, bundles)
+archive/**/*.pdf
+
+# macOS junk from the JAIR author kit
+__MACOSX/
+paper/templates/
+
+# Reasonix session state
+.reasonix/
+
+# Ruff cache
+.ruff_cache/
+
 # Local / Personal
 .opencode/
 opencode.json.bak*

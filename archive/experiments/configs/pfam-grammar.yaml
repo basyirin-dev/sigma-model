@@ -1,0 +1,23 @@
+# Σ-Model — Pfam-Grammar: Domain architecture grammar induction probes
+# Intended for merge with pfam-base.yaml via sigma.config.merge_configs
+
+experiment:
+  n_runs_per_condition: 30   # 3 probes × 30 runs = 90 total; sufficient for effect size detection
+
+probes:
+  - name: "positional_bias"
+    probe_type: "linear"      # tests whether model encodes absolute domain position
+    input_dim: 256             # matches d_model from pfam-base.yaml
+    target: "domain_position"
+  - name: "cooccurrence"
+    probe_type: "bilinear"     # tests pairwise domain co-occurrence knowledge
+    input_dim: 256
+    target: "domain_pair"
+  - name: "hierarchy"
+    probe_type: "mlp"          # tests hierarchical fold-class structure
+    hidden_dims: [128, 64]     # 2-layer MLP: 256→128→64→class
+    target: "fold_class"
+
+data:
+  probe_split: "stratified"             # preserve class balance across splits
+  probe_holdout_fraction: 0.2           # 80/20 train/probe split

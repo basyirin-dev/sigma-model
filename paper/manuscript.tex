@@ -1,18 +1,31 @@
-\documentclass[10pt]{article}
-\usepackage{tmlr}
+%% JAIR manuscript submission
+\documentclass[manuscript,screen]{jair}
 
-\usepackage{hyperref}
-\usepackage{url}
+\setcopyright{cc}
+\acmDOI{10.1613/jair.1.xxxxx}
+\acmVolume{1}
+\acmArticle{1}
+\acmMonth{1}
+\acmYear{2026}
+\JAIRAE{}
+\JAIRTrack{}
+\settopmatter{printacmref=false}
 
+%% hyperref and url are loaded by jair/acmart class. PDF metadata set via AtBeginDocument.
+\AtBeginDocument{%
 \hypersetup{
-  pdftitle={The Σ-Model: Schema-Coherence Suppression as the Origin of Compositional Generalisation Failure},
-  pdfauthor={Anonymous},
+  pdftitle={The Sigma-Model: Schema-Coherence Suppression as the Origin of Compositional Generalisation Failure},
   pdfsubject={Machine Learning, Dynamical Systems, Cognitive Science},
   pdfkeywords={compositional generalisation, schema coherence, neural ODEs, dynamical systems, curriculum learning}
+}%
 }
 
+%% JAIR uses BibTeX with ACM-Reference-Format style
+\citestyle{acmauthoryear}
+\bibliographystyle{ACM-Reference-Format}
+
 % --- Non-tmlr packages ---
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{longtable,array}
 \usepackage{booktabs}
@@ -61,11 +74,16 @@
 \colorlet{breadthcolor}{gray!12}
 \colorlet{frontiercolor}{gray!70}
 
-\title{The $\Sigma$-Model: Schema-Coherence Suppression as the Origin of Compositional Generalisation Failure --- A Dynamical-Systems Framework for Generalisation Failure}
+\title[The \texorpdfstring{$\Sigma$}{Sigma}-Model]{The $\Sigma$-Model: Schema-Coherence Suppression as the Origin of Compositional Generalisation Failure --- A Dynamical-Systems Framework for Generalisation Failure}
 
-\author{\name Anonymous Author(s) \\
-\addr Paper under double-blind review \\
-\email ---}
+\author{Basyirin Amsyar Basri}
+\email{amsyar.basy@gmail.com}
+\affiliation{%
+  \institution{Independent Researcher}
+  \city{Selangor}
+  \country{Malaysia}
+}
+\renewcommand{\shortauthors}{Amsyar}
 
 \begin{document}
 
@@ -83,7 +101,7 @@ dynamical-systems framework with three contributions: (i)~the
 $\sigma$-suppression mechanism --- SGD creates a stable
 low-$\sigma_A$ equilibrium (``$\sigma$-trap''), explaining
 high-ID/low-OOD agents (Proposition~4.1); (ii)~a grounded ODE system
-(Eqs.~14,~28,~29) with local existence, invariance, and bifurcation
+(Eqs.~\eqref{eq:depth-ode},~\eqref{eq:lr-modulation},~\eqref{eq:sigma-ode}) with local existence, invariance, and bifurcation
 analysis (Propositions~3.1--4.4); (iii)~a five-phase training arc
 with empirically detectable Phase-2 entry (Prediction~9). The
 framework formalises five cognitive faculty gaps with executable
@@ -103,6 +121,9 @@ ordering.
 \end{abstract}
 
 \maketitle
+\hypersetup{pdftitle={The Sigma-Model: Schema-Coherence Suppression as the Origin of Compositional Generalisation Failure},
+  pdfauthor={Basyirin Amsyar Basri}}
+\received{24 June 2026}
 
 % ============================================================
 \section{Introduction}\label{sec:introduction}
@@ -205,7 +226,7 @@ following proof structure, with each step mapped to a paper section:
 \begin{itemize}[nosep]
 \item \textbf{Step 1 (Section~\ref{sec:core-framework}):} Define observables ($\delta_A$, $\beta_A$, $\sigma_A$) and show $\sigma_A$ is latent
   \begin{itemize}[nosep]
-  \item Lemma~3.1: $\sigma_A$ cannot be inferred from $\delta_A$ alone [Proposition~3.6--3.7] % CLAIM:C-021
+  \item Propositions~3.6--3.7: $\sigma_A$ cannot be inferred from $\delta_A$ alone % CLAIM:C-021
   \end{itemize}
 \item \textbf{Step 2 (Section~\ref{sec:cognitive-dimensions}):} Show standard SGD dynamics suppress $\sigma_A$
   \begin{itemize}[nosep]
@@ -885,7 +906,7 @@ bounded by $\Delta_{\max} < \infty$, then $T_{\max} = \infty$ (global existence)
 \item $\delta_A = 0$: $\dot{\delta}_A \geq 0$ (growth term dominates when depth is zero)
 \item $\delta_A = \Delta(d,t)$: $\dot{\delta}_A \leq 0$ (approaching frontier reduces growth)
 \item $\sigma_A = 0$: $\dot{\sigma}_A = 0$ (the $\sigma_A$ factor multiplies the entire RHS, making $\sigma_A=0$ an invariant manifold, not a reflecting boundary)
-\item $\sigma_A = 1$: $\dot{\sigma}_A = \rho \cdot P_A \cdot \alpha_A \cdot (1-\gamma_\sigma) - \epsilon_\sigma \cdot \Omega_{SL}$, which is not inherently $\leq 0$; the $\sigma_A \in [0,1]$ bound is enforced by clamping (Algorithm~3.1) rather than by the ODE dynamics alone. Because the phenomenological ODE solver (Section~10.1) is implemented in NumPy and detached from the neural autograd graph, hard clamping with \texttt{np.clip} creates no gradient-flow dead zone at the boundaries
+\item $\sigma_A = 1$: $\dot{\sigma}_A = \rho \cdot P_A \cdot \alpha_A \cdot (1-\gamma_\sigma) - \epsilon_\sigma \cdot \Omega_{SL}$, which is not inherently $\leq 0$; the $\sigma_A \in [0,1]$ bound is enforced by clamping (Algorithm~3.1) rather than by the ODE dynamics alone. Because the phenomenological ODE solver (Section~\ref{sec:implementation}) is implemented in NumPy and detached from the neural autograd graph, hard clamping with \texttt{np.clip} creates no gradient-flow dead zone at the boundaries
 \item $\alpha_A = 0$: $\dot{\alpha}_A \geq 0$ (growth term $\gamma \cdot C_A > 0$)
 \item $\alpha_A = 1$: $\dot{\alpha}_A \leq 0$ (the $(1-\alpha_A)$ factor vanishes)
 \item $\hat{M}_A = 0$: $\dot{\hat{M}}_A \geq 0$ (driven toward $\sigma_A \geq 0$)
@@ -918,8 +939,11 @@ dramatically simplifying analysis.
 
 \textbf{Proposition 3.3 (Fast-Slow Decomposition).}
 % CLAIM:C-024
-\textit{Define the timescale parameter $\epsilon = \max(\nu_M, \kappa_P, \kappa_I, \kappa_F) / \min(\eta_{\max}, \rho, \gamma) \ll 1$.
-Decompose $\mathbf{x}_A = (\mathbf{x}_A^{\text{fast}}, \mathbf{x}_A^{\text{slow}})$
+\textit{Define the timescale parameter}
+\[
+\epsilon = \max(\nu_M, \kappa_P, \kappa_I, \kappa_F) / \min(\eta_{\max}, \rho, \gamma) \ll 1.
+\]
+\textit{Decompose $\mathbf{x}_A = (\mathbf{x}_A^{\text{fast}}, \mathbf{x}_A^{\text{slow}})$
 where $\mathbf{x}_A^{\text{fast}} = (\delta_A, \sigma_A, \alpha_A)$ and
 $\mathbf{x}_A^{\text{slow}} = (\hat{M}_A, \Xi_A^P, \Xi_A^I, \Xi_A^F)$.
 Then the system admits a slow manifold
@@ -936,9 +960,10 @@ perturbation theory \citep{fenichel1979geometric}. Normal hyperbolicity
 of the critical manifold $\mathcal{M}_0$ requires the $3\times3$ Jacobian
 of the fast subsystem with respect to $\mathbf{x}_A^{\text{fast}}$ to have
 eigenvalues bounded away from the imaginary axis. An explicit computation
-(see the companion proof-reconstruction document
-Proposition~3.3 (see companion proof document) verifies that the Jacobian
+(companion proof-reconstruction document, Proposition~3.3)
+verifies that the Jacobian
 \[
+\small
 \mathbf{J}_{\text{fast}} = 
 \begin{pmatrix}
 -\lambda_c(1-\gamma_\sigma\sigma_A) & \lambda_c\gamma_\sigma\delta_A & 0 \\
@@ -1181,7 +1206,7 @@ The overhead is dominated by augmentation consistency computation.
 For resource-constrained settings, AC can be computed every $k$ steps
 (reducing total overhead to +17\%).
 
-\textbf{VRAM complexity.} The phenomenological implementation (Section~10.1)
+\textbf{VRAM complexity.} The phenomenological implementation (Section~\ref{sec:implementation})
 avoids the full GCA/RGA computation: the ODE solver is pure NumPy, naturally
 detached from the autograd graph, and a single backward pass per step is used
 (no \texttt{retain\_graph} or \texttt{create\_graph}). Total VRAM is
@@ -1317,7 +1342,7 @@ Real-world agents, however, operate across multiple channels --- text,
 vision, audio --- which raises a question addressed in this section:
 does schema coherence acquired through one modality transfer to another?
 
-\subsection{Extension~6 --- Domain \texorpdfstring{$\times$}{x} Modality Product Space}\label{sec:product-space}
+\subsection{Extension~5 --- Domain \texorpdfstring{$\times$}{x} Modality Product Space}\label{sec:product-space}
 
 \subsubsection{Modality Set}
 \begin{equation}\label{eq:modalities}
@@ -1347,7 +1372,7 @@ fragile if any channel is weak. Depth, by contrast, follows the
 strongest modality because what the agent can express is bounded by
 its best channel, analogous to fluency in one's most proficient language.
 
-\subsection{Extension~7 --- Cross-Modal Schema Transfer \texorpdfstring{$\Theta_A(d,m_1,m_2,t)$}{Theta\_A(d,m\_1,m\_2,t)}}\label{sec:cross-modal}
+\subsection{Extension~6 --- Cross-Modal Schema Transfer \texorpdfstring{$\Theta_A(d,m_1,m_2,t)$}{Theta\_A(d,m\_1,m\_2,t)}}\label{sec:cross-modal}
 
 \subsubsection{Cross-Modal Schema Transfer Function}
 \begin{equation}\label{eq:cross-modal-transfer}
@@ -1363,7 +1388,7 @@ its best channel, analogous to fluency in one's most proficient language.
 \end{aligned}
 \end{equation}
 
-\subsection{Extension~8 --- Benchmark Validity Function \texorpdfstring{$V_A(B,f,t)$}{V\_A(B,f,t)}}\label{sec:validity}
+\subsection{Extension~7 --- Benchmark Validity Function \texorpdfstring{$V_A(B,f,t)$}{V\_A(B,f,t)}}\label{sec:validity}
 
 \begin{equation}\label{eq:validity-function}
 V_A(B,f,t) = CI(B,f) \cdot FD(B) \cdot DG(B) \cdot R_A(B,f,t) % CLAIM:C-007
@@ -1377,7 +1402,7 @@ V_A(B,f,t) = CI(B,f) \cdot FD(B) \cdot DG(B) \cdot R_A(B,f,t) % CLAIM:C-007
 
 A benchmark's validity is only meaningful if its scores are consistent --- a benchmark that produces wildly different scores across repeated administrations cannot support valid claims about any cognitive faculty. The reliability function formalises this consistency requirement, drawing on classical test theory~\citep{crocker1986introduction}.
 
-\subsection{Extension~9 --- Benchmark Reliability Function \texorpdfstring{$R_A(B,f,t)$}{R\_A(B,f,t)}}\label{sec:reliability-fn}
+\subsection{Extension~8 --- Benchmark Reliability Function \texorpdfstring{$R_A(B,f,t)$}{R\_A(B,f,t)}}\label{sec:reliability-fn}
 
 \begin{equation}\label{eq:reliability}
 R_A(B,f,t) = \begin{cases} \displaystyle\frac{1}{1 + \frac{\text{Var}_k(\text{score}_A^k(B))}{\mathbb{E}[\text{score}_A(B)]^2}} & \text{if } \mathbb{E}[\text{score}_A(B)] > 0 \\[8pt] 0 & \text{if } \mathbb{E}[\text{score}_A(B)] = 0 \end{cases}
@@ -2224,7 +2249,7 @@ as future work for the present empirical claims.
 \emph{Status: formal SDE framework provided (Appendix~\ref{app:sde}); empirical
 validation deferred.}
 
-\medskip
+\par\addvspace{\medskipamount}
 \noindent\textbf{Assumption-Boundary Ledger.}
 Table~\ref{tab:assumptions} maps each major mathematical assumption
 to its formal justification and the appendix or future-work item that
@@ -2238,10 +2263,10 @@ addresses it.
 \textbf{Assumption} & \textbf{Location} & \textbf{Justification} & \textbf{Limitation / Open Question} & \textbf{Addressed In} \\
 \midrule
 Fenichel timescale separation $\epsilon \ll 1$ & Prop~3.3 & Standard singular perturbation theory & $\epsilon$ bounds not empirically calibrated & §12.2(b), Appendix~\ref{app:stability} \\
-Deterministic proxy fusion (Eqs.~7--9) & §3.1.4 & First-order Taylor approximation & Nonlinear fusion corrections at $k \gg 1$ & §12.4 Extensions \\
-$\hat{\sigma}_A$ Gaussian estimator & Prop~3.6 & CLT over $N$ evaluation samples & Non-Gaussian tails for rare-event benchmarks & §12.3 Empirical calibration \\
-Additive-multiplicative coupling forms & Eqs.~24--25 & Phenomenological, not first-principles & Could arise from product of more fundamental gating terms & §12.2(c) \\
-Constant rate parameters ($\rho$, $\epsilon_\sigma$, $\gamma$, etc.) & All ODEs & Stationarity assumed over training horizon & Time-varying rates in practice; scheduled hyperparameters create drift & §12.4 Extensions \\
+Deterministic proxy fusion (Eqs.~\eqref{eq:gca}--\eqref{eq:fusion}) & §3.1.4 & First-order Taylor approximation & Nonlinear fusion corrections at $k \gg 1$ & §12.3 \\
+$\hat{\sigma}_A$ Gaussian estimator & Prop~3.6 & CLT over $N$ evaluation samples & Non-Gaussian tails for rare-event benchmarks & §12.1 \\
+Additive-multiplicative coupling forms & Eqs.~\eqref{eq:depth-ode}--\eqref{eq:sigma-ode} & Phenomenological, not first-principles & Could arise from product of more fundamental gating terms & §12.2(c) \\
+Constant rate parameters ($\rho$, $\epsilon_\sigma$, $\gamma$, etc.) & All ODEs & Stationarity assumed over training horizon & Time-varying rates in practice; scheduled hyperparameters create drift & §12.3 \\
 AMSGrad $\equiv$ SGD for analysis & §3.8 & Theoretical equivalence at large step count & Adaptive LR effects on $\sigma_A$ not formally characterised & §12.2(a) \\
 $\sigma_{\text{AI}} \approx 0$ & §12.1 & Accurate for current next-token-prediction LLMs & May change with architectural innovation & §12.1 \\
 Stochastic skeleton sufficiency & Appendix~\ref{app:sde} & LLN over training trajectory smooths mini-batch noise & Fluctuation bounds for finite-batch training not derived & Appendix~\ref{app:sde} \\
@@ -2274,7 +2299,7 @@ $\epsilon_\sigma$, $\gamma$, $\nu_M$, $\kappa_P$, $\kappa_I$, $\kappa_F$)
 remain unmeasured. The dimensionless parameter groups reduce independent
 parameters but do not eliminate empirical estimation needs.
 
-\medskip
+\par\addvspace{\medskipamount}
 \noindent\textbf{Failure-Mode Analysis.}
 Every framework has failure modes --- conditions under which the core
 mechanism predicts incorrectly. We identify three:
@@ -2303,7 +2328,7 @@ boundary conditions under which the $\Sigma$-Model should \emph{not}
 be applied. A practitioner whose setup triggers any of the above
 should treat $\sigma_A$ estimates as unreliable.
 
-\medskip
+\par\addvspace{\medskipamount}
 \noindent\textbf{Practical Adoption Guide.}
 Before applying the $\Sigma$-Model, verify:
 \begin{enumerate}[nosep]
@@ -2328,14 +2353,14 @@ $\delta_A$-only analysis suffices for your use case.
 \addcontentsline{toc}{subsection}{Reproducibility Statement}
 % ============================================================
 
-All experimental results in this paper are reproducible using the provided codebase. The main ODE validation experiment is implemented as a config-driven Jupyter notebook (\texttt{experiments/h-bar-experiment.ipynb}) whose parameters are defined in \texttt{experiments/configs/base.yaml}. A minimal reproducible example (\texttt{scripts/mre\_sigma.py}) runs in under 60~seconds on CPU and exercises the full ODE coupling, signal extraction, and loss modulation pipeline. The test suite (\texttt{tests/}; 31 tests) covers the ODE solver, config loading, and metric functions and is verified via \texttt{pytest} and a standalone smoke test (\texttt{scripts/smoke\_test.py}). All code uses deterministic seeding (\texttt{torch.manual\_seed(run\_id * 42 + 7)}, \texttt{cudnn.deterministic = True}) and is audited for deprecated APIs.
+All experimental results in this paper are reproducible using the provided codebase. The main ODE validation experiment is implemented as a config-driven Jupyter notebook (\path{experiments/h-bar-experiment.ipynb}) whose parameters are defined in \path{experiments/configs/base.yaml}. A minimal reproducible example (\path{scripts/mre_sigma.py}) runs in under 60~seconds on CPU and exercises the full ODE coupling, signal extraction, and loss modulation pipeline. The test suite (\path{tests/}; 31 tests) covers the ODE solver, config loading, and metric functions and is verified via \texttt{pytest} and a standalone smoke test (\path{scripts/smoke_test.py}). All code uses deterministic seeding (\texttt{torch.manual\_\-seed(run\_id * 42 + 7)}, \path{cudnn.deterministic = True}) and is audited for deprecated APIs.
 
 % ============================================================
 \subsection*{Data and Code Availability}
 \addcontentsline{toc}{subsection}{Data and Code Availability}
 % ============================================================
 
-The source code for the $\Sigma$-Model framework, ODE solvers, training pipeline, benchmark protocols, and all analysis scripts is available at \texttt{<URL redacted for double-blind review>}. SCAN and COGS datasets are bundled in the \texttt{hackathon/} directory; PCFG-SET is generated programmatically. The environment is fully specified via \texttt{requirements.txt}, \texttt{environment.yml}, and a \texttt{Dockerfile} with a Python~3.12 base image and pinned dependencies. A \texttt{Makefile} provides one-command targets: \texttt{make build}, \texttt{make test}, and \texttt{make notebook}.
+The source code for the $\Sigma$-Model framework, ODE solvers, training pipeline, benchmark protocols, and all analysis scripts is available at \url{https://github.com/basyirin-dev/sigma-model}. SCAN and COGS datasets are bundled in the \texttt{hackathon/} directory; PCFG-SET is generated programmatically. The environment is fully specified via \texttt{requirements.txt}, \texttt{environment.yml}, and a \texttt{Dockerfile} with a Python~3.12 base image and pinned dependencies. A \texttt{Makefile} provides one-command targets: \texttt{make build}, \texttt{make test}, and \texttt{make notebook}.
 
 % ============================================================
 \subsection*{Ethics and Broader Impact}
@@ -2421,7 +2446,6 @@ better.
 % Bibliography
 % ============================================================
 \small
-\bibliographystyle{tmlr}
 \bibliography{bibliography}
 
 % ============================================================
@@ -2434,7 +2458,7 @@ better.
 \begin{center}
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{c l l l}
+\begin{tabular}{c l l >{\raggedright\arraybackslash}p{4.2cm}}
 \toprule
 \textbf{Symbol} & \textbf{Type} & \textbf{Domain} & \textbf{Description} \\
 \midrule
@@ -2731,7 +2755,7 @@ the red from green quadrants.}
 \begin{figure}[htbp]
 \centering
 \resizebox{0.85\textwidth}{!}{\input{figures/figure5-pipeline}}
-\caption{\textbf{Σ-Model Training Pipeline (Algorithm~3.2).}
+\caption{\textbf{Σ-Model Training Pipeline (Algorithm~\ref{alg:training-step}).}
 The end-to-end flow from input batch through signal extraction, proxy
 fusion, ODE integration, and modulated loss to the optimizer step.
 Evaluation checkpoints feed back recalibration weights to the fusion
@@ -2800,168 +2824,139 @@ $E_C$.}
 \end{figure}
 
 % ============================================================
-% Reproducibility Checklist
+% Reproducibility Checklist for JAIR
 % ============================================================
 \appendix
-\section*{Reproducibility Checklist}
+\section*{Reproducibility Checklist for JAIR}
 
-\medskip
+Select the answers that apply to your research --- one per item.
 
-\subsection*{A. All Articles}
-% 5 items required for all submissions.
-\begin{enumerate}
-  \item \textbf{All claims investigated in this work are clearly stated.}
-    \textbf{Yes.} See \S\ref{sec:predictions} (Nine Core Falsifiable Predictions),
-    Proposition~4.1, and the enumerated contribution list in \S\ref{sec:introduction}.
-
-  \item \textbf{Clear explanations are given for how the work reported substantiates the claims.}
-    \textbf{Yes.} Each prediction in \S\ref{sec:predictions} is derived from the ODE
-    system (Propositions~3.1--4.4) and tested in \S\ref{sec:ode-exp}
-    with statistical analysis. Intuition blocks follow key equations to bridge
-    formalism and interpretation.
-
-  \item \textbf{Limitations or technical assumptions are stated clearly and explicitly.}
-    \textbf{Yes.} Formal assumptions are stated in \S\ref{sec:state-space} and
-    \S\ref{sec:equilibrium}. Failure-mode analysis bounds the framework's
-    applicability (\S\ref{sec:scope},\S\ref{sec:open-questions}), and the
-    assumption--boundary ledger enumerates 12 explicit limitations.
-
-  \item \textbf{Conceptual outlines and/or pseudo-code descriptions of the AI methods
-    introduced in this work are provided, and important implementation details are discussed.}
-    \textbf{Yes.} Algorithms~3.1 (ODE integration) and~3.2 (adaptive curriculum)
-    provide formal pseudo-code. The five-phase training arc is described in
-    \S\ref{sec:phase-structure}. The \texttt{code/sigma/} package implements
-    the full pipeline.
-
-  \item \textbf{Motivation is provided for all design choices, including algorithms,
-    implementation choices, parameters, data sets and experimental protocols beyond metrics.}
-    \textbf{Yes.} Design choices are motivated throughout \S\ref{sec:math-foundations}
-    and \S\ref{sec:phase-structure}. Hyperparameter selection is documented in
-    \texttt{experiments/configs/base.yaml} with inline comments. The
-    pre-registered protocol (\S\ref{sec:empirical-validation}) specifies
-    statistical tests, sample sizes, and exclusion criteria.
-\end{enumerate}
-
-\subsection*{B. Theoretical Contributions}
-\noindent\textit{Does this paper include theoretical contributions?} \textbf{Yes.}
+\subsection*{All articles:}
 
 \begin{enumerate}
-  \item \textbf{All assumptions and restrictions are stated formally and clearly.}
-    \textbf{Yes.} See Definition~3.1 (state space), Assumptions~3.1--3.5
-    (differentiability, boundedness, coupling structure), and the
-    assumption--boundary ledger in Appendix~C.
+    \item All claims investigated in this work are clearly stated.
+    [yes]
 
-  \item \textbf{Novel claims are stated formally (e.g., in theorem statements).}
-    \textbf{Yes.} Propositions~3.1--3.5 establish existence, uniqueness,
-    invariance, and domain properties of the ODE system.
-    Propositions~4.1--4.4 establish bifurcation results for the
-    $\sigma_A$ dynamics.
+    \item Clear explanations are given how the work reported substantiates the claims.
+    [yes]
 
-  \item \textbf{Proofs of non-trivial claims are provided in sufficient detail to
-    permit verification by readers with a reasonable level of expertise.}
-    \textbf{Yes.} Proofs are provided in \S\ref{sec:math-foundations}--\ref{sec:bifurcation}
-    with full calculations. The proof-reconstruction directory
-    (\texttt{docs/proof-reconstruction/}) contains expanded derivations.
+    \item Limitations or technical assumptions are stated clearly and explicitly.
+    [yes]
 
-  \item \textbf{Complex formalism, such as definitions or proofs, is motivated and
-    explained clearly.}
-    \textbf{Yes.} Intuition blocks follow each major formal result (after
-    \eqref{eq:depth-ode}, \eqref{eq:sigma-ode}, Proposition~4.1).
-    The piecewise-smooth (Filippov) formulation is motivated by the
-    max(0,~.) and |~.| non-smoothness in the coupling structure.
+    \item Conceptual outlines and/or pseudo-code descriptions of the AI methods introduced in this work are provided, and important implementation details are discussed.
+    [yes]
 
-  \item \textbf{The use of mathematical notation serves the purpose of enhancing
-    clarity, i.e., use that does not introduce unnecessary complexity.}
-    \textbf{Yes.} Notation is introduced incrementally with natural-language
-    glosses. Table~1 provides a notation summary. All symbols are defined
-    at first use and collected in the notation index (\S\ref{sec:reliability}).
-
-  \item \textbf{Appropriate citations are given for all non-trivial theoretical tools
-    and techniques used.}
-    \textbf{Yes.} Citations are provided for Filippov solutions
-    (standard theory), IMEX-RK stability methods, bifurcation
-    theory~\cite{kuznetsov1998}, and the ARS(2,3,2) tableau.
+    \item Motivation is provided for all design choices, including algorithms, implementation choices, parameters, data sets and experimental protocols beyond metrics.
+    [yes]
 \end{enumerate}
 
-\subsection*{C. Computational Experiments}
-\noindent\textit{Does this paper include computational experiments?} \textbf{Yes.}
+\subsection*{Articles containing theoretical contributions:}
+Does this paper make theoretical contributions?
+[yes]
+
+If yes, please complete the list below.
 
 \begin{enumerate}
-  \item \textbf{All source code required for conducting experiments is included in
-    an online appendix or will be made publicly available upon publication.}
-    \textbf{Yes.} Complete source code is available in the \texttt{code/}
-    directory and archived in \texttt{code\_archive.tgz}. The reproducibility
-    package includes docker-compose and a Makefile for one-command setup.
+    \item All assumptions and restrictions are stated clearly and formally.
+    [yes]
 
-  \item \textbf{The source code comes with a license that allows usage for research purposes.}
-    \textbf{Yes.} The repository is licensed under the MIT License
-    (see \texttt{LICENSE} in the source root).
+    \item All novel claims are stated formally (e.g., in theorem statements).
+    [yes]
 
-  \item \textbf{The method used for setting the seeds (or other source of randomness)
-    is described, and the management of randomness is clearly explained.}
-    \textbf{Yes.} Pseudorandom seeding is documented in
-    \texttt{code/}\allowbreak\texttt{sigma/}\allowbreak\texttt{utils/}\allowbreak\texttt{seeding.py}
-    and \S\ref{sec:empirical-validation}. All experiments use fixed seeds
-    ($0$--$14$) with deterministic PyTorch operations.
+    \item Proofs of all non-trivial claims are provided in sufficient detail to permit verification by readers with a reasonable degree of expertise (e.g., that expected from a PhD candidate in the same area of AI).
+    [yes]
 
-  \item \textbf{The execution environment (operating system, hardware, software
-    versions) is clearly described.}
-    \textbf{Yes.} \texttt{HARDWARE.md} documents the GPU (NVIDIA Tesla T4),
-    CPU, RAM, and CUDA version. \texttt{pyproject.toml} and
-    \texttt{requirements-locked.txt} specify exact software versions.
-    The Dockerfile (\texttt{Dockerfile}) provides a reproducible
-    containerised environment.
+    \item Complex formalism, such as definitions or proofs, is motivated and explained clearly.
+    [yes]
 
-  \item \textbf{The evaluation metrics are precisely defined, and the method used
-    to compute them is described.}
-    \textbf{Yes.} In-distribution and out-of-distribution accuracy are
-    defined in \S\ref{sec:ode-exp} with the compositional gap metric.
-    Cohen's $d$, Welch's $t$-test, and Bonferroni correction are
-    specified. The code computing these metrics is in
-    \texttt{code/sigma/benchmarks/}.
+    \item The use of mathematical notation and formalism serves the purpose of enhancing clarity and precision; gratuitous use of mathematical formalism (i.e., use that does not enhance clarity or precision) is avoided.
+    [yes]
 
-  \item \textbf{The number of algorithm runs used to compute results is specified,
-    and the analysis goes beyond single-dimensional summaries to include
-    statistics on variation.}
-    \textbf{Yes.} $n = 15$ runs per condition (45 total) with Welch's
-    $t$-tests, Cohen's $d$ effect sizes, standard deviations, and
-    post-hoc power analysis ($>99.9\%$ at $\alpha = 0.00625$).
-    Segmented regression with 95\% confidence intervals is used for
-    Phase~2 inflection analysis.
-
-  \item \textbf{All parameters are described, and (where applicable) the process
-    of finding hyperparameters is described.}
-    \textbf{Yes.} All hyperparameters are documented in
-    \texttt{experiments/configs/base.yaml} with inline explanations.
-    See also Table~4 (parameter values) in \S\ref{sec:ode-exp}.
-    The hyperparameter search procedure is described in
-    \S\ref{sec:ode-exp} (grid search over coupling strengths).
+    \item Appropriate citations are given for all non-trivial theoretical tools and techniques.
+    [yes]
 \end{enumerate}
 
-\subsection*{D. Datasets}
-\noindent\textit{Does this paper rely on one or more datasets?} \textbf{Yes.}
+\subsection*{Articles reporting on computational experiments:}
+Does this paper include computational experiments? [yes]
 
+If yes, please complete the list below.
 \begin{enumerate}
-  \item \textbf{Datasets are publicly available or will be made publicly available.}
-    \textbf{Yes.} The synthetic compositional benchmark is generated
-    on-the-fly by \texttt{code/sigma/benchmarks/generator.py}. The
-    generator code and configuration are included in the source archive.
-    The \texttt{hackathon/} directory contains the Phase~0--5 task
-    definitions.
+    \item All source code required for conducting experiments is included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for source code readability and documentation as well as for long-term accessibility.
+    [yes]
 
-  \item \textbf{Datasets are properly documented with metadata, and relevant
-    analyses are provided.}
-    \textbf{Yes.} Dataset statistics (train/OOD splits, phase composition)
-    are reported in \S\ref{sec:ode-exp}. The benchmark generator supports
-    full metadata export.
+    \item The source code comes with a license that allows free usage for reproducibility purposes.
+    [yes]
 
-  \item \textbf{The method for dividing data into training, validation, and test
-    sets is described.}
-    \textbf{Yes.} The Phase~0--5 protocol defines fixed splits: Phase~0
-    (12 templates, 144~instances each) for training; Phases~1--5 for
-    OOD compositional evaluation. See \S\ref{sec:ode-exp} and
-    \texttt{experiments/configs/base.yaml}.
+    \item The source code comes with a license that allows free usage for research purposes in general.
+    [yes]
+
+    \item Raw, unaggregated data from all experiments is included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for long-term accessibility.
+    [yes]
+
+    \item The unaggregated data comes with a license that allows free usage for reproducibility purposes.
+    [yes]
+
+    \item The unaggregated data comes with a license that allows free usage for research purposes in general.
+    [yes]
+
+    \item If an algorithm depends on randomness, then the method used for generating random numbers and for setting seeds is described in a way sufficient to allow replication of results.
+    [yes]
+
+    \item The execution environment for experiments, the computing infrastructure (hardware and software) used for running them, is described, including GPU/CPU makes and models; amount of memory (cache and RAM); make and version of operating system; names and versions of relevant software libraries and frameworks.
+    [yes]
+
+    \item The evaluation metrics used in experiments are clearly explained and their choice is explicitly motivated.
+    [yes]
+
+    \item The number of algorithm runs used to compute each result is reported.
+    [yes]
+
+    \item Reported results have not been ``cherry-picked'' by silently ignoring unsuccessful or unsatisfactory experiments.
+    [yes]
+
+    \item Analysis of results goes beyond single-dimensional summaries of performance (e.g., average, median) to include measures of variation, confidence, or other distributional information.
+    [yes]
+
+    \item All (hyper-)parameter settings for the algorithms/methods used in experiments have been reported, along with the rationale or method for determining them.
+    [yes]
+
+    \item The number and range of (hyper-)parameter settings explored prior to conducting final experiments have been indicated, along with the effort spent on (hyper-)parameter optimisation.
+    [yes]
+
+    \item Appropriately chosen statistical hypothesis tests are used to establish statistical significance in the presence of noise effects.
+    [yes]
 \end{enumerate}
 
-\enlargethispage*{1.5cm}
+\subsection*{Articles using data sets:}
+Does this work rely on one or more data sets (possibly obtained from a benchmark generator or similar software artifact)?
+[yes]
+
+If yes, please complete the list below.
+\begin{enumerate}
+    \item All newly introduced data sets are included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for long-term accessibility with a license that allows free usage for research purposes.
+    [NA]
+
+    \item The newly introduced data set comes with a license that allows free usage for reproducibility purposes.
+    [NA]
+
+    \item The newly introduced data set comes with a license that allows free usage for research purposes in general.
+    [NA]
+
+    \item All data sets drawn from the literature or other public sources (potentially including authors' own previously published work) are accompanied by appropriate citations.
+    [yes]
+
+    \item All data sets drawn from the existing literature (potentially including authors' own previously published work) are publicly available.
+    [yes]
+
+    \item All new data sets and data sets that are not publicly available are described in detail, including relevant statistics, the data collection process and annotation process if relevant.
+    [NA]
+
+    \item All methods used for preprocessing, augmenting, batching or splitting data sets (e.g., in the context of hold-out or cross-validation) are described in detail.
+    [yes]
+\end{enumerate}
+
+\subsection*{Explanations on any of the answers above (optional):}
+
+[This paper does not introduce new static datasets. The synthetic compositional benchmark (PCFG-SET) is generated programmatically by included source code (\texttt{code/sigma/benchmarks/generator.py}), making static data archiving unnecessary. All existing datasets (SCAN, COGS) are cited and publicly available from their original sources.]
+
 \end{document}

@@ -1,0 +1,35 @@
+# H-MCB (Metacognitive Calibration Benchmark) — Metacognition Track
+# Tests whether models can accurately predict their own OOD performance (calibration)
+
+benchmark: H-MCB
+track: Metacognition
+
+dataset: COGS
+sample_size: 200
+
+stages:
+  stage1:
+    name: Self-Model Elicitation    # model predicts its own accuracy on ID examples
+    temperature: 0.7                # higher temperature = more diverse self-predictions
+    k_types: 5                      # number of self-model types to elicit
+  stage2:
+    name: OOD Performance           # actual OOD accuracy (ground truth for calibration)
+    temperature: 0.0                # greedy decoding
+  id_control:
+    name: In-Distribution Control   # ID accuracy baseline
+    temperature: 0.0
+
+metrics:
+  primary: zeta_hat_A (calibration error)  # calibration error across all self-model types
+  secondary:
+    - zeta_hat_A type_5_hard               # calibration error on hardest self-model type
+  validity:
+    CI: 0.825
+    FD: 0.800
+    DG: 0.506
+    RA: 0.999
+    VA: 0.334
+
+predictions_tested:
+  - P2
+  - P1

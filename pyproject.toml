@@ -3,9 +3,9 @@ requires = ["setuptools>=75"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sigma"
-version = "3.0.0"
-description = "Σ-Model V3.0+ — Schema Coherence Framework for AI Agents"
+name = "sigma-align"
+version = "1.0.0"
+description = "Σ-Align — Schema Coherence Framework for AI Alignment and AGI Safety"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
@@ -20,7 +20,6 @@ dependencies = [
     "pyyaml>=6.0,<7.0",
     "tqdm>=4.60,<5.0",
     "matplotlib>=3.8,<4.0",
-    "datasets>=2.20,<3.0",
     "seaborn>=0.13,<1.0",
     "pandas>=2.0,<3.0",
     "pyarrow>=14,<25",
@@ -42,18 +41,11 @@ viz = [
 ]
 
 [project.scripts]
-sigma-gen-supplement = "sigma.visualization.interactive:main_cli"
-sigma-monitor-pub = "sigma.monitoring.pub:main"
-sigma-monitor-frameworks = "sigma.monitoring.frameworks:main"
-sigma-monitor-datasets = "sigma.monitoring.datasets:main"
-sigma-monitor-social = "sigma.monitoring.social:main"
-sigma-monitor-twitter = "sigma.monitoring.twitter:main"
-sigma-monitor-report = "sigma.monitoring.report:main"
-sigma-monitor-all = "sigma.monitoring:run_all"
+sigma-evaluate = "sigma_align.monitoring.evaluation:main"
 
 [tool.setuptools.packages.find]
 where = ["code"]
-include = ["sigma*"]
+include = ["sigma_align*"]
 
 [tool.ruff]
 line-length = 100
@@ -63,5 +55,4 @@ target-version = "py314"
 select = ["E", "F", "I", "N", "W"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
+testpaths = []

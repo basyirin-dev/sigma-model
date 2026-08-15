@@ -1,0 +1,16 @@
+PF00198	CL0149	CoA-acyltrans	2-oxoacid_dh	2-oxoacid dehydrogenases acyltransferase (catalytic domain)
+PF00244	CL0020	TPR	14-3-3	14-3-3 protein
+PF00389	CL0063	NADP_Rossmann	2-Hacid_dh	D-isomer specific 2-hydroxyacid dehydrogenase, catalytic domain
+PF02826	CL0063	NADP_Rossmann	2-Hacid_dh_C	D-isomer specific 2-hydroxyacid dehydrogenase, NAD binding domain
+PF04029			2-ph_phosp	2-phosphosulpholactate phosphatase
+PF09847	CL0181	ABC-2	12TM_1	Membrane protein of 12 TMs
+PF10417			1-cysPrx_C	C-terminal domain of 1-Cys peroxiredoxin
+PF12574			120_Rick_ant	120 KDa Rickettsia surface antigen
+PF16078			2-oxogl_dehyd_N	2-oxoglutarate dehydrogenase N-terminus
+PF16998	CL0051	NTF2	17kDa_Anti_2	17 kDa outer membrane surface antigen
+PF21578	CL0169	Rep	117-like_vir	Virus, 117-like
+PF21734	CL0186	Beta_propeller	10_blade	10-bladed beta propeller domain
+PF26127	CL0015	MFS	12TM_Mok13	Mok13-like, transmembrane domain
+PF26733	CL0091	NAD_Ferredoxin	03009_C	Adenylate-forming reductase 03009, C-terminal domain
+PF28545			1TM_TonB_rel	TonB-like single transmembrane helix
+PF28546			1TM_TonB	TonB transmembrane helix

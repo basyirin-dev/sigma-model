@@ -1,0 +1,16 @@
+# Generated via pip list --format=freeze on 2026-06-29.
+# Install with: pip install --no-deps -r requirements-lock.txt
+biopython==1.87
+datasets==2.21.0
+fair-esm==2.0.0
+matplotlib==3.10.6
+numpy==2.5.0
+pandas==2.3.3
+pyarrow==21.0.0
+pyhmmer==0.12.1
+PyYAML==6.0.3
+scipy==1.16.3
+seaborn==0.13.2
+torch==2.12.0
+tqdm==4.67.1
+triton==3.7.0

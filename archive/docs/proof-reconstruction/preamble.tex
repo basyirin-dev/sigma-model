@@ -1,0 +1,74 @@
+% ============================================================
+% Preamble — Shared Definitions for Proof Reconstruction
+% Target: JAIR Supplementary Material
+% ============================================================
+
+% Core packages
+\usepackage{amsmath,amsthm}
+\usepackage{newunicodechar}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Theorem environments — acmart defines proposition/theorem/lemma/corollary/definition/conjecture/example
+% We add only custom starred environments not provided by the class
+\newtheorem*{assumption}{Assumption}
+\newtheorem*{proof-sketch}{Proof Sketch}
+\newtheorem*{remark}{Remark}
+\newtheorem*{boundary-case}{Boundary Case Verification}
+\newtheorem*{circularity-check}{Circular Dependency Check}
+
+% Custom commands (matching paper conventions)
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\CosSim}{CosSim}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\im}{Im}
+
+% State variables (Σ-Model conventions)
+\newcommand{\dA}{\delta_A}
+\newcommand{\sA}{\sigma_A}
+\newcommand{\aA}{\alpha_A}
+\newcommand{\bA}{\beta_A}
+\newcommand{\x}{\mathbf{x}}
+
+% Standard notation
+\newcommand{\defeq}{\stackrel{\triangle}{=}}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\inner}[1]{\langle #1 \rangle}
+
+% Gradient notation
+\newcommand{\grad}{\nabla}
+
+% Fix acmart \paragraph bug after display math
+\renewcommand{\paragraph}[1]{\par\textbf{#1}\par}
+
+% Resolve \eqref for main-paper equation references
+% Show actual number if defined, otherwise clean placeholder
+\let\stdeqref\eqref
+\makeatletter
+\renewcommand{\eqref}[1]{%
+  \@ifundefined{r@#1}{\textnormal{(main manuscript)}}{\stdeqref{#1}}%
+}
+\makeatother
+
+% Citation style (matching main manuscript)
+\citestyle{acmauthoryear}
+
+% Bibliography
+\bibliographystyle{ACM-Reference-Format}
+
+% Suppress placeholder JAIR metadata in first-page citation block
+\JAIRAE{}
+\JAIRTrack{}
+\settopmatter{printacmref=false}

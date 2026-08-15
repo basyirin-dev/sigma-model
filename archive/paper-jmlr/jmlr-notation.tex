@@ -1,0 +1,52 @@
+% ======================================================================
+% Notation Registry — JMLR paper
+% Fully aligned with TMLR notation per docs/notation-registry.md
+% Every symbol used identically to the companion TMLR paper
+% ======================================================================
+
+% --- State Variables (SV) ---
+\newcommand{\deltaA}{\delta_A(d,t)}        % Parametric depth
+\newcommand{\sigmaA}{\sigma_A(d,t)}        % Schema coherence (true latent)
+\newcommand{\sigmaTilde}{\tilde{\sigma}_A}  % Stage 1 proxy
+\newcommand{\sigmaHat}{\hat{\sigma}_A}      % Stage 2 estimate
+\newcommand{\sigmaCrit}{\sigma_{\mathrm{critical}}}  % Bifurcation threshold
+\newcommand{\alphaA}{\alpha_A(d,t)}        % Attentional fidelity
+\newcommand{\XiP}{\Xi_A^P}                 % Executive planning
+\newcommand{\XiI}{\Xi_A^I}                 % Executive inhibition
+\newcommand{\XiF}{\Xi_A^F}                 % Executive flexibility
+\newcommand{\Mhat}{\hat{M}_A}              % Self-model
+
+% --- State Space ---
+\newcommand{\X}{\mathcal{X}}               % State space
+\newcommand{\Mzero}{\mathcal{M}_0}         % Critical manifold
+\newcommand{\Meps}{\mathcal{M}_\epsilon}   % Slow manifold
+
+% --- Parameters (P) ---
+\newcommand{\rhoRate}{\rho}                % Schema growth rate
+\newcommand{\gammaSigma}{\gamma_\sigma}    % Schema saturation
+\newcommand{\epsilonSigma}{\epsilon_\sigma} % Shortcut suppression
+\newcommand{\lambdaC}{\lambda_c}           % Parametric decay
+
+% --- Functions (F) ---
+\newcommand{\PA}{P_A(d,t)}                % Principled structure availability
+\newcommand{\OmegaSL}{\Omega_{SL}(d,t)}   % Shortcut-learning pressure
+\newcommand{\CA}{C_A(d,t)}                % Attention training signal
+\newcommand{\RA}{\R_A^{\mathrm{surface}}}  % Surface reward pressure
+
+% --- Derived Quantities (D) ---
+\newcommand{\Rzero}{R_0}                   % Basic reproduction number
+\newcommand{\PhiA}{\Psi_A(d_1,d_2,t)}     % Intersection discovery rate
+
+% --- Fast-Slow ---
+\newcommand{\fastVars}{\mathbf{x}_A^{\mathrm{fast}}}
+\newcommand{\slowVars}{\mathbf{x}_A^{\mathrm{slow}}}
+\newcommand{\Jfast}{\mathbf{J}_{\mathrm{fast}}}
+
+% --- ODEs (explicit for reference) ---
+\newcommand{\sigmaODE}{\dot{\sigma}_A = \sigma_A\bigl[\rhoRate \PA \alphaA (1 - \gammaSigma \sigma_A) - \epsilonSigma \OmegaSL \bigr]}
+\newcommand{\deltaODE}{\dot{\delta}_A = f_{\mathrm{learn}} \eta T_A - \lambdaC (1 - \gammaSigma \sigma_A)\,\delta_A (1 - r_A)}
+\newcommand{\alphaODE}{\dot{\alpha}_A = \gamma \CA (1 - \alpha_A) - \zeta_\alpha \alpha_A \RA}
+
+% --- Standard mathematical notation ---
+\newcommand{\defeq}{\triangleq}
+\newcommand{\R}{\mathbb{R}}

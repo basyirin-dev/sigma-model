@@ -1,0 +1,651 @@
+{
+  "timestamp": "2026-06-09T08:14:13.740319",
+  "since": "2026-04-03",
+  "total_clusters": 14,
+  "total_new_papers": 38,
+  "clusters": {
+    "schema_coherence": {
+      "query_count": 3,
+      "papers_found": 14,
+      "papers": [
+        {
+          "title": "Twelve quick tips for designing AI-driven HPC workflows",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07491v1",
+          "authors": [
+            "Jamie J. Alnasir"
+          ],
+          "summary": "High-performance computing (HPC) clusters remain the backbone of large-scale scientific computation, traditionally executing deterministic, linear pipelines optimised for predictable performance. However, the pervasive integration of artificial intelligence (AI) and foundation models into scientific"
+        },
+        {
+          "title": "How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07489v1",
+          "authors": [
+            "Jeremy Yang",
+            "Kate Zyskowski",
+            "Noah Yonack",
+            "Jerry Ma"
+          ],
+          "summary": "Frontier AI systems are bridging the gap between intelligence and utility by shifting from conversational assistants to autonomous agents that execute tasks end to end. Using production data from Perplexity's Search and Computer products, we study this transition by examining how AI agents accelerat"
+        },
+        {
+          "title": "Drifting Models for Surrogate Flow Modeling",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07481v1",
+          "authors": [
+            "Chris R. Jung",
+            "Markus D\u00f6rr",
+            "Natalie J\u00fcngling",
+            "Jennifer Niessner",
+            "Adam T. M\u00fcller",
+            "Nicolaj C. Stache"
+          ],
+          "summary": "While Computational Fluid Dynamics (CFD) provides high-fidelity flow fields for optimizing indoor environments, its computational cost limits rapid exploration. To solve this problem generative surrogates offer better distribution modeling than deterministic networks, but iterative sampling is slow."
+        },
+        {
+          "title": "Act As a Real Researcher: A Suite of Benchmarks Evaluating Frontier LLMs and Agentic Harnesses in Research Lifecycle",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07462v1",
+          "authors": [
+            "Jiayu Wang",
+            "Weijiang Lv",
+            "Bowen Fu",
+            "Jing Fu",
+            "Jiayi Song",
+            "Lingyu Zhang",
+            "Lanxuan Xue",
+            "Luodi Chen",
+            "Zepeng Xin",
+            "Kaiyu Li",
+            "Xiangyong Cao"
+          ],
+          "summary": "As foundation models advance and agent scaffolding becomes increasingly sophisticated, agents have demonstrated remarkable proficiency in complex, long-horizon coding tasks and even autonomous experiment execution. Despite their evolution from research assistants into autonomous research agents, the"
+        },
+        {
+          "title": "A 65 nm Trustworthy Hypoglycemia Forecasting Engine Achieving 11.3 nJ per Inference",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07455v1",
+          "authors": [
+            "Boyang Cheng",
+            "Jianbo Liu",
+            "Pengyu Ren",
+            "Xueji Zhao",
+            "Steven Davis",
+            "Likai Pei",
+            "Zephan M. Enciso",
+            "Kai Ni",
+            "Ningyuan Cao"
+          ],
+          "summary": "Diabetes affects millions of people and requires reliable continuous glucose monitoring for early hypoglycemia warning. However, medical AI systems must be not only accurate and energy efficient, but also explainable, noise robust, and uncertainty aware. This work presents a 65 nm hypoglycemia forec"
+        },
+        {
+          "title": "Sparse Subspace-to-Expert Sharing for Task-Agnostic Continual Learning",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07500v1",
+          "authors": [
+            "Fatema Siddika",
+            "Md Anwar Hossen",
+            "Tanwi Mallick",
+            "Ali Jannesari"
+          ],
+          "summary": "Continual learning in Large Language Models (LLMs) is hindered by the plasticity-stability dilemma, where acquiring new capabilities often leads to catastrophic forgetting of previous knowledge. Existing methods typically treat parameters uniformly, failing to distinguish between specific task knowl"
+        },
+        {
+          "title": "Implicit Data Synthesis for Contrastive Unsupervised Data Augmentation",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07498v1",
+          "authors": [
+            "Patrick Kage",
+            "Trevor Hedges",
+            "N. Siddharth",
+            "Pavlos Andreadis"
+          ],
+          "summary": "Scientific observations generate large quantities of unlabeled data which is laborious to hand-label, making unsupervised learning techniques valuable for processing datasets. Among these approaches, contrastive learning provides a convenient mechanism for extracting structural representations from "
+        },
+        {
+          "title": "Accelerated Decentralized Stochastic Gradient Descent for Strongly Convex Optimization",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07496v1",
+          "authors": [
+            "Ming Sun",
+            "Kun Yuan"
+          ],
+          "summary": "Decentralized stochastic optimization is a fundamental paradigm for large-scale learning over networks, where agents communicate only with their neighbors and no central coordinator is required. For strongly convex problems, communication efficiency is mainly determined by the condition number \\(\u03ba=L"
+        },
+        {
+          "title": "Second-Order Path Kernel Interpolation Formulas in Machine Learning",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07495v1",
+          "authors": [
+            "Jin Guo",
+            "Roy Y. He",
+            "Jean-Michel Morel"
+          ],
+          "summary": "Understanding how training data shape neural network predictions is a central problem in modern learning theory. In 2020, Pedro Domingos proposed an interpolation formula valid for every model learned by deterministic gradient descent. It expresses the model's prediction as an integral, along the op"
+        },
+        {
+          "title": "Mitigating Proxy-to-Wild Domain Gap in Deepfake Speech",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07494v1",
+          "authors": [
+            "Xuanjun Chen",
+            "Yun-Shing Wu",
+            "Wei-Chung Lu",
+            "Claire Lin",
+            "Haibin Wu",
+            "Hung-yi Lee",
+            "Jyh-Shing Roger Jang"
+          ],
+          "summary": "Recent neural audio codec-based speech generation (CodecFake) produces highly realistic audio, posing a challenge to existing deepfake countermeasure models. While using codec resynthesized speech (CoRS) as proxy data improves performance, it often suffers from limited generalization. We propose Dom"
+        },
+        {
+          "title": "UniSHARP: Universal Sharp Monocular View Synthesis",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07514v1",
+          "authors": [
+            "Meixi Song",
+            "Dizhe Zhang",
+            "Hao Ren",
+            "Ruiyang Zhang",
+            "Bo Du",
+            "Ming-Hsuan Yang",
+            "Lu Qi"
+          ],
+          "summary": "In this work, we focus on extending SHARP, the popular photorealistic view synthesis method, for universal monocular rendering across a continuum of camera systems, from conventional perspective cameras to wide-field-of-view, fisheye and omnidirectional panoramic settings. To overcome the pinhole-sp"
+        },
+        {
+          "title": "Streaming Video Generation with Streaming Force Control",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07508v1",
+          "authors": [
+            "Hanhui Wang",
+            "Yiming Xie",
+            "Haiwen Feng",
+            "Zhaoyang Lv",
+            "Shenlong Wang",
+            "Huaizu Jiang"
+          ],
+          "summary": "We introduce StreamForce, a streaming video generation framework that enables physically grounded control through continuous force inputs. Unlike prior video models that train separate models for different force types, assume fixed forces, or rely on non-causal processing, StreamForce is a causal an"
+        },
+        {
+          "title": "Ideals defining components of two-row Springer fibers",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07507v1",
+          "authors": [
+            "Cristina Sabando-Alvarez",
+            "Martha Precup"
+          ],
+          "summary": "Springer fibers are subvarieties of the flag variety parameterized by nilpotent matrices. They are central objects of study in geometry representation theory. This paper focuses on two-row Springer fibers, those corresponding to nilpotent matrices with two Jordan blocks. Irreducible components of tw"
+        },
+        {
+          "title": "Your UnEmbedding Matrix is Secretly a Feature Lens for Text Embeddings",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07502v1",
+          "authors": [
+            "Songhao Wu",
+            "Zhongxin Chen",
+            "Yuxuan Liu",
+            "Heng Cui",
+            "Cong Li",
+            "Rui Yan"
+          ],
+          "summary": "Large language models exhibit impressive zero-shot capabilities across a wide range of downstream tasks. However, they struggle to function as off-the-shelf embedding models, leading to suboptimal performance on massive text embedding benchmarks. In this paper, we identify a potential cause underlyi"
+        }
+      ]
+    },
+    "compositional_generalization": {
+      "query_count": 4,
+      "papers_found": 13,
+      "papers": [
+        {
+          "title": "CoMetaPNS: Continually Meta-learning Personalized Neural Surrogates for Cardiac Electrophysiology Simulations",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07488v1",
+          "authors": [
+            "Ryan Missel",
+            "Xiajun Jiang",
+            "Linwei Wang"
+          ],
+          "summary": "Personalized virtual heart simulations face challenges in model personalization and computational cost. While neural surrogates offer state-of-the-art solutions, they typically address either efficient personalization or training generalizable models. Recent work reframes this by learning the proces"
+        },
+        {
+          "title": "Physiologically Constrained Musculoskeletal Neural Network for Multi-DoF Joint Kinematics Estimation from Partially Observed sEMG",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07476v1",
+          "authors": [
+            "Wending Heng",
+            "Mingming Zhang",
+            "Glen Cooper",
+            "Zhenhong Li"
+          ],
+          "summary": "This paper investigates multi-degrees of freedom (DoF) joint kinematics estimation under partially observed surface electromyography (sEMG), where only a subset of task-relevant muscles can be measured due to anatomical inaccessibility or sensor constraints. A novel musculoskeletal neural network (M"
+        },
+        {
+          "title": "Unsupervised Continual Clustering via Forward-Backward Knowledge Distillation",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07474v1",
+          "authors": [
+            "Mohammadreza Sadeghi",
+            "Sareh Soleimani",
+            "Zihan Wang",
+            "Narges Armanfard"
+          ],
+          "summary": "Unsupervised Continual Learning (UCL) aims to enable neural networks to learn sequential tasks without labels or access to past data. A major challenge in this setting is Catastrophic Forgetting, where models forget previously learned tasks upon learning new ones. This challenge is amplified in UCL "
+        },
+        {
+          "title": "How reliable are LLMs when it comes to playing dice?",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07515v1",
+          "authors": [
+            "Luca Avena",
+            "Gianmarco Bet",
+            "Bernardo Busoni"
+          ],
+          "summary": "We investigate the probabilistic reasoning capabilities of large language models through a controlled benchmarking study on discrete probability problems. We constructed two datasets, respectively a set of standard exercises and a set of counterintuitive exercises, designed to trigger heuristic reas"
+        },
+        {
+          "title": "Agentopia: Long-Term Life Simulation and Learning in Agent Societies",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07513v1",
+          "authors": [
+            "Xintao Wang",
+            "Sirui Zheng",
+            "Hongqiu Wu",
+            "Weiyuan Li",
+            "Jen-tse Huang",
+            "Minghao Zhu",
+            "Can Zu",
+            "Qi Deng",
+            "Jiawei Wang",
+            "Qianyu He",
+            "Heng Wang",
+            "Xiaojian Wu",
+            "Yunzhe Tao"
+          ],
+          "summary": "Humans learn from social life. Simulating this process with LLM-powered agents represents a promising research direction, raising a natural question: whether LLMs can learn from such simulated social experience to better understand and replicate human behavior. However, prior agent society simulatio"
+        },
+        {
+          "title": "MemDreamer: Decoupling Perception and Reasoning for Long Video Understanding via Hierarchical Graph Memory and Agentic Retrieval Mechanism",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07512v1",
+          "authors": [
+            "Cong Chen",
+            "Guo Gan",
+            "Kaixiang Ji",
+            "ChaoYang Zhang",
+            "Zhen Yang",
+            "Guangming Yao",
+            "Hao Chen",
+            "Jingdong Chen",
+            "Yi Yuan",
+            "Chunhua Shen"
+          ],
+          "summary": "Current Vision-Language Models struggle with hours-long videos because processing full-length visual sequences induces prohibitive token explosion and attention dilution. To overcome this, we introduce MemDreamer to decouple perception and reasoning, shifting long-video understanding into an agentic"
+        },
+        {
+          "title": "Impact of Synthetic Lesional MR Images in Automated Focal Cortical Dysplasia Detection in Low-Data Scenarios",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07381v1",
+          "authors": [
+            "Prabhjot Kaur",
+            "Hakim Ouaalam",
+            "Sedat Kandemirli",
+            "Sanjay P. Prabhu",
+            "Simon K. Warfield"
+          ],
+          "summary": "Background and Purpose: Automated detection of focal cortical dysplasia (FCD) requires large volumes of voxelwise lesion-delineated MRI data, which are difficult to acquire. This study aims to generate synthetic MRI data exhibiting FCD, assess their realism, and evaluate their impact on automated FC"
+        },
+        {
+          "title": "Mitosis Detection in the Wild: Multi-Tumor and Context-Aware Generalization in the MIDOG 2025 Challenge",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07368v1",
+          "authors": [
+            "Marc Aubreville",
+            "Jonas Ammeling",
+            "Sweta Banerjee",
+            "Viktoria Weiss",
+            "Taryn A. Donovan",
+            "Robert Klopfleisch",
+            "Jiaqi Lv",
+            "Shan E Ahmed Raza",
+            "Rapha\u00ebl Bourgade",
+            "Thomas Walter",
+            "Yasemin Topuz",
+            "Song\u00fcl Varl\u0131",
+            "Charles-Antoine Collins-Fekete",
+            "Zhuoyan Shen",
+            "Navya Sri Kelam",
+            "Nitin Singhal",
+            "Christian Marzahl",
+            "Brian Napora",
+            "Tengyou Xu",
+            "Hongyan Gu",
+            "Mario Vento",
+            "Gennaro Percannella",
+            "Norbert Ropiak",
+            "Izabela Wasiak",
+            "Jie Xiao",
+            "Shaojun Liu",
+            "Seungho Choe",
+            "April Khademi",
+            "Vidushi Walia",
+            "Sujatha Kotte",
+            "Andrew Broad",
+            "Alex Wright",
+            "Guillaume Balezo",
+            "Esha Sadia Nasir",
+            "Mostafa Jahanifar",
+            "Yosuke Yamagishi",
+            "Shouhei Hanaoka",
+            "Mattia Sarno",
+            "Francesco Tortorella",
+            "Biwen Meng",
+            "Jingxin Liu",
+            "Sara Krauss",
+            "Daniel Hieber",
+            "Lavish Ramchandani",
+            "Dev Kumar Das",
+            "Mieko Ochi",
+            "Yuan Bae",
+            "Piotr Giedziun",
+            "Mateusz Maniewski",
+            "Vangala Govindakrishnan Saipradeep",
+            "Naveen Sivadasan",
+            "Leire Benito-Del-Valle",
+            "Adrian Galdran",
+            "Kaustubh Atey",
+            "Sameer Anand Jha",
+            "Adinath Dukre",
+            "Imran Razzak",
+            "Maxime W. Lafarge",
+            "Viktor H. Koelzer",
+            "Nils Porsche",
+            "Nikolas Stathonikos",
+            "Mitko Veta",
+            "Dominik Hirling",
+            "Zsanett Zs\u00f3fia Iv\u00e1n",
+            "Peter Horvath",
+            "Katharina Breininger",
+            "Christof A. Bertram"
+          ],
+          "summary": "Automated mitosis detection is a well-established task in computational pathology. While previous benchmarks focused on scanner-induced domain shift, clinical \"real-world\" application requires models to be robust across the vast variance to be expected in the histological landscape. The MItosis DOma"
+        },
+        {
+          "title": "Ptychographic Algorithms for Phase Recovery in 4D Scanning Transmission Electron Microscopy",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07204v1",
+          "authors": [
+            "Amel Shamseldeen Ali Alhassan"
+          ],
+          "summary": "In Momentum-resolved Scanning Transmission Electron Microscopy (4D STEM), a convergent electron beam is raster-scanned across a think specimen in 2D in real space. The corresponding 2D diffraction pattern, in momentum space, to each point is recorded, forming a 4D data set. Information decoding proc"
+        },
+        {
+          "title": "External-Field-Assisted Muon Reactivation in Muon-Catalyzed Fusion: A Rate-Network Criterion for Reducing Alpha Sticking",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07077v1",
+          "authors": [
+            "Wei Kou",
+            "Xurong Chen"
+          ],
+          "summary": "Alpha sticking is a major loss channel in deuterium--tritium muon-catalyzed fusion. We study whether an additional external-field-assisted stripping channel can reduce the residual sticking loss after conventional collisional reactivation. The external contribution is written as $R_X=f_XP_X\u03b7_X$, whe"
+        },
+        {
+          "title": "Unravelling the Role of Stacking Disorder on the Optoelectronic Properties of Zn3P2",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07042v1",
+          "authors": [
+            "Francesco Salutari",
+            "Nico Kawashima",
+            "Aidas Urbonavicius",
+            "Helena Rabelo Freitas",
+            "Raphael Lemerle",
+            "Thomas Hagger",
+            "Kimberly A. Dick",
+            "Anna Fontcuberta i Morral",
+            "Simon Escobar Steinvall",
+            "Maria Chiara Spadaro",
+            "Silvana Botti",
+            "Jordi Arbiol"
+          ],
+          "summary": "Zinc phosphide (Zn3P2) is a promising photovoltaic absorber for thin-film and flexible solar cells due to its earth-abundant composition and favourable optoelectronic properties. Recent advances in epitaxy have enabled the growth of high-quality Zn3P2 thin films despite the challenges posed by its i"
+        },
+        {
+          "title": "Non-Abelian braiding in Abelian Fractional Quantum Hall Phases from realistic interactions",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07517v1",
+          "authors": [
+            "Ha Quang Trung",
+            "Bo Yang"
+          ],
+          "summary": "We propose a method of realizing non-Abelian braiding of fractionalized quasiholes in the Laughlin fractional quantum Hall phase at $\u03bd=1/3$ with realistic two-body interactions within the lowest Landau level. It is numerically shown that low-lying gapped excitations near $\u03bd=1/3$ are contained almost"
+        },
+        {
+          "title": "Counterintuitive problems in discrete probability",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07516v1",
+          "authors": [
+            "Luca Avena",
+            "Gianmarco Bet",
+            "Bernardo Busoni"
+          ],
+          "summary": "This manuscript contains a collection of counterintuitive problems in discrete probability, together with detailed solutions. The dataset was constructed as part of a broader research project investigating the capabilities of the latest-generation Large Language Models (LLMs) in solving discrete pro"
+        }
+      ]
+    },
+    "ood_generalization": {
+      "query_count": 3,
+      "papers_found": 4,
+      "papers": [
+        {
+          "title": "On the large N convergence of matrix models",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07504v1",
+          "authors": [
+            "M. P. Garcia del Moral",
+            "P. Le\u00f3n",
+            "A. Restuccia"
+          ],
+          "summary": "In this paper, the large N behavior of a supersymmetric matrix model is compared with its exact continuum description. We concentrate on the large N limit of a supersymmetric matrix model describing a supermembrane with central charge on a toroidally compactified target space. We analyze, on the one"
+        },
+        {
+          "title": "Planning-aligned Token Compression for Long-Context Autonomous Driving",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07464v1",
+          "authors": [
+            "Zhixuan Liang",
+            "Yuxiao Chen",
+            "Yurong You",
+            "Peter Karkus",
+            "Wenhao Ding",
+            "Boyi Li",
+            "Alexander Popov",
+            "Yan Wang",
+            "Maximilian Igl",
+            "Yiming Li",
+            "Danfei Xu",
+            "Nikolai Smolyanskiy",
+            "Boris Ivanovic",
+            "Ping Luo",
+            "Marco Pavone"
+          ],
+          "summary": "Monolithic vision-action models represent an emerging paradigm in autonomous driving. However, this architecture produces token sequences that quickly exceed real-time computational budgets when encoding extended temporal context for complex interactions. While approaches like linear transformers an"
+        },
+        {
+          "title": "Amortized Neural Optimization for Pre-Layout Signal Integrity Design Space Exploration using Differentiable Surrogates",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07463v1",
+          "authors": [
+            "Julian With\u00f6ft",
+            "Werner John",
+            "Emre Ecik",
+            "Ralf Br\u00fcning",
+            "J\u00fcrgen G\u00f6tze"
+          ],
+          "summary": "Pre-layout design space exploration (DSE) for high-speed signal integrity (SI) analysis is often limited by the computational cost of simulations and iterative optimization algorithms within modern electronic design automation (EDA) workflows. While machine learning surrogate models accelerate the s"
+        },
+        {
+          "title": "Optical Poling Reveals Hidden Molecular Restructuring in Multimode Fibers, Unlocking Ultra-Efficient Third-Order Nonlinearities",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07444v1",
+          "authors": [
+            "Maxime Jonard",
+            "Thomas Larqu\u00e9",
+            "Dan-Esli Bouyou Bouyou",
+            "Tigran Mansuryan",
+            "Alessandro Tonello",
+            "C. Sandt",
+            "Jean-Ren\u00e9 Ducl\u00e8re",
+            "Julie Cornette",
+            "Yago Arosa",
+            "Marc Fabert",
+            "Claire Lefort",
+            "Vincent Couderc",
+            "Maggy Colas"
+          ],
+          "summary": "Optical poling is a well-established technique for inducing \u03c7^{(2)} nonlinearity, yet its impact on silica's molecular structure remains unexplored. Here, we report the first direct observation of molecular restructuring in large-core graded-index multimode fibers (MMFs) induced by optical poling, t"
+        }
+      ]
+    },
+    "phase_transition_training": {
+      "query_count": 3,
+      "papers_found": 3,
+      "papers": [
+        {
+          "title": "Affordance-Based Hierarchical Reinforcement Learning for Quadruped Pedipulation",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07506v1",
+          "authors": [
+            "Tuba Girgin",
+            "Jose Castelblanco",
+            "Gabriel Rodriguez",
+            "Emre Girgin",
+            "Cagri Kilic"
+          ],
+          "summary": "The object manipulation capabilities of quadruped robots is an open research challenge. While previous studies have focused on low-level policy learning, task execution still relies on expert-designed high-level trajectories. Autonomous selection of both an affordable interaction point on the target"
+        },
+        {
+          "title": "Network Recovery from Cascade Data: A Debiased Jacobian-Based Machine Learning Approach",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07483v1",
+          "authors": [
+            "Lei Huang"
+          ],
+          "summary": "Many important outcomes unfold as dynamic cascades, including product adoption, disease spread, financial distress, and information diffusion. A central challenge is to recover the hidden influence network behind these cascades. Existing methods typically assume a specific diffusion model, and their"
+        },
+        {
+          "title": "Primordial Black Hole Triggered Type Ia Supernovae II: Comparison with Supernova Remnants and Galactic Chemical Evolution",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07505v1",
+          "authors": [
+            "Shing-Chi Leung",
+            "Seth Walther",
+            "Alexander Kusenko",
+            "Ken'ichi Nomoto",
+            "Tomoharu Suzuki"
+          ],
+          "summary": "The asteroid-mass class of Primordial Black Holes (PBHs) is one of the candidates for the dark matter in the universe. With a mass between $4 \\times 10^{-17} < M_{\\rm PBH} < 4 \\times 10^{-12}~M_{\\odot}$, they could be the major component of dark matter in the cosmic mass budget. The infall of these "
+        }
+      ]
+    },
+    "grokking_phase_transition": {
+      "query_count": 3,
+      "papers_found": 4,
+      "papers": [
+        {
+          "title": "A Comparison of cluster algebra structures arising from $i$-boxes and Demazure weaves",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07493v1",
+          "authors": [
+            "JiSun Huh",
+            "Woo-Seok Jung",
+            "Myungho Kim",
+            "Euiyong Park"
+          ],
+          "summary": "We compare two cluster algebras related to a positive element $\\mathtt{b}$ in the braid group of finite $ADE$ type. One is the localized bosonic extension ${\\widetilde{\\mathbb{A}}}_\\mathbb{C}(\\mathtt{b})$ equipped with an initial seed arising from an admissible chain $\\mathfrak{C}$ of $i$-boxes, whi"
+        },
+        {
+          "title": "A study of maximal shifts in the minimal graded free resolution of the residue field",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07456v1",
+          "authors": [
+            "Dinesh Limbu",
+            "Liana M. \u015eega",
+            "Adela Vraciu"
+          ],
+          "summary": "We study two invariants, rate and slant, that describe the extremal behavior of the maximal shifts in the minimal free resolution of the residue field over a standard graded algebra. We provide bounds and computations of these invariants for a variety of rings, including compressed level algebras, r"
+        },
+        {
+          "title": "Sycophantic Praise: Evaluating Excessive Praise in Language Models",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07441v1",
+          "authors": [
+            "Daniel Vennemeyer",
+            "Phan Anh Duong",
+            "Meryl Ye",
+            "Ruihong Huang",
+            "Tianyu Jiang"
+          ],
+          "summary": "Sycophancy in language models is typically studied as excessive agreement or validation, while explicit praise and flattery have received comparatively little attention. We argue that sycophantic praise is a distinct alignment problem that cannot be reliably measured using current methods. We introd"
+        },
+        {
+          "title": "Flow of deformable droplets: self-pinned glasses and string-like flow",
+          "date": "2026-06-05",
+          "url": "http://arxiv.org/abs/2606.07438v1",
+          "authors": [
+            "Achille Quarante",
+            "Michael Chiang",
+            "Davide Marenduzzo",
+            "Giuseppe Negro"
+          ],
+          "summary": "We investigate, through numerical simulations, the rheology of a dry suspension of deformable droplets under pressure-driven flow. The system exhibits two force-driven dynamical transitions. At low forcing, the suspension behaves as a yield-stress material: below a critical force, droplets remain ar"
+        }
+      ]
+    },
+    "metacognition_AI": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "executive_function_AI": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "theory_of_mind_LM": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "agentic_evaluation": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "sigma_suppression": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "curriculum_learning_compositional": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "parameter_space_topology": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "singular_learning_theory": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    },
+    "boundary_case_memory": {
+      "query_count": 3,
+      "papers_found": 0,
+      "papers": []
+    }
+  }
+}

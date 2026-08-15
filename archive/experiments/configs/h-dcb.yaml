@@ -1,0 +1,32 @@
+# H-DCB (Delegation Control Benchmark) — Executive Functions Track
+# Tests models' ability to delegate sub-tasks (RAG density sweep) and manage inhibitory conflict
+
+benchmark: H-DCB
+track: Executive
+
+dataset: COGS + RAG wrapper
+sample_size: 200
+
+conditions:
+  RAG_Density_Sweep:
+    rho_levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]  # fraction of examples retrieved vs computed
+    context_per_rho: int(rho * 5)                   # retrieved context count scales with rho
+  BCR:
+    name: Inhibitory Conflict Task                  # must suppress prepotent but wrong response
+    temperature: 0.0
+    target_count: 200
+
+metrics:
+  primary: beta_1_hat (slope of Acc_comp vs rho)  # how accuracy changes as delegation increases
+  secondary:
+    - BCR at rho=1.0                                # inhibitory control when fully delegated
+  validity:
+    CI: 0.832
+    FD: 0.830
+    DG: 0.430
+    RA: 0.999
+    VA: 0.297
+
+predictions_tested:
+  - P5
+  - P1

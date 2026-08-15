@@ -1,0 +1,126 @@
+% ======================================================================
+% Main file: The Σ-Model in Protein Domain Architectures
+% NeurIPS 2027 submission
+%
+% FIXME: Swap \documentclass{neurips_2026} -> neurips_2027 when the
+% official style file is released (expected Q1 2027). See SWAP-TO-2027.txt.
+% ======================================================================
+\documentclass[final]{neurips_2026}
+
+% --- Fonts & encoding ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+% --- Core math & formatting ---
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumitem}
+
+% --- Algorithms ---
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% --- Figures ---
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric}
+
+% --- Custom commands ---
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\CosSim}{CosSim}
+
+% ======================================================================
+% Metadata
+% ======================================================================
+\title{The $\Sigma$-Model in Protein Domain Architectures:\\[2pt]
+Schema-Coherence Suppression and Recombination}
+
+\author{
+  Basyirin Amsyar Basri \\
+  Independent Researcher \\
+  \texttt{basri@sigma-model.dev}
+}
+
+% ======================================================================
+\begin{document}
+% ======================================================================
+
+\maketitle
+
+\begin{abstract}
+[PLACEHOLDER — 200-word abstract describing the application of the
+$\Sigma$-Model framework to protein domain architecture recombination,
+introducing the PfamCG-1.0 benchmark, and reporting experimental results
+for brittle recombination, grammatical induction probes, and curriculum
+design.]
+\end{abstract}
+
+\section{Introduction}
+[PLACEHOLDER — Motivation: compositional generalisation in protein
+domain architectures. The $\Sigma$-Model \cite{basri2026sigma} as a
+dynamical-systems framework for schema-coherence suppression. Three
+contributions: brittle recombination (N=500), grammatical probes
+(3 probe types), and PfamCG-1.0 benchmark suite.]
+
+\section{Background: The $\Sigma$-Model Framework}
+[PLACEHOLDER — Summary of the coupled ODE system
+(Eqs.~1--6 of Basri, 2026), key concepts ($\sigma_A$, $\delta_A$,
+$\alpha_A$), phases of learning, and the training-aware curriculum
+hypothesis.]
+
+\section{Pfam Domain Architectures as a Test Bed}
+[PLACEHOLDER — Pfam database (version 39.0), domain architecture
+representation, recombination distance via HMM bit scores, vocabulary
+construction, and dataset statistics.]
+
+\section{Experiment 1: Brittle Domain Recombination}
+[PLACEHOLDER — N=500 regime: familiar combinations, new families, and
+cross-fold transfer. Hypothesis: $\Sigma$-Model predicts brittle
+recombination for unfamiliar domain pairs. Results: accuracy vs.\
+familiarity, effect size, statistical tests.]
+% CLAIM:C-039 — σ-trap replicates in protein domain data (H1)
+% CLAIM:C-040 — ΔCG ≥ 30pp for low-σ models on Pfam OOD splits
+
+\section{Experiment 2: Grammatical Induction Probes}
+[PLACEHOLDER — Three probe types: positional bias (linear),
+co-occurrence (bilinear), hierarchy (MLP). Results per probe:
+accuracy, $R^2$, and comparison to random baseline.]
+% CLAIM:C-041 — PLMs encode surface co-occurrence, not domain grammar (H2)
+% CLAIM:C-042 — Structural OOD accuracy < lexical OOD accuracy by >10pp
+
+\section{Experiment 3: PfamCG-1.0 Benchmark}
+[PLACEHOLDER — Benchmark results: recombination accuracy, domain
+retention rate, novel combination precision, fold consistency.
+Comparison with baselines: random, frequency-based, co-occurrence.]
+% CLAIM:C-043 — Multiplicative model fits better than additive (H3)
+% CLAIM:C-044 — PfamCG-1.0 benchmark valid against known biology
+
+\section{Discussion}
+[PLACEHOLDER — Implications for protein engineering, limitations
+(vocabulary size, architecture depth), connections to other
+compositional generalisation benchmarks.]
+
+\section{Related Work}
+[PLACEHOLDER — Protein language models (ESM, ProtBERT), domain
+architecture prediction, curriculum learning for biological sequences,
+compositional generalisation in NLP.]
+
+\section{Conclusion}
+[PLACEHOLDER — Summary of findings and future directions.]
+
+% ======================================================================
+\bibliographystyle{plain}
+\bibliography{bibliography}
+% ======================================================================
+
+\appendix
+\section{Supplemental Materials}
+[PLACEHOLDER — Additional experimental details, hyperparameter grids,
+and full result tables.]
+
+\end{document}
