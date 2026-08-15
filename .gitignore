@@ -98,3 +98,6 @@ archive/thesis/monograph.pdf
 # Phase 04 mechanism gate — raw experiment outputs (never committed)
 output/
 archive/gate-results/
+
+# Kaggle upload artifact (user-created zip of code/)
+code.zip
