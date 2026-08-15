@@ -1,0 +1,45 @@
+# Paper 06 v2 — Novelty Audit & Literature Positioning
+
+**Date**: 2026-08-16
+**Phase**: P03
+**Purpose**: Gate the §2 novelty claim. For each closest-competitor account, record (a) what it explains, (b) its state/order variable, (c) whether it already contains an equivalent bifurcation / low-coherence attractor, (d) the empirical signature that would distinguish it from the σ-trap. Feeds `paper/planning/paper-blueprint.md` (P05) and §2 of the narrow manuscript (P06).
+**Method**: Abstracts retrieved from arXiv (2026-08-16); manuscript §7.1's existing engagement with this literature cross-checked.
+
+---
+
+## 1. Competitor comparison table
+
+| # | Account (paper) | What it explains | State / order variable | Equivalent bifurcation or low-σ attractor? | Distinguishing signature vs. the σ-trap |
+|:--|:----------------|:-----------------|:----------------------|:------------------------------------------|:----------------------------------------|
+| 1 | **Grokking — Power et al. 2022** (arXiv 2201.02177) | Abrupt memorisation→generalisation well past overfitting; dataset-size → optimisation needed | None (phenomenological description) | No | Grokking is a *temporal* escape event; the σ-trap is a *stable equilibrium* that standard training stays in. Grokking occurs when training accidentally escapes; σ-trap predicts *why escape is rare* |
+| 2 | **Lazy→rich — Kumar et al. 2023** (arXiv 2310.06110) | Grokking without regularisation via transition from lazy (linear) to rich (feature-learning) dynamics; NTK-eigenvector alignment and feature-learning rate as determinants | Feature-learning regime / NTK alignment | No — describes one escape mechanism, not an attractor | Microscopic account of a single escape path (polynomial regression, MNIST, small transformers). σ-trap is macroscopic and compositional-specific: predicts *compositional* OOD failure conditional on matched ID, not generic delayed generalisation |
+| 3 | **SLT basin selection — Cullen et al. 2026** (arXiv 2603.01192) | Grokking as transition from higher-LLC (memorising) to lower-LLC (generalising) basin; LLC trajectories track onset | Local learning coefficient (LLC) | Partial — two basins, but no derived threshold for *when* the transition fires; transition "governed by optimisation dynamics" left unformalised | σ_A is the macroscopic order parameter their framework lacks; σ_critical is a derived, empirically detectable threshold. LLC is a Bayesian *probe*; σ is a coupled *state variable* in a closed dynamical system |
+| 4 | **Dimensional phase transition — Wang 2026** (arXiv 2604.04655) | Grokking as self-organised-critical dimensional transition; effective dimensionality D crosses sub→super-diffusive at onset; reflects gradient-field geometry | Effective dimensionality D(t) of gradient avalanches | No — characterises the transition generically, any task | Empirical characterisation of the transition *as such*; no latent coherence variable, no threshold derivation, no prediction of *compositional-specific* failure |
+| 5 | **Feature-learning phase transition — Montanari & Wang 2026** (arXiv 2602.01434) | Threshold δ_NN for feature learning in two-layer networks (multi-index models, proportional asymptotics); phase transition in Hessian spectrum | Hessian spectrum phase / δ_NN threshold | Closest formal *threshold*, but microscopic and architecture-restricted | Restricted to two-layer networks / multi-index models; threshold is a sample-complexity/spectrum condition, not a latent coherence variable; does not address compositional recombination failure |
+| 6 | **Early-warning signals — Xu 2026** (bib `xu2026earlywarning`) | Commutator defects in the loss landscape as universal early-warning signals for grokking (SCAN, modular arithmetic) | Loss-landscape geometric diagnostic | No | Complementary *diagnostic*; supports σ-trajectory as a leading indicator (§11), no state-variable theory |
+| 7 | **Sharpness / flatness** (SAM, flat-minima literature) | Loss-landscape property correlated with generalisation | Landscape curvature | No | Landscape property vs. *representation organisation relative to compositional structure*; the empirical question — does σ predict compositional OOD *conditional on* flatness statistics — is treated as a competing-variable test (§11) |
+| 8 | **Lottery ticket — Frankle & Carlin 2019** | Training finds sparse subnetworks ("winning tickets") | Parameter sparsity/subnetwork identity | No | Parameter selection vs. representational *organisation*: identical parameters can differ in σ depending on whether they encode compositional operators or surface correlations |
+
+## 2. Positioning note (goes into §2)
+
+1. **σ-trap vs. grokking.** Grokking (Power et al. 2022) is a *temporal* phenomenon: generalisation emerges late, after prolonged overfitting, in small algorithmic settings. The σ-trap is an *equilibrium* phenomenon: under standard training the system converges to a stable low-coherence state and stays there. Grokking is the rare event in which training escapes the trap (e.g. via weight decay lowering shortcut pressure); the σ-trap explains why escape is rare and unpredictable — the low-σ equilibrium is locally stable, and escape requires crossing σ_critical.
+2. **σ vs. SLT (Cullen et al.).** SLT is microscopic and Bayesian: LLC ranks basins by statistical preference; the *transition* itself is left to "optimisation dynamics". The σ-trap is macroscopic and phenomenological: it supplies a closed two-variable system whose threshold (σ_critical) is derived and empirically detectable. The relationship is like thermodynamics vs. statistical mechanics — complementary levels, not rivals. The σ-trap's claim stands only if σ predicts compositional OOD *beyond* what LLC-style probes already predict.
+3. **σ vs. shortcut learning (Geirhos et al.).** Shortcut learning describes the *strategy* (reliance on surface features); σ describes the *representational state produced by the competition* between shortcut exploitation and schema formation. Distinguishable empirically: same shortcut pressure with different σ trajectories → different future OOD performance.
+4. **σ vs. lazy/rich (Kumar et al.) and dimensional phase transition (Wang).** These characterise *generic* delayed generalisation and the transition's geometry. Neither posits a latent variable tied to *compositional* structure; the σ-trap's distinguishing prediction is compositional-specific failure conditional on matched ID performance.
+5. **σ vs. Montanari & Wang.** Their δ_NN is a rigorous microscopic threshold for two-layer networks in multi-index models. The σ-trap is macroscopic, architecture-agnostic in formulation, and targets compositional recombination; both should be cited, with the division of labour (microscopic sample-complexity threshold vs. macroscopic coherence attractor) made explicit.
+
+## 3. Novelty statement (candidate, for §2)
+
+> Existing accounts of compositional generalisation have characterised the problem through task structure, representation geometry, shortcut learning, scaling, curriculum design, or optimisation dynamics. We introduce a complementary dynamical construct — schema coherence — that explicitly represents the degree to which learned representations support systematic recombination. The novel claim is not that compositional generalisation involves a training transition, but that this transition can be characterised by a low-coherence attractor and a critical threshold whose location predicts when surface-learning trajectories fail to develop compositional competence.
+
+The claim is falsifiable: σ must predict compositional OOD behaviour conditional on (i) ID accuracy, (ii) generic complexity/norm/feature-learning metrics, (iii) loss-landscape geometry (sharpness, LLC), and (iv) shortcut-pressure proxies — the competing-variable design of §11.
+
+## 4. Decision-point check (P03 gate)
+
+**Q: Does any competitor already posit an equivalent low-schema-coherence attractor / bifurcation with a derived threshold for compositional failure?**
+
+**A: No.** The eight accounts above either (a) describe the transition without a mechanism (Power, Xu), (b) supply a microscopic mechanism without a macroscopic order parameter (Kumar, Cullen, Montanari–Wang), or (c) characterise the transition generically with no compositional-specific latent variable (Wang). None combines a latent coherence state variable, coupled shortcut-learning pressure, a derived bifurcation threshold, and an empirically detectable transition signature — the four elements of the σ-trap claim.
+
+**Residual risks to re-check at P04/P11** (flagged, not resolved here):
+- Whether an *equivalent* order parameter exists in the 2025–2026 grokking-theory literature beyond the eight audited (re-scan at P11).
+- The strongest surviving objection is "this is just a logistic-type equation" (the bifurcation σ̇ = σ(a − bσ) − cσ is standard): the paper's defence is the *empirical* discriminability of σ as a leading indicator (P04 gate) and the competing-variable design (§11), not the novelty of the mathematics.
