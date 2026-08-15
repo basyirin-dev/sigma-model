@@ -3,7 +3,7 @@
 **Duration**: Ongoing (applies to all phases of the σ-Trap paper rewrite)
 **Dependencies**: None
 **Output**: Standards matrix enforced across all phases 00–13 of the Paper 06 v2 roadmap
-**Status**: Adapted 2026-08-16 from the archived monograph `thesis/cross-cutting.md` (CC.1–CC.8); deltas recorded at the end of this document.
+**Status**: Adapted 2026-08-16 from the archived monograph `archive/thesis/cross-cutting.md` (CC.1–CC.8); deltas recorded at the end of this document.
 
 These requirements apply to **every** phase of the Paper 06 v2 pipeline (see `paper/planning/roadmap.md`). All phases must comply unless explicitly exempted.
 

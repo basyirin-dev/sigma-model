@@ -79,19 +79,18 @@ opencode.json.bak*
 # Python package build
 code/*.egg-info/
 
-# Paper 01/02 full-text PDFs (large artifacts — not committed)
-research/pdfs/
-thesis/chapters/*/research/pdfs/
-thesis/publications/*/research/pdfs/
-research/full-text-pdfs/
-thesis/chapters/*/research/full-text-pdfs/
-research/full-text-txt/
-thesis/chapters/*/research/full-text-txt/
+# Archived thesis full-text PDFs (large artifacts — not committed)
+archive/thesis/chapters/*/research/pdfs/
+archive/thesis/publications/*/research/pdfs/
+archive/thesis/chapters/*/research/full-text-pdfs/
+archive/thesis/chapters/*/research/full-text-txt/
+archive/thesis/publications/*/research/full-text-pdfs/
+archive/thesis/publications/*/research/full-text-txt/
 
-# Chapter phase-doc build artifacts
-thesis/chapters/02-agi-safety-landscape/phases/*.pdf
+# Archived chapter phase-doc build artifacts
+archive/thesis/chapters/*/phases/*.pdf
 
-# Publication manuscript build outputs (like paper/manuscript.pdf)
-thesis/publications/*/manuscript.pdf
-thesis/publications/*/protocol.pdf
-thesis/monograph.pdf
+# Archived monograph/publication build outputs
+archive/thesis/publications/*/manuscript.pdf
+archive/thesis/publications/*/protocol.pdf
+archive/thesis/monograph.pdf

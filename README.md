@@ -1,6 +1,15 @@
-# Σ-Align: Schema Coherence Framework for AI Alignment and AGI Safety
+# Σ-Model — Schema-Coherence Suppression & Compositional Generalisation Failure
 
-**Core thesis (three-tier, cumulative):** *Schema coherence is a measurable property of learned representation structure whose deterioration can produce a stable low-coherence regime (the σ-trap) associated with systematic generalisation failure.* The same mechanism provides a testable account of some safety-relevant forms of objective divergence, and — if it persists in more capable systems — schema-coherent training may be a candidate component of alignment strategy. (Identity formulation "CG failure = alignment failure" is documented but not the working claim.)
+A dynamical-systems framework for compositional generalisation failure. Core idea:
+standard gradient-based training drives agents into a stable low-schema-coherence
+equilibrium (the **σ-trap**) — high in-distribution accuracy coexists with
+systematic out-of-distribution compositional failure because depth accumulates
+while schema coherence is suppressed.
+
+The active deliverable is a single narrow manuscript (the **σ-Trap paper**,
+targeting TMLR after the JAIR desk-rejection) plus an arXiv companion technical
+report preserving the extended framework (proxy architecture, cognitive
+extensions, multimodal coverage, benchmark protocol).
 
 ---
 
@@ -8,44 +17,39 @@
 
 | Path | Contents |
 |:-----|:---------|
-| `paper/` | Sigma-Model manuscript (Paper 06, JAIR → TMLR) |
-| `thesis/` | Monograph — 10 chapters, front/back matter, publications, planning docs |
-| `code/sigma_align/` | Reusable Python package (ODE, config, utils, monitoring) |
-| `Σ-Align/` | Decision documentation (MCDAs, audit trails, errata, methodology) |
+| `paper/` | σ-Trap manuscript (TMLR format) + arXiv companion (`paper/companion/`) + planning docs (`paper/planning/`) |
+| `code/sigma_align/` | Reusable Python package (ODE, config, utils, monitoring, evaluation) |
+| `archive/` | Read-only historical artifacts: thesis monograph (`archive/thesis/`), decision docs (`archive/Σ-Align/`), old code, datasets, experiment results. Do not modify. |
 | `docs/adrs/` | Architecture Decision Records |
-| `archive/` | Protein-domain artifacts (read-only historical reference) |
 | `hbar_env/` | Python virtual environment |
 
-## Monograph (Chapters)
+## Current Status
 
-The thesis is written as a **monograph** (chapter-based prose). Completed publications
-are adapted into chapters; their venue manuscripts are archived in `thesis/publications/`.
+- Paper 06 (Σ-Model) was desk-rejected by JAIR (2026-07-15) on exposition/notation,
+  overbroad claims, and scope grounds. Pivoting: **narrow σ-Trap paper → arXiv → TMLR**,
+  experiment-gated. See `paper/planning/roadmap.md` for the phase plan.
+- The thesis monograph (10 chapters) and AGI-safety publication pipeline are
+  **archived** (reversible via git) — the project is re-centered on the
+  dynamical-systems account of compositional generalisation failure.
 
-| Ch | Chapter | Source | Status |
-|:--:|:--------|:-------|:-------|
-| 1 | Introduction | original | 🟢 Drafted |
-| 2 | The Landscape of AGI Safety | Paper 01 (Scoping Review) | 🟡 Adapting |
-| 3 | Schema Coherence and the σ-Trap | Paper 02 (Systematic Review) | 🟡 Pending |
-| 4 | The Σ-Align Framework | Paper 03 (Conceptual) | ⚪ Pending |
-| 5 | σ-Coupling Interventions | Paper 04 (Pilot Study) | ⚪ Pending |
-| 6 | Quantifying the σ-Trap | Paper 05 (Meta-Analysis) | ⚪ Pending |
-| 7 | The Σ-Model | Paper 06 (Empirical #1) | 🟢 Source complete |
-| 8 | Mesa-Optimization via Schema Coherence | Paper 07 (Empirical #2) | ⚪ Pending |
-| 9 | What Schema Coherence Can and Cannot Tell Us About Alignment | Paper 09 (Final Scoping) | ⚪ Pending |
-| 10 | Conclusion | original | ⚪ Pending |
+## Build
 
-Build the monograph with `make monograph` (from repo root).
+| Task | Command |
+|:-----|:--------|
+| Build the paper PDF | `make paper06` (from root) or `make pdf` (from `paper/`) |
+| Lint | `ruff check code/sigma_align/` |
+| Run evaluation | `PYTHONPATH=code:$PYTHONPATH python -m sigma_align.monitoring.evaluation` |
+| CLI | `sigma-evaluate` (installed via `pip install -e .`) |
 
-See [`thesis/narrative.md`](thesis/narrative.md) for the full arc and roadmap.
+Activate the venv first: `source hbar_env/bin/activate`.
 
 ## Citation
 
 ```bibtex
-@misc{sigma-align2026,
-  title={{\Sigma}-Align: Schema Coherence and the {$\sigma$}-Trap
-         in {AGI} Safety and Alignment},
+@misc{sigma-model2026,
+  title={The {$\Sigma$}-Model: Schema-Coherence Suppression as a Dynamical
+         Mechanism of Compositional Generalisation Failure},
   author={{Basyirin Amsyar Basri}},
-  howpublished={PhD thesis (monograph)},
   year={2026}
 }
 ```
