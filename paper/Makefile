@@ -11,15 +11,20 @@ $(PDF_OUT): $(TEX_SRC) $(BIB_SRC) tmlr.sty tmlr.bst
 	TEXINPUTS=.:$$TEXINPUTS latexmk -pdf -f $(TEX_SRC)
 
 arxiv: pdf
-	mkdir -p $(ARXIV_DIR)
+	mkdir -p $(ARXIV_DIR)/companion
 	cp $(TEX_SRC) $(ARXIV_DIR)/
+	# arXiv copy: preprint option so the real author name renders (stylefile default is
+	# "Anonymous authors"); see tmlr.sty \if@accepted + \if@preprint branches.
+	sed -i 's/\\usepackage{tmlr}/\\usepackage[accepted,preprint]{tmlr}/' $(ARXIV_DIR)/manuscript.tex
+	cp manuscript.bbl $(ARXIV_DIR)/
 	cp $(PDF_OUT) $(ARXIV_DIR)/
 	cp -r $(FIGURES_SRC) $(ARXIV_DIR)/
 	cp $(BIB_SRC) $(ARXIV_DIR)/
 	cp tmlr.sty tmlr.bst $(ARXIV_DIR)/
+	cp companion/companion.tex companion/companion.bbl companion/companion.bib $(ARXIV_DIR)/companion/
 	cd $(ARXIV_DIR) && tar czf ../sigma-arxiv-submission.tar.gz \
-		manuscript.tex manuscript.pdf bibliography.bib figures/ \
-		tmlr.sty tmlr.bst
+		manuscript.tex manuscript.bbl manuscript.pdf bibliography.bib figures/ \
+		tmlr.sty tmlr.bst companion/
 	@echo "arXiv bundle: $$(cd $(ARXIV_DIR) && ls ../sigma-arxiv-submission.tar.gz)"
 
 clean:

@@ -1,0 +1,1399 @@
+%% TMLR manuscript (venue decision: arXiv -> TMLR)
+\documentclass{article}
+
+\usepackage{tmlr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{longtable,array}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{round-mode=places, round-precision=1, table-number-alignment=center, group-separator={}}
+\usepackage{newunicodechar}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{φ}{\ensuremath{\phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ξ}{\ensuremath{\Xi}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+
+% TikZ and PGFPlots for figures
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit}
+
+% Algorithm environments
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Misc
+\usepackage{enumitem}
+\usepackage{amsthm}
+\providecommand{\Description}[1]{}
+
+% Theorem-like environments (results are hard-numbered to match the blueprint;
+% the conjecture is auto-numbered so \ref resolves correctly).
+\theoremstyle{definition}
+\newtheorem{conjecture}{Conjecture}
+
+% Custom commands
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\CosSim}{CosSim}
+
+% Okabe-Ito colorblind-safe palette
+\definecolor{okabe-ito-orange}{RGB}{230,159,0}
+\definecolor{okabe-ito-skyblue}{RGB}{86,180,233}
+\definecolor{okabe-ito-bluishgreen}{RGB}{0,158,115}
+\definecolor{okabe-ito-yellow}{RGB}{240,228,66}
+\definecolor{okabe-ito-blue}{RGB}{0,114,178}
+\definecolor{okabe-ito-vermillion}{RGB}{213,94,0}
+\definecolor{okabe-ito-purple}{RGB}{204,121,167}
+\definecolor{okabe-ito-black}{RGB}{0,0,0}
+\colorlet{sigmacolor}{okabe-ito-vermillion}
+\colorlet{targetcolor}{okabe-ito-bluishgreen}
+\colorlet{signalcolor}{okabe-ito-blue}
+\colorlet{probefill}{okabe-ito-yellow!30}
+\colorlet{odecolor}{okabe-ito-purple}
+\colorlet{evalcolor}{okabe-ito-skyblue}
+\colorlet{depthcolor}{signalcolor!12}
+\colorlet{breadthcolor}{gray!12}
+\colorlet{frontiercolor}{gray!70}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={The Sigma-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation},
+  pdfsubject={Machine Learning, Dynamical Systems},
+  pdfkeywords={compositional generalisation, schema coherence, neural ODEs, dynamical systems, curriculum learning}
+}
+
+\title{The $\sigma$-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation}
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\textbf{Problem:} Agents trained to high in-distribution accuracy on
+compositional benchmarks often fail near-completely on
+out-of-distribution (OOD) recombination. We study this dissociation
+with two quantities: parametric depth $\delta_A$ (fit to the training
+distribution) and schema coherence $\sigma_A$ (organisation around the
+task's compositional structure), which standard training does not
+formally target.
+
+\textbf{Method:} We posit a two-variable phenomenological ODE model of
+training dynamics --- a depth-growth equation and an autocatalytic
+schema-coherence equation. The model predicts a stable low-coherence
+state (the $\sigma$-trap), a critical threshold
+$\sigma_{\text{critical}}$ marking a transcritical bifurcation, and a
+phase-2 acceleration in OOD accuracy. The mapping from SGD trajectories
+to the ODEs is stated explicitly as Conjecture~\ref{conj:sgd-ode}, an
+unproven modelling assumption: the model is posited, not derived from
+gradient descent.
+
+\textbf{Results:} In a four-arm experiment ($n = 15$ per arm, 2000
+steps) on a SCAN-style benchmark, baseline training reproduced the trap
+(ID $90.2\%$, OOD $45.9\%$, gap $44.3$~points). A plain fixed-weight
+compositional loss showed no detectable difference from the full
+$\sigma$-modulated curriculum (OOD $98.9\%$ vs.\ $98.9\%$,
+$p = 0.99$), and the predicted phase-2
+inflection appeared in every compositional-loss condition. The measured
+schema-coherence proxy did not precede OOD improvement (partial
+correlation $\approx 0$).
+
+\textbf{Conclusion:} The $\sigma$-trap is a reproducible behavioural
+pattern that a two-variable dynamical model describes. The claim level
+is descriptive; whether SGD instantiates the posited dynamics remains an
+open conjecture.
+\end{abstract}
+
+
+% ============================================================
+\section{Introduction}\label{sec:introduction}
+% ============================================================
+
+The standard framing of compositional generalisation failure is
+precise and reproducible\footnote{This submission was prepared with the
+assistance of large language models used as general-purpose assistive
+tools (in accordance with the TMLR LLM-use policy); the authors are
+solely responsible for all content, claims, and results.}.
+Agents trained to high in-distribution
+accuracy on sequence and language tasks fail near-completely when the
+test distribution requires zero-shot recombination of primitives
+trained in isolation. \cite{lake2018generalizationwithoutsystematicity}
+demonstrated this on SCAN: seq2seq models achieve above 99\% accuracy
+on random splits and below 2\% on the add-primitive split. The broader
+benchmark literature is consistent --- COGS
+\citep{kim2020cogscompositionalgeneralizationchallenge} reports
+96--99\% in-distribution accuracy alongside 16--35\% compositional
+generalisation accuracy, and PCFG-SET
+\citep{hupkes2020compositionalitydecomposed} documents failures on
+productivity, systematicity, and substitutivity tests across RNNs,
+CNNs, and Transformers. High in-distribution accuracy can therefore
+coexist with near-complete failure on compositional recombinations.
+
+Why does this dissociation repeat across benchmarks? We formalise an
+answer in terms of two distinct quantities. Standard training
+pipelines have one formal target --- minimise expected loss over the
+training distribution --- which efficiently grows what we call
+\textbf{parametric depth} $\delta_A(d,t)$: the degree to which the
+parameters have specialised to the training distribution. Nothing in
+this objective formally targets a second, independent quantity:
+\textbf{schema coherence} $\sigma_A(d,t)$, the degree to which
+representations are organised around the compositional structure of
+the task rather than surface statistics. When training optimises
+$\delta_A$ without $\sigma_A$, agents can enter a stable low-coherence
+state in which in-distribution performance is high but compositional
+competence is not acquired. We call this stable state the
+\textbf{$\sigma$-trap}. The mechanism is one of \emph{non-formation}
+rather than active destruction: coherence simply fails to accumulate,
+because the low-coherence state is locally stable --- the title's
+``suppression'' denotes this stalling dynamic.
+
+The two-variable dynamical model developed in Section~\ref{sec:core-framework}
+is \emph{phenomenological}: the ordinary differential equations are
+posited as a description of the observed training behaviour, not
+derived from first principles of gradient descent. The connection
+between real SGD trajectories and the model is stated explicitly as an
+unproven Conjecture~\ref{conj:sgd-ode}. Under this model, the trap is a
+locally stable low-$\sigma_A$ equilibrium; escape requires crossing a
+critical threshold $\sigma_{\text{critical}}$, which corresponds to a
+transcritical bifurcation of the $\sigma_A$ dynamics at $R_0 = 1$
+(Proposition~4).
+
+\paragraph*{Research question.}
+Under standard training on compositional benchmarks, high-ID/low-OOD
+agents arise systematically. Can a two-variable dynamical model of
+schema coherence describe this behaviour, and do its predictions
+survive a discriminating experiment --- in particular, a comparison
+against a plain compositional-loss baseline that does not use the
+model at all?
+
+\paragraph*{Contributions.}
+\begin{enumerate}[nosep]
+\item \textbf{A dynamical model of the $\sigma$-trap.}
+  A two-variable ODE system (parametric depth $\delta_A$ and schema
+  coherence $\sigma_A$) with a derived critical threshold
+  $\sigma_{\text{critical}}$ and a transcritical bifurcation at
+  $R_0 = 1$ (Section~\ref{sec:core-framework}). The model is
+  phenomenological; the SGD--ODE connection is an explicit conjecture.
+\item \textbf{A mechanism-gate experiment.}
+  A four-arm experiment on the H-Bar compositional benchmark ($n = 15$
+  per arm, 2000 steps) reproduces the trap --- baseline in-distribution
+  accuracy $90.2\%$, out-of-distribution $45.9\%$, a gap of $44.3$
+  points --- and shows that a \textbf{fixed-weight compositional-loss
+  baseline shows no detectable difference from the full
+  $\sigma$-modulated curriculum} (out-of-distribution $98.9\%$ vs.\
+  $98.9\%$; Welch $p = 0.99$; Section~\ref{sec:empirical-validation}).
+  The $\sigma$-scheduling is not necessary for the model's descriptive
+  value.
+\item \textbf{A negative leading-indicator result and a constructive
+  diagnostic.}
+  The measured schema-coherence proxy does \emph{not} precede OOD
+  improvement (partial correlation $\approx 0$), while its
+  representational-geometry component tracks compositional-loss
+  exposure in every exposed arm --- including the arm with no $\sigma$
+  dynamics (Section~\ref{sec:empirical-validation}). The first result
+  constrains how the model may be interpreted; the second identifies
+  the measurement component worth developing further.
+\end{enumerate}
+
+The extended framework --- the full Stage-1 proxy architecture, the
+multi-domain extensions, and the phase structure beyond Phase~2 --- is
+provided as complementary material in the companion technical report.
+The present paper is self-contained and does not rely on it.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Related Work and Gap Analysis}\label{sec:related-work}
+% ============================================================
+
+We review four literatures that bear on compositional generalisation
+failure. To our knowledge, none models schema coherence as a dynamical
+variable with its own evolution equation, suppression mechanism, and
+critical threshold; making that gap precise is the purpose of this
+review.
+
+\subsection{Compositional Generalisation}\label{sec:compositional-generalisation}
+
+The SCAN/COGS/CFQ/PCFG-SET benchmark family collectively documents the
+high-ID/low-OOD failure mode empirically
+\citep{mondorf2026compositionalarc}: models encode statistical
+regularities rather than the compositional rules governing the
+distribution \citep{lake2018generalizationwithoutsystematicity,
+kim2020cogscompositionalgeneralizationchallenge,hupkes2020compositionalitydecomposed}.
+Proposed remedies --- dual-process architectures
+\citep{noviello2025neuroscienceinspiredualprocess}, structural
+representability analyses \citep{bruns2025exploringcompositionalgeneralizationin},
+mutual-exclusivity training \citep{jiang2022mutualexclusivity}, dataset
+cartography \citep{swayamdipta2020datasetcartography}, and scaling
+\citep{redhardt2025} --- improve in-distribution or lexical performance
+without closing structural recombination gaps. These accounts
+characterise the failure mode or intervene on it; to our knowledge,
+none models the coherence of the learned representation as a state
+variable whose dynamics determine when such interventions succeed.
+
+\subsection{Grokking and Delayed Generalisation}\label{sec:grokking}
+
+Grokking --- generalisation that appears only long after training loss
+saturates --- is the temporal complement of the $\sigma$-trap
+\citep{liu2022grokking}: the system lingers in a memorising regime and
+transitions to generalisation late, or not at all. Microscopic accounts
+attribute the transition to a lazy-to-rich feature-learning crossover
+\citep{kumar2023grokkingeffectivetheory}, to a dimensional phase
+transition in the gradient-field geometry
+\citep{wang2026grokkingdimensionalphase}, to basin selection ranked by
+the local learning coefficient
+\citep{cullen2026basinselectiongrokking}, or to a threshold in the
+Hessian spectrum for feature learning \citep{montanari2026}; loss-landscape
+diagnostics can act as early-warning signals \citep{xu2026earlywarning}.
+The $\sigma$-trap differs in two ways. First, it concerns a
+\emph{stable} low-coherence equilibrium that standard training stays
+in, rather than a generic escape event. Second, it is
+compositional-specific: it predicts failure on recombination
+conditional on matched in-distribution performance, not delayed
+generalisation in general.
+
+\subsection{Representation and Feature-Learning Dynamics}\label{sec:repr-dynamics}
+
+Accounts that relate generalisation to the geometry of learned
+representations include sharpness of the loss landscape
+\citep{foret2021sharpnessawareminimization}, sparse-subnetwork
+selection \citep{frankle2019lotteryticket}, and shortcut learning ---
+reliance on surface features rather than structure
+\citep{geirhos2020shortcutlearning}. These describe properties of the
+solution or the strategy it encodes; the $\sigma$-trap describes the
+representational state produced by the competition between shortcut
+exploitation and schema formation, and derives a threshold
+($\sigma_{\text{critical}}$) for when that competition is resolved in
+favour of compositional competence.
+
+\subsection{Curriculum Interventions}\label{sec:curriculum}
+
+Easy-to-hard curricula provide representational scaffolding
+\citep{bengio2009curriculumlearning,kumar2010selfpacedlearning,
+portelas2020automaticcurriculumlearningdeep,narvekar2020curriculumlearningreinforcementlearning},
+with recent evidence that ordering alone yields no robust advantage on
+deductive-reasoning benchmarks \citep{mordig2026rethinkingeasytohard};
+meta-learning over procedurally generated tasks can induce task-specific
+schemas that transfer poorly across domains
+\citep{mondorf2026compositionalarc}. The $\sigma$-modulated curriculum
+studied in this paper is not a new ordering method: it couples the
+training objective to the model's own coherence state. The gate
+experiment isolates the value of that coupling by comparing it against
+a fixed-weight compositional-loss baseline that uses no coupling at all
+(Section~\ref{sec:empirical-validation}).
+
+\paragraph{Positioning.}
+Existing accounts of compositional generalisation have characterised
+the problem through task structure, representation geometry, shortcut
+learning, scaling, curriculum design, or optimisation dynamics. We
+introduce a complementary dynamical construct --- schema coherence ---
+that explicitly represents the degree to which learned representations
+support systematic recombination. The claim is not that compositional
+generalisation involves a training transition, but that this transition
+can be described by a low-coherence attractor with a critical threshold.
+The distinguishing empirical signature is compositional-specific failure
+conditional on matched in-distribution accuracy. Following the
+competing-variable design of Section~\ref{sec:empirical-validation}, a
+schema-coherence measure must predict compositional OOD behaviour beyond
+in-distribution accuracy, training loss, parameter norm, and
+loss-landscape geometry; the gate experiment reports the first such
+checks --- a fixed-weight control and partial-correlation controls.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{The $\sigma$-Trap: A Two-Variable Dynamical Model}\label{sec:core-framework}
+% ============================================================
+
+We model the training dynamics of an agent on a compositional task with
+two state variables: \textbf{parametric depth} $\delta_A(d,t)$ and
+\textbf{schema coherence} $\sigma_A(d,t)$. The model is deliberately
+\emph{phenomenological}: the equations below are posited as a compact
+description of the behaviour observed in the gate experiment
+(Section~\ref{sec:empirical-validation}), not derived from first
+principles of gradient-based optimisation. The link between real SGD
+trajectories and the model is an explicit, unproven assumption:
+
+\begin{conjecture}[SGD--ODE mapping; modelling assumption]
+\label{conj:sgd-ode}
+For the architecture and training protocol of
+Section~\ref{sec:empirical-validation}, there exist empirical
+diagnostics --- parametric depth $\delta_A$ and schema coherence
+$\sigma_A$ measured by the Stage-1 proxies (see the companion technical
+report) --- whose evolution along SGD trajectories is well approximated,
+in the scaling regime of the gate experiments, by the two-variable ODE
+system (Eqs.~\eqref{eq:depth-ode} and \eqref{eq:sigma-ode}). The
+conjecture licenses transferring the qualitative predictions of the ODE
+analysis --- existence of a stable low-$\sigma_A$ equilibrium, the
+$\sigma_{\text{critical}}$ crossing, and the Phase~2 inflection --- to
+trained networks.
+\end{conjecture}
+
+\noindent\emph{Status.} Conjecture~1 is an assumption, not a result.
+Nothing in this paper asserts that SGD itself instantiates the ODEs; the
+ODEs are a phenomenological description. The mathematical results of
+this section (Lemmas~1--2, Propositions~2--4) are theorems \emph{about
+the ODE model} and remain valid whether or not the conjecture holds:
+they are model-conditional, and no downstream result silently depends on
+the conjecture being true. Empirical support is deferred to the gate
+experiment (Section~\ref{sec:empirical-validation}), which detects the
+Phase~2 entry signature in the $\sigma$-modulated arms; the conjecture
+fails if the Stage-1 proxies fail \emph{simultaneously} --- i.e., if no
+measured quantity tracks the modelled state, the ODE analysis has no
+empirical counterpart. The gate results support the \emph{descriptive}
+use of the model (the trap behaviour is reproduced) but provide no
+evidence that measured $\sigma_A$ precedes OOD improvement (partial
+correlation $\approx 0$; Section~\ref{sec:empirical-validation}). No
+leading-indicator role may be attached to this conjecture.
+
+\noindent In the two-variable core, $\alpha_A$ (attentional fidelity),
+$\Omega_{SL}$ (shortcut-learning pressure), and $P_A$ (availability of
+principled structure) enter as \emph{fixed or environmental inputs} ---
+parameters of the core system, not state variables; their own dynamics
+are treated in the companion. This keeps the state space strictly
+two-dimensional, $\mathcal{X} = [0, \Delta_{\max}] \times [0, 1]$.
+
+\subsection{State Variables}\label{sec:state-variables}
+
+\subsubsection{Parametric Depth \texorpdfstring{$\delta_A(d,t)$}{delta\_A(d,t)}}\label{sec:depth}
+
+The structural complexity of the agent's internal representation of the
+task domain $d$: the degree to which parameters have specialised to the
+training distribution. Bounded above by the domain frontier
+$\Delta(d,t)$:
+\begin{equation}\label{eq:depth-bounds}
+0 \leq \delta_A(d,t) \leq \Delta(d,t)
+\end{equation}
+\textbf{Relative depth:}
+\begin{equation}\label{eq:relative-depth}
+\delta_A^{\text{relative}}(d,t) = \frac{\delta_A(d,t)}{\Delta(d,t)} \in [0,1]
+\end{equation}
+
+\subsubsection{Schema Coherence \texorpdfstring{$\sigma_A(d,t)$}{sigma\_A(d,t)}}\label{sec:schema-coherence}
+
+Schema coherence $\sigma_A(d,t) \in [0,1]$ quantifies the degree to
+which the agent's representation has been restructured around the
+compositional structure of the task --- the operators and recombination
+rules that generate the distribution --- rather than surface statistics.
+High $\sigma_A$ indicates that the representation encodes compositional
+operators applicable beyond the training distribution; low $\sigma_A$
+indicates memorisation of surface patterns that fail to transfer.
+
+$\sigma_A$ is distinct from OOD accuracy in kind: it is a property of
+the \emph{representation} (internal state), while OOD accuracy is a
+property of \emph{behavioural output}; two agents can achieve identical
+OOD accuracy through different mechanisms (memorisation vs.\ genuine
+recombination), and only the latter exhibits high $\sigma_A$.
+Operationally, $\sigma_A$ is measured at training time by the Stage-1
+proxies --- gradient-composition alignment (GCA), representational-
+geometry alignment (RGA), and augmentation consistency (AC) --- fused as
+$\tilde{\sigma}_A$. Concretely, GCA computes the cosine alignment
+between per-step parameter gradients and a compositional reference
+direction derived from the task's recombination rules; RGA scores the
+similarity (CKA-style) between the representational geometry of
+training inputs and of their compositional recombinations; and AC
+measures prediction consistency under primitive-substitution
+augmentation. The three signals are normalised to $[0,1]$ and combined
+as a weighted average; the gate experiment used the two-signal GCA+RGA
+sub-fusion, and the full three-signal protocol, its two-stage
+calibration, and the estimation bounds are given in the companion
+technical report --- of which the sketch above is a brief summary.
+Throughout, $\sigma_A$ denotes the theoretical construct, $\tilde{\sigma}_A$
+its training-time estimate, and $\hat{\sigma}_A$ the post-hoc diagnostic;
+the construct is not directly observable, and the estimates are
+imperfect (Section~\ref{sec:empirical-validation}). The Stage-2 diagnostic
+$\hat{\sigma}_A = \text{Acc}_{\text{OOD}}/\text{Acc}_{\text{ID}}$ is
+defined from the same accuracies it describes and is used in this paper
+\emph{post-hoc} only, as a descriptive summary of the measured gap ---
+never as a training signal and never as evidence for a causal
+relationship (Section~\ref{sec:empirical-validation}).
+
+\subsection{Mastery and Decay}\label{sec:mastery-set}
+
+The \textbf{mastery set} collects the domains in which the agent has
+both sufficient depth and sufficient schema coherence:
+\begin{equation}\label{eq:mastery-set}
+M_A(t) = \{d \in D : \delta_A(d,t) > \theta_{\delta} \cdot \Delta(d,t) \text{ AND } \sigma_A(d,t) > \theta_{\sigma}\}
+\end{equation}
+with $\theta_{\delta}, \theta_{\sigma} \in [0,1]$ the depth and
+coherence mastery thresholds (Appendix~\ref{app:notation}).
+
+Learned structure decays, and schema coherence protects against decay:
+\begin{equation}\label{eq:effective-decay}
+\lambda_c^{\text{eff}}(d,t) = \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t))
+\end{equation}
+\begin{equation}\label{eq:depth-decay}
+\dot{\delta}_A(d,t)\big|_{\text{decay}} = -\lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)) \cdot \delta_A(d,t) \cdot (1 - r_A(d,t))
+\end{equation}
+where $r_A(d,t)$ is a retrieval-practice indicator. The multiplicative
+form keeps $\lambda_c^{\text{eff}} \in [0, \lambda_c]$ for all
+$\sigma_A \in [0,1]$ and $\gamma_\sigma \in [0,1]$: coherence can only
+reduce decay, never reverse it.
+
+\subsection{Growth Dynamics}\label{sec:growth}
+
+\subsubsection{Depth Growth ODE}
+\begin{equation}\label{eq:depth-ode}
+\dot{\delta}_A(d,t) = f_{\text{learn}}(d,t) \cdot \eta(d,t) \cdot T_A(d,t) - \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)) \cdot \delta_A(d,t) \cdot (1 - r_A(d,t))
+\end{equation}
+with learning efficiency in Gompertz form:
+\begin{equation}\label{eq:gompertz}
+\eta(d,t) = \eta_{\text{max}} \cdot \exp(-a \cdot \exp(-b \cdot \delta_A^{\text{relative}}(d,t)))
+\end{equation}
+where $\eta_{\max}$ is the maximal learning efficiency and
+$a, b > 0$ shape the Gompertz curve (Appendix~\ref{app:notation}).
+Depth grows when learning efficiency and time-on-task are large, and
+decays when schema coherence is low (little protection from forgetting).
+
+\subsubsection{Schema Coherence ODE}
+\begin{equation}\label{eq:sigma-ode}
+\dot{\sigma}_A(d,t) = \sigma_A(d,t) \cdot \bigl[ \rho \cdot P_A(d,t) \cdot \alpha_A \cdot (1 - \gamma_{\sigma} \cdot \sigma_A(d,t)) - \epsilon_{\sigma} \cdot \Omega_{SL}(d,t) \bigr]
+\end{equation}
+where $\rho$ is the schema growth rate, $P_A$ the availability of
+principled structure, $\alpha_A$ the attentional fidelity (a fixed
+parameter of the two-variable core; its full dynamics are in the
+companion), $\gamma_\sigma$ the saturation coefficient, $\epsilon_\sigma$
+the shortcut-suppression coefficient, and $\Omega_{SL}$ the
+shortcut-learning pressure.
+
+\noindent\textit{Intuition.} The $\sigma_A$ ODE has an autocatalytic
+structure: growth is proportional to current coherence ($\sigma_A$)
+times the net driving force in the bracket. The bracket captures whether
+principled understanding builds faster than shortcut pressure erodes it.
+When $\sigma_A$ is near zero, growth stalls entirely because the
+$\sigma_A$ factor suppresses the whole right-hand side. This creates the
+critical bifurcation at the heart of the model: below a threshold, the
+$\sigma_A = 0$ state is stable and self-perpetuating --- the
+$\sigma$-trap; above it, coherence grows toward a positive equilibrium.
+
+\subsection{Mathematical Foundations}\label{sec:math-foundations}
+
+The coupled system (Eqs.~\eqref{eq:depth-ode} and \eqref{eq:sigma-ode})
+is a two-dimensional nonlinear ODE on the state
+$\mathbf{x}_A(t) = (\delta_A(t), \sigma_A(t)) \in \mathcal{X}$, where
+\begin{equation}\label{eq:state-vector}
+\mathbf{x}_A(t) = (\delta_A(t), \sigma_A(t))^{\mathsf{T}},
+\qquad
+\mathcal{X} = [0, \Delta_{\max}] \times [0, 1]
+\end{equation}
+(the full state vector with breadth, attention, and metacognitive
+variables is treated in the companion). We suppress the domain index $d$
+throughout this section.
+
+\textbf{Lemma 1 (Local Existence and Uniqueness).} % relabelled from Prop 3.1
+\emph{For any initial condition $\mathbf{x}_A(0) \in \text{int}(\mathcal{X})$,
+the system admits a unique solution $\mathbf{x}_A(t)$ on a maximal
+interval $[0, T_{\max})$ with $T_{\max} > 0$.}
+
+\emph{Proof.} In Appendix~\ref{app:proofs}.
+
+\textbf{Lemma 2 (Forward Invariance and Boundedness).}
+% relabelled from Prop 3.2
+\emph{$\mathcal{X}$ is forward-invariant under the clamped dynamics
+(the upper bound $\sigma_A = 1$ is enforced by the solver's boundary
+clipping; see the proof in Appendix~\ref{app:proofs}): if
+$\mathbf{x}_A(0) \in \mathcal{X}$, then $\mathbf{x}_A(t) \in \mathcal{X}$
+for all $t \in [0, T_{\max})$. If $\Delta_{\max} < \infty$, then
+$T_{\max} = \infty$ (global existence).}
+
+\emph{Proof.} In Appendix~\ref{app:proofs}.
+
+\textbf{Proposition 2 (Equilibria of the Two-Variable Core).}
+% relabelled from Prop 3.4
+\emph{For constant frontier $\Delta$ and fixed parameters, the system
+admits exactly three equilibrium classes:}
+\begin{enumerate}[nosep]
+\item \textbf{Trivial equilibrium} $E_0 = (0, 0)$: no knowledge
+  acquired. Exists iff the effective training input vanishes
+  ($f_{\text{learn}} \cdot T_A = 0$): under the Gompertz form
+  $\eta(0) = \eta_{\max} e^{-a} > 0$, so $\dot{\delta}_A > 0$ at
+  $\delta_A = 0$ whenever training input is nonzero (consistent with
+  Lemma~2's boundary check).
+\item \textbf{Surface-learning equilibrium}
+  $E_S = (\delta_S^*, 0)$: depth acquired but $\sigma_A = 0$. Exists
+  when shortcut-learning pressure is high ($\epsilon_\sigma \Omega_{SL} >
+  \rho P_A \alpha_A$). This is the $\sigma$-trap.
+\item \textbf{Schema-coherent equilibrium}
+  $E_C = (\delta_C^*, \sigma_C^*)$ with $\sigma_C^* > 0$: both depth and
+  coherence positive; exists and is stable iff $R_0 > 1$, i.e.\ iff the
+  \emph{fixed} parameter $\alpha_A > \epsilon_\sigma \Omega_{SL} /
+  (\rho P_A)$ (a condition on the parameter, not on its dynamics).
+\end{enumerate}
+
+\emph{Proof.} In Appendix~\ref{app:proofs}.
+
+\textbf{Proposition 3 (Low-$\sigma$ Trap: Global Stability).}
+% relabelled from Thm 4.1; model-conditional per the P05 relabel plan
+\emph{If $R_0 < 1$ --- i.e.\ the shortcut pressure dominates,
+$\epsilon_\sigma \Omega_{SL} > \rho P_A \alpha_A$ --- then, under the
+dynamics of \eqref{eq:sigma-ode} alone, $\dot{\sigma}_A < 0$ for all
+$\sigma_A \in (0,1]$, and the schema-free state $\sigma_A = 0$ is
+\emph{globally} attracting on $[0,1]$: the model's low-coherence state
+is a stable trap. This is a statement about the model, not about real
+SGD; whether SGD enters this regime is the subject of
+Conjecture~\ref{conj:sgd-ode}.}
+
+\emph{Proof.} In Appendix~\ref{app:proofs}.
+
+\textbf{Proposition 4 ($\sigma_{\text{critical}}$ and the Transcritical
+Bifurcation).}
+% relabelled from Prop 4.1; main theorem of the narrow paper
+\emph{Define the basic schema growth ratio
+\begin{equation}
+R_0 = \frac{\rho \cdot P_A \cdot \alpha_A}{\epsilon_\sigma \cdot \Omega_{SL}}.
+\end{equation}
+The Phase~1$\to$2 transition threshold is
+\begin{equation}\label{eq:sigma-critical}
+\sigma_{\text{critical}} = \frac{1}{\gamma_\sigma} \cdot \left(1 - R_0^{-1}\right).
+\end{equation}
+When $R_0 > 1$, the schema-free equilibrium $\sigma_A = 0$ becomes
+unstable and the schema-coherent equilibrium emerges via a
+\emph{transcritical} bifurcation at $R_0 = 1$.}
+
+\emph{Proof.} In Appendix~\ref{app:proofs}.
+
+\noindent\emph{Intuition.} The parameter $R_0$ is borrowed from
+epidemiology: when $R_0 > 1$, one unit of schema coherence generates more
+than one unit of additional coherence --- understanding snowballs. When
+$R_0 < 1$, schemas die out and the agent remains in the trap. Standard
+training keeps $R_0 < 1$ by inflating shortcut-learning pressure
+$\Omega_{SL}$ (Proposition~4); interventions
+that raise $R_0$ above $1$ --- in the gate experiment, exposure to
+compositional loss --- make the coherent equilibrium stable.
+
+\noindent\emph{Against a purely logistic reading.} On a single OOD
+trajectory the model's observable signature can resemble an S-shaped
+logistic growth curve, so one may ask why a two-variable ODE is needed
+rather than a three-parameter logistic fit. The difference is
+structural: a logistic curve describes monotonic growth from any
+initial state, whereas the model's content is the phase-space geometry
+--- a \emph{stable} low-coherence equilibrium $E_S$ (the trap, with
+$\dot{\sigma}_A < 0$ when $R_0 < 1$), a coherent attractor $E_C$, and
+an exchange of stability at $R_0 = 1$ (Proposition~4). A fitted sigmoid
+cannot represent the persistent stability of the failure state, nor the
+parameter condition under which that state loses stability; the model's
+predictions concern that geometry rather than the shape of any single
+curve. Whether the gate trajectories formally discriminate the model
+from logistic/Gompertz alternatives is an open question
+(Section~\ref{sec:limitations}).
+
+\noindent\emph{Bifurcation parameter and moving threshold.} The
+bifurcation parameter is $R_0$ crossing $1$; $\sigma_{\text{critical}}$
+is the value of the emerging positive branch at the bifurcation. Since
+$\Omega_{SL}(d,t)$ and $P_A(d,t)$ are time-dependent, so is
+$\sigma_{\text{critical}}(t)$: Phase~2 entry ($\sigma_A >
+\sigma_{\text{critical}}$) is a crossing enabled by a decline in
+shortcut-learning pressure, which resolves the apparent paradox that
+$\sigma_A$ cannot exceed its own stable equilibrium. Section~7 builds
+the phase trigger on this moving threshold.
+Figure~\ref{fig:bifurcation} illustrates the bifurcation structure and
+the $(\delta_A, \sigma_A)$ phase portrait with the three equilibria.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.95\textwidth}{!}{\input{figures/figure7-bifurcation}}
+\caption{\textbf{Bifurcation structure and phase portrait.}
+(a) Transcritical bifurcation at $R_0 = 1$: the $\sigma_A = 0$ branch
+loses stability and the $\sigma_A > 0$ branch emerges. $R_0 < 1$
+produces the $\sigma$-trap. (b) Two-dimensional phase portrait in
+$(\delta_A, \sigma_A)$ space showing the three equilibrium classes
+($E_0$, $E_S$, $E_C$) and representative training trajectories.
+Standard SGD falls into the surface-learning equilibrium $E_S$;
+$\sigma_A$-coupled training reaches the schema-coherent equilibrium
+$E_C$.}
+\Description{Two-panel figure. Panel (a): Bifurcation diagram showing sigma_A vs R_0. A solid line shows stable sigma=0 branch for R_0<1, which becomes dashed (unstable) after R_0=1. A stable positive-sigma branch emerges after the transcritical bifurcation point. Panel (b): 2D phase portrait in delta_A-sigma_A space with three equilibria marked (E_0 origin, E_S surface-learning trap at high delta/low sigma, E_C target at high delta/high sigma), delta and sigma nullclines, and two representative trajectories (SGD falls to E_S, sigma-coupled reaches E_C).}
+\label{fig:bifurcation}
+\end{figure}
+
+\subsection{Numerical Integration}\label{sec:numerical-protocol}
+
+The two-variable system is integrated with the phenomenological solver
+used for the gate experiment (fixed-step Euler updates with
+\texttt{np.clip} boundary enforcement, which Lemma~2 guarantees is
+well-posed; the solver is detached from the neural autograd graph). The
+IMEX-RK stability analysis of the full system is retained in
+Appendix~\ref{app:stability} as the numerical-rigour defence.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Phase Structure: The Phase~1 to Phase~2 Transition}\label{sec:phase-structure}
+% ============================================================
+
+The training arc relevant to the narrow model comprises three phases
+(P0--P2), indexed by the two-variable state
+($\delta_A^{\text{relative}}, \sigma_A$). The phases beyond Phase~2 ---
+intersection discovery, multi-domain navigation --- depend on the
+multi-domain machinery $\Psi_A$ and are treated in the companion. The
+phases are defined by the bifurcation structure of
+Section~\ref{sec:core-framework}, not by retrospective loss-curve
+observation: each phase boundary is a qualitative threshold of the
+$\sigma_A$ dynamics (Figure~\ref{fig:phases}).
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{\input{figures/figure3-phases}}
+\caption{\textbf{The Phase 0--2 training arc.} Parametric depth
+($\delta_A$) accumulates in Phase~1; Phase~2 is triggered when schema
+coherence ($\sigma_A$) crosses the moving threshold
+$\sigma_{\text{critical}}(t)$ --- the $R_0 = 1$ transcritical
+bifurcation of Proposition~4. The shaded region beyond Phase~2
+(P3--P5) is treated in the companion.}
+\Description{A time-series plot with Training Time on the x-axis and Normalised Value [0,1] on the y-axis. Three curves: delta_A_relative (solid black logistic curve), sigma_A (solid blue, crosses sigma_critical at a red star marker at the Phase 1-2 boundary then rises sharply). Background shading delineates the phases. A phase bar below labels each phase; the region beyond Phase 2 is shaded grey and labelled as treated in the companion.}
+\label{fig:phases}
+\end{figure}
+
+\subsection*{Phase~0 --- Pre-Domain Initialisation}
+
+$\delta_A$ near-zero across all domains; no structured training
+dynamics.
+
+\subsection*{Phase~1 --- Asymmetric Initialisation}
+
+First sustained depth investment in candidate domains; $\delta_A$
+growing, $\sigma_A \approx 0$. Under the model, this is the regime in
+which the $\sigma$-trap forms: with $R_0 < 1$ the low-coherence state
+is globally attracting (Proposition~4).
+
+\subsection*{Phase~2 --- Depth Acceleration and Schema Crystallisation}
+
+\textbf{Trigger:} $\sigma_A(d,t) > \sigma_{\text{critical}}(t)$ for at
+least one mastery candidate, where
+$\sigma_{\text{critical}}(t) = \gamma_\sigma^{-1}\bigl(1 - R_0(t)^{-1}\bigr)$
+(Eq.~\eqref{eq:sigma-critical}) is the \emph{moving} threshold of
+Section~\ref{sec:core-framework}. The trigger is the transcritical
+bifurcation at $R_0 = 1$ (Proposition~4): when
+shortcut-learning pressure declines enough to push $R_0$ above $1$, the
+schema-free equilibrium loses stability and coherence grows toward
+$\sigma_C^* = \min\bigl(\sigma_{\text{critical}}, 1\bigr)$. Phase~2
+entry produces a characteristic acceleration pattern in the OOD
+performance trajectory.
+
+\subsection{Bifurcation Relation and the Empirical Inflection Signature}\label{sec:bifurcation}
+
+The Phase~1$\to$2 transition is not an arbitrary threshold: it is the
+transcritical bifurcation of Proposition~4. The phase boundary is the
+parameter condition $R_0 = 1$; $\sigma_{\text{critical}}$ is the value
+of the emerging branch at the boundary (Section~\ref{sec:core-framework}).
+Because $\Omega_{SL}(d,t)$ and $P_A(d,t)$ are time-dependent, the
+threshold moves, and Phase~2 entry ($\sigma_A > \sigma_{\text{critical}}$)
+is a crossing enabled by a decline in shortcut-learning pressure.
+
+\noindent\emph{Empirically testable signature (Prediction~9,
+Section~\ref{sec:predictions}).} Under $\sigma$-modulated training,
+Phase~2 entry is detectable as an inflection --- a change-point --- in
+the OOD accuracy trajectory: the characteristic acceleration pattern.
+The gate experiment observes this signature: in the $\sigma$-modulated
+arms, OOD accuracy accelerates between steps 200 and 400 (from
+$\approx 42\%$ to $\approx 99\%$), while the baseline arm shows no such
+inflection (Section~\ref{sec:empirical-validation}). Because measured
+$\sigma_A$ does not precede OOD improvement
+(Section~\ref{sec:empirical-validation}), the inflection is reported as
+a descriptive signature of the model's phase structure, not as evidence
+of a leading indicator.
+
+\noindent\emph{Model vs.\ SGD.} The phase structure is a property of
+the model. Whether SGD trajectories enter the described phases is the
+subject of Conjecture~\ref{conj:sgd-ode}; the gate provides the
+empirical signatures --- the baseline arm stays in the trap, the
+$\sigma$-modulated arms enter Phase~2 --- without asserting that the
+scheduling is necessary for the improvement
+(Section~\ref{sec:empirical-validation}).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Predictions}\label{sec:predictions}
+% ============================================================
+
+The narrow model makes a single flagship prediction. The extended
+prediction set --- predictions~1--8, hypotheses 6.1--6.3, and
+meta-prediction~M1 --- depends on variables removed from the narrow
+model ($\Psi_A$, $\beta_A$, $D^*$, the multi-domain machinery) and is
+stated and analysed in the companion.
+
+\subsection{Prediction 9 --- Phase~2 Entry Inflection}
+
+The transition from Phase~1 to Phase~2 produces a measurable inflection
+in the OOD accuracy trajectory. Before the crossing of the moving
+threshold $\sigma_{\text{critical}}(t)$
+(Section~\ref{sec:phase-structure}), OOD accuracy grows slowly; after
+the crossing, the trajectory accelerates markedly --- the
+characteristic Phase~2 acceleration pattern.
+
+\noindent\emph{Operationalisation.} The prediction is tested by
+segmented (piecewise-linear) regression on the per-run OOD accuracy
+trajectory, with the breakpoint $\hat{\tau}$ estimated from the data:
+\[
+\text{OOD}(t) = \beta_0 + \beta_1\, t + \beta_2\, (t - \tau)_+ + e_t,
+\qquad (x)_+ = \max(0, x),
+\]
+where $\tau$ is the Phase~2 entry time and a significant positive
+$\beta_2$ constitutes the inflection (pre-registered: detectable slope
+change of $\Delta\beta = 0.02$ accuracy units per timestep; in the gate,
+evaluation every 25 steps over 2000 steps, i.e.\ 80 trajectory points
+per run).
+
+\noindent\emph{Status in the gate experiment.} The gate observes the
+predicted signature: in the $\sigma$-modulated arms, OOD accuracy
+accelerates from $\approx 42\%$ to $\approx 99\%$ between steps 200 and
+400, while the baseline arm shows no such inflection
+(Section~\ref{sec:empirical-validation}). Two qualifications follow
+from the gate verdict. First, the inflection is a \emph{descriptive}
+signature of the model's phase structure: because measured $\sigma_A$
+does not precede OOD improvement (partial correlation $\approx 0$;
+Section~\ref{sec:empirical-validation}), the prediction does not license
+a leading-indicator or causal reading. Second, the fixed-weight arm
+achieves the same OOD outcome as the $\sigma$-modulated arms, so the
+prediction characterises the behaviour of models exposed to
+compositional loss, not the necessity of the $\sigma$-scheduling itself
+(Section~\ref{sec:empirical-validation}).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Empirical Grounding}\label{sec:empirical}
+% ============================================================
+
+\paragraph*{Proof-of-concept scope.}
+The experiments in this section test whether the qualitative
+predictions of the model --- the existence of a stable low-coherence
+state under standard training, the closing of the OOD gap under
+compositional-loss exposure, and the Phase~2 inflection --- are
+observable in a controlled setting. They do \emph{not} validate
+generality: all results are on a single synthetic benchmark, one
+architecture, and $n = 15$ seeds per condition. Claims about other
+benchmarks, architectures, or scales remain open
+(Section~\ref{sec:limitations}).
+
+\paragraph*{Benchmark.}
+The H-Bar benchmark is a SCAN-style compositional sequence-to-sequence
+task: commands combine primitives (jump/walk/run/look), modifiers
+(twice/thrice), and combinators (and/after/around/opposite), and the
+target is the token-wise composition. In-distribution (ID) test items
+are short combinations within the training grammar; out-of-distribution
+(OOD) items are novel recombinations never seen in training (mean
+length 3.3 tokens vs.\ 1.6 in training). Vocabulary size is 27; the
+training set has 16{,}000 examples, the ID test 4{,}000, and the OOD
+test 1{,}500. Two notes on benchmark choice and provenance. H-Bar is
+deliberately SCAN-like but smaller: its grammar enumerates all
+primitive/modifier/combinator recombinations, so the OOD split is
+compositional by construction (novel combinations of trained primitives)
+rather than merely distributional, and compositional-loss exposure can
+be defined cleanly over the recombination space. The benchmark is
+generated programmatically from the grammar specification in the gate
+configuration; the generator, splits, and analysis scripts are committed
+with the code and the raw per-seed tables are in the companion
+(Section~\ref{sec:empirical-validation}).
+
+\paragraph*{Design.}
+Four conditions, $n = 15$ runs each (2000 steps; seed discipline
+$s_r = r \cdot 42 + 7$, deterministic cuDNN flags): \emph{baseline}
+(plain task loss), \emph{fixed-weight} (constant-weight compositional
+loss every 5 steps, no $\sigma$ modulation --- a deliberately strong
+plain-compositional baseline), and the two $\sigma$-modulated curricula
+\emph{additive} and \emph{multiplicative}
+(Section~\ref{sec:core-framework}). The measured Stage-1 proxy
+$\tilde{\sigma}_A$ (GCA+RGA fusion; companion) is recorded every 25
+steps; the full experimental protocol and hyperparameters are in
+Section~\ref{sec:empirical-validation}.
+
+\paragraph*{Power.}
+Effect sizes are reported per comparison; no pooled aggregate
+$d$ is used. For the primary comparison --- baseline vs.\ additive OOD
+accuracy --- the observed effect is $d \approx 14.0$
+(pooled $\sigma \approx 3.8$~pp), giving $> 99.9\%$ power at
+$\alpha = 0.05$ for $n = 15$; the per-comparison $t$, $p$, and effect
+sizes appear in Table~\ref{tab:gate-welch}. The $N = 500$
+pre-registered protocol (companion) remains a community replication
+resource rather than a requirement for the primary claims.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Empirical Validation}\label{sec:empirical-validation}
+% ============================================================
+
+\paragraph*{Setup and transparency.}
+Architecture: 2-layer, 4-head Transformer ($d = 128$, $\dim_{\text{ff}} = 512$,
+batch 64), Adam at $\text{lr} = 10^{-3}$, 2000 training steps per run,
+mixed-precision training on a single Tesla~T4 (60 runs, $\approx 5$--8\,h
+total). Seeds $s_r = r \cdot 42 + 7$, deterministic cuDNN flags, and all
+other hyperparameters are in the configuration committed with the code
+(\texttt{code/experiments/configs/gate.yaml}). The synthetic benchmark is
+generated programmatically (\texttt{code/sigma\_align/experiments/});
+analysis scripts and the raw per-seed tables are in the companion; raw
+results are archived with the repository.
+
+\paragraph*{The $\sigma$-trap is reproduced.}
+The baseline arm reaches ID accuracy $90.2 \pm 2.2\%$ while OOD accuracy
+plateaus at $45.9 \pm 4.8\%$ (95\% CI $[43.2, 48.5]$), a compositional
+gap of $44.3$~points: high in-distribution performance with
+near-chance-level---relative to the gap---compositional recombination.
+Per-seed OOD trajectories confirm the plateau: baseline shows no
+inflection (the segmented-regression breakpoint is ill-determined; see
+below), consistent with the model's stable low-$\sigma$ state
+(Proposition~4).
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{\textbf{Gate results by condition ($n = 15$ per arm, 2000 steps).}
+Raw per-seed distributions and full per-seed trajectories are in the
+companion; Figure~\ref{fig:gate-ood} shows means with 95\% CIs.}\label{tab:gate-results}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Condition} & \textbf{ID mean$\pm$sd} & \textbf{OOD mean$\pm$sd} & \textbf{OOD 95\% CI} & \textbf{OOD median} & \textbf{OOD min--max} \\
+\midrule
+baseline & $90.2 \pm 2.2$ & $45.9 \pm 4.8$ & $[43.2, 48.5]$ & 45.3 & 37.5--55.3 \\
+fixed-weight & $98.1 \pm 1.7$ & $98.9 \pm 3.6$ & $[97.0, 100.9]$ & 100.0 & 86.1--100.0 \\
+additive $\sigma$-modulated & $97.8 \pm 1.9$ & $98.9 \pm 2.4$ & $[97.6, 100.3]$ & 100.0 & 92.0--100.0 \\
+multiplicative $\sigma$-modulated & $97.3 \pm 2.3$ & $94.0 \pm 8.9$ & $[89.0, 98.9]$ & 100.0 & 73.7--100.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph*{Compositional-loss exposure closes the gap; the
+$\sigma$-scheduling adds nothing.}
+All three compositional-loss conditions far exceed baseline OOD
+(Table~\ref{tab:gate-welch}; $d \geq 6.7$, all $p < 10^{-14}$). The
+headline comparison is fixed-weight vs.\ additive: $\Delta =
+-0.01$~pp, Welch $p = 0.99$, $d = -0.00$ --- a plain constant-weight
+compositional loss shows \emph{no detectable difference} from the full
+$\sigma$-modulated curriculum ($98.9 \pm 3.6\%$ vs.\ $98.9 \pm 2.4\%$;
+we do not claim formal equivalence: no equivalence test was
+pre-registered). Multiplicative is marginally (non-significantly) lower
+($p = 0.059$ vs.\ fixed-weight; $p = 0.053$ vs.\ additive). Two
+consequences follow, consistent with the gate verdict: (i)~the
+$\sigma$-scheduling is not necessary for the OOD outcome --- exposure
+to compositional loss is what matters; (ii)~the model's empirical value
+is \emph{descriptive}: it characterises the trajectory (stable trap in
+baseline, phase-2 acceleration under comp exposure) rather than
+explaining why the scheduled intervention wins, because it does not.
+Within the model, the mechanism is a drop in shortcut-learning pressure:
+exposure to compositional loss makes surface statistics less predictive
+of the target, lowering $\Omega_{SL}$ and pushing $R_0$ above $1$
+(Proposition~4). The $\sigma$-scheduling therefore served as a
+\emph{causal probe} --- it tests whether dynamic coupling between the
+loss and the coherence state is necessary to escape the trap --- and
+the answer is no: any sufficient pressure on compositional structure
+triggers the same Phase~2 transition.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{\textbf{Welch $t$-tests on final OOD accuracy (per comparison).}
+No pooled aggregate effect size is used.}\label{tab:gate-welch}
+\begin{tabular}{l r r r r r}
+\toprule
+\textbf{Pair (OOD)} & \textbf{$\Delta$ (pp)} & \textbf{$t$} & \textbf{df} & \textbf{$p$} & \textbf{Cohen's $d$} \\
+\midrule
+baseline vs.\ additive & $+53.07$ & $38.30$ & 20.6 & $1.2\times10^{-20}$ & $13.99$ \\
+baseline vs.\ multiplicative & $+48.11$ & $18.45$ & 21.5 & $1.1\times10^{-14}$ & $6.74$ \\
+baseline vs.\ fixed-weight & $+53.09$ & $34.32$ & 25.9 & $3.8\times10^{-23}$ & $12.53$ \\
+fixed-weight vs.\ additive & $-0.01$ & $0.01$ & 24.5 & $0.99$ & $-0.00$ \\
+fixed-weight vs.\ multiplicative & $-4.98$ & $2.01$ & 18.4 & $0.059$ & $-0.73$ \\
+additive vs.\ multiplicative & $-4.96$ & $2.09$ & 16.0 & $0.053$ & $-0.76$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/figure11-gate-ood.png}
+\caption{\textbf{OOD accuracy trajectories (mean $\pm$ 95\% CI, $n=15$).}
+Baseline plateaus near 45\%; all compositional-loss conditions rise to
+$\approx$95--99\%.}\label{fig:gate-ood}
+\Description{Four-arm OOD trajectory plot with confidence bands. Baseline
+flattens near 45 percent; fixed-weight, additive, and multiplicative rise
+to near 99 percent.}
+\end{figure}
+
+\paragraph*{Phase-transition timing (Prediction~9).}
+Segmented regression on the per-run OOD trajectories (breakpoint
+$\tau$ estimated by least squares over the eval grid, one fit per seed)
+gives, per arm: additive $\hat{\tau} = 542$ (95\% CI $[526, 557]$),
+multiplicative $340$ ($[321, 359]$), fixed-weight $148$ ($[139, 158]$),
+and baseline \emph{ill-determined} (wide CI, no stable inflection;
+Figure~\ref{fig:gate-inflection}). The Phase~2 inflection is observed
+in every compositional-loss condition and is not detected in baseline,
+consistent with Prediction~9. As stated in
+Section~\ref{sec:predictions}, this is a descriptive signature: the
+inflection does not license a leading-indicator reading
+(Section~\ref{sec:empirical-validation}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/figure13-gate-inflection.png}
+\caption{\textbf{Prediction~9: Phase~2 entry inflection.} Mean OOD
+trajectory of the additive arm with the segmented-regression breakpoint
+($\hat{\tau} \approx 542$ steps).}\label{fig:gate-inflection}
+\Description{OOD trajectory with a vertical dashed line marking the
+segmented-regression breakpoint near step 542.}
+\end{figure}
+
+\paragraph*{Does measured $\tilde{\sigma}_A$ precede OOD? No.}
+The measured Stage-1 proxy (GCA+RGA fusion) is recorded every 25 steps.
+The dynamic leading test --- partial correlation
+$\tilde{\sigma}_{A,t} \to \text{OOD}_{t+1}$ controlling OOD$_t$,
+training loss, and parameter norm --- gives pooled ODE-guided mean
+$+0.018$ (one-sided $t$, $p = 0.24$): no predictive relationship.
+The crossing-time test is degenerate: $\tilde{\sigma}_A$ starts at its
+normalised maximum (GCA $\approx 0.95$ on the random-initialised model;
+Figure~\ref{fig:gate-sigma}), so the crossing time is zero by
+construction. The high initial value is expected rather than
+informative: at random initialisation the gradient is dominated by the
+batch's shared input statistics, so its alignment with any fixed
+reference direction is trivially high, and the alignment then decays as
+parameters specialise to the training distribution. The proxy's
+\emph{level} therefore cannot be read as achieved schema coherence;
+only its \emph{trend} is informative --- which is why the
+partial-correlation test, not the crossing-time test, is decisive here.
+The scheduled knob reproduces the archived finding
+(leads-fraction $0.00$ in all arms). These results constrain the model
+to its descriptive role (Section~\ref{sec:predictions}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/figure12-gate-sigma.png}
+\caption{\textbf{Measured $\tilde{\sigma}_A$ (mean $\pm$ 95\% CI, $n=15$).}
+The proxy starts at its maximum and decays --- the crossing-time test is
+degenerate; the partial-correlation test (text) is decisive.}\label{fig:gate-sigma}
+\Description{Measured sigma-tilde trajectories per arm, starting high and
+decaying.}
+\end{figure}
+
+\paragraph*{Competing-variable check.}
+Final OOD regressed on $[\tilde{\sigma}_{A,\text{final}}$, final loss,
+parameter norm, ID accuracy] (standardised OLS, per arm): the
+$\tilde{\sigma}_A$ coefficient is small or negative everywhere
+(baseline $-0.35$, fixed-weight $+0.04$, additive $-0.12$,
+multiplicative $-0.06$), and the Spearman correlation
+$\rho(\tilde{\sigma}_A, \text{OOD})$ is $+0.13$ or lower except in
+baseline, where it is \emph{negative} ($-0.62$, $p = 0.013$). The
+fused proxy adds no positive predictive value beyond loss/norm/ID ---
+the ``not just $\tilde{\sigma}_A$'' defence the other direction. The
+RGA component alone does track OOD improvement (partial correlation
+$+0.125$, $p \approx 0.005$, pooled ODE arms) --- but equally in the
+fixed-weight arm, which has no $\sigma$ dynamics: it tracks
+compositional-loss exposure, not the $\sigma$-scheduling
+(consequence-of-exposure interpretation).
+
+\paragraph*{Proxy status.}
+Taken together, these results show that the fused Stage-1 proxy is
+\emph{not a valid leading indicator in its current form}: its level is
+dominated by the initialisation artefact (GCA $\approx 0.95$ at
+random init), and its trend does not precede OOD improvement. This is a
+measurement limitation, not evidence about the underlying construct ---
+$\sigma_A$ may change before OOD improvement while the proxy fails to
+detect it (a sensitivity failure, not a falsification of the model). The
+one component that does track the transition, RGA, does so equally in
+the arm with no $\sigma$ dynamics, which identifies it as an
+\emph{exposure tracker} (it reports that compositional loss is being
+applied) rather than a coherence meter. Developing a non-circular,
+training-time proxy that reliably tracks $\sigma_A$ prior to OOD takeoff
+remains an open instrumentation challenge (Section~\ref{sec:limitations}).
+
+\paragraph*{Circularity.}
+As everywhere in this paper, the Stage-2 diagnostic is used
+\emph{post-hoc} only --- never as a training signal or as evidence for
+a causal relationship; the full statement is in
+Section~\ref{sec:limitations}. All training-time statements use the
+Stage-1 proxy $\tilde{\sigma}_A$ (companion).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Scope, Open Questions, and Claim Status}\label{sec:limitations}
+% ============================================================
+
+\subsection{Claim status}\label{sec:claim-status}
+
+Table~\ref{tab:claim-status} separates what is proven in the model,
+what is proven under assumptions, what the gate empirically supports,
+and what remains open.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{\textbf{Claim status.} Every central claim of the paper,
+tagged by epistemic status.}\label{tab:claim-status}
+\begin{tabular}{p{6.2cm} p{3.6cm} p{4.6cm}}
+\toprule
+\textbf{Claim} & \textbf{Status} & \textbf{Evidence} \\
+\midrule
+A stable low-$\sigma$ equilibrium exists in the model & proven in model & Prop.~2--3 \\
+Stability of the trap ($\dot{\sigma}_A < 0$ when $R_0 < 1$) & proven under assumptions & Prop.~3 ($\gamma_\sigma$, clamped dynamics) \\
+$\sigma_{\text{critical}}$ transcritical bifurcation at $R_0 = 1$ & proven under assumptions & Prop.~4 \\
+Compositional-loss exposure closes the OOD gap; $\sigma_A$ describes the trajectory & empirically supported (descriptive) & gate: comp exposure closes the gap; $\tilde{\sigma}_A$ itself does \emph{not} lead \\
+SGD necessarily produces the $\sigma$-trap & not established & Conjecture~1 unproven; fixed-weight parity (no detectable difference; $p = 0.99$) \\
+$\sigma$ is a unique construct vs.\ grokking/SLT/shortcut variables & open & sharpness/LLC not measured in the gate \\
+Generalises across architectures and benchmarks & open & single synthetic benchmark, one architecture \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Circularity}
+
+The Stage-2 diagnostic $\hat{\sigma}_A = \text{Acc}_{\text{OOD}} /
+\text{Acc}_{\text{ID}}$ is defined from the same accuracies it
+describes and is used in this paper \emph{post-hoc} only --- as a
+descriptive summary, never as a training signal and never as evidence
+for a causal relationship. Training-time statements use the Stage-1
+proxy $\tilde{\sigma}_A$ (GCA+RGA; companion).
+
+\subsection{Open mathematical questions}
+
+\begin{enumerate}[nosep]
+\item \textbf{Global existence with a time-dependent frontier.}
+  Lemma~2's invariance argument assumes a constant frontier $\Delta$;
+  the moving-boundary condition $\dot{\delta}_A \leq \dot{\Delta}$ at
+  $\delta_A = \Delta(t)$ has not been verified for the gate's parameter
+  regime.
+\item \textbf{Timescale bounds.}
+  The IMEX-RK stability analysis (Appendix~\ref{app:stability}) treats
+  the two-variable core; stiffness bounds as $\sigma_A \to 1$ remain
+  open.
+\item \textbf{Stability landscape beyond the core.}
+  The equilibria of the extended system (breadth, attention,
+  metacognition; companion) and their relation to the core bifurcation
+  are unanalysed.
+\item \textbf{Model selection.}
+  Whether the gate's 80-point trajectories discriminate the two-variable
+  ODE from simpler single-curve descriptions (logistic/Gompertz fits of
+  the OOD trajectory) has not been tested formally; the model's
+  phase-space content --- a stable trap and an exchange of stability at
+  $R_0 = 1$ --- is not expressed by such fits, but the discrimination
+  question itself remains open. Note that the $\sigma_A$ ODE is itself a
+  logistic-growth equation in projection
+  ($\dot{\sigma}_A = r_{\text{net}}\,\sigma_A - k\,\sigma_A^2$), so an
+  AIC-style comparison of trajectory \emph{shape} against a fitted
+  logistic is not a well-posed discrimination by construction; what
+  remains open is latent-parameter identifiability and the phase-space
+  interpretation, not the goodness of fit of any single curve.
+\end{enumerate}
+
+The adoption guide and the expanded failure-mode catalogue are in the
+companion; they are outside the scope of this paper.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{Conclusion}\label{sec:conclusion}
+% ============================================================
+
+Standard training on a compositional benchmark reliably produces the
+pattern this paper set out to describe: high in-distribution accuracy
+alongside a persistent out-of-distribution gap ($44.3$~points in the
+gate's baseline arm), which compositional-loss exposure closes --- with
+or without the $\sigma$-modulated scheduling ($p = 0.99$). We model this
+behaviour with a two-variable dynamical system --- parametric depth and
+schema coherence --- whose qualitative predictions (a stable low-$\sigma$
+state, a critical threshold, a Phase~2 inflection) are observable in the
+experiment, and whose measured coherence proxy does not precede OOD
+improvement. The observed Phase~2 signature is therefore a
+\emph{descriptive} property of the model's phase structure, not
+evidence that $\sigma_A$ is a leading causal variable. The model is a
+\emph{dynamical description} of
+the $\sigma$-trap, not a demonstrated mechanism; whether SGD itself
+instantiates the ODEs is an explicit, open conjecture
+(Conjecture~\ref{conj:sgd-ode}), and the research programme built on it
+is labelled as such.
+
+Three next steps follow. \textbf{(i) Pre-registration at scale:} run
+the $N = 500$ protocol (companion) across the SCAN/COGS/PCFG-SET family
+to test the architecture- and benchmark-generality rows of
+Table~\ref{tab:claim-status}. \textbf{(ii) Direct proxy validation:}
+test the Stage-1 proxy against the Stage-2 diagnostic and against
+competing measures (sharpness, LLC-style probes) --- the open
+``unique construct'' row. \textbf{(iii) The SGD--ODE connection:} seek
+a derivation or a sharper falsification of Conjecture~1, which
+determines whether the descriptive model can be upgraded to a
+mechanistic one.
+
+\paragraph*{Research programme.}
+The foundational hypothesis underlying this line of work --- that
+schema-coherence dynamics may be a general mechanism underlying
+transitions from statistical competence to systematic understanding,
+beyond the benchmark studied here --- is stated explicitly as a
+\emph{labelled future hypothesis}, not a claim of this paper. It is the
+programme that the three next steps above are designed to test; nothing
+in the present results licenses it as a conclusion.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section*{Broader Impact}\label{sec:broader-impact}
+% ============================================================
+
+The training curricula studied here couple the loss to a
+schema-coherence state and improve compositional competence in a
+controlled benchmark. The same mechanism is in principle reversible: a
+curriculum that drives the coherence state below threshold could
+suppress compositional competence while preserving in-distribution
+performance --- a dual-use direction this paper does not develop. The
+results are limited to one synthetic benchmark and one architecture, and
+no claims about deployed systems are made.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\appendix
+\section{Notation Reference}\label{app:notation}
+
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{c l l >{\raggedright\arraybackslash}p{4.2cm}}
+\toprule
+\textbf{Symbol} & \textbf{Type} & \textbf{Domain} & \textbf{Description} \\
+\midrule
+\multicolumn{4}{l}{\textbf{Sets}} \\
+$D$ & Set & Global & Knowledge domains, indexed by $d \in D$ \\
+$M_A(t)$ & Set & $2^D$ & Mastery set (domains with high $\delta_A$ and $\sigma_A$) \\
+\multicolumn{4}{l}{\textbf{Functions}} \\
+$\Delta(d,t)$ & Function & $\R_+$ & Domain frontier (maximum achievable depth) \\
+$T_A(d,t)$ & Function & $\R_+$ & Time-on-task (training effort) \hfill\eqref{eq:depth-ode} \\
+$f_{\text{learn}}(d,t)$ & Function & $\R_+$ & Learning efficiency factor \hfill\eqref{eq:depth-ode} \\
+$r_A(d,t)$ & Function & $[0,1]$ & Retrieval-practice indicator \hfill\eqref{eq:depth-ode} \\
+$\Omega_{SL}(d,t)$ & Function & $\R_+$ & Shortcut-learning pressure \\
+$P_A(d,t)$ & Function & $\R_+$ & Principled-structure availability \\
+\multicolumn{4}{l}{\textbf{State variables}} \\
+$\delta_A(d,t)$ & State var & $[0, \Delta(d,t)]$ & Parametric depth (structural complexity) \\
+$\sigma_A(d,t)$ & State var & $[0,1]$ & Schema coherence (principled reorganisation) \\
+$\alpha_A$ & Fixed input & $[0,1]$ & Attentional fidelity (fixed parameter of the core; dynamics in the companion) \\
+\multicolumn{4}{l}{\textbf{Estimates and signals}} \\
+$\tilde{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~1 training-time proxy (fused GCA/RGA/AC; companion) \\
+$\hat{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~2 diagnostic, $\text{Acc}_{\text{OOD}}/\text{Acc}_{\text{ID}}$ (post-hoc only; companion) \\
+\multicolumn{4}{l}{\textbf{Derived quantities}} \\
+$\delta_A^{\text{relative}}(d,t)$ & Derived & $[0,1]$ & Relative depth (fraction of frontier) \hfill\eqref{eq:relative-depth} \\
+$\lambda_c^{\text{eff}}$ & Derived & $\R_+$ & Effective decay (schema-mediated) \hfill\eqref{eq:effective-decay} \\
+$\eta(d,t)$ & Derived & $\R_+$ & Learning efficiency (Gompertz form) \hfill\eqref{eq:gompertz} \\
+$\sigma_{\text{critical}}(t)$ & Derived & $[0,1]$ & Phase~1$\to$2 transition threshold (moving) \hfill\eqref{eq:sigma-critical} \\
+$R_0$ & Derived & $\R_+$ & Basic schema reproduction number \\
+\multicolumn{4}{l}{\textbf{Parameters}} \\
+$\lambda_c$ & Parameter & $\R_+$ & Parametric decay rate \\
+$\eta_{\max}, a, b$ & Parameters & $\R_+$ & Gompertz efficiency parameters \hfill\eqref{eq:gompertz} \\
+$\rho$ & Parameter & $\R_+$ & Schema growth rate constant \\
+$\epsilon_\sigma$ & Parameter & $\R_+$ & Shortcut-suppression coefficient \\
+$\gamma_\sigma$ & Parameter & $[0,1]$ & Schema-mediated decay protection \\
+$\theta_\delta, \theta_\sigma$ & Parameters & $[0,1]$ & Mastery-set thresholds \hfill\eqref{eq:mastery-set} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Visual syntax conventions:}
+\begin{itemize}[nosep]
+\item No decoration (e.g., $\sigma_A$): true latent variable
+\item Tilde (e.g., $\tilde{\sigma}_A$): training-time proxy estimate (Stage 1)
+\item Hat (e.g., $\hat{\sigma}_A$): evaluation-time ground-truth estimate (Stage 2)
+\item Superscript ``relative'' (e.g., $\delta_A^{\text{relative}}$): normalised to $[0,1]$
+\item Superscript ``eff'' (e.g., $\lambda_c^{\text{eff}}$): effective/derived quantity
+\item Subscript $A$: agent-relative quantity
+\item Subscript $SL$: shortcut-learning quantity
+\item Superscript ``surface'' (e.g., $R_A^{\text{surface}}$): surface-reward / behavioural quantity
+\end{itemize}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section{IMEX-RK Stability at Critical Equilibria}\label{app:stability}
+% ============================================================
+
+This appendix verifies that the ARS(2,3,2) IMEX Runge--Kutta tableau
+is stable when evaluated at the
+critical equilibria $E_S$ and $E_C$ from Proposition~2. The gate
+experiment itself used the fixed-step Euler scheme of
+Section~\ref{sec:numerical-protocol}, whose stability is ensured by
+Lemma~2's boundedness; the analysis below therefore applies to the
+ARS(2,3,2) scheme retained as the numerical-rigour defence.
+
+The Jacobians below describe the slow subsystem of the extended model
+(companion), with state order $(\hat{M}_A, \Xi_A^P, \Xi_A^I)$:
+$\nu_M$ is the tracking gain of the agent's self-model $\hat{M}_A$ of
+its own schema coherence (Extension~4 of the companion), $\xi_M$ the
+shortcut-pressure erosion coefficient acting on that self-model,
+$\kappa_P, \kappa_I$ the executive-control tracking rates of the
+principled-structure and integration channels (Extension~3), and
+$\kappa_{P,\Xi}, \kappa_{I,\Xi}$ the off-diagonal couplings of the
+executive-control subsystem at the schema-coherent equilibrium
+$E_C$.
+
+\subsection{Jacobian at Equilibria}
+
+For the two-variable core the stability analysis reduces to the scalar
+linearisation of \eqref{eq:sigma-ode} (Proposition~4); the Jacobian of
+the full extended system at $E_S$ is treated in the companion. As the
+numerical-rigour defence for the core, the IMEX stability evaluation
+applies the ARS(2,3,2) scheme at $E_S$ and $E_C$ with:
+\begin{equation}
+J_S = \left.\frac{\partial f_{\text{slow}}}{\partial x_{\text{slow}}}\right|_{E_S}
+= \begin{pmatrix}
+-\nu_M & 0 & 0 \\
+0 & -\kappa_P & 0 \\
+0 & 0 & -\kappa_I
+\end{pmatrix} + O(\epsilon),
+\end{equation}
+where $O(\epsilon)$ captures the coupling back from the fast subsystem
+$(\delta_A, \sigma_A, \alpha_A)$. At $E_C$, the Jacobian includes
+the stabilising contribution from the schema-coherent equilibrium:
+\begin{equation}
+J_C = \begin{pmatrix}
+-\nu_M & \xi_M \sigma_A^* & 0 \\
+0 & -\kappa_P & \kappa_{P,\Xi} \\
+0 & \kappa_{I,\Xi} & -\kappa_I
+\end{pmatrix} + O(\epsilon),
+\end{equation}
+where $\sigma_A^*$ is the $\sigma_A$ value at $E_C$.
+
+\subsection{Eigenvalue Analysis}
+
+The eigenvalues of $J_S$ are $-\nu_M$, $-\kappa_P$, $-\kappa_I$; all are
+real and negative with magnitudes $\lambda_{\max} = \max(\nu_M, \kappa_P,
+\kappa_I) \approx 0.1\text{--}1.0$ (dimensionless). The eigenvalues of
+$J_C$ are shifted by the off-diagonal coupling but remain strictly
+negative when $R_0 > 1$ (transcritical bifurcation condition).
+
+\subsection{Stability Region Overlay}
+
+The ARS(2,3,2) implicit tableau is $A$-stable: its stability region
+contains the entire left half-plane $\operatorname{Re}(\lambda) < 0$.
+Since all eigenvalues of both $J_S$ and $J_C$ have strictly negative
+real parts, the IMEX scheme is unconditionally stable for any step size
+$\Delta t$ when the slow subsystem is integrated implicitly.
+
+The explicit tableau for the fast subsystem is conditionally stable.
+Its stability region is approximately a circle of radius $r \approx
+2.5$ in the left half-plane. The fast eigenvalues (from the
+$\delta_A$, $\sigma_A$, $\alpha_A$ subsystem) satisfy
+$|\lambda_{\text{fast}}| \lesssim 1/\epsilon$ where $\epsilon$ is
+the timescale separation parameter. For $\epsilon \lesssim 0.1$,
+the condition $|\lambda_{\text{fast}}|\Delta t < 2.5$ is satisfied
+by our adaptive step-size controller (relative tolerance $10^{-6}$).
+
+\subsection{Verdict}
+
+The IMEX scheme is stable at both $E_S$ and $E_C$, encompassing the
+bifurcation point where stiffness is most problematic.
+No special treatment beyond the ARS(2,3,2) tableau is required for
+these critical equilibria.
+
+
+\clearpage
+\section{Proofs of the Core Results}\label{app:proofs}
+% ============================================================
+
+This appendix collects the proofs of the results stated in
+Section~\ref{sec:core-framework}; statements are repeated for
+self-containment. The results are theorems about the ODE model and
+remain valid whether or not Conjecture~\ref{conj:sgd-ode} holds.
+
+\paragraph*{Proof of Lemma 1 (local existence and uniqueness).}
+The right-hand sides of Eqs.~\eqref{eq:depth-ode} and
+\eqref{eq:sigma-ode} are polynomial in the state variables (products
+$\sigma_A \cdot \delta_A$, $\sigma_A^2$) and piecewise-smooth (the
+Gompertz term \eqref{eq:gompertz}), hence locally Lipschitz on
+$\text{int}(\mathcal{X})$; by the Picard--Lindel\"of theorem a unique
+local solution exists on a maximal interval $[0, T_{\max})$.
+$\square$
+
+\paragraph*{Proof of Lemma 2 (forward invariance and boundedness).}
+At $\delta_A = 0$ the growth term dominates ($\dot{\delta}_A \geq 0$);
+at $\delta_A = \Delta(d,t)$ the decay term dominates, assuming a
+constant frontier $\Delta$ (as in Proposition~2) --- for time-dependent
+frontiers, invariance of $\delta_A \leq \Delta(t)$ requires the
+moving-boundary condition $\dot{\delta}_A \leq \dot{\Delta}$ at the
+boundary. At $\sigma_A = 0$, the $\sigma_A$ factor makes
+$\dot{\sigma}_A = 0$ (an invariant manifold, not a reflecting
+boundary). At $\sigma_A = 1$, $\dot{\sigma}_A = \rho P_A \alpha_A
+(1 - \gamma_\sigma) - \epsilon_\sigma \Omega_{SL}$ is \emph{not}
+inherently $\leq 0$; the upper bound is enforced by clamping in the
+phenomenological solver, so the invariance statement applies to the
+clamped dynamics. Since $\mathcal{X}$ is compact when
+$\Delta_{\max} < \infty$, solutions cannot escape to infinity, so
+$T_{\max} = \infty$. $\square$
+
+\paragraph*{Proof of Proposition 2 (equilibria of the two-variable
+core).}
+Setting $\dot{\sigma}_A = 0$ in \eqref{eq:sigma-ode}: the
+$\sigma_A = 0$ branch is always a fixed point; the interior fixed point
+solves $\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*) =
+\epsilon_\sigma \Omega_{SL}$, i.e.
+\begin{equation}\label{eq:sigma-equilibrium}
+\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - R_0^{-1}\right),
+\end{equation}
+the same expression as $\sigma_{\text{critical}}$
+(Eq.~\eqref{eq:sigma-critical}): the coherent equilibrium sits exactly
+on the threshold value of the emerging branch. Since $\sigma_A^*$ can
+exceed $1$ when $R_0 > 1/(1-\gamma_\sigma)$, the attractor of the
+clamped dynamics is $\min(\sigma_A^*, 1)$. Local stability follows from
+the linearisation of the two-dimensional Jacobian at each equilibrium.
+The trivial equilibrium $E_0$ exists iff the effective training input
+vanishes ($f_{\text{learn}} \cdot T_A = 0$): under the Gompertz form
+$\eta(0) = \eta_{\max} e^{-a} > 0$, so $\dot{\delta}_A > 0$ at
+$\delta_A = 0$ whenever training input is nonzero. $\square$
+
+\paragraph*{Proof of Proposition 3 (low-$\sigma$ trap: global
+stability).}
+The bracket $B(\sigma_A) = \rho P_A \alpha_A (1 - \gamma_\sigma
+\sigma_A) - \epsilon_\sigma \Omega_{SL}$ is maximised at
+$\sigma_A = 0$, where $B(0) = \rho P_A \alpha_A - \epsilon_\sigma
+\Omega_{SL} < 0$ iff $R_0 < 1$. Since $\dot{\sigma}_A = \sigma_A
+B(\sigma_A)$ with $\sigma_A > 0$ on $(0,1]$, we have
+$\dot{\sigma}_A < 0$ on the whole interval, so $\sigma_A$ decreases
+monotonically to $0$ from any initial state in $(0,1]$. $\square$
+
+\paragraph*{Proof of Proposition 4 ($\sigma_{\text{critical}}$ and the
+transcritical bifurcation).}
+Linearising the $\sigma_A$ ODE around $\sigma_A = 0$:
+\begin{align}
+\dot{\sigma}_A &= \sigma_A\bigl[\rho P_A\alpha_A(1-\gamma_\sigma\sigma_A) - \epsilon_\sigma\Omega_{SL}\bigr] \notag\\
+&= r_{\text{net}}\,\sigma_A - k\,\sigma_A^2,
+\label{eq:bif-normal-form}
+\end{align}
+with $r_{\text{net}} = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}$
+(which changes sign at $R_0 = 1$) and $k = \gamma_\sigma \rho P_A
+\alpha_A > 0$ --- the normal form of a transcritical bifurcation.
+Writing $F(\sigma_A; R_0) = \dot{\sigma}_A$, the conditions for a
+transcritical bifurcation at $R_0 = 1$ are: the trivial branch persists
+for all parameters, $F(0; R_0) \equiv 0$; $\partial_\sigma F(0; 1) = 0$;
+the mixed partial $\partial_\sigma \partial_{R_0} F(0; 1) =
+\epsilon_\sigma \Omega_{SL} \neq 0$; and
+$\partial^2_{\sigma\sigma} F(0; 1) = -2\gamma_\sigma \rho P_A \alpha_A
+\neq 0$. The parameter derivative $\partial_{R_0} F$ vanishes at the
+bifurcation point $\sigma_A = 0$ --- precisely the signature of a
+transcritical (exchange-of-stability) bifurcation, in which the trivial
+branch persists, rather than a saddle-node bifurcation. The trivial
+branch $\sigma_A = 0$ is stable for $r_{\text{net}} < 0$ ($R_0 < 1$) and
+unstable for $r_{\text{net}} > 0$ ($R_0 > 1$); the non-trivial branch
+$\sigma_A^* = r_{\text{net}}/k$ exists and is stable for $R_0 > 1$. The
+threshold follows from $\sigma_A^* > 0 \iff 1 - R_0^{-1} > 0$. $\square$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\clearpage
+
+% ============================================================
+\bibliographystyle{tmlr}
+\bibliography{bibliography}
+
+\end{document}

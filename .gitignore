@@ -42,7 +42,31 @@ Thumbs.db
 # Build / Output
 paper/manuscript.pdf
 paper/companion/*.pdf
+paper/submission/*.pdf
+paper/submission/**/*.pdf
 paper/figures/*.png
+
+# TMLR submission package — derived copies and build outputs (anonymized sources ARE tracked)
+paper/submission/figures/
+paper/submission/bibliography.bib
+paper/submission/tmlr.sty
+paper/submission/tmlr.bst
+paper/submission/supplementary/companion.bbl
+paper/submission/supplementary/sigma-trap-code-data.zip
+paper/submission/supplementary/code/
+paper/submission/supplementary/configs/
+paper/submission/supplementary/data/
+
+# arXiv bundle — derived (regenerate with make arxiv); README-upload.md IS tracked
+arxiv-submission/manuscript.tex
+arxiv-submission/manuscript.bbl
+arxiv-submission/manuscript.pdf
+arxiv-submission/bibliography.bib
+arxiv-submission/tmlr.sty
+arxiv-submission/tmlr.bst
+arxiv-submission/figures/
+arxiv-submission/companion/
+sigma-arxiv-submission.tar.gz
 
 # Archive (large files)
 archive/*.tar.gz
