@@ -5,6 +5,14 @@
 **Dependencies**: P06–P09 (cut content), P04 (proxy implementation)
 **Output**: standalone companion report (`paper/companion/`)
 **Executor**: Agent
+**Status**: ✅ Complete — companion.tex builds clean (0 undefined refs/citations, 24 pp); dependency cross-check passes both directions
+
+## Result (2026-08-16)
+
+- **companion.tex** (v1.0): plain-article technical-report style with the shared macro/figure set; own title/abstract; Introduction positioning the report as a framework document with the foundational hypothesis as a labelled quote; self-citation of the narrow paper.
+- **Content assembled** from `removed-sections-draft.tex` + P04 data: proxy architecture (GCA/RGA/AC, fusion, two-stage calibration, Props 3.6–3.7, implementation), cognitive extensions (α_A, Ξ_A, M̂_A, collective field), multimodal (product space, Θ_A, V_A, R_A), reliability + benchmark protocol, phases 3–5 + faculty–validity, predictions 1–8/H6/M1, five-gap map + assumption ledger + SDE extension, and the full mechanism-gate data (four-arm table, Welch, proxy diagnostics, Prediction-9 τ).
+- **Dependency cross-check**: all 21 "companion" refs in the narrow paper verified supplementary (no load-bearing claim); the companion cites the narrow paper only (no circular dependency).
+- **Build**: `paper/companion/Makefile` (BIBINPUTS to the shared bibliography); `make pdf` → 0 errors / 0 undefined; 24 pp. 15 framework-citation entries restored into `companion.bib` (pruned from the main bib in P09); a Core-Equations appendix restates the narrow paper's equations for self-containment.
 
 ## Purpose
 

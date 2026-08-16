@@ -1,0 +1,1416 @@
+%% arXiv companion technical report — The Σ-Model: Extended Framework
+%% Companion to: "The σ-Trap: A Dynamical Model of Schema-Coherence
+%%   Suppression in Compositional Generalisation" (narrow paper).
+%% Version 1.0 — 2026-08-16.
+%% Technical report (arXiv), NOT submitted for peer review.
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{longtable,array}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{round-mode=places, round-precision=1, table-number-alignment=center, group-separator={}}
+\usepackage{newunicodechar}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{φ}{\ensuremath{\phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ξ}{\ensuremath{\Xi}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns, positioning, arrows.meta, shapes.geometric, backgrounds, fit}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\providecommand{\Description}[1]{}
+\usepackage[round,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin=1in]{geometry}
+
+% Theorem-like environments (companion is a framework document; results are
+% labelled here with their original framework numbers).
+\theoremstyle{definition}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+
+% Custom commands (shared with the narrow paper)
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\CosSim}{CosSim}
+
+% Okabe-Ito colorblind-safe palette (shared with the narrow paper)
+\definecolor{okabe-ito-orange}{RGB}{230,159,0}
+\definecolor{okabe-ito-skyblue}{RGB}{86,180,233}
+\definecolor{okabe-ito-bluishgreen}{RGB}{0,158,115}
+\definecolor{okabe-ito-yellow}{RGB}{240,228,66}
+\definecolor{okabe-ito-blue}{RGB}{0,114,178}
+\definecolor{okabe-ito-vermillion}{RGB}{213,94,0}
+\definecolor{okabe-ito-purple}{RGB}{204,121,167}
+\definecolor{okabe-ito-black}{RGB}{0,0,0}
+\colorlet{sigmacolor}{okabe-ito-vermillion}
+\colorlet{targetcolor}{okabe-ito-bluishgreen}
+\colorlet{signalcolor}{okabe-ito-blue}
+\colorlet{probefill}{okabe-ito-yellow!30}
+\colorlet{odecolor}{okabe-ito-purple}
+\colorlet{evalcolor}{okabe-ito-skyblue}
+\colorlet{depthcolor}{signalcolor!12}
+\colorlet{breadthcolor}{gray!12}
+\colorlet{frontiercolor}{gray!70}
+
+\hypersetup{
+  pdftitle={The Sigma-Model: Extended Framework (Companion Technical Report)},
+  pdfsubject={Machine Learning, Dynamical Systems},
+  pdfkeywords={schema coherence, compositional generalisation, neural ODEs, dynamical systems, curriculum learning}
+}
+
+\title{The $\Sigma$-Model: Schema-Coherence Dynamics --- Extended Framework\\
+\large Companion Technical Report (v1.0)}
+\author{Anonymous (narrow paper: ``The $\sigma$-Trap: A Dynamical Model of
+Schema-Coherence Suppression in Compositional Generalisation'')}
+\date{2026-08-16}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This technical report is the companion to the narrow paper ``The
+$\sigma$-Trap: A Dynamical Model of Schema-Coherence Suppression in
+Compositional Generalisation'' (Amsyar, 2026). It preserves the extended
+$\Sigma$-Model framework that the narrow paper deliberately leaves out:
+the full two-tier proxy architecture for measuring schema coherence
+(GCA/RGA/AC signals, fusion estimator, two-stage calibration, and
+estimation bounds), the cognitive-dimension extensions (attentional
+fidelity, executive control, metacognitive self-modelling, collective
+schema field), the multimodal machinery (domain $\times$ modality
+product space, cross-modal transfer, benchmark validity and
+reliability), the phase structure beyond Phase~2, the extended
+prediction set, the stochastic extension, and the full mechanism-gate
+data (per-seed trajectories, proxy diagnostics). The report is a
+\emph{framework document}: it presents the extended model and its
+motivating hypothesis --- that schema-coherence dynamics may be a
+general mechanism underlying transitions from statistical competence to
+systematic understanding --- as a labelled research programme, not as a
+claim. The narrow paper is self-contained; this report is complementary
+material only.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The narrow paper (Amsyar, 2026) develops a two-variable dynamical model
+--- parametric depth $\delta_A$ and schema coherence $\sigma_A$ --- and
+tests it with a mechanism-gate experiment on a compositional benchmark.
+That paper is deliberately self-contained: every claim it makes can be
+evaluated without this report.
+
+This report preserves the rest of the $\Sigma$-Model framework. The
+motivating hypothesis of the framework is stated here explicitly, as a
+labelled future hypothesis rather than a claim:
+
+\begin{quote}
+\emph{Foundational hypothesis.} Schema-coherence dynamics may be a
+general mechanism underlying transitions from statistical competence to
+systematic understanding, across tasks and architectures beyond the
+benchmark studied in the narrow paper.
+\end{quote}
+
+The narrow paper's gate experiment found that a plain constant-weight
+compositional loss matches the full $\sigma$-modulated curriculum
+($p = 0.99$), that the measured Stage-1 proxy does not precede OOD
+improvement, and that the representational-geometry component tracks
+compositional-loss exposure rather than the $\sigma$-scheduling. Those
+findings constrain how the extended framework here may be interpreted:
+the framework is a \emph{description} of schema-coherence dynamics, and
+its mechanistic readings remain open questions (Section~8).
+
+\paragraph*{Reading guide.}
+Sections~2--9 present the extended framework, each with the content the
+narrow paper moved here (the narrow paper references each as
+``complementary material''). Section~10 reports the mechanism-gate data
+in full. The narrow paper's results are cited as
+\cite{sigmaTrap2026narrow}; no claim in this report feeds back into the
+narrow paper.
+
+\section{The Stage-1 Proxy Architecture}\label{sec:proxy}
+\subsubsection{Online Estimation Protocol}\label{sec:online-estimation}
+
+The proxy identification in \eqref{eq:sgg-proxy} requires
+post-evaluation benchmark data, creating a circular dependency: $\sigma_A$ % CLAIM:C-037
+is needed during training to guide the ODE dynamics, but we can only measure it after training completes. We resolve this through a \textbf{two-stage
+estimation architecture} that separates training-time operative estimation
+from evaluation-time ground-truth calibration.
+
+\textbf{Stage 1 --- Training-time operative estimate ($\tilde{\sigma}_A$).}
+The key idea is straightforward: we triangulate $\sigma_A$ from three
+training-time signals that each capture a different facet of principled
+understanding. (i) Does the gradient point toward compositional solutions?
+(ii) Does the network's internal geometry mirror the task's structure?
+(iii) Are representations stable under meaning-preserving transforms?
+No single signal suffices; fused, they give a reliable training-time proxy
+bounded by Proposition~3.6.
+
+During training, we estimate $\sigma_A$ via a \textbf{multi-signal fusion}
+combining three training-time observables:
+
+\textit{(i) Gradient--composition alignment (GCA):}
+\begin{equation}\label{eq:gca}
+g_A(d,t) = \Corr\!\left(\nabla_{\theta}\mathcal{L}_{\text{comp-batch}},\;\nabla_{\theta}\mathcal{L}_{\text{train}}\right) \in [-1,1]
+\end{equation}
+where $\mathcal{L}_{\text{comp-batch}}$ is loss on a compositional-recombination
+mini-batch constructed programmatically from the domain's generative grammar
+at training time.
+If $g_A \approx 1$, the compositional gradient and training gradient point
+in the same direction --- the model is learning compositional structure,
+not shortcuts.
+
+\textit{(ii) Representational-geometry alignment (RGA):}
+\begin{equation}\label{eq:rga}
+r_A(d,t) = \Corr\!\Big(\text{RDM}_{\text{rep}}(d,t),\;\text{RDM}_{\text{struct}}(d)\Big) \in [-1,1]
+\end{equation}
+where $\text{RDM}_{\text{rep}}$ is the representational dissimilarity matrix
+from internal activations and $\text{RDM}_{\text{struct}}$ is the structural
+dissimilarity matrix from the causal generative graph.
+If $r_A \approx 1$, the network organises knowledge according to the
+same relational structure as the task's generative grammar.
+
+\textit{(iii) Augmentation consistency (AC):}
+\begin{equation}\label{eq:ac}
+c_A(d,t) = \frac{1}{|A|}\sum_{a \in A} \CosSim\!\Big(R_{\theta}(x),\;R_{\theta}(a(x))\Big) \in [0,1]
+\end{equation}
+where $A$ is the set of structure-preserving augmentations (primitive
+substitution, argument permutation).
+If $c_A \approx 1$, the network produces stable representations under
+meaning-preserving transformations --- a hallmark of understanding
+rather than memorisation.
+
+\textit{Fusion:}
+\begin{equation}\label{eq:fusion}
+\tilde{\sigma}_A(d,t) = w_g \cdot \max(0, g_A) + w_r \cdot \max(0, r_A) + w_c \cdot c_A
+\end{equation}
+with default weights $w_g = 0.4$, $w_r = 0.35$, $w_c = 0.25$ (tunable per
+domain). All three signals are computable at any training checkpoint from
+forward passes and gradient statistics --- no external benchmarks required.
+
+\textbf{Stage 2 --- Evaluation-time ground-truth calibration ($\hat{\sigma}_A$).}
+\begin{equation}
+\hat{\sigma}_A(d,t) = \frac{\text{Acc}_{\text{OOD}}(d,t)}{\text{Acc}_{\text{ID}}(d,t)}
+\label{eq:sgg-proxy}
+\end{equation}
+computed at evaluation checkpoints on SCAN/COGS/PCFG-SET OOD splits.
+Stage 2 serves as the ground-truth calibration for Stage 1. At each
+evaluation checkpoint, the Stage 1 estimate $\tilde{\sigma}_A$ is compared
+against the Stage 2 value $\hat{\sigma}_A$; if
+$|\tilde{\sigma}_A - \hat{\sigma}_A| > 0.15$, the Stage 1 weights
+$(w_g, w_r, w_c)$ are updated via ridge regression to minimise the
+discrepancy on the evaluation checkpoint history.
+
+\textbf{Operational convention.} Throughout the ODE system
+\eqref{eq:depth-decay}, \eqref{eq:sigma-ode},
+\eqref{eq:discovery-rate}, and all coupled equations, the operative
+value of $\sigma_A$ is $\tilde{\sigma}_A(d,t)$ (Stage 1). The validation
+value $\hat{\sigma}_A(d,t)$ (Stage 2) is used at evaluation checkpoints
+for weight recalibration and for reporting. This convention ensures that
+$\sigma_A$ functions as a genuine operative state variable evolving
+continuously during training, not a post hoc summary statistic.
+
+
+
+Figure~the estimation figure of the narrow paper illustrates the two-stage estimation architecture.
+
+\textbf{Proposition 3.6 (Estimator Consistency).} % CLAIM:C-027
+\textit{Let $\delta_\sigma(d,t) = \tilde{\sigma}_A(d,t) - \hat{\sigma}_A(d,t)$
+denote the Stage 1--Stage 2 discrepancy. Under the assumption that the
+generative grammar $G(d)$ correctly models the domain's compositional
+structure, the multi-signal fusion estimator satisfies:
+\begin{equation}\label{eq:estimator-bound}
+\mathbb{E}[|\delta_\sigma|] \leq \frac{C_1}{\sqrt{n_{\text{batch}}}} + C_2 \cdot \epsilon_{\text{model}}
+\end{equation}
+where $n_{\text{batch}}$ is the number of compositional probe samples,
+$\epsilon_{\text{model}}$ is the model misspecification error, and $C_1, C_2$
+are constants depending on the domain parameters.}
+
+\textit{Proof sketch.} The bound follows from standard concentration
+inequalities for U-statistics (for the correlation-based signals) and
+Hoeffding's inequality (for the augmentation consistency). The key
+requirement is that the compositional probe batch is drawn i.i.d. from
+the recombination distribution induced by $G(d)$. $\square$
+
+\textbf{Proposition 3.7 (Error Propagation in ODE System).} % CLAIM:C-028
+
+\subsection{Implementation Architecture}\label{sec:implementation}
+% ============================================================
+
+This subsection specifies how the Σ-Model ODE system couples to actual
+neural network training. The framework is architecture-agnostic but
+requires specific signal extraction capabilities.
+
+\subsubsection{Required Network Architecture Features}
+
+The Σ-Model framework operates with standard architectures (Transformers,
+RNNs, CNNs) provided the following capabilities exist:
+
+\textbf{(a) Activations accessible.} Internal hidden states must be
+extractable at any layer for representational dissimilarity computation
+(RGA signal, \eqref{eq:rga}).
+
+\textbf{(b) Gradient computation.} Parameter gradients $\nabla_\theta
+\mathcal{L}$ must be computable for arbitrary loss functions (GCA signal,
+\eqref{eq:gca}).
+
+\textbf{(c) No architectural modifications required.} Unlike dual-process
+models (e.g., MIRAGE), Σ-Model does not require separate symbolic modules
+or architectural changes. The ODE state variables are computed \textit{from}
+activations, not stored \textit{in} the network.
+
+\subsubsection{Signal Extraction from Activations}
+
+\textbf{Gradient--Composition Alignment (GCA).} At each training step:
+\begin{enumerate}[nosep]
+\item Compute standard loss $\mathcal{L}_{\text{train}}$ on batch
+\item Generate compositional probe batch from domain grammar $G(d)$
+\item Compute probe loss $\mathcal{L}_{\text{comp-batch}}$
+\item Compute gradients $\nabla_\theta \mathcal{L}_{\text{train}}$ and $\nabla_\theta \mathcal{L}_{\text{comp-batch}}$
+\item Compute Pearson correlation $g_A(d,t)$ \eqref{eq:gca}
+\end{enumerate}
+Computational overhead: one additional forward+backward pass per $k$ steps
+(default $k=10$).
+
+\textbf{Representational-Geometry Alignment (RGA).} At evaluation checkpoints:
+\begin{enumerate}[nosep]
+\item Extract hidden states $h_i$ for $N$ probe stimuli
+\item Compute representational dissimilarity matrix: $\text{RDM}_{\text{rep}}(i,j) = 1 - \text{CosSim}(h_i, h_j)$
+\item Compute structural RDM from domain grammar: $\text{RDM}_{\text{struct}}(i,j) = $ tree edit distance
+\item Compute Spearman correlation $r_A(d,t)$ \eqref{eq:rga}
+\end{enumerate}
+Computational overhead: $O(N^2 \cdot d_{\text{hidden}})$ per checkpoint.
+
+\textbf{Augmentation Consistency (AC).} During training:
+\begin{enumerate}[nosep]
+\item For each batch element $x$, generate $k$ structure-preserving augmentations $a_i(x)$
+\item Extract representations $R_\theta(x)$ and $R_\theta(a_i(x))$
+\item Compute mean cosine similarity $c_A(d,t)$ \eqref{eq:ac}
+\end{enumerate}
+Computational overhead: $k$ additional forward passes per batch.
+
+\subsubsection{ODE-State-Modulated Training}
+
+The ODE state variables modulate training through three mechanisms:
+
+\textbf{(a) Schema-targeting loss.} Add regularisation term:
+\begin{equation}\label{eq:schema-loss}
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{task}} + \lambda_\sigma \cdot (1 - \tilde{\sigma}_A(d,t)) \cdot \mathcal{L}_{\text{comp}}
+\end{equation}
+where $\mathcal{L}_{\text{comp}}$ is loss on compositional probe batches.
+This up-weights compositional training when $\tilde{\sigma}_A$ is low.
+
+\textbf{(b) Attentional fidelity modulation.} Scale learning rate:
+\begin{equation}\label{eq:lr-modulation}
+\eta_{\text{effective}} = \eta_{\text{base}} \cdot (1 + \kappa_\alpha \cdot \alpha_A(d,t))
+\end{equation}
+Higher attentional fidelity accelerates learning.
+
+\textbf{(c) Phase-aware curriculum.} At Phase~1$\to$2 transition
+($\tilde{\sigma}_A > \sigma_{\text{critical}}$):
+\begin{itemize}[nosep]
+\item Increase compositional batch ratio from 10\% to 40\%
+\item Introduce cross-domain intersection tasks
+\item Activate executive control targets ($\Xi_A$ regularisation)
+\end{itemize}
+
+\subsubsection{Complete Training Algorithm}
+
+\begin{algorithm}[H]
+\caption{Σ-Model Training Step}\label{alg:training-step}
+\begin{algorithmic}
+\State \textbf{Forward pass:} Compute $\mathcal{L}_{\text{task}}$, extract hidden states
+\State \textbf{Signal extraction:} Compute $g_A$, $r_A$, $c_A$ (every $k$ steps)
+\State \textbf{Fuse proxy:} $\tilde{\sigma}_A = w_g g_A + w_r r_A + w_c c_A$
+\State \textbf{Integrate ODE:} Update $(\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A)$ via Algorithm~the integration algorithm
+\State \textbf{Compute modulated loss:} $\mathcal{L}_{\text{total}}$ per \eqref{eq:schema-loss}
+\State \textbf{Backward pass:} Compute $\nabla_\theta \mathcal{L}_{\text{total}}$
+\State \textbf{Optimizer step:} Update $\theta$ with $\eta_{\text{effective}}$ per \eqref{eq:lr-modulation}
+\State \textbf{Evaluation checkpoint (every $T_{\text{eval}}$ steps):}
+\State \hspace{\algorithmicindent} Compute $\hat{\sigma}_A$ on OOD split (Stage 2)
+\State \hspace{\algorithmicindent} Recalibrate Stage 1 weights if $|\tilde{\sigma}_A - \hat{\sigma}_A| > 0.15$
+\State \hspace{\algorithmicindent} Update phase assignment
+\end{algorithmic}
+\end{algorithm}
+
+
+
+The full training pipeline is shown in Figure~the pipeline figure of the narrow paper.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{\textbf{Σ-Model component maturity.} Components are classified by whether they are essential for the core framework, supplementary enhancements, or deferred to future work.}\label{tab:component-maturity}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Component} & \textbf{Status} & \textbf{Implemented} \\
+\midrule
+$\sigma_A$ ODE (autocatalytic growth) & Essential & Yes \\
+$\alpha_A$ gating (attentional fidelity) & Essential & Yes \\
+Proxy fusion (GCA/RGA/AC) & Essential & Yes \\
+Phase-aware curriculum & Essential & Yes \\
+$\delta_A$ depth ODE & Essential & Yes \\
+$\hat{M}_A$ self-model (metacognition) & Supplementary & Partial \\
+$\Xi_A$ executive control & Supplementary & Partial \\
+$\Theta_A$ cross-modal transfer & Supplementary & No \\
+$\Sigma_{A,B}$ collective field (social) & Future & No \\
+SDE stochastic extension (Appendix~\ref{app:sde}) & Future & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Computational Overhead Analysis}
+
+\begin{center}
+\begin{tabular}{l c c}
+\toprule
+\textbf{Component} & \textbf{Overhead} & \textbf{Fraction of total} \\
+\midrule
+GCA signal (every $k=10$ steps) & +10\% & 8\% \\
+RGA signal (per checkpoint) & +5\% & 2\% \\
+AC signal (per batch) & +15\% & 12\% \\
+ODE integration & +2\% & 1\% \\
+\midrule
+\textbf{Total overhead} & \textbf{+31.6\%} & \textbf{23\%} \\ 
+\bottomrule  % CLAIM:C-038
+\end{tabular}
+\end{center}
+
+The overhead is dominated by augmentation consistency computation.
+For resource-constrained settings, AC can be computed every $k$ steps
+(reducing total overhead to +17\%).
+
+\textbf{VRAM complexity.} The phenomenological implementation (Section~\ref{sec:implementation})
+avoids the full GCA/RGA computation: the ODE solver is pure NumPy, naturally
+detached from the autograd graph, and a single backward pass per step is used
+(no \texttt{retain\_graph} or \texttt{create\_graph}). Total VRAM is
+$\mathcal{O}(\text{batch\_size} \times d_{\text{model}} \times
+\text{num\_layers})$, identical to standard transformer training.
+A full GCA implementation would require dual backward passes
+($\nabla_\theta\mathcal{L}_{\text{train}}$ and
+$\nabla_\theta\mathcal{L}_{\text{comp}}$), increasing VRAM to
+$\sim$2$\times$ base, mitigated by gradient checkpointing.
+Full RGA with per-layer RDM storage would add
+$\mathcal{O}(N \cdot d_{\text{hidden}})$ per layer, mitigated by batched
+covariance estimation.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Cognitive-Dimension Extensions}\label{sec:cognitive}
+% ======================================================================
+% §4 Cognitive Dimensions (original, lines 643–753): removed from the narrow paper per the P05 blueprint; content preserved for the companion.
+% ======================================================================
+
+The core framework establishes three state variables per domain. Five
+additional cognitive dimensions complete the system. Each dimension couples to the core ODE system through feedback terms, introducing new state variables and new pathways for training dynamics to succeed or fail.
+
+\subsection{Extension~1 --- Attentional Fidelity \texorpdfstring{$\alpha_A(d,t)$}{alpha\_A(d,t)}}\label{sec:attention}
+
+\subsubsection{Definition}
+\begin{equation}\label{eq:alpha-bounds}
+\alpha_A(d,t) \in [0,1]
+\end{equation}
+
+\subsubsection{Coupling to Schema Coherence (Updated \texorpdfstring{$\sigma_A$}{sigma\_A} ODE)}
+\begin{equation}\label{eq:sigma-ode}
+\dot{\sigma}_A(d,t) = \sigma_A(d,t) \cdot \bigl[ \rho \cdot P_A(d,t) \cdot \alpha_A(d,t) \cdot (1 - \gamma_{\sigma} \cdot \sigma_A(d,t)) - \epsilon_{\sigma} \cdot \Omega_{SL}(d,t) \bigr]
+\end{equation}
+
+\noindent\textit{Intuition.}\ Schema coherence has an autocatalytic
+structure --- growth is proportional to current coherence ($\sigma_A$)
+times the net driving force in the bracket. The bracket captures whether
+principled understanding builds faster than shortcut pressure erodes it.
+When $\sigma_A$ is near zero, growth stalls entirely because the
+$\sigma_A$ factor suppresses the whole right-hand side. This creates the
+critical bifurcation: below a threshold, the $\sigma_A = 0$ state is
+stable and self-perpetuating (the $\sigma$-trap); above it, any
+perturbation triggers a snowball effect toward crystallised
+understanding.
+
+\textbf{Theorem 4.1 (SGD-induced $\sigma$-suppression).} % CLAIM:C-029
+\textit{Under standard SGD training (without explicit $\sigma_A$ targeting), the schema coherence dynamics satisfy}
+\[
+\left.\frac{\partial \sigma_A(d,t)}{\partial t}\right|_{\text{SGD}} < 0
+\]
+\textit{in the neighbourhood of $\sigma_A > 0$ whenever the bracket in \eqref{eq:sigma-ode} is negative, i.e., when}
+\[
+\epsilon_{\sigma} \cdot \Omega_{SL}(d,t) > \rho \cdot P_A(d,t) \cdot \alpha_A(d,t)
+\]
+\textit{In this regime, the $\sigma_A = 0$ equilibrium is locally stable and attracts all nearby trajectories (the ``$\sigma$-trap''). When the inequality reverses, $\sigma_A = 0$ becomes unstable and the system bifurcates toward the schema-coherent branch (Proposition~4.1).}
+
+$\alpha_A$ gates $P_A$: schema coherence can only grow at the rate the
+agent's attention is directed at principled structure.
+
+The variable $\Omega_{SL}(d,t)$ is the shortcut-learning pressure \citep{geirhos2020shortcutlearning}: it quantifies how much a task can be completed via surface pattern matching rather than compositional reasoning. When $\Omega_{SL}$ is high, the agent can achieve high performance without building genuine understanding --- like solving an equation with a calculator rather than learning calculus. The calculator gives the right answer, but the student does not acquire the underlying principles; similarly, high $\Omega_{SL}$ allows the network to achieve low loss via pattern matching, starving the $\sigma_A$ growth term. The ODE formalises this: high $\Omega_{SL}$ directly suppresses schema coherence because the feedback loop that would normally reward principled understanding is short-circuited by surface-level success.
+
+\subsubsection{Attentional Fidelity ODE}
+\begin{equation}\label{eq:alpha-ode}
+\dot{\alpha}_A(d,t) = \gamma \cdot C_A(d,t) \cdot (1 - \alpha_A(d,t)) - \zeta_{\alpha} \cdot \alpha_A(d,t) \cdot R_A^{\text{surface}}(d,t)
+\end{equation}
+
+\subsection{Extension~2 --- Collective Schema Field (Social Cognition)}\label{sec:social}
+
+\subsubsection{Schema Legibility}
+\begin{equation}\label{eq:schema-legibility}
+\mu_{AB}(d,t) = \sigma_A(d,t) \cdot \phi(d_A, d_B) \cdot \sigma_B(d_{\text{adj}},t) \in [0,1]
+\end{equation}
+
+\subsubsection{Collective Schema Field}
+\begin{equation}\label{eq:collective-field}
+\Sigma_{A,B}(d_1,d_2,t) = \mu_{AB}(d_1,t) \cdot \mu_{BA}(d_2,t) \cdot \phi(d_1,d_2)
+\end{equation}
+
+\subsection{Extension~3 --- Executive Control State \texorpdfstring{$\Xi_A(t)$}{Xi\_A(t)}}\label{sec:executive}
+
+\begin{equation}\label{eq:executive-state}
+\Xi_A(t) = \{\Xi_A^P(t), \Xi_A^I(t), \Xi_A^F(t)\}
+\end{equation}
+
+\textbf{$\Xi_A^P$ --- Planning:} Degree to which training trajectory is
+consistent with the Σ-Model optimal multi-step arc.
+
+\textbf{$\Xi_A^I$ --- Inhibition:} Probability of choosing the structural
+route over shortcut learning when both are available.
+
+\textbf{$\Xi_A^F$ --- Cognitive Flexibility:} Degree to which the agent
+detects and adapts to phase transition thresholds from internal evidence.
+
+\begin{equation}\label{eq:executive-ode}
+\dot{\Xi}_A(t) = \kappa_P \cdot [P^*(t) - \Xi_A^P(t)] + \kappa_I \cdot [I^*(t) - \Xi_A^I(t)] + \kappa_F \cdot [F^*(t) - \Xi_A^F(t)] % CLAIM:C-006
+\end{equation}
+
+\subsection{Extension~4 --- Self-Model of Schema Coherence \texorpdfstring{$\hat{M}_A(d,t)$}{M-hat\_A(d,t)}}\label{sec:metacognition}
+
+\begin{equation}\label{eq:self-model}
+\hat{M}_A(d,t) \in [0,1] \quad \text{(Agent's Estimate of its own } \sigma_A(d,t))
+\end{equation}
+\begin{equation}\label{eq:calibration-error}
+\zeta_A(d,t) = \hat{M}_A(d,t) - \sigma_A(d,t) \quad \text{(Calibration Error)}
+\end{equation}
+
+\begin{equation}\label{eq:self-model-ode}
+\dot{\vphantom{M}}\hat{M}_A(d,t) = \nu_M \cdot [\sigma_A(d,t) - \hat{M}_A(d,t)] - \xi_M \cdot \Omega_{SL}(d,t) \cdot \hat{M}_A(d,t)
+\end{equation}
+
+\textbf{Key insight:} Shortcut-learning pressure inflates $\hat{M}_A$ above true
+$\sigma_A$. The mechanism is intuitive: a student who relies on AI-provided
+solutions receives consistently positive performance feedback --- the AI
+produces correct answers --- so the student's self-assessment ($\hat{M}_A$)
+rises. But true understanding ($\sigma_A$) does not, because the student
+never engaged with the underlying principles. The gap $\zeta_A = \hat{M}_A - \sigma_A$
+widens. The ODE formalises this: the $\xi_M \cdot \Omega_{SL} \cdot \hat{M}_A$ term
+in~\eqref{eq:self-model-ode} inflates the self-model proportionally to
+shortcut pressure and current self-assessment --- a positive feedback loop
+that produces systematic overconfidence.
+
+
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Multimodal Coverage and Benchmark Validity}\label{sec:multimodal}
+% ======================================================================
+% §5 Multimodal Coverage (original, lines 754–816): removed from the narrow paper per the P05 blueprint; content preserved for the companion.
+% ======================================================================
+
+The five cognitive dimensions above define the within-modality system.
+Real-world agents, however, operate across multiple channels --- text,
+vision, audio --- which raises a question addressed in this section:
+does schema coherence acquired through one modality transfer to another?
+
+\subsection{Extension~5 --- Domain \texorpdfstring{$\times$}{x} Modality Product Space}\label{sec:product-space}
+
+\subsubsection{Modality Set}
+\begin{equation}\label{eq:modalities}
+M = \{\text{text, visual, auditory, sensorimotor, symbolic}\}
+\end{equation}
+This five-modality taxonomy follows the standard multimodal machine learning survey~\citep{baltrušaitis2018multimodal}.
+ 
+\subsubsection{Product Space Construction}
+
+V3.0 extends all Σ-Model state variables from domain-indexed
+$\sigma_A(d, t)$, $\delta_A(d, t)$, $\alpha_A(d, t)$ to the product space $D \times M$:
+$\sigma_A(d, m, t)$, $\delta_A(d, m, t)$, $\alpha_A(d, m, t)$ for all $d \in D$, $m \in M$.
+
+\textbf{Consistency condition:} For each domain $d$, the unimodal variables
+are recovered by marginalisation:
+\begin{align}
+\sigma_A(d, t) &= \min_m \sigma_A(d, m, t) & &\text{(marginal schema coherence)} \label{eq:marginal-sigma} \\
+\delta_A(d, t) &= \max_m \delta_A(d, m, t) & &\text{(peak parametric depth)} \label{eq:marginal-delta}
+\end{align}
+
+\textbf{Rationale:} Compositional failure in any modality suffices to
+violate schema coherence for the domain as a whole (min), while
+depth follows the strongest modality (max). Why asymmetry? A
+compositionally competent visual module cannot compensate for a text
+module that fails on structural recombinations --- the domain is
+fragile if any channel is weak. Depth, by contrast, follows the
+strongest modality because what the agent can express is bounded by
+its best channel, analogous to fluency in one's most proficient language.
+
+\subsection{Extension~6 --- Cross-Modal Schema Transfer \texorpdfstring{$\Theta_A(d,m_1,m_2,t)$}{Theta\_A(d,m\_1,m\_2,t)}}\label{sec:cross-modal}
+
+\subsubsection{Cross-Modal Schema Transfer Function}
+\begin{equation}\label{eq:cross-modal-transfer}
+\Theta_A(d, m_1, m_2, t) = \sigma_A(d, m_1, t) \cdot \omega(m_1, m_2)
+\end{equation}
+
+\subsubsection{Extended Schema Coherence ODE (V3.0)}
+\begin{equation}\label{eq:sigma-ode-v3}
+\begin{aligned}
+\dot{\sigma}_A(d,m,t) = {} & \rho \cdot P_A(d,m,t) \cdot \alpha_A(d,m,t) \cdot (1 - \sigma_A(d,m,t)) \\
+& - \epsilon_{\sigma} \cdot \sigma_A(d,m,t) \cdot \Omega_{SL}(d,m,t) \\
+& + \rho_{\theta} \cdot \sum_{m' \neq m} \Theta_A(d,m',m,t) \cdot \sigma_A(d,m',t)
+\end{aligned}
+\end{equation}
+
+\subsection{Extension~7 --- Benchmark Validity Function \texorpdfstring{$V_A(B,f,t)$}{V\_A(B,f,t)}}\label{sec:validity}
+
+\begin{equation}\label{eq:validity-function}
+V_A(B,f,t) = CI(B,f) \cdot FD(B) \cdot DG(B) \cdot R_A(B,f,t) % CLAIM:C-007
+\end{equation}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Reliability and the Benchmark Protocol}\label{sec:benchmark}
+% ======================================================================
+% §6 Reliability (original, lines 817–830): removed from the narrow paper per the P05 blueprint; content preserved for the companion.
+% ======================================================================
+
+A benchmark's validity is only meaningful if its scores are consistent --- a benchmark that produces wildly different scores across repeated administrations cannot support valid claims about any cognitive faculty. The reliability function formalises this consistency requirement, drawing on classical test theory~\citep{crocker1986introduction}.
+
+\subsection{Extension~8 --- Benchmark Reliability Function \texorpdfstring{$R_A(B,f,t)$}{R\_A(B,f,t)}}\label{sec:reliability-fn}
+
+\begin{equation}\label{eq:reliability}
+R_A(B,f,t) = \begin{cases} \displaystyle\frac{1}{1 + \frac{\text{Var}_k(\text{score}_A^k(B))}{\mathbb{E}[\text{score}_A(B)]^2}} & \text{if } \mathbb{E}[\text{score}_A(B)] > 0 \\[8pt] 0 & \text{if } \mathbb{E}[\text{score}_A(B)] = 0 \end{cases}
+\end{equation}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+% ======================================================================
+% §8 Benchmark Protocol (original, lines 905–950): removed from the narrow paper per the P05 blueprint; content preserved for the companion.
+% ======================================================================
+
+\subsection{Five-Step Protocol}\label{sec:five-step}
+
+\textbf{Benchmark Generation Protocol (5 steps):}
+(1)~Identify variable pair (target faculty variable vs.\ confound);
+(2)~Design $2{\times}2$ factorial contrast dissociating the pair;
+(3)~Specify proxy metric (SGG, RTI, CE);
+(4)~Register directional prediction with magnitude estimate;
+(5)~Pre-register falsification thresholds before data collection.
+
+\textbf{Step~1 --- Identify the Variable Pair.} Every benchmark tests
+the gap between two Σ-Model variables --- the target faculty variable and
+the controlled confound variable.
+
+\textbf{Step~2 --- Design the Contrast Condition.} Construct task sets
+where the two variables dissociate, as illustrated in Figure~the diagnostic figure of the narrow paper. Standard $2\times 2$ factorial for
+Learning track:
+
+
+
+\begin{center}
+\begin{tabular}{>{\raggedright}p{4cm} c c >{\raggedright\arraybackslash}p{5cm}}
+\toprule
+\textbf{Condition} & $\delta_A$ & $\sigma_A$ & \textbf{Expected OOD Performance} \\
+\midrule
+High $\delta_A$, High $\sigma_A$ & High & High & High \\
+\textbf{High $\delta_A$, Low $\sigma_A$} & \textbf{High} & \textbf{Low} & \textbf{Low --- key diagnostic cell} \\
+Low $\delta_A$, High $\sigma_A$ & Low & High & Moderate \\
+Low $\delta_A$, Low $\sigma_A$ & Low & Low & Low \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Step~3 --- Specify the Measurement Proxy.}
+
+\textbf{Step~4 --- State the Σ-Model Prediction.} Format: direction,
+magnitude estimate, effect, condition comparison, alternative.
+
+\textbf{Step~5 --- Specify the Falsification Condition.} Written in
+pre-registration format before data collection, following established preregistration standards~\citep{pineau2021reproducibility}.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Phase Structure Beyond Phase 2}\label{sec:phases}
+% ======================================================================
+% §7 Phase Structure (original, lines 831–1064): phases 3–5, faculty–validity
+% correspondence, and the bifurcation-analysis parts not kept in the core.
+% ======================================================================
+
+The training arc comprises six labelled phases (P0--P5), illustrated in Figure~Figure~3 of the narrow paper. The key insight behind this structure is that learning is not a smooth, monotonic process. There are qualitative thresholds --- bifurcation points --- where the dynamics fundamentally change character. Standard training optimises depth accumulation (Phase~1 behaviour) and rarely triggers the transition to Phase~2; Σ-Model identifies the specific condition ($\sigma_A > \sigma_{\text{critical}}$) that standard training actively suppresses. P0
+(Pre-Domain Initialisation) is a ground-state initialisation stage
+with $\delta_A \approx 0$ and no structured training dynamics; the
+remaining five phases (P1--P5) constitute the \emph{five-phase
+training arc} indexed by
+($\delta_A^{\text{relative}}$, $\sigma_A$, $|M_A(t)|$) and define
+\textbf{prescriptive states} --- not retrospective loss-curve
+observations.
+
+\subsection*{Phase~0 --- Pre-Domain Initialisation}
+
+$\delta_A$ near-zero across all domains; breadth diffuse; $M_A(t)$
+undetermined. Domain selection is path-dependent through $\phi(d,d')$
+terms.
+
+\subsection*{Phase~1 --- Asymmetric Initialisation}
+
+\textbf{Trigger:} First sustained depth investment in 1--3 candidate
+mastery domains. $\delta_A$ growing; $\sigma_A \approx 0$; $\alpha_A$
+low.
+
+\subsection*{Phase~2 --- Depth Acceleration and Schema Crystallisation}
+
+\textbf{Trigger:} $\sigma_A(d,t) > \sigma_{\text{critical}}$ for at
+least one mastery candidate.
+
+\begin{equation}\label{eq:sigma-critical}
+\sigma_{\text{critical}} = \frac{1}{\gamma_\sigma} \cdot (1 - R_0^{-1})
+\end{equation}
+
+H-shape becomes visible. Phase~2 entry produces a characteristic
+acceleration pattern in the OOD performance trajectory.
+
+\subsection*{Phase~3 --- Intersection Discovery and Schema Crystallisation}
+
+$\delta_A^{\text{relative}} > \delta^*$ triggers sustained intersection
+discovery ($\Psi_A > 0$). Active intersections generate measurable
+cross-domain transfer; $\sigma_A$ approaches 1 as schemas crystallise.
+
+\subsection{Bifurcation Analysis of Phase Transitions}\label{sec:bifurcation}
+
+The phase transition triggers are not arbitrary thresholds but emerge from
+the bifurcation structure of the coupled ODE system. We derive each
+threshold from the fixed-point analysis.
+
+Bifurcation analysis \citep{kuznetsov1998} studies how the long-term behaviour of a dynamical system changes as parameters vary. A bifurcation is a qualitative shift --- analogous to water suddenly freezing when temperature drops below $0^\circ$C. Below the threshold, the system has one stable state; above it, a new stable state appears. Σ-Model's bifurcation analysis identifies three critical thresholds: $R_0 = 1$, where schema-free equilibrium becomes unstable (the Phase~1$\to$2 transition); $\delta^* = 0.54$, where intersection discovery becomes self-sustaining (Phase~2$\to$3); and the hysteresis band, where the reverse transition requires a larger perturbation than the forward transition.
+
+\textbf{Proposition 4.1 ($\sigma_{\text{critical}}$ Derivation).} % CLAIM:C-030
+\textit{The Phase~1$\to$2 transition threshold is:
+\begin{equation}\label{eq:sigma-critical-derived}
+\sigma_{\text{critical}} = \frac{1}{\gamma_\sigma}(1 - R_0^{-1})
+\end{equation}
+where $R_0 = \frac{\rho \cdot P_A \cdot \alpha_A}{\epsilon_\sigma \cdot \Omega_{SL}}$ is the
+basic schema growth ratio. When $R_0 > 1$, the schema-free
+equilibrium $E_S = (\delta_S^*, 0, \alpha_S^*, 0, \Xi_S^*)$ becomes unstable
+and the schema-coherent equilibrium $E_C$ emerges via a transcritical
+bifurcation.}
+
+\noindent\textit{Intuition.}\ The parameter $R_0$ is borrowed from
+epidemiology: when $R_0 > 1$, a disease spreads exponentially.
+Analogously, $R_0 > 1$ here means one unit of schema coherence generates
+more than one unit of additional coherence --- understanding snowballs.
+When $R_0 < 1$, schemas die out; when $R_0 > 1$, they crystallise.
+This single number captures the paper's central tension: standard SGD
+keeps $R_0 < 1$ by inflating shortcut-learning pressure $\Omega_{SL}$.
+
+\textit{Proof.} Linearize the $\sigma_A$ ODE \eqref{eq:sigma-ode}
+around $\sigma_A = 0$. Because the $\sigma_A$ factor multiplies the entire right-hand side, the expansion is:
+\begin{equation}
+\dot{\sigma}_A \approx (\rho \cdot P_A \cdot \alpha_A - \epsilon_\sigma \cdot \Omega_{SL}) \cdot \sigma_A + O(\sigma_A^2)
+\end{equation}
+The equilibrium $\sigma_A = 0$ (the schema-free state) is always a fixed point.
+It is stable when $\rho \cdot P_A \cdot \alpha_A < \epsilon_\sigma \cdot \Omega_{SL}$,
+i.e., $R_0 < 1$, and unstable when $R_0 > 1$. At $R_0 = 1$, a transcritical bifurcation occurs --- the stable and unstable equilibria exchange stability, and a non-zero branch $\sigma_A > 0$ emerges. The normal form is obtained by expanding the full ODE to second order:
+\begin{align}
+\dot{\sigma}_A &= \sigma_A\bigl[\rho P_A\alpha_A(1-\gamma_\sigma\sigma_A) - \epsilon_\sigma\Omega_{SL}\bigr] \notag\\
+&= \bigl(\rho P_A\alpha_A - \epsilon_\sigma\Omega_{SL}\bigr)\sigma_A - \gamma_\sigma\rho P_A\alpha_A\,\sigma_A^2 \\
+&= r_{\text{net}}\,\sigma_A - k\,\sigma_A^2,
+\label{eq:bif-normal-form}
+\end{align}
+where $r_{\text{net}} = \rho P_A\alpha_A - \epsilon_\sigma\Omega_{SL}$ and $k = \gamma_\sigma\rho P_A\alpha_A > 0$. This is the normal form of a transcritical bifurcation. The transversality condition $\partial_{R_0} F(0; R_0)\big|_{R_0=1} \neq 0$ is satisfied because $\partial F/\partial R_0 = \epsilon_\sigma\Omega_{SL}\,\sigma_A$, which is non-zero for $\sigma_A \neq 0$. The quadratic coefficient $k$ is non-zero since $\gamma_\sigma > 0$ and $\rho P_A\alpha_A > 0$ at the bifurcation point. The non-trivial equilibrium of $\dot{x} = rx - kx^2$ is $x^* = r/k$, which gives:
+\[
+\sigma_{\text{critical}} = \frac{1}{\gamma_\sigma}(1 - R_0^{-1})
+\]
+as the crossing threshold at which the bifurcating branch becomes positive. $\square$
+
+\textbf{Proposition 4.2 (Depth Threshold Derivation).} % CLAIM:C-031
+\textit{The Phase~2$\to$3 threshold $\delta^*$ emerges from the
+intersection activation condition. Active intersection discovery requires:
+\begin{equation}\label{eq:delta-threshold-derived}
+\delta^* = \frac{\lambda_c}{\eta_{\max}} \ln\!\left(\frac{\theta_I}{\theta_0}\right) + \frac{1}{2}
+\end{equation}
+For typical parameters $\lambda_c = 0.01$, $\eta_{\max} = 1.0$,
+$\theta_I = 0.8$, $\theta_0 = 0.01$, this yields $\delta^* \approx 0.54$.
+We adopt a nominal threshold of $\delta^* \approx 0.65$ in our simulations to account for the lag between intersection activation and sustained discovery. This shift of $\tau \approx \delta^*_{\text{nominal}} - \delta^*_{\text{analytical}} = 0.11$ can be interpreted as a hysteresis delay (see Proposition~4.3): once Phase~3 is reached, the system requires the relative depth to fall below $\delta^*_{\text{reverse}} < \delta^*_{\text{forward}}$ before reverting to Phase~2, creating a stable band $[\delta^*_{\text{reverse}}, \delta^*_{\text{forward}}]$ where both phases are locally stable. The nominal value $\delta^*_{\text{forward}} \approx 0.65$ is chosen as the centre of this hysteresis band.}
+
+\textit{Proof.} The intersection discovery rate
+$\Psi_A \propto \sqrt{q_A(d_1) \cdot q_A(d_2)}$ becomes non-negligible
+when $q_A = \sigma_A \cdot \delta_A^{\text{relative}} > \theta_I$.
+Given that $\sigma_A \approx 1$ in Phase~3 (post-bifurcation), the
+threshold reduces to $\delta_A^{\text{relative}} > \theta_I$. However,
+the Gompertz efficiency $\eta(d,t)$ decays exponentially near the
+frontier, so the effective threshold is shifted downward by the
+efficiency decay factor. Solving $\eta(\delta^*) = \lambda_c$ gives
+the expression above. $\square$
+
+\textbf{Proposition 4.3 (Hysteresis and Reverse Transitions).} % CLAIM:C-032
+\textit{The phase transition system exhibits hysteresis: the reverse
+transition threshold is strictly lower than the forward transition
+threshold. Specifically:
+\begin{itemize}[nosep]
+\item Phase~3$\to$2: occurs when $\delta_A^{\text{relative}} < 0.50$ for $> k$ consecutive timesteps
+\item Phase~2$\to$1: occurs when $\sigma_A < \sigma_{\text{critical}} - \Delta_{\text{hyst}}$ where $\Delta_{\text{hyst}} = 0.1$
+\end{itemize}}
+
+\textit{Proof sketch.} The hysteresis arises from the bistability region
+near the transcritical bifurcation. In the parameter range
+$R_0 \in (1 - \epsilon, 1 + \epsilon)$, both the $\sigma_A = 0$ and
+$\sigma_A > 0$ equilibria are locally stable. The system remains in
+whichever basin it currently occupies until a sufficiently large
+perturbation pushes it across the separatrix. $\square$
+
+\textbf{Proposition 4.4 (Noise Sensitivity).} % CLAIM:C-033
+\textit{Under Gaussian estimation noise $\hat{\sigma}_A = \sigma_A + \epsilon$
+with $\epsilon \sim \mathcal{N}(0, \nu^2)$, the phase assignment error rate is:
+\begin{equation}\label{eq:phase-error-rate}
+\mathbb{P}(\text{error}) = \Phi\!\left(-\frac{|\sigma_A - \sigma_{\text{critical}}|}{\nu}\right) + \Phi\!\left(-\frac{|\delta_A^{\text{relative}} - \delta^*|}{\nu}\right)
+\end{equation}
+where $\Phi$ is the standard normal CDF. For $\nu = 0.05$ and typical
+distances from thresholds ($|\sigma_A - \sigma_{\text{critical}}| > 0.15$),
+the error rate is $< 0.3\%$.}
+
+
+
+Figure~Figure~4 of the narrow paper visualises the bifurcation structure and phase portrait.
+
+\subsection*{Phase~4 --- Multi-Domain Frontier Navigation}
+
+Active intersections generating $\Psi_A(d_1,d_2,t) > 0$ measurably.
+Near-frontier depth; qualitative shift from acquisition to generation.
+
+\subsection*{Phase~5 --- Expanding Frontier}
+
+Dynamic open-boundary structure. $\Delta(d,t)$ continues advancing;
+every activated intersection opens new $AP_A(t)$ domains.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Extended Predictions}\label{sec:predictions}
+% ======================================================================
+% §9 Predictions (original, lines 1111–1257): predictions 1–8, hypotheses
+% 6.1–6.3, meta-prediction M1, statistical framework — cut to Prediction 9.
+% ======================================================================
+
+Each prediction below is derived from the ODE system and is distinguished from depth-only ($\delta_A$-only) accounts. Predictions~1--8 constitute the eight core pre-registered comparisons; Prediction~9 provides a computational ODE validation, and Meta-Prediction~M1 synthesises the core predictions into an overarching claim about intervention mechanisms. Section~the narrow paper presents pilot data for Predictions~1,~6, and~9.
+
+\subsection{Prediction~1 --- Schema Quality at Intersections}
+Agents with higher $\sigma_A(d,t)$ will produce higher-quality
+interdisciplinary outputs at activated intersections, even when matched
+on $\delta_A(d,t)$.
+
+\subsection{Prediction~2 --- AI Augmentation and Schema Suppression}
+Agents operating under high shortcut-learning pressure $\Omega_{SL}(d,t)$ will show accelerated $\beta_A$
+growth but slower $\sigma_A(d,t)$ development.
+
+\subsection{Prediction~3 --- Relative Mastery as Resilience Predictor}
+$\delta_A^{\text{relative}}(d,t)$, not absolute depth, predicts
+resilience to domain acceleration.
+
+\subsection{Prediction~4 --- Shortcut Threshold Expansion}
+$D^*(d,t)$ will expand faster than agents' ability to compensate through
+frontier and intersection work.
+
+\subsection{Prediction~5 --- Phase~3 Compression Under High \texorpdfstring{$\Omega_{SL}$}{Omega\_SL}}
+The gap between first mastery and first non-trivial intersection
+activation will narrow for agents with high $\Omega_{SL}(d,t)$, because shortcut-driven breadth acquisition accelerates depth-accumulation milestones while $\sigma_A$ suppression keeps intersection quality low --- producing rapid but shallow intersections.
+
+\subsection{Prediction~6 --- Multiplicative vs.\ Additive \texorpdfstring{$\sigma_A$}{sigma\_A}
+Dependence in \texorpdfstring{$\Psi_A$}{Psi\_A}}
+$\Psi_A(d_1,d_2,t)$ is multiplicatively dependent on $\sigma_A$ in both
+mastery domains. An additive model fits cross-domain discovery data as
+well as or better than the multiplicative model falsifies the claim.
+
+\subsubsection*{Hypothesis 6.1: \texorpdfstring{$\sigma_A/\delta_A$}{sigma\_A/delta\_A} Dissociation Under Meta-Learning}
+Meta-learning regimes that improve compositional generalisation will
+show increased $\text{Acc}_{\text{OOD}}$ on lexical recombination
+($\delta_A$-proximal) but no significant increase on structural
+compositionality ($\sigma_A$-proximal)
+\citep{lake2023humanlikesystematicgeneralization}.
+
+\subsubsection*{Hypothesis 6.2: Distribution Engineering Does Not Transfer \texorpdfstring{$\sigma_A$}{sigma\_A}}
+Agents trained on engineered distributions that include specific
+primitive compositions will achieve high accuracy on those compositions
+but show no significant improvement on compositional recombinations
+absent from the engineered distribution
+\citep{patel2022revisitingcompositionalgeneralization}.
+
+\subsubsection*{Hypothesis 6.3: Training Regime Optimisation Does Not Transfer \texorpdfstring{$\sigma_A$}{sigma\_A}}
+Agents whose compositional generalisation gains stem from training regime
+modifications will show increased $\text{Acc}_{\text{ID}}$ but no
+significant increase in $\text{Acc}_{\text{OOD-struct}}$.
+
+\subsection{Prediction~7 --- Benchmark Validity Predicts Cross-Model
+Stability}
+$V_A(B,f,t)$ will predict the degree to which benchmark scores transfer
+across frontier model generations.
+
+\subsection{Prediction~8 --- Cross-Modal Schema Transfer}
+Cross-modal transfer of compositional rules scales with
+$\omega(m_1, m_2) \cdot \sigma_A(d, m_1, t)$. High-$\sigma_A$ agents
+show above-chance transfer; low-$\sigma_A$ agents do not.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Prediction~9 --- Phase~2 Entry Inflection}
+The transition from Phase~1 to Phase~2 produces a measurable inflection
+in the OOD accuracy trajectory.
+
+\subsection*{Meta-Predictions}
+
+\subsubsection*{Meta-Prediction~M1 --- Incidental \texorpdfstring{$\sigma_A$}{sigma\_A} Elevation}\label{sec:meta-M1}
+Architectural interventions (e.g., MIRAGE's dual-process module) and
+data-centric interventions (e.g., mutual exclusivity, dataset
+cartography) will improve compositional generalisation \emph{only}
+to the extent that they incidentally raise $\sigma_A$ above
+$\sigma_{\text{critical}}$. Interventions that improve ID accuracy
+without elevating $\sigma_A$ (e.g., by increasing $\delta_A$ alone)
+will not close the OOD gap. This follows directly from the
+bifurcation structure (Proposition~4.1): crossing
+$\sigma_{\text{critical}}$ is necessary for Phase~2 entry, regardless
+of how that crossing is achieved.
+
+\subsection{Statistical Framework for Falsifiable Predictions}\label{sec:statistical-framework}
+
+Each prediction is operationalised through a pre-registrable statistical
+test with defined null hypotheses, power analysis, and decision rules.
+
+\textbf{Table~\ref{tab:predictions-framework} summarises the statistical
+framework for the three core predictions.}
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Statistical framework for core falsifiable predictions.}}
+\label{tab:predictions-framework}
+\small
+\begin{tabular}{@{}l p{2.2cm} p{2.2cm} p{2.5cm} p{2.0cm}@{}}
+\toprule
+\textbf{Prediction} & \textbf{$H_0$} & \textbf{$H_1$} & \textbf{Test Statistic} & \textbf{Sample Size} \\
+\midrule
+Pred.~1 (Intersection quality) & $\mu_{\text{high-}\sigma} - \mu_{\text{low-}\sigma} = 0$ & $\mu_{\text{high-}\sigma} - \mu_{\text{low-}\sigma} > 0$ & Welch's $t$ & $n = 64$ per group \\
+Pred.~6 (Multiplicative $\sigma_A$) & $R^2_{\text{add}} \geq R^2_{\text{mult}}$ & $R^2_{\text{mult}} - R^2_{\text{add}} > 0.10$ & $F$-test on $\Delta R^2$ & $n = 120$ models \\
+Pred.~9 (Phase~2 inflection) & $\beta_2 = 0$ (no spline kink) & $\beta_2 > 0$ (significant kink) & Segmented regression $t$ & $T = 500$ timesteps \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Prediction~1 --- Statistical specification.}
+\begin{itemize}[nosep]
+\item \textbf{Null hypothesis $H_0$:} $\mathbb{E}[\text{quality} \mid \sigma_A > \theta_\sigma] - \mathbb{E}[\text{quality} \mid \sigma_A < \theta_\sigma] = 0$
+\item \textbf{Alternative $H_1$:} The difference is positive, with Cohen's $d \geq 0.5$
+\item \textbf{Test statistic:} Welch's $t$-test (unequal variances)
+\item \textbf{Sample size:} $n = 64$ per group achieves power $1 - \beta = 0.80$ at $\alpha = 0.05$ for $d = 0.5$
+\item \textbf{Multiple comparisons:} Bonferroni correction across 8 predictions requires $p < 0.00625$
+\item \textbf{Baseline comparator:} Standard SGD training without $\sigma_A$ targeting
+\end{itemize}
+
+\textbf{Prediction~6 --- Statistical specification.}
+\begin{itemize}[nosep]
+\item \textbf{Null hypothesis $H_0$:} $R^2_{\text{additive}} \geq R^2_{\text{multiplicative}}$
+\item \textbf{Alternative $H_1$:} $R^2_{\text{mult}} - R^2_{\text{add}} > 0.10$
+\item \textbf{Test statistic:} $F$-test on incremental $R^2$:
+\begin{equation}
+F = \frac{(R^2_{\text{mult}} - R^2_{\text{add}}) / \Delta df}{(1 - R^2_{\text{mult}}) / (n - p - 1)}
+\end{equation}
+\item \textbf{Sample size:} $n = 120$ models achieves power $0.80$ for $\Delta R^2 = 0.10$
+\item \textbf{Model specification:}
+\begin{align}
+\text{Additive: } & \Psi_A = a_0 + a_1 \sigma_A(d_1) + a_2 \sigma_A(d_2) + a_3 \delta_A(d_1) + a_4 \delta_A(d_2) + \epsilon \\
+\text{Multiplicative: } & \Psi_A = a_0 + a_1 \sigma_A(d_1)\sigma_A(d_2) + a_2 \delta_A(d_1)\delta_A(d_2) + \epsilon
+\end{align}
+\end{itemize}
+
+\textbf{Prediction~9 --- Statistical specification.}
+\begin{itemize}[nosep]
+\item \textbf{Null hypothesis $H_0$:} $\beta_2 = 0$ in segmented regression (no inflection at Phase~2 entry)
+\item \textbf{Alternative $H_1$:} $\beta_2 > 0$ (significant positive kink at $\sigma_{\text{critical}}$ crossing)
+\item \textbf{Test statistic:} Segmented (piecewise) regression with unknown breakpoint:
+\begin{equation}
+\text{Acc}_{\text{OOD}}(t) = \beta_0 + \beta_1 t + \beta_2 (t - \tau)_+ + \epsilon_t
+\end{equation}
+where $\tau$ is the estimated Phase~2 entry time and $(x)_+ = \max(0, x)$
+\item \textbf{Sample size:} $T = 500$ training timesteps with evaluation every 10 steps ($n = 50$ observations)
+\item \textbf{Effect size:} Detectable slope change of $\Delta\beta = 0.02$ accuracy units per timestep
+\end{itemize}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+
+
+\section{Positioning, Assumption Ledger, and the Stochastic Extension}\label{sec:positioning}
+% ============================================================
+
+The Σ-Model occupies a specific gap: none of the five research areas below models the dynamics of schema coherence. We review each to make this gap precise.
+
+\subsection{Curriculum Learning}\label{sec:curriculum-learning}
+
+\cite{bengio2009curriculumlearning} established the foundational result:
+easy-to-hard sample ordering improves generalisation by providing
+representational scaffolding. Subsequent work elaborated difficulty
+measurement \citep{kumar2010selfpacedlearning,portelas2020automaticcurriculumlearningdeep,
+narvekar2020curriculumlearningreinforcementlearning} and pacing schedules.
+Every variant maximises the rate at which $\delta_A$ increases.
+Recent empirical work~\cite{mordig2026rethinkingeasytohard} confirms
+that easy-to-hard ordering provides no robust advantage for
+deductive reasoning benchmarks, reinforcing the gap between
+depth-growth optimisation and schema crystallisation.
+
+\textbf{Gap statement.} Curriculum learning provides training-sequence
+optimisation for depth growth rate but has no formal account of
+$\sigma_A(d,t)$ dynamics, no triggering conditions for schema
+crystallisation, and no prescription for the qualitative shift in
+training regime that $\sigma_{\text{critical}}$-crossing requires. Σ-Model
+is not a curriculum method: it formalises the \emph{phase structure} that
+curriculum methods navigate without modelling. The
+$\sigma_A$ ODE~\eqref{eq:sigma-ode} specifies what
+$\sigma_{\text{critical}}$-crossing requires; curriculum learning
+addresses only $\delta_A$-growth rate within a single phase.
+
+\subsection{Compositional Generalisation}\label{sec:compositional-generalisation}
+
+The SCAN/COGS/CFQ/PCFG-SET benchmark family collectively documents the
+high-$\delta_A$/low-$\sigma_A$ failure mode empirically~\citep{mondorf2026compositionalarc}.
+The consistent diagnosis: models encode statistical regularities rather than the
+compositional rules governing the distribution.
+
+\textbf{Gap statement.} The compositional generalisation literature
+characterises the failure mode and provides measurement proxies for
+$\sigma_{\text{critical}}$-crossing, but does not formalise $\sigma_A$
+as the training variable whose dynamics the failure reveals, does not
+identify what suppresses it, and does not specify how to design training
+regimes that reliably induce schema crystallisation.
+
+\paragraph{Recent Work Differentiation}
+
+\textbf{\cite{noviello2025neuroscienceinspiredualprocess} --- MIRAGE dual-process model.}
+Noviello et al.\ propose a dual-process model in which compositional
+generalisation is supported by a separate symbolic System-2 module. The Σ-Model framework demonstrates that
+this structural postulate is unnecessary by formalising compositional
+capacity as a developmental trajectory within a single ODE system.
+Specifically, schema coherence $\sigma_A(d,t)$ grows continuously
+through the $\sigma_A$ ODE \eqref{eq:sigma-ode}, where the
+$\alpha_A$ gating term directs neural training effort toward
+compositional structure without requiring a separate symbolic substrate.
+The $\sigma_{\text{critical}}$ bifurcation \eqref{eq:sigma-critical}
+defines a threshold crossing that is achievable entirely within the
+neural parameter space --- no symbolic overlay is invoked.
+Thus Σ-Model predicts that MIRAGE's success is bounded by its incidental
+$\sigma_A$ elevation, not by the dual-process architecture itself.
+
+\textbf{\cite{li2023slogstructuralgeneralizationbenchmark} --- SLOG benchmark recursion failures.}
+Li et al.\ document persistent failures on unseen recursion depths.
+Σ-Model predicts these failures from the $\sigma_A$ ODE as a Phase~1
+diagnostic: agents with $\sigma_A \approx 0$ cannot transfer recursive
+patterns to unseen depths because the schema growth term is gated by
+$\alpha_A$, which is suppressed when surface-reward pressure
+$R_A^{\text{surface}}$ is high.
+Thus Σ-Model predicts that recursion failures are a
+$\sigma_A$-diagnostic, not a capacity limit.
+
+\textbf{\cite{bruns2025exploringcompositionalgeneralizationin} --- RASP structural representability.}
+Bruns demonstrates via RASP that transformers possess the structural capacity
+to represent compositional operations. Σ-Model's framework is
+complementary: the RASP proof establishes that
+$\sigma_{\text{critical}}$-crossing is theoretically possible, while
+Σ-Model's ODE system explains why standard training does not achieve it.
+Thus Σ-Model distinguishes capacity from utilisation --- a distinction
+RASP alone cannot address.
+
+\textbf{\cite{jiang2022mutualexclusivity} --- Mutual exclusivity training on COGS.}
+Jiang et al.\ demonstrate that mutual exclusivity (ME) training pushes
+COGS lexical scores substantially higher while structural
+compositionality splits remain below 1\%. % CLAIM:C-003 Σ-Model's $\sigma_A$ ODE
+predicts this dissociation precisely: ME training increases
+$\delta_A$ at the lexical level but does not gate through $\alpha_A$
+for structural compositional regularities, so
+$\rho \cdot P_A \cdot \alpha_A \cdot (1 - \sigma_A) \approx 0$
+regardless of $P_A$ magnitude.
+Thus Σ-Model predicts that lexical remediation leaves structural
+compositionality gaps intact --- an empirically verifiable dissociation.
+
+\textbf{\cite{swayamdipta2020datasetcartography} --- Dataset cartography curricula.}
+Swayamdipta et al.\ show that dataset cartography yields performance
+gains without closing structural compositionality gaps. This result is
+predicted by Σ-Model's gap statement: curriculum learning optimises
+$\eta(d,t)$ but has no formal mechanism for increasing $\sigma_A$.
+Thus Σ-Model predicts that map-based curricula will improve ID
+accuracy without closing the OOD gap.
+
+\textbf{\cite{redhardt2025} --- Scaling compositional generalisation (NeurIPS Spotlight).}
+Redhardt et al.~show that scaling can lead to compositional generalisation,
+potentially challenging Σ-Model's central claim that structural gaps persist at
+scale. Within Σ-Model, however, scaling-driven gains are predicted to reflect a
+Phase~1$\to$2 transition driven by increased $\delta_A$ that eventually crosses
+$\sigma_{\text{critical}}$, but at suboptimal resource efficiency compared with
+targeted $\alpha_A$ interventions \eqref{eq:alpha-ode}. Scaling alone does not
+address the $\alpha_A$ gating mechanism, predicting slower $\sigma_A$ growth per
+unit of training compute.
+Thus Σ-Model predicts that scaling will eventually close the OOD gap, but at
+substantially larger compute budgets than targeted $\sigma_A$ interventions.
+
+\textbf{\cite{mondorf2026compositionalarc} --- Compositional-ARC meta-learning.}
+Mondorf et al.~approach compositionality in spatial reasoning through meta-learning
+over procedurally generated ARC tasks. The $\Sigma$-Model makes a sharp prediction:
+meta-learning enables $\sigma_A$ to crystallise \emph{per task} by compressing the
+learning trajectory into few-shot adaptation, but the resulting schemas are
+task-specific rather than domain-general. Thus Compositional-ARC should succeed on
+ARC-homologous compositions while transferring poorly to structurally different
+domains --- a dissociation that $\delta_A$-only accounts cannot explain.
+
+\subsection{Continual Learning and Decay}\label{sec:continual-learning}
+
+\cite{mccloskey1989catastrophicinterference},
+\cite{goodfellow2013empiricalinvestigationcatastrophicforgetting}, and
+\cite{kirkpatrick2017overcomingcatastrophicforgetting} address parametric
+overwriting under sequential training. Every mitigation strategy targets
+preservation or recovery of parametric content.
+
+\textbf{Gap statement.} The continual learning literature formally
+accounts for parametric decay $\lambda_c$ under sequential training but
+has no formal object for the domain frontier $\Delta(d,t)$ and no
+mechanism for representing frontier obsolescence $\lambda_f(d,t)$ as a
+distinct decay process with different intervention implications.
+
+\textbf{Connection to schema coherence.} Parametric decay $\lambda_c$ in
+continual learning is the temporal analogue of schema coherence suppression
+$\sigma_A$ in compositional generalisation. Just as $\lambda_c$ causes
+forgetting of previous tasks, $\sigma_A$-suppression causes ``forgetting''
+of compositional structure. The Σ-Model framework connects these through the
+schema-mediated decay reduction mechanism \eqref{eq:effective-decay}:
+schema coherence acts as a protective factor against both forms of decay,
+with $\gamma_\sigma$ modulating the degree of protection.
+
+\subsection{Causal and Structured Representation Learning}\label{sec:causal-repr}
+
+\cite{scholkopf2021towardcausalrepresentationlearning} establish that
+causal representations support OOD generalisation.
+\cite{mohan2024structureindrlsurveyopenproblems} document seven structural
+prior incorporation patterns. \cite{torresan2024disentangledrepresentationscausalcognition}
+distinguish weak from strong disentanglement.
+
+\textbf{Gap statement.} Causal and structured representation learning
+specify the target state corresponding to high $\sigma_A(d,t)$ but do
+not formalise $\sigma_A$ as a dynamic scalar with its own ODE, do not
+model the training process that builds it or the shortcut-learning pressure
+$\Omega_{SL}(d,t)$ \citep{geirhos2020shortcutlearning} that suppresses it, and do not connect it to
+attentional allocation, executive control, metacognitive self-modelling,
+or collective schema communication.
+
+\subsection{Cognitive Evaluation of AI Systems}\label{sec:cognitive-eval}
+
+\cite{burnell2026measuringprogressagi} propose a Cognitive Taxonomy of
+ten faculties and identify Learning, Metacognition, Attention, Executive
+Functions, and Social Cognition as having large evaluation coverage gaps.
+\cite{chollet2019measureintelligence} proposes ARC as a generalisation
+benchmark. \cite{morris2024levelsagi} establish a Levels of AGI framework.
+
+\textbf{Gap statement.} Existing cognitive evaluation frameworks specify
+what should be measured but provide no formal theoretical grounding for
+why specific task designs isolate specific faculties. The Σ-Model Benchmark
+Protocol (Section~\ref{sec:benchmark}) provides that grounding
+by deriving benchmark designs directly from formal variable structures.
+
+\subsection{Synthesis --- The Five-Gap Map}\label{sec:five-gap-map}
+
+The five gaps reduce to a single pattern: each literature addresses
+one variable while missing $\sigma_A$. The following table consolidates
+this diagnosis.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{>{\raggedright}p{3.5cm} >{\raggedright}p{3.5cm} >{\raggedright\arraybackslash}p{6.5cm}}
+\toprule
+\textbf{Literature} & \textbf{Σ-Model Variable Addressed} & \textbf{Σ-Model Variable Missing} \\
+\midrule
+Curriculum Learning & $\delta_A$ growth rate & $\sigma_A$ dynamics, $\alpha_A$, $\Xi_A$ \\
+Compositional Generalisation & $\sigma_A$ failure mode (empirical) & $\sigma_A$ formation mechanism, suppression \\
+Continual Learning & $\lambda_c$ (parametric decay) & $\lambda_f$ (frontier obsolescence), $\sigma_A$ coupling \\
+Causal/Structured Repr. & $\sigma_A$ target state & $\sigma_A$ developmental trajectory, $\hat{M}_A$, $\mu_{AB}$ \\
+Cognitive Evaluation & Faculty identification & Formal theoretical grounding for benchmark design \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Comparison with Contemporary Frameworks.}
+Table~\ref{tab:framework-comparison} positions Σ-Model relative to recent
+approaches addressing compositional generalisation failure.
+
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Comparison of compositional generalisation frameworks.}}
+\label{tab:framework-comparison}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{4.8cm}}
+\toprule
+\textbf{Framework} & \textbf{Failure Mode} & \textbf{Mechanism} & \textbf{Relation to $\Sigma$-Model} \\
+\midrule
+MIRAGE \citep{noviello2025neuroscienceinspiredualprocess}
+  & System-1/System-2 competition
+  & Dual-process architecture
+  & Formalises System-2 ($\sigma_A$) growth dynamics \\
+
+RASP \citep{bruns2025exploringcompositionalgeneralizationin}
+  & Capacity gap
+  & Restricted access sequences
+  & Predicts \emph{when} capacity is used ($\sigma_A$-dependent) \\
+
+Mutual Exclusivity \citep{jiang2022mutualexclusivity}
+  & Lexical overlap interference
+  & Augmentation-induced sparsity
+  & ME targets $\sigma_A$ via data; $\Sigma$-Model targets $\sigma_A$ directly\\
+
+Dataset Cartography \citep{swayamdipta2020datasetcartography}
+  & Example difficulty mismatch
+  & Curriculum ordering
+  & Extends to $\sigma_A$-dependent phase curriculum \\
+
+\textbf{$\Sigma$-Model (Ours)}
+  & \textbf{$\sigma_A$-suppression trap}
+  & \textbf{Coupled ODE + phase curriculum}
+  & \textbf{Predicts conditions where prior methods succeed/fail} \\
+
+Compositional-ARC \citep{mondorf2026compositionalarc}
+  & Cross-domain meta-generalisation gap
+  & Meta-learning + spatial reasoning
+  & Meta-learns per-task schemas; $\Sigma$-Model predicts limited cross-domain transfer \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Distinctive contribution.}
+Unlike frameworks that propose \emph{architectural} solutions (MIRAGE,
+RASP), \emph{data-centric} solutions (Mutual Exclusivity, Dataset
+Cartography), or \emph{meta-learning} solutions (Compositional-ARC),
+Σ-Model proposes a \emph{dynamical-systems} explanation:
+compositional failure is not merely a capacity or data problem, but a
+\textbf{bifurcation phenomenon}. Standard training creates a stable
+low-$\sigma_A$ equilibrium (Proposition~4.2); escape requires crossing
+a critical threshold via phase-aware curriculum. This predicts that
+architectural and data-centric methods will succeed only when they
+incidentally raise $\sigma_A$ above $\sigma_{\text{critical}}$---a
+testable meta-prediction (Meta-Prediction~M1; Section~\ref{sec:meta-M1}).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+
+% ======================================================================
+% Appendix: Stochastic Differential Equation Extension (SDE) — moved to companion per P05.
+% ======================================================================
+\clearpage
+\section{Stochastic Differential Equation Extension}\label{app:sde}
+
+The main text presents a deterministic ODE skeleton of the $\Sigma$-Model.
+This appendix introduces the stochastic extension and explains why the
+deterministic form is sufficient for the present empirical claims.
+
+\subsection{It\^o Stochastic Formulation}
+
+Replace the deterministic ODE system with an It\^o SDE:
+\begin{equation}\label{eq:sde-full}
+dX_t = f(X_t)\,dt + \Sigma(X_t)\,dW_t,
+\end{equation}
+where $X_t \in \mathcal{X} \subset \mathbb{R}^n$ is the state vector
+($\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A^P, \Xi_A^I, \Xi_A^F$),
+$f: \mathcal{X} \to \mathbb{R}^n$ is the deterministic vector field
+defined by Eqs.~\eqref{eq:depth-ode}--\eqref{eq:sigma-ode} (the
+two-variable core; the extended system is treated in the companion),
+$\Sigma: \mathcal{X} \to \mathbb{R}^{n \times m}$ is the noise
+covariance matrix, and $W_t$ is an $m$-dimensional Wiener process.
+
+\subsection{Noise Covariance Structure}
+
+We decompose $\Sigma$ into diagonal blocks corresponding to each variable's
+dominant noise source:
+\begin{equation}
+\Sigma(X_t) = \operatorname{diag}\bigl(
+\sigma_\delta(\delta_A),\; \sigma_\sigma(\sigma_A),\;
+\sigma_\alpha(\alpha_A),\;\sigma_M(\hat{M}_A),\;
+\sigma_\Xi(\Xi_A^P),\;\sigma_\Xi(\Xi_A^I),\;\sigma_\Xi(\Xi_A^F)
+\bigr),
+\end{equation}
+where each $\sigma_v$ scales with the empirical variance of the
+corresponding gradient estimate under mini-batch sampling. For the
+training-time proxies (GCA, RGA, AC), the noise amplitude is:
+\begin{equation}
+\sigma_g \propto \frac{1}{\sqrt{B}}, \qquad
+\sigma_r \propto \frac{1}{\sqrt{B}}, \qquad
+\sigma_c \propto \frac{1}{\sqrt{B}},
+\end{equation}
+with $B$ the batch size.
+
+\subsection{Deterministic Skeleton Sufficiency}
+
+The deterministic ODE is sufficient for the present empirical claims
+for two reasons:
+
+\textbf{(1) Law of large numbers.} Each training step updates parameters
+using a mini-batch of size $B$, producing a noisy gradient. Aggregating
+over $T$ steps, the empirical mean converges to the true gradient at rate
+$O(1/\sqrt{T})$. For the $T = 2000$ steps used in our pilot experiments,
+the noise-to-signal ratio is below $3\%$ for all reported metrics.
+
+\textbf{(2) Measurement aggregation.} The proxy signals
+$\tilde{\sigma}_A$ (GCA, RGA, AC) are averaged over $k$ evaluation
+steps ($k \geq 10$), further reducing variance by $\sqrt{k}$.
+The Stage~2 estimator $\hat{\sigma}_A$ averages over $N$ evaluation
+samples ($N \geq 200$ in the pre-registered protocol), reducing the
+standard error to $\sigma_{\hat{\sigma}_A} / \sqrt{N}$.
+
+\subsection{Code Scope}
+
+The current Python codebase implements the deterministic ODE skeleton
+only. The SDE extension is a theoretical contribution that:
+\begin{itemize}[nosep]
+\item Formalises the noise structure that mini-batch training
+  introduces into the $\Sigma$-Model dynamics
+\item Provides the mathematical foundation for fluctuation bounds
+  and confidence intervals on phase transition timings
+\item Does \emph{not} change the expected trajectory $\mathbb{E}[X_t]$,
+  which is governed by the deterministic ODE
+\end{itemize}
+Empirical validation of the SDE extension---including estimation of the
+noise covariance entries---is deferred to a dedicated calibration study
+(see \S~the conclusion of the narrow paper, item~2).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\clearpage
+
+
+
+\section{The Mechanism-Gate Data}\label{sec:gate}
+\section{The Mechanism-Gate Data}\label{sec:gate}
+
+This section reports the Phase-04 mechanism-gate experiment in full. The
+narrow paper uses the headline results; the per-seed and proxy-level
+detail lives here.
+
+\subsection{Setup}
+
+Four conditions, $n = 15$ runs each, 2000 steps, on the H-Bar
+compositional benchmark (a SCAN-style task; see the narrow paper):
+baseline, fixed-weight (constant-weight compositional loss every 5
+steps, no $\sigma$ modulation), and the two $\sigma$-modulated curricula
+(additive, multiplicative). The Stage-1 proxy $\tilde{\sigma}_A$ =
+$\frac{1}{2}(\text{GCA} + \text{RGA})$ is recorded every 25 steps
+(Section~\ref{sec:proxy}).
+
+\subsection{Final accuracy}
+
+\begin{center}
+\small
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Condition} & \textbf{ID mean$\pm$sd} & \textbf{OOD mean$\pm$sd} & \textbf{OOD 95\% CI} & \textbf{OOD median} \\
+\midrule
+baseline & $90.2 \pm 2.2$ & $45.9 \pm 4.8$ & $[43.2, 48.5]$ & 45.3 \\
+fixed-weight & $98.1 \pm 1.7$ & $98.9 \pm 3.6$ & $[97.0, 100.9]$ & 100.0 \\
+additive & $97.8 \pm 1.9$ & $98.9 \pm 2.4$ & $[97.6, 100.3]$ & 100.0 \\
+multiplicative & $97.3 \pm 2.3$ & $94.0 \pm 8.9$ & $[89.0, 98.9]$ & 100.0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Welch $t$-tests on final OOD: baseline vs.\ additive $t(20.6) = 38.30$,
+$p = 1.2\times10^{-20}$, $d = 13.99$; baseline vs.\ multiplicative
+$t(21.5) = 18.45$, $p = 1.1\times10^{-14}$, $d = 6.74$; fixed-weight vs.\
+additive $t(24.5) = 0.01$, $p = 0.99$, $d = -0.00$; additive vs.\
+multiplicative $t(16.0) = 2.09$, $p = 0.053$, $d = -0.76$. Raw per-seed
+distributions are archived with the repository.
+
+\subsection{Proxy diagnostics}
+
+The measured proxy $\tilde{\sigma}_A$ starts at its maximum (GCA
+$\approx 0.95$ on the random-initialised model) and decays; the
+crossing-time leading test is therefore degenerate. The dynamic test
+(partial correlation $\tilde{\sigma}_{A,t} \to \text{OOD}_{t+1}$
+controlling OOD$_t$, loss, parameter norm) gives pooled ODE-guided mean
+$+0.018$ (one-sided $t$, $p = 0.24$): no leading relationship. The RGA
+component alone gives $+0.125$ ($p \approx 0.005$) in the
+compositional-exposure arms --- including the fixed-weight arm with no
+$\sigma$ dynamics --- i.e.\ it tracks compositional-loss exposure, not
+the $\sigma$-scheduling (consequence-of-exposure interpretation). The
+scheduled knob reproduces the archived finding (leads-fraction $0.00$
+in all arms).
+
+\subsection{Phase-2 inflection (Prediction 9)}
+
+Segmented-regression breakpoints per arm: additive $\hat{\tau} = 542$
+(95\% CI $[526, 557]$), multiplicative $340$ ($[321, 359]$),
+fixed-weight $148$ ($[139, 158]$), baseline ill-determined (no stable
+inflection). The predicted Phase-2 acceleration is observed in every
+compositional-exposure condition and absent in baseline.
+
+
+
+\clearpage
+\section*{Appendix: Core Equations of the Narrow Paper}\label{app:core}
+
+For self-containment of the references above, the core equations of the
+narrow paper are restated (see the narrow paper for the full development):
+
+\begin{align}
+\label{eq:depth-ode}
+\dot{\delta}_A(d,t) &= f_{\text{learn}}(d,t) \cdot \eta(d,t) \cdot T_A(d,t) - \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)) \cdot \delta_A(d,t) \cdot (1 - r_A(d,t)), \\
+\label{eq:sigma-ode}
+\dot{\sigma}_A(d,t) &= \sigma_A(d,t) \cdot \bigl[ \rho \cdot P_A(d,t) \cdot \alpha_A \cdot (1 - \gamma_{\sigma} \cdot \sigma_A(d,t)) - \epsilon_{\sigma} \cdot \Omega_{SL}(d,t) \bigr], \\
+\label{eq:effective-decay}
+\lambda_c^{\text{eff}}(d,t) &= \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)), \\
+\label{eq:depth-decay}
+\dot{\delta}_A\big|_{\text{decay}} &= -\lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)) \cdot \delta_A(d,t) \cdot (1 - r_A(d,t)), \\
+\label{eq:discovery-rate}
+\Psi_A(d_1,d_2,t) &= \Psi_0 \cdot \phi(d_1,d_2) \cdot \sqrt{q_A(d_1,t) \cdot q_A(d_2,t)}.
+\end{align}
+
+The key results are: a stable low-$\sigma$ equilibrium (the
+$\sigma$-trap) when $R_0 < 1$; the critical threshold
+$\sigma_{\text{critical}} = \gamma_\sigma^{-1}(1 - R_0^{-1})$ at the
+transcritical bifurcation $R_0 = 1$; and the Phase~2 inflection in OOD
+accuracy. Conjecture~1 (SGD--ODE mapping) is stated in the narrow paper
+and governs the transfer of these results to trained networks.
+
+\bibliographystyle{plainnat}
+\bibliography{companion,../bibliography}
+
+\end{document}

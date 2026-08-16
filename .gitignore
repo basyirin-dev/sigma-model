@@ -41,6 +41,7 @@ Thumbs.db
 
 # Build / Output
 paper/manuscript.pdf
+paper/companion/*.pdf
 paper/figures/*.png
 
 # Archive (large files)
