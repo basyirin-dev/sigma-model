@@ -1,31 +1,9 @@
-%% JAIR manuscript submission
-\documentclass[manuscript,screen]{jair}
+%% TMLR manuscript (venue decision: arXiv -> TMLR)
+\documentclass{article}
 
-\setcopyright{cc}
-\acmDOI{10.1613/jair.1.xxxxx}
-\acmVolume{1}
-\acmArticle{1}
-\acmMonth{1}
-\acmYear{2026}
-\JAIRAE{}
-\JAIRTrack{}
-\settopmatter{printacmref=false}
-
-%% hyperref and url are loaded by jair/acmart class. PDF metadata set via AtBeginDocument.
-\AtBeginDocument{%
-\hypersetup{
-  pdftitle={The Sigma-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation},
-  pdfsubject={Machine Learning, Dynamical Systems},
-  pdfkeywords={compositional generalisation, schema coherence, neural ODEs, dynamical systems, curriculum learning}
-}%
-}
-
-%% JAIR uses BibTeX with ACM-Reference-Format style
-\citestyle{acmauthoryear}
-\bibliographystyle{ACM-Reference-Format}
-
-% --- Non-tmlr packages ---
+\usepackage{tmlr}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{longtable,array}
 \usepackage{booktabs}
@@ -33,6 +11,22 @@
 \sisetup{round-mode=places, round-precision=1, table-number-alignment=center, group-separator={}}
 \usepackage{newunicodechar}
 \newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{φ}{\ensuremath{\phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ξ}{\ensuremath{\Xi}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
 
 % TikZ and PGFPlots for figures
 \usepackage{tikz}
@@ -80,18 +74,19 @@
 \colorlet{breadthcolor}{gray!12}
 \colorlet{frontiercolor}{gray!70}
 
-\title[The \texorpdfstring{$\sigma$}{Sigma}-Trap]{The $\sigma$-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation}
-
-\author{Basyirin Amsyar Basri}
-\email{amsyar.basy@gmail.com}
-\affiliation{%
-  \institution{Independent Researcher}
-  \city{Selangor}
-  \country{Malaysia}
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={The Sigma-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation},
+  pdfsubject={Machine Learning, Dynamical Systems},
+  pdfkeywords={compositional generalisation, schema coherence, neural ODEs, dynamical systems, curriculum learning}
 }
-\renewcommand{\shortauthors}{Amsyar}
+
+\title{The $\sigma$-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation}
+\author{Basyirin Amsyar Basri}
+\date{}
 
 \begin{document}
+\maketitle
 
 \begin{abstract}
 \textbf{Problem:} Agents trained to high in-distribution accuracy on
@@ -127,10 +122,6 @@ is descriptive; whether SGD instantiates the posited dynamics remains an
 open conjecture.
 \end{abstract}
 
-\maketitle
-\hypersetup{pdftitle={The Sigma-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation},
-  pdfauthor={Basyirin Amsyar Basri}}
-\received{24 June 2026}
 
 % ============================================================
 \section{Introduction}\label{sec:introduction}
@@ -176,7 +167,7 @@ unproven Conjecture~\ref{conj:sgd-ode}. Under this model, the trap is a
 locally stable low-$\sigma_A$ equilibrium; escape requires crossing a
 critical threshold $\sigma_{\text{critical}}$, which corresponds to a
 transcritical bifurcation of the $\sigma_A$ dynamics at $R_0 = 1$
-(Proposition~Proposition~4).
+(Proposition~4).
 
 \paragraph*{Research question.}
 Under standard training on compositional benchmarks, high-ID/low-OOD
@@ -487,11 +478,7 @@ throughout this section.
 the system admits a unique solution $\mathbf{x}_A(t)$ on a maximal
 interval $[0, T_{\max})$ with $T_{\max} > 0$.}
 
-\emph{Proof sketch.} The right-hand sides are polynomial in the state
-variables (products $\sigma_A \cdot \delta_A$, $\sigma_A^2$) and
-piecewise-smooth (the Gompertz term), hence locally Lipschitz on
-$\text{int}(\mathcal{X})$; the result follows from Picard--Lindel\"of.
-(A full proof is in Appendix~\ref{app:notation}.)
+\emph{Proof.} In Appendix~\ref{app:proofs}.
 
 \textbf{Lemma 2 (Forward Invariance and Boundedness).}
 % relabelled from Prop 3.2
@@ -500,20 +487,7 @@ $\mathbf{x}_A(0) \in \mathcal{X}$, then $\mathbf{x}_A(t) \in \mathcal{X}$
 for all $t \in [0, T_{\max})$. If $\Delta_{\max} < \infty$, then
 $T_{\max} = \infty$ (global existence).}
 
-\emph{Proof sketch.} At $\delta_A = 0$ the growth term dominates
-($\dot{\delta}_A \geq 0$); at $\delta_A = \Delta(d,t)$ the decay term
-dominates, assuming a constant frontier $\Delta$ (as in
-Proposition~2) --- for time-dependent frontiers, invariance of
-$\delta_A \leq \Delta(t)$ requires the moving-boundary condition
-$\dot{\delta}_A \leq \dot{\Delta}$ at the boundary. At $\sigma_A = 0$,
-the $\sigma_A$ factor makes $\dot{\sigma}_A = 0$ (an invariant
-manifold, not a reflecting boundary). At $\sigma_A = 1$,
-$\dot{\sigma}_A = \rho P_A \alpha_A (1 - \gamma_\sigma) -
-\epsilon_\sigma \Omega_{SL}$ is \emph{not} inherently $\leq 0$; the
-upper bound is enforced by clamping in the phenomenological solver, so
-the invariance statement applies to the clamped dynamics. Since
-$\mathcal{X}$ is compact, solutions cannot escape to infinity.
-$\square$
+\emph{Proof.} In Appendix~\ref{app:proofs}.
 
 \textbf{Proposition 2 (Equilibria of the Two-Variable Core).}
 % relabelled from Prop 3.4
@@ -537,20 +511,7 @@ admits exactly three equilibrium classes:}
   (\rho P_A)$ (a condition on the parameter, not on its dynamics).
 \end{enumerate}
 
-\emph{Proof sketch.} Setting $\dot{\sigma}_A = 0$ in
-\eqref{eq:sigma-ode}: the $\sigma_A = 0$ branch is always a fixed
-point; the interior fixed point solves
-$\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*) =
-\epsilon_\sigma \Omega_{SL}$, i.e.
-\begin{equation}\label{eq:sigma-equilibrium}
-\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - R_0^{-1}\right),
-\end{equation}
-the same expression as $\sigma_{\text{critical}}$ (Proposition~4): the
-coherent equilibrium sits exactly on the threshold value of the emerging
-branch. Since $\sigma_A^*$ can exceed $1$ when $R_0 > 1/(1-\gamma_\sigma)$,
-the attractor of the clamped dynamics is
-$\min(\sigma_A^*, 1)$. Local stability follows from the linearisation of
-the two-dimensional Jacobian. $\square$
+\emph{Proof.} In Appendix~\ref{app:proofs}.
 
 \textbf{Proposition 3 (Low-$\sigma$ Trap: Global Stability).}
 % relabelled from Thm 4.1; model-conditional per the P05 relabel plan
@@ -563,14 +524,7 @@ is a stable trap. This is a statement about the model, not about real
 SGD; whether SGD enters this regime is the subject of
 Conjecture~\ref{conj:sgd-ode}.}
 
-\emph{Proof.} The bracket
-$B(\sigma_A) = \rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A) -
-\epsilon_\sigma \Omega_{SL}$ is maximised at $\sigma_A = 0$, where
-$B(0) = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL} < 0$ iff
-$R_0 < 1$. Since $\dot{\sigma}_A = \sigma_A B(\sigma_A)$ with
-$\sigma_A > 0$ on $(0,1]$, we have $\dot{\sigma}_A < 0$ on the whole
-interval, so $\sigma_A$ decreases monotonically to $0$ from any initial
-state in $(0,1]$. $\square$
+\emph{Proof.} In Appendix~\ref{app:proofs}.
 
 \textbf{Proposition 4 ($\sigma_{\text{critical}}$ and the Transcritical
 Bifurcation).}
@@ -587,40 +541,14 @@ When $R_0 > 1$, the schema-free equilibrium $\sigma_A = 0$ becomes
 unstable and the schema-coherent equilibrium emerges via a
 \emph{transcritical} bifurcation at $R_0 = 1$.}
 
-\emph{Proof.} Linearising the $\sigma_A$ ODE around $\sigma_A = 0$:
-$\dot{\sigma}_A = r_{\text{net}} \sigma_A - k \sigma_A^2$, where
-$r_{\text{net}} = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}$ and
-$k = \gamma_\sigma \rho P_A \alpha_A > 0$
-\begin{align}
-\dot{\sigma}_A &= \sigma_A\bigl[\rho P_A\alpha_A(1-\gamma_\sigma\sigma_A) - \epsilon_\sigma\Omega_{SL}\bigr] \notag\\
-&= r_{\text{net}}\,\sigma_A - k\,\sigma_A^2,
-\label{eq:bif-normal-form}
-\end{align}
-the normal form of a transcritical bifurcation, with
-$r_{\text{net}} = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}$
-(which changes sign at $R_0 = 1$) and $k = \gamma_\sigma \rho P_A
-\alpha_A > 0$. Writing $F(\sigma_A; R_0) = \dot{\sigma}_A$, the
-conditions for a transcritical bifurcation at $R_0 = 1$ are: the
-trivial branch persists for all parameters, $F(0; R_0) \equiv 0$;
-$\partial_\sigma F(0; 1) = 0$; the mixed partial
-$\partial_\sigma \partial_{R_0} F(0; 1) = \epsilon_\sigma \Omega_{SL}
-\neq 0$; and $\partial^2_{\sigma\sigma} F(0; 1) = -2\gamma_\sigma \rho
-P_A \alpha_A \neq 0$. Note that the parameter derivative
-$\partial_{R_0} F$ vanishes at the bifurcation point $\sigma_A = 0$ ---
-precisely the signature of a transcritical (exchange-of-stability)
-bifurcation, in which the trivial branch persists, rather than a
-saddle-node bifurcation. The trivial branch $\sigma_A = 0$ is stable for
-$r_{\text{net}} < 0$ ($R_0 < 1$) and unstable for $r_{\text{net}} > 0$
-($R_0 > 1$); the non-trivial branch $\sigma_A^* = r_{\text{net}}/k$
-exists and is stable for $R_0 > 1$. The threshold follows from
-$\sigma_A^* > 0 \iff 1 - R_0^{-1} > 0$. $\square$
+\emph{Proof.} In Appendix~\ref{app:proofs}.
 
 \noindent\emph{Intuition.} The parameter $R_0$ is borrowed from
 epidemiology: when $R_0 > 1$, one unit of schema coherence generates more
 than one unit of additional coherence --- understanding snowballs. When
 $R_0 < 1$, schemas die out and the agent remains in the trap. Standard
 training keeps $R_0 < 1$ by inflating shortcut-learning pressure
-$\Omega_{SL}$ (Proposition~Proposition~4); interventions
+$\Omega_{SL}$ (Proposition~4); interventions
 that raise $R_0$ above $1$ --- in the gate experiment, exposure to
 compositional loss --- make the coherent equilibrium stable.
 
@@ -633,6 +561,8 @@ $\sigma_{\text{critical}}(t)$: Phase~2 entry ($\sigma_A >
 shortcut-learning pressure, which resolves the apparent paradox that
 $\sigma_A$ cannot exceed its own stable equilibrium. Section~7 builds
 the phase trigger on this moving threshold.
+Figure~\ref{fig:bifurcation} illustrates the bifurcation structure and
+the $(\delta_A, \sigma_A)$ phase portrait with the three equilibria.
 
 \subsection{Numerical Integration}\label{sec:numerical-protocol}
 
@@ -669,7 +599,7 @@ dynamics.
 First sustained depth investment in candidate domains; $\delta_A$
 growing, $\sigma_A \approx 0$. Under the model, this is the regime in
 which the $\sigma$-trap forms: with $R_0 < 1$ the low-coherence state
-is globally attracting (Proposition~Proposition~4).
+is globally attracting (Proposition~4).
 
 \subsection*{Phase~2 --- Depth Acceleration and Schema Crystallisation}
 
@@ -678,7 +608,7 @@ least one mastery candidate, where
 $\sigma_{\text{critical}}(t) = \gamma_\sigma^{-1}\bigl(1 - R_0(t)^{-1}\bigr)$
 (Eq.~\eqref{eq:sigma-critical}) is the \emph{moving} threshold of
 Section~\ref{sec:core-framework}. The trigger is the transcritical
-bifurcation at $R_0 = 1$ (Proposition~Proposition~4): when
+bifurcation at $R_0 = 1$ (Proposition~4): when
 shortcut-learning pressure declines enough to push $R_0$ above $1$, the
 schema-free equilibrium loses stability and coherence grows toward
 $\sigma_C^* = \min\bigl(\sigma_{\text{critical}}, 1\bigr)$. Phase~2
@@ -688,8 +618,7 @@ performance trajectory.
 \subsection{Bifurcation Relation and the Empirical Inflection Signature}\label{sec:bifurcation}
 
 The Phase~1$\to$2 transition is not an arbitrary threshold: it is the
-transcritical bifurcation of
-Proposition~Proposition~4. The phase boundary is the
+transcritical bifurcation of Proposition~4. The phase boundary is the
 parameter condition $R_0 = 1$; $\sigma_{\text{critical}}$ is the value
 of the emerging branch at the boundary (Section~\ref{sec:core-framework}).
 Because $\Omega_{SL}(d,t)$ and $P_A(d,t)$ are time-dependent, the
@@ -841,7 +770,7 @@ near-chance-level---relative to the gap---compositional recombination.
 Per-seed OOD trajectories confirm the plateau: baseline shows no
 inflection (the segmented-regression breakpoint is ill-determined; see
 below), consistent with the model's stable low-$\sigma$ state
-(Proposition~Proposition~4).
+(Proposition~4).
 
 \begin{table}[htbp]
 \centering
@@ -1098,6 +1027,7 @@ no claims about deployed systems are made.
 \noindent\rule{\linewidth}{0.4pt}
 
 % ============================================================
+\appendix
 \section{Notation Reference}\label{app:notation}
 
 \begin{center}
@@ -1107,73 +1037,36 @@ no claims about deployed systems are made.
 \toprule
 \textbf{Symbol} & \textbf{Type} & \textbf{Domain} & \textbf{Description} \\
 \midrule
-\multicolumn{4}{l}{\textbf{Sets and Domains}} \\
+\multicolumn{4}{l}{\textbf{Sets}} \\
 $D$ & Set & Global & Knowledge domains, indexed by $d \in D$ \\
-$M$ & Set & Global & Modalities $\{$text, visual, auditory, sensorimotor, symbolic$\}$ \\
 $M_A(t)$ & Set & $2^D$ & Mastery set (domains with high $\delta_A$ and $\sigma_A$) \\
-$B_A(t)$ & Set & $2^D$ & Breadth set (domains with high $\beta_A$ but not mastered) \\
-$D^*(d,t)$ & Derived & $2^d$ & Shortcut threshold (sub-tasks via surface patterns) \\
 \multicolumn{4}{l}{\textbf{Functions}} \\
 $\Delta(d,t)$ & Function & $\R_+$ & Domain frontier (maximum achievable depth) \\
 $T_A(d,t)$ & Function & $\R_+$ & Time-on-task (training effort) \hfill\eqref{eq:depth-ode} \\
 $f_{\text{learn}}(d,t)$ & Function & $\R_+$ & Learning efficiency factor \hfill\eqref{eq:depth-ode} \\
-$C_A(d,t)$ & Function & $\R_+$ & Training signal for attentional growth (companion) \\
-$\phi(d_1,d_2)$ & Function & $[0,1]$ & Domain similarity coupling (companion) \\
-$\Omega_{SL}(d,t)$ & Function & $\R_+$ & Shortcut learning pressure \\
-$P_A(d,t)$ & Function & $\R_+$ & Principled structure availability \\
-$R_A^{\text{surface}}(d,t)$ & Function & $\R_+$ & Surface-reward pressure \\
-\multicolumn{4}{l}{\textbf{State Variables}} \\
+$r_A(d,t)$ & Function & $[0,1]$ & Retrieval-practice indicator \hfill\eqref{eq:depth-ode} \\
+$\Omega_{SL}(d,t)$ & Function & $\R_+$ & Shortcut-learning pressure \\
+$P_A(d,t)$ & Function & $\R_+$ & Principled-structure availability \\
+\multicolumn{4}{l}{\textbf{State variables}} \\
 $\delta_A(d,t)$ & State var & $[0, \Delta(d,t)]$ & Parametric depth (structural complexity) \\
-$\beta_A(d,t)$ & State var & $\R_+$ & Functional breadth (surface competence) \\
 $\sigma_A(d,t)$ & State var & $[0,1]$ & Schema coherence (principled reorganisation) \\
-$\alpha_A(d,t)$ & State var & $[0,1]$ & Attentional fidelity (structure-directed attention) \\
-$\hat{M}_A(d,t)$ & State var & $[0,1]$ & Self-model of schema coherence (metacognitive) \\
-$\Xi_A^P(t)$ & State var & $[0,1]$ & Executive planning quality \\
-$\Xi_A^I(t)$ & State var & $[0,1]$ & Executive inhibition quality \\
-$\Xi_A^F(t)$ & State var & $[0,1]$ & Executive cognitive flexibility \\
-\multicolumn{4}{l}{\textbf{Estimates and Signals}} \\
-$\tilde{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~1 training-time proxy (fused signals) \\
-$\hat{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~2 ground-truth (OOD/ID ratio; companion) \\
-$g_A(d,t)$ & Signal & $[-1,1]$ & Gradient-composition alignment (GCA; companion) \\
-$r_A(d,t)$ & Signal & $[-1,1]$ & Representational-geometry alignment (RGA; companion) \\
-$c_A(d,t)$ & Signal & $[0,1]$ & Augmentation consistency (AC; companion) \\
-\multicolumn{4}{l}{\textbf{Derived Quantities}} \\
+$\alpha_A$ & Fixed input & $[0,1]$ & Attentional fidelity (fixed parameter of the core; dynamics in the companion) \\
+\multicolumn{4}{l}{\textbf{Estimates and signals}} \\
+$\tilde{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~1 training-time proxy (fused GCA/RGA/AC; companion) \\
+$\hat{\sigma}_A(d,t)$ & Estimate & $[0,1]$ & Stage~2 diagnostic, $\text{Acc}_{\text{OOD}}/\text{Acc}_{\text{ID}}$ (post-hoc only; companion) \\
+\multicolumn{4}{l}{\textbf{Derived quantities}} \\
 $\delta_A^{\text{relative}}(d,t)$ & Derived & $[0,1]$ & Relative depth (fraction of frontier) \hfill\eqref{eq:relative-depth} \\
-$\delta_\sigma(d,t)$ & Derived & $[-1,1]$ & Stage~1--2 proxy discrepancy (companion) \\
-$\zeta_A(d,t)$ & Derived & $[-1,1]$ & Calibration error ($\hat{M}_A - \sigma_A$) \\
-$\Psi_A(d_1,d_2,t)$ & Derived & $\R_+$ & Intersection activation (cross-domain discovery; companion) \\
-$q_A(d,t)$ & Derived & $[0,1]$ & Effective mastery quality ($\sigma_A \cdot \delta_A^{\text{relative}}$) \\
-$\lambda_c^{\text{eff}}$ & Derived & $\R_+$ & Effective decay (schema-mediated) \\
+$\lambda_c^{\text{eff}}$ & Derived & $\R_+$ & Effective decay (schema-mediated) \hfill\eqref{eq:effective-decay} \\
 $\eta(d,t)$ & Derived & $\R_+$ & Learning efficiency (Gompertz form) \hfill\eqref{eq:gompertz} \\
-$\mu_{AB}(d,t)$ & Derived & $[0,1]$ & Schema legibility (inter-agent) \\
-$\Sigma_{A,B}(d_1,d_2,t)$ & Derived & $[0,1]$ & Collective schema field \\
-$\Theta_A(d,m_1,m_2,t)$ & Derived & $[0,1]$ & Cross-modal schema transfer \\
-$V_A(B,f,t)$ & Derived & $[0,1]$ & Benchmark validity function \\
-$\sigma_{\text{critical}}$ & Derived & $[0,1]$ & Phase~1$\to$2 transition threshold \\
+$\sigma_{\text{critical}}(t)$ & Derived & $[0,1]$ & Phase~1$\to$2 transition threshold (moving) \hfill\eqref{eq:sigma-critical} \\
 $R_0$ & Derived & $\R_+$ & Basic schema reproduction number \\
 \multicolumn{4}{l}{\textbf{Parameters}} \\
-$\Psi_0$ & Parameter & $\R_+$ & Base discovery rate constant (companion) \\
 $\lambda_c$ & Parameter & $\R_+$ & Parametric decay rate \\
-$\lambda_f(d,t)$ & Parameter & $\R_+$ & Frontier obsolescence rate \\
-$\eta_{\max}$ & Parameter & $\R_+$ & Maximum learning efficiency \hfill\eqref{eq:gompertz} \\
-$a, b$ & Parameters & $\R_+$ & Gompertz shape parameters \hfill\eqref{eq:gompertz} \\
+$\eta_{\max}, a, b$ & Parameters & $\R_+$ & Gompertz efficiency parameters \hfill\eqref{eq:gompertz} \\
 $\rho$ & Parameter & $\R_+$ & Schema growth rate constant \\
-$\epsilon_\sigma$ & Parameter & $\R_+$ & Shortcut suppression coefficient \\
-$\gamma$ & Parameter & $\R_+$ & Attention growth rate constant \\
-$\zeta_\alpha$ & Parameter & $\R_+$ & Surface-reward attention suppression \\
-$\nu_M$ & Parameter & $\R_+$ & Self-model convergence rate \\
-$\xi_M$ & Parameter & $\R_+$ & Shortcut metacognitive inflation \\
-$\kappa_P, \kappa_I, \kappa_F$ & Parameters & $\R_+$ & Executive control convergence rates \\
-$\tau_A(B,d,t)$ & Parameter & $[0,1]$ & Theory-of-mind coupling \\
-$\theta_I, \theta_\delta, \theta_\sigma, \theta_\beta$ & Parameters & $[0,1]$ & Threshold parameters \\
+$\epsilon_\sigma$ & Parameter & $\R_+$ & Shortcut-suppression coefficient \\
 $\gamma_\sigma$ & Parameter & $[0,1]$ & Schema-mediated decay protection \\
-$w_g, w_r, w_c$ & Parameters & $[0,1]$ & Signal fusion weights (Stage~1) \\
-$\omega(m_1,m_2)$ & Parameter & $[0,1]$ & Modality similarity weight \\
-\multicolumn{4}{l}{\textbf{Metrics}} \\
-$CI(B,f)$ & Metric & $[0,1]$ & Construct isolation \\
-$FD(B)$ & Metric & $[0,1]$ & Format diversity \\
-$DG(B)$ & Metric & $[0,1]$ & Difficulty gradient \\
-$R_A(B,f,t)$ & Metric & $[0,1]$ & Benchmark reliability \\
+$\theta_\delta, \theta_\sigma$ & Parameters & $[0,1]$ & Mastery-set thresholds \hfill\eqref{eq:mastery-set} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1193,87 +1086,6 @@ $R_A(B,f,t)$ & Metric & $[0,1]$ & Benchmark reliability \\
 \noindent\rule{\linewidth}{0.4pt}
 
 % ============================================================
-\clearpage
-\section{Stochastic Differential Equation Extension}\label{app:sde}
-% ============================================================
-
-The main text presents a deterministic ODE skeleton of the $\Sigma$-Model.
-This appendix introduces the stochastic extension and explains why the
-deterministic form is sufficient for the present empirical claims.
-
-\subsection{It\^o Stochastic Formulation}
-
-Replace the deterministic ODE system with an It\^o SDE:
-\begin{equation}\label{eq:sde-full}
-dX_t = f(X_t)\,dt + \Sigma(X_t)\,dW_t,
-\end{equation}
-where $X_t \in \mathcal{X} \subset \mathbb{R}^n$ is the state vector
-($\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A^P, \Xi_A^I, \Xi_A^F$),
-$f: \mathcal{X} \to \mathbb{R}^n$ is the deterministic vector field
-defined by Eqs.~\eqref{eq:depth-ode}--\eqref{eq:sigma-ode} (the
-two-variable core; the extended system is treated in the companion),
-$\Sigma: \mathcal{X} \to \mathbb{R}^{n \times m}$ is the noise
-covariance matrix, and $W_t$ is an $m$-dimensional Wiener process.
-
-\subsection{Noise Covariance Structure}
-
-We decompose $\Sigma$ into diagonal blocks corresponding to each variable's
-dominant noise source:
-\begin{equation}
-\Sigma(X_t) = \operatorname{diag}\bigl(
-\sigma_\delta(\delta_A),\; \sigma_\sigma(\sigma_A),\;
-\sigma_\alpha(\alpha_A),\;\sigma_M(\hat{M}_A),\;
-\sigma_\Xi(\Xi_A^P),\;\sigma_\Xi(\Xi_A^I),\;\sigma_\Xi(\Xi_A^F)
-\bigr),
-\end{equation}
-where each $\sigma_v$ scales with the empirical variance of the
-corresponding gradient estimate under mini-batch sampling. For the
-training-time proxies (GCA, RGA, AC), the noise amplitude is:
-\begin{equation}
-\sigma_g \propto \frac{1}{\sqrt{B}}, \qquad
-\sigma_r \propto \frac{1}{\sqrt{B}}, \qquad
-\sigma_c \propto \frac{1}{\sqrt{B}},
-\end{equation}
-with $B$ the batch size.
-
-\subsection{Deterministic Skeleton Sufficiency}
-
-The deterministic ODE is sufficient for the present empirical claims
-for two reasons:
-
-\textbf{(1) Law of large numbers.} Each training step updates parameters
-using a mini-batch of size $B$, producing a noisy gradient. Aggregating
-over $T$ steps, the empirical mean converges to the true gradient at rate
-$O(1/\sqrt{T})$. For the $T = 2000$ steps used in our pilot experiments,
-the noise-to-signal ratio is below $3\%$ for all reported metrics.
-
-\textbf{(2) Measurement aggregation.} The proxy signals
-$\tilde{\sigma}_A$ (GCA, RGA, AC) are averaged over $k$ evaluation
-steps ($k \geq 10$), further reducing variance by $\sqrt{k}$.
-The Stage~2 estimator $\hat{\sigma}_A$ averages over $N$ evaluation
-samples ($N \geq 200$ in the pre-registered protocol), reducing the
-standard error to $\sigma_{\hat{\sigma}_A} / \sqrt{N}$.
-
-\subsection{Code Scope}
-
-The current Python codebase implements the deterministic ODE skeleton
-only. The SDE extension is a theoretical contribution that:
-\begin{itemize}[nosep]
-\item Formalises the noise structure that mini-batch training
-  introduces into the $\Sigma$-Model dynamics
-\item Provides the mathematical foundation for fluctuation bounds
-  and confidence intervals on phase transition timings
-\item Does \emph{not} change the expected trajectory $\mathbb{E}[X_t]$,
-  which is governed by the deterministic ODE
-\end{itemize}
-Empirical validation of the SDE extension---including estimation of the
-noise covariance entries---is deferred to a dedicated calibration study
-(see \S\ref{sec:conclusion}, item~2).
-
-\noindent\rule{\linewidth}{0.4pt}
-
-% ============================================================
-\clearpage
 \section{IMEX-RK Stability at Critical Equilibria}\label{app:stability}
 % ============================================================
 
@@ -1283,8 +1095,11 @@ critical equilibria $E_S$ and $E_C$ from Proposition~2.
 
 \subsection{Jacobian at Equilibria}
 
-Let the slow subsystem be $x_{\text{slow}} = (\hat{M}_A, \Xi_A)$.
-The Jacobian of the slow vector field evaluated at $E_S$ is:
+For the two-variable core the stability analysis reduces to the scalar
+linearisation of \eqref{eq:sigma-ode} (Proposition~4); the Jacobian of
+the full extended system at $E_S$ is treated in the companion. As the
+numerical-rigour defence for the core, the IMEX stability evaluation
+applies the ARS(2,3,2) scheme at $E_S$ and $E_C$ with:
 \begin{equation}
 J_S = \left.\frac{\partial f_{\text{slow}}}{\partial x_{\text{slow}}}\right|_{E_S}
 = \begin{pmatrix}
@@ -1334,96 +1149,129 @@ by our adaptive step-size controller (relative tolerance $10^{-6}$).
 
 The IMEX scheme is stable at both $E_S$ and $E_C$, encompassing the
 bifurcation point where stiffness is most problematic.
-No special treatment---beyond the ARS(2,3,2) tableau already specified
-in Algorithm~3.1---is required for these critical equilibria.
+No special treatment beyond the ARS(2,3,2) tableau is required for
+these critical equilibria.
+
+
+\clearpage
+\section{Proofs of the Core Results}\label{app:proofs}
+% ============================================================
+
+This appendix collects the proofs of the results stated in
+Section~\ref{sec:core-framework}; statements are repeated for
+self-containment. The results are theorems about the ODE model and
+remain valid whether or not Conjecture~\ref{conj:sgd-ode} holds.
+
+\paragraph*{Proof of Lemma 1 (local existence and uniqueness).}
+The right-hand sides of Eqs.~\eqref{eq:depth-ode} and
+\eqref{eq:sigma-ode} are polynomial in the state variables (products
+$\sigma_A \cdot \delta_A$, $\sigma_A^2$) and piecewise-smooth (the
+Gompertz term \eqref{eq:gompertz}), hence locally Lipschitz on
+$\text{int}(\mathcal{X})$; by the Picard--Lindel\"of theorem a unique
+local solution exists on a maximal interval $[0, T_{\max})$.
+$\square$
+
+\paragraph*{Proof of Lemma 2 (forward invariance and boundedness).}
+At $\delta_A = 0$ the growth term dominates ($\dot{\delta}_A \geq 0$);
+at $\delta_A = \Delta(d,t)$ the decay term dominates, assuming a
+constant frontier $\Delta$ (as in Proposition~2) --- for time-dependent
+frontiers, invariance of $\delta_A \leq \Delta(t)$ requires the
+moving-boundary condition $\dot{\delta}_A \leq \dot{\Delta}$ at the
+boundary. At $\sigma_A = 0$, the $\sigma_A$ factor makes
+$\dot{\sigma}_A = 0$ (an invariant manifold, not a reflecting
+boundary). At $\sigma_A = 1$, $\dot{\sigma}_A = \rho P_A \alpha_A
+(1 - \gamma_\sigma) - \epsilon_\sigma \Omega_{SL}$ is \emph{not}
+inherently $\leq 0$; the upper bound is enforced by clamping in the
+phenomenological solver, so the invariance statement applies to the
+clamped dynamics. Since $\mathcal{X}$ is compact when
+$\Delta_{\max} < \infty$, solutions cannot escape to infinity, so
+$T_{\max} = \infty$. $\square$
+
+\paragraph*{Proof of Proposition 2 (equilibria of the two-variable
+core).}
+Setting $\dot{\sigma}_A = 0$ in \eqref{eq:sigma-ode}: the
+$\sigma_A = 0$ branch is always a fixed point; the interior fixed point
+solves $\rho P_A \alpha_A (1 - \gamma_\sigma \sigma_A^*) =
+\epsilon_\sigma \Omega_{SL}$, i.e.
+\begin{equation}\label{eq:sigma-equilibrium}
+\sigma_A^* = \frac{1}{\gamma_\sigma}\left(1 - R_0^{-1}\right),
+\end{equation}
+the same expression as $\sigma_{\text{critical}}$
+(Eq.~\eqref{eq:sigma-critical}): the coherent equilibrium sits exactly
+on the threshold value of the emerging branch. Since $\sigma_A^*$ can
+exceed $1$ when $R_0 > 1/(1-\gamma_\sigma)$, the attractor of the
+clamped dynamics is $\min(\sigma_A^*, 1)$. Local stability follows from
+the linearisation of the two-dimensional Jacobian at each equilibrium.
+The trivial equilibrium $E_0$ exists iff the effective training input
+vanishes ($f_{\text{learn}} \cdot T_A = 0$): under the Gompertz form
+$\eta(0) = \eta_{\max} e^{-a} > 0$, so $\dot{\delta}_A > 0$ at
+$\delta_A = 0$ whenever training input is nonzero. $\square$
+
+\paragraph*{Proof of Proposition 3 (low-$\sigma$ trap: global
+stability).}
+The bracket $B(\sigma_A) = \rho P_A \alpha_A (1 - \gamma_\sigma
+\sigma_A) - \epsilon_\sigma \Omega_{SL}$ is maximised at
+$\sigma_A = 0$, where $B(0) = \rho P_A \alpha_A - \epsilon_\sigma
+\Omega_{SL} < 0$ iff $R_0 < 1$. Since $\dot{\sigma}_A = \sigma_A
+B(\sigma_A)$ with $\sigma_A > 0$ on $(0,1]$, we have
+$\dot{\sigma}_A < 0$ on the whole interval, so $\sigma_A$ decreases
+monotonically to $0$ from any initial state in $(0,1]$. $\square$
+
+\paragraph*{Proof of Proposition 4 ($\sigma_{\text{critical}}$ and the
+transcritical bifurcation).}
+Linearising the $\sigma_A$ ODE around $\sigma_A = 0$:
+\begin{align}
+\dot{\sigma}_A &= \sigma_A\bigl[\rho P_A\alpha_A(1-\gamma_\sigma\sigma_A) - \epsilon_\sigma\Omega_{SL}\bigr] \notag\\
+&= r_{\text{net}}\,\sigma_A - k\,\sigma_A^2,
+\label{eq:bif-normal-form}
+\end{align}
+with $r_{\text{net}} = \rho P_A \alpha_A - \epsilon_\sigma \Omega_{SL}$
+(which changes sign at $R_0 = 1$) and $k = \gamma_\sigma \rho P_A
+\alpha_A > 0$ --- the normal form of a transcritical bifurcation.
+Writing $F(\sigma_A; R_0) = \dot{\sigma}_A$, the conditions for a
+transcritical bifurcation at $R_0 = 1$ are: the trivial branch persists
+for all parameters, $F(0; R_0) \equiv 0$; $\partial_\sigma F(0; 1) = 0$;
+the mixed partial $\partial_\sigma \partial_{R_0} F(0; 1) =
+\epsilon_\sigma \Omega_{SL} \neq 0$; and
+$\partial^2_{\sigma\sigma} F(0; 1) = -2\gamma_\sigma \rho P_A \alpha_A
+\neq 0$. The parameter derivative $\partial_{R_0} F$ vanishes at the
+bifurcation point $\sigma_A = 0$ --- precisely the signature of a
+transcritical (exchange-of-stability) bifurcation, in which the trivial
+branch persists, rather than a saddle-node bifurcation. The trivial
+branch $\sigma_A = 0$ is stable for $r_{\text{net}} < 0$ ($R_0 < 1$) and
+unstable for $r_{\text{net}} > 0$ ($R_0 > 1$); the non-trivial branch
+$\sigma_A^* = r_{\text{net}}/k$ exists and is stable for $R_0 > 1$. The
+threshold follows from $\sigma_A^* > 0 \iff 1 - R_0^{-1} > 0$. $\square$
 
 \noindent\rule{\linewidth}{0.4pt}
 
 \clearpage
 % ============================================================
-% Figures (ordered 1--10)
+% Figures
 % ============================================================
 
-% --- Figure 1: The Σ-Model Conceptual Framework ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.85\textwidth}{!}{\input{figures/figure1-framework}}
-\caption{\raggedright\textbf{The $\Sigma$-Model Conceptual Framework.} Knowledge is
-structured into vertical parametric depth ($\delta_A$), horizontal
-functional breadth ($\beta_A$), and schema coherence ($\sigma_A$) which
-acts as the structural integrity required to support cross-domain
-intersection activation ($\Psi_A$).}
-\Description{A schematic diagram of the Sigma-Model knowledge representation. Two vertical pillars stand on a shared horizontal base. The base represents functional breadth beta, filled with a crosshatch pattern. The left pillar (domain d1) is taller than the right (domain d2), representing parametric depth delta(d). Both pillars have diagonal-line hatching indicating schema coherence sigma. A horizontal bridge connects the pillars at threshold height theta_I, labelled Psi (inactive). A dashed line at the top marks the domain frontier Delta(t). A dotted red line at mid-height marks the activation threshold theta_I.}
-\label{fig:sigma-framework}
-\end{figure}
 
-% --- Figure 2: Coupled Dynamical System ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.9\textwidth}{!}{\input{figures/figure2-coupled-system}}
-\caption{\textbf{Coupled Dynamical System Architecture of the Σ-Model
-V3.0+ Model.} Arrows denote causal coupling within the ODE system,
-highlighting the central gating role of attentional fidelity ($\alpha_A$)
-and the joint suppressive effect of shortcut-learning pressure ($\Omega_{SL}$).}
-\Description{A two-panel node-and-edge diagram. Panel (a) Core Coupling Loop (left) contains four nodes: Parametric Depth delta_A, Schema Coherence sigma_A, Attentional Fidelity alpha_A, and Training Signal C_A. Edges show C_A drives alpha_A, alpha_A gates sigma_A, sigma_A reduces decay on delta_A, and delta_A supports alpha_A. Panel (b) Metacognitive Extension (right) contains sigma_A, Self-Model M_hat_A, and Shortcut Learning Omega_SL. sigma_A calibrates M_hat_A, Omega_SL inflates M_hat_A and suppresses sigma_A.}
-\label{fig:coupled-system}
-\end{figure}
 
-% --- Figure 3: Five-Phase Training Arc ---
+
+
+% --- Figure 3: Phase 0-2 Training Arc ---
 \begin{figure}[htbp]
 \centering
 \resizebox{\textwidth}{!}{\input{figures/figure3-phases}}
-\caption{\textbf{The Five-Phase Training Arc.} Parametric depth
-($\delta_A$) accumulates in Phase~1, but Phase~2 is only triggered when
-attentional fidelity ($\alpha_A$) drives schema coherence ($\sigma_A$)
-across the $\sigma_{\text{critical}}$ bifurcation threshold.}
-\Description{A time-series plot with Training Time on the x-axis and Normalised Value [0,1] on the y-axis. Three curves: delta_A_relative (solid black logistic curve), alpha_A (densely dashed green, rises early then plateaus), sigma_A (solid blue, crosses sigma_critical at a red star marker at the Phase 1-2 boundary then rises sharply). Background shading alternates to delineate six phases P0 through P5. A phase bar below labels each phase.}
+\caption{\textbf{The Phase 0--2 training arc.} Parametric depth
+($\delta_A$) accumulates in Phase~1; Phase~2 is triggered when schema
+coherence ($\sigma_A$) crosses the moving threshold
+$\sigma_{\text{critical}}(t)$ --- the $R_0 = 1$ transcritical
+bifurcation of Proposition~4.}
+\Description{A time-series plot with Training Time on the x-axis and Normalised Value [0,1] on the y-axis. Three curves: delta_A_relative (solid black logistic curve), sigma_A (solid blue, crosses sigma_critical at a red star marker at the Phase 1-2 boundary then rises sharply). Background shading delineates the phases. A phase bar below labels each phase.}
 \label{fig:phases}
 \end{figure}
 
-% --- Figure 4: Diagnostic Matrix ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.7\textwidth}{!}{\input{figures/figure4-diagnostic}}
-\caption{\textbf{The Compositional Generalisation Failure Mode.} Current
-training pipelines (trajectory arrow) push agents into the
-High-$\delta_A$/Low-$\sigma_A$ quadrant (red, ``Illusion of Mastery''),
-passing in-distribution evaluation but failing out-of-distribution
-recombination. The target capable-agent state (green, top-right) requires
-active $\sigma_A$ cultivation. \textbf{Diagnostic implication:} standard
-benchmarks measuring only in-distribution accuracy cannot distinguish
-the red from green quadrants.}
-\Description{A 2x2 quadrant diagram with Parametric Depth delta_A (Low to High) on the x-axis and Schema Coherence sigma_A (Low to High) on the y-axis. Top-left (white): Moderate ID / Moderate OOD. Top-right (green crosshatch, Target State): High ID, High OOD, marked with a green star. Bottom-left (grey): Low ID / Low OOD. Bottom-right (red with grid pattern, Illusion of Mastery): High In-Distribution Accuracy but fails OOD Recombination. A dashed arrow curves from top-left down to bottom-right, labelled Standard SGD.}
-\label{fig:diagnostic}
-\end{figure}
 
-% --- Figure 5: Training Pipeline Flow ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.85\textwidth}{!}{\input{figures/figure5-pipeline}}
-\caption{\textbf{Σ-Model Training Pipeline (companion).}
-The end-to-end flow from input batch through signal extraction, proxy
-fusion, ODE integration, and modulated loss to the optimizer step.
-Evaluation checkpoints feed back recalibration weights to the fusion
-stage. Phase-aware curriculum adjustments are triggered by the ODE
-state.}
-\Description{A swimlane flowchart showing the end-to-end training process. Lane A (Forward Pass): input batch arrives, forward pass computes task loss, hidden states extracted. Lane B (Signal Extraction): three signals computed (GCA, RGA, AC). Lane C (Proxy Fusion): weighted fusion produces sigma_tilde. Lane D (ODE Integration): state variables updated. Lane E (Loss Modulation): total loss computed with sigma-targeting term. Backward pass and optimizer step complete the loop. A side branch shows evaluation checkpoint computing sigma_hat and recalibrating fusion weights.}
-\label{fig:pipeline}
-\end{figure}
 
-% --- Figure 6: Two-Stage sigma_A Estimation Architecture ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.9\textwidth}{!}{\input{figures/figure6-estimation}}
-\caption{\textbf{Two-Stage $\sigma_A$ Estimation Architecture.}
-Stage~1 (training-time) fuses three structural signals into the
-operative proxy $\tilde{\sigma}_A$. Stage~2 (evaluation-time) computes
-the ground-truth estimate $\hat{\sigma}_A$ via the OOD/ID accuracy
-ratio. When $|\tilde{\sigma}_A - \hat{\sigma}_A| > 0.15$, ridge
-regression recalibrates the Stage~1 fusion weights.}
-\Description{Two-panel diagram. Stage 1 (training-time): three signal sources (GCA, RGA, AC) feed into a weighted fusion producing sigma_tilde_A. Stage 2 (evaluation-time): OOD and ID accuracy scores combine to form sigma_hat_A via the ratio Acc_OOD/Acc_ID. A dotted arrow shows recalibration feedback from Stage 2 back to the fusion weights when discrepancy exceeds 0.15.}
-\label{fig:estimation}
-\end{figure}
+
+
+
 
 % --- Figure 7: Bifurcation and Phase Portrait ---
 \begin{figure}[htbp]
@@ -1442,167 +1290,14 @@ $E_C$.}
 \label{fig:bifurcation}
 \end{figure}
 
-% --- Figure 8: Main Experimental Results ---
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/figure8-main-results.png}
-\caption{\textbf{Main experimental results.} Comparison of out-of-distribution accuracy across baseline (standard SGD), Σ-Model additive, and Σ-Model multiplicative conditions on SCAN/COGS benchmarks. Error bars show standard deviation over 15 independent runs.}
-\Description{A 2x2 panel figure. Panel (A): In-Distribution Learning Curves — line plot of ID accuracy vs training step for three conditions (Baseline, Additive, Multiplicative), each with plus-minus 1-sigma shaded error band. All conditions converge to 90-98 percent ID accuracy by step 2000. Panel (B): Final OOD Accuracy by Condition — vertical bar chart showing Baseline 44.5 percent, Additive 97.0 percent, Multiplicative 94.1 percent. Panel (C): Schema Coherence Trajectories — sigma_tilde vs training step. Baseline rises to about 0.55, Additive plateaus near 0.35, Multiplicative rises steeply to about 0.85. Panel (D): Phase Distribution — horizontal stacked bar chart showing P2 Crystallise 44.1 percent, P3 Intersection 42.5 percent, P0 Pre-Init 13.4 percent.}
-\label{fig:sigma-main-results}
-\end{figure}
 
-% --- Figure 9: Prediction 6 Comparison ---
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/figure9-prediction6.png}
-\caption{\textbf{Prediction 6: Multiplicative vs.\ Additive $\sigma_A$ model comparison.} The quadratic multiplicative model (green, $R^2 = 0.762$) substantially outperforms the linear additive model (orange, $R^2 = 0.427$), with $\Delta R^2 = 0.335$. Residual analysis confirms systematic bias in the additive model and near-zero residuals for the multiplicative fit.}
-\Description{Two-panel figure. Panel (A): Model Comparison — scatter plot of cross-domain discovery Psi vs schema coherence sigma_hat with two fitted curves: quadratic multiplicative (green) and linear additive (orange dashed). Panel (B): Residual Analysis — multiplicative residuals (green circles) scatter randomly around zero; additive residuals (orange crosses) show clear funnel pattern indicating model misspecification.}
-\label{fig:prediction-6-comparison}
-\end{figure}
 
-% --- Figure 10: Prediction 9 Inflection ---
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/figure10-prediction9.png}
-\caption{\textbf{Prediction 9: Phase~2 entry inflection in OOD accuracy trajectory.} Segmented regression detects a significant inflection point at $\hat{\tau}$ training steps, marking Phase~2 (Crystallisation) entry. The pre-entry slope ($\beta_0$) reflects rapid OOD accuracy growth driven by $\sigma_A$-coupled curriculum activation; the post-entry slope ($\beta_1 \approx 0$) captures the OOD accuracy ceiling. Shaded regions indicate 95\% CI for the breakpoint estimate and regression line.}
-\Description{A single-panel scatter plot of mean OOD accuracy vs training timesteps (0 to 2000). Light blue scatter points show raw OOD accuracy. A thick dark red segmented regression line fits two linear regimes with an inflection point marking Phase 2 entry. Light red shaded bands show 95 percent CI on the breakpoint and regression line.}
-\label{fig:prediction-9-inflection}
-\end{figure}
+
+
+
 
 % ============================================================
-% Reproducibility Checklist for JAIR
-% ============================================================
-\appendix
-\section*{Reproducibility Checklist for JAIR}
-
-Select the answers that apply to your research --- one per item.
-
-\subsection*{All articles:}
-
-\begin{enumerate}
-    \item All claims investigated in this work are clearly stated.
-    [yes]
-
-    \item Clear explanations are given how the work reported substantiates the claims.
-    [yes]
-
-    \item Limitations or technical assumptions are stated clearly and explicitly.
-    [yes]
-
-    \item Conceptual outlines and/or pseudo-code descriptions of the AI methods introduced in this work are provided, and important implementation details are discussed.
-    [yes]
-
-    \item Motivation is provided for all design choices, including algorithms, implementation choices, parameters, data sets and experimental protocols beyond metrics.
-    [yes]
-\end{enumerate}
-
-\subsection*{Articles containing theoretical contributions:}
-Does this paper make theoretical contributions?
-[yes]
-
-If yes, please complete the list below.
-
-\begin{enumerate}
-    \item All assumptions and restrictions are stated clearly and formally.
-    [yes]
-
-    \item All novel claims are stated formally (e.g., in theorem statements).
-    [yes]
-
-    \item Proofs of all non-trivial claims are provided in sufficient detail to permit verification by readers with a reasonable degree of expertise (e.g., that expected from a PhD candidate in the same area of AI).
-    [yes]
-
-    \item Complex formalism, such as definitions or proofs, is motivated and explained clearly.
-    [yes]
-
-    \item The use of mathematical notation and formalism serves the purpose of enhancing clarity and precision; gratuitous use of mathematical formalism (i.e., use that does not enhance clarity or precision) is avoided.
-    [yes]
-
-    \item Appropriate citations are given for all non-trivial theoretical tools and techniques.
-    [yes]
-\end{enumerate}
-
-\subsection*{Articles reporting on computational experiments:}
-Does this paper include computational experiments? [yes]
-
-If yes, please complete the list below.
-\begin{enumerate}
-    \item All source code required for conducting experiments is included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for source code readability and documentation as well as for long-term accessibility.
-    [yes]
-
-    \item The source code comes with a license that allows free usage for reproducibility purposes.
-    [yes]
-
-    \item The source code comes with a license that allows free usage for research purposes in general.
-    [yes]
-
-    \item Raw, unaggregated data from all experiments is included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for long-term accessibility.
-    [yes]
-
-    \item The unaggregated data comes with a license that allows free usage for reproducibility purposes.
-    [yes]
-
-    \item The unaggregated data comes with a license that allows free usage for research purposes in general.
-    [yes]
-
-    \item If an algorithm depends on randomness, then the method used for generating random numbers and for setting seeds is described in a way sufficient to allow replication of results.
-    [yes]
-
-    \item The execution environment for experiments, the computing infrastructure (hardware and software) used for running them, is described, including GPU/CPU makes and models; amount of memory (cache and RAM); make and version of operating system; names and versions of relevant software libraries and frameworks.
-    [yes]
-
-    \item The evaluation metrics used in experiments are clearly explained and their choice is explicitly motivated.
-    [yes]
-
-    \item The number of algorithm runs used to compute each result is reported.
-    [yes]
-
-    \item Reported results have not been ``cherry-picked'' by silently ignoring unsuccessful or unsatisfactory experiments.
-    [yes]
-
-    \item Analysis of results goes beyond single-dimensional summaries of performance (e.g., average, median) to include measures of variation, confidence, or other distributional information.
-    [yes]
-
-    \item All (hyper-)parameter settings for the algorithms/methods used in experiments have been reported, along with the rationale or method for determining them.
-    [yes]
-
-    \item The number and range of (hyper-)parameter settings explored prior to conducting final experiments have been indicated, along with the effort spent on (hyper-)parameter optimisation.
-    [yes]
-
-    \item Appropriately chosen statistical hypothesis tests are used to establish statistical significance in the presence of noise effects.
-    [yes]
-\end{enumerate}
-
-\subsection*{Articles using data sets:}
-Does this work rely on one or more data sets (possibly obtained from a benchmark generator or similar software artifact)?
-[yes]
-
-If yes, please complete the list below.
-\begin{enumerate}
-    \item All newly introduced data sets are included in an online appendix or will be made publicly available upon publication of the paper. The online appendix follows best practices for long-term accessibility with a license that allows free usage for research purposes.
-    [NA]
-
-    \item The newly introduced data set comes with a license that allows free usage for reproducibility purposes.
-    [NA]
-
-    \item The newly introduced data set comes with a license that allows free usage for research purposes in general.
-    [NA]
-
-    \item All data sets drawn from the literature or other public sources (potentially including authors' own previously published work) are accompanied by appropriate citations.
-    [yes]
-
-    \item All data sets drawn from the existing literature (potentially including authors' own previously published work) are publicly available.
-    [yes]
-
-    \item All new data sets and data sets that are not publicly available are described in detail, including relevant statistics, the data collection process and annotation process if relevant.
-    [NA]
-
-    \item All methods used for preprocessing, augmenting, batching or splitting data sets (e.g., in the context of hold-out or cross-validation) are described in detail.
-    [yes]
-\end{enumerate}
-
-\subsection*{Explanations on any of the answers above (optional):}
-
-[This paper does not introduce new static datasets. The synthetic compositional benchmark (PCFG-SET) is generated programmatically by included source code (\texttt{code/sigma/benchmarks/generator.py}), making static data archiving unnecessary. All existing datasets (SCAN, COGS) are cited and publicly available from their original sources.]
+\bibliographystyle{tmlr}
+\bibliography{bibliography}
 
 \end{document}

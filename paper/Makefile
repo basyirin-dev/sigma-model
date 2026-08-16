@@ -3,13 +3,11 @@ PDF_OUT     = manuscript.pdf
 ARXIV_DIR   = ../arxiv-submission
 FIGURES_SRC = figures
 BIB_SRC     = bibliography.bib
-JAIR_CLS    = jair.cls acmart.cls acmauthoryear.bbx acmauthoryear.cbx acmdatamodel.dbx
-
 all: pdf
 
 pdf: $(PDF_OUT)
 
-$(PDF_OUT): $(TEX_SRC) $(BIB_SRC) $(JAIR_CLS)
+$(PDF_OUT): $(TEX_SRC) $(BIB_SRC) tmlr.sty tmlr.bst
 	TEXINPUTS=.:$$TEXINPUTS latexmk -pdf -f $(TEX_SRC)
 
 arxiv: pdf
@@ -18,10 +16,10 @@ arxiv: pdf
 	cp $(PDF_OUT) $(ARXIV_DIR)/
 	cp -r $(FIGURES_SRC) $(ARXIV_DIR)/
 	cp $(BIB_SRC) $(ARXIV_DIR)/
-	cp $(JAIR_CLS) $(ARXIV_DIR)/
+	cp tmlr.sty tmlr.bst $(ARXIV_DIR)/
 	cd $(ARXIV_DIR) && tar czf ../sigma-arxiv-submission.tar.gz \
 		manuscript.tex manuscript.pdf bibliography.bib figures/ \
-		$(JAIR_CLS)
+		tmlr.sty tmlr.bst
 	@echo "arXiv bundle: $$(cd $(ARXIV_DIR) && ls ../sigma-arxiv-submission.tar.gz)"
 
 clean:

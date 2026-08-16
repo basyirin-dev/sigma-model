@@ -1759,3 +1759,89 @@ pre-registration format before data collection, following established preregistr
 \noindent\rule{\linewidth}{0.4pt}
 
 % ============================================================
+
+% ======================================================================
+% Appendix: Stochastic Differential Equation Extension (SDE) — moved to companion per P05.
+% ======================================================================
+\clearpage
+\section{Stochastic Differential Equation Extension}\label{app:sde}
+% ============================================================
+
+The main text presents a deterministic ODE skeleton of the $\Sigma$-Model.
+This appendix introduces the stochastic extension and explains why the
+deterministic form is sufficient for the present empirical claims.
+
+\subsection{It\^o Stochastic Formulation}
+
+Replace the deterministic ODE system with an It\^o SDE:
+\begin{equation}\label{eq:sde-full}
+dX_t = f(X_t)\,dt + \Sigma(X_t)\,dW_t,
+\end{equation}
+where $X_t \in \mathcal{X} \subset \mathbb{R}^n$ is the state vector
+($\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A^P, \Xi_A^I, \Xi_A^F$),
+$f: \mathcal{X} \to \mathbb{R}^n$ is the deterministic vector field
+defined by Eqs.~\eqref{eq:depth-ode}--\eqref{eq:sigma-ode} (the
+two-variable core; the extended system is treated in the companion),
+$\Sigma: \mathcal{X} \to \mathbb{R}^{n \times m}$ is the noise
+covariance matrix, and $W_t$ is an $m$-dimensional Wiener process.
+
+\subsection{Noise Covariance Structure}
+
+We decompose $\Sigma$ into diagonal blocks corresponding to each variable's
+dominant noise source:
+\begin{equation}
+\Sigma(X_t) = \operatorname{diag}\bigl(
+\sigma_\delta(\delta_A),\; \sigma_\sigma(\sigma_A),\;
+\sigma_\alpha(\alpha_A),\;\sigma_M(\hat{M}_A),\;
+\sigma_\Xi(\Xi_A^P),\;\sigma_\Xi(\Xi_A^I),\;\sigma_\Xi(\Xi_A^F)
+\bigr),
+\end{equation}
+where each $\sigma_v$ scales with the empirical variance of the
+corresponding gradient estimate under mini-batch sampling. For the
+training-time proxies (GCA, RGA, AC), the noise amplitude is:
+\begin{equation}
+\sigma_g \propto \frac{1}{\sqrt{B}}, \qquad
+\sigma_r \propto \frac{1}{\sqrt{B}}, \qquad
+\sigma_c \propto \frac{1}{\sqrt{B}},
+\end{equation}
+with $B$ the batch size.
+
+\subsection{Deterministic Skeleton Sufficiency}
+
+The deterministic ODE is sufficient for the present empirical claims
+for two reasons:
+
+\textbf{(1) Law of large numbers.} Each training step updates parameters
+using a mini-batch of size $B$, producing a noisy gradient. Aggregating
+over $T$ steps, the empirical mean converges to the true gradient at rate
+$O(1/\sqrt{T})$. For the $T = 2000$ steps used in our pilot experiments,
+the noise-to-signal ratio is below $3\%$ for all reported metrics.
+
+\textbf{(2) Measurement aggregation.} The proxy signals
+$\tilde{\sigma}_A$ (GCA, RGA, AC) are averaged over $k$ evaluation
+steps ($k \geq 10$), further reducing variance by $\sqrt{k}$.
+The Stage~2 estimator $\hat{\sigma}_A$ averages over $N$ evaluation
+samples ($N \geq 200$ in the pre-registered protocol), reducing the
+standard error to $\sigma_{\hat{\sigma}_A} / \sqrt{N}$.
+
+\subsection{Code Scope}
+
+The current Python codebase implements the deterministic ODE skeleton
+only. The SDE extension is a theoretical contribution that:
+\begin{itemize}[nosep]
+\item Formalises the noise structure that mini-batch training
+  introduces into the $\Sigma$-Model dynamics
+\item Provides the mathematical foundation for fluctuation bounds
+  and confidence intervals on phase transition timings
+\item Does \emph{not} change the expected trajectory $\mathbb{E}[X_t]$,
+  which is governed by the deterministic ODE
+\end{itemize}
+Empirical validation of the SDE extension---including estimation of the
+noise covariance entries---is deferred to a dedicated calibration study
+(see \S\ref{sec:conclusion}, item~2).
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\clearpage
+
