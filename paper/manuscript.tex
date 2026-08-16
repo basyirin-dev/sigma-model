@@ -766,93 +766,49 @@ compositional loss, not the necessity of the $\sigma$-scheduling itself
 \section{Empirical Grounding}\label{sec:empirical}
 % ============================================================
 
-We now test the core Σ-Model predictions empirically, using a synthetic compositional benchmark that provides ground-truth access to all state variables. The results reported below are from $n = 15$ runs per condition. While initial power analyses conservatively assumed small effect sizes (requiring $N = 500$), the observed effect sizes for the primary OOD generalisation claims are exceptionally large (Cohen's $d > 7.5$). A post-hoc power analysis confirms $> 99.9\%$ statistical power at $\alpha = 0.00625$ (Bonferroni-corrected) for the primary comparisons. Hence $n = 15$ is statistically conclusive for the primary claims; the $N = 500$ pre-registered protocol (\S\ref{sec:empirical-validation}) is retained as a community replication resource.
+\paragraph*{Proof-of-concept scope.}
+The experiments in this section test whether the qualitative
+predictions of the model --- the existence of a stable low-coherence
+state under standard training, the closing of the OOD gap under
+compositional-loss exposure, and the Phase~2 inflection --- are
+observable in a controlled setting. They do \emph{not} validate
+generality: all results are on a single synthetic benchmark, one
+architecture, and $n = 15$ seeds per condition. Claims about other
+benchmarks, architectures, or scales remain open
+(Section~\ref{sec:limitations}).
 
-\begin{table}[htbp]
-\centering
-\small
-\caption{\textbf{Prediction-validation map.} Each falsifiable prediction is linked to its theoretical derivation and the experiment that tests it.}\label{tab:prediction-validation}
-\begin{tabular}{p{0.6cm} p{4.7cm} p{2.6cm} p{5.2cm}}
-\toprule
-\textbf{P\#} & \textbf{Prediction} & \textbf{Derived in} & \textbf{Test} \\
-\midrule
-P1 & Schema quality at intersections (§9.1) & Eq.~\eqref{eq:sigma-ode} & OOD gap analysis (Table~\ref{tab:results-summary}) \\
-P2 & AI augmentation widens OOD gap (companion) & Prop~3 & Companion report \\
-P3 & Mastery predicts resilience (companion) & Prop~2 & Companion report \\
-P4 & Shortcut threshold expansion (companion) & --- & Companion report \\
-P5 & Phase~3 compression (companion) & Eq.~\eqref{eq:sigma-ode} & Companion report \\
-P6 & Multiplicative vs.\ additive $\Psi_A$ (companion) & --- & Companion report \\
-P7 & Benchmark validity stability (companion) & --- & Companion report \\
-P8 & Cross-modal transfer (companion) & --- & Companion report \\
-P9 & Phase~2 inflection (§9.9) & Prop~4.1 & Segmented regression (Figure~\ref{fig:prediction-9-inflection}) \\
-M1 & Incidental $\sigma_A$ elevation (§9.10) & Meta-analysis & Prior method success attribution \\
-\bottomrule
-\end{tabular}
-\end{table}
+\paragraph*{Benchmark.}
+The H-Bar benchmark is a SCAN-style compositional sequence-to-sequence
+task: commands combine primitives (jump/walk/run/look), modifiers
+(twice/thrice), and combinators (and/after/around/opposite), and the
+target is the token-wise composition. In-distribution (ID) test items
+are short combinations within the training grammar; out-of-distribution
+(OOD) items are novel recombinations never seen in training (mean
+length 3.3 tokens vs.\ 1.6 in training). Vocabulary size is 27; the
+training set has 16{,}000 examples, the ID test 4{,}000, and the OOD
+test 1{,}500.
 
-\subsection{ODE Validation Experiment}\label{sec:ode-exp}
+\paragraph*{Design.}
+Four conditions, $n = 15$ runs each (2000 steps; seed discipline
+$s_r = r \cdot 42 + 7$, deterministic cuDNN flags): \emph{baseline}
+(plain task loss), \emph{fixed-weight} (constant-weight compositional
+loss every 5 steps, no $\sigma$ modulation --- a deliberately strong
+plain-compositional baseline), and the two $\sigma$-modulated curricula
+\emph{additive} and \emph{multiplicative}
+(Section~\ref{sec:core-framework}). The measured Stage-1 proxy
+$\tilde{\sigma}_A$ (GCA+RGA fusion; companion) is recorded every 25
+steps; the full experimental protocol and hyperparameters are in
+Section~\ref{sec:empirical-validation}.
 
-We conducted 45 training runs (15 per condition) on an NVIDIA Tesla T4
-GPU to validate the core Σ-Model predictions. All runs use the synthetic
-hard compositional benchmark (Phase~0--5 protocol, 2000 training steps
-per run) with parameters from the base configuration.
-
-\textbf{Baseline (high-$\delta_A$/low-$\sigma_A$).}
-In-distribution accuracy reached $90.2 \pm 2.3\%$ while out-of-distribution
-compositional accuracy remained at $44.5 \pm 4.7\%$, producing a
-compositional gap of 45.6~percentage points, consistent with prior SCAN and COGS baseline results~\citep{lake2018generalizationwithoutsystematicity,kim2020cogscompositionalgeneralizationchallenge}. The model remained in
-Phase~0 throughout training, confirming that naive SGD does not
-spontaneously induce schema coherence.
-
-\textbf{Coupled training closes the gap.}
-Additive coupling reached ID=$97.0 \pm 1.7\%$, OOD=$97.0 \pm 6.7\%$
-(gap=0.0pp; Welch's $t(28)=-24.0$, $p<0.001$, Cohen's $d=9.1$).
-Multiplicative coupling reached ID=$97.4 \pm 1.9\%$, OOD=$94.1 \pm 8.0\%$
-(gap=3.4pp; $t(28)=-20.0$, $p<0.001$, $d=7.6$). The additive vs.\
-multiplicative OOD difference was not significant ($t(28)=1.06$,
-$p=0.30$).
-
-\textbf{We confirm phase transitions.}
-Both coupling conditions exhibited a clear Phase~0$\to$2 transition
-(additive: median entry at step~313, $\sigma_A\approx0.16$;
-multiplicative: median entry at step~183, $\sigma_A\approx0.15$).
-Multiplicative coupling triggered the transition earlier and reached
-a higher final $\sigma_A$ ($0.89$ vs.\ $0.55$ for additive), confirming
-that multiplicative gating amplifies schema crystallisation.
-
-\textbf{$\sigma_A$ divergence.}
-Final $\sigma_A$ values differed significantly between additive and
-multiplicative conditions ($t=-83.9$, $p<0.001$), confirming that
-coupling type shapes $\sigma_A$ trajectories independently of
-$\delta_A$.
-
-\textbf{Claim~8 supported.} The high-$\delta_A$/low-$\sigma_A$ baseline
-(OOD=$44.5\%$) underperformed the high-$\delta_A$/high-$\sigma_A$
-multiplicative condition (OOD=$94.1\%$) by 49.6~percentage points
-($d>0.5$), satisfying the prediction threshold of $\geq$30~pp % CLAIM:C-008
-(Figure~\ref{fig:sigma-main-results}).
-
-All five Σ-Model benchmarks are \textbf{designed to satisfy} pre-deployment
-validity criteria. Table~\ref{tab:validity} reports \textbf{target} validity
-components (design specifications, not empirical measurements).
-
-\begin{table}[htbp]
-\centering
-\caption{\textbf{Benchmark validity components: target specifications for deployment.}} % CLAIM:C-009
-\label{tab:validity}
-\small
-\begin{tabular}{l l c c c c c l}
-\toprule
-\textbf{Bench.} & \textbf{Track} & \textbf{Target $CI$} & \textbf{Target $FD$} & \textbf{Target $DG$} & \textbf{Target $R_A$} & \textbf{Target $V_A$} & \textbf{Status} \\
-\midrule
-H-PTB & Learning & 0.836 & 0.750 & 0.426 & 0.999 & 0.267 & Design \\
-H-AFB & Attention & 0.931 & 0.830 & 0.442 & 0.999 & 0.341 & Design \\
-H-MCB & Metacog. & 0.825 & 0.800 & 0.506 & 0.999 & 0.334 & Design \\
-H-DCB & Executive & 0.832 & 0.830 & 0.430 & 0.999 & 0.297 & Design \\
-H-STB & Social & 0.936 & 0.830 & 0.509 & 0.999 & 0.395 & Design \\
-\bottomrule
-\end{tabular}
-\end{table}
+\paragraph*{Power.}
+Effect sizes are reported per comparison (CC.3.6); no pooled aggregate
+$d$ is used. For the primary comparison --- baseline vs.\ additive OOD
+accuracy --- the observed effect is $d \approx 14.0$
+(pooled $\sigma \approx 3.8$~pp), giving $> 99.9\%$ power at
+$\alpha = 0.05$ for $n = 15$; the per-comparison $t$, $p$, and effect
+sizes appear in Table~\ref{tab:gate-welch}. The $N = 500$
+pre-registered protocol (companion) remains a community replication
+resource rather than a requirement for the primary claims.
 
 \noindent\rule{\linewidth}{0.4pt}
 
@@ -860,438 +816,222 @@ H-STB & Social & 0.936 & 0.830 & 0.509 & 0.999 & 0.395 & Design \\
 \section{Empirical Validation}\label{sec:empirical-validation}
 % ============================================================
 
-This section presents completed experiments and pre-registered benchmark
-protocols for the core Σ-Model predictions.
+\paragraph*{Setup and transparency.}
+Architecture: 2-layer, 4-head Transformer ($d = 128$, $\dim_{\text{ff}} = 512$,
+batch 64), Adam at $\text{lr} = 10^{-3}$, 2000 training steps per run,
+mixed-precision training on a single Tesla~T4 (60 runs, $\approx 5$--8\,h
+total). Seeds $s_r = r \cdot 42 + 7$, deterministic cuDNN flags, and all
+other hyperparameters are in the configuration committed with the code
+(\texttt{code/experiments/configs/gate.yaml}). The synthetic benchmark is
+generated programmatically (\texttt{code/sigma\_align/experiments/});
+analysis scripts and the raw per-seed tables are in the companion; raw
+results are archived with the repository.
 
-\subsection{Completed ODE Experiments}\label{sec:completed-ode}
-
-\paragraph{Power analysis note.}
-The pre-registered protocol specifies $N = 500$ training runs per
-condition, conservatively powered for small effects ($d = 0.2$).
-However, the observed effect sizes for the primary OOD generalisation
-comparisons are exceptionally large (Cohen's $d > 7.5$). A post-hoc
-power analysis (one-tailed Welch's $t$, $\alpha = 0.00625$, Bonferroni-
-corrected for 8 predictions) confirms that the achieved power at
-$N = 15$ exceeds $0.999$ for all pairwise comparisons involving the
-baseline condition. The $N = 500$ pre-registered protocol is retained as
-an OSF-registered community replication resource; the $N = 15$ sample is
-statistically conclusive for the primary claims reported below.
-
-\subsubsection{Experimental Setup}
-
-\textbf{Architecture.} Standard Transformer (2 layers, 4 heads,
-$d_{\text{model}}=128$) trained on SCAN/COGS under three conditions:
-\begin{itemize}[nosep]
-\item \textbf{Condition A (Baseline):} Standard SGD training
-\item \textbf{Condition B (Σ-Model additive):} Σ-Model curriculum with additive $\sigma_A$ coupling
-\item \textbf{Condition C (Σ-Model multiplicative):} Σ-Model curriculum with multiplicative $\sigma_A$ coupling
-\end{itemize}
-
-\textbf{Training protocol.} 15 training runs per condition, evaluation
-every 10 timesteps, total 5,000 timesteps. Compositional probe batches
-generated from domain grammar $G(d)$ at ratio 10\% (Phase~1) increasing
-to 40\% (Phase~2+).
-
-\textbf{Statistical analysis plan.} All tests pre-registered with
-Bonferroni correction for 8 predictions ($\alpha_{\text{corrected}} = 0.00625$).
-
-\subsubsection{Prediction 1 --- Schema Quality at Intersections}
-As pre-registered, we conducted a Welch's t-test to evaluate whether higher $\sigma_A$ produces higher-quality interdisciplinary outputs. Analysing $n=64$ samples per group, the results strongly support $H_1$. The high-$\sigma_A$ group achieved significantly higher quality scores ($M=4.01, SD=0.56$) compared to the low-$\sigma_A$ group ($M=2.88, SD=0.82$), with $t(126) = 9.144$ and $p < 0.0001$. The observed effect size of Cohen's $d = 1.616$ vastly exceeds the pre-registered minimum detectable threshold of $0.5$, consistent with schema coherence being a primary driver of intersectional output validity.
-
-
-
-\subsubsection{Prediction 6 --- Multiplicative vs.\ Additive \texorpdfstring{$\sigma_A$}{sigma\_A} Dependence}
-To test the multiplicative discovery hypothesis, we analysed $n=120$ training trajectories via quartile-binned regression (15 runs $\times$ 2 conditions $\times$ 4 temporal bins each). The F-test on incremental $R^2$ confirms that the quadratic multiplicative model ($R^2_{\text{mult}} = 0.762$) provides a superior fit to the cross-domain discovery data $\Psi_A$ compared to the linear additive model ($R^2_{\text{add}} = 0.427$). The multiplicative model explained an additional $\Delta R^2 = 0.335$ of the variance ($F(1, 117) = 165.0, p < 0.0001$), far exceeding the pre-registered requirement of $\Delta R^2 > 0.10$. This result confirms that interdisciplinary discovery scales superlinearly with schema coherence (Figure~\ref{fig:prediction-6-comparison}).
-
-Prediction~6 is supported on its formal claim: the quadratic
-structure $\Psi_A \propto \sigma_A(d_1, t) \cdot \sigma_A(d_2, t)$
-provides a significantly better model of intersection discovery
-dynamics than the linear alternative
-($\Delta R^2 = 0.335$, $F(1,117) = 165.0$, $p \approx 10^{-21}$).
-Achieved power at $N = 15$ for $\Delta R^2 = 0.335$ exceeds
-$0.99$, so this result is robust to the reduced sample.
-However, the multiplicative formulation is a \emph{descriptive} model
-of the discovery mechanism---it does not entail that a multiplicative
-training objective will yield higher OOD accuracy. Indeed, the
-additive training condition produced numerically higher OOD accuracy
-($97.01\%$ vs.\ $94.08\%$, $p = 0.300$), though this difference is
-non-significant. The two results are therefore compatible: the
-multiplicative model correctly describes how intersection quality
-depends on schema coherence, while the additive training condition may
-benefit from simpler gradient dynamics that are easier to optimise
-under standard SGD. Prediction~6 is strongly supported as a structural claim;
-it makes no comparative prediction about training-condition OOD
-accuracy, so the non-significant additive trend neither supports nor
-falsifies it.
-
-
-
-\subsubsection{Prediction 9 --- Phase~2 Entry Inflection}
-Segmented regression analysis of the OOD accuracy trajectory identified a significant inflection point at $\hat{\tau} = 500$ training steps, marking Phase~2 (Crystallisation) entry. The pre-entry slope ($\beta_0 = 0.166$ accuracy units per timestep) reflects the rapid OOD accuracy improvement driven by $\sigma_A$-coupled curriculum activation. The post-entry slope ($\beta_1 \approx 0$) indicates the ceiling phase: once Phase~2 is entered, OOD accuracy plateaus near maximal performance. The breakpoint is sharp and detectable via the piecewise linear model (Figure~\ref{fig:prediction-9-inflection}).
-
-
-
-\subsubsection{Baseline Comparison}
-We evaluated the Σ-Model curriculum against standard SGD on the COGS structural compositionality split. While the baseline model exhibited a significant compositional gap of 45.6\% ($\text{Acc}_{\text{ID}} = 90.15 \pm 2.27\%$, $\text{Acc}_{\text{OOD}} = 44.53 \pm 4.72\%$), the Σ-Model curriculum substantially reduced this bottleneck. The additive Σ-Model condition achieved an OOD accuracy of $97.01 \pm 6.67\%$ ($t(28) = -24.034, p < 0.0001$ vs.\ baseline). The multiplicative condition similarly achieved $94.08 \pm 7.96\%$. (Consistent with the Prediction~6 reconciliation above, this non-significant OOD accuracy trend concerns training-condition optimisation, not the multiplicative structure of $\Psi_A$ itself.) Both curriculum conditions met the Bonferroni-corrected significance threshold ($\alpha = 0.00625$), providing preliminary evidence that the Σ-Model mechanism may address compositional generalisation failures.
-
-\subsection{Experimental Results}
-
-\textbf{Accuracy Summary.} Table~\ref{tab:results-summary} reports
-final in-distribution (ID) and out-of-distribution (OOD) accuracy
-across 15 independent runs per condition.
+\paragraph*{The $\sigma$-trap is reproduced.}
+The baseline arm reaches ID accuracy $90.2 \pm 2.2\%$ while OOD accuracy
+plateaus at $45.9 \pm 4.8\%$ (95\% CI $[43.2, 48.5]$), a compositional
+gap of $44.3$~points: high in-distribution performance with
+near-chance-level---relative to the gap---compositional recombination.
+Per-seed OOD trajectories confirm the plateau: baseline shows no
+inflection (the segmented-regression breakpoint is ill-determined; see
+below), consistent with the model's stable low-$\sigma$ state
+(Proposition~\ref{prop:sigma-critical}).
 
 \begin{table}[htbp]
 \centering
-\caption{\textbf{Experimental results summary.} Mean $\pm$ standard
-deviation over 15 runs.}
-\label{tab:results-summary}
+\small
+\caption{\textbf{Gate results by condition ($n = 15$ per arm, 2000 steps).}
+Raw per-seed distributions are in the companion; per-seed trajectories in
+Figure~\ref{fig:gate-ood}.}\label{tab:gate-results}
 \begin{tabular}{l c c c c c}
 \toprule
-\textbf{Condition} & \textbf{$\text{Acc}_{\text{ID}}$ (\%)} & \textbf{$\text{Acc}_{\text{OOD}}$ (\%)} & \textbf{$n$} \\
+\textbf{Condition} & \textbf{ID mean$\pm$sd} & \textbf{OOD mean$\pm$sd} & \textbf{OOD 95\% CI} & \textbf{OOD median} & \textbf{OOD min--max} \\
 \midrule
-Baseline (standard SGD) & $90.2 \pm 2.3$ & $44.5 \pm 4.7$ & 15 \\
-Σ-Model additive         & $97.0 \pm 1.7$ & $97.0 \pm 6.7$ & 15 \\
-Σ-Model multiplicative   & $97.4 \pm 1.9$ & $94.1 \pm 8.0$ & 15 \\
+baseline & $90.2 \pm 2.2$ & $45.9 \pm 4.8$ & $[43.2, 48.5]$ & 45.3 & 37.5--55.3 \\
+fixed-weight & $98.1 \pm 1.7$ & $98.9 \pm 3.6$ & $[97.0, 100.9]$ & 100.0 & 86.1--100.0 \\
+additive $\sigma$-modulated & $97.8 \pm 1.9$ & $98.9 \pm 2.4$ & $[97.6, 100.3]$ & 100.0 & 92.0--100.0 \\
+multiplicative $\sigma$-modulated & $97.3 \pm 2.3$ & $94.0 \pm 8.9$ & $[89.0, 98.9]$ & 100.0 & 73.7--100.0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Baseline compositional gap:} $45.6\%$ (SCAN target: 64--83\%).
-The gap is meaningful and consistent with prior literature.
-
-\subsection{Statistical Tests}
-
-All tests use Welch's $t$-test with Bonferroni-corrected
-$\alpha = 0.00625$ (8 predictions).
+\paragraph*{Compositional-loss exposure closes the gap; the
+$\sigma$-scheduling adds nothing.}
+All three compositional-loss conditions far exceed baseline OOD
+(Table~\ref{tab:gate-welch}; $d \geq 6.7$, all $p < 10^{-14}$). The
+headline comparison is fixed-weight vs.\ additive: $\Delta =
+-0.01$~pp, Welch $p = 0.99$, $d = -0.00$ --- a plain constant-weight
+compositional loss \emph{matches} the full $\sigma$-modulated curriculum
+exactly. Multiplicative is marginally (non-significantly) lower
+($p = 0.059$ vs.\ fixed-weight; $p = 0.053$ vs.\ additive). Two
+consequences follow, consistent with the gate verdict: (i)~the
+$\sigma$-scheduling is not necessary for the OOD outcome --- exposure
+to compositional loss is what matters; (ii)~the model's empirical value
+is \emph{descriptive}: it characterises the trajectory (stable trap in
+baseline, phase-2 acceleration under comp exposure) rather than
+explaining why the scheduled intervention wins, because it does not.
 
 \begin{table}[htbp]
 \centering
-\caption{\textbf{Pairwise comparisons on OOD accuracy.}}
-\label{tab:statistical-tests}
 \small
-\begin{tabular}{l c c c c l}
+\caption{\textbf{Welch $t$-tests on final OOD accuracy (per comparison).}
+No pooled aggregate effect size is used.}\label{tab:gate-welch}
+\begin{tabular}{l r r r r r}
 \toprule
-\textbf{Comparison} & \textbf{$t(df)$} & \textbf{$p$} & \textbf{Cohen's $d$} & \textbf{$\Delta$ (pp)} & \textbf{Result} \\
+\textbf{Pair (OOD)} & \textbf{$\Delta$ (pp)} & \textbf{$t$} & \textbf{df} & \textbf{$p$} & \textbf{Cohen's $d$} \\
 \midrule
-Baseline vs.\ Additive & $-24.875\,(25.2)$ & $<0.0001$ & $9.084$ & $52.5$ & \checkmark\ SIG \\
-Baseline vs.\ Mult. & $-20.737\,(22.8)$ & $<0.0001$ & $7.571$ & $49.6$ & \checkmark\ SIG \\
-Additive vs.\ Mult. & $1.093\,(27.2)$ & $0.3003$ & $-0.399$ & $-2.9$ & $\times$ NS \\
+baseline vs.\ additive & $+53.07$ & $38.30$ & 20.6 & $1.2\times10^{-20}$ & $13.99$ \\
+baseline vs.\ multiplicative & $+48.11$ & $18.45$ & 21.5 & $1.1\times10^{-14}$ & $6.74$ \\
+baseline vs.\ fixed-weight & $+53.09$ & $34.32$ & 25.9 & $3.8\times10^{-23}$ & $12.53$ \\
+fixed-weight vs.\ additive & $-0.01$ & $0.01$ & 24.5 & $0.99$ & $-0.00$ \\
+fixed-weight vs.\ multiplicative & $-4.98$ & $2.01$ & 18.4 & $0.059$ & $-0.73$ \\
+additive vs.\ multiplicative & $-4.96$ & $2.09$ & 16.0 & $0.053$ & $-0.76$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Both Σ-Model conditions significantly outperform the baseline on OOD
-accuracy (Table~\ref{tab:statistical-tests}). The additive and multiplicative conditions do not differ
-significantly from each other, though the additive condition shows a
-trend toward higher OOD performance.
-
-\paragraph{Power note on non-significant comparison.}
-The pre-registered protocol powered the additive-vs-multiplicative
-comparison at $N = 500$ for a small effect ($d = 0.2$). At $N = 15$,
-achieved power for the observed effect size ($d = -0.399$) is
-approximately $0.18$; the non-significance ($p = 0.300$) is therefore
-uninformative and cannot be interpreted as evidence for the null.
-
-\subsection{Diagnosis: \texorpdfstring{$\sigma_A$}{sigma\_A} Trajectories}
-
-$\sigma_A$ trajectories diverge sharply between conditions.
-Table~\ref{tab:sigma-trajectories} reports initial, mid-training, and
-final $\sigma_A$ values.
-
-\begin{table}[htbp]
+\begin{figure}[htbp]
 \centering
-\caption{\textbf{$\sigma_A$ trajectory statistics.} Averages over 15 runs.
-The baseline $\sigma_A \approx 0$ confirms the $\sigma$-trap
-(Theorem~4.1).}
-\label{tab:sigma-trajectories}
-\begin{tabular}{l c c c c}
-\toprule
-\textbf{Condition} & \textbf{Initial} & \textbf{Mid} & \textbf{Final} & \textbf{$\Delta$} \\
-\midrule
-Baseline     & $0.100$ & $0.098$ & $0.102$ & $+0.002$ \\
-Additive     & $0.047$ & $0.302$ & $0.537$ & $+0.490$ \\
-Multiplicative & $0.062$ & $0.749$ & $0.889$ & $+0.827$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=0.9\textwidth]{figures/figure11-gate-ood.png}
+\caption{\textbf{OOD accuracy trajectories (mean $\pm$ 95\% CI, $n=15$).}
+Baseline plateaus near 45\%; all compositional-loss conditions rise to
+$\approx$95--99\%.}\label{fig:gate-ood}
+\Description{Four-arm OOD trajectory plot with confidence bands. Baseline
+flattens near 45 percent; fixed-weight, additive, and multiplicative rise
+to near 99 percent.}
+\end{figure}
 
-The multiplicative condition reaches substantially higher final
-$\sigma_A$ ($0.889$ vs.\ $0.537$), with a faster mid-training rise
-($0.749$ vs.\ $0.302$). A $t$-test on final $\sigma_A$ confirms the
-trajectories are significantly different ($t = -83.914$, $p < 0.0001$).
+\paragraph*{Phase-transition timing (Prediction~9).}
+Segmented regression on the per-run OOD trajectories (breakpoint
+$\tau$ estimated by least squares over the eval grid, one fit per seed)
+gives, per arm: additive $\hat{\tau} = 542$ (95\% CI $[526, 557]$),
+multiplicative $340$ ($[321, 359]$), fixed-weight $148$ ($[139, 158]$),
+and baseline \emph{ill-determined} (wide CI, no stable inflection;
+Figure~\ref{fig:gate-inflection}). The predicted Phase~2 inflection is
+therefore observable in every compositional-loss condition and absent in
+baseline --- consistent with Prediction~9. As stated in
+Section~\ref{sec:predictions}, this is a descriptive signature: the
+inflection does not license a leading-indicator reading
+(Section~\ref{sec:empirical-validation}).
 
-\subsection{Diagnosis: Loss Modulation Effect Sizes}
-
-Loss modulation achieves target effect sizes:
-\begin{itemize}[nosep]
-\item \textbf{Additive} max effect: $20\%$ (target: $10$--$25\%$)
-\item \textbf{Multiplicative} max effect: $30\%$ (target: $10$--$30\%$)
-\end{itemize}
-Gradient flow checks confirm correct coupling:
-$\frac{\partial \mathcal{L}_{\text{total}}}{\partial \sigma} = -0.20$
-(non-zero $\Rightarrow$ coupling affects training) and
-$\frac{\partial \mathcal{L}_{\text{total}}}{\partial \mathcal{L}_{\text{task}}} = 1.14$
-(near unity $\Rightarrow$ gradients flow correctly).
-
-\subsection{Diagnosis: Phase Transition Timing}
-
-Both conditions enter Phase~2 early enough for the curriculum to
-take effect (Table~\ref{tab:phase-timing}).
-
-\begin{table}[htbp]
+\begin{figure}[htbp]
 \centering
-\caption{\textbf{Phase Transition Timing.} Steps and percentage of
-total training.\protect\footnotemark}
-\label{tab:phase-timing}
-\begin{tabular}{l c c c}
-\toprule
-\textbf{Phase} & \textbf{Additive steps (\%)} & \textbf{Multiplicative steps (\%)} \\
-\midrule
-P0 Pre-Init & $102$ ($17.0\%$) & $59$ ($9.8\%$) \\
-P1 Asymmetric & $0$ ($0.0\%$) & $0$ ($0.0\%$) \\
-P2 Crystallise & $243$ ($40.5\%$) & $286$ ($47.7\%$) \\
-P3 Intersection & $255$ ($42.5\%$) & $255$ ($42.5\%$) \\
-\bottomrule
-\end{tabular}
-\end{table}
-\footnotetext{P4 (Multi-Domain Frontier Navigation) and P5
-(Expanding Frontier) are not listed because no run reached these
-phases within the allocated training budget. Detection of Phase~4
-entry requires $|\mathcal{M}_A(t)| \geq 2$ active intersections with
-$\Psi_A > 0$ sustained for $> k$ timesteps; see
-Proposition~4.3. The full $N = 500$ protocol
-(Section~\ref{sec:empirical-validation}) may yield Phase~4 entries; the pilot
-$N = 15$ does not.}
+\includegraphics[width=0.9\textwidth]{figures/figure13-gate-inflection.png}
+\caption{\textbf{Prediction~9: Phase~2 entry inflection.} Mean OOD
+trajectory of the additive arm with the segmented-regression breakpoint
+($\hat{\tau} \approx 542$ steps).}\label{fig:gate-inflection}
+\Description{OOD trajectory with a vertical dashed line marking the
+segmented-regression breakpoint near step 542.}
+\end{figure}
 
-Both conditions enter Phase~2 early enough for the curriculum to
-take effect (Table~\ref{tab:phase-timing}). The most striking result:
-Phase~1 (Asymmetric Initialisation) duration was zero steps in both
-conditions. In the standard SGD regime, Phase~1 represents a period
-where $\delta_A$ grows while $\sigma_A \approx 0$. The Σ-Model conditions
-bypass this phase entirely because $\sigma_A$-coupling
-\eqref{eq:sigma-ode} is active from the initial training
-step, preventing the untargeted depth accumulation that defines the
-asymmetric state. Activating the $\sigma_A$ target eliminates the
-$\sigma$-trap entry pathway. Phase~2 entry occurs at median step 350
-(additive) and 200 (multiplicative), well before the $35\%$ training
-mark in all runs --- the curriculum has sufficient time to influence
-$\sigma_A$ dynamics.
+\paragraph*{Does measured $\tilde{\sigma}_A$ precede OOD? No.}
+The measured Stage-1 proxy (GCA+RGA fusion) is recorded every 25 steps.
+The dynamic leading test --- partial correlation
+$\tilde{\sigma}_{A,t} \to \text{OOD}_{t+1}$ controlling OOD$_t$,
+training loss, and parameter norm --- gives pooled ODE-guided mean
+$+0.018$ (one-sided $t$, $p = 0.24$): no predictive relationship.
+The crossing-time test is degenerate: $\tilde{\sigma}_A$ starts at its
+normalised maximum (GCA $\approx 0.95$ on the random-initialised model;
+Figure~\ref{fig:gate-sigma}), so the crossing time is zero by
+construction. The scheduled knob reproduces the archived finding
+(leads-fraction $0.00$ in all arms). These results constrain the model
+to its descriptive role (Section~\ref{sec:predictions}).
 
-\subsection{Sensitivity Analysis for Hyperparameters}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/figure12-gate-sigma.png}
+\caption{\textbf{Measured $\tilde{\sigma}_A$ (mean $\pm$ 95\% CI, $n=15$).}
+The proxy starts at its maximum and decays --- the crossing-time test is
+degenerate; the partial-correlation test (text) is decisive.}\label{fig:gate-sigma}
+\Description{Measured sigma-tilde trajectories per arm, starting high and
+decaying.}
+\end{figure}
 
-\textbf{Fusion weights $(w_g, w_r, w_c)$.} Varying $w_g \in [0.2, 0.6]$
-changes $\tilde{\sigma}_A$ estimates by $\leq 3.4\%$,
-indicating robust dependence.
+\paragraph*{Competing-variable check.}
+Final OOD regressed on $[\tilde{\sigma}_{A,\text{final}}$, final loss,
+parameter norm, ID accuracy] (standardised OLS, per arm): the
+$\tilde{\sigma}_A$ coefficient is small or negative everywhere
+(baseline $-0.35$, fixed-weight $+0.04$, additive $-0.12$,
+multiplicative $-0.06$), and the Spearman correlation
+$\rho(\tilde{\sigma}_A, \text{OOD})$ is $+0.13$ or lower except in
+baseline, where it is \emph{negative} ($-0.62$, $p = 0.013$). The
+fused proxy adds no positive predictive value beyond loss/norm/ID ---
+the ``not just $\tilde{\sigma}_A$'' defence the other direction. The
+RGA component alone does track OOD improvement (partial correlation
+$+0.125$, $p \approx 0.005$, pooled ODE arms) --- but equally in the
+fixed-weight arm, which has no $\sigma$ dynamics: it tracks
+compositional-loss exposure, not the $\sigma$-scheduling
+(consequence-of-exposure interpretation).
 
-\textbf{Phase transition thresholds.} Varying $\sigma_{\text{critical}}$
-by $\pm 0.1$ changes Phase~2 entry time by $38$ timesteps.
-
-\textbf{Computational overhead.} Σ-Model training adds $31.6\%$
-wall-clock time vs.\ standard SGD (measurement protocol in the companion).
-
-\subsection{Pre-Registered Benchmark Protocols}\label{sec:benchmark-protocols}
-% CLAIM:C-010 % CLAIM:C-011 % CLAIM:C-012 % CLAIM:C-013 % CLAIM:C-014
-% CLAIM:C-015 % CLAIM:C-016 % CLAIM:C-017 % CLAIM:C-018 % CLAIM:C-019
-
-The five cognitive faculty benchmarks (H-PTB, H-AFB, H-MCB, H-DCB,
-H-STB) are designed to test Predictions~7--8 and the faculty-specific
-predictions (Section~9). Table~\ref{tab:validity} reports their validity
-component targets (design stage). The following hypotheses are
-pre-registered for each track, with execution pending on frontier-model
-API access:
-
-\begin{itemize}[nosep]
-\item \textbf{H-PTB} (Learning): OOD accuracy ratio $\rho_{\text{OOD}}$
-  at $\tau^*$ for GPT-4, Claude~3.5, Gemini~1.5.
-\item \textbf{H-AFB} (Attention): $\hat{\alpha}_A$ at $s=0.80$,
-  $\Delta_{\text{surf}}$ measure of surface-vs-deep attention.
-\item \textbf{H-MCB} (Metacognition): Overall $\hat{\zeta}_A$ score,
-  confidence-accuracy calibration.
-\item \textbf{H-DCB} (Executive): $\hat{\beta}_1$ slope of
-  compositionality benefit, BCR at $\rho=1.0$.
-\item \textbf{H-STB} (Social cognition): ROI$_{\text{Schema}}$,
-  $\hat{\mu}_{AB}$ theory-of-mind accuracy.
-\end{itemize}
+\paragraph*{Circularity.}
+The Stage-2 diagnostic $\hat{\sigma}_A = \text{Acc}_{\text{OOD}} /
+\text{Acc}_{\text{ID}}$ is defined from the same accuracies it
+describes; it is used here \emph{post-hoc} only, as a descriptive
+summary, and never as a training signal or as evidence for a causal
+relationship. All training-time statements in this paper use the
+Stage-1 proxy $\tilde{\sigma}_A$ (companion).
 
 \noindent\rule{\linewidth}{0.4pt}
 
 % ============================================================
-\section{Scope, Open Questions, and Extensions}\label{sec:limitations}
+\section{Scope, Open Questions, and Claim Status}\label{sec:limitations}
 % ============================================================
 
-Every formal framework has boundaries. We delineate three categories: what we cannot yet measure, what we have assumed away, and what remains mathematically not yet established.
+\subsection{Claim status}\label{sec:claim-status}
 
-\subsection{Scope and Applicability Boundaries}\label{sec:scope}
-
-\textbf{Measurement constraint ($\sigma_A$ proxy architecture).}
-$\sigma_A(d,t)$ is a latent variable estimated through a two-tier proxy
-architecture (Section~3.1.4). Stage~1 provides training-time operative
-estimates via multi-signal fusion; Stage~2 provides evaluation-time
-ground-truth calibration. Propositions~3.6--3.7 bound the estimator error.
-
-\textbf{Temporal scope ($\sigma_{\text{AI}} \approx 0$ assumption).}
-The assumption $\sigma_{\text{AI}} \approx 0$ is accurate for current
-general-purpose LLMs trained on next-token prediction, but may change
-with architectural or training innovations. The framework must be
-re-evaluated if $\sigma_{\text{AI}}$ becomes non-negligible.
-
-\textbf{Resource requirements.} The Prolific Academic human baseline
-protocol requires $N \geq 200$ participants % CLAIM:C-020 at approximately
-\$800--2,000 per benchmark submission, creating a replication cost
-barrier for independent validation.
-
-\subsection{Outstanding Mathematical Questions}\label{sec:open-questions}
-
-The following properties of the coupled system (\eqref{eq:depth-ode}--\eqref{eq:sigma-ode})
-remain conjectural pending formal analysis:
-
-\textbf{(a) Global existence and uniqueness.} Proposition~3.1
-establishes local existence and establishes forward invariance,
-but a complete proof of global existence for all initial conditions in the
-domain of interest remains under development. \emph{Status: partial
-proof exists, full proof in progress.}
-
-\textbf{(b) Timescale separation conditions.} Proposition~3.3 assumes
-\begin{equation*}
-\epsilon = \frac{\max(\nu_M, \kappa_P, \kappa_I, \kappa_F)}{\min(\eta_{\max}, \rho, \gamma)} \ll 1.
-\end{equation*}
-Rigorous verification of this condition for realistic parameter regimes
-is pending. \emph{Status: assumption plausible from order-of-magnitude
-estimates, formal bounds not yet established.}
-
-\textbf{(c) Stability of phase equilibrium points.} Proposition~4.1
-characterises the transcritical bifurcation at $R_0 = 1$, but full
-stability analysis of all equilibrium classes across the parameter space
-remains incomplete. \emph{Status: local stability known, global
-stability landscape open.}
-
-\textbf{(d) Stochastic extension.} The current deterministic ODE system
-does not account for gradient noise, mini-batch sampling variability,
-or measurement error in proxy estimates. A stochastic differential
-equation extension is developed in Appendix~\ref{app:sde} and is bounded
-as future work for the present empirical claims.
-\emph{Status: formal SDE framework provided (Appendix~\ref{app:sde}); empirical
-validation deferred.}
-
-\par\addvspace{\medskipamount}
-\noindent\textbf{Assumption-Boundary Ledger.}
-Table~\ref{tab:assumptions} maps each major mathematical assumption
-to its formal justification and the appendix or future-work item that
-addresses it.
+Table~\ref{tab:claim-status} separates what is proven in the model,
+what is proven under assumptions, what the gate empirically supports,
+and what remains open (CC.3.7).
 
 \begin{table}[htbp]
 \centering
 \small
-\begin{tabular}{p{3.3cm} p{1.6cm} p{2.8cm} p{3.2cm} p{2.5cm}}
+\caption{\textbf{Claim status.} Every central claim of the paper,
+tagged by epistemic status.}\label{tab:claim-status}
+\begin{tabular}{p{6.2cm} p{3.6cm} p{4.6cm}}
 \toprule
-\textbf{Assumption} & \textbf{Location} & \textbf{Justification} & \textbf{Limitation / Open Question} & \textbf{Addressed In} \\
+\textbf{Claim} & \textbf{Status} & \textbf{Evidence} \\
 \midrule
-Fenichel timescale separation $\epsilon \ll 1$ & Prop~3.3 & Standard singular perturbation theory & $\epsilon$ bounds not empirically calibrated & §12.2(b), Appendix~\ref{app:stability} \\
-Deterministic proxy fusion (companion §R2) & §3.1.4 & First-order Taylor approximation & Nonlinear fusion corrections at $k \gg 1$ & §12.3 \\
-$\hat{\sigma}_A$ Gaussian estimator & Prop~3.6 & CLT over $N$ evaluation samples & Non-Gaussian tails for rare-event benchmarks & §12.1 \\
-Additive-multiplicative coupling forms & Eqs.~\eqref{eq:depth-ode}--\eqref{eq:sigma-ode} & Phenomenological, not first-principles & Could arise from product of more fundamental gating terms & §12.2(c) \\
-Constant rate parameters ($\rho$, $\epsilon_\sigma$, $\gamma$, etc.) & All ODEs & Stationarity assumed over training horizon & Time-varying rates in practice; scheduled hyperparameters create drift & §12.3 \\
-AMSGrad $\equiv$ SGD for analysis & §3.8 & Theoretical equivalence at large step count & Adaptive LR effects on $\sigma_A$ not formally characterised & §12.2(a) \\
-$\sigma_{\text{AI}} \approx 0$ & §12.1 & Accurate for current next-token-prediction LLMs & May change with architectural innovation & §12.1 \\
-Stochastic skeleton sufficiency & Appendix~\ref{app:sde} & LLN over training trajectory smooths mini-batch noise & Fluctuation bounds for finite-batch training not derived & Appendix~\ref{app:sde} \\
+A stable low-$\sigma$ equilibrium exists in the model & proven in model & Prop.~2--3 \\
+Stability of the trap ($\dot{\sigma}_A < 0$ when $R_0 < 1$) & proven under assumptions & Prop.~3 ($\gamma_\sigma$, clamped dynamics) \\
+$\sigma_{\text{critical}}$ transcritical bifurcation at $R_0 = 1$ & proven under assumptions & Prop.~4 \\
+$\sigma$ predicts compositional OOD behaviour & empirically supported (pilot) & gate: comp exposure closes the gap; $\tilde{\sigma}_A$ itself does \emph{not} lead \\
+SGD necessarily produces the $\sigma$-trap & not established & Conjecture~1 unproven; fixed-weight equivalence ($p = 0.99$) \\
+$\sigma$ is a unique construct vs.\ grokking/SLT/shortcut variables & open & sharpness/LLC not measured in the gate \\
+Generalises across architectures and benchmarks & open & single synthetic benchmark, one architecture \\
 \bottomrule
 \end{tabular}
-\caption{\textbf{Assumption-Boundary Ledger.} Each mathematical assumption in the $\Sigma$-Model framework is mapped to its formal justification and the specific appendix or section that addresses its limitations.}\label{tab:assumptions}
 \end{table}
 
-\noindent\textbf{Design principle.}
-The ledger serves a dual purpose: it documents where the current theory is
-complete (justified assumptions with bounded limitations) and where
-further work is needed (open questions with explicit future-work
-references). Reviewers and adopters can thus distinguish structural
-limitations from remediable gaps.
+\subsection{Circularity}
 
-\subsection{Extensions Beyond Current Scope}\label{sec:extensions}
+The Stage-2 diagnostic $\hat{\sigma}_A = \text{Acc}_{\text{OOD}} /
+\text{Acc}_{\text{ID}}$ is defined from the same accuracies it
+describes and is used in this paper \emph{post-hoc} only --- as a
+descriptive summary, never as a training signal and never as evidence
+for a causal relationship. Training-time statements use the Stage-1
+proxy $\tilde{\sigma}_A$ (GCA+RGA; companion).
 
-\textbf{Phase transition training algorithms.} The phase structure
-specifies \emph{when} each transition occurs but not the training
-algorithms that reliably induce transitions. Designing $\sigma_A$-targeting
-curricula remains an open engineering challenge.
+\subsection{Open mathematical questions}
 
-\textbf{Multi-agent collective field dynamics.} The present framework
-treats agent $A$ as the unit of analysis. Full multi-agent systems
-require extending to a collective knowledge field with emergent schema
-dynamics.
-
-\textbf{Parameter calibration.} Multiple rate constants ($\rho$,
-$\epsilon_\sigma$, $\gamma$, $\nu_M$, $\kappa_P$, $\kappa_I$, $\kappa_F$)
-remain unmeasured. The dimensionless parameter groups reduce independent
-parameters but do not eliminate empirical estimation needs.
-
-\par\addvspace{\medskipamount}
-\noindent\textbf{Failure-Mode Analysis.}
-Every framework has failure modes --- conditions under which the core
-mechanism predicts incorrectly. We identify three:
-
-\textbf{(1) Simultaneous proxy failure.} If all three proxy signals
-(GCA, RGA, AC) fail simultaneously --- for example, under adversarial
-training or non-differentiable operations --- $\tilde{\sigma}_A$ is
-uninformative. The framework provides no fallback estimator beyond
-Stage~2 calibration, which requires OOD access.
-
-\textbf{(2) Brittle domain similarity.} The intersection activation
-$\Psi_A$ depends on $\phi(d_1,d_2)$, which is computed from the
-structural overlap of domain frontiers. Incorrect $\phi$ estimates
-produce either false positives (spurious transfer) or false negatives
-(missed intersections). The framework inherits whatever domain structure
-approximation the practitioner provides.
-
-\textbf{(3) Catastrophic miscalibration.} If Stage~1--2 discrepancy
-exceeds the $0.15$ recalibration threshold and remains
-uncorrected, the curriculum uses an erroneous $\tilde{\sigma}_A$ that
-may worsen downstream $\sigma_A$ trajectory. The framework detects
-but does not autonomously recover from persistent miscalibration.
-
-These failure modes are not theoretical edge cases; they define the
-boundary conditions under which the $\Sigma$-Model should \emph{not}
-be applied. A practitioner whose setup triggers any of the above
-should treat $\sigma_A$ estimates as unreliable.
-
-\par\addvspace{\medskipamount}
-\noindent\textbf{Practical Adoption Guide.}
-Before applying the $\Sigma$-Model, verify:
 \begin{enumerate}[nosep]
-\item Can you extract hidden-state activations during training
-  (for GCA/RGA/AC computation)?
-\item Can you compute $\text{Acc}_{\text{OOD}} / \text{Acc}_{\text{ID}}$
-  at evaluation checkpoints (for Stage~2 calibration)?
-\item Do you have a domain similarity metric $\phi(d_1,d_2)$
-  (or a reasonable proxy, such as embedding cosine similarity)?
-\item Can you modulate your loss function by
-  $\lambda_\sigma(1 - \tilde{\sigma}_A)$ or
-  $(1 \pm \text{coupling\_strength} \times \sigma_A)$?
+\item \textbf{Global existence with a time-dependent frontier.}
+  Lemma~2's invariance argument assumes a constant frontier $\Delta$;
+  the moving-boundary condition $\dot{\delta}_A \leq \dot{\Delta}$ at
+  $\delta_A = \Delta(t)$ has not been verified for the gate's parameter
+  regime.
+\item \textbf{Timescale bounds.}
+  The IMEX-RK stability analysis (Appendix~\ref{app:stability}) treats
+  the two-variable core; stiffness bounds as $\sigma_A \to 1$ remain
+  open.
+\item \textbf{Stability landscape beyond the core.}
+  The equilibria of the extended system (breadth, attention,
+  metacognition; companion) and their relation to the core bifurcation
+  are unanalysed.
 \end{enumerate}
-If your setup is missing two or more of these, consider which
-subcomponents can be approximated or whether a simpler
-$\delta_A$-only analysis suffices for your use case.
 
-\noindent\rule{\linewidth}{0.4pt}
-
-% ============================================================
-\subsection*{Reproducibility Statement}
-\addcontentsline{toc}{subsection}{Reproducibility Statement}
-% ============================================================
-
-All experimental results in this paper are reproducible using the provided codebase. The main ODE validation experiment is implemented as a config-driven Jupyter notebook (\path{experiments/h-bar-experiment.ipynb}) whose parameters are defined in \path{experiments/configs/base.yaml}. A minimal reproducible example (\path{scripts/mre_sigma.py}) runs in under 60~seconds on CPU and exercises the full ODE coupling, signal extraction, and loss modulation pipeline. The test suite (\path{tests/}; 31 tests) covers the ODE solver, config loading, and metric functions and is verified via \texttt{pytest} and a standalone smoke test (\path{scripts/smoke_test.py}). All code uses deterministic seeding (\texttt{torch.manual\_\-seed(run\_id * 42 + 7)}, \path{cudnn.deterministic = True}) and is audited for deprecated APIs.
-
-% ============================================================
-\subsection*{Data and Code Availability}
-\addcontentsline{toc}{subsection}{Data and Code Availability}
-% ============================================================
-
-The source code for the $\Sigma$-Model framework, ODE solvers, training pipeline, benchmark protocols, and all analysis scripts is available at \url{https://github.com/basyirin-dev/sigma-model}. SCAN and COGS datasets are bundled in the \texttt{hackathon/} directory; PCFG-SET is generated programmatically. The environment is fully specified via \texttt{requirements.txt}, \texttt{environment.yml}, and a \texttt{Dockerfile} with a Python~3.12 base image and pinned dependencies. A \texttt{Makefile} provides one-command targets: \texttt{make build}, \texttt{make test}, and \texttt{make notebook}.
-
-% ============================================================
-\subsection*{Ethics and Broader Impact}
-\addcontentsline{toc}{subsection}{Ethics and Broader Impact}
-% ============================================================
-
-This work proposes a formal framework for understanding and measuring schema coherence in AI agents. While the intended application is diagnosing and remediating compositional generalisation failure, the ability to systematically cultivate or suppress $\sigma_A$ carries dual-use implications: the same phase-aware curriculum that crystallises compositional schemas could in principle be inverted to enforce rigid representational constraints or block the formation of alternative conceptual structures. We confine the present analysis to diagnostic and remedial uses; the safety and alignment implications of directed $\sigma_A$ control, particularly in multi-agent and human-interaction settings, are important open questions beyond the scope of this paper.
+The adoption guide and the expanded failure-mode catalogue are in the
+companion; they are outside the scope of this paper.
 
 \noindent\rule{\linewidth}{0.4pt}
 
@@ -1299,83 +1039,35 @@ This work proposes a formal framework for understanding and measuring schema coh
 \section{Conclusion}\label{sec:conclusion}
 % ============================================================
 
-The central finding of this paper is that compositional generalisation
-failure is a bifurcation phenomenon, not a capacity or data problem.
-Depth, schema coherence, attentional fidelity, executive control,
-metacognitive self-modelling, and collective schema communication are
-formally independent variables in agent training~--- optimising any
-subset without the others produces systematically predictable failure
-modes. The coupled ODE system admits a transcritical bifurcation at
-$R_0 = 1$ (Theorem~4.1), producing a phase transition from surface
-learning to schema-coherent understanding that standard training
-actively suppresses. Pilot experiments on a synthetic compositional
-benchmark confirm the predicted asymmetry between depth accumulation
-and schema crystallisation: the $\sigma$-trap is real, measurable,
-and avoidable.
+Standard training on a compositional benchmark reliably produces the
+pattern this paper set out to describe: high in-distribution accuracy
+alongside a persistent out-of-distribution gap ($44.3$~points in the
+gate's baseline arm), which compositional-loss exposure closes --- with
+or without the $\sigma$-modulated scheduling ($p = 0.99$). We model this
+behaviour with a two-variable dynamical system --- parametric depth and
+schema coherence --- whose qualitative predictions (a stable low-$\sigma$
+state, a critical threshold, a Phase~2 inflection) are observable in the
+experiment, and whose measured coherence proxy does not precede OOD
+improvement. The model is therefore a \emph{dynamical description} of
+the $\sigma$-trap, not a demonstrated mechanism; whether SGD itself
+instantiates the ODEs is an explicit, open conjecture
+(Conjecture~\ref{conj:sgd-ode}), and the research programme built on it
+is labelled as such.
 
-The most important limitation --- that $\sigma_A$ remains a latent
-variable estimated through proxy metrics --- is also the most urgent
-research opportunity. Closing the measurement gap will unlock targeted
-training curricula that convert every depth-accumulating agent into a
-principled generaliser. We identify four concrete next steps:
-
-\begin{enumerate}[nosep]
-
-\item \textbf{Execute the pre-registered protocol at scale.}
-The five-step benchmark protocol (described in the companion technical
-report) is pre-registered for $N = 500$ training runs per condition. The pilot
-$N = 15$ results provide effect size estimates for power analysis but
-cannot support confirmatory conclusions. The immediate deliverable is
-completing the full $N = 500$ protocol and publishing the results with
-pre-registered decision rules.
-
-\item \textbf{Empirically calibrate rate constants.}
-Seven ODE rate constants ($\rho$, $\epsilon_\sigma$, $\gamma$,
-$\nu_M$, $\kappa_P$, $\kappa_I$, $\kappa_F$) remain unmeasured. We
-propose a systematic calibration protocol: fit the coupled ODE system
-to learning curves from SCAN, COGS, and PCFG-SET benchmarks using
-nonlinear least squares, with profile likelihood confidence intervals
-for each parameter. The dimensionless groups identified in the companion reduce the effective dimensionality, making this
-tractable.
-
-\item \textbf{Develop an open-source $\Sigma$-Model training library.}
-The ODE integration (Algorithm~3.1), signal extraction (GCA, RGA, AC),
-and phase-aware curriculum are currently implemented as standalone
-scripts. A maintainable library with standardised interfaces would
-enable community replication, extension, and adoption across
-architecture families (Transformer, RNN, CNN) and benchmark suites.
-
-\item \textbf{Validate against human behaviour.}
-The Prolific Academic protocol (\S\ref{sec:scope}) specifies $N \geq
-200$ human participants for cross-calibration of $\hat{\sigma}_A$
-estimates. This is essential for establishing whether the proxy
-architecture captures human-interpretable schema coherence or a
-model-specific artefact.
-
-\end{enumerate}
-
-These four steps form a coherent programme: theory-driven measurement
-(N~=~500 protocol) $\rightarrow$ parameter estimation (calibration)
-$\rightarrow$ tool-building (open-source library) $\rightarrow$
-behavioural grounding (human validation). Each step is independently
-valuable and each strengthens the evidential foundation for the next.
-The transition from measuring depth to cultivating coherence is the next
-frontier in training AI agents that not only know more, but understand
-better.
+Three next steps follow. \textbf{(i) Pre-registration at scale:} run
+the $N = 500$ protocol (companion) across the SCAN/COGS/PCFG-SET family
+to test the architecture- and benchmark-generality rows of
+Table~\ref{tab:claim-status}. \textbf{(ii) Direct proxy validation:}
+test the Stage-1 proxy against the Stage-2 diagnostic and against
+competing measures (sharpness, LLC-style probes) --- the open
+``unique construct'' row. \textbf{(iii) The SGD--ODE connection:} seek
+a derivation or a sharper falsification of Conjecture~1, which
+determines whether the descriptive model can be upgraded to a
+mechanistic one.
 
 \noindent\rule{\linewidth}{0.4pt}
 
 % ============================================================
-% Bibliography
-% ============================================================
-\small
-\bibliography{bibliography}
-
-% ============================================================
-% Appendix A --- Notation Table
-% ============================================================
-\appendix
-\clearpage
 \section{Notation Reference}\label{app:notation}
 
 \begin{center}
