@@ -5,6 +5,14 @@
 **Dependencies**: P05 blueprint
 **Output**: manuscript §§1–3, 7, 9 restructured
 **Executor**: Agent (LaTeX edits) + user review at the §3 checkpoint
+**Status**: ✅ Complete — §§1–3, 7, 9 rewritten per the blueprint; §§4–6 and §8 removed (content preserved in `paper/companion/removed-sections-draft.tex`); §3 checkpoint passed (3 reviews, PROCEED); build clean
+
+## Result (2026-08-16)
+
+- **§1** rewritten (title A applied, one research question, three verdict-consistent contributions, companion pointer); **§2** rewritten (four literatures + re-anchored positioning + competing-variable sentence; 3 competitor citations added to the bib).
+- **§3** = two-variable core: phenomenological statement + Conjecture 1 (SGD↔ODE) with status paragraph; δ_A/σ_A definitions; mastery/decay; depth + σ ODEs; Lemmas 1–2, Props 2–4 (σ_critical transcritical bifurcation); numerical-integration note. Review fixes applied: σ*_C corrected to (1/γ)(1−R₀⁻¹) (removed inherited internal contradiction), Prop 3 strengthened to global stability, Prop 4 transversality corrected, moving-threshold note added.
+- **§7** = Phases 0–2 + bifurcation relation + empirical inflection signature; **§9** = Prediction 9 flagship (descriptive wording).
+- **§§4–6, §8** deleted; all dangling refs fixed; label audit: exactly one `??` (abstract → `eq:lr-modulation`, deferred to P08). `make pdf` builds (30 pp, pre-P07 length).
 
 ## Purpose
 
