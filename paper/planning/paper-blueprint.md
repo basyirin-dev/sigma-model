@@ -289,12 +289,13 @@ benchmark protocol), §9's predictions 1–8/H6/M1, phases 3–5, faculty–vali
 
 ## 11. Approval
 
-**Status: drafted — awaiting user approval** (P05 exit criterion).
+**Status: ✅ approved by user (2026-08-16)** — P05 exit criterion met.
 
-- [ ] **User approval** — this blueprint is the contract P06–P09 execute against. Approval
-      also confirms the title pick: **A** (recommended) / **C** (fallback) — B is rejected
-      by the locked claim level and will not be used.
-- [ ] Approved blueprint committed (this file); P06 may start.
+- [x] **User approval** — this blueprint is the contract P06–P09 execute against. Title pick
+      confirmed by the user: **A** ("The σ-Trap: A Dynamical Model of Schema-Coherence
+      Suppression in Compositional Generalisation"); C retained as documented fallback; B
+      rejected by the locked claim level and will not be used.
+- [x] Approved blueprint committed (this file); P06 may start.
 
 
 

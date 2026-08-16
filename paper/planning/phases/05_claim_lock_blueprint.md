@@ -5,7 +5,7 @@
 **Dependencies**: P04 (gate result), P00 (claim ledger), P03 (novelty audit)
 **Output**: `paper/planning/paper-blueprint.md` — user-approved
 **Executor**: Agent (drafts) + user (approval)
-**Status**: 🔶 Drafted — `paper/planning/paper-blueprint.md` complete (taxonomy mapping, gate-number refresh, decide resolutions, relabeling plan + Conjecture 1, title decision, section blueprint, claim-status skeleton, circularity decision, page budget); **awaiting user approval** before P06
+**Status**: ✅ **Approved by user (2026-08-16)** — P05 complete; blueprint is the contract for P06–P09; P06 may start
 
 ## Draft result (2026-08-16)
 
