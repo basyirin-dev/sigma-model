@@ -5,6 +5,15 @@
 **Dependencies**: P04 (gate result), P00 (claim ledger), P03 (novelty audit)
 **Output**: `paper/planning/paper-blueprint.md` — user-approved
 **Executor**: Agent (drafts) + user (approval)
+**Status**: 🔶 Drafted — `paper/planning/paper-blueprint.md` complete (taxonomy mapping, gate-number refresh, decide resolutions, relabeling plan + Conjecture 1, title decision, section blueprint, claim-status skeleton, circularity decision, page budget); **awaiting user approval** before P06
+
+## Draft result (2026-08-16)
+
+- Verdict lock encoded throughout: phenomenological/descriptive; no mechanistic or leading-indicator wording in any kept section.
+- Title: **A recommended** ("The σ-Trap: A Dynamical Model of Schema-Coherence Suppression in Compositional Generalisation"), C fallback, B rejected.
+- Page budget ≈ 14 pp (main ≈ 12.75 + appendix ≈ 1.25), within TMLR norms; §12 claim-status skeleton includes "σ is a unique construct — open" and the negative leading result.
+- Circularity: σ̂_A post-hoc only, stated plainly; Stage-1 proxies one-sentence-referenced to the companion.
+- Approval marker: see `paper/planning/paper-blueprint.md` §11 (to be ticked by the user).
 
 ## Purpose
 
