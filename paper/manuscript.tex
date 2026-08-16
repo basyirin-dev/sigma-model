@@ -156,7 +156,10 @@ the task rather than surface statistics. When training optimises
 $\delta_A$ without $\sigma_A$, agents can enter a stable low-coherence
 state in which in-distribution performance is high but compositional
 competence is not acquired. We call this stable state the
-\textbf{$\sigma$-trap}.
+\textbf{$\sigma$-trap}. The mechanism is one of \emph{non-formation}
+rather than active destruction: coherence simply fails to accumulate,
+because the low-coherence state is locally stable --- the title's
+``suppression'' denotes this stalling dynamic.
 
 The two-variable dynamical model developed in Section~\ref{sec:core-framework}
 is \emph{phenomenological}: the ordinary differential equations are
@@ -396,9 +399,17 @@ recombination), and only the latter exhibits high $\sigma_A$.
 Operationally, $\sigma_A$ is measured at training time by the Stage-1
 proxies --- gradient-composition alignment (GCA), representational-
 geometry alignment (RGA), and augmentation consistency (AC) --- fused as
-$\tilde{\sigma}_A$; the full protocol, the two-stage calibration, and
-the estimation bounds are given in the companion technical report and
-referenced here in one sentence. The Stage-2 diagnostic
+$\tilde{\sigma}_A$. Concretely, GCA computes the cosine alignment
+between per-step parameter gradients and a compositional reference
+direction derived from the task's recombination rules; RGA scores the
+similarity (CKA-style) between the representational geometry of
+training inputs and of their compositional recombinations; and AC
+measures prediction consistency under primitive-substitution
+augmentation. The three signals are normalised to $[0,1]$ and combined
+as a weighted average; the gate experiment used the two-signal GCA+RGA
+sub-fusion, and the full three-signal protocol, its two-stage
+calibration, and the estimation bounds are given in the companion
+technical report --- of which the sketch above is a brief summary. The Stage-2 diagnostic
 $\hat{\sigma}_A = \text{Acc}_{\text{OOD}}/\text{Acc}_{\text{ID}}$ is
 defined from the same accuracies it describes and is used in this paper
 \emph{post-hoc} only, as a descriptive summary of the measured gap ---
@@ -412,6 +423,8 @@ both sufficient depth and sufficient schema coherence:
 \begin{equation}\label{eq:mastery-set}
 M_A(t) = \{d \in D : \delta_A(d,t) > \theta_{\delta} \cdot \Delta(d,t) \text{ AND } \sigma_A(d,t) > \theta_{\sigma}\}
 \end{equation}
+with $\theta_{\delta}, \theta_{\sigma} \in [0,1]$ the depth and
+coherence mastery thresholds (Appendix~\ref{app:notation}).
 
 Learned structure decays, and schema coherence protects against decay:
 \begin{equation}\label{eq:effective-decay}
@@ -435,6 +448,8 @@ with learning efficiency in Gompertz form:
 \begin{equation}\label{eq:gompertz}
 \eta(d,t) = \eta_{\text{max}} \cdot \exp(-a \cdot \exp(-b \cdot \delta_A^{\text{relative}}(d,t)))
 \end{equation}
+where $\eta_{\max}$ is the maximal learning efficiency and
+$a, b > 0$ shape the Gompertz curve (Appendix~\ref{app:notation}).
 Depth grows when learning efficiency and time-on-task are large, and
 decays when schema coherence is low (little protection from forgetting).
 
@@ -482,7 +497,9 @@ interval $[0, T_{\max})$ with $T_{\max} > 0$.}
 
 \textbf{Lemma 2 (Forward Invariance and Boundedness).}
 % relabelled from Prop 3.2
-\emph{$\mathcal{X}$ is forward-invariant under the dynamics: if
+\emph{$\mathcal{X}$ is forward-invariant under the clamped dynamics
+(the upper bound $\sigma_A = 1$ is enforced by the solver's boundary
+clipping; see the proof in Appendix~\ref{app:proofs}): if
 $\mathbf{x}_A(0) \in \mathcal{X}$, then $\mathbf{x}_A(t) \in \mathcal{X}$
 for all $t \in [0, T_{\max})$. If $\Delta_{\max} < \infty$, then
 $T_{\max} = \infty$ (global existence).}
@@ -564,6 +581,22 @@ the phase trigger on this moving threshold.
 Figure~\ref{fig:bifurcation} illustrates the bifurcation structure and
 the $(\delta_A, \sigma_A)$ phase portrait with the three equilibria.
 
+\begin{figure}[htbp]
+\centering
+\resizebox{0.95\textwidth}{!}{\input{figures/figure7-bifurcation}}
+\caption{\textbf{Bifurcation structure and phase portrait.}
+(a) Transcritical bifurcation at $R_0 = 1$: the $\sigma_A = 0$ branch
+loses stability and the $\sigma_A > 0$ branch emerges. $R_0 < 1$
+produces the $\sigma$-trap. (b) Two-dimensional phase portrait in
+$(\delta_A, \sigma_A)$ space showing the three equilibrium classes
+($E_0$, $E_S$, $E_C$) and representative training trajectories.
+Standard SGD falls into the surface-learning equilibrium $E_S$;
+$\sigma_A$-coupled training reaches the schema-coherent equilibrium
+$E_C$.}
+\Description{Two-panel figure. Panel (a): Bifurcation diagram showing sigma_A vs R_0. A solid line shows stable sigma=0 branch for R_0<1, which becomes dashed (unstable) after R_0=1. A stable positive-sigma branch emerges after the transcritical bifurcation point. Panel (b): 2D phase portrait in delta_A-sigma_A space with three equilibria marked (E_0 origin, E_S surface-learning trap at high delta/low sigma, E_C target at high delta/high sigma), delta and sigma nullclines, and two representative trajectories (SGD falls to E_S, sigma-coupled reaches E_C).}
+\label{fig:bifurcation}
+\end{figure}
+
 \subsection{Numerical Integration}\label{sec:numerical-protocol}
 
 The two-variable system is integrated with the phenomenological solver
@@ -588,6 +621,19 @@ phases are defined by the bifurcation structure of
 Section~\ref{sec:core-framework}, not by retrospective loss-curve
 observation: each phase boundary is a qualitative threshold of the
 $\sigma_A$ dynamics (Figure~\ref{fig:phases}).
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{\input{figures/figure3-phases}}
+\caption{\textbf{The Phase 0--2 training arc.} Parametric depth
+($\delta_A$) accumulates in Phase~1; Phase~2 is triggered when schema
+coherence ($\sigma_A$) crosses the moving threshold
+$\sigma_{\text{critical}}(t)$ --- the $R_0 = 1$ transcritical
+bifurcation of Proposition~4. The shaded region beyond Phase~2
+(P3--P5) is treated in the companion.}
+\Description{A time-series plot with Training Time on the x-axis and Normalised Value [0,1] on the y-axis. Three curves: delta_A_relative (solid black logistic curve), sigma_A (solid blue, crosses sigma_critical at a red star marker at the Phase 1-2 boundary then rises sharply). Background shading delineates the phases. A phase bar below labels each phase; the region beyond Phase 2 is shaded grey and labelled as treated in the companion.}
+\label{fig:phases}
+\end{figure}
 
 \subsection*{Phase~0 --- Pre-Domain Initialisation}
 
@@ -671,7 +717,7 @@ characteristic Phase~2 acceleration pattern.
 segmented (piecewise-linear) regression on the per-run OOD accuracy
 trajectory, with the breakpoint $\hat{\tau}$ estimated from the data:
 \[
-\text{OOD}(t) = \beta_0 + \beta_1\, t + \beta_2\, (t - \tau)_+ + \varepsilon_t,
+\text{OOD}(t) = \beta_0 + \beta_1\, t + \beta_2\, (t - \tau)_+ + e_t,
 \qquad (x)_+ = \max(0, x),
 \]
 where $\tau$ is the Phase~2 entry time and a significant positive
@@ -736,7 +782,7 @@ steps; the full experimental protocol and hyperparameters are in
 Section~\ref{sec:empirical-validation}.
 
 \paragraph*{Power.}
-Effect sizes are reported per comparison (CC.3.6); no pooled aggregate
+Effect sizes are reported per comparison; no pooled aggregate
 $d$ is used. For the primary comparison --- baseline vs.\ additive OOD
 accuracy --- the observed effect is $d \approx 14.0$
 (pooled $\sigma \approx 3.8$~pp), giving $> 99.9\%$ power at
@@ -868,7 +914,15 @@ $+0.018$ (one-sided $t$, $p = 0.24$): no predictive relationship.
 The crossing-time test is degenerate: $\tilde{\sigma}_A$ starts at its
 normalised maximum (GCA $\approx 0.95$ on the random-initialised model;
 Figure~\ref{fig:gate-sigma}), so the crossing time is zero by
-construction. The scheduled knob reproduces the archived finding
+construction. The high initial value is expected rather than
+informative: at random initialisation the gradient is dominated by the
+batch's shared input statistics, so its alignment with any fixed
+reference direction is trivially high, and the alignment then decays as
+parameters specialise to the training distribution. The proxy's
+\emph{level} therefore cannot be read as achieved schema coherence;
+only its \emph{trend} is informative --- which is why the
+partial-correlation test, not the crossing-time test, is decisive here.
+The scheduled knob reproduces the archived finding
 (leads-fraction $0.00$ in all arms). These results constrain the model
 to its descriptive role (Section~\ref{sec:predictions}).
 
@@ -899,11 +953,10 @@ compositional-loss exposure, not the $\sigma$-scheduling
 (consequence-of-exposure interpretation).
 
 \paragraph*{Circularity.}
-The Stage-2 diagnostic $\hat{\sigma}_A = \text{Acc}_{\text{OOD}} /
-\text{Acc}_{\text{ID}}$ is defined from the same accuracies it
-describes; it is used here \emph{post-hoc} only, as a descriptive
-summary, and never as a training signal or as evidence for a causal
-relationship. All training-time statements in this paper use the
+As everywhere in this paper, the Stage-2 diagnostic is used
+\emph{post-hoc} only --- never as a training signal or as evidence for
+a causal relationship; the full statement is in
+Section~\ref{sec:limitations}. All training-time statements use the
 Stage-1 proxy $\tilde{\sigma}_A$ (companion).
 
 \noindent\rule{\linewidth}{0.4pt}
@@ -916,7 +969,7 @@ Stage-1 proxy $\tilde{\sigma}_A$ (companion).
 
 Table~\ref{tab:claim-status} separates what is proven in the model,
 what is proven under assumptions, what the gate empirically supports,
-and what remains open (CC.3.7).
+and what remains open.
 
 \begin{table}[htbp]
 \centering
@@ -930,7 +983,7 @@ tagged by epistemic status.}\label{tab:claim-status}
 A stable low-$\sigma$ equilibrium exists in the model & proven in model & Prop.~2--3 \\
 Stability of the trap ($\dot{\sigma}_A < 0$ when $R_0 < 1$) & proven under assumptions & Prop.~3 ($\gamma_\sigma$, clamped dynamics) \\
 $\sigma_{\text{critical}}$ transcritical bifurcation at $R_0 = 1$ & proven under assumptions & Prop.~4 \\
-$\sigma$ predicts compositional OOD behaviour & empirically supported (pilot) & gate: comp exposure closes the gap; $\tilde{\sigma}_A$ itself does \emph{not} lead \\
+Compositional-loss exposure closes the OOD gap; $\sigma_A$ describes the trajectory & empirically supported (descriptive) & gate: comp exposure closes the gap; $\tilde{\sigma}_A$ itself does \emph{not} lead \\
 SGD necessarily produces the $\sigma$-trap & not established & Conjecture~1 unproven; fixed-weight equivalence ($p = 0.99$) \\
 $\sigma$ is a unique construct vs.\ grokking/SLT/shortcut variables & open & sharpness/LLC not measured in the gate \\
 Generalises across architectures and benchmarks & open & single synthetic benchmark, one architecture \\
@@ -1091,7 +1144,22 @@ $\theta_\delta, \theta_\sigma$ & Parameters & $[0,1]$ & Mastery-set thresholds \
 
 This appendix verifies that the ARS(2,3,2) IMEX Runge--Kutta tableau
 is stable when evaluated at the
-critical equilibria $E_S$ and $E_C$ from Proposition~2.
+critical equilibria $E_S$ and $E_C$ from Proposition~2. The gate
+experiment itself used the fixed-step Euler scheme of
+Section~\ref{sec:numerical-protocol}, whose stability is ensured by
+Lemma~2's boundedness; the analysis below therefore applies to the
+ARS(2,3,2) scheme retained as the numerical-rigour defence.
+
+The Jacobians below describe the slow subsystem of the extended model
+(companion), with state order $(\hat{M}_A, \Xi_A^P, \Xi_A^I)$:
+$\nu_M$ is the tracking gain of the agent's self-model $\hat{M}_A$ of
+its own schema coherence (Extension~4 of the companion), $\xi_M$ the
+shortcut-pressure erosion coefficient acting on that self-model,
+$\kappa_P, \kappa_I$ the executive-control tracking rates of the
+principled-structure and integration channels (Extension~3), and
+$\kappa_{P,\Xi}, \kappa_{I,\Xi}$ the off-diagonal couplings of the
+executive-control subsystem at the schema-coherent equilibrium
+$E_C$.
 
 \subsection{Jacobian at Equilibria}
 
@@ -1246,55 +1314,6 @@ threshold follows from $\sigma_A^* > 0 \iff 1 - R_0^{-1} > 0$. $\square$
 \noindent\rule{\linewidth}{0.4pt}
 
 \clearpage
-% ============================================================
-% Figures
-% ============================================================
-
-
-
-
-
-% --- Figure 3: Phase 0-2 Training Arc ---
-\begin{figure}[htbp]
-\centering
-\resizebox{\textwidth}{!}{\input{figures/figure3-phases}}
-\caption{\textbf{The Phase 0--2 training arc.} Parametric depth
-($\delta_A$) accumulates in Phase~1; Phase~2 is triggered when schema
-coherence ($\sigma_A$) crosses the moving threshold
-$\sigma_{\text{critical}}(t)$ --- the $R_0 = 1$ transcritical
-bifurcation of Proposition~4.}
-\Description{A time-series plot with Training Time on the x-axis and Normalised Value [0,1] on the y-axis. Three curves: delta_A_relative (solid black logistic curve), sigma_A (solid blue, crosses sigma_critical at a red star marker at the Phase 1-2 boundary then rises sharply). Background shading delineates the phases. A phase bar below labels each phase.}
-\label{fig:phases}
-\end{figure}
-
-
-
-
-
-
-
-% --- Figure 7: Bifurcation and Phase Portrait ---
-\begin{figure}[htbp]
-\centering
-\resizebox{0.95\textwidth}{!}{\input{figures/figure7-bifurcation}}
-\caption{\textbf{Bifurcation structure and phase portrait.}
-(a) Transcritical bifurcation at $R_0 = 1$: the $\sigma_A = 0$ branch
-loses stability and the $\sigma_A > 0$ branch emerges. $R_0 < 1$
-produces the $\sigma$-trap. (b) Two-dimensional phase portrait in
-$(\delta_A, \sigma_A)$ space showing the three equilibrium classes
-($E_0$, $E_S$, $E_C$) and representative training trajectories.
-Standard SGD falls into the surface-learning equilibrium $E_S$;
-$\sigma_A$-coupled training reaches the schema-coherent equilibrium
-$E_C$.}
-\Description{Two-panel figure. Panel (a): Bifurcation diagram showing sigma_A vs R_0. A solid line shows stable sigma=0 branch for R_0<1, which becomes dashed (unstable) after R_0=1. A stable positive-sigma branch emerges after the transcritical bifurcation point. Panel (b): 2D phase portrait in delta_A-sigma_A space with three equilibria marked (E_0 origin, E_S surface-learning trap at high delta/low sigma, E_C target at high delta/high sigma), delta and sigma nullclines, and two representative trajectories (SGD falls to E_S, sigma-coupled reaches E_C).}
-\label{fig:bifurcation}
-\end{figure}
-
-
-
-
-
-
 
 % ============================================================
 \bibliographystyle{tmlr}

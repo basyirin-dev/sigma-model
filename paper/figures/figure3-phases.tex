@@ -21,9 +21,7 @@
         \fill[gray!8]  (axis cs:0,0) rectangle (axis cs:1,1.05);
         \fill[white]   (axis cs:1,0) rectangle (axis cs:4,1.05);
         \fill[signalcolor!8]  (axis cs:4,0) rectangle (axis cs:5,1.05);
-        \fill[white]   (axis cs:5,0) rectangle (axis cs:6,1.05);
-        \fill[gray!8]  (axis cs:6,0) rectangle (axis cs:8,1.05);
-        \fill[white]   (axis cs:8,0) rectangle (axis cs:10,1.05);
+        \fill[gray!8]  (axis cs:5,0) rectangle (axis cs:10,1.05);
     \end{scope}
 
     % Threshold Lines
@@ -52,18 +50,14 @@
         \fill[gray!15] (axis cs:0,-0.15) rectangle (axis cs:1,0);
         \fill[signalcolor!6]  (axis cs:1,-0.15) rectangle (axis cs:4,0);
         \fill[signalcolor!12] (axis cs:4,-0.15) rectangle (axis cs:5,0);
-        \fill[signalcolor!6]  (axis cs:5,-0.15) rectangle (axis cs:6,0);
-        \fill[gray!15] (axis cs:6,-0.15) rectangle (axis cs:8,0);
-        \fill[signalcolor!6]  (axis cs:8,-0.15) rectangle (axis cs:10,0);
+        \fill[gray!15] (axis cs:5,-0.15) rectangle (axis cs:10,0);
         \draw[gray!50, thick] (axis cs:0,-0.15) rectangle (axis cs:10,0);
 
         % Phase labels (bold, legible)
         \node[font=\footnotesize\bfseries, text=black] at (axis cs:0.5,-0.075) {P0};
         \node[font=\footnotesize\bfseries, text=black] at (axis cs:2.5,-0.075) {P1};
         \node[font=\footnotesize\bfseries, text=sigmacolor!80!black] at (axis cs:4.5,-0.075) {P2};
-        \node[font=\footnotesize\bfseries, text=black] at (axis cs:5.5,-0.075) {P3};
-        \node[font=\footnotesize\bfseries, text=black] at (axis cs:7.0,-0.075) {P4};
-        \node[font=\footnotesize\bfseries, text=black] at (axis cs:9.0,-0.075) {P5};
+        \node[font=\footnotesize\bfseries, text=gray!60] at (axis cs:7.5,-0.075) {P3--P5 (companion)};
     \end{scope}
 
     % Phase descriptions below bar
@@ -71,9 +65,6 @@
         \node[font=\footnotesize, text=gray!70] at (axis cs:0.5,-0.06) {Init};
         \node[font=\footnotesize, text=gray!70] at (axis cs:2.5,-0.06) {Depth Accel.};
         \node[font=\footnotesize, text=sigmacolor!70] at (axis cs:4.5,-0.06) {Crystallize};
-        \node[font=\footnotesize, text=gray!70] at (axis cs:5.5,-0.06) {Frontier};
-        \node[font=\footnotesize, text=gray!70] at (axis cs:7.0,-0.06) {Multi-Domain};
-        \node[font=\footnotesize, text=gray!70] at (axis cs:9.0,-0.06) {Expand};
     \end{scope}
 
 \end{axis}
