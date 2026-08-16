@@ -5,6 +5,15 @@
 **Dependencies**: P07 draft
 **Output**: framing-passed manuscript + abstract
 **Executor**: Agent + user approval of abstract/title
+**Status**: ✅ Complete (pending user approval of abstract/title) — phenomenological framing verified, overclaims removed, ethics + research-programme paragraphs added, abstract rewritten (215 words), build clean with 0 undefined references
+
+## Result (2026-08-16)
+
+- **Abstract rewritten** (215 words ≤ 250): structured Problem/Method/Results/Conclusion, gate numbers (gap 44.3 pp; fixed-weight = additive, p=0.99; proxy does not precede OOD), phenomenological framing, descriptive conclusion — the last `??` (eq:lr-modulation) is cleared; 0 undefined refs.
+- **Overclaim sweep**: ledger-§E grep list returns zero hits across the whole manuscript (incl. appendices); §1/§3 phenomenological statements verified; three-layer separation clean (§3 Lemmas/Props + Conjecture, §7 Model-vs-SGD boundary, §11 empirical, §12 claim-status table).
+- **Broader Impact** subsection added after §13 (clinical dual-use note, limited scope, no AGI-safety language).
+- **Research-programme** paragraph in §13: foundational hypothesis as a labelled future hypothesis.
+- Title A retained; **user approval of abstract + title** is the remaining exit criterion.
 
 ## Purpose
 

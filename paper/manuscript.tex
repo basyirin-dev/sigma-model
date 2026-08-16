@@ -88,36 +88,37 @@
 \begin{document}
 
 \begin{abstract}
-\textbf{Problem:} Standard gradient-based training pipelines optimise
-parametric depth $\delta_A(d,t)$ without targeting schema coherence
-$\sigma_A(d,t)$ --- an agent's internal organisation around governing
-principles rather than surface statistics. High-depth, low-coherence
-agents fail on OOD recombination that ID metrics miss. Existing
-frameworks do not specify how $\sigma_A$ forms, what suppresses it,
-or how it drives attentional allocation.
+\textbf{Problem:} Agents trained to high in-distribution accuracy on
+compositional benchmarks often fail near-completely on
+out-of-distribution (OOD) recombination. We study this dissociation
+with two quantities: parametric depth $\delta_A$ (fit to the training
+distribution) and schema coherence $\sigma_A$ (organisation around the
+task's compositional structure), which standard training does not
+formally target.
 
-\textbf{Method:} We introduce the \textbf{$\Sigma$-Model}, a coupled
-dynamical-systems framework with three contributions: (i)~the
-$\sigma$-suppression mechanism --- SGD creates a stable
-low-$\sigma_A$ equilibrium (``$\sigma$-trap''), explaining
-high-ID/low-OOD agents (Proposition~4.1); (ii)~a grounded ODE system
-(Eqs.~\eqref{eq:depth-ode},~\eqref{eq:lr-modulation},~\eqref{eq:sigma-ode}) with local existence, invariance, and bifurcation
-analysis (Propositions~3.1--4.4); (iii)~a five-phase training arc
-with empirically detectable Phase-2 entry (Prediction~9). The
-framework formalises five cognitive faculty gaps with executable
-benchmarks~\cite{burnell2026measuringprogressagi} and covers
-attentional fidelity, executive control, metacognition, social
-cognition, and multimodal transfer.
+\textbf{Method:} We posit a two-variable phenomenological ODE model of
+training dynamics --- a depth-growth equation and an autocatalytic
+schema-coherence equation. The model predicts a stable low-coherence
+state (the $\sigma$-trap), a critical threshold
+$\sigma_{\text{critical}}$ marking a transcritical bifurcation, and a
+phase-2 acceleration in OOD accuracy. The mapping from SGD trajectories
+to the ODEs is stated explicitly as Conjecture~\ref{conj:sgd-ode}, an
+unproven modelling assumption: the model is posited, not derived from
+gradient descent.
 
-\textbf{Results:} Pilot experiments ($n = 15$ per condition) confirm
-additive and multiplicative $\sigma_A$ coupling significantly
-outperform naive SGD on OOD accuracy ($d = 9.08$, $7.57$;
-$p < 0.0001$), with Phase~2 entry detected early in training.
+\textbf{Results:} In a four-arm experiment ($n = 15$ per arm, 2000
+steps) on a SCAN-style benchmark, baseline training reproduced the trap
+(ID $90.2\%$, OOD $45.9\%$, gap $44.3$~points). A plain fixed-weight
+compositional loss matched the full $\sigma$-modulated curriculum
+(OOD $98.9\%$ vs.\ $98.9\%$, $p = 0.99$), and the predicted phase-2
+inflection appeared in every compositional-loss condition. The measured
+schema-coherence proxy did not precede OOD improvement (partial
+correlation $\approx 0$).
 
-\textbf{Conclusion:} $\sigma_A$-suppression is the mechanistic origin
-of compositional failure. Capable-agent training must target
-$\sigma_A$ dynamics explicitly --- not merely scale or curriculum
-ordering.
+\textbf{Conclusion:} The $\sigma$-trap is a reproducible behavioural
+pattern that a two-variable dynamical model describes. The claim level
+is descriptive; whether SGD instantiates the posited dynamics remains an
+open conjecture.
 \end{abstract}
 
 \maketitle
@@ -1064,6 +1065,30 @@ competing measures (sharpness, LLC-style probes) --- the open
 a derivation or a sharper falsification of Conjecture~1, which
 determines whether the descriptive model can be upgraded to a
 mechanistic one.
+
+\paragraph*{Research programme.}
+The foundational hypothesis underlying this line of work --- that
+schema-coherence dynamics may be a general mechanism underlying
+transitions from statistical competence to systematic understanding,
+beyond the benchmark studied here --- is stated explicitly as a
+\emph{labelled future hypothesis}, not a claim of this paper. It is the
+programme that the three next steps above are designed to test; nothing
+in the present results licenses it as a conclusion.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+% ============================================================
+\section*{Broader Impact}\label{sec:broader-impact}
+% ============================================================
+
+The training curricula studied here couple the loss to a
+schema-coherence state and improve compositional competence in a
+controlled benchmark. The same mechanism is in principle reversible: a
+curriculum that drives the coherence state below threshold could
+suppress compositional competence while preserving in-distribution
+performance --- a dual-use direction this paper does not develop. The
+results are limited to one synthetic benchmark and one architecture, and
+no claims about deployed systems are made.
 
 \noindent\rule{\linewidth}{0.4pt}
 
