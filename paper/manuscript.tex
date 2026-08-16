@@ -930,9 +930,9 @@ $\tau$ estimated by least squares over the eval grid, one fit per seed)
 gives, per arm: additive $\hat{\tau} = 542$ (95\% CI $[526, 557]$),
 multiplicative $340$ ($[321, 359]$), fixed-weight $148$ ($[139, 158]$),
 and baseline \emph{ill-determined} (wide CI, no stable inflection;
-Figure~\ref{fig:gate-inflection}). The predicted Phase~2 inflection is
-therefore observable in every compositional-loss condition and absent in
-baseline --- consistent with Prediction~9. As stated in
+Figure~\ref{fig:gate-inflection}). The Phase~2 inflection is observed
+in every compositional-loss condition and is not detected in baseline,
+consistent with Prediction~9. As stated in
 Section~\ref{sec:predictions}, this is a descriptive signature: the
 inflection does not license a leading-indicator reading
 (Section~\ref{sec:empirical-validation}).
@@ -1079,7 +1079,13 @@ proxy $\tilde{\sigma}_A$ (GCA+RGA; companion).
   the OOD trajectory) has not been tested formally; the model's
   phase-space content --- a stable trap and an exchange of stability at
   $R_0 = 1$ --- is not expressed by such fits, but the discrimination
-  question itself remains open.
+  question itself remains open. Note that the $\sigma_A$ ODE is itself a
+  logistic-growth equation in projection
+  ($\dot{\sigma}_A = r_{\text{net}}\,\sigma_A - k\,\sigma_A^2$), so an
+  AIC-style comparison of trajectory \emph{shape} against a fitted
+  logistic is not a well-posed discrimination by construction; what
+  remains open is latent-parameter identifiability and the phase-space
+  interpretation, not the goodness of fit of any single curve.
 \end{enumerate}
 
 The adoption guide and the expanded failure-mode catalogue are in the
