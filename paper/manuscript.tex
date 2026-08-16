@@ -46,7 +46,13 @@
 
 % Misc
 \usepackage{enumitem}
+\usepackage{amsthm}
 \providecommand{\Description}[1]{}
+
+% Theorem-like environments (results are hard-numbered to match the blueprint;
+% the conjecture is auto-numbered so \ref resolves correctly).
+\theoremstyle{definition}
+\newtheorem{conjecture}{Conjecture}
 
 % Custom commands
 \newcommand{\R}{\mathbb{R}}
@@ -170,7 +176,7 @@ unproven Conjecture~\ref{conj:sgd-ode}. Under this model, the trap is a
 locally stable low-$\sigma_A$ equilibrium; escape requires crossing a
 critical threshold $\sigma_{\text{critical}}$, which corresponds to a
 transcritical bifurcation of the $\sigma_A$ dynamics at $R_0 = 1$
-(Proposition~\ref{prop:sigma-critical}).
+(Proposition~Proposition~4).
 
 \paragraph*{Research question.}
 Under standard training on compositional benchmarks, high-ID/low-OOD
@@ -326,8 +332,7 @@ description of the behaviour observed in the gate experiment
 principles of gradient-based optimisation. The link between real SGD
 trajectories and the model is an explicit, unproven assumption:
 
-\begin{quote}
-\textbf{Conjecture 1 (SGD--ODE mapping; modelling assumption).}
+\begin{conjecture}[SGD--ODE mapping; modelling assumption]
 \label{conj:sgd-ode}
 For the architecture and training protocol of
 Section~\ref{sec:empirical-validation}, there exist empirical
@@ -340,7 +345,7 @@ conjecture licenses transferring the qualitative predictions of the ODE
 analysis --- existence of a stable low-$\sigma_A$ equilibrium, the
 $\sigma_{\text{critical}}$ crossing, and the Phase~2 inflection --- to
 trained networks.
-\end{quote}
+\end{conjecture}
 
 \noindent\emph{Status.} Conjecture~1 is an assumption, not a result.
 Nothing in this paper asserts that SGD itself instantiates the ODEs; the
@@ -568,7 +573,7 @@ interval, so $\sigma_A$ decreases monotonically to $0$ from any initial
 state in $(0,1]$. $\square$
 
 \textbf{Proposition 4 ($\sigma_{\text{critical}}$ and the Transcritical
-Bifurcation).} \label{prop:sigma-critical}
+Bifurcation).}
 % relabelled from Prop 4.1; main theorem of the narrow paper
 \emph{Define the basic schema growth ratio
 \begin{equation}
@@ -615,7 +620,7 @@ epidemiology: when $R_0 > 1$, one unit of schema coherence generates more
 than one unit of additional coherence --- understanding snowballs. When
 $R_0 < 1$, schemas die out and the agent remains in the trap. Standard
 training keeps $R_0 < 1$ by inflating shortcut-learning pressure
-$\Omega_{SL}$ (Proposition~\ref{prop:sigma-critical}); interventions
+$\Omega_{SL}$ (Proposition~Proposition~4); interventions
 that raise $R_0$ above $1$ --- in the gate experiment, exposure to
 compositional loss --- make the coherent equilibrium stable.
 
@@ -664,7 +669,7 @@ dynamics.
 First sustained depth investment in candidate domains; $\delta_A$
 growing, $\sigma_A \approx 0$. Under the model, this is the regime in
 which the $\sigma$-trap forms: with $R_0 < 1$ the low-coherence state
-is globally attracting (Proposition~\ref{prop:sigma-critical}).
+is globally attracting (Proposition~Proposition~4).
 
 \subsection*{Phase~2 --- Depth Acceleration and Schema Crystallisation}
 
@@ -673,7 +678,7 @@ least one mastery candidate, where
 $\sigma_{\text{critical}}(t) = \gamma_\sigma^{-1}\bigl(1 - R_0(t)^{-1}\bigr)$
 (Eq.~\eqref{eq:sigma-critical}) is the \emph{moving} threshold of
 Section~\ref{sec:core-framework}. The trigger is the transcritical
-bifurcation at $R_0 = 1$ (Proposition~\ref{prop:sigma-critical}): when
+bifurcation at $R_0 = 1$ (Proposition~Proposition~4): when
 shortcut-learning pressure declines enough to push $R_0$ above $1$, the
 schema-free equilibrium loses stability and coherence grows toward
 $\sigma_C^* = \min\bigl(\sigma_{\text{critical}}, 1\bigr)$. Phase~2
@@ -684,7 +689,7 @@ performance trajectory.
 
 The Phase~1$\to$2 transition is not an arbitrary threshold: it is the
 transcritical bifurcation of
-Proposition~\ref{prop:sigma-critical}. The phase boundary is the
+Proposition~Proposition~4. The phase boundary is the
 parameter condition $R_0 = 1$; $\sigma_{\text{critical}}$ is the value
 of the emerging branch at the boundary (Section~\ref{sec:core-framework}).
 Because $\Omega_{SL}(d,t)$ and $P_A(d,t)$ are time-dependent, the
@@ -836,7 +841,7 @@ near-chance-level---relative to the gap---compositional recombination.
 Per-seed OOD trajectories confirm the plateau: baseline shows no
 inflection (the segmented-regression breakpoint is ill-determined; see
 below), consistent with the model's stable low-$\sigma$ state
-(Proposition~\ref{prop:sigma-critical}).
+(Proposition~Proposition~4).
 
 \begin{table}[htbp]
 \centering
