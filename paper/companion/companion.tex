@@ -85,7 +85,7 @@
 
 \title{The $\Sigma$-Model: Schema-Coherence Dynamics --- Extended Framework\\
 \large Companion Technical Report (v1.0)}
-\author{Anonymous (narrow paper: ``The $\sigma$-Trap: A Dynamical Model of
+\author{Basyirin Amsyar Basri (narrow paper: ``The $\sigma$-Trap: A Dynamical Model of
 Schema-Coherence Suppression in Compositional Generalisation'')}
 \date{2026-08-16}
 
@@ -234,7 +234,9 @@ continuously during training, not a post hoc summary statistic.
 
 
 
-Figure~the estimation figure of the narrow paper illustrates the two-stage estimation architecture.
+The two-stage estimation architecture --- a Stage-1 training-time proxy calibrated
+against a Stage-2 evaluation-time diagnostic --- is described in
+Section~\ref{sec:proxy} of this report.
 
 \textbf{Proposition 3.6 (Estimator Consistency).} % CLAIM:C-027
 \textit{Let $\delta_\sigma(d,t) = \tilde{\sigma}_A(d,t) - \hat{\sigma}_A(d,t)$
@@ -255,6 +257,20 @@ requirement is that the compositional probe batch is drawn i.i.d. from
 the recombination distribution induced by $G(d)$. $\square$
 
 \textbf{Proposition 3.7 (Error Propagation in ODE System).} % CLAIM:C-028
+\textit{Let $\mathbf{x}(t)$ be the trajectory of the two-variable core under the true
+coherence state and $\hat{\mathbf{x}}(t)$ the trajectory driven by the estimated state
+$\tilde{\sigma}_A$, whose per-step error is bounded by $|\delta_\sigma| \leq \epsilon$
+(Proposition~3.6). Since the right-hand sides of the core ODEs are locally Lipschitz with
+constant $L$ (Lemma~1 of the narrow paper), Gronwall's inequality gives, for all $t$
+within the maximal interval,
+\begin{equation}\label{eq:error-prop}
+\|\mathbf{x}(t) - \hat{\mathbf{x}}(t)\| \leq \frac{\epsilon}{L}\left(e^{Lt} - 1\right).
+\end{equation}
+}
+
+\textit{Proof sketch.} Apply the standard Gronwall argument to the Lipschitz bound on
+the trajectory difference, with the initial error bounded by $\epsilon$ and the
+per-step estimation error bounded via Proposition~3.6's concentration bound. $\square$
 
 \subsection{Implementation Architecture}\label{sec:implementation}
 % ============================================================
@@ -344,7 +360,7 @@ Higher attentional fidelity accelerates learning.
 \State \textbf{Forward pass:} Compute $\mathcal{L}_{\text{task}}$, extract hidden states
 \State \textbf{Signal extraction:} Compute $g_A$, $r_A$, $c_A$ (every $k$ steps)
 \State \textbf{Fuse proxy:} $\tilde{\sigma}_A = w_g g_A + w_r r_A + w_c c_A$
-\State \textbf{Integrate ODE:} Update $(\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A)$ via Algorithm~the integration algorithm
+\State \textbf{Integrate ODE:} Update $(\delta_A, \sigma_A, \alpha_A, \hat{M}_A, \Xi_A)$ via the ODE integration step of this algorithm
 \State \textbf{Compute modulated loss:} $\mathcal{L}_{\text{total}}$ per \eqref{eq:schema-loss}
 \State \textbf{Backward pass:} Compute $\nabla_\theta \mathcal{L}_{\text{total}}$
 \State \textbf{Optimizer step:} Update $\theta$ with $\eta_{\text{effective}}$ per \eqref{eq:lr-modulation}
@@ -357,7 +373,8 @@ Higher attentional fidelity accelerates learning.
 
 
 
-The full training pipeline is shown in Figure~the pipeline figure of the narrow paper.
+The full training pipeline is the single pass of Algorithm~\ref{alg:training-step}
+above, repeated over the training schedule.
 
 \begin{table}[htbp]
 \centering
@@ -637,7 +654,8 @@ the gap between two Σ-Model variables --- the target faculty variable and
 the controlled confound variable.
 
 \textbf{Step~2 --- Design the Contrast Condition.} Construct task sets
-where the two variables dissociate, as illustrated in Figure~the diagnostic figure of the narrow paper. Standard $2\times 2$ factorial for
+where the two variables dissociate (Section~\ref{sec:proxy} develops the diagnostic
+distinction). Standard $2\times 2$ factorial for
 Learning track:
 
 
@@ -831,7 +849,7 @@ every activated intersection opens new $AP_A(t)$ domains.
 % 6.1–6.3, meta-prediction M1, statistical framework — cut to Prediction 9.
 % ======================================================================
 
-Each prediction below is derived from the ODE system and is distinguished from depth-only ($\delta_A$-only) accounts. Predictions~1--8 constitute the eight core pre-registered comparisons; Prediction~9 provides a computational ODE validation, and Meta-Prediction~M1 synthesises the core predictions into an overarching claim about intervention mechanisms. Section~the narrow paper presents pilot data for Predictions~1,~6, and~9.
+Each prediction below is derived from the ODE system and is distinguished from depth-only ($\delta_A$-only) accounts. Predictions~1--8 constitute the eight core pre-registered comparisons; Prediction~9 provides a computational ODE validation, and Meta-Prediction~M1 synthesises the core predictions into an overarching claim about intervention mechanisms. The narrow paper presents pilot data for Predictions~1,~6, and~9.
 
 \subsection{Prediction~1 --- Schema Quality at Intersections}
 Agents with higher $\sigma_A(d,t)$ will produce higher-quality
@@ -1156,8 +1174,11 @@ The five gaps reduce to a single pattern: each literature addresses
 one variable while missing $\sigma_A$. The following table consolidates
 this diagnosis.
 
-\begin{center}
+\begin{table}[htbp]
+\centering
 \renewcommand{\arraystretch}{1.3}
+\caption{Related-literature coverage in terms of the $\Sigma$-Model
+variables.}\label{tab:lit-coverage}
 \begin{tabular}{>{\raggedright}p{3.5cm} >{\raggedright}p{3.5cm} >{\raggedright\arraybackslash}p{6.5cm}}
 \toprule
 \textbf{Literature} & \textbf{Σ-Model Variable Addressed} & \textbf{Σ-Model Variable Missing} \\
@@ -1169,7 +1190,7 @@ Causal/Structured Repr. & $\sigma_A$ target state & $\sigma_A$ developmental tra
 Cognitive Evaluation & Faculty identification & Formal theoretical grounding for benchmark design \\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
 \paragraph{Comparison with Contemporary Frameworks.}
 Table~\ref{tab:framework-comparison} positions Σ-Model relative to recent
@@ -1310,7 +1331,7 @@ only. The SDE extension is a theoretical contribution that:
 \end{itemize}
 Empirical validation of the SDE extension---including estimation of the
 noise covariance entries---is deferred to a dedicated calibration study
-(see \S~the conclusion of the narrow paper, item~2).
+(see the conclusion of the narrow paper, item~2).
 
 \noindent\rule{\linewidth}{0.4pt}
 
@@ -1319,7 +1340,6 @@ noise covariance entries---is deferred to a dedicated calibration study
 
 
 
-\section{The Mechanism-Gate Data}\label{sec:gate}
 \section{The Mechanism-Gate Data}\label{sec:gate}
 
 This section reports the Phase-04 mechanism-gate experiment in full. The
@@ -1338,8 +1358,11 @@ $\frac{1}{2}(\text{GCA} + \text{RGA})$ is recorded every 25 steps
 
 \subsection{Final accuracy}
 
-\begin{center}
+\begin{table}[htbp]
+\centering
 \small
+\caption{Gate results by condition ($n = 15$ per arm, 2000
+steps).}\label{tab:gate-results-companion}
 \begin{tabular}{l c c c c}
 \toprule
 \textbf{Condition} & \textbf{ID mean$\pm$sd} & \textbf{OOD mean$\pm$sd} & \textbf{OOD 95\% CI} & \textbf{OOD median} \\
@@ -1350,7 +1373,7 @@ additive & $97.8 \pm 1.9$ & $98.9 \pm 2.4$ & $[97.6, 100.3]$ & 100.0 \\
 multiplicative & $97.3 \pm 2.3$ & $94.0 \pm 8.9$ & $[89.0, 98.9]$ & 100.0 \\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
 Welch $t$-tests on final OOD: baseline vs.\ additive $t(20.6) = 38.30$,
 $p = 1.2\times10^{-20}$, $d = 13.99$; baseline vs.\ multiplicative
@@ -1393,7 +1416,7 @@ narrow paper are restated (see the narrow paper for the full development):
 \begin{align}
 \label{eq:depth-ode}
 \dot{\delta}_A(d,t) &= f_{\text{learn}}(d,t) \cdot \eta(d,t) \cdot T_A(d,t) - \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)) \cdot \delta_A(d,t) \cdot (1 - r_A(d,t)), \\
-\label{eq:sigma-ode}
+\label{eq:sigma-ode-r}
 \dot{\sigma}_A(d,t) &= \sigma_A(d,t) \cdot \bigl[ \rho \cdot P_A(d,t) \cdot \alpha_A \cdot (1 - \gamma_{\sigma} \cdot \sigma_A(d,t)) - \epsilon_{\sigma} \cdot \Omega_{SL}(d,t) \bigr], \\
 \label{eq:effective-decay}
 \lambda_c^{\text{eff}}(d,t) &= \lambda_c \cdot (1 - \gamma_\sigma \cdot \sigma_A(d,t)), \\

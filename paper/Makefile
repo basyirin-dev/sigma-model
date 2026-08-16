@@ -17,11 +17,13 @@ arxiv: pdf
 	# "Anonymous authors"); see tmlr.sty \if@accepted + \if@preprint branches.
 	sed -i 's/\\usepackage{tmlr}/\\usepackage[accepted,preprint]{tmlr}/' $(ARXIV_DIR)/manuscript.tex
 	cp manuscript.bbl $(ARXIV_DIR)/
-	cp $(PDF_OUT) $(ARXIV_DIR)/
 	cp -r $(FIGURES_SRC) $(ARXIV_DIR)/
 	cp $(BIB_SRC) $(ARXIV_DIR)/
 	cp tmlr.sty tmlr.bst $(ARXIV_DIR)/
 	cp companion/companion.tex companion/companion.bbl companion/companion.bib $(ARXIV_DIR)/companion/
+	# Compile the preprint-option copy so the shipped PDF matches the shipped source
+	# (the canonical paper/manuscript.pdf is the double-blind build and must not ship).
+	cd $(ARXIV_DIR) && pdflatex -interaction=nonstopmode manuscript.tex >/dev/null 2>&1 && pdflatex -interaction=nonstopmode manuscript.tex >/dev/null 2>&1
 	cd $(ARXIV_DIR) && tar czf ../sigma-arxiv-submission.tar.gz \
 		manuscript.tex manuscript.bbl manuscript.pdf bibliography.bib figures/ \
 		tmlr.sty tmlr.bst companion/
