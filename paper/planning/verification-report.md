@@ -137,7 +137,7 @@ restricted to post-hoc descriptive use with circularity statements at each use (
 | Errors | **0** |
 | Undefined references | **0** |
 | Warnings | 3 pre-existing hyperref Unicode warnings (unchanged from P10) |
-| Page count | **19 pages**: main body pp. 1–14 (incl. Broader Impact p. 14), Appendices A–C pp. 15–17, References pp. 18–19 |
+| Page count | **20 pages** (post-P11.5): main body pp. 1–15 (Broader Impact p. 15), Appendices A–C pp. 16–18, References pp. 19–20. The P11.5 review-response pass added ~1 page of hardening text (Proxy status paragraph, logistic-reading defense, H-Bar provenance, conclusion sharpening). Phase 11 build was 19 pages |
 | Blueprint target | ≈ 14 pp (P05 estimate: main ≈ 12.75 + Appendix A ≈ 1.25) — **recorded deviation**: the blueprint predates the split of Appendices B/C and excludes references; current main+appendices = 17 pp, within TMLR norms (no strict limit; typical 15–25 pp). Non-blocking; trim if reviewers push back. |
 | Floats | Figures 1–3 pp. 6–11; Figure 4 (bifurcation) pp. 10–11; Figure 5 (phases) p. 12; Tables 1–3 pp. 9–13 — all in the body before references (DEF-03 fix confirmed working) |
 | Cross-references | All equation/proposition/table/figure `\ref`s resolve; no `??`; figures numbered consistently (bifurcation = Fig 4, phases = Fig 5 after the DEF-03 move) |
@@ -225,5 +225,35 @@ decision (keep "Suppression" with the non-formation clarification — recommende
 retitle before submission).
 
 ---
+
+## 8. Addendum — External Reviewer Simulations and Strategic Responses (post-sign-off, P11.5)
+
+After the Phase 11 sign-off, eight external documents were provided and processed:
+four peer-review-style assessments (A5–A8) and four strategic responses (S9–S12).
+Full finding-by-finding dispositions live in `paper/planning/reviewer-response.md`;
+this addendum records the summary for the Phase 11 record.
+
+- **Assessments**: verdicts ranged from accept (A5), accept/strong revision (A7), to
+  major revision (A6) and narrow-and-strengthen (A8). Consensus: the descriptive claim
+  level, Table 3, and the honest negative results are strengths; the residual risks are
+  the "So what?"/Occam's-razor objection, the p = 0.99 equivalence language, the proxy
+  degeneracy, and single-benchmark scope.
+- **Edits applied (P11.5, `paper/manuscript.tex`)**: §2 novelty softening; "no detectable
+  difference" equivalence wording (abstract/Contribution 2/§7/Table 3); Pivot A (σ-scheduling
+  as causal probe; Ω_SL/R₀ mechanism); Pivot B ("Proxy status" paragraph; RGA exposure
+  tracker; open instrumentation challenge); Pivot C ("Against a purely logistic reading",
+  §3.4; Open Question 4 model selection, §8.3); H-Bar provenance (§6); per-seed-trajectory
+  pointer (Table 1); construct-vs-proxy separation (§3.1.2); conclusion sharpened.
+  Claim level unchanged (descriptive); title unchanged.
+- **Predictive-validation probe**: run on the existing 60 runs under a pre-committed rule
+  (decision record in `reviewer-response.md` §6). Outcome: paper's breakpoints re-verified
+  (fixed 148.3 / mult 340.0 / add 541.7); logistic rate monotone in effective pressure
+  (fixed 0.0210 > mult 0.0115 > add 0.0067) matching the τ ordering; ODE-vs-logistic shape
+  discrimination impossible by construction (σ dynamics logistic-family in projection).
+  Per the pre-committed rule nothing was added to the manuscript; the evidence is recorded
+  for the companion/P13.
+- **Rebuild status**: `make pdf` re-run after the P11.5 edits — 0 errors, 0 undefined
+  references; page count 20 (main pp. 1–15, appendices pp. 16–18, references pp. 19–20),
+  one page above the Phase 11 build due to the hardening text (§4).
 
 *End of Phase 11 verification report.*

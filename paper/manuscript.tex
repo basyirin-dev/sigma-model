@@ -110,8 +110,9 @@ gradient descent.
 \textbf{Results:} In a four-arm experiment ($n = 15$ per arm, 2000
 steps) on a SCAN-style benchmark, baseline training reproduced the trap
 (ID $90.2\%$, OOD $45.9\%$, gap $44.3$~points). A plain fixed-weight
-compositional loss matched the full $\sigma$-modulated curriculum
-(OOD $98.9\%$ vs.\ $98.9\%$, $p = 0.99$), and the predicted phase-2
+compositional loss showed no detectable difference from the full
+$\sigma$-modulated curriculum (OOD $98.9\%$ vs.\ $98.9\%$,
+$p = 0.99$), and the predicted phase-2
 inflection appeared in every compositional-loss condition. The measured
 schema-coherence proxy did not precede OOD improvement (partial
 correlation $\approx 0$).
@@ -193,10 +194,11 @@ model at all?
   per arm, 2000 steps) reproduces the trap --- baseline in-distribution
   accuracy $90.2\%$, out-of-distribution $45.9\%$, a gap of $44.3$
   points --- and shows that a \textbf{fixed-weight compositional-loss
-  baseline matches the full $\sigma$-modulated curriculum}
-  (out-of-distribution $98.9\%$ vs.\ $98.9\%$; Welch $p = 0.99$;
-  Section~\ref{sec:empirical-validation}). The $\sigma$-scheduling is
-  not necessary for the model's descriptive value.
+  baseline shows no detectable difference from the full
+  $\sigma$-modulated curriculum} (out-of-distribution $98.9\%$ vs.\
+  $98.9\%$; Welch $p = 0.99$; Section~\ref{sec:empirical-validation}).
+  The $\sigma$-scheduling is not necessary for the model's descriptive
+  value.
 \item \textbf{A negative leading-indicator result and a constructive
   diagnostic.}
   The measured schema-coherence proxy does \emph{not} precede OOD
@@ -220,9 +222,10 @@ The present paper is self-contained and does not rely on it.
 % ============================================================
 
 We review four literatures that bear on compositional generalisation
-failure. None models schema coherence as a dynamical variable with its
-own evolution equation, suppression mechanism, and critical threshold;
-making that gap precise is the purpose of this review.
+failure. To our knowledge, none models schema coherence as a dynamical
+variable with its own evolution equation, suppression mechanism, and
+critical threshold; making that gap precise is the purpose of this
+review.
 
 \subsection{Compositional Generalisation}\label{sec:compositional-generalisation}
 
@@ -239,9 +242,9 @@ mutual-exclusivity training \citep{jiang2022mutualexclusivity}, dataset
 cartography \citep{swayamdipta2020datasetcartography}, and scaling
 \citep{redhardt2025} --- improve in-distribution or lexical performance
 without closing structural recombination gaps. These accounts
-characterise the failure mode or intervene on it; none models the
-coherence of the learned representation as a state variable whose
-dynamics determine when such interventions succeed.
+characterise the failure mode or intervene on it; to our knowledge,
+none models the coherence of the learned representation as a state
+variable whose dynamics determine when such interventions succeed.
 
 \subsection{Grokking and Delayed Generalisation}\label{sec:grokking}
 
@@ -409,7 +412,11 @@ augmentation. The three signals are normalised to $[0,1]$ and combined
 as a weighted average; the gate experiment used the two-signal GCA+RGA
 sub-fusion, and the full three-signal protocol, its two-stage
 calibration, and the estimation bounds are given in the companion
-technical report --- of which the sketch above is a brief summary. The Stage-2 diagnostic
+technical report --- of which the sketch above is a brief summary.
+Throughout, $\sigma_A$ denotes the theoretical construct, $\tilde{\sigma}_A$
+its training-time estimate, and $\hat{\sigma}_A$ the post-hoc diagnostic;
+the construct is not directly observable, and the estimates are
+imperfect (Section~\ref{sec:empirical-validation}). The Stage-2 diagnostic
 $\hat{\sigma}_A = \text{Acc}_{\text{OOD}}/\text{Acc}_{\text{ID}}$ is
 defined from the same accuracies it describes and is used in this paper
 \emph{post-hoc} only, as a descriptive summary of the measured gap ---
@@ -568,6 +575,22 @@ training keeps $R_0 < 1$ by inflating shortcut-learning pressure
 $\Omega_{SL}$ (Proposition~4); interventions
 that raise $R_0$ above $1$ --- in the gate experiment, exposure to
 compositional loss --- make the coherent equilibrium stable.
+
+\noindent\emph{Against a purely logistic reading.} On a single OOD
+trajectory the model's observable signature can resemble an S-shaped
+logistic growth curve, so one may ask why a two-variable ODE is needed
+rather than a three-parameter logistic fit. The difference is
+structural: a logistic curve describes monotonic growth from any
+initial state, whereas the model's content is the phase-space geometry
+--- a \emph{stable} low-coherence equilibrium $E_S$ (the trap, with
+$\dot{\sigma}_A < 0$ when $R_0 < 1$), a coherent attractor $E_C$, and
+an exchange of stability at $R_0 = 1$ (Proposition~4). A fitted sigmoid
+cannot represent the persistent stability of the failure state, nor the
+parameter condition under which that state loses stability; the model's
+predictions concern that geometry rather than the shape of any single
+curve. Whether the gate trajectories formally discriminate the model
+from logistic/Gompertz alternatives is an open question
+(Section~\ref{sec:limitations}).
 
 \noindent\emph{Bifurcation parameter and moving threshold.} The
 bifurcation parameter is $R_0$ crossing $1$; $\sigma_{\text{critical}}$
@@ -767,7 +790,16 @@ are short combinations within the training grammar; out-of-distribution
 (OOD) items are novel recombinations never seen in training (mean
 length 3.3 tokens vs.\ 1.6 in training). Vocabulary size is 27; the
 training set has 16{,}000 examples, the ID test 4{,}000, and the OOD
-test 1{,}500.
+test 1{,}500. Two notes on benchmark choice and provenance. H-Bar is
+deliberately SCAN-like but smaller: its grammar enumerates all
+primitive/modifier/combinator recombinations, so the OOD split is
+compositional by construction (novel combinations of trained primitives)
+rather than merely distributional, and compositional-loss exposure can
+be defined cleanly over the recombination space. The benchmark is
+generated programmatically from the grammar specification in the gate
+configuration; the generator, splits, and analysis scripts are committed
+with the code and the raw per-seed tables are in the companion
+(Section~\ref{sec:empirical-validation}).
 
 \paragraph*{Design.}
 Four conditions, $n = 15$ runs each (2000 steps; seed discipline
@@ -822,8 +854,8 @@ below), consistent with the model's stable low-$\sigma$ state
 \centering
 \small
 \caption{\textbf{Gate results by condition ($n = 15$ per arm, 2000 steps).}
-Raw per-seed distributions are in the companion; per-seed trajectories in
-Figure~\ref{fig:gate-ood}.}\label{tab:gate-results}
+Raw per-seed distributions and full per-seed trajectories are in the
+companion; Figure~\ref{fig:gate-ood} shows means with 95\% CIs.}\label{tab:gate-results}
 \begin{tabular}{l c c c c c}
 \toprule
 \textbf{Condition} & \textbf{ID mean$\pm$sd} & \textbf{OOD mean$\pm$sd} & \textbf{OOD 95\% CI} & \textbf{OOD median} & \textbf{OOD min--max} \\
@@ -842,8 +874,10 @@ All three compositional-loss conditions far exceed baseline OOD
 (Table~\ref{tab:gate-welch}; $d \geq 6.7$, all $p < 10^{-14}$). The
 headline comparison is fixed-weight vs.\ additive: $\Delta =
 -0.01$~pp, Welch $p = 0.99$, $d = -0.00$ --- a plain constant-weight
-compositional loss \emph{matches} the full $\sigma$-modulated curriculum
-exactly. Multiplicative is marginally (non-significantly) lower
+compositional loss shows \emph{no detectable difference} from the full
+$\sigma$-modulated curriculum ($98.9 \pm 3.6\%$ vs.\ $98.9 \pm 2.4\%$;
+we do not claim formal equivalence: no equivalence test was
+pre-registered). Multiplicative is marginally (non-significantly) lower
 ($p = 0.059$ vs.\ fixed-weight; $p = 0.053$ vs.\ additive). Two
 consequences follow, consistent with the gate verdict: (i)~the
 $\sigma$-scheduling is not necessary for the OOD outcome --- exposure
@@ -851,6 +885,14 @@ to compositional loss is what matters; (ii)~the model's empirical value
 is \emph{descriptive}: it characterises the trajectory (stable trap in
 baseline, phase-2 acceleration under comp exposure) rather than
 explaining why the scheduled intervention wins, because it does not.
+Within the model, the mechanism is a drop in shortcut-learning pressure:
+exposure to compositional loss makes surface statistics less predictive
+of the target, lowering $\Omega_{SL}$ and pushing $R_0$ above $1$
+(Proposition~4). The $\sigma$-scheduling therefore served as a
+\emph{causal probe} --- it tests whether dynamic coupling between the
+loss and the coherence state is necessary to escape the trap --- and
+the answer is no: any sufficient pressure on compositional structure
+triggers the same Phase~2 transition.
 
 \begin{table}[htbp]
 \centering
@@ -952,6 +994,21 @@ fixed-weight arm, which has no $\sigma$ dynamics: it tracks
 compositional-loss exposure, not the $\sigma$-scheduling
 (consequence-of-exposure interpretation).
 
+\paragraph*{Proxy status.}
+Taken together, these results show that the fused Stage-1 proxy is
+\emph{not a valid leading indicator in its current form}: its level is
+dominated by the initialisation artefact (GCA $\approx 0.95$ at
+random init), and its trend does not precede OOD improvement. This is a
+measurement limitation, not evidence about the underlying construct ---
+$\sigma_A$ may change before OOD improvement while the proxy fails to
+detect it (a sensitivity failure, not a falsification of the model). The
+one component that does track the transition, RGA, does so equally in
+the arm with no $\sigma$ dynamics, which identifies it as an
+\emph{exposure tracker} (it reports that compositional loss is being
+applied) rather than a coherence meter. Developing a non-circular,
+training-time proxy that reliably tracks $\sigma_A$ prior to OOD takeoff
+remains an open instrumentation challenge (Section~\ref{sec:limitations}).
+
 \paragraph*{Circularity.}
 As everywhere in this paper, the Stage-2 diagnostic is used
 \emph{post-hoc} only --- never as a training signal or as evidence for
@@ -984,7 +1041,7 @@ A stable low-$\sigma$ equilibrium exists in the model & proven in model & Prop.~
 Stability of the trap ($\dot{\sigma}_A < 0$ when $R_0 < 1$) & proven under assumptions & Prop.~3 ($\gamma_\sigma$, clamped dynamics) \\
 $\sigma_{\text{critical}}$ transcritical bifurcation at $R_0 = 1$ & proven under assumptions & Prop.~4 \\
 Compositional-loss exposure closes the OOD gap; $\sigma_A$ describes the trajectory & empirically supported (descriptive) & gate: comp exposure closes the gap; $\tilde{\sigma}_A$ itself does \emph{not} lead \\
-SGD necessarily produces the $\sigma$-trap & not established & Conjecture~1 unproven; fixed-weight equivalence ($p = 0.99$) \\
+SGD necessarily produces the $\sigma$-trap & not established & Conjecture~1 unproven; fixed-weight parity (no detectable difference; $p = 0.99$) \\
 $\sigma$ is a unique construct vs.\ grokking/SLT/shortcut variables & open & sharpness/LLC not measured in the gate \\
 Generalises across architectures and benchmarks & open & single synthetic benchmark, one architecture \\
 \bottomrule
@@ -1016,6 +1073,13 @@ proxy $\tilde{\sigma}_A$ (GCA+RGA; companion).
   The equilibria of the extended system (breadth, attention,
   metacognition; companion) and their relation to the core bifurcation
   are unanalysed.
+\item \textbf{Model selection.}
+  Whether the gate's 80-point trajectories discriminate the two-variable
+  ODE from simpler single-curve descriptions (logistic/Gompertz fits of
+  the OOD trajectory) has not been tested formally; the model's
+  phase-space content --- a stable trap and an exchange of stability at
+  $R_0 = 1$ --- is not expressed by such fits, but the discrimination
+  question itself remains open.
 \end{enumerate}
 
 The adoption guide and the expanded failure-mode catalogue are in the
@@ -1036,7 +1100,10 @@ behaviour with a two-variable dynamical system --- parametric depth and
 schema coherence --- whose qualitative predictions (a stable low-$\sigma$
 state, a critical threshold, a Phase~2 inflection) are observable in the
 experiment, and whose measured coherence proxy does not precede OOD
-improvement. The model is therefore a \emph{dynamical description} of
+improvement. The observed Phase~2 signature is therefore a
+\emph{descriptive} property of the model's phase structure, not
+evidence that $\sigma_A$ is a leading causal variable. The model is a
+\emph{dynamical description} of
 the $\sigma$-trap, not a demonstrated mechanism; whether SGD itself
 instantiates the ODEs is an explicit, open conjecture
 (Conjecture~\ref{conj:sgd-ode}), and the research programme built on it
