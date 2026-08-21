@@ -1,0 +1,77 @@
+# Configuration for Equal-Cumulative-Exposure & Timing Discrimination Matrix
+schema_version: 1
+
+reproducibility:
+  global_seed: 42
+  torch_deterministic: true
+
+data:
+  n_train: 16000
+  n_test_id: 4000
+  n_test_ood: 1500
+  n_comp: 8000
+
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 2
+  dim_ff: 512
+  dropout: 0.1
+  pad_idx: 0
+
+training:
+  lr: 0.001
+  batch_size: 64
+  n_timesteps: 2000
+  eval_every: 25
+  eval_max_batches: 8
+  gradient_clip_norm: 1.0
+  use_amp: true
+  num_workers: 2
+
+experiment:
+  name: "hbar-equal-exposure-matrix"
+  conditions:
+    - "constant_low"
+    - "early_burst"
+    - "late_burst"
+    - "pulsed"
+  n_runs_per_condition: 10
+  save_checkpoints: false
+
+proxy:
+  rga_operators: ["swap_primitives", "swap_modifiers"]
+  rga_n_pairs: 2000
+  rga_n_examples: 256
+  fuse_gca: 0.5
+  fuse_rga: 0.5
+
+# All arms receive the exact same integrated compositional loss (Total = 400 effective units)
+conditions:
+  constant_low:
+    # lambda = 0.2 continuously for 2000 steps (0.2 * 2000 = 400)
+    mode: "constant"
+    comp_weight: 0.2
+    comp_every: 1
+
+  early_burst:
+    # lambda = 1.0 for steps 0 to 400, then 0.0 for steps 400 to 2000 (1.0 * 400 = 400)
+    mode: "window"
+    comp_weight: 1.0
+    start_step: 0
+    end_step: 400
+    comp_every: 1
+
+  late_burst:
+    # lambda = 0.0 for steps 0 to 1600, then 1.0 for steps 1600 to 2000 (1.0 * 400 = 400)
+    mode: "window"
+    comp_weight: 1.0
+    start_step: 1600
+    end_step: 2000
+    comp_every: 1
+
+  pulsed:
+    # lambda = 1.0 applied every 5th step across all 2000 steps (1.0 * 400 = 400)
+    mode: "pulsed"
+    comp_weight: 1.0
+    comp_every: 5

@@ -87,7 +87,7 @@ def compute_gca(
             return 0.5
 
         cos = torch.nn.functional.cosine_similarity(g_main, g_comp, dim=0)
-        return float(((cos.item() + 1.0) / 2.0))
+        return float(min(1.0, max(0.0, (cos.item() + 1.0) / 2.0)))
     finally:
         model.train(was_training)
 

@@ -1,0 +1,60 @@
+# Configuration for 50,000-step Extended Training (Grokking vs Asymptotic Trap Test)
+schema_version: 1
+
+reproducibility:
+  global_seed: 42
+  torch_deterministic: true
+
+data:
+  n_train: 16000
+  n_test_id: 4000
+  n_test_ood: 1500
+  n_comp: 8000
+
+model:
+  d_model: 128
+  nhead: 4
+  num_layers: 2
+  dim_ff: 512
+  dropout: 0.1
+  pad_idx: 0
+
+training:
+  lr: 0.001
+  batch_size: 64
+  n_timesteps: 50000
+  eval_every: 250
+  eval_max_batches: 8
+  gradient_clip_norm: 1.0
+  use_amp: true
+  num_workers: 2
+
+experiment:
+  name: "hbar-grokking-50k"
+  conditions:
+    - "baseline_standard"
+    - "baseline_wd01"
+    - "baseline_wd10"
+  n_runs_per_condition: 5
+  save_checkpoints: false
+
+proxy:
+  rga_operators: ["swap_primitives", "swap_modifiers"]
+  rga_n_pairs: 2000
+  rga_n_examples: 256
+  fuse_gca: 0.5
+  fuse_rga: 0.5
+
+conditions:
+  baseline_standard:
+    weight_decay: 0.0
+    use_curriculum: false
+    comp_weight: 0.0
+  baseline_wd01:
+    weight_decay: 0.01
+    use_curriculum: false
+    comp_weight: 0.0
+  baseline_wd10:
+    weight_decay: 0.1
+    use_curriculum: false
+    comp_weight: 0.0

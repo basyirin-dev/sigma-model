@@ -100,29 +100,54 @@ opencode.json.bak*
 
 # Coverage
 .coverage
+.pytest_cache/
 
 # Python package build
 code/*.egg-info/
+*.egg-info/
 
-# Archived thesis full-text PDFs (large artifacts — not committed)
-archive/thesis/chapters/*/research/pdfs/
-archive/thesis/publications/*/research/pdfs/
-archive/thesis/chapters/*/research/full-text-pdfs/
-archive/thesis/chapters/*/research/full-text-txt/
-archive/thesis/publications/*/research/full-text-pdfs/
-archive/thesis/publications/*/research/full-text-txt/
+# Outreach and personal recruitment kits
+mentor-kit/
 
-# Archived chapter phase-doc build artifacts
-archive/thesis/chapters/*/phases/*.pdf
+# Internal submission handoff and review post-mortems
+paper/submission/UPLOAD-HANDOFF.md
+paper/submission/compliance-checklist.md
+paper/submission/cover-letter.md
+paper/submission/reviewer-summary.md
+paper/planning/
 
-# Archived monograph/publication build outputs
-archive/thesis/publications/*/manuscript.pdf
-archive/thesis/publications/*/protocol.pdf
-archive/thesis/monograph.pdf
+# Local agent configurations
+.agents/
 
-# Phase 04 mechanism gate — raw experiment outputs (never committed)
-output/
+# Historical thesis, decision logs, and legacy archive (prevent double-blind leaks)
+archive/thesis/
+archive/Σ-Align/
+archive/legacy_templates/
+archive/variants/
+archive/kaggle_payloads/
+archive/root/
+archive/submission/
+archive/build/
+archive/arxiv-submission/
+archive/hackathon/
+archive/documentation/
+archive/reference/
+archive/artifacts/
+archive/scripts/
+archive/data/
+archive/paper-jmlr/
+archive/paper-neurips/
+archive/results/
+archive/results_b64/
+archive/experiments/
+archive/tests/
 archive/gate-results/
 
-# Kaggle upload artifact (user-created zip of code/)
-code.zip
+# Archives and bundles
+*.tar.gz
+*.zip
+arxiv-submission/
+
+# Raw experiment output directories
+output/
+

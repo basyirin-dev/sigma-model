@@ -5,39 +5,29 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sigma-align"
 version = "1.0.0"
-description = "Σ-Align — Schema Coherence Framework for AI Alignment and AGI Safety"
+description = "The Σ-Model: A Dynamical-Systems Framework for Compositional Generalization and Schema-Coherence Suppression"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-    { name = "[Anonymous]" },
+    { name = "Basyirin Amsyar Basri" },
 ]
 
 dependencies = [
-    "numpy>=2.0,<3.0",
-    "scipy>=1.14,<2.0",
-    "torch>=2.10,<3.0",
+    "numpy>=1.24,<3.0",
+    "scipy>=1.10,<2.0",
+    "torch>=2.0,<3.0",
     "pyyaml>=6.0,<7.0",
     "tqdm>=4.60,<5.0",
-    "matplotlib>=3.8,<4.0",
-    "seaborn>=0.13,<1.0",
+    "matplotlib>=3.7,<4.0",
+    "seaborn>=0.12,<1.0",
     "pandas>=2.0,<3.0",
-    "pyarrow>=14,<25",
-    "triton>=3.0,<4.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8",
+    "pytest>=8.0",
     "ruff>=0.5",
-    "pre-commit>=3.5",
-    "pip-audit>=2.10",
-    "jupyterlab>=4.0",
-    "ipykernel>=6.0",
-]
-viz = [
-    "plotly>=5.18,<6.0",
-    "kaleido>=0.2.1,<1.0",
 ]
 
 [project.scripts]
@@ -49,10 +39,19 @@ include = ["sigma_align*"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py314"
+target-version = "py310"
+extend-exclude = ["*.ipynb", "archive/*"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["F401", "F811"]
+"code/experiments/*" = ["E402"]
+
 
 [tool.pytest.ini_options]
-testpaths = []
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
