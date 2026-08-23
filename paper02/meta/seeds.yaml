@@ -1,0 +1,30 @@
+# Seed Registry (RPF v2.0 CC.1.8)
+
+**Project:** Paper 02 (*Critical Compositional Pressure & The Two-Subspace Law*)
+**Purpose:** Single source of truth for random-seed provenance. All multi-seed runs derive seeds deterministically from this registry.
+
+## Derivation Rule
+
+- **Default rule (Paper 01 v2 convention):** `seed = run_id * 42 + 7`, where `run_id` is the zero-based run index within an arm/cell.
+- Any deviation from the rule (e.g., P03.1 sub-gate fresh seeds) must be recorded below with provenance.
+
+| seed_id | value | provenance | phase_created | used_in |
+|---------|-------|------------|---------------|---------|
+| seed-000 | 7 (run_id 0) | Derivation rule `run_id*42+7` (Paper 01 v2 convention); deterministic protocol CC.1.2 | P00 | P03 gate (Arm A λ=0.00, run 00) |
+| seed-001 | 49 (run_id 1) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.00, run 01) |
+| seed-002 | 91 (run_id 2) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.05, run 00) |
+| seed-003 | 133 (run_id 3) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.05, run 01) |
+| seed-004 | 175 (run_id 4) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.10, run 00) |
+| seed-005 | 217 (run_id 5) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.10, run 01) |
+| seed-006 | 259 (run_id 6) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.20, run 00) |
+| seed-007 | 301 (run_id 7) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.20, run 01) |
+| seed-008 | 343 (run_id 8) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.30, run 00) |
+| seed-009 | 385 (run_id 9) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.30, run 01) |
+| seed-010 | 427 (run_id 10) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.50, run 00) |
+| seed-011 | 469 (run_id 11) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.50, run 01) |
+| seed-012 | 511 (run_id 12) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.75, run 00) |
+| seed-013 | 553 (run_id 13) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=0.75, run 01) |
+| seed-014 | 595 (run_id 14) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=1.00, run 00) |
+| seed-015 | 637 (run_id 15) | Derivation rule `run_id*42+7` | P00 | P03 gate (Arm A λ=1.00, run 01) |
+
+> **Note:** the 450-run gate grid uses run_id 0–449 (Arm A: 10 λ-levels × 30 seeds; Arm B: 5 t_int × 30 seeds). Only smoke-test seeds (run_id 0–15, 10 executed runs) are pre-registered above; full-grid seeds follow the same rule and are recorded post-execution per CC.1.8. P03.1 sub-gate runs use run_id 450+ (never reused). Rows are appended by the agent as runs execute.

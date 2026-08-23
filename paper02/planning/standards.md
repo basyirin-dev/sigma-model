@@ -9,28 +9,30 @@
 
 ## 1. Compliance Matrix (rows = phases P00–P14, columns = CC.1–CC.7)
 
+> **Reconciled to the rule registry (2026-08-23):** each cell = Required iff ≥1 rule in §2 lists that phase in its `enforcement_phase`. Auto-generation via `scripts/generate_compliance_matrix.py` pending (`TOOLING-PENDING`).
+
 | Phase | CC.1 Repro | CC.2 Numerical | CC.3 Writing | CC.4 Data | CC.5 Release | CC.6 Agentic | CC.7 Ethics |
 |-------|:----------:|:--------------:|:------------:|:---------:|:------------:|:------------:|:-----------:|
-| **P00** | Required | — | — | — | — | Required | — |
+| **P00** | — | — | — | — | Required | Required | — |
 | **P0.5** | — | — | — | — | — | Required | — |
 | **PCC** | — | — | — | — | — | Required | — |
-| **P01** | — | — | Required | — | — | Required | — |
-| **P02** | — | — | Required | — | — | Required | — |
+| **P01** | — | — | — | — | — | Required | — |
+| **P02** | — | — | — | — | — | Required | — |
 | **P02.5** | — | — | — | — | — | Required | — |
-| **P03** | Required | Required | — | Required | — | Required | — |
-| **P03.1** | Required | Required | — | Required | — | Required | — |
-| **P04** | Required | Required | — | Required | — | Required | Required |
-| **P05** | Required | Required | — | Required | — | Required | — |
-| **P06** | Required | Required | — | Required | — | Required | — |
+| **P03** | Required | Required | — | — | — | Required | — |
+| **P03.1** | Required | Required | — | — | — | Required | — |
+| **P04** | — | — | — | Required | — | Required | Required |
+| **P05** | Required | Required | — | — | — | Required | — |
+| **P06** | Required | Required | — | Required | — | Required | Required |
 | **P07** | Required | Required | Required | Required | — | Required | — |
-| **P08** | — | — | Required | — | Required | Required | — |
-| **P09** | — | — | Required | — | Required | Required | Required |
-| **P09.5** | — | — | Required | — | — | Required | — |
-| **P10** | Required | Required | Required | Required | Required | Required | — |
-| **P11** | — | — | Required | — | Required | Required | — |
-| **P11.5** | — | — | Required | — | Required | Required | — |
-| **P12** | — | — | Required | — | Required | Required | — |
-| **P13** | Required | Required | Required | Required | Required | Required | — |
+| **P08** | — | Required | Required | — | Required | Required | Required |
+| **P09** | — | — | Required | — | — | Required | Required |
+| **P09.5** | — | — | — | — | — | Required | — |
+| **P10** | Required | Required | Required | Required | — | Required | — |
+| **P11** | — | — | — | — | Required | Required | Required |
+| **P11.5** | — | — | — | — | — | Required | — |
+| **P12** | — | — | — | — | Required | Required | — |
+| **P13** | Required | Required | — | — | — | Required | — |
 | **P14** | — | — | — | — | — | Required | — |
 
 ---
@@ -106,7 +108,7 @@ Legend: `☐` = open checkbox; `verifiable_by`: `script` (automated) or `human` 
 
 | ID | Rule | Verif. | Enforcement | Origin | Δ |
 |----|------|:------:|-------------|--------|---|
-| CC.6.1 | Conventional commits: `[Tag][Scope][Δ]` with Tag ∈ {P00..P14, ADR, META, FIX}, Scope ∈ phase canonical names (Infrastructure, Research, Standards, Literature, Hypothesis, PreReg, Gate, Design, Implementation, Data, Analysis, Writing, Review, Reconcile, Verification, Package, Preprint, Close, Revision, PostPub), Δ ∈ {INIT, Δ, HOTFIX}. | script | all | RPF §VI / v1 CC.6.1 (updated) | v1 CC.6.1 |
+| CC.6.1 | Conventional commits: `[Tag][Scope][Δ]` with Tag ∈ {P00, P0.5, PCC, P01, P02, P02.5, P03, P03.1, P04, P05, P06, P07, P08, P09, P09.5, P10, P11, P11.5, P12, P13, P14, ADR, META, FIX}, Scope ∈ {Infrastructure, Research, Standards, Literature, Hypothesis, PreReg, Gate, Design, Implementation, Data, Analysis, Writing, Review, Reconcile, Verification, Package, Preprint, Close, Revision, PostPub, Roadmap, Ledger, Docs}, Δ ∈ {INIT, Δ, HOTFIX}. *(Extension beyond the RPF v2.0 scope list: Roadmap/Ledger/Docs added for governance commits, e.g. `[META][Roadmap][Δ]`.)* | script | all | RPF §VI / v1 CC.6.1 (updated) | v1 CC.6.1 |
 | CC.6.2 | Artifact-gated mutation: the agent never silently overwrites or discards a prior-phase artifact without an approved superseding ADR or HUMAN-GATE sign-off. | human | all | v1 CC.6.2 | v1 CC.6.2 |
 | CC.6.3 | Kill-switch conditions: halt + escalate + serialize state on (a) same exit criteria failing 3×, (b) compute >20 % over budget, (c) output contradicting gate binding constraints, (d) ledger↔artifact mismatch >3, (e) gate SLA exceeded without fallback, (f) critical CVE. | human | all | RPF §XI.1 | new |
 | CC.6.4 | State serialization at gates: agent state (phase, task index, ledger snapshot, pending decisions) saved to `experiments/agent-state/<phase>_checkpoint.json` at every HUMAN-GATE. | script | all | RPF §XI.2 | new |

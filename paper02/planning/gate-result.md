@@ -9,11 +9,13 @@
 
 ## 1. Pre-Registered Decision Criteria
 
-- **Criterion 1 (Bifurcation Step Function):** $P(\text{escape} \mid \lambda < \hat{\lambda}_{\text{crit}}) < 0.05$ and $P(\text{escape} \mid \lambda > \hat{\lambda}_{\text{crit}}) > 0.95$.  
+> Criteria quoted verbatim from the P02.5 pre-registration (`planning/preregistration.md` §1–2, which itself matches `phases/P03_GATE.md` Task 3.3). Evaluation is scored against the pre-registration only.
+
+- **Criterion 1 — Sharp Step-Function Escape (primary):** escape := $\text{Acc}_{\text{OOD}} \ge 80\%$; fit $P(\text{escape} \mid \lambda) = \frac{1}{1 + \exp(-k(\lambda - \lambda_{\text{crit}}))}$. **PASS iff** $k \ge 15.0$ and $P(\text{escape} \mid \lambda \le 0.10) < 0.05$ and $P(\text{escape} \mid \lambda \ge 0.50) > 0.95$.  
   **Status:** [Pending]
-- **Criterion 2 (Late-Onset Recovery):** Late intervention at $t_{\text{int}} = 1000$ achieves OOD recovery $\ge 90\%$.  
+- **Criterion 2 — Late-Onset Destabilization of $E_S$:** for $t_{\text{int}} = 1000$ runs (trapped at step 1000, $\text{Acc}_{\text{OOD}} \le 50\%$), switching on $\lambda = 1.0$ reaches final $\text{Acc}_{\text{OOD}} \ge 90\%$ in $\ge 90\%$ of seeds.  
   **Status:** [Pending]
-- **Criterion 3 (Supercritical Asymptotic Parity):** Supercritical arms ($\lambda \ge 0.5$) match fixed-weight loss within TOST $\pm 2.5\%$.  
+- **Criterion 3 — Supercritical Asymptotic Equivalence:** pairwise TOST equivalence among $\lambda \in \{0.5, 0.75, 1.0, 1.5, 2.0\}$ within margin $\pm 2.5\%$ ($p < 0.05$, Bonferroni across 10 pairs).  
   **Status:** [Pending]
 
 ---
