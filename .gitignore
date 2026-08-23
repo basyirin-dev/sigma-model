@@ -40,22 +40,29 @@ Thumbs.db
 *.lot
 
 # Build / Output
-paper/manuscript.pdf
-paper/companion/*.pdf
-paper/submission/*.pdf
-paper/submission/**/*.pdf
-paper/figures/*.png
+paper01/manuscript.pdf
+paper01/companion/*.pdf
+paper01/submission/*.pdf
+paper01/submission/**/*.pdf
+paper01/figures/*.png
+paper02/**/*.pdf
+paper02/**/*.png
+paper02/docs/
+
+# Paper 02 — heavy regenerable artifacts (manifests/configs/scripts ARE tracked; raw outputs re-derivable from run_gate.py)
+paper02/experiments/**/*.pkl
+paper02/experiments/agent-state/
 
 # TMLR submission package — derived copies and build outputs (anonymized sources ARE tracked)
-paper/submission/figures/
-paper/submission/bibliography.bib
-paper/submission/tmlr.sty
-paper/submission/tmlr.bst
-paper/submission/supplementary/companion.bbl
-paper/submission/supplementary/sigma-trap-code-data.zip
-paper/submission/supplementary/code/
-paper/submission/supplementary/configs/
-paper/submission/supplementary/data/
+paper01/submission/figures/
+paper01/submission/bibliography.bib
+paper01/submission/tmlr.sty
+paper01/submission/tmlr.bst
+paper01/submission/supplementary/companion.bbl
+paper01/submission/supplementary/sigma-trap-code-data.zip
+paper01/submission/supplementary/code/
+paper01/submission/supplementary/configs/
+paper01/submission/supplementary/data/
 
 # arXiv bundle — derived (regenerate with make arxiv); README-upload.md IS tracked
 arxiv-submission/manuscript.tex
@@ -86,7 +93,7 @@ archive/**/*.pdf
 
 # macOS junk from the JAIR author kit
 __MACOSX/
-paper/templates/
+paper01/templates/
 
 # Reasonix session state
 .reasonix/
@@ -110,11 +117,11 @@ code/*.egg-info/
 mentor-kit/
 
 # Internal submission handoff and review post-mortems
-paper/submission/UPLOAD-HANDOFF.md
-paper/submission/compliance-checklist.md
-paper/submission/cover-letter.md
-paper/submission/reviewer-summary.md
-paper/planning/
+paper01/submission/UPLOAD-HANDOFF.md
+paper01/submission/compliance-checklist.md
+paper01/submission/cover-letter.md
+paper01/submission/reviewer-summary.md
+paper01/planning/
 
 # Local agent configurations
 .agents/
@@ -150,4 +157,6 @@ arxiv-submission/
 
 # Raw experiment output directories
 output/
+paper02/data/raw/*
+!paper02/data/raw/README.md
 

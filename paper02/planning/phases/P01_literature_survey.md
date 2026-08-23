@@ -8,6 +8,8 @@
 **Executor:** Agent (90%) / Human-Gate (10%)  
 **Deliverables:** `paper02/experiments/literature/survey_table.csv`, `paper02/planning/literature-audit.md` (appended Gap Memo), `paper02/decisions/ADR-004_literature_positioning.md`
 
+**RPF v2.0:** Git tag `p01-survey-done` · RACI: Agent **R** / PI **A** (gap novelty confirmation) · Abort: <20 relevant papers → halt · Acceptance: `survey_table.csv` ≥50 entries (60 ✓, 12/cluster), gap memo appended (`literature-audit.md` §9), ADR-004 committed · **Closed under v1.0.0, migrated 2026-08-23; `[HUMAN-GATE]` novelty approval still pending (exit criterion 4).**
+
 ---
 
 ## 1. Purpose & Scope
