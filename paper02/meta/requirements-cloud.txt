@@ -1,0 +1,40 @@
+# Cloud / GPU Cluster Environment Manifest for Paper 02
+# Target: Python 3.13.x / 3.14.x on CUDA 12.x / Tesla T4 / P100 / A5000
+
+# Core Frameworks
+torch>=2.12.0
+torchvision>=0.27.0
+torchaudio>=2.11.0
+jax[cuda12]>=0.4.35
+optax>=0.2.4
+
+# Dynamical Systems & Autodiff ODE Solvers
+diffrax>=0.6.0
+equinox>=0.11.4
+scipy>=1.14.0
+sympy>=1.13.0
+numpy>=2.0.0
+
+# Manifold Geometry & Representation Metrics
+geomstats>=2.7.0
+scikit-learn>=1.5.0
+
+# Curvature & Hessian Edge-of-Stability Tracking
+curvlinops>=0.3.0
+pyhessian>=0.1.0
+
+# Tabular Data & Graph Representations
+pandas>=2.2.0
+pyarrow>=17.0.0
+networkx>=3.3
+torch-geometric>=2.5.0
+
+# Visualization & Reporting
+matplotlib>=3.9.0
+seaborn>=0.13.0
+tqdm>=4.66.0
+pyyaml>=6.0.2
+
+# Testing & Quality
+pytest>=8.3.0
+ruff>=0.6.0
