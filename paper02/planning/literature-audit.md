@@ -228,4 +228,65 @@ While extensive literature documents grokking, sharpness transitions, and compos
 
 The clustering scopes the proposition — *"No existing framework derives a closed-form critical supervision threshold for compositional representation formation from continuous gradient flow, nor characterizes the resulting transcritical stability exchange"* — to Paper 02's two-subspace formalism, without asserting the absence of related dynamical-systems, grokking, or SLT/EOS work. Full claim-tagged treatment (CC.3.3, CLM-001–007): `planning/methodological-clustering.md`.
 
+---
+
+## 9. Gap-Analysis Memo (P01 Task 1.4)
+
+**Status:** ✅ Drafted (2026-08-23) — pending `[HUMAN-GATE]` novelty approval (§9.6).
+**Inputs:** `experiments/literature/survey_table.csv` (60 entries, 12/cluster) · §5 reviewer critiques (A5–A8, S9–S12) · §6 consensus sweep (Claims 1–6) · §7 gap formulation · §8 methodological clustering (Task 1.3) · `planning/methodological-clustering.md` · `decisions/ADR-001`.
+**Exit criterion (P01 §4, #2):** explicit differentiation against Grokking, SLT, and EOS — satisfied by §8 + this memo.
+
+---
+
+### 9.1 Purpose & Method
+
+**Purpose.** P01 has assembled a 60-entry, 5-cluster curated survey (`survey_table.csv`), an independent consensus sweep over six foundational questions (§6), and a row-cited comparative clustering (§8). This memo consolidates that evidence into a single rigorous statement of the theoretical gap Paper 02 closes, formulates the scoped **Novelty Proposition**, and records the boundary conditions that keep the claim defensible under review. It is the P01 artifact on which the `[HUMAN-GATE]` on novelty positioning (§9.6) and the related-work section of the Paper 02 manuscript will be built.
+
+**Method.** Evidence discipline follows §8 and `methodological-clustering.md`: every statement about a prior work is quoted from its `survey_table.csv` row (`Core_Claim` / `Limitation_Identified`), cited as `rNN` (1-based data row of `survey_table.csv`); full author/year/venue/arXiv/DOI citations for every anchor row are given in `methodological-clustering.md` §2, and identifier resolution was verified programmatically (Task 1.3). Two primary-source details are explicitly flagged (grokking step counts, Paper 01 v2 extended-horizon figures). Paper 02 statements carry CC.3.3 tags: **(T)** model theorem (ADR-001 / CLM-001–002), **(E)** empirical (Paper 01 v2 baselines, `literature-audit.md` §1, or `decide-at-P03`), **(I)** interpretation.
+
+### 9.2 The Gap, Cluster by Cluster
+
+**Grokking & delayed generalization (r13–r16).** The phenomenon is a *spontaneous, unguided* escape from a metastable plateau over $\sim 10^4$–$10^5$ steps on **i.i.d. splits** (r13, flagged primary-source detail). The σ-trap is the opposite regime: an **asymptotically stable equilibrium under standard loss** (E) — OOD arrested at $34.7\%$ at $10\times$ horizon, a $44.3\text{ pp}$ gap (Paper 01 v2, §1.1) — whose escape requires *injected* supercritical pressure $\lambda > \lambda_{\text{crit}}$ (T, CLM-001). The literature models delayed generalization, not stable compositional failure (r13 limitation). **Gap filled:** a threshold law for *when* the trap becomes escapable.
+
+**Singular Learning Theory (r25–r30).** SLT characterizes statistical complexity (RLCT/LLC) across singularity strata; LLC is a *post-hoc diagnostic probe* of basin complexity and does *not* derive escape thresholds (r26 limitation). Paper 02 supplies the deterministic counterpart: transverse stability exchange of representation manifolds under competing gradient fields (T, CLM-001). **Complementary, not contradictory** (I) — no claim disputes RLCT asymptotics (r25).
+
+**Edge of Stability (r37–r40).** EOS tracks progressive sharpening of $\lambda_{\text{max}}(H)$ toward $2/\eta$ — a *step-size* stability boundary in discrete SGD (r37); the row's own limitation: it "does not analyze the competitive transverse stability between shortcut and schema representations." Paper 02's boundary is in *loss-weight* space: $\mu_\perp(\lambda) = \lambda a_C - b_C = 0 \iff \lambda_{\text{crit}} = b_C/a_C$ (T, CLM-001), in the modified-continuous-flow family that r38 shows can represent EOS (I).
+
+**Compositional generalization literature (r49–r55).** Lake & Baroni (r49) and Kim & Linzen (r50) document catastrophic zero-shot OOD failure and supply benchmarks — explicitly *"no dynamical systems explanation or critical threshold law"* (r49 limitation). Curriculum results (r55) show scheduling does not change asymptotics, grounding Paper 02's static-$\lambda$ framing (E, §1.2). Paper 02 takes these benchmarks as premises (CC.4.2 support disjointness) and supplies the missing mechanism (T, CLM-001; E, CLM-003/004 `decide-at-P03`).
+
+**Bifurcations & phase transitions (r1–r11).** The closest-formalism neighbor: transcritical/pitchfork boundaries in toy landscapes (r2), dynamical phases in deep *linear* networks (r4), trajectory bifurcations at generic saddles (r10), BBP spectral transitions (r1), sample-complexity thresholds in two-layer nets (r5). The rows' own limitations leave open (i) task-vs-schema subspace decomposition (r2, r10), (ii) closed-form supervision thresholds (r1, r11), and (iii) compositional sequence architectures (r4, r5). **This cluster is Paper 02's primary citation neighborhood**; the two-subspace transcritical analysis (T, CLM-001) is the direct continuation of its bifurcation program in the compositional setting (I).
+
+### 9.3 Why the Gap Matters: Falsifiability
+
+The gap is not taxonomic: the missing threshold law carries three pre-registered, machine-checkable predictions at the **P03 Mechanism Gate** (E, `decide-at-P03`): (i) a *sharp* escape-probability phase boundary — $P(\text{escape} \mid \lambda < \hat{\lambda}_{\text{crit}}) < 0.05$ and $P(\text{escape} \mid \lambda > \hat{\lambda}_{\text{crit}}) > 0.95$ (CLM-003); (ii) late-onset recovery under supercritical pressure at $t_{\text{int}} = 1000$ reaching $\ge 90\%$ OOD (CLM-004); (iii) supercritical asymptotic parity with fixed-weight loss within TOST $\pm 2.5\%$ (P03 gate Criterion 3; Paper 01 v2 §1.2). Cross-benchmark generality on SCAN, COGS, and H-Bar is in scope (CLM-007, `keep`). A gap whose closure is this directly testable is precisely the kind of claim a reviewer can verify or refute — and precisely the kind of *derivation* Paper 01 reviewers A5–A8 flagged as missing (§5).
+
+### 9.4 Novelty Proposition (verbatim, Phase P01 Task 1.4)
+
+> *"No existing framework derives a closed-form critical supervision threshold for compositional representation formation from continuous gradient flow, nor characterizes the resulting transcritical stability exchange."*
+
+**Scoping (per Task 1.3, `methodological-clustering.md` §4).** The proposition is delimited by its own terms: *closed-form critical supervision threshold*, *continuous gradient flow*, *transcritical stability exchange* — i.e., the two-subspace gradient-flow formalism of ADR-001/CLM-001. It asserts **neither** the absence of any related dynamical-systems, phase-transition, grokking, or SLT/EOS work, **nor** priority over diagnostics (LLC, sharpness) or over discrete-SGD phenomena (EOS oscillations, noise escapes; §6.6 Claim 6). Within those terms, the claim is supported by the surveyed rows' `Limitation_Identified` fields as row-cited in §9.2: none of the anchor works derives such a threshold or characterizes the stability exchange (identifier resolution of all cited rows verified programmatically, Task 1.3).
+
+### 9.5 Boundary Conditions & Non-Claims
+
+- **Not a claim of absence:** phase-transition work in learning exists and is extensive (r1–r11); the proposition claims a *specific closed-form threshold derived from continuous gradient flow in a two-subspace reduction*.
+- **Not a priority claim over SLT/EOS:** RLCT/LLC asymptotics (r25, r26) and EOS sharpening (r37) stand; Paper 02 is complementary (see §9.2 and §8.2 matrix).
+- **Not a denial of empirical failures:** r49/r50 failures are premises, not targets (CC.4.2).
+- **Not a discrete-SGD claim:** the derivation is from continuous gradient flow; finite-step phenomena (EOS regime, §6.6) are outside its scope, addressed only via the modified/subspace continuous-flow family (r38).
+- **Deferred, not claimed:** autonomous grammar discovery (CLM-008) and continual manifold preservation (CLM-009) are deferred to Paper 03; OQ-01–OQ-03 (§4) remain open.
+
+### 9.6 `[HUMAN-GATE]` Novelty Positioning Approval
+
+The Principal Investigator must verify, before Task 1.4 closes P01:
+
+- [ ] No relevant 2025–2026 preprint (beyond the 60-row survey) undermines the scoped proposition as formulated in §9.4.
+- [ ] The differentiation against Grokking, SLT, and EOS (§9.2, §8.2) is accepted as the related-work framing for Paper 02.
+- [ ] ADR-004 (`decisions/ADR-004_literature_positioning.md`) records the chosen positioning and its rationale.
+- [ ] **Verdict:** [Approved / Revisions Required]
+
+### 9.7 Traceability
+
+- **CC.3.3:** (T) statements confined to ADR-001/CLM-001–002; (E) statements cite Paper 01 v2 §1 baselines or carry `decide-at-P03`; (I) statements flagged and grounded in cited rows.
+- **Ledger:** CLM-001 (two-subspace stability exchange, T), CLM-002 ($R_0 = 1$ isomorphism, T), CLM-003/004 (escape boundary / late-onset recovery, E, `decide-at-P03`), CLM-005 (CKA lead-lag, E, `decide-at-P03`), CLM-006 (WGCA, E), CLM-007 (cross-benchmark, E).
+- **Standards:** CC.3.3, CC.6.1 (commit format), CC.6.2 (additive artifact; no prior-phase artifact modified). This memo supersedes nothing; it consolidates §5–§8.
+
 

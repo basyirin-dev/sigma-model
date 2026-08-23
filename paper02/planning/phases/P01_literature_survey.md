@@ -2,7 +2,7 @@
 
 **Phase ID:** P01  
 **Phase Title:** Multi-Domain Systematic Literature Survey, Taxonomy Clustering & Theoretical Gap Isolation  
-**Status:** In Progress (Tasks 1.1–1.3 complete; Task 1.4 + gates pending)  
+**Status:** Tasks 1.1–1.4 complete; `[HUMAN-GATE]` novelty approval pending  
 **Duration:** 2 Days  
 **Dependencies:** PCC  
 **Executor:** Agent (90%) / Human-Gate (10%)  
@@ -60,6 +60,7 @@ Execute an exhaustive, agent-driven literature survey across 5 adjacent fields: 
    - *Vs. Standard Compositional Literature (Lake & Baroni, Kim & Linzen):* Prior work documents empirical failure or proposes heuristic architectures. Paper 02 derives the exact critical threshold condition from gradient flow.
 
 ### Task 1.4: Draft Formal Gap-Analysis Memo
+**Status:** ✅ Complete (2026-08-23) — Gap-Analysis Memo appended as `paper02/planning/literature-audit.md` §9; `paper02/decisions/ADR-004_literature_positioning.md` emitted (Status: Proposed, pending `[HUMAN-GATE]` §9.6). Claim-audited + independently reviewed (verbatim proposition, P03-gate-aligned falsifiability, CC.3.3 tags).
 1. Draft a 3-page rigorous Gap-Analysis Memo and append to `paper02/planning/literature-audit.md`.
 2. Formulate the **Novelty Proposition:**
    > *"No existing framework derives a closed-form critical supervision threshold for compositional representation formation from continuous gradient flow, nor characterizes the resulting transcritical stability exchange."*
@@ -74,9 +75,9 @@ Execute an exhaustive, agent-driven literature survey across 5 adjacent fields: 
 
 ## 4. Machine-Checkable Exit Criteria
 - [x] `paper02/experiments/literature/survey_table.csv` contains $\ge 50$ curated entries across the 5 clusters. *(60 entries, 12 per cluster — verified 2026-08-23)*
-- [ ] Gap-analysis memo appended to `planning/literature-audit.md` with explicit differentiation against Grokking, SLT, and EOS. *(Task 1.3 differentiation landed as `literature-audit.md` §8 + `methodological-clustering.md`; full Gap-Analysis Memo pending Task 1.4)*
-- [ ] `paper02/decisions/ADR-004_literature_positioning.md` committed.
-- [ ] `[HUMAN-GATE]` Novelty positioning approved.
+- [x] Gap-analysis memo appended to `planning/literature-audit.md` with explicit differentiation against Grokking, SLT, and EOS. *(Done 2026-08-23: §9 Gap-Analysis Memo + §8 clustering, row-cited and claim-tagged)*
+- [x] `paper02/decisions/ADR-004_literature_positioning.md` committed. *(Emitted 2026-08-23; committed with the Task 1.4 commit)*
+- [ ] `[HUMAN-GATE]` Novelty positioning approved. *(Open — approval block at `literature-audit.md` §9.6; ADR-004 Status: Proposed)*
 
 ---
 
