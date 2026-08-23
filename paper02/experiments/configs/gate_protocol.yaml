@@ -1,0 +1,70 @@
+# Paper 02 — Mechanism Gate Protocol Configuration (P03)
+# Governance: Pre-registered experimental parameters for Arms A & B (450 total runs)
+
+experiment:
+  name: "phase03_mechanism_gate"
+  description: "Empirical validation of the supercritical transcritical bifurcation and separatrix on H-Bar"
+  total_runs: 450
+  seeds_per_condition: 30
+  seed_formula: "run_id * 42 + 7"
+
+model:
+  architecture: "seq2seq_transformer"
+  d_model: 128
+  nhead: 4
+  num_encoder_layers: 2
+  num_decoder_layers: 2
+  dim_feedforward: 512
+  dropout: 0.1
+  pad_idx: 0
+
+data:
+  benchmark: "hbar_zero_leakage"
+  n_train: 10000
+  n_test_id: 2000
+  n_test_ood: 2000
+  n_comp_probe: 2000
+  batch_size: 64
+  num_workers: 0
+
+optimization:
+  optimizer: "adam"
+  lr: 0.001
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  clip_grad_norm: 1.0
+  total_steps: 2000
+  eval_interval: 25
+
+arms:
+  arm_a_dense_sweep:
+    description: "Step-0 onset lambda sweep across 10 levels"
+    lambda_values: [0.0, 0.05, 0.10, 0.20, 0.30, 0.50, 0.75, 1.00, 1.50, 2.00]
+    num_seeds: 30
+    total_runs: 300
+
+  arm_b_late_intervention:
+    description: "Late-onset pressure activation (lambda = 1.0) after subcritical entrapment"
+    lambda_val: 1.0
+    intervention_steps: [0, 100, 250, 500, 1000]
+    num_seeds: 30
+    total_runs: 150
+
+gate_criteria:
+  criterion_1_separatrix:
+    escape_accuracy_threshold: 0.80
+    min_logistic_steepness_k: 15.0
+    max_p_escape_subcritical: 0.05
+    min_p_escape_supercritical: 0.95
+    subcritical_check_lambda: 0.10
+    supercritical_check_lambda: 0.50
+
+  criterion_2_late_onset:
+    target_intervention_step: 1000
+    min_final_accuracy: 0.90
+    min_passing_fraction: 0.90
+
+  criterion_3_equivalence:
+    supercritical_lambdas: [0.50, 0.75, 1.00, 1.50, 2.00]
+    tost_margin: 0.025
+    alpha_significance: 0.05
