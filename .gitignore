@@ -157,6 +157,12 @@ arxiv-submission/
 
 # Raw experiment output directories
 output/
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+experiments/*/outputs/
+.pi/state/
 paper02/data/raw/*
 !paper02/data/raw/README.md
+.pi/
 
