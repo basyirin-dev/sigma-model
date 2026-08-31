@@ -1,0 +1,36 @@
+---
+title: "The Sigma-Trap: Dynamical Equilibrium and Compositional Generalisation in Deep Learning"
+author:
+  - name: "Anonymous Authors"
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+  pdf:
+    documentclass: article
+    number-sections: true
+bibliography: ../../literature/bibliography.bib
+---
+
+# Introduction
+
+Compositional generalisation—the capacity to comprehend and produce novel combinations of familiar primitives—remains a fundamental challenge for deep neural networks [@lake2018generalization].
+
+# Theoretical Framework: The $\Sigma$-Model
+
+We formulate training dynamics as a coupled dynamical system:
+\begin{align}
+\frac{dD}{dt} &= f(D, S; \alpha, \beta) \\
+\frac{dS}{dt} &= g(D, S; \gamma, \sigma)
+\end{align}
+where $D$ denotes depth accumulation and $S$ denotes schema coherence.
+
+# Numerical Simulations & Empirical Findings
+
+Using high-precision adaptive ODE solvers and discrete transformer evaluations, we identify a stable attractor state termed the **$\sigma$-trap**.
+
+# References
+
+::: {#refs}
+:::

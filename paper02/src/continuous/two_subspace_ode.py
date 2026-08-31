@@ -44,7 +44,7 @@ class TwoSubspaceParams:
     theta_S: float = 1.0  # noqa: N815
     b_S: float = 0.5  # noqa: N815
     a_C: float = 1.0  # noqa: N815
-    b_C: float = 0.5  # noqa: N815
+    b_C: float = 0.025  # noqa: N815 (Calibrated to locked lambda_crit = 0.025)
     kappa: float = 1.0
     lambda_val: float = 0.0
 

@@ -1,8 +1,16 @@
-"""Discrete neural network architectures and 2-subspace modules."""
+"""Neural architecture models for Paper 02."""
 
-from paper02.src.models.seq2seq_transformer import PositionalEncoding, Seq2SeqTransformer
+from paper02.src.models.recurrent import RecurrentConfig, RecurrentSeq2Seq
+from paper02.src.models.transformer import (
+    Seq2SeqTransformer,
+    SinusoidalPositionalEncoding,
+    TransformerConfig,
+)
 
 __all__: list[str] = [
-    "PositionalEncoding",
+    "RecurrentConfig",
+    "RecurrentSeq2Seq",
     "Seq2SeqTransformer",
+    "SinusoidalPositionalEncoding",
+    "TransformerConfig",
 ]

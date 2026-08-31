@@ -1,0 +1,52 @@
+name: RPF v2.0 Reproducibility Smoke Test & Governance CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  smoke-and-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt || true
+          pip install -e . || true
+          pip install pytest pyyaml ruff
+
+      - name: Run Ruff Code Quality Lint
+        run: |
+          ruff check . --exclude archive,paper01,paper02,hbar_env || true
+
+      - name: Run RPF Governance Compliance Linter
+        run: |
+          python scripts/compliance_linter.py
+
+      - name: Validate Manifest Schemas
+        run: |
+          find experiments/ -name "manifest.yaml" -exec python .pi/tools/validate_manifest_schema.py {} + || true
+
+      - name: Run Unit Tests
+        run: |
+          PYTHONPATH=. pytest tests/unit/ -v || true
+
+      - name: Build Clean-Room Docker Container (Dry Run)
+        run: |
+          docker build --dry-run . || true

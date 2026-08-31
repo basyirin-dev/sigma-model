@@ -1,0 +1,17 @@
+{
+  "figure_id": "FIG-001",
+  "title": "Two-Subspace Continuous Gradient Flow Phase Portrait & Transcritical Bifurcation",
+  "caption": "Phase portraits of the continuous gradient flow dynamical system under subcritical (left, lambda=0.00) and supercritical (right, lambda=0.05) compositional pressure. Under subcritical pressure, the shortcut equilibrium E_S is the unique stable sink. Under supercritical pressure exceeding lambda_crit = b_C / a_C = 0.025, E_S undergoes a transcritical bifurcation, exchanging stability with the coherent equilibrium E_C.",
+  "files": {
+    "pdf": "figure1_phase_portrait.pdf",
+    "png": "figure1_phase_portrait.png",
+    "tex": "figure1_phase_portrait.tex"
+  },
+  "provenance": [
+    "paper02/src/continuous/two_subspace_ode.py",
+    "ADR-011"
+  ],
+  "colorblind_safe": true,
+  "palette": "Okabe-Ito",
+  "status": "DRAFT_ANALYSIS | PENDING_PI_REVIEW | NOT_FINAL_EVIDENCE"
+}

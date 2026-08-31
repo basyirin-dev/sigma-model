@@ -1,0 +1,46 @@
+{
+  "schema_version": "2.0",
+  "phase": "P00",
+  "phase_name": "Repository & Toolchain Setup",
+  "status": "COMPLETED",
+  "timestamp": "2026-08-26T01:50:00Z",
+  "governance": {
+    "standards_rule_count": 54,
+    "compliance_status": "PASS",
+    "phase_exit_check": "PASS",
+    "unit_tests_pass": true
+  },
+  "seeds_registered": 5,
+  "pi_ecosystem": {
+    "extensions": [
+      ".pi/extensions/rpf-guard.ts",
+      ".pi/extensions/human-gate.ts",
+      ".pi/extensions/manifest-enforcer.ts"
+    ],
+    "agents": [
+      ".pi/agents/scout.md",
+      ".pi/agents/sim-worker.md",
+      ".pi/agents/redteam-reviewer.md",
+      ".pi/agents/verifier.md"
+    ],
+    "skills": [
+      ".pi/skills/compliance-linter",
+      ".pi/skills/ledger-sync",
+      ".pi/skills/overclaim-detector",
+      ".pi/skills/phase-exit-validator",
+      ".pi/skills/ledger-update",
+      ".pi/skills/human-gate-serializer"
+    ],
+    "tools": [
+      ".pi/tools/validate_manifest_schema.py",
+      ".pi/tools/run_compliance_linter.py"
+    ],
+    "snippets": [
+      ".pi/snippets/01-evidence-gating.md",
+      ".pi/snippets/02-numeric-integrity.md",
+      ".pi/snippets/03-negative-results.md",
+      ".pi/snippets/04-overclaim-firewall.md",
+      ".pi/snippets/05-gate-serialization.md"
+    ]
+  }
+}

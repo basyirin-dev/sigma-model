@@ -289,4 +289,32 @@ The Principal Investigator must verify, before Task 1.4 closes P01:
 - **Ledger:** CLM-001 (two-subspace stability exchange, T), CLM-002 ($R_0 = 1$ isomorphism, T), CLM-003/004 (escape boundary / late-onset recovery, E, `decide-at-P03`), CLM-005 (CKA lead-lag, E, `decide-at-P03`), CLM-006 (WGCA, E), CLM-007 (cross-benchmark, E).
 - **Standards:** CC.3.3, CC.6.1 (commit format), CC.6.2 (additive artifact; no prior-phase artifact modified). This memo supersedes nothing; it consolidates §5–§8.
 
+---
+
+## 10. Benchmark Architecture & Diagnostic Grounding Bibliography
+
+Canonical BibTeX database committed at [`paper02/bibliography.bib`](file:///home/bigbasy/Documents/sigma-model/paper02/bibliography.bib).
+
+| BibTeX Key | Citation | Core Finding / Methodological Role for Paper 02 |
+|---|---|---|
+| `Wu2023ReCOGS` | Wu, Manning, & Potts (2023, *TACL*) | ReCOGS: Proves logical form formatting artifacts overshadow compositional evaluation; motivates $\hbar$'s minimal homomorphic denotational target $\llbracket \cdot \rrbracket$. |
+| `Ahuja2024Provable` | Ahuja & Mansouri (2024, *arXiv*) | Proves formal separation between length extrapolation and Cartesian product compositional generalization; grounds $\hbar$'s 3-way split protocol. |
+| `Kim2022Uncontrolled` | Kim, Linzen, & Smolensky (2022, *NeurIPS*) | Demonstrates that pretraining exposure to held-out test words inflates compositional scores; mandates $\hbar$'s synthetic closed lexicon. |
+| `An2026Representational` | An & Du (2026, *arXiv*) | Defines Homomorphism Error (HE) between symbolic grammar rules and hidden-state transformations ($R^2 = 0.73$ OOD predictor). |
+| `Uselis2026Compositional` | Uselis, Dittadi, & Oh (2026, *arXiv*) | Proves linear, orthogonal representations are mathematically necessary for systematic compositionality; grounds the Two-Subspace Law. |
+| `Hupkes2019Compositionality` | Hupkes et al. (2019, *JAIR*) | PCFG-SET: Decomposes compositionality into systematicity, productivity, substitutivity, localism, and overgeneralization. |
+| `Keysers2019Measuring` | Keysers et al. (2019, *ICLR*) | CFQ: Introduces Distribution-Based Compositionality Assessment (DBCA) and maximum compound divergence. |
+| `Kim2020COGS` | Kim & Linzen (2020, *EMNLP*) | COGS: Semantic parsing challenge establishing structural and lexical systematic generalization splits. |
+| `Lake2018Generalization` | Lake & Baroni (2018, *ICML*) | SCAN: Command-to-action navigation benchmark demonstrating RNN systematicity failure on primitive and length splits. |
+| `Li2023SLOG` | Li et al. (2023, *EMNLP*) | SLOG: Proves structural recursion is underrepresented vs. lexical substitution in standard benchmarks. |
+| `Ruis2020Benchmark` | Ruis et al. (2020, *NeurIPS*) | gSCAN: Grounded multimodal systematic generalization benchmark. |
+| `Geirhos2020Shortcut` | Geirhos et al. (2020, *Nat. Mach. Intell.*) | Establishes the taxonomy and mechanics of shortcut learning in deep neural networks. |
+| `Lippl2024Kernel` | Lippl & Stachenfeld (2024, *arXiv*) | Kernel theory of shortcut bias vs. compositional generalization under gradient descent. |
+| `Kazemnejad2023Impact` | Kazemnejad et al. (2023, *NeurIPS*) | Proves positional encodings drive length generalization independently of compositional logic. |
+| `Kohli2026Loop` | Kohli et al. (2026, *arXiv*) | Distinguishes systematic recombination from depth/recursion extrapolation in Transformers. |
+| `Gebru2021Datasheets` | Gebru et al. (2021, *CACM*) | Standard for Datasheets for Datasets documentation. |
+| `Davari2022Reliability` | Davari et al. (2022, *ICLR*) | Analyzes CKA reliability, invariances, and blind spots in deep representation analysis. |
+| `Raju2026Geometric` | Raju (2026, *arXiv*) | Geometric stability metric quantifying coordinate sensitivity beyond rotation-invariant CKA. |
+| `Sevetlidis2026Gauge` | Sevetlidis & Pavlidis (2026, *arXiv*) | Representation holonomy measuring path-dependent curvature in representation manifolds. |
+
 

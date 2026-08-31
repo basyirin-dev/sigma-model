@@ -6,6 +6,10 @@ from paper02.src.continuous.observable_signatures import (
     simulate_late_onset_destabilization,
     simulate_rate_ordering,
 )
+from paper02.src.continuous.solver import (
+    ContinuousTwoSubspaceSolver,
+    SolverResult,
+)
 from paper02.src.continuous.two_subspace_ode import (
     EquilibriumPoint,
     TwoSubspaceParams,
@@ -15,7 +19,9 @@ from paper02.src.continuous.two_subspace_ode import (
 )
 
 __all__: list[str] = [
+    "ContinuousTwoSubspaceSolver",
     "EquilibriumPoint",
+    "SolverResult",
     "TwoSubspaceParams",
     "TwoSubspaceSystem",
     "generate_bifurcation_diagram",

@@ -1,7 +1,7 @@
 # Environment & Dependency Pinning Spec
 
 **Project:** Paper 02 (*Critical Compositional Pressure & The Two-Subspace Law*)  
-**Governance:** Research Planning Framework (RPF v1.0.0)  
+**Governance:** Research Planning Framework (RPF v2.0.0)  
 **Virtual Environment:** `hbar_env/` (`source hbar_env/bin/activate`)  
 
 ---
@@ -51,7 +51,7 @@
 - **Target Platforms:** Kaggle Notebooks / Cloud Compute (GCP Vertex / Lambda Labs)
 - **Accelerators:** NVIDIA Tesla T4 x2 / P100 / RTX A5000 / TPU v3-8 (CUDA 12.x / cuDNN 9.x)
 - **Memory:** 16GB+ VRAM, 32GB+ System RAM
-- **Primary Use:** Dense multi-seed sweeps ($n=15$ seeds), Hessian top eigenvalue tracking over training trajectories, continuous neural ODE simulations.
+- **Primary Use:** Dense multi-seed sweeps ($n=30$ seeds for Tier 1 primary falsification cells, $n=10$ seeds for Tier 2 exploratory architecture screening; $n=15$ deprecated), Hessian top eigenvalue tracking over training trajectories, continuous gradient-flow ODE simulations.
 
 ---
 

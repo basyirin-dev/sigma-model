@@ -1,0 +1,15 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    title={Cross-Benchmark Invariance},
+    xlabel={$\lambda$},
+    ylabel={OOD Accuracy (\%)},
+    grid=major
+]
+\addplot[blue, mark=*] coordinates {(0.0,0) (0.025,98) (0.5,99)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

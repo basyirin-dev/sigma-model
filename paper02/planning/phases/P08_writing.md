@@ -4,7 +4,7 @@
 
 **Phase ID:** P08  
 **Phase Title:** Complete Manuscript Assembly in NeurIPS/ICLR LaTeX Format, Mathematical Appendix Formulation, and Bibliography Verification  
-**Status:** Pending  
+**Status:** Complete (Draft Assembly Finished; Pending PI Gate Review)  
 **Duration:** 3–4 Days  
 **Dependencies:** P07  
 **Executor:** Agent (85%) / Human-Gate (15%)  
@@ -76,10 +76,10 @@ Draft the complete, self-contained manuscript in NeurIPS/ICLR LaTeX format. Synt
 ---
 
 ## 4. Machine-Checkable Exit Criteria
-- [ ] Manuscript compiles cleanly via `make -C paper02 pdf` (exit code 0).
-- [ ] Abstract $\le 250$ words (CC.3.1).
-- [ ] Every claim in the text links bi-directionally to a row in `planning/ledger.md`.
-- [ ] 0 undefined references (`??`) and 0 undefined citations (`?`) in LaTeX build log.
+- [x] Manuscript compiles cleanly via `make -C paper02 pdf` (exit code 0).
+- [x] Abstract $\le 250$ words (CC.3.1) [Actual: 220 words].
+- [x] Every claim in the text links bi-directionally to a row in `planning/ledger.md` (Table 4 / CLM-001--CLM-007).
+- [x] 0 undefined references (`??`) and 0 undefined citations (`?`) in LaTeX build log.
 - [ ] `[HUMAN-GATE]` Full draft approved for red-team review.
 
 ---

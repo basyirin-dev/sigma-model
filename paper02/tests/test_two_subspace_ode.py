@@ -20,9 +20,11 @@ class TestTwoSubspaceParams:
         assert params.theta_S == 1.0
         assert params.b_S == 0.5
         assert params.a_C == 1.0
-        assert params.b_C == 0.5
+        assert params.b_C == 0.025
         assert params.kappa == 1.0
         assert params.lambda_val == 0.0
+        sys = TwoSubspaceSystem(params)
+        assert np.isclose(sys.lambda_crit, 0.025)
 
     @pytest.mark.parametrize(
         ("kwargs", "expected_err"),

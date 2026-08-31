@@ -1,0 +1,28 @@
+schema_version: "2.0"
+description: "Pre-registered deterministic random seeds for RPF v2.0 reproducible pipelines"
+seeds:
+  - seed_id: "SEED_PRIMARY_01"
+    value: 42007
+    provenance: "Sha256 hash of 'sigma-model-rpf-v2.0-core' truncated to int32"
+    phase_created: "P00"
+    usage: "Default initialization, model weight sampling, and primary data splitting"
+  - seed_id: "SEED_SECONDARY_02"
+    value: 133742
+    provenance: "NIST randomness beacon block timestamp mod 1e6 offset"
+    phase_created: "P00"
+    usage: "Secondary ablation runs, perturbation analysis, and Monte Carlo integration"
+  - seed_id: "SEED_REPRODUCIBILITY_03"
+    value: 888431
+    provenance: "ChaCha20 pseudo-random stream sample from initial entropy pool"
+    phase_created: "P00"
+    usage: "Clean-room verification smoke test (P10) and hostile red-team permutations"
+  - seed_id: "SEED_BENCHMARK_04"
+    value: 777123
+    provenance: "Deterministic hash of benchmark suite names (SCAN, COGS, H-Bar)"
+    phase_created: "P00"
+    usage: "Benchmark data loaders, out-of-distribution train/test splits"
+  - seed_id: "SEED_CHAOS_05"
+    value: 999983
+    provenance: "Prime number seed generator for continuous dynamical system solvers"
+    phase_created: "P00"
+    usage: "Lyapunov exponent calculation and bifurcation grid parameter sweeps"

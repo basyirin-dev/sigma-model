@@ -1,10 +1,10 @@
 # Phase 07 — Analysis, Diagnostics, Order-Parameter Extraction & Figures
 
-**RPF v2.0:** Git tag `p07-analysis-done` · Duration 3–5d · GPU 8 · RACI: Agent **R** / PI **A** (interpretation) · Abort: primary analysis contradicts gate result → halt · Acceptance: ≥8 figures with metadata sidecars + alt text + colorblind-safe (CC.3.4–3.6), sensitivity section, statistical tests with correction, ledger predictions resolved · *Pending (locked by P03 gate).*
+**RPF v2.0:** Git tag `p07-analysis-done` · Duration 3–5d · GPU 8 · RACI: Agent **R** / PI **A** (interpretation) · Abort: primary analysis contradicts gate result → halt · Acceptance: 5 publication figures with metadata sidecars + alt text + colorblind-safe (CC.3.4–3.6), sensitivity section, statistical tests with correction, ledger predictions resolved · **STATUS: 🔄 ACTIVE (Analysis & Figure Generation In Progress)**
 
 **Phase ID:** P07  
 **Phase Title:** Representation Geometry Diagnostics, Empirical Bifurcation Fitting, Hessian Dynamics & Figure Generation  
-**Status:** Pending  
+**Status:** **ACTIVE (Authorized)**  
 **Duration:** 2–3 Days  
 **Dependencies:** P06  
 **Executor:** Agent (90%) / Human-Gate (10%)  

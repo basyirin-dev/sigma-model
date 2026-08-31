@@ -245,7 +245,7 @@ CURATED_PAPERS: list[PaperEntry] = [
     },
     {
         "Title": "Grokking as the Transition from Lazy to Rich Training Regimes",
-        "Authors": "Kumar, T., Bordelon, B., Edelamn, B., Pehlevan, C.",
+        "Authors": "Kumar, T., Bordelon, B., Edelman, B., Pehlevan, C.",
         "Year": 2023,
         "Venue": "NeurIPS",
         "ArXiv_ID": "2310.06110",
@@ -903,9 +903,79 @@ CURATED_PAPERS: list[PaperEntry] = [
 ]
 
 
+def validate_papers(papers: list[PaperEntry]) -> None:
+    """Validate paper entries against RPF v2.0 Phase 01 criteria."""
+    if len(papers) < 50:
+        raise ValueError(f"Acceptance criterion failed: expected >= 50 papers, got {len(papers)}")
+
+    required_fields = [
+        "Title",
+        "Authors",
+        "Year",
+        "Venue",
+        "ArXiv_ID",
+        "DOI",
+        "Primary_Cluster",
+        "Core_Claim",
+        "Mathematical_Formalism",
+        "Empirical_Benchmark",
+        "Order_Parameter_Used",
+        "Limitation_Identified",
+    ]
+
+    expected_clusters = {
+        "Bifurcations & Phase Transitions",
+        "Grokking & Delayed Generalization",
+        "Singular Learning Theory & Geometry",
+        "Edge of Stability & Hessian Dynamics",
+        "Compositional Generalization & Inductive Biases",
+    }
+
+    cluster_counts: dict[str, int] = {}
+    seen_titles: set[str] = set()
+    seen_dois: set[str] = set()
+    seen_arxivs: set[str] = set()
+
+    for idx, paper in enumerate(papers, start=1):
+        for field in required_fields:
+            val = paper.get(field)  # type: ignore[literal-required]
+            if val is None or (isinstance(val, str) and not val.strip()):
+                raise ValueError(f"Paper {idx} ('{paper.get('Title')}') missing field: {field}")
+
+        if not (2000 <= paper["Year"] <= 2026):
+            raise ValueError(f"Paper {idx} ('{paper['Title']}') has invalid year: {paper['Year']}")
+
+        cluster = paper["Primary_Cluster"]
+        if cluster not in expected_clusters:
+            raise ValueError(f"Paper {idx} has unrecognized cluster: {cluster}")
+        cluster_counts[cluster] = cluster_counts.get(cluster, 0) + 1
+
+        title_norm = paper["Title"].strip().lower()
+        if title_norm in seen_titles:
+            raise ValueError(f"Duplicate title detected: {paper['Title']}")
+        seen_titles.add(title_norm)
+
+        doi_norm = paper["DOI"].strip().lower()
+        if doi_norm in seen_dois:
+            raise ValueError(f"Duplicate DOI detected: {paper['DOI']}")
+        seen_dois.add(doi_norm)
+
+        arxiv_norm = paper["ArXiv_ID"].strip().lower()
+        if arxiv_norm in seen_arxivs:
+            raise ValueError(f"Duplicate ArXiv ID detected: {paper['ArXiv_ID']}")
+        seen_arxivs.add(arxiv_norm)
+
+    for cluster in expected_clusters:
+        count = cluster_counts.get(cluster, 0)
+        if count < 12:
+            raise ValueError(f"Cluster '{cluster}' has {count} entries (< 12 required).")
+
+
 def main() -> None:
-    """Write curated paper matrix to CSV and JSON."""
-    out_dir = Path("/home/bigbasy/Documents/sigma-model/paper02/experiments/literature")
+    """Validate and write curated paper matrix to CSV and JSON."""
+    validate_papers(CURATED_PAPERS)
+
+    out_dir = Path(__file__).resolve().parent
     out_dir.mkdir(parents=True, exist_ok=True)
     csv_file = out_dir / "survey_table.csv"
     json_file = out_dir / "survey_table.json"
@@ -936,7 +1006,7 @@ def main() -> None:
     with open(json_file, "w", encoding="utf-8") as f:
         json.dump(CURATED_PAPERS, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully generated survey_table.csv with {len(CURATED_PAPERS)} curated papers.")
+    print(f"Validation PASSED: {len(CURATED_PAPERS)} curated papers across 5 clusters.")
     print(f"Output saved to {csv_file} and {json_file}")
 
 

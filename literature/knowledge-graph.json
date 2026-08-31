@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0",
+  "nodes": [
+    {
+      "id": "sigma_trap",
+      "label": "Sigma-Trap Equilibrium",
+      "category": "Theoretical Concept",
+      "description": "Stable dynamical equilibrium characterized by high depth accumulation and suppressed schema coherence."
+    },
+    {
+      "id": "critical_compositional_pressure",
+      "label": "Critical Compositional Pressure",
+      "category": "Hypothesis",
+      "description": "Threshold of out-of-distribution pressure beyond which compositional subspace separates."
+    },
+    {
+      "id": "two_subspace_law",
+      "label": "Two-Subspace Law",
+      "category": "Model Theorem",
+      "description": "Orthogonal geometric decomposition between syntax/depth representations and semantic schema representations."
+    },
+    {
+      "id": "scan_benchmark",
+      "label": "SCAN Benchmark",
+      "category": "Empirical Benchmark",
+      "description": "Compositional sequence-to-sequence navigation task testing length and primitive generalization."
+    }
+  ],
+  "edges": [
+    {
+      "source": "sigma_trap",
+      "target": "two_subspace_law",
+      "relation": "governed_by",
+      "weight": 0.95
+    },
+    {
+      "source": "critical_compositional_pressure",
+      "target": "sigma_trap",
+      "relation": "bifurcates_at",
+      "weight": 0.9
+    },
+    {
+      "source": "two_subspace_law",
+      "target": "scan_benchmark",
+      "relation": "empirically_evaluated_on",
+      "weight": 0.85
+    }
+  ]
+}

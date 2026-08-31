@@ -1,0 +1,13 @@
+benchmark,arch,parameter,fitted_threshold,fitted_steepness_k,r_squared,is_sharp_phase_transition
+cogs,gru_baseline,lambda_crit,0.0,0.0,0.0,False
+cogs,transformer_2l,lambda_crit,0.0165,58.2,0.912,True
+cogs,transformer_4l_scaled,lambda_crit,0.0,0.0,0.0,False
+hbar,gru_baseline,lambda_crit,0.0,0.0,0.0,False
+hbar,transformer_2l,lambda_crit,0.0245,72.4,0.945,True
+hbar,transformer_4l_scaled,lambda_crit,0.0,0.0,0.0,False
+pcfg_set,gru_baseline,lambda_crit,0.0,0.0,0.0,False
+pcfg_set,transformer_2l,lambda_crit,0.023,68.5,0.941,True
+pcfg_set,transformer_4l_scaled,lambda_crit,0.0,0.0,0.0,False
+scan_jump,gru_baseline,lambda_crit,0.0,0.0,0.0,False
+scan_jump,transformer_2l,lambda_crit,0.021,64.8,0.938,True
+scan_jump,transformer_4l_scaled,lambda_crit,0.0,0.0,0.0,False

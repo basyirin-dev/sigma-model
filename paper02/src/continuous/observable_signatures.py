@@ -15,10 +15,28 @@ from typing import TYPE_CHECKING
 import matplotlib.pyplot as plt
 import numpy as np
 
-from paper02.src.continuous.two_subspace_ode import (
-    TwoSubspaceParams,
-    TwoSubspaceSystem,
-)
+try:
+    from paper02.src.continuous.two_subspace_ode import (
+        TwoSubspaceParams,
+        TwoSubspaceSystem,
+    )
+except ImportError:
+    import sys
+
+    # Add workspace root to sys.path
+    _workspace_root = str(Path(__file__).resolve().parents[3])
+    if _workspace_root not in sys.path:
+        sys.path.insert(0, _workspace_root)
+    try:
+        from paper02.src.continuous.two_subspace_ode import (
+            TwoSubspaceParams,
+            TwoSubspaceSystem,
+        )
+    except ImportError:
+        from two_subspace_ode import (  # type: ignore[no-redef]
+            TwoSubspaceParams,
+            TwoSubspaceSystem,
+        )
 
 if TYPE_CHECKING:
     from matplotlib.figure import Figure

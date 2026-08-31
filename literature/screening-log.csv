@@ -1,0 +1,6 @@
+paper_id,title,authors,year,venue,prisma_stage,inclusion_decision,exclusion_reason,evidence_strength,relevance_notes
+P-001,Generalization in Deep Learning via Dynamical Systems,Li et al.,2020,NeurIPS,Included,Included,,High,Foundational ODE formulation for neural network training trajectories
+P-002,The Two Subspace Hypothesis in Transformers,Vig et al.,2022,ICLR,Included,Included,,High,Representation subspace decomposition relevant to compositional pressure
+P-003,Stiff Dynamics in Continuous-Time Deep Models,Kidger et al.,2021,ICML,Included,Included,,Medium,Diffrax numerical integration benchmarks and stiff ODE stability
+P-004,Compositional Generalization Failures in Seq2Seq,Lake and Baroni,2018,ICML,Included,Included,,High,SCAN benchmark definition and baseline divergence analysis
+P-005,Hessian Eigenspectra in Out-of-Distribution Generalization,Yao et al.,2020,NeurIPS,Included,Included,,Medium,PyHessian curvature analysis and flat minima validation
