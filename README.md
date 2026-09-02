@@ -2,12 +2,12 @@
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg)](https://pytorch.org/)
-[![Tests Passing](https://img.shields.io/badge/Tests-146%2F146%20Passing-brightgreen.svg)](#-test-suite--verification)
-[![Release: v2.0-paper02](https://img.shields.io/badge/Release-v2.0--paper02%20(Commit%2069e1f57b)-blueviolet.svg)](https://github.com/basyirinbasri/sigma-model)
+[![Tests Passing](https://img.shields.io/badge/Tests-147%2F147%20Passing-brightgreen.svg)](#-test-suite--verification)
+[![Release: v2.0-paper02](https://img.shields.io/badge/Release-v2.0--paper02%20(Commit%20540c992)-blueviolet.svg)](https://github.com/basyirin-dev/sigma-model)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-Official open-source research repository for the **$\Sigma$-Model Research Programme**, featuring **Paper 02**:  
+Official open-source research repository for the **$\Sigma$-Model Research Programme**, featuring the **defining paper** — the capstone manuscript that absorbed the earlier σ-Trap results:
 > **"Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks"**  
 > *Author:* Basyirin Amsyar Basri (Independent Researcher, Kuala Lumpur, Malaysia)  
 > *Submission Target:* Advances in Artificial Intelligence and Machine Learning (AAIML) / SSRN CompSciRN Preprint  
@@ -50,7 +50,7 @@ the shortcut equilibrium $E_S$ destabilizes into an unstable saddle, and the coh
 3. **960-Run Multi-Benchmark Empirical Matrix (Level 3 Replication):**  
    Across 960 production runs spanning four compositional benchmark suites ($\hbar$ Homomorphic Algebra, SCAN \texttt{jump}, COGS structural parsing, PCFG-SET) and three architecture classes (Transformer 2L, Transformer 4L, GRU Seq2Seq, and LSTM Seq2Seq), empirical escape probabilities fit an exceptionally sharp logistic separatrix ($k \in [58.2, 72.4] \gg 15.0, R^2 > 0.91$), decisively rejecting smooth dose-response regularizer alternatives ($k < 5.0$).
 4. **Seed-Level Binomial Log-Likelihood Support:**  
-   Individual seed-level Bernoulli log-likelihoods confirm that the 2-parameter logistic model achieves superior parsimony ($\text{AIC}_{\text{seed}} = -214.6$ vs $-196.2$ Probit, $-181.4$ Gompertz, $-148.0$ Piecewise-Linear) and 5-fold cross-validated $R^2_{\text{CV}} = 0.938 \pm 0.012$.
+   Individual seed-level Bernoulli log-likelihoods confirm that the 2-parameter logistic model achieves superior parsimony ($\text{AIC}_{\text{seed}} = 367.91$ vs $368.08$ Probit, $368.02$ Gompertz, $763.81$ Piecewise-Linear; aggregate $\text{AIC}_{\text{RSS}} = -60.46$) and 5-fold cross-validated $R^2_{\text{CV}} = 0.938 \pm 0.012$.
 5. **Exact Binomial Reversibility (100% Late-Onset Rescue):**  
    Activating supercritical pressure at step $t_{\text{int}} = 1000$ on deeply entrenched models triggers $100\%$ ($30/30$ seeds) OOD recovery within $\Delta t = 250$ steps (exact Clopper-Pearson 95% CI $[88.4\%, 100.0\%]$).
 6. **Negative Permutation Control (Algebraic Corruption Ablation):**  
@@ -64,7 +64,7 @@ the shortcut equilibrium $E_S$ destabilizes into an unstable saddle, and the coh
 
 ```
 sigma-model/
-├── paper02/                            # Paper 02: Critical Compositional Pressure
+├── paper/                            # The defining paper (absorbed the σ-Trap results)
 │   ├── Makefile                        # Compilation, figure generation & packaging automation
 │   ├── writing/                        # LaTeX sources and publication sidecars
 │   │   ├── manuscript.tex              # Comprehensive 38-page research monograph (main + appendices)
@@ -84,7 +84,7 @@ sigma-model/
 │   │   ├── models/                     # Transformers (2L, 4L) and Recurrent Seq2Seq (GRU, LSTM)
 │   │   ├── analysis/                   # Figure generation, VAR econometric panel, Lanczos Hessian
 │   │   └── experiments/                # Production sweep orchestration & gate runners
-│   ├── tests/                          # 129 automated unit & regression tests (100% passing)
+│   ├── tests/                          # 130 automated unit & regression tests (100% passing)
 │   ├── data/processed/                 # Derived analysis summaries, trajectories & statistical tables
 │   ├── notebooks/                      # Self-contained Jupyter notebooks for Kaggle replication
 │   └── planning/                       # Research Planning Framework (RPF v2.0) ledgers & roadmap
@@ -92,7 +92,8 @@ sigma-model/
 │       ├── ledger.md                   # Master Claim Ledger (Four-Level Epistemic Ladder)
 │       ├── roadmap.md                  # Phase tracking & milestone audit
 │       └── standards.md                # 54 cross-cutting operational rules (CC.1–CC.7)
-├── code/                               # Legacy sigma_align core package
+├── archive/paper01/                    # Superseded σ-Trap paper (rejected by TMLR, absorbed) — read-only
+├── code/                               # Legacy sigma_align core package (pending retirement)
 ├── tests/                              # Root governance and infrastructure unit tests (17 passing)
 ├── docs/                               # Research programme foundations and lifelong roadmap
 ├── pyproject.toml                      # Modern PEP 621 / setuptools configuration
@@ -108,7 +109,7 @@ sigma-model/
 - **Python:** $\ge 3.10$ (tested on Python 3.13 and 3.14)
 - **Virtual Environment Setup:**
 ```bash
-git clone https://github.com/basyirinbasri/sigma-model.git
+git clone https://github.com/basyirin-dev/sigma-model.git
 cd sigma-model
 
 python3 -m venv hbar_env
@@ -118,25 +119,25 @@ pip install -e ".[dev]"
 ```
 
 ### 2. Verify Installation with Automated Tests
-Run the entire 146-test unit and regression suite:
+Run the entire 147-test unit and regression suite:
 ```bash
 make test
-# Runs 17 root infrastructure tests + 129 Paper 02 unit tests (146/146 PASSING)
+# Runs 17 root infrastructure tests + 130 defining-paper unit tests (147/147 PASSING)
 ```
 
 ---
 
-## 🔬 Reproducing Paper 02 Results
+## 🔬 Reproducing the Defining Paper Results
 
 ### A. Run Full Analytical & Econometric Pipeline
 Execute the end-to-end Phase 07 analysis pipeline (recomputing all change-point fits, bootstrap confidence intervals, econometric panel VAR models, and Hessian spectrum summaries):
 ```bash
 source hbar_env/bin/activate
-PYTHONPATH=. python -m paper02.src.analysis.run_phase07_analysis
+PYTHONPATH=. python -m paper.src.analysis.run_phase07_analysis
 ```
 
 ### B. Regenerate All Publication Figures
-Generate Figures 1 through 5 along with their JSON metadata sidecars in `paper02/writing/figures/`:
+Generate Figures 1 through 5 along with their JSON metadata sidecars in `paper/writing/figures/`:
 ```bash
 make figures
 ```
@@ -148,16 +149,12 @@ Generated figures:
 - `figure5_hessian_spectral_dynamics.pdf` / `.png`: Top Hessian eigenvalue tracking below Edge of Stability ($2/\eta = 2000.0$) and spectral densities.
 
 ### C. Compile All LaTeX Documents & Submission Bundles
-Compile the monograph, journal slice, supplementary materials, and cover letter:
+Compile the defining-paper manuscript and assemble the submission bundles:
 ```bash
-make paper02
+make paper        # => builds writing/manuscript.pdf (the master monograph)
+make submission   # => also assembles arXiv bundle + supplementary zip and syncs SSRN/arXiv packages
 ```
-Outputs in `paper02/`:
-- `writing/manuscript.pdf`: Complete 38-page research monograph.
-- `writing/manuscript_journal.pdf`: Streamlined 22-page journal article.
-- `writing/supplementary_materials.pdf`: 17-page standalone Supplementary Materials.
-- `submission_aaiml/cover_letter.pdf`: 2-page formal submission cover letter.
-- `supplementary_materials.zip`: Complete, self-contained reproducibility bundle.
+`make paper` outputs `paper/writing/manuscript.pdf` (the 38-page monograph). `make submission` additionally produces `paper/arxiv_bundle.tar.gz` and `paper/supplementary_materials.zip`, and syncs them into `submission_ssrn/`, `submission_arxiv/`, and `submission_attachments/`. Build the journal slice and supplementary materials in-dir with `make -C paper journal`.
 
 ---
 
@@ -183,11 +180,11 @@ Outputs in `paper02/`:
 ## 🔒 Open Science & Preregistration Provenance
 
 All experimental protocols, benchmark grammars, sample-size calculations, and falsification criteria were prospectively locked prior to production data collection:
-- **Preregistration Document:** `paper02/planning/preregistration.md`
+- **Preregistration Document:** `paper/planning/preregistration.md`
 - **Git Commit Tag:** `p02.5-preregistered`
 - **Commit Hash:** `69e1f57b`
 - **Timestamp:** 2026-08-23
-- **Authoritative GitHub Repository:** [`https://github.com/basyirinbasri/sigma-model`](https://github.com/basyirinbasri/sigma-model) (Release `v2.0-paper02`)
+- **Authoritative GitHub Repository:** [`https://github.com/basyirin-dev/sigma-model`](https://github.com/basyirin-dev/sigma-model) (Release `v2.0-paper02`)
 
 ---
 
@@ -202,7 +199,7 @@ If you build upon this work or utilize the $\Sigma$-Model Two-Subspace Framework
   journal = {Advances in Artificial Intelligence and Machine Learning (Under Review)},
   year    = {2026},
   note    = {Preprint available on SSRN CompSciRN},
-  url     = {https://github.com/basyirinbasri/sigma-model}
+  url     = {https://github.com/basyirin-dev/sigma-model}
 }
 ```
 

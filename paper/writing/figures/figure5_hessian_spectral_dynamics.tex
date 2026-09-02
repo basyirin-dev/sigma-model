@@ -1,0 +1,15 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    title={Hessian Sharpness & Spectral Density},
+    xlabel={Eigenvalue $\lambda \times 10^4$},
+    ylabel={Density $\rho(\lambda)$},
+    grid=major
+]
+\addplot[blue, domain=0:10] {exp(-x/3)};
+\end{axis}
+\end{tikzpicture}
+\end{document}

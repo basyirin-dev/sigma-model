@@ -1,0 +1,17 @@
+{
+  "figure_id": "FIG-005",
+  "title": "Loss Landscape Sharpness & Hessian Spectral Dynamics",
+  "caption": "(a) Top Hessian eigenvalue lambda_max(H_t) across training steps for shortcut basin E_S (lambda=0.0) vs coherent basin E_C (lambda=0.025), demonstrating stability deep below the Edge of Stability (EOS) ceiling 2/eta = 2000. (b) Lanczos spectral density distributions contrasting shortcut flatness with coherent curvature.",
+  "files": {
+    "pdf": "figure5_hessian_spectral_dynamics.pdf",
+    "png": "figure5_hessian_spectral_dynamics.png",
+    "tex": "figure5_hessian_spectral_dynamics.tex"
+  },
+  "provenance": [
+    "paper/data/processed/hessian_spectral_summary.csv",
+    "paper/src/analysis/hessian_lanczos.py"
+  ],
+  "colorblind_safe": true,
+  "palette": "Okabe-Ito",
+  "status": "DRAFT_ANALYSIS | PENDING_PI_REVIEW | NOT_FINAL_EVIDENCE"
+}

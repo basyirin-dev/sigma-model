@@ -1,0 +1,177 @@
+# Phase 04 Multi-Benchmark Experimental Matrix Configuration
+version: "2.0.0"
+phase: "P04"
+description: "Full factorial multi-benchmark experimental matrix across 4 benchmark suites and 3 architecture classes"
+
+global:
+  seed_base: 42
+  seed_offset: 7
+  deterministic: true
+  num_seeds: 30
+  optimizer:
+    name: "AdamW"
+    lr: 0.001
+    weight_decay: 0.01
+    betas: [0.9, 0.98]
+    eps: 1.0e-8
+    warmup_steps: 500
+    lr_schedule: "cosine"
+    min_lr: 1.0e-5
+  training:
+    max_steps: 2000
+    batch_size: 64
+    eval_every: 25
+    use_amp: true
+    gradient_clip: 1.0
+  metrics:
+    track_rga: true
+    track_wgca: true
+    track_loss_components: true
+    rga_subsample: 256
+
+benchmarks:
+  hbar:
+    name: "H-Bar"
+    domain: "homomorphic_execution"
+    vocab_size: 27
+    splits:
+      split_a_recombination:
+        description: "Fixed-length compositional recombination (L=4)"
+        train_max_len: 4
+        test_max_len: 4
+      split_b_recursion_depth:
+        description: "Hierarchical recursion depth extrapolation (d=4,5)"
+        train_max_depth: 3
+        test_depths: [4, 5]
+      split_c_length_extrapolation:
+        description: "Sequence length extrapolation calibration (L=7..16)"
+        train_max_len: 6
+        test_lens: [7, 8, 10, 12, 16]
+    dataset_sizes:
+      n_train: 10000
+      n_val: 1000
+      n_test: 1500
+
+  scan:
+    name: "SCAN"
+    domain: "spatial_navigation"
+    vocab_size: 35
+    splits:
+      add_primitive_jump:
+        description: "Zero-shot primitive jump extrapolation (atomic jump in train, composite in test)"
+      length_split:
+        description: "Sequence length extrapolation (train <= 22, test 23..48)"
+    dataset_sizes:
+      n_train: 14670
+      n_test: 7706
+
+  cogs:
+    name: "COGS_ReCOGS"
+    domain: "semantic_parsing"
+    vocab_size: 750
+    splits:
+      structural_recursion:
+        description: "Active-passive and recursive relative clause shifts"
+      novel_argument_swap:
+        description: "Object-to-subject category transposition"
+    dataset_sizes:
+      n_train: 24155
+      n_test: 21000
+
+  pcfg_set:
+    name: "PCFG-SET"
+    domain: "grammar_productivity"
+    vocab_size: 120
+    splits:
+      systematicity:
+        description: "Cartesian token substitution"
+      productivity:
+        description: "Grammar recursion depth expansion"
+    dataset_sizes:
+      n_train: 90000
+      n_test: 5000
+      n_total: 95000
+architectures:
+  arch_a_transformer_2l:
+    family: "transformer"
+    name: "Transformer 2-Layer (Baseline)"
+    d_model: 128
+    n_heads: 4
+    num_encoder_layers: 2
+    num_decoder_layers: 2
+    dim_feedforward: 512
+    dropout: 0.1
+    max_seq_len: 64
+
+  arch_b_transformer_4l:
+    family: "transformer"
+    name: "Transformer 4-Layer (Deep Scaled)"
+    d_model: 256
+    n_heads: 8
+    num_encoder_layers: 2
+    num_decoder_layers: 2
+    dim_feedforward: 1024
+    dropout: 0.1
+    max_seq_len: 64
+
+  arch_c_recurrent_gru:
+    family: "recurrent"
+    name: "Gated Recurrent Seq2Seq (GRU)"
+    model_class: "RecurrentSeq2Seq"
+    rnn_type: "GRU"
+    d_model: 128
+    d_hidden: 128
+    num_layers: 2
+    dropout: 0.1
+    max_seq_len: 64
+
+conditions:
+  lambda_regimes:
+    locked_lambda_crit: 0.025
+    uncertainty: 0.005
+    source: "P03.1_HG"
+    subcritical_safe_max: 0.020
+    boundary_min: 0.020
+    boundary_max: 0.030
+    supercritical_min: 0.030
+    grid_classification:
+      0.000: "subcritical"
+      0.010: "subcritical"
+      0.015: "subcritical"
+      0.020: "boundary"
+      0.025: "boundary"
+      0.030: "boundary"
+      0.050: "supercritical"
+      0.100: "supercritical"
+      0.500: "supercritical"
+      1.000: "supercritical"
+      2.000: "supercritical"
+
+  tier_1_primary_change_point:
+    evidence_class: "primary"
+    description: "Primary falsification and critical boundary change-point matrix"
+    benchmarks: ["hbar", "scan", "cogs", "pcfg_set"]
+    architectures: ["arch_a_transformer_2l"]
+    lambda_grid: [0.000, 0.015, 0.020, 0.025, 0.030, 0.500]
+    num_seeds: 30
+    run_count: 720
+
+  tier_2_exploratory_scaling:
+    evidence_class: "exploratory"
+    description: "Exploratory cross-architecture universality and capacity scaling"
+    benchmarks: ["hbar", "scan", "cogs", "pcfg_set"]
+    architectures: ["arch_b_transformer_4l", "arch_c_recurrent_gru"]
+    lambda_grid: [0.000, 0.025, 0.500]
+    num_seeds: 10
+    run_count: 240
+
+  arm_a_dense_pressure_sweep:
+    type: "dense_lambda_sweep"
+    description: "Dense compositional pressure sweep around critical threshold (Aspirational Full Matrix)"
+    lambda_grid: [0.00, 0.010, 0.015, 0.020, 0.025, 0.030, 0.050, 0.100, 0.500, 1.000, 2.000]
+
+  arm_b_late_intervention:
+    type: "late_intervention"
+    description: "Late-onset pressure activation after prolonged shortcut entrapment"
+    fixed_lambda: 0.05
+    intervention_steps: [0, 100, 250, 500, 1000, 1500]

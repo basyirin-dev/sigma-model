@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0",
+  "phase": "P04",
+  "checkpointed_at": "2026-08-27T04:37:32.418Z",
+  "status": "awaiting-human-gate",
+  "summary": "Phase 04 Multi-Benchmark Protocol Specification complete (0 GPU hrs). Experimental matrix specified in ADR-007 and matrix_p04.yaml encoding locked lambda_crit = 0.025 +- 0.005. Diagnostic toolchains (CKA, HE, Subspace Angles, HVP Power Iteration, Circuit Probing) implemented in ADR-008 and paper02/src/analysis/. Axiomatic Chomsky grammar G_hbar, 3-way decoupled generator, pairwise strict zero-leakage auditor (audit_leakage.py), and formal Dataset Card (hbar_benchmark.md) committed. Statistical power sized (n=30, MDES d=0.58, TOST power >= 0.99) and multiple-comparison control pre-registered in ADR-009. 109/109 unit tests pass. Compliance linter passes 54/54. Pending PI decision.",
+  "options": [
+    {
+      "option": "Approve Multi-Benchmark Experimental Design & Protocol Specification (P04) and authorize Phase 05 (Continuous Formulation & SDE Solver).",
+      "tradeoffs": "Locks the multi-benchmark factorial matrix (4 suites x 3 architectures x 17 conditions x 30 seeds), pairwise zero-leakage protocol, diagnostic engines, and pre-registered statistical analysis plan, unlocking Phase 05 SDE solver implementation."
+    },
+    {
+      "option": "Require modifications to benchmark suites or architecture matrix configurations.",
+      "tradeoffs": "Allows adjusting benchmark splits or model parameters prior to continuous solver and production setup."
+    },
+    {
+      "option": "Require adjustments to diagnostic toolchains or statistical pre-registration controls.",
+      "tradeoffs": "Permits fine-tuning CKA, Hessian Lanczos, or TOST parameters before Phase 05."
+    }
+  ],
+  "artifacts": {
+    "checkpoint": "experiments/agent-state/P04_checkpoint.json",
+    "decision_draft": "decisions/human-gates/P04_HG.md"
+  },
+  "instruction": "Agent must HALT and await explicit human decision; no downstream artifact may be touched."
+}

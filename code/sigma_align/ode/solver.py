@@ -1,3 +1,4 @@
+# pyright: strict
 import numpy as np
 
 
@@ -30,7 +31,7 @@ class SigmaODESolver:
         coupling_mode: str | None = None,
         coupling_str: float = 0.0,
         sigma_init: float = 0.1,
-    ) -> dict:
+    ) -> dict[str, float | int]:
         """Advance the ODE state by one training step.
 
         Maps to: Algorithm 3.1 in manuscript.tex (numerical integration protocol).

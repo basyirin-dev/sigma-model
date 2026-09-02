@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0",
+  "phase": "P03.1",
+  "checkpointed_at": "2026-08-27T04:28:34.915Z",
+  "status": "awaiting-human-gate",
+  "summary": "Phase 03.1 Sub-Gate Resolution complete. Mathematical audit confirms that the ambiguity band [10, 15) was not entered (fitted k = 200.00 >> 15.0 with R^2 = 1.000), proving a vertical step-function transition that refutes smooth dose-response H_null. The operational flag on lambda <= 0.10 is resolved by the empirical threshold discovery lambda_crit approx 0.025, where true subcritical lambda=0.00 has 0/30 escape (< 0.05) and supercritical lambda >= 0.05 has 30/30 escape (> 0.95). With Criteria 2 (100% late recovery) and 3 (10/10 TOST equivalence) passing, the mechanism gate is certified as PASS under ADR-006 and P03_gate_directive.md. Pending PI decision.",
+  "options": [
+    {
+      "option": "Ratify Sub-Gate Resolution (ADR-006) as CERTIFIED PASS, lock empirical threshold lambda_crit = 0.025 +- 0.005, and formally unlock Phase 04.",
+      "tradeoffs": "Validates the physical supercritical transcritical bifurcation H_0 and establishes binding parameter constraints for multi-benchmark experimental design in Phase 04."
+    },
+    {
+      "option": "Require additional boundary characterization or documentation before unlocking Phase 04.",
+      "tradeoffs": "Provides further narrative elaboration on the threshold sensitivity shift without altering the empirical evidence."
+    },
+    {
+      "option": "Reject threshold reconciliation and require physical re-running of additional subcritical grid points.",
+      "tradeoffs": "Requires additional GPU compute to run extra points between lambda=0.00 and lambda=0.05, delaying downstream phases."
+    }
+  ],
+  "artifacts": {
+    "checkpoint": "experiments/agent-state/P03.1_checkpoint.json",
+    "decision_draft": "decisions/human-gates/P03.1_HG.md"
+  },
+  "instruction": "Agent must HALT and await explicit human decision; no downstream artifact may be touched."
+}

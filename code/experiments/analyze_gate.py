@@ -502,7 +502,7 @@ def main() -> None:
     ap.add_argument(
         "--results-dir", default="archive/gate-results", help="dir with all_results.pkl"
     )
-    ap.add_argument("--out", default="paper/planning/gate-result.md", help="output markdown path")
+    ap.add_argument("--out", default="paper01/planning/gate-result.md", help="output markdown path")
     args = ap.parse_args()
 
     all_results, summary = load_results(args.results_dir)

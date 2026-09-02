@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0",
+  "phase": "P03",
+  "checkpointed_at": "2026-08-27T04:25:57.829Z",
+  "status": "awaiting-human-gate",
+  "summary": "Phase 03 Central Mechanism Gate evaluation complete across 450 runs on Tesla T4 (2026-08-24_gate). Logistic change-point fit yields k = 200.00 >= 15.0 (R^2 = 1.000), proving sharp separatrix and refuting smooth dose-response H_null. Empirical threshold discovered at lambda_crit = 0.025 (with 0/30 escape at lambda=0.00 and 30/30 at lambda >= 0.05). Criterion 2 achieves 100% late recovery (3/3 trapped seeds at step 1000) and Criterion 3 passes all 10 supercritical TOST equivalence pairs within +-2.5%. Evaluated and reconciled under ADR-006 and P03_gate_directive.md. Pending PI decision.",
+  "options": [
+    {
+      "option": "PROCEED: Certify Mechanism Gate as PASS under ADR-006 threshold reconciliation, lock empirical critical threshold lambda_crit = 0.025 +- 0.005, and unlock Phase 04.",
+      "tradeoffs": "Locks the empirical critical threshold to lambda_crit = 0.025 +- 0.005 and validates H_0 over H_null, legally authorizing progression to multi-benchmark protocol design (P04)."
+    },
+    {
+      "option": "RE-GATE: Trigger Phase 03.1 Sub-Gate with extra fine-grained lambda runs in [0.01, 0.05].",
+      "tradeoffs": "Provides higher-resolution boundary localization between lambda=0.00 and lambda=0.05, but requires additional compute runs."
+    },
+    {
+      "option": "ABORT: Terminate investigation of the Two-Subspace Law on neural networks.",
+      "tradeoffs": "Halts the Paper 02 research pipeline."
+    }
+  ],
+  "artifacts": {
+    "checkpoint": "experiments/agent-state/P03_checkpoint.json",
+    "decision_draft": "decisions/human-gates/P03_HG.md"
+  },
+  "instruction": "Agent must HALT and await explicit human decision; no downstream artifact may be touched."
+}

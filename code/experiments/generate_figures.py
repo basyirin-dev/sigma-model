@@ -183,13 +183,13 @@ def main() -> None:
     parser.add_argument(
         "--results-dir",
         type=Path,
-        default=Path("paper/submission/supplementary/data/gate-results"),
+        default=Path("paper01/submission/supplementary/data/gate-results"),
         help="Directory containing the gate experiment data files.",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("paper/figures"),
+        default=Path("paper01/figures"),
         help="Directory where output figure PNGs will be saved.",
     )
     args = parser.parse_args()

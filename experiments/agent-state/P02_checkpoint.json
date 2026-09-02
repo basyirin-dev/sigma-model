@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0",
+  "phase": "P02",
+  "checkpointed_at": "2026-08-27T04:18:28.718Z",
+  "status": "awaiting-human-gate",
+  "summary": "Phase 02 Hypothesis Formulation, Mathematical Reduction & Risk Scoring complete. Continuous gradient flow in two-subspace reduction formally derives transverse eigenvalue mu_perp = lambda a_C - b_C and critical threshold lambda_crit = b_C / a_C (ADR-001). Scientific hypotheses (H_0, H_null, H_alt) and 3 observable signatures operationalized (ADR-003). Continuous ODE solver (two_subspace_ode.py, observable_signatures.py) and figures generated. Risk #1 (Separatrix vs Smooth Sigmoid) designated as the Phase 03 Gate target. Pending PI approval.",
+  "options": [
+    {
+      "option": "Approve Central Hypothesis H_0, Analytical Reduction (ADR-001), and Designation of Risk #1 as Phase 03 Gate Target, and proceed to Pre-Registration (P02.5).",
+      "tradeoffs": "Locks in the two-subspace continuous gradient flow model and binds the existence of a sharp separatrix P(escape | lambda) as the strict empirical gate target for P03."
+    },
+    {
+      "option": "Require modification of analytical assumptions (e.g. non-orthogonal subspace couplings or higher-order curvature terms) before pre-registration.",
+      "tradeoffs": "Enriches the theoretical model with additional coupling degrees of freedom, but increases analytical complexity without altering the fundamental transverse stability exchange mu_perp = lambda a_C - b_C."
+    },
+    {
+      "option": "Reject transcritical bifurcation mechanism in favor of smooth dose-response (H_null) or scale-only emergence (H_alt).",
+      "tradeoffs": "Abandons the dynamical-systems threshold derivation and pivots Paper 02 back to empirical curve fitting or scale-only benchmarking."
+    }
+  ],
+  "artifacts": {
+    "checkpoint": "experiments/agent-state/P02_checkpoint.json",
+    "decision_draft": "decisions/human-gates/P02_HG.md"
+  },
+  "instruction": "Agent must HALT and await explicit human decision; no downstream artifact may be touched."
+}

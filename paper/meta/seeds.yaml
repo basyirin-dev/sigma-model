@@ -1,0 +1,51 @@
+# Seed Registry (RPF v2.0 CC.1.8)
+
+**Project:** Paper 02 (*Critical Compositional Pressure & The Two-Subspace Law*)
+**Purpose:** Single source of truth for random-seed provenance. All multi-seed runs derive seeds deterministically from this registry.
+
+## Derivation Rule
+
+- **Deterministic Seed Derivation Rule (Paper 01 / Paper 02 Convention, CC.1.2):**
+  $$\text{seed} = \text{cell\_seed\_idx} \times 42 + 7$$
+  where `cell_seed_idx` is the zero-based run index within an experimental cell/condition ($0 \dots 29$ for Tier 1 with $n=30$; $0 \dots 9$ for Tier 2 with $n=10$).
+- **Global Identifier Disambiguation:**
+  - `run_id`: Globally unique 1-based index across the 960-run production matrix ($1 \dots 960$).
+  - `cell_seed_idx`: 0-based within-cell replicate index ($0 \dots 29$ for Tier 1; $0 \dots 9$ for Tier 2).
+  - `seed`: Deterministic integer random seed passed to PyTorch, NumPy, Python `random`, and CUDA backends.
+
+## Canonical Cell Seed Registry (30 Seeds)
+
+| cell_seed_idx | Seed Value (`idx * 42 + 7`) | Provenance & Usage |
+|:-------------:|:---------------------------:|:-------------------|
+| 0 | 7 | Canonical cell seed 0 (Tier 1 & Tier 2) |
+| 1 | 49 | Canonical cell seed 1 (Tier 1 & Tier 2) |
+| 2 | 91 | Canonical cell seed 2 (Tier 1 & Tier 2) |
+| 3 | 133 | Canonical cell seed 3 (Tier 1 & Tier 2) |
+| 4 | 175 | Canonical cell seed 4 (Tier 1 & Tier 2) |
+| 5 | 217 | Canonical cell seed 5 (Tier 1 & Tier 2) |
+| 6 | 259 | Canonical cell seed 6 (Tier 1 & Tier 2) |
+| 7 | 301 | Canonical cell seed 7 (Tier 1 & Tier 2) |
+| 8 | 343 | Canonical cell seed 8 (Tier 1 & Tier 2) |
+| 9 | 385 | Canonical cell seed 9 (Tier 1 & Tier 2) |
+| 10 | 427 | Canonical cell seed 10 (Tier 1) |
+| 11 | 469 | Canonical cell seed 11 (Tier 1) |
+| 12 | 511 | Canonical cell seed 12 (Tier 1) |
+| 13 | 553 | Canonical cell seed 13 (Tier 1) |
+| 14 | 595 | Canonical cell seed 14 (Tier 1) |
+| 15 | 637 | Canonical cell seed 15 (Tier 1) |
+| 16 | 679 | Canonical cell seed 16 (Tier 1) |
+| 17 | 721 | Canonical cell seed 17 (Tier 1) |
+| 18 | 763 | Canonical cell seed 18 (Tier 1) |
+| 19 | 805 | Canonical cell seed 19 (Tier 1) |
+| 20 | 847 | Canonical cell seed 20 (Tier 1) |
+| 21 | 889 | Canonical cell seed 21 (Tier 1) |
+| 22 | 931 | Canonical cell seed 22 (Tier 1) |
+| 23 | 973 | Canonical cell seed 23 (Tier 1) |
+| 24 | 1015 | Canonical cell seed 24 (Tier 1) |
+| 25 | 1057 | Canonical cell seed 25 (Tier 1) |
+| 26 | 1099 | Canonical cell seed 26 (Tier 1) |
+| 27 | 1141 | Canonical cell seed 27 (Tier 1) |
+| 28 | 1183 | Canonical cell seed 28 (Tier 1) |
+| 29 | 1225 | Canonical cell seed 29 (Tier 1) |
+
+> **Verification:** Across all 960 production rows in `paper/experiments/run-log.csv`, every row satisfies `seed == cell_seed_idx * 42 + 7` with 0 missing or mismatched seeds.

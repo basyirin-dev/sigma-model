@@ -1,3 +1,4 @@
+# pyright: strict
 import numpy as np
 
 

@@ -83,7 +83,7 @@ def segmented_tau(steps: np.ndarray, y: np.ndarray) -> float:
 def main() -> None:
     ap = argparse.ArgumentParser(description="P07 gate figures + τ estimation")
     ap.add_argument("--results-dir", default="archive/gate-results")
-    ap.add_argument("--outdir", default="paper/figures")
+    ap.add_argument("--outdir", default="paper01/figures")
     args = ap.parse_args()
 
     all_results = load_results(args.results_dir)

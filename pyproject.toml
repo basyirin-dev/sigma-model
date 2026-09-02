@@ -39,8 +39,8 @@ include = ["sigma_align*"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
-extend-exclude = ["*.ipynb", "archive/*"]
+target-version = "py313"
+extend-exclude = ["*.ipynb", "archive/*", "paper/notebooks/*", "paper/submission_*/*"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W"]
@@ -48,10 +48,27 @@ ignore = ["E501"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["F401", "F811"]
+"paper/tests/*" = ["F401", "F811"]
 "code/experiments/*" = ["E402"]
 
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "paper/tests"]
 python_files = ["test_*.py"]
+
+
+[tool.coverage.run]
+source = ["paper/src", "code/sigma_align"]
+omit = [
+    "*/test_*",
+    "*/tests/*",
+    "*/experiments/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "if __name__ == .__main__.:",
+    "pragma: no cover",
+]
+show_missing = true
 

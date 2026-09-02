@@ -27,7 +27,7 @@ def scan_file(file_path: Path):
 
 def main():
     root = Path(".")
-    files_to_scan = list(root.glob("writing/**/*.qmd")) + list(root.glob("paper01/**/*.tex")) + list(root.glob("paper02/**/*.tex"))
+    files_to_scan = list(root.glob("paper/**/*.tex"))
     
     total_violations = 0
     for f in files_to_scan:

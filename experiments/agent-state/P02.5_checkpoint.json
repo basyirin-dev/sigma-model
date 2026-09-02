@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.0",
+  "phase": "P02.5",
+  "checkpointed_at": "2026-08-27T04:21:42.468Z",
+  "status": "awaiting-human-gate",
+  "summary": "Phase 02.5 Pre-Registration complete. Formal pre-registration document (planning/preregistration.md) locked with exactly 1 primary metric (Criterion 1: Sharp escape step-function, k >= 15.0 with separation bounds), 2 secondary confirmatory metrics (Criterion 2: Late-onset recovery >= 90%, Criterion 3: Supercritical TOST parity within +-2.5%), 4 exploratory metrics, 5 objective data exclusion criteria, N=30 seeds/cell power calibration (SE <= 0.091), and a 3-way decision rule. Bidirectional linkages to ADR-003 and P03_GATE.md established. Pending PI approval.",
+  "options": [
+    {
+      "option": "Approve Pre-Registration Protocol (planning/preregistration.md) and authorize transition to Phase 03 Mechanism Gate execution.",
+      "tradeoffs": "Formally locks evaluation criteria, non-parametric power bounds (N=30 seeds/cell), exclusion rules, and the 3-way decision rule prior to gate evaluation."
+    },
+    {
+      "option": "Require adjustments to primary/secondary metric thresholds before locking pre-registration.",
+      "tradeoffs": "Allows fine-tuning of the steepness bound k or separation criteria, but delays Phase 03 Gate execution."
+    },
+    {
+      "option": "Require revision of statistical power bounds, seed sample size, or data exclusion criteria.",
+      "tradeoffs": "Permits altering the experimental grid size (e.g. increasing N beyond 30 seeds), which scales compute requirements accordingly."
+    }
+  ],
+  "artifacts": {
+    "checkpoint": "experiments/agent-state/P02.5_checkpoint.json",
+    "decision_draft": "decisions/human-gates/P02.5_HG.md"
+  },
+  "instruction": "Agent must HALT and await explicit human decision; no downstream artifact may be touched."
+}

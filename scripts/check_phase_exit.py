@@ -65,11 +65,11 @@ def check_p00() -> tuple[bool, list[str]]:
 
     # 7. Pi ecosystem files
     for pi_file in [
-        ".pi/extensions/rpf-guard.ts",
+        ".pi/extensions/rpf-governance.ts",
         ".pi/extensions/human-gate.ts",
         ".pi/extensions/manifest-enforcer.ts",
-        ".pi/tools/validate_manifest_schema.py",
-        ".pi/tools/run_compliance_linter.py",
+        "scripts/validate_manifest_schema.py",
+        "scripts/run_compliance_linter.py",
     ]:
         if not (WORKSPACE / pi_file).exists():
             issues.append(f"{pi_file} is missing.")
@@ -90,9 +90,9 @@ def check_p01() -> tuple[bool, list[str]]:
 def check_p02() -> tuple[bool, list[str]]:
     """P02: Theoretical Foundations & ODE Derivations."""
     issues = []
-    theory_files = list(WORKSPACE.glob("src/simulation/*.py")) + list(WORKSPACE.glob("code/sigma_align/ode/*.py"))
+    theory_files = list(WORKSPACE.glob("paper/src/continuous/*.py")) + list(WORKSPACE.glob("code/sigma_align/ode/*.py"))
     if not theory_files:
-        issues.append("No theoretical ODE simulation modules found in src/simulation/ or code/sigma_align/ode/.")
+        issues.append("No theoretical ODE simulation modules found in paper/src/continuous/ or code/sigma_align/ode/.")
     return len(issues) == 0, issues
 
 def check_p03() -> tuple[bool, list[str]]:
@@ -135,9 +135,9 @@ def check_p08() -> tuple[bool, list[str]]:
     """P08: Manuscript Drafting."""
     issues = []
     qmd = WORKSPACE / "writing/manuscript/index.qmd"
-    tex = WORKSPACE / "paper01/manuscript.tex"
+    tex = WORKSPACE / "paper/writing/manuscript.tex"
     if not qmd.exists() and not tex.exists():
-        issues.append("Manuscript source file missing in writing/manuscript/ or paper01/.")
+        issues.append("Manuscript source file missing in writing/manuscript/ or paper/writing/.")
     return len(issues) == 0, issues
 
 def check_p09() -> tuple[bool, list[str]]:

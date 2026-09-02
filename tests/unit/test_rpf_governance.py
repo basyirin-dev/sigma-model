@@ -1,10 +1,13 @@
 """RPF v2.0 Governance & Infrastructure Unit Tests."""
 
-import yaml
 from pathlib import Path
+
 import pytest
-from scripts.compliance_linter import lint_workspace
+import yaml
+
 from scripts.check_phase_exit import check_p00
+from scripts.compliance_linter import lint_workspace
+
 
 def test_seeds_registry_valid():
     seeds_path = Path("meta/seeds.yaml")

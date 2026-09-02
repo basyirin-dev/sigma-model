@@ -3,6 +3,7 @@
   "lsp": {
     "pyright": { "command": ["pyright-langserver", "--stdio"], "extensions": ["py"], "disabled": false },
     "ruff": { "command": ["ruff", "server"], "extensions": ["py"], "disabled": false },
+    "texlab": { "command": ["texlab"], "extensions": ["tex", "bib", "sty", "cls"], "disabled": false },
     "yaml": { "command": ["yaml-language-server", "--stdio"], "extensions": ["yaml", "yml"], "disabled": false },
     "taplo": { "command": ["taplo", "lsp", "stdio"], "extensions": ["toml"], "disabled": false },
     "marksman": { "command": ["marksman"], "extensions": ["md"], "disabled": false },
@@ -12,6 +13,11 @@
     "dockerfile": { "disabled": true }
   },
   "mcp": {
+    "codebase_memory": {
+      "type": "local",
+      "command": ["codebase-memory-mcp"],
+      "enabled": true
+    },
     "sequential_thinking": {
       "type": "local",
       "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
@@ -34,17 +40,27 @@
     },
     "academic_research": {
       "type": "local",
-      "command": ["academic-research-mcp"],
+      "command": ["uvx", "academic-research-mcp"],
       "enabled": true
     },
     "zotero": {
       "type": "local",
-      "command": ["zotero-mcp", "serve"],
+      "command": ["uvx", "--from", "zotero-mcp-server", "zotero-mcp", "serve"],
       "enabled": true
     },
     "arxiv": {
       "type": "local",
-      "command": ["arxiv-mcp-server"],
+      "command": ["uvx", "arxiv-mcp-server"],
+      "enabled": true
+    },
+    "duckdb": {
+      "type": "local",
+      "command": ["uvx", "mcp-server-motherduck", "--read-write"],
+      "enabled": true
+    },
+    "sympy": {
+      "type": "local",
+      "command": ["uvx", "mcp-sympy"],
       "enabled": true
     }
   },

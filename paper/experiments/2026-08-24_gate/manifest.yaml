@@ -1,0 +1,88 @@
+schema_version: "2.0.0"
+run_id: "2026-08-24_gate"
+phase: "P03"
+timestamp: "2026-08-24T13:41:32Z"
+status: "COMPLETED"
+
+config:
+  name: "phase03_mechanism_gate"
+  protocol_path: "paper/experiments/configs/gate_protocol.yaml"
+  model: "seq2seq_transformer"
+  d_model: 128
+  nhead: 4
+  num_encoder_layers: 2
+  num_decoder_layers: 2
+  dim_feedforward: 512
+  optimizer: "adam"
+  lr: 0.001
+  total_steps: 2000
+  batch_size: 64
+  eval_interval: 25
+  arms:
+    arm_a:
+      lambda_values: [0.0, 0.05, 0.10, 0.20, 0.30, 0.50, 0.75, 1.00, 1.50, 2.00]
+      seeds_per_cell: 30
+      total_runs: 300
+    arm_b:
+      lambda_val: 1.0
+      intervention_steps: [0, 100, 250, 500, 1000]
+      seeds_per_cell: 30
+      total_runs: 150
+  total_runs: 450
+
+seed:
+  provenance: "meta/seeds.yaml"
+  formula: "run_id * 42 + 7"
+  num_seeds_per_condition: 30
+  deterministic: true
+
+hardware:
+  gpu_model: "NVIDIA Tesla T4"
+  gpu_count: 1
+  cuda_version: "12.2"
+  driver_version: "535.104.05"
+  host_os: "Linux 6.6.137+ x86_64"
+
+environment:
+  python_version: "3.13.9"
+  torch_version: "2.12.0"
+  numpy_version: "1.26.4"
+  scipy_version: "1.13.1"
+  deterministic_mode: true
+  cudnn_deterministic: true
+  cudnn_benchmark: false
+
+data:
+  benchmark: "hbar_zero_leakage"
+  dataset_path: "paper/data/processed/hbar_zero_leakage.pt"
+  n_train: 10000
+  n_test_id: 2000
+  n_test_ood: 2000
+  n_comp_probe: 2000
+  data_hash_sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+tracking:
+  output_bundle: "paper/experiments/2026-08-24_gate/all_results.pkl"
+  output_bundle_sha256: "a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0"
+  metrics_logged:
+    - "step"
+    - "loss_train"
+    - "loss_comp"
+    - "acc_id"
+    - "acc_ood"
+    - "cka_rga"
+    - "param_norm"
+
+compute:
+  gpu_hours: 1.85
+  allocated_budget_hours: 2.00
+  abort_threshold_hours: 4.00
+  co2_kg_estimate: 0.22
+
+numerical_sanity:
+  nan_inf_count: 0
+  non_convergence_count: 0
+  seed_mismatch_count: 0
+  residual_norms_finite: true
+  gradient_clipping_threshold: 1.0
+  sanity_status: "PASS"

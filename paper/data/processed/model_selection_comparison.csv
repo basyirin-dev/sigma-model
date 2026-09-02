@@ -1,0 +1,6 @@
+functional_form,aggregate_r2,aggregate_aic_rss,seed_log_likelihood,seed_aic,seed_bic,parameters
+2-Parameter Logistic (Transcritical),0.8868,-47.12,-173.63,351.26,358.86,"lambda_crit=0.0233, k=93.94"
+2-Parameter Logistic (Dense Grid NLS Cell-Proportion Fit),0.8868,-47.12,-173.63,351.26,358.86,"lambda_crit=0.0238, k=79.48"
+Probit Cumulative Gaussian,0.8859,-46.85,-173.76,351.52,359.12,"mu=0.0233, sigma=0.0175"
+Gompertz Asymmetric Sigmoid,0.8872,-47.2,-173.7,351.41,359.01,"alpha=0.0162, beta=68.40"
+Piecewise-Linear Change-Point,0.883,-51.03,-379.9,763.81,771.4,"lambda_0=0.0000, s=24.21"

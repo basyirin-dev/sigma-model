@@ -1,0 +1,18 @@
+# Treat source as UTF-8 text and normalize line endings on commit/checkout.
+* text=auto
+
+# Declare binary/large artifacts so Git never diff/merge them as text.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.hmm binary
+*.pt binary
+*.pkl binary
+*.npy binary
+*.zip binary
+*.tar.gz binary
+*.gz binary
+*.so binary
+*.ipynb binary

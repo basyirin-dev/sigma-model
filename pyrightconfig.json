@@ -1,0 +1,65 @@
+{
+  "include": [
+    "code",
+    "paper02"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "archive",
+    "hbar_env"
+  ],
+  "venvPath": ".",
+  "venv": "hbar_env",
+  "extraPaths": [
+    "code",
+    "paper02",
+    "/usr/lib/python3.14/site-packages",
+    "/home/bigbasy/.local/lib/python3.14/site-packages"
+  ],
+  "typeCheckingMode": "standard",
+  "reportMissingTypeStubs": false,
+  "reportPrivateImportUsage": "warning",
+  "executionEnvironments": [
+    {
+      "root": "code/sigma_align/ode",
+      "extraPaths": [
+        "code",
+        "/usr/lib/python3.14/site-packages",
+        "/home/bigbasy/.local/lib/python3.14/site-packages"
+      ]
+    },
+    {
+      "root": "code/sigma_align/config",
+      "extraPaths": [
+        "code",
+        "/usr/lib/python3.14/site-packages",
+        "/home/bigbasy/.local/lib/python3.14/site-packages"
+      ]
+    },
+    {
+      "root": "code/sigma_align",
+      "extraPaths": [
+        "code",
+        "/usr/lib/python3.14/site-packages",
+        "/home/bigbasy/.local/lib/python3.14/site-packages"
+      ]
+    },
+    {
+      "root": "code/experiments",
+      "extraPaths": [
+        "code",
+        "/usr/lib/python3.14/site-packages",
+        "/home/bigbasy/.local/lib/python3.14/site-packages"
+      ]
+    },
+    {
+      "root": "paper02",
+      "extraPaths": [
+        "paper02",
+        "/usr/lib/python3.14/site-packages",
+        "/home/bigbasy/.local/lib/python3.14/site-packages"
+      ]
+    }
+  ]
+}

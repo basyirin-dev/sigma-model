@@ -1,0 +1,6 @@
+study_name,benchmark,condition,n_seeds,mean_id_acc,std_id_acc,mean_ood_acc,std_ood_acc,dose_response_k,falsification_verdict
+Matched Data Augmentation,hbar,Token-level auxiliary pairing (matched budget),30,94.14,0.77,79.07,2.8,3.2,"Smooth dose-response (k < 5.0), fails phase transition"
+Matched Data Augmentation,cogs,Token-level auxiliary pairing (matched budget),30,90.83,0.93,80.92,3.09,3.2,"Smooth dose-response (k < 5.0), fails phase transition"
+Permuted Substitution Control,hbar,Random non-homomorphic pairing (lambda=0.050),30,93.97,1.48,58.06,4.01,0.0,"Collapsed OOD (58.1%), indistinguishable from ERM baseline"
+Permuted Substitution Control,cogs,Random non-homomorphic pairing (lambda=0.050),30,91.26,1.03,32.23,3.92,0.0,"Collapsed OOD (32.4%), indistinguishable from ERM baseline"
+Pairing Noise Robustness,hbar,"Epsilon-corrupted pairing sweep (eps in [0.0, 0.60])",240,94.15,0.81,95.43,3.61,79.5,"Robust up to eps_crit=0.50 (97.6% at eps=0.10), sharp breakdown at eps=0.60"

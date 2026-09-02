@@ -39,41 +39,21 @@ Thumbs.db
 *.lof
 *.lot
 
-# Build / Output
-paper01/manuscript.pdf
-paper01/companion/*.pdf
-paper01/submission/*.pdf
-paper01/submission/**/*.pdf
-paper01/figures/*.png
-paper02/**/*.pdf
-paper02/**/*.png
-paper02/docs/
+# Build / Output — the defining paper (/paper/) delivers the manuscript, figures and bundles
+paper/**/*.pdf
+paper/**/*.png
+paper/docs/
 
-# Paper 02 — heavy regenerable artifacts (manifests/configs/scripts ARE tracked; raw outputs re-derivable from run_gate.py)
-paper02/experiments/**/*.pkl
-paper02/experiments/agent-state/
+# Defining paper — heavy regenerable artifacts (manifests/configs/scripts ARE tracked; raw outputs re-derivable from run_gate.py)
+paper/experiments/**/*.pkl
+paper/experiments/agent-state/
 
-# TMLR submission package — derived copies and build outputs (anonymized sources ARE tracked)
-paper01/submission/figures/
-paper01/submission/bibliography.bib
-paper01/submission/tmlr.sty
-paper01/submission/tmlr.bst
-paper01/submission/supplementary/companion.bbl
-paper01/submission/supplementary/sigma-trap-code-data.zip
-paper01/submission/supplementary/code/
-paper01/submission/supplementary/configs/
-paper01/submission/supplementary/data/
-
-# arXiv bundle — derived (regenerate with make arxiv); README-upload.md IS tracked
-arxiv-submission/manuscript.tex
-arxiv-submission/manuscript.bbl
-arxiv-submission/manuscript.pdf
-arxiv-submission/bibliography.bib
-arxiv-submission/tmlr.sty
-arxiv-submission/tmlr.bst
-arxiv-submission/figures/
-arxiv-submission/companion/
-sigma-arxiv-submission.tar.gz
+# Raw experiment output directories
+output/
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+experiments/*/outputs/
 
 # Archive (large files)
 archive/*.tar.gz
@@ -91,9 +71,16 @@ archive/**/__pycache__/
 # Archived build outputs (PDFs, bundles)
 archive/**/*.pdf
 
+# Archived superseded-paper planning and internal records (never re-track)
+archive/paper01/planning/
+
+# Superseded Paper 01 — derived/untracked artifacts (tracked manuscript sources stay tracked)
+archive/paper01/**/*.png
+archive/paper01/submission/
+archive/paper01/templates/
+
 # macOS junk from the JAIR author kit
 __MACOSX/
-paper01/templates/
 
 # Reasonix session state
 .reasonix/
@@ -107,7 +94,16 @@ opencode.json.bak*
 
 # Coverage
 .coverage
+.coverage.*
+coverage.xml
+htmlcov/
 .pytest_cache/
+.mypy_cache/
+
+# Environment / secrets — never commit
+.env
+.env.*
+!.env.example
 
 # Python package build
 code/*.egg-info/
@@ -115,13 +111,6 @@ code/*.egg-info/
 
 # Outreach and personal recruitment kits
 mentor-kit/
-
-# Internal submission handoff and review post-mortems
-paper01/submission/UPLOAD-HANDOFF.md
-paper01/submission/compliance-checklist.md
-paper01/submission/cover-letter.md
-paper01/submission/reviewer-summary.md
-paper01/planning/
 
 # Local agent configurations
 .agents/
@@ -153,16 +142,9 @@ archive/gate-results/
 # Archives and bundles
 *.tar.gz
 *.zip
-arxiv-submission/
 
-# Raw experiment output directories
-output/
-data/raw/*
-!data/raw/.gitkeep
-!data/raw/README.md
-experiments/*/outputs/
-.pi/state/
-paper02/data/raw/*
-!paper02/data/raw/README.md
+# Data raw directories
+paper/data/raw/*
+!paper/data/raw/README.md
 .pi/
-
+.pi/state/

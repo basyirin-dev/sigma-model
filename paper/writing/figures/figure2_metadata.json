@@ -1,0 +1,18 @@
+{
+  "figure_id": "FIG-002",
+  "title": "Empirical Bifurcation Boundary & Late-Onset Recovery Separatrix",
+  "caption": "(a) Empirical escape probability as a function of compositional pressure lambda for the canonical Transformer 2L on H-Bar (n=30 seeds/cell), showing a sharp step transition at hat{lambda}_crit = 0.025. (b) 2D late-onset recovery heatmap over the (lambda, t_int) plane demonstrating 100% escape for supercritical pressure even after late-onset intervention.",
+  "files": {
+    "pdf": "figure2_bifurcation_boundary.pdf",
+    "png": "figure2_bifurcation_boundary.png",
+    "tex": "figure2_bifurcation_boundary.tex"
+  },
+  "provenance": [
+    "paper/data/processed/ood_summary_table.csv",
+    "paper/data/processed/inflection_breakpoints.csv"
+  ],
+  "sample_size": "n=30 seeds per cell (primary)",
+  "colorblind_safe": true,
+  "palette": "Okabe-Ito",
+  "status": "DRAFT_ANALYSIS | PENDING_PI_REVIEW | NOT_FINAL_EVIDENCE"
+}
