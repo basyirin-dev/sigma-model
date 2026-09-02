@@ -12,10 +12,10 @@ This directory contains the primary submission deliverables and self-contained a
 
 | File Name | SHA-256 Checksum | Size | Description |
 |---|---|---|---|
-| `manuscript.pdf` | `a7403ed7a9afd2bb2bffca1c557b330f2fc7a2e3727e2e91987dd971ec260e29` | 1076.8 KB | **Comprehensive Master Monograph**: Full TMLR-formatted master deliverable (Main Body + Appendices A–F, proofs, and figures). |
+| `manuscript.pdf` | `4852667fb33721430698c4b145798875a423ca27c55c913a2c66ebf97cd3584a` | 1076.8 KB | **Comprehensive Master Monograph**: Full TMLR-formatted master deliverable (Main Body + Appendices A–F, proofs, and figures). |
 | `manuscript_journal.pdf` | `e36457c30fb7579d872a886a3486ed9a580d9f07a7106448810c0cfd34a3b3b0` | 844.0 KB | **Journal Main Manuscript**: Streamlined 27-page AAIML journal format covering core theoretical foundations and empirical validation. |
 | `supplementary_materials.pdf` | `dab8ca4b1c5c20538dc11da473ca44d5372a101db4720fa797ee5b1b466decb1` | 718.2 KB | **Supplementary Materials Annex**: Self-contained 19-page annex containing full mathematical proofs, dataset formalizations, and econometric tables. |
-| `arxiv_bundle.tar.gz` | `27b388b77b229b793ce4013331c502285d297823950ecac9c6089d49b15f9061` | 243.7 KB | **arXiv Submission Package**: Complete turnkey source bundle (LaTeX source, flattened bibliography `.bbl`, style files, and vector figures). |
+| `arxiv_bundle.tar.gz` | `2966fd1b22fbfbf37ad0d1664592e0766f515bfd5f57ac67da05fb5418d3f3ad` | 243.7 KB | **arXiv Submission Package**: Complete turnkey source bundle (LaTeX source, flattened bibliography `.bbl`, style files, and vector figures). |
 | `supplementary_materials.zip` | `a5cca5923ad527c255a5d08acba5f22a6ad9293b549acf43786f8a3c28faa636` | 3977.4 KB | **Standalone Reproducibility Archive**: Complete standalone package containing all source code (`src/`), unit/leakage tests (`tests/`), all 17 processed CSV tables (`data/processed/`), and vector figures. |
 | `run-log.csv` | `cefd63bb945b23675d2c57baade225fb22f2cec49bc0ab858e58ead40f76faf8` | 190.3 KB | **Master Run Log**: Complete 960-run production execution log across 4 benchmarks and 3 architectures, including explicit `split` metadata and baseline GCA. |
 | `ood_summary_table.csv` | `838e5ee9c9dea69f0c3c4f19dd56bc59ff2a1dbaf54dca58c1e8da4579831769` | 9.2 KB | **Canonical OOD Summary Table**: Summary metrics and 95% confidence intervals across all benchmark $\times$ architecture $\times$ $\lambda$ conditions. |
