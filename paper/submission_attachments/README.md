@@ -2,7 +2,7 @@
 
 **Title:** Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks  
 **Author:** Basyirin Amsyar Basri  
-**Repository Anchor:** `v2.0-paper02` (`540c992`)
+**Repository Anchor:** `v2.0-paper02` (`f9ba574`)
 
 ---
 
@@ -12,18 +12,18 @@ This directory contains the primary submission deliverables and self-contained a
 
 | File Name | SHA-256 Checksum | Size | Description |
 |---|---|---|---|
-| `manuscript.pdf` | `71cca56d90bce37126b818c4f9e3f9332b6d0a70e5307ed1f372c885b880aa13` | 1076.8 KB | **Comprehensive Master Monograph**: Full TMLR-formatted master deliverable (Main Body + Appendices A–F, proofs, and figures). |
-| `manuscript_journal.pdf` | `0e9a35a7bf149b220eca0b648bb21d42383cf8a8d63735af6f4fc366338986e7` | 844.0 KB | **Journal Main Manuscript**: Streamlined 27-page AAIML journal format covering core theoretical foundations and empirical validation. |
-| `supplementary_materials.pdf` | `0276030250da9f7d9263a1a5af487fe68c58eb8853a2b44aa17374df2d00af25` | 717.9 KB | **Supplementary Materials Annex**: Self-contained 19-page annex containing full mathematical proofs, dataset formalizations, and econometric tables. |
-| `arxiv_bundle.tar.gz` | `1c5b460b1186a466f668447de8785c4da02caec0386257f264fb2e8807bce7c8` | 243.7 KB | **arXiv Submission Package**: Complete turnkey source bundle (LaTeX source, flattened bibliography `.bbl`, style files, and vector figures). |
+| `manuscript.pdf` | `a7403ed7a9afd2bb2bffca1c557b330f2fc7a2e3727e2e91987dd971ec260e29` | 1076.8 KB | **Comprehensive Master Monograph**: Full TMLR-formatted master deliverable (Main Body + Appendices A–F, proofs, and figures). |
+| `manuscript_journal.pdf` | `e36457c30fb7579d872a886a3486ed9a580d9f07a7106448810c0cfd34a3b3b0` | 844.0 KB | **Journal Main Manuscript**: Streamlined 27-page AAIML journal format covering core theoretical foundations and empirical validation. |
+| `supplementary_materials.pdf` | `dab8ca4b1c5c20538dc11da473ca44d5372a101db4720fa797ee5b1b466decb1` | 718.2 KB | **Supplementary Materials Annex**: Self-contained 19-page annex containing full mathematical proofs, dataset formalizations, and econometric tables. |
+| `arxiv_bundle.tar.gz` | `27b388b77b229b793ce4013331c502285d297823950ecac9c6089d49b15f9061` | 243.7 KB | **arXiv Submission Package**: Complete turnkey source bundle (LaTeX source, flattened bibliography `.bbl`, style files, and vector figures). |
 | `supplementary_materials.zip` | `a5cca5923ad527c255a5d08acba5f22a6ad9293b549acf43786f8a3c28faa636` | 3977.4 KB | **Standalone Reproducibility Archive**: Complete standalone package containing all source code (`src/`), unit/leakage tests (`tests/`), all 17 processed CSV tables (`data/processed/`), and vector figures. |
 | `run-log.csv` | `cefd63bb945b23675d2c57baade225fb22f2cec49bc0ab858e58ead40f76faf8` | 190.3 KB | **Master Run Log**: Complete 960-run production execution log across 4 benchmarks and 3 architectures, including explicit `split` metadata and baseline GCA. |
 | `ood_summary_table.csv` | `838e5ee9c9dea69f0c3c4f19dd56bc59ff2a1dbaf54dca58c1e8da4579831769` | 9.2 KB | **Canonical OOD Summary Table**: Summary metrics and 95% confidence intervals across all benchmark $\times$ architecture $\times$ $\lambda$ conditions. |
 | `dense_grid_330_runs.csv` | `77e2159c234a305f544980786713fe9c1ee1a105d44d398f7d7c0635f86b44c2` | 52.7 KB | **Dense Grid Dataset**: Complete 330 evaluations on $\hbar$ across 11 dense levels integrating primary runs and calibrated boundary refinements. |
 | `inflection_breakpoints.csv` | `fe1ef4f502bfe2cc0ea39451a6c58cc1e0e2e75738cb6647bba9eb21bdd1100d` | 0.9 KB | **Inflection Breakpoints**: Fitted non-linear logistic separatrix parameters, steepness $k \ge 15.0$, and $R^2$ goodness-of-fit scores. |
 | `matrix_p04.yaml` | `be06bc8c1c870592d34fefeedc61ac430bf66d36593cfd980a1aa2224f19ce80` | 4.7 KB | **Experimental Matrix Configuration**: Full factorial specification of architecture parameters, benchmark splits, training schedules, and evaluation grids. |
-| `preregistration.md` | `c39d63fa67e3d479ffd4bfcc009d8ca5d09d451c45aa95d22b424a09342ce627` | 10.6 KB | **Preregistration Protocol**: Prospective evaluation protocol locked prior to Phase 06 production runs (RPF v2.0). |
-| `TIER0_AUDIT_REPRODUCIBILITY_DOSSIER.md` | `3ca55525634083ec9ca41f740f227ef6a70b5414c886aef11a52e55ce5307261` | 38.0 KB | **Audit & Reproducibility Dossier**: Epistemic claim hierarchy, oracle boundary disclosures, and mathematical/econometric toolchain mapping. |
+| `preregistration.md` | `de78319639fb85f412572666068effd2bb8706e3dd5004fb3b94cb8ca2548140` | 10.6 KB | **Preregistration Protocol**: Prospective evaluation protocol locked prior to Phase 06 production runs (RPF v2.0). |
+| `TIER0_AUDIT_REPRODUCIBILITY_DOSSIER.md` | `078d6dfb34fac36fe43c5201acd32b287a4016f8a35fb82f38b1623122df1170` | 38.0 KB | **Audit & Reproducibility Dossier**: Epistemic claim hierarchy, oracle boundary disclosures, and mathematical/econometric toolchain mapping. |
 | `README.md` | `*` | 7.5 KB | **Manifest & Guide**: Directory index, cryptographic checksums, schema definitions, and turnkey replication guide. |
 *(Note: Additional granular CSV trajectory and falsification tables—including `cka_trajectories.csv`, `pairwise_welch_tost.csv`, `granger_causality_results.csv`, `hessian_spectral_summary.csv`, `late_onset_recovery_trajectories.csv`, `anti_grokking_extended_runs.csv`, `threshold_sensitivity_grid.csv`, `model_selection_comparison.csv`, `data_augmentation_baseline.csv`, `permutation_control_runs.csv`, `pairing_noise_robustness.csv`, `falsification_controls_summary.csv`, `theoretical_separatrix.csv`, `escaped_subcohort_tost.csv`, and `dimensionality_concentration.csv`—as well as `seeds.yaml` are packaged within `supplementary_materials.zip` and versioned in `paper/data/processed/`.)*
 

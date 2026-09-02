@@ -27,7 +27,7 @@ The experimental falsification protocol underwent a rigorous, prospectively docu
 
 4. **Git Provenance Hash Reconciliation:**
    - Initial Preregistration Tag: `p02.5-preregistered` (Commit `97eabba`, 2026-08-23).
-   - Production Release Anchor Tag: `v2.0-paper02` (Commit `540c992`, finalized immutable release).
+   - Production Release Anchor Tag: `v2.0-paper02` (Commit `f9ba574`, finalized immutable release).
 ## 1. Primary Outcome (exactly one)
 
 | Field | Value |
@@ -82,5 +82,5 @@ Excluded runs are logged with the `NEGATIVE` tag and re-run with fresh seeds fro
 | p03_gate_protocol_id | `planning/phases/P03_GATE.md` Task 3.3 + `experiments/configs/gate_protocol.yaml` |
 | p03_1_adr_id | `decisions/ADR-006_subgate_calibration.md` |
 | gate_result | `planning/gate-result.md` (scored against this document) |
-| release_anchor | Git tag `v2.0-paper02` (Commit `540c992`) |
+| release_anchor | Git tag `v2.0-paper02` (Commit `f9ba574`) |
 | ledger | CLM-003 (primary), CLM-004 (secondary), CLM-005/006 (exploratory) |

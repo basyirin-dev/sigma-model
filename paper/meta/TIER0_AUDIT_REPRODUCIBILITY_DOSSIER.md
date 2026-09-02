@@ -2,7 +2,7 @@
 **Project:** Paper 02 (*Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks*)  
 **Author:** Basyirin Amsyar Basri (Independent Researcher)  
 **Authoritative Repository:** `https://github.com/basyirin-dev/sigma-model` (Git Remote: `git@github.com:basyirin-dev/sigma-model.git`)  
-**Release Tag Anchor:** `v2.0-paper02` (Commit: `540c992`)  
+**Release Tag Anchor:** `v2.0-paper02` (Commit: `f9ba574`)
 **Preregistration Tag:** `p02.5-preregistered` (Commit: `97eabba`, Locked 2026-08-23)  
 **Deliverables Evaluated:** `paper02/writing/manuscript.pdf` (Master 42-page unified manuscript), `paper02/writing/manuscript_journal.pdf` (Journal main body), `paper02/writing/supplementary_materials.pdf` (Journal supplementary materials), `paper02/arxiv_bundle.tar.gz`, `paper02/supplementary_materials.zip`.
 
@@ -30,7 +30,7 @@ This dossier provides exhaustive, immutable verification and technical evidence 
 - **Authoritative GitHub Repository:** `https://github.com/basyirin-dev/sigma-model`
 - **Authenticated Git Remote:** `git@github.com:basyirin-dev/sigma-model.git`
 - **Primary Release Tag:** `v2.0-paper02`
-- **Master Release Commit Hash:** `540c992`
+- **Master Release Commit Hash:** `f9ba574`
 - **Preregistration Anchor Tag:** `p02.5-preregistered` (Commit `97eabba`, 2026-08-23)
 
 ### 1.2 Generated Immutable Artifacts & Bundles
@@ -99,7 +99,7 @@ All experimental designs, sample sizes, and falsification criteria were prospect
    Upon establishing exact Hessian quadratic form normalization ($a_C = 1.0, b_C = 0.025$), the critical boundary was calibrated analytically ($\lambda_{\text{crit}} = b_C / a_C = 0.025$) and prospectively locked to $\lambda_{\text{crit}} \in [0.015, 0.030]$ ($0.025 \pm 0.005$) and late-onset intervention was locked to supercritical pressure $\lambda_{\text{post}} = 0.050$ ($2\times \lambda_{\text{crit}}$).
 3. **Git Provenance Hash Reconciliation:**
    - Initial Preregistration Tag: `p02.5-preregistered` (Commit Hash: `97eabba`, Timestamp: 2026-08-23 18:24:10 UTC).
-   - Production Release Anchor Tag: `v2.0-paper02` (Commit Hash: `540c992`, finalized immutable release).
+   - Production Release Anchor Tag: `v2.0-paper02` (Commit Hash: `f9ba574`, finalized immutable release).
    - Production Matrix Execution: Phase P06 production runs (960 runs) were executed strictly under the locked Stage 2 parameterization.
 ### 4.2 Verification of Locked vs. Empirical Decision Boundaries
 | Criterion | Prospective Preregistered Threshold | Empirical Measured Result | Status |

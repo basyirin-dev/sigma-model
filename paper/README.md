@@ -3,7 +3,7 @@
 **Full Title:** Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks  
 **Author:** Basyirin Amsyar Basri (Independent Researcher, Kuala Lumpur, Malaysia)  
 **Submission Target:** SSRN CompSciRN Preprint / arXiv Preprint (Peer Review at a Later Date)  
-**Release Tag:** `v2.0-paper02` · **Commit Anchor:** `540c992` · **Preregistration Tag:** `p02.5-preregistered` (Commit `97eabba`, 2026-08-23)
+**Release Tag:** `v2.0-paper02` · **Commit Anchor:** `f9ba574` · **Preregistration Tag:** `p02.5-preregistered` (Commit `97eabba`, 2026-08-23)
 
 ---
 
