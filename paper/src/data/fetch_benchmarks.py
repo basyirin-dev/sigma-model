@@ -36,13 +36,12 @@ def generate_scan_benchmark(
     actions = ["jump", "walk", "look", "run"]
     directions = ["left", "right"]
     connectors = ["and", "after"]
+    modifiers = ["twice", "thrice", "around left", "around right", "opposite left", "opposite right"]
 
-    # Vocabulary mapping to primitive action traces
     def _interpret_command(cmd: str) -> str:
         tokens = cmd.split()
         if not tokens:
             return ""
-        # Primitive homomorphic mapping
         out = []
         for t in tokens:
             if t == "jump":
@@ -73,47 +72,58 @@ def generate_scan_benchmark(
                 out.append(f"I_{t.upper()}")
         return " ".join(out)
 
-    # 1. Base command generation
+    # 1. Base atomic & simple commands
     all_commands: list[str] = []
     for a in actions:
         all_commands.append(a)
         for d in directions:
             all_commands.append(f"{a} {d}")
             all_commands.append(f"turn {d}")
-            for m in ["twice", "thrice", "around", "opposite"]:
+            for m in modifiers:
                 all_commands.append(f"{a} {d} {m}")
                 all_commands.append(f"turn {d} {m}")
 
-    # Compound commands
-    compound_commands: list[str] = []
-    for c1 in all_commands[:20]:
+    id_atoms = [c for c in all_commands if "jump" not in c]
+    jump_atoms = [c for c in all_commands if "jump" in c]
+
+    # 2. In-distribution compounds (no jump, or single atomic jump)
+    id_compounds: list[str] = list(id_atoms)
+    id_compounds.append("jump")
+    for c1 in id_atoms:
         for conn in connectors:
-            for c2 in all_commands[:20]:
-                compound_commands.append(f"{c1} {conn} {c2}")
+            for c2 in id_atoms:
+                id_compounds.append(f"{c1} {conn} {c2}")
 
-    # Deduplicate corpus
-    full_corpus = list(dict([(c, _interpret_command(c)) for c in all_commands + compound_commands]).items())
+    # 3. OOD Jump compounds (held-out composition)
+    jump_compounds: list[str] = [c for c in jump_atoms if c != "jump"]
+    for c1 in jump_atoms:
+        for conn in connectors:
+            for c2 in id_atoms[:15]:
+                jump_compounds.append(f"{c1} {conn} {c2}")
+                jump_compounds.append(f"{c2} {conn} {c1}")
 
-    # Strict Pairwise Disjoint Partitions for SCAN
-    # 1. ood_jump: all compounds containing "jump"
-    ood_jump = [x for x in full_corpus if "jump" in x[0] and x[0] != "jump"]
+    # 4. Length extrapolation compounds (depth 3, length > 8)
+    len_compounds: list[str] = []
+    for c1 in id_atoms[:10]:
+        for conn1 in connectors:
+            for c2 in id_atoms[:10]:
+                for conn2 in connectors:
+                    for c3 in id_atoms[:5]:
+                        len_compounds.append(f"{c1} {conn1} {c2} {conn2} {c3}")
 
-    # 2. ood_len: compounds of length > 4 without "jump"
-    ood_len = [x for x in full_corpus if len(x[0].split()) > 4 and "jump" not in x[0]]
+    id_corpus = list(dict([(c, _interpret_command(c)) for c in id_compounds]).items())
+    jump_corpus = list(dict([(c, _interpret_command(c)) for c in jump_compounds]).items())
+    len_corpus = list(dict([(c, _interpret_command(c)) for c in len_compounds]).items())
 
-    # 3. in-distribution pool: length <= 4, no jump compounds (isolated "jump" allowed)
-    id_pool = [x for x in full_corpus if len(x[0].split()) <= 4 and ("jump" not in x[0] or x[0] == "jump")]
-
-    # Split in-distribution pool into train and val_id
-    split_idx = int(len(id_pool) * 0.85)
-    train_data = id_pool[:split_idx]
-    val_id = id_pool[split_idx:]
+    split_idx = int(len(id_corpus) * 0.8)
+    train_data = id_corpus[:split_idx]
+    val_id = id_corpus[split_idx:]
 
     return {
         "train": train_data,
         "val_id": val_id,
-        "ood_add_primitive_jump": ood_jump,
-        "ood_length_split": ood_len,
+        "ood_add_primitive_jump": jump_corpus,
+        "ood_length_split": len_corpus,
     }
 
 
@@ -121,8 +131,14 @@ def generate_cogs_benchmark(
     seed: int = 42,
 ) -> dict[str, list[tuple[str, str]]]:
     """Deterministically generate canonical COGS / ReCOGS semantic parsing splits."""
-    nouns = ["cat", "dog", "mouse", "boy", "girl", "hedgehog", "tiger", "bear"]
-    verbs = ["saw", "liked", "helped", "chased", "found", "heard", "painted"]
+    nouns = [
+        "cat", "dog", "mouse", "boy", "girl", "hedgehog", "tiger", "bear", "frog", "rabbit",
+        "lion", "horse", "elephant", "monkey", "bird", "duck", "doctor", "teacher", "officer", "baker"
+    ]
+    verbs = [
+        "saw", "liked", "helped", "chased", "found", "painted", "heard", "fed", "trained",
+        "observed", "called", "examined", "protected", "rescued", "visited"
+    ]
 
     # Generate active sentences
     active_sentences: list[tuple[str, str]] = []
@@ -148,15 +164,16 @@ def generate_cogs_benchmark(
     recursive_sentences: list[tuple[str, str]] = []
     for n1 in nouns[:4]:
         for v1 in verbs[:4]:
-            for n2 in nouns[4:]:
-                for v2 in verbs[4:]:
-                    for n3 in nouns[:4]:
+            for n2 in nouns[4:8]:
+                for v2 in verbs[4:8]:
+                    for n3 in nouns[8:12]:
                         src = f"The {n1} that {v1} the {n2} {v2} the {n3} ."
                         tgt = f"{v2} ( agent : {n1} ( {v1} : {n2} ) , theme : {n3} )"
                         recursive_sentences.append((src, tgt))
 
-    train = active_sentences[: len(active_sentences) * 4 // 5]
-    val_id = active_sentences[len(active_sentences) * 4 // 5 :]
+    split_idx = int(len(active_sentences) * 0.8)
+    train = active_sentences[:split_idx]
+    val_id = active_sentences[split_idx:]
     ood_structural = passive_sentences
     ood_recursive = recursive_sentences
 
@@ -172,8 +189,8 @@ def generate_pcfg_set_benchmark(
     seed: int = 42,
 ) -> dict[str, list[tuple[str, str]]]:
     """Deterministically generate canonical PCFG-SET benchmark splits."""
-    symbols = ["A", "B", "C", "D", "E", "F", "G", "H"]
-    ops = ["swap", "repeat", "reverse", "shift", "concat"]
+    symbols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
+    ops = ["swap", "repeat", "reverse", "shift", "concat", "echo"]
 
     def _eval_pcfg(expr: str) -> str:
         tokens = expr.split()
@@ -189,9 +206,17 @@ def generate_pcfg_set_benchmark(
             return f"{args[1]} {args[0]} " + " ".join(args[2:])
         if op == "shift" and len(args) >= 1:
             return " ".join(args[1:] + [args[0]])
+        if op == "echo":
+            return " ".join(args)
+        if op == "concat" and len(args) >= 2:
+            return f"{args[0]}{args[1]} " + " ".join(args[2:])
         return " ".join(args)
 
-    held_out_combinations = {("swap", "A", "B"), ("repeat", "C", "D"), ("reverse", "E", "F")}
+    # Held-out combinations for systematicity across operator subsets
+    held_out_pairs = {("swap", s1, s2) for s1 in ["A", "B", "C"] for s2 in ["A", "B", "C"]}
+    held_out_pairs.update({("repeat", s1, s2) for s1 in ["D", "E", "F"] for s2 in ["D", "E", "F"]})
+    held_out_pairs.update({("reverse", s1, s2) for s1 in ["G", "H", "I"] for s2 in ["G", "H", "I"]})
+    held_out_pairs.update({("shift", s1, s2) for s1 in ["J", "K", "L"] for s2 in ["J", "K", "L"]})
 
     base_id_samples: list[tuple[str, str]] = []
     ood_systematicity_samples: list[tuple[str, str]] = []
@@ -201,22 +226,22 @@ def generate_pcfg_set_benchmark(
             for s2 in symbols:
                 expr = f"{op} {s1} {s2}"
                 val = _eval_pcfg(expr)
-                if (op, s1, s2) in held_out_combinations:
+                if (op, s1, s2) in held_out_pairs:
                     ood_systematicity_samples.append((expr, val))
                 else:
                     base_id_samples.append((expr, val))
 
     deep_samples: list[tuple[str, str]] = []
-    for op1 in ops[:3]:
-        for op2 in ops[3:]:
-            for s1 in symbols:
-                for s2 in symbols:
+    for op1 in ops[:4]:
+        for op2 in ops:
+            for s1 in symbols[:8]:
+                for s2 in symbols[:8]:
                     expr = f"{op1} {op2} {s1} {s2}"
                     inner = _eval_pcfg(f"{op2} {s1} {s2}")
                     outer = _eval_pcfg(f"{op1} {inner}")
                     deep_samples.append((expr, outer))
 
-    split_idx = int(len(base_id_samples) * 0.85)
+    split_idx = int(len(base_id_samples) * 0.8)
     train = base_id_samples[:split_idx]
     val_id = base_id_samples[split_idx:]
     ood_systematicity = ood_systematicity_samples

@@ -130,29 +130,30 @@ class HBarDataGenerator:
 
     def generate_canonical_splits(
         self,
-        n_train: int = 10000,
-        n_val: int = 1000,
-        n_test: int = 2000,
+        n_train: int = 2500,
+        n_val: int = 500,
+        n_test: int = 1000,
     ) -> HBarSplitSuite:
         """Generate full canonical dataset splits with strict zero overlap."""
         held_out_pairs = {("jump", "left"), ("walk", "right"), ("run", "around")}
         atoms = self._build_atomic_pool()
-        train_pool: list[tuple[str, str]] = []
+        connectors = ["and", "after"]
+        modifiers = ["twice", "thrice"]
 
-        # Generate in-distribution training data (depth <= 2, length <= 4, no held-out combinations)
+        corpus_pool: list[tuple[str, str]] = []
+        # 1. Depth 1 & 2 Atoms
         for a in atoms:
             parts = a.split()
             act = parts[0]
             direction = parts[1] if len(parts) > 1 else None
             if (act, direction) not in held_out_pairs:
                 cmd = a
-                target = " ".join(HBarGrammar.execute_command_string(cmd))
-                train_pool.append((cmd, target))
-                for mod in ["twice", "thrice"]:
+                corpus_pool.append((cmd, " ".join(HBarGrammar.execute_command_string(cmd))))
+                for mod in modifiers:
                     cmd_mod = f"{a} {mod}"
-                    target_mod = " ".join(HBarGrammar.execute_command_string(cmd_mod))
-                    train_pool.append((cmd_mod, target_mod))
+                    corpus_pool.append((cmd_mod, " ".join(HBarGrammar.execute_command_string(cmd_mod))))
 
+        # 2. Compound Depth 2 & 3
         for a1 in atoms:
             p1 = a1.split()
             if (p1[0], p1[1] if len(p1) > 1 else None) in held_out_pairs:
@@ -161,14 +162,25 @@ class HBarDataGenerator:
                 p2 = a2.split()
                 if (p2[0], p2[1] if len(p2) > 1 else None) in held_out_pairs:
                     continue
-                for conn in ["and", "after"]:
+                for conn in connectors:
                     cmd = f"{a1} {conn} {a2}"
-                    target = " ".join(HBarGrammar.execute_command_string(cmd))
-                    train_pool.append((cmd, target))
+                    corpus_pool.append((cmd, " ".join(HBarGrammar.execute_command_string(cmd))))
+                    for m in modifiers:
+                        cmd_m = f"{a1} {conn} {a2} {m}"
+                        corpus_pool.append((cmd_m, " ".join(HBarGrammar.execute_command_string(cmd_m))))
 
-        self.rng.shuffle(train_pool)
-        train_data = train_pool[:n_train]
-        val_data = train_pool[n_train : n_train + n_val]
+        # Remove duplicates
+        unique_corpus = list(dict(corpus_pool).items())
+        self.rng.shuffle(unique_corpus)
+
+        n_total_id = len(unique_corpus)
+        if n_train + n_val <= n_total_id:
+            train_data = unique_corpus[:n_train]
+            val_data = unique_corpus[n_train : n_train + n_val]
+        else:
+            split_idx = int(n_total_id * 0.8)
+            train_data = unique_corpus[:split_idx]
+            val_data = unique_corpus[split_idx:]
 
         test_a = self.generate_split_a_recombination(n_test)
         test_b = self.generate_split_b_recursion_depth(n_test)

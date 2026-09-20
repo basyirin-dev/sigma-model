@@ -15,7 +15,7 @@ import torch.nn as nn
 class PositionalEncoding(nn.Module):
     """Sinusoidal positional encoding with batch_first layout."""
 
-    def __init__(self, d_model: int, max_len: int = 500, dropout: float = 0.1) -> None:
+    def __init__(self, d_model: int, max_len: int = 2048, dropout: float = 0.1) -> None:
         super().__init__()
         self.dropout = nn.Dropout(dropout)
         position = torch.arange(max_len).unsqueeze(1)
@@ -40,6 +40,7 @@ class Seq2SeqTransformer(nn.Module):
         nhead: int = 4,
         num_layers: int = 2,
         dim_ff: int = 512,
+        max_len: int = 2048,
         dropout: float = 0.1,
         pad_idx: int = 0,
     ) -> None:

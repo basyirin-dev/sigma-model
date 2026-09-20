@@ -59,9 +59,9 @@ def fit_logistic_separatrix(
         y_pred = logistic_step_fn(lambda_vals, k_fit, lam_crit_fit)
         ss_res = float(np.sum((escape_fractions - y_pred) ** 2))
         ss_tot = float(np.sum((escape_fractions - np.mean(escape_fractions)) ** 2))
-        r2 = 1.0 - (ss_res / ss_tot) if ss_tot > 1e-12 else 1.0
+        r2 = max(0.0, 1.0 - (ss_res / ss_tot)) if ss_tot > 1e-6 else 0.0
 
-        return k_fit, lam_crit_fit, max(0.0, r2)
+        return k_fit, lam_crit_fit, r2
     except Exception:
         return 0.0, 0.0, 0.0
 

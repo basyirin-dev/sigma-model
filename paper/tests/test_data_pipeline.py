@@ -21,7 +21,7 @@ class TestDataPipeline:
     def test_derive_processed_tables(self, tmp_path) -> None:
         proc_dir = tmp_path / "processed"
         summary = derive_all_processed_tables(
-            raw_pkl_path="paper/data/raw/all_results.pkl",
+            raw_pkl_path="paper/data/raw/p06_production_results.pkl",
             processed_dir=proc_dir,
         )
 

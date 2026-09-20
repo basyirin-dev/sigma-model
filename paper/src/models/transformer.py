@@ -18,7 +18,7 @@ import torch.nn as nn
 class SinusoidalPositionalEncoding(nn.Module):
     """Standard sinusoidal positional encodings."""
 
-    def __init__(self, d_model: int, max_len: int = 512) -> None:
+    def __init__(self, d_model: int, max_len: int = 2048) -> None:
         super().__init__()
         pe = torch.zeros(max_len, d_model)
         position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
@@ -45,7 +45,7 @@ class TransformerConfig:
     n_decoder_layers: int = 2
     d_ff: int = 512
     dropout: float = 0.1
-    max_len: int = 128
+    max_len: int = 2048
     pad_idx: int = 0
 
 
