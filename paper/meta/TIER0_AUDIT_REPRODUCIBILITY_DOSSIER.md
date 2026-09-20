@@ -32,6 +32,9 @@ This dossier provides exhaustive, immutable verification and technical evidence 
 - **Primary Release Tag:** `v2.0-paper02`
 - **Master Release Commit Hash:** `f9ba574`
 - **Preregistration Anchor Tag:** `p02.5-preregistered` (Commit `97eabba`, 2026-08-23)
+- **Live Research & Reproducibility Portal (GitHub Pages):** `https://basyirin-dev.github.io/sigma-model/`
+- **Online Preregistration Record:** `https://basyirin-dev.github.io/sigma-model/preregistration.html`
+- **Online Reproducibility Dossier:** `https://basyirin-dev.github.io/sigma-model/reproducibility.html`
 
 ### 1.2 Generated Immutable Artifacts & Bundles
 The build system (`paper02/Makefile`) deterministically compiles and packages all submission bundles from source:

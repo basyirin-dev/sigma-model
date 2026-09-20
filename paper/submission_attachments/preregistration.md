@@ -28,6 +28,7 @@ The experimental falsification protocol underwent a rigorous, prospectively docu
 4. **Git Provenance Hash Reconciliation:**
    - Initial Preregistration Tag: `p02.5-preregistered` (Commit `97eabba`, 2026-08-23).
    - Production Release Anchor Tag: `v2.0-paper02` (Commit `f9ba574`, finalized immutable release).
+   - Authoritative Web Record (GitHub Pages): `https://basyirin-dev.github.io/sigma-model/preregistration.html` (hosted live via GitHub Pages instead of external third-party registry).
 ## 1. Primary Outcome (exactly one)
 
 | Field | Value |

@@ -2,8 +2,9 @@
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg)](https://pytorch.org/)
-[![Tests Passing](https://img.shields.io/badge/Tests-147%2F147%20Passing-brightgreen.svg)](#-test-suite--verification)
-[![Release: v2.0-paper02](https://img.shields.io/badge/Release-v2.0--paper02%20(Commit%20540c992)-blueviolet.svg)](https://github.com/basyirin-dev/sigma-model)
+[![Tests Passing](https://img.shields.io/badge/Tests-184%2F184%20Passing-brightgreen.svg)](#-test-suite--verification)
+[![Release: v2.0-paper02](https://img.shields.io/badge/Release-v2.0--paper02%20(Commit%20f9ba574)-blueviolet.svg)](https://github.com/basyirin-dev/sigma-model)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Portal-blue.svg)](https://basyirin-dev.github.io/sigma-model/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
@@ -11,7 +12,8 @@ Official open-source research repository for the **$\Sigma$-Model Research Progr
 > **"Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks"**  
 > *Author:* Basyirin Amsyar Basri (Independent Researcher, Kuala Lumpur, Malaysia)  
 > *Submission Target:* Advances in Artificial Intelligence and Machine Learning (AAIML) / SSRN CompSciRN Preprint  
-> *Release Tag:* `v2.0-paper02` · *Commit Anchor:* `69e1f57b` · *Preregistration Tag:* `p02.5-preregistered` (2026-08-23)
+> *Release Tag:* `v2.0-paper02` · *Commit Anchor:* `f9ba574` · *Preregistration Tag:* `p02.5-preregistered` (2026-08-23)  
+> *Live Research Portal:* [https://basyirin-dev.github.io/sigma-model/](https://basyirin-dev.github.io/sigma-model/)
 
 ---
 
@@ -178,13 +180,16 @@ make submission   # => also assembles arXiv bundle + supplementary zip and syncs
 ---
 
 ## 🔒 Open Science & Preregistration Provenance
-
+ 
 All experimental protocols, benchmark grammars, sample-size calculations, and falsification criteria were prospectively locked prior to production data collection:
 - **Preregistration Document:** `paper/planning/preregistration.md`
 - **Git Commit Tag:** `p02.5-preregistered`
-- **Commit Hash:** `69e1f57b`
+- **Commit Hash:** `97eabba`
 - **Timestamp:** 2026-08-23
-- **Authoritative GitHub Repository:** [`https://github.com/basyirin-dev/sigma-model`](https://github.com/basyirin-dev/sigma-model) (Release `v2.0-paper02`)
+- **Authoritative GitHub Repository:** [`https://github.com/basyirin-dev/sigma-model`](https://github.com/basyirin-dev/sigma-model) (Release `v2.0-paper02`, Commit `f9ba574`)
+- **Live Research & Preregistration Portal (GitHub Pages):** [`https://basyirin-dev.github.io/sigma-model/`](https://basyirin-dev.github.io/sigma-model/)
+- **Prospective Preregistration Protocol:** [`https://basyirin-dev.github.io/sigma-model/preregistration.html`](https://basyirin-dev.github.io/sigma-model/preregistration.html)
+- **Reproducibility Dossier:** [`https://basyirin-dev.github.io/sigma-model/reproducibility.html`](https://basyirin-dev.github.io/sigma-model/reproducibility.html)
 
 ---
 
@@ -198,7 +203,7 @@ If you build upon this work or utilize the $\Sigma$-Model Two-Subspace Framework
   author  = {Basri, Basyirin Amsyar},
   journal = {Advances in Artificial Intelligence and Machine Learning (Under Review)},
   year    = {2026},
-  note    = {Preprint available on SSRN CompSciRN},
+  note    = {Preprint available on SSRN / arXiv. Research & Reproducibility Portal: https://basyirin-dev.github.io/sigma-model/},
   url     = {https://github.com/basyirin-dev/sigma-model}
 }
 ```
