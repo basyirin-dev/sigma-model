@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prospective Preregistration Protocol — Σ-Model</title>
+  <meta name="description" content="Prospectively locked preregistration protocol for the Σ-Model 960-run production experiment (RPF v2.0 Phase P02.5 / P03.1).">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22 fill=%22%232563eb%22>Σ</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="greek-sigma">Σ</span>
+        <span>Σ-Model Portal</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#theory">Theory & Model</a></li>
+          <li><a href="index.html#interactive">Interactive Explorer</a></li>
+          <li><a href="index.html#empirical">Empirical Results</a></li>
+          <li><a href="preregistration.html" class="active">Preregistration</a></li>
+          <li><a href="reproducibility.html">Reproducibility</a></li>
+          <li><a href="index.html#replication">Replication</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+          🌓
+        </button>
+        <a href="https://github.com/basyirin-dev/sigma-model" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 960px;">
+
+    <div style="margin-bottom: 2rem;">
+      <div class="hero-badge-group" style="justify-content: flex-start;">
+        <span class="badge badge-green">Locked Prospective Protocol</span>
+        <span class="badge badge-purple">Tag: p02.5-preregistered</span>
+        <span class="badge badge-blue">Commit 97eabba (2026-08-23)</span>
+      </div>
+      <h1 class="hero-title" style="text-align: left; font-size: 2.3rem;">
+        Prospective Preregistration Protocol
+      </h1>
+      <p class="hero-subtitle" style="text-align: left; font-size: 1.1rem; color: var(--text-secondary);">
+        Phase P02.5 Gate Screening & Phase P04 Production Matrix Execution Protocol under Research Planning Framework (RPF v2.0).
+      </p>
+    </div>
+
+    <div class="callout callout-info" style="margin-bottom: 2rem;">
+      <div class="callout-title">Cryptographic Git Commit Provenance</div>
+      <p style="font-size: 0.9rem;">
+        In accordance with open science standards, this protocol was formulated, timestamped, and cryptographically frozen in Git prior to the execution of any Phase P06 production training runs.
+      </p>
+      <div style="margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.82rem;">
+        • Initial Preregistration Tag: <tt>p02.5-preregistered</tt> (Commit <tt>97eabba</tt>, 2026-08-23 18:24:10 UTC)<br>
+        • Parameter Calibration Anchor: <tt>ADR-006</tt> (Subgate Calibration, 2026-08-25)<br>
+        • Production Release Anchor: <tt>v2.0-paper02</tt> (Commit <tt>f9ba574</tt>)<br>
+        • Authoritative Web Record: <tt>https://basyirin-dev.github.io/sigma-model/preregistration.html</tt>
+      </div>
+    </div>
+
+    <!-- Protocol Section 0: Provenance & Matrix Taxonomy -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">0. Experimental Matrix Taxonomy & Grid Hierarchy</h2>
+      <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+        The experimental plan comprises a mutually exclusive and collectively exhaustive (MECE) 960-run production hierarchy:
+      </p>
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.92rem; color: var(--text-secondary);">
+          <li>
+            <strong>Locked Tier 1 Primary Falsification Matrix (720 runs):</strong> 4 benchmarks (&hbar;, SCAN, COGS, PCFG-SET) &times; 1 canonical architecture (Transformer 2L, 0.93M params) &times; 6 standardized discrete levels (&lambda; &in; {0.000, 0.015, 0.020, 0.025, 0.030, 0.500}) &times; n=30 independent seeds = <strong>720 runs</strong>.
+          </li>
+          <li>
+            <strong>Tier 2 Architecture Scaling Matrix (240 runs):</strong> 4 benchmarks &times; 2 scaled architectures (Deep Transformer 4L with 3.80M params; GRU Seq2Seq with 0.41M params) &times; 3 discrete regimes (&lambda; &in; {0.000, 0.025, 0.500}) &times; n=10 independent seeds = <strong>240 runs</strong>.
+          </li>
+          <li>
+            <strong>Derived 11-Point Dense Grid on &hbar; (330 evaluated conditions):</strong> Formed by the 180 &hbar; Tier 1 runs plus 150 targeted boundary-refinement runs (&lambda; &in; {0.010, 0.018, 0.022, 0.028, 0.050}, n=30 seeds each) used for continuous inflection point estimation.
+          </li>
+          <li>
+            <strong>Derived Interventional & Grokking Arms:</strong> Evaluates 180 branched trajectory checkpoints (30 seeds &times; 6 timepoints) from the subcritical baseline and 30 extended-horizon 20k-step anti-grokking control runs.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Protocol Section 1: Primary Outcome -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">1. Primary Outcome (Criterion 1)</h2>
+      <div class="table-wrapper">
+        <table class="academic-table">
+          <tbody>
+            <tr>
+              <td style="width: 25%; font-weight: bold;">Metric Name</td>
+              <td>
+                <strong>Criterion 1 — Sharp escape step-function (Fitted 2-Parameter Logistic Change-Point Estimand & Standardized Transition Scale)</strong>:<br>
+                <code style="font-size: 0.9rem;">P<sub>fit</sub>(escape | &lambda;) = 1 / (1 + exp(-k(&lambda; - &lambda;<sub>crit</sub>)))</code>, escape := Acc<sub>OOD</sub> &ge; 80%, and standardized transition scale <code style="font-size: 0.9rem;">P*(&lambda;) = (P<sub>fit</sub>(&lambda;) - P<sub>baseline</sub>) / (1 - P<sub>baseline</sub>)</code>.
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">Threshold</td>
+              <td>
+                Steepness <strong>k &ge; 15.0</strong>, macroscopic jump <strong>&Delta;P<sub>fit</sub> &ge; 0.50</strong>, and standardized threshold separation <strong>P*(&lambda; &le; 0.010) &lt; 0.50</strong> (with P*(&lambda; &le; 0.000) &lt; 0.05) and <strong>P*(&lambda; &ge; 0.500) &gt; 0.95</strong>.<br>
+                <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                  Empirical Outcome: k = 79.48 &gt;&gt; 15.0 (PASS); &Delta;P<sub>fit</sub> = 0.7496 &gt;&gt; 0.50 (PASS); P*(&lambda; = 0.010) = 0.1968 &lt; 0.50 (PASS); P*(&lambda; &ge; 0.500) = 1.000 &gt; 0.95 (PASS).
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">Direction</td>
+              <td>Higher k = sharper boundary = PASS; separation inequalities must hold.</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">Justification</td>
+              <td>
+                Distinguishes a macroscopic phase boundary (trap &rarr; escape) from a smooth dose-response regularizer curve. In the continuous ODE (Level 1), subcritical escape is identically 0%. In finite-sample discrete mini-batch training (Level 3), small baseline escapes represent stochastic fluctuations from initialization and early mini-batch gradient variance.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Protocol Section 2: Secondary Outcomes -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">2. Secondary Outcomes (Confirmatory)</h2>
+      <div class="table-wrapper">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Metric Name</th>
+              <th>Preregistered Threshold</th>
+              <th>Tag</th>
+              <th>Observed Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Criterion 2 — Late-Onset Recovery</strong></td>
+              <td>For t<sub>int</sub> = 1000 runs (trapped at step 1000, Acc<sub>OOD</sub> &le; 50%), switching on &lambda; = 0.050 reaches final Acc<sub>OOD</sub> &ge; 90% in &ge; 90% of seeds.</td>
+              <td><span class="badge badge-green">Confirmatory</span></td>
+              <td class="mono-cell" style="color: var(--success); font-weight: bold;">30/30 (100.0%)</td>
+            </tr>
+            <tr>
+              <td><strong>Criterion 3 — Supercritical Asymptotic Parity</strong></td>
+              <td>Pairwise TOST equivalence among &lambda; &in; {0.025, 0.030, 0.050, 0.100, 0.500} within margin &plusmn;2.5%, p &lt; 0.05 (Bonferroni across 10 pairs).</td>
+              <td><span class="badge badge-green">Confirmatory</span></td>
+              <td class="mono-cell" style="color: var(--success);">All pairs p &lt; 0.005 (Qualified for 2L post-separation &lambda; &ge; 0.030)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Protocol Section 3: Exploratory Outcomes -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">3. Exploratory Outcomes</h2>
+      <div class="card">
+        <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.92rem; color: var(--text-secondary);">
+          <li>
+            <strong>&lambda;&#770;<sub>crit</sub> Point Estimate:</strong> Logistic inflection point point estimate and 95% bootstrap CI within [0.015, 0.030], matching the analytical formula &lambda;<sub>crit</sub> = b<sub>C</sub> / a<sub>C</sub> = 0.025.
+          </li>
+          <li>
+            <strong>Transition-Latency Ordering:</strong> &tau;&#770;<sub>fixed</sub> &lt; &tau;&#770;<sub>mult</sub> &lt; &tau;&#770;<sub>add</sub> corresponding to compositional operator complexity.
+          </li>
+          <li>
+            <strong>CKA/RGA Lead-Lag Dynamics:</strong> Granger causality test demonstrating internal representation alignment precedes behavioral generalization jumps (&Delta;RGA<sub>t</sub> &rarr; &Delta;OOD<sub>t+1</sub>).
+          </li>
+          <li>
+            <strong>Whitened GCA Step-0 Orthogonality:</strong> P<sub>&perp;</sub><sup>emb</sup> verification that embedding layer initializations exhibit exact step-0 orthogonality without spurious alignment artifacts.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Protocol Section 4: Exclusion Criteria -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">4. Objective Exclusion Criteria</h2>
+      <div class="table-wrapper">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Exclusion Criterion</th>
+              <th>Operational Rationale</th>
+              <th>Observed Incurrence (960 Runs)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NaN or Inf loss/metric at any step</td>
+              <td>Numerical instability / floating-point overflow</td>
+              <td class="mono-cell">0 runs (0.0%)</td>
+            </tr>
+            <tr>
+              <td>Training non-convergence (loss non-decreasing &ge; 500 steps)</td>
+              <td>Optimization breakdown</td>
+              <td class="mono-cell">0 runs (0.0%)</td>
+            </tr>
+            <tr>
+              <td>Checkpoint / file artifact SHA-256 hash mismatch</td>
+              <td>Data corruption</td>
+              <td class="mono-cell">0 runs (0.0%)</td>
+            </tr>
+            <tr>
+              <td>Hardware / OS crash (OOM, killed process)</td>
+              <td>Compute infrastructure fault</td>
+              <td class="mono-cell">0 runs (0.0%)</td>
+            </tr>
+            <tr>
+              <td>Seed mismatch (&ne; cell_seed_idx * 42 + 7)</td>
+              <td>Determinism failure</td>
+              <td class="mono-cell">0 runs (0.0%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Protocol Section 5: Statistical Plan -->
+    <section class="section">
+      <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1rem;">5. Statistical Plan & Power Calibration</h2>
+      <div class="card">
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Sample sizes are calibrated to ensure statistical power &gt; 0.90 for detecting macroscopic phase-boundary jumps:
+        </p>
+        <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.92rem; color: var(--text-secondary);">
+          <li>
+            <strong>Sample Size & Power:</strong> n = 30 independent seeds per cell. For binomial escape fraction, standard error is bounded by SE &le; &radic;(0.5 &times; 0.5 / 30) &approx; 0.091, resolving the required separation (&Delta;P &ge; 0.50) with &gt; 5 SE margin.
+          </li>
+          <li>
+            <strong>Model Selection Likelihood Formulation:</strong> Individual seed Bernoulli MLE (<tt>AIC = 2k - 2 ln L</tt>, saturated ceiling <tt>ln L<sub>sat</sub> = -165.234</tt>) and aggregate proportions (<tt>AIC = n ln(RSS/n) + 2k</tt>).
+          </li>
+          <li>
+            <strong>Family-Wise Error Rate Control:</strong> Bonferroni correction within each hypothesis family (e.g., &alpha; = 0.05 / 10 = 0.005 for TOST equivalence pairs), with pre-ordered gate hierarchy (Primary &rarr; Secondary).
+          </li>
+          <li>
+            <strong>Decision Rule:</strong> PASS = Primary meets all criteria (k &ge; 15.0 &and; &Delta;P<sub>fit</sub> &ge; 0.50 &and; P*(&le;0.010) &lt; 0.50 &and; P*(&ge;0.500) &gt; 0.95) &and; Secondary consistent.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="https://github.com/basyirin-dev/sigma-model/raw/main/paper/planning/preregistration.md" class="btn btn-outline">
+        📥 Download Raw Preregistration Markdown
+      </a>
+      <a href="index.html" class="btn btn-primary" style="margin-left: 0.75rem;">
+        &larr; Back to Main Research Portal
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="brand">
+          <span class="greek-sigma">Σ</span>
+          <span>The Σ-Model Research Programme</span>
+        </div>
+        <p>
+          Investigating continuous dynamical systems, representation geometry, and algebraic generalization in deep learning.
+        </p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Main Portal</a></li>
+            <li><a href="reproducibility.html">Reproducibility Dossier</a></li>
+            <li><a href="https://github.com/basyirin-dev/sigma-model">GitHub Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

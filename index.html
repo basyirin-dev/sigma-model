@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Σ-Model: A Dynamical Systems Framework for Compositional Representation Formation</title>
+  <meta name="description" content="Official research and reproducibility portal for the Σ-Model: Critical Compositional Pressure and the Two-Subspace Law in neural networks.">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22 font-weight=%22bold%22 fill=%22%232563eb%22>Σ</text></svg>">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="greek-sigma">Σ</span>
+        <span>Σ-Model Portal</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#theory" class="active">Theory & Model</a></li>
+          <li><a href="#interactive">Interactive Explorer</a></li>
+          <li><a href="#empirical">Empirical Results</a></li>
+          <li><a href="preregistration.html">Preregistration</a></li>
+          <li><a href="reproducibility.html">Reproducibility</a></li>
+          <li><a href="#replication">Replication</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+          🌓
+        </button>
+        <a href="https://github.com/basyirin-dev/sigma-model" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: text-bottom; margin-right: 4px;">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge-group">
+        <span class="badge badge-blue">Defining Manuscript</span>
+        <span class="badge badge-green">184/184 Automated Tests Passing</span>
+        <span class="badge badge-purple">Release v2.0-paper02</span>
+        <span class="badge badge-blue">Locked Preregistration</span>
+      </div>
+      <h1 class="hero-title">Critical Compositional Pressure & The Two-Subspace Law</h1>
+      <p class="hero-subtitle">
+        A Dynamical Systems Framework for Compositional Representation Formation in Neural Networks
+      </p>
+      <div class="hero-authors">
+        <strong>Basyirin Amsyar Basri</strong> &bull; Independent Researcher &bull; Kuala Lumpur, Malaysia
+      </div>
+      <div class="hero-buttons">
+        <a href="https://github.com/basyirin-dev/sigma-model/raw/main/paper/writing/manuscript.pdf" class="btn btn-primary">
+          📄 Download Master Monograph (PDF)
+        </a>
+        <a href="preregistration.html" class="btn btn-outline">
+          🔒 Preregistration Protocol
+        </a>
+        <a href="reproducibility.html" class="btn btn-outline">
+          🧪 Reproducibility Dossier
+        </a>
+        <a href="https://github.com/basyirin-dev/sigma-model" target="_blank" rel="noopener" class="btn btn-outline">
+          💻 Source Repository
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="container">
+
+    <!-- Overview / Core Theoretical Framework -->
+    <section id="theory" class="section">
+      <div class="section-header">
+        <span class="section-tag">Dynamical Systems Theory</span>
+        <h2 class="section-title">The Two-Subspace Learning Law</h2>
+        <p class="section-desc">
+          Compositional failure in deep neural networks is not an optimizer anomaly or data scarcity artifact: standard Empirical Risk Minimization (ERM) drives continuous gradient flow into a low-schema-coherence shortcut attractor ($E_S$). Introducing structural pressure $\lambda$ induces an analytical transcritical bifurcation at $\lambda_{\text{crit}}$.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Theorem 1: Transcritical Bifurcation</h3>
+            <span class="badge badge-blue">Level 1 Theorem</span>
+          </div>
+          <div class="card-body">
+            Gradient flow decomposes into orthogonal subspaces: shortcut heuristic coordinate $u(t)$ and schema-aligned coordinate $v(t)$:
+            <div style="margin: 0.75rem 0; font-family: var(--font-mono); font-size: 0.85rem; background: var(--bg-secondary); padding: 0.5rem; border-radius: var(--radius-sm);">
+              u&#775; = u(&theta;<sub>S</sub> - a<sub>S</sub>u - b<sub>S</sub>v<sup>2</sup>)<br>
+              v&#775; = v(&lambda;a<sub>C</sub> - b<sub>C</sub> - &kappa;v<sup>2</sup>)
+            </div>
+            At the critical threshold <strong>&lambda;<sub>crit</sub> = b<sub>C</sub> / a<sub>C</sub> = 0.025</strong> ($R_0 = \lambda a_C / b_C = 1$), the shortcut equilibrium $E_S$ destabilizes into an unstable saddle and stability exchanges to the coherent attractor $E_C$.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Theorem 2: Dimension Bounds</h3>
+            <span class="badge badge-purple">Level 1 Theorem</span>
+          </div>
+          <div class="card-body">
+            By the Cauchy-Schwarz inequality, the effective participation ratio of the internal representation space is strictly bounded from below:
+            <div style="margin: 0.75rem 0; font-family: var(--font-mono); font-size: 0.85rem; background: var(--bg-secondary); padding: 0.5rem; border-radius: var(--radius-sm);">
+              D<sub>eff</sub> = 1 / &sum; p<sub>i</sub><sup>2</sup> &ge; 2.29
+            </div>
+            Empirical PCA spectrum confirms $\text{PC}_1 = 58.2\%$, $\text{PC}_2 = 28.2\%$, and remaining dimensions carry $13.6\%$ of activation variance, ruling out 1D degenerate collapse.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Empirical Replication</h3>
+            <span class="badge badge-green">Level 3 Observation</span>
+          </div>
+          <div class="card-body">
+            960 production neural network runs across 4 compositional benchmark suites (&hbar;, SCAN, COGS, PCFG-SET) and 3 architecture classes confirm:
+            <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+              <li>Sharp change-point separatrix ($k = 79.5 \gg 15.0$).</li>
+              <li>100% late-onset interventional rescue at step 1000.</li>
+              <li>Internal CKA alignment precedes behavioral jumps ($F(2,29)=3.72, p=0.037$).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Bifurcation Explorer -->
+    <section id="interactive" class="section">
+      <div class="section-header">
+        <span class="section-tag">Interactive Simulation</span>
+        <h2 class="section-title">Two-Subspace Phase Portrait Explorer</h2>
+        <p class="section-desc">
+          Interact directly with the continuous dynamical system. Adjust compositional structural pressure $\lambda$ to observe vector field trajectories, stream particle convergence, and the exact stability exchange at $\lambda_{\text{crit}} = 0.025$.
+        </p>
+      </div>
+
+      <div class="interactive-panel">
+        <div class="explorer-layout">
+          <div>
+            <div class="canvas-container">
+              <canvas id="phaseCanvas"></canvas>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+              <span>• Horizontal: Shortcut coordinate u(t)</span>
+              <span>• Vertical: Schema coordinate v(t)</span>
+              <span>• Red circle: Unstable saddle &bull; Green circle: Stable attractor</span>
+            </div>
+          </div>
+
+          <div class="controls-panel">
+            <div class="control-group">
+              <div class="control-label">
+                <span>Compositional Pressure (&lambda;)</span>
+                <span id="lambdaVal" style="font-family: var(--font-mono); color: var(--primary);">0.0150</span>
+              </div>
+              <input type="range" id="lambdaSlider" class="control-slider" min="0.000" max="0.055" step="0.001" value="0.015">
+              <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted);">
+                <span>0.000 (ERM)</span>
+                <span style="color: var(--danger); font-weight: bold;">&lambda;<sub>crit</sub> = 0.025</span>
+                <span>0.055 (Supercritical)</span>
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 0.75rem;">
+              <div class="stat-callout">
+                <span class="stat-lbl">Reproduction Ratio R₀</span>
+                <span id="r0Val" class="stat-val">0.60</span>
+              </div>
+              <div class="stat-callout">
+                <span class="stat-lbl">Critical Threshold</span>
+                <span class="stat-val">0.0250</span>
+              </div>
+            </div>
+
+            <div id="regimeStatus" class="regime-indicator regime-subcritical">
+              <!-- Dynamically populated -->
+            </div>
+
+            <div class="card" style="padding: 1rem; font-size: 0.82rem;">
+              <div style="font-weight: 700; margin-bottom: 0.4rem; color: var(--text-primary);">Fixed Point Spectrum:</div>
+              <div id="fixedPointsInfo" style="font-family: var(--font-mono); line-height: 1.5;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empirical Results & Change-Point Plot -->
+    <section id="empirical" class="section">
+      <div class="section-header">
+        <span class="section-tag">Empirical Evidence (960 Runs)</span>
+        <h2 class="section-title">Sharp Phase Boundary & Multi-Benchmark Matrix</h2>
+        <p class="section-desc">
+          Empirical escape probabilities across 11 dense grid levels on &hbar; ($N=330$ runs) decisively fit a sharp logistic transition ($k = 79.48, \text{AIC}_{\text{seed}} = 351.26$), rejecting smooth dose-response regularizers.
+        </p>
+      </div>
+
+      <div class="explorer-layout" style="margin-bottom: 2rem;">
+        <div>
+          <div class="canvas-container" style="aspect-ratio: 16 / 9;">
+            <canvas id="changePointCanvas"></canvas>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center;">
+            Figure: Empirical escape fraction across 11 dense grid levels on &hbar; (N=330 runs) overlaid on fitted logistic change-point curve (k = 79.5).
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="callout callout-info">
+            <div class="callout-title">Model Selection Parsimony</div>
+            Seed-level Bernoulli log-likelihoods confirm continuous sigmoidal models are statistically indistinguishable (&Delta;AIC &lt; 0.3):
+            <div style="margin-top: 0.5rem; font-size: 0.85rem; font-family: var(--font-mono);">
+              • Logistic: AIC = 351.26 (Normal form)<br>
+              • Probit: AIC = 351.52 (&Delta;AIC = +0.26)<br>
+              • Gompertz: AIC = 351.41 (&Delta;AIC = +0.15)<br>
+              • Piecewise-Linear: AIC = 763.81 (Rejected)
+            </div>
+          </div>
+
+          <div class="callout callout-success">
+            <div class="callout-title">Negative Permutation Control</div>
+            Randomly permuting structural substitution pairs under identical compute and loss magnitude collapses OOD accuracy:
+            <div style="margin-top: 0.5rem; font-size: 0.85rem;">
+              • &hbar;: 58.1% &plusmn; 3.4% (Welch t = 0.89, p = 0.38 vs ERM)<br>
+              • COGS: 32.4% &plusmn; 4.1% (Welch t = 1.90, p = 0.062 vs ERM)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benchmark Summary Table -->
+      <div class="table-wrapper">
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th>Benchmark Suite</th>
+              <th>Task Domain</th>
+              <th>Architecture</th>
+              <th>ERM Baseline (&lambda; = 0.000)</th>
+              <th>Supercritical (&lambda; = 0.050)</th>
+              <th>Gain (&Delta;OOD)</th>
+              <th>Permutation Control</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>&hbar; Homomorphic Algebra</strong></td>
+              <td>Algebraic Recursion & Composition</td>
+              <td>Transformer 2L (0.93M)</td>
+              <td class="mono-cell">58.74% &plusmn; 13.97%</td>
+              <td class="mono-cell" style="color: var(--success); font-weight: bold;">99.42% &plusmn; 0.38%</td>
+              <td class="mono-cell">+40.68%</td>
+              <td class="mono-cell">58.12% &plusmn; 3.41%</td>
+            </tr>
+            <tr>
+              <td><strong>SCAN</strong></td>
+              <td>Command-to-Action Sequences (<tt>jump</tt>)</td>
+              <td>Transformer 2L (0.93M)</td>
+              <td class="mono-cell">12.45% &plusmn; 3.18%</td>
+              <td class="mono-cell" style="color: var(--success); font-weight: bold;">98.85% &plusmn; 0.62%</td>
+              <td class="mono-cell">+86.40%</td>
+              <td class="mono-cell">14.20% &plusmn; 2.85%</td>
+            </tr>
+            <tr>
+              <td><strong>COGS</strong></td>
+              <td>Structural Semantic Parsing</td>
+              <td>Transformer 2L (0.93M)</td>
+              <td class="mono-cell">34.50% &plusmn; 4.50%</td>
+              <td class="mono-cell" style="color: var(--success); font-weight: bold;">98.15% &plusmn; 0.95%</td>
+              <td class="mono-cell">+63.65%</td>
+              <td class="mono-cell">32.48% &plusmn; 3.12%</td>
+            </tr>
+            <tr>
+              <td><strong>PCFG-SET</strong></td>
+              <td>Context-Free Syntactic Recursion</td>
+              <td>Transformer 2L (0.93M)</td>
+              <td class="mono-cell">51.20% &plusmn; 6.25%</td>
+              <td class="mono-cell" style="color: var(--success); font-weight: bold;">99.10% &plusmn; 0.45%</td>
+              <td class="mono-cell">+47.90%</td>
+              <td class="mono-cell">50.85% &plusmn; 4.10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Publication Figures Gallery -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-tag">Publication Figures</span>
+        <h2 class="section-title">Analytical & Empirical Diagnostic Suite</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="figure-card">
+          <div class="figure-img-wrap">
+            <img src="assets/figures/figure1_phase_portrait.png" alt="Figure 1 Phase Portrait">
+          </div>
+          <div class="figure-caption">
+            <strong>Figure 1: Analytical Phase Portraits.</strong> Vector fields and representative streamlines for subcritical (&lambda; = 0.015) vs supercritical (&lambda; = 0.035) regimes, illustrating the transcritical exchange of stability.
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <div class="figure-img-wrap">
+            <img src="assets/figures/figure3_representation_geometry.png" alt="Figure 3 Representation Geometry">
+          </div>
+          <div class="figure-caption">
+            <strong>Figure 3: Representation Geometry Dynamics.</strong> Linear CKA and Whitened GCA trajectories through training, demonstrating internal alignment preceding behavioral OOD generalization jumps.
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <div class="figure-img-wrap">
+            <img src="assets/figures/figure4_cross_benchmark_generalization.png" alt="Figure 4 Cross-Benchmark Generalization">
+          </div>
+          <div class="figure-caption">
+            <strong>Figure 4: Cross-Benchmark Generalization Curves.</strong> Generalization performance across all four benchmark suites as a function of compositional pressure &lambda;.
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <div class="figure-img-wrap">
+            <img src="assets/figures/figure5_hessian_spectral_dynamics.png" alt="Figure 5 Hessian Spectral Dynamics">
+          </div>
+          <div class="figure-caption">
+            <strong>Figure 5: Hessian Curvature Dynamics.</strong> Top eigenvalue &lambda;<sub>max</sub> trajectories evaluated via matrix-free Lanczos iteration, confirming stability below the Edge of Stability ceiling (2/&eta; = 2000.0).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Turnkey Replication Guide -->
+    <section id="replication" class="section">
+      <div class="section-header">
+        <span class="section-tag">Reproducibility & Open Science</span>
+        <h2 class="section-title">Turnkey Single-Command Replication</h2>
+        <p class="section-desc">
+          All code, configurations, deterministic seed schedules, and raw logs are fully accessible for bit-for-bit independent verification.
+        </p>
+      </div>
+
+      <div class="code-block">
+        <button class="copy-btn" data-target="replicationCode">Copy Commands</button>
+        <pre id="replicationCode"># 1. Clone the authoritative repository
+git clone https://github.com/basyirin-dev/sigma-model.git
+cd sigma-model
+
+# 2. Activate Python environment & install dependencies
+python3 -m venv hbar_env
+source hbar_env/bin/activate
+pip install -e ".[dev]"
+
+# 3. Run full automated test suite (184 unit & regression tests)
+make test
+
+# 4. Regenerate all 17 canonical evaluation tables from raw production logs
+python -m paper.src.data.derive_processed_tables
+
+# 5. Build master monograph and submission PDFs
+make paper
+make -C paper journal</pre>
+      </div>
+
+      <div class="grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Deterministic Seed Protocol</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            All production runs follow the prospective seed rule: <tt>seed = cell_seed_idx * 42 + 7</tt>, with CUDA deterministic backend enabled and cuDNN benchmarking disabled.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Zero Data Leakage</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Syntactic support disjointness: <tt>supp(D_train) &cap; supp(D_test) = &empty;</tt>. SHA-256 hash checks verify 0.0% sequence overlap across all benchmarks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX Citation Block -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-tag">Citation</span>
+        <h2 class="section-title">BibTeX Reference</h2>
+      </div>
+
+      <div class="code-block">
+        <button class="copy-btn" data-target="bibtexCitation">Copy BibTeX</button>
+        <pre id="bibtexCitation">@article{basri2026critical,
+  title={Critical Compositional Pressure: A Phase-Boundary Framework for Compositional Representation Formation in Neural Networks},
+  author={Basri, Basyirin Amsyar},
+  journal={Advances in Artificial Intelligence and Machine Learning (AAIML)},
+  year={2026},
+  url={https://github.com/basyirin-dev/sigma-model},
+  note={Reproducibility Portal: https://basyirin-dev.github.io/sigma-model/}
+}</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="brand">
+          <span class="greek-sigma">Σ</span>
+          <span>The Σ-Model Research Programme</span>
+        </div>
+        <p>
+          Investigating continuous dynamical systems, representation geometry, and algebraic generalization in deep learning.
+        </p>
+        <p style="font-size: 0.82rem; margin-top: 0.5rem;">
+          Code: <a href="https://opensource.org/licenses/MIT">MIT License</a> &bull; Data: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> &bull; Commit Anchor: <tt>f9ba574</tt>
+        </p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#theory">Theoretical Framework</a></li>
+            <li><a href="#interactive">Interactive Explorer</a></li>
+            <li><a href="#empirical">Empirical Results</a></li>
+            <li><a href="preregistration.html">Preregistration Protocol</a></li>
+            <li><a href="reproducibility.html">Reproducibility Dossier</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Deliverables</h4>
+          <ul>
+            <li><a href="https://github.com/basyirin-dev/sigma-model/raw/main/paper/writing/manuscript.pdf">Master Monograph (PDF)</a></li>
+            <li><a href="https://github.com/basyirin-dev/sigma-model/raw/main/paper/writing/manuscript_journal.pdf">Journal Article (PDF)</a></li>
+            <li><a href="https://github.com/basyirin-dev/sigma-model/raw/main/paper/writing/supplementary_materials.pdf">Supplementary Materials</a></li>
+            <li><a href="https://github.com/basyirin-dev/sigma-model">GitHub Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
