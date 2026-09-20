@@ -53,4 +53,4 @@ Large language models (Claude, Anthropic) were used as assistive grammar, style,
 2. [x] Supplementary materials bundle (`supplementary_materials.zip`) generated with code, test suite, and processed results.
 3. [x] SSRN CompSciRN subject areas selected.
 4. [x] LLM writing assistance disclosed in paper footnote (`\thanks`) and abstract metadata.
-5. [x] Open-source repository: \url{https://github.com/basyirin-dev/sigma-model} (Release \texttt{v2.0-paper02}, Commit \texttt{f9ba574}) and reproducibility bundle (\texttt{supplementary\_materials.zip}). A permanent Zenodo DOI will be minted concurrent with or prior to SSRN posting.
+5. [x] Open-source repository: \url{https://github.com/basyirin-dev/sigma-model} (Release \texttt{v2.0-paper02}, Commit \texttt{f9ba574}), live research and reproducibility portal: \url{https://basyirin-dev.github.io/sigma-model/}, and reproducibility bundle (\texttt{supplementary\_materials.zip}). A permanent Zenodo DOI will be minted concurrent with or prior to SSRN posting.
